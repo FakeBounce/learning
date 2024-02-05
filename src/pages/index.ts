@@ -1,1 +1,1 @@
-export * from './auth/LoginPage';
+export * from '@src/pages/login/LoginPage';

@@ -27,3 +27,4 @@
 ## Access coverage report
 
 ```open coverage/lcov-report/index.html```
+

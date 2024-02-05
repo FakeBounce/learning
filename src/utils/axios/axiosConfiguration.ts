@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useRefreshToken } from './useRefreshToken';
 import axiosInstance from './axios';
 import { configure } from 'axios-hooks';
-import { setSession } from './session.ts';
+import { setSession } from './session';
 import localStorageAvailable from '../localStorageAvailable';
 // paths
 import { PATH_AUTH } from '../../routes/paths';
