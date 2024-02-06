@@ -1,7 +1,8 @@
 import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
 import { Navigate, useRoutes } from 'react-router-dom';
-import { LoginPage, Page404 } from '@src/routes/elements';
+import { LoginPage, Page404 } from 'src/routes/elements';
+import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
 // ----------------------------------------------------------------------
 
@@ -27,7 +28,9 @@ const Router = () => {
       path: 'dashboard/',
       element: (
         <AuthGuard>
-          <>Bienvenue sur le dashboard</>
+          <MainLayout >
+            <>Contenu</>
+          </MainLayout>
         </AuthGuard>
       )
     },
@@ -37,7 +40,14 @@ const Router = () => {
       path: '404',
       element: <Page404 />
     },
-    { path: '*', element: <Navigate to="/404" replace /> }
+    {
+      path: '*',
+      element: (
+        <GuestGuard>
+          <Navigate to="/404" replace />
+        </GuestGuard>
+      )
+    }
   ]);
 };
 

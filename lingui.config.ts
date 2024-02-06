@@ -8,13 +8,13 @@ export default {
   catalogs: [
     {
       path: 'src/locales/{name}/{locale}',
-      include: ['src/components/{name}', 'src/pages/{name}'],
+      include: ['src/components/{name}', 'src/pages/{name}', 'src/utils/{name}'],
       exclude: ['**/node_modules/**', 'src/components/**', 'src/pages/index.ts']
     },
     {
       path: 'src/locales/{locale}',
       include: ['src/pages/**'],
-      exclude: ['**/node_modules/**', 'src/redux/**', 'src/utils/**']
+      exclude: ['**/node_modules/**', 'src/redux/**']
     }
   ],
   runtimeConfigModule: ['@lingui/core', 'i18n'],

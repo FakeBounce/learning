@@ -85,6 +85,7 @@ export const theme: ThemeProps = {
     // 900: '#002260'
     // },
     grey: {
+      25: '#FAFAFA',
       50: '#ECF6FF',
       100: '#DDEFFF',
       200: '#C4D7E7',
