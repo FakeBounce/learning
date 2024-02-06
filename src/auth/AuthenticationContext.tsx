@@ -1,5 +1,5 @@
 import { useDeleteQuery, useGetQuery, usePostQuery } from '@utils/axios';
-import { setSession } from '@utils/axios/session.ts';
+import { setSession } from '@utils/axios/session';
 import { AuthenticationReducer, initialAuthenticationState } from './AuthenticationReducer';
 import {
   useEffect,
@@ -31,6 +31,11 @@ const useAuthenticationContext = () => {
   return context;
 };
 
+/*
+    * AuthenticationProvider
+    * This provider is used to manage the authentication state of the application
+    * Never move in Reducer store due to javascript security
+ */
 function AuthenticationProvider({ children }: { children: ReactNode }) {
   const [, fetchUser] = useGetQuery({
     endpoint: '/user',
@@ -48,7 +53,6 @@ function AuthenticationProvider({ children }: { children: ReactNode }) {
   });
 
   try {
-    // @todo - Move state into specific reducer in redux directory
     const [state, dispatch] = useReducer(AuthenticationReducer, initialAuthenticationState);
     useEffect(() => {
       initialize();
@@ -128,7 +132,7 @@ function AuthenticationProvider({ children }: { children: ReactNode }) {
         isInitialized: state.isInitialized,
         isAuthenticated: state.isAuthenticated,
         userData: state.userData,
-        method: 'sanctum', // If we have multiple ways to log in
+        method: 'basic', // If we have multiple ways to log in
         login,
         logout
       }),

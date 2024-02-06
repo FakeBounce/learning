@@ -1,4 +1,4 @@
-const theme: ThemeProps = {
+export const theme: ThemeProps = {
   palette: {
     purple: {
       50: '#EBE5FF',
