@@ -1,20 +1,15 @@
-import { useLocales } from '@src/locales';
 import { Link as RouterLink } from 'react-router-dom';
-// @mui
+import { Trans } from '@lingui/macro';
 import { Box, Button, Typography } from '@mui/material';
-// assets
 import PageNotFoundIllustration from '@src/assets/illustrations/PageNotFoundIllustration';
-
 // ----------------------------------------------------------------------
 
 // @todo: Rework text and page
 export default function Page404() {
-  const { translate } = useLocales();
-
   return (
     <>
       <Typography variant="h3" paragraph align="center">
-        {translate('404_TITLE')}
+        <Trans>404 Title</Trans>
       </Typography>
 
       <Typography sx={{ color: 'text.secondary' }}>

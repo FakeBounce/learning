@@ -1,15 +1,9 @@
-// @mui
+import { Trans } from '@lingui/macro';
 import { Typography, Box } from '@mui/material';
-import { useLocales } from '@src/locales';
 import theme from '@theme';
 import { NavLink } from 'react-router-dom';
-// login
-
-// ----------------------------------------------------------------------
 
 export default function LoginHeader() {
-  const { translate } = useLocales();
-
   return (
     <>
       <Typography
@@ -17,20 +11,20 @@ export default function LoginHeader() {
         fontWeight={theme.fonts.weight.medium}
         fontSize={theme.fonts.size.xxl}
       >
-        {translate('LOGIN_TITLE')}
+        <Trans>Connexion</Trans>
       </Typography>
-      <Box display="flex" mb={4}>
+      <Box display="flex" flexDirection={['column', 'row']} mb={4}>
         <Typography fontSize={theme.fonts.size.base}>
-          {translate('LOGIN_NO_ACCOUNT_YET')}
+          <Trans>Pas encore de compte ?</Trans>
         </Typography>
         <Typography
-          ml={1}
+          ml={[0, 1]}
           fontWeight={theme.fonts.weight.semibold}
           fontSize={theme.fonts.size.base}
           color={theme.palette.green[700]}
         >
           <NavLink to="/register" style={{ color: theme.palette.green[700] }}>
-            {translate('LOGIN_CREATE_ACCOUNT')}
+            <Trans>Créer un compte</Trans>
           </NavLink>
         </Typography>
       </Box>

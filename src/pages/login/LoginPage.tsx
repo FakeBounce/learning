@@ -6,6 +6,7 @@ import { LMSCard } from '@src/components/lms';
 import { PATH_AFTER_LOGIN } from '@src/config-global';
 import LoginFooter from '@src/pages/login/LoginFooter';
 import LoginHeader from '@src/pages/login/LoginHeader';
+import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -19,7 +20,8 @@ const StyledLoginContainerBox = styled(Box)(() => ({
   height: '100vh',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: 0
+  margin: 0,
+  padding: '0 1rem'
 }));
 
 const LoginSchema = Yup.object().shape({
@@ -36,6 +38,7 @@ const defaultValues = {
 
 export default function Login() {
   const { login } = useAuthenticationContext();
+  const { enqueueSnackbar } = useSnackbar();
 
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -55,24 +58,20 @@ export default function Login() {
       await login(data.login, data.password, data.organization_id);
       navigate(PATH_AFTER_LOGIN);
     } catch (error) {
-      console.error(error);
-      // @todo Add snack as error
+      const errorMessage = error as { response: { data: { message: { value: string } } } };
+      enqueueSnackbar(errorMessage.response.data.message.value, { variant: 'error' });
     }
   };
 
   return (
-    <StyledLoginContainerBox>
-      <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <LMSCard
-            width={500}
-            header={<LoginHeader />}
-            footer={<LoginFooter isLoading={!isLoading} />}
-          >
+    <FormProvider {...methods}>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <StyledLoginContainerBox>
+          <LMSCard header={<LoginHeader />} footer={<LoginFooter isLoading={!isLoading} />}>
             <LoginForm setShowPassword={setShowPassword} showPassword={showPassword} />
           </LMSCard>
-        </form>
-      </FormProvider>
-    </StyledLoginContainerBox>
+        </StyledLoginContainerBox>
+      </form>
+    </FormProvider>
   );
 }

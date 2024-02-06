@@ -1,10 +1,8 @@
-import { useLocales } from '@src/locales';
+import { Trans } from '@lingui/macro';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link, Stack } from '@mui/material';
 import { PATH_AUTH } from '../../routes/paths';
 import { RHFTextField, RHFTextFieldAdornement } from '@src/components/hook-form';
-
-// ----------------------------------------------------------------------
 
 interface LoginFormProps {
   showPassword: boolean;
@@ -12,8 +10,6 @@ interface LoginFormProps {
 }
 
 function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
-  const { translate } = useLocales();
-
   return (
     <>
       <Stack spacing={3}>
@@ -22,7 +18,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
           name="organization_id"
           label={
             <>
-              {translate('LOGIN_ORGANISATION_ID_LABEL')}
+              <Trans>Organisation ID</Trans>
               <span className="MuiFormLabel-asterisk"> *</span>
             </>
           }
@@ -31,7 +27,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
         <RHFTextField
           label={
             <>
-              {translate('LOGIN_EMAIL_LABEL')}
+              <Trans>Login</Trans>
               <span className="MuiFormLabel-asterisk"> *</span>
             </>
           }
@@ -42,7 +38,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
           name="password"
           label={
             <>
-              {translate('LOGIN_PASSWORD_LABEL')}
+              <Trans>Mot de passe</Trans>
               <span className="MuiFormLabel-asterisk"> *</span>
             </>
           }
@@ -60,7 +56,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
           color="inherit"
           underline="always"
         >
-          {translate('LOGIN_FORGOT_PASSWORD')}
+          <Trans>Mot de passe oublié ?</Trans>
         </Link>
       </Stack>
     </>

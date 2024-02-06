@@ -1,4 +1,3 @@
-import { alpha } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import Iconify from '../iconify/Iconify';
 // ----------------------------------------------------------------------
@@ -21,8 +20,7 @@ function SnackbarIcon({ icon, color }: SnackbarIconProps) {
         borderRadius: 1.5,
         alignItems: 'center',
         justifyContent: 'center',
-        color: `${color}.main`,
-        bgcolor: (theme) => alpha(theme.palette[color].main, 0.16)
+        color: `${color}.main`
       }}
     >
       <Iconify icon={icon} width={24} />

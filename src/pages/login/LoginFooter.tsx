@@ -1,13 +1,12 @@
 // @mui
+import { Trans } from '@lingui/macro';
 import { LoadingButton } from '@mui/lab';
-import { useLocales } from '@src/locales';
+
 import theme from '@theme';
 
 // ----------------------------------------------------------------------
 
 export default function LoginFooter({ isLoading }: { isLoading: boolean }) {
-  const { translate } = useLocales();
-
   return (
     <LoadingButton
       fullWidth
@@ -23,7 +22,7 @@ export default function LoginFooter({ isLoading }: { isLoading: boolean }) {
         }
       }}
     >
-      {translate('LOGIN_SUBMIT')}
+      <Trans>Se connecter</Trans>
     </LoadingButton>
   );
 }
