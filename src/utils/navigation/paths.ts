@@ -2,30 +2,36 @@ function path(root: string, sublink: string) {
   return `${root}${sublink}`;
 }
 
-const ROOTS_AUTH = '/login';
 const ROOTS_DASHBOARD = '/';
 
 // ----------------------------------------------------------------------
 
 export const PATH_AUTH = {
-  root: ROOTS_AUTH,
   login: '/login',
-  resetPassword: path(ROOTS_AUTH, '/reset-password')
+  resetPassword: '/reset-password'
 };
 
+// Used for dashboard navigation
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
-  courseList: path(ROOTS_DASHBOARD, '/course-list'),
-  modulesList: path(ROOTS_DASHBOARD, '/modules-list')
+  courseList: path(ROOTS_DASHBOARD, 'course-list'),
+  modulesList: path(ROOTS_DASHBOARD, 'modules-list')
 };
 
+// Used for sidebar navigation parameters
 export const PATH_PARAMETERS = {
-  root: ROOTS_DASHBOARD, // @todo update with the correct path
-  roles: '/roles',
-  organisations: '/organisations',
-  groups: '/groups',
-  users: '/users',
-  students: '/students',
-  externalTesters: '/external-testers',
-  customize: '/customize'
+  root: ROOTS_DASHBOARD,
+  roles: path(ROOTS_DASHBOARD, 'roles'),
+  organisations: path(ROOTS_DASHBOARD, 'organisations'),
+  groups: path(ROOTS_DASHBOARD, 'groups'),
+  users: path(ROOTS_DASHBOARD, 'users'),
+  students: path(ROOTS_DASHBOARD, 'students'),
+  externalTesters: path(ROOTS_DASHBOARD, 'external-testers'),
+  customize: path(ROOTS_DASHBOARD, 'customize')
 };
+
+const ROOT_ORGANISATIONS = PATH_PARAMETERS.organisations;
+export const PATH_ORGANISATIONS = {
+  root: ROOT_ORGANISATIONS,
+  add: path(ROOT_ORGANISATIONS, '/creation')
+}

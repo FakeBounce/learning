@@ -1,6 +1,7 @@
 // ----------------------------------------------------------------------
 import { Trans } from '@lingui/macro';
-import { PATH_DASHBOARD, PATH_PARAMETERS } from './paths';
+import { ReactNode } from 'react';
+import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from './paths';
 
 // GENERAL
 // ----------------------------------------------------------------------
@@ -29,3 +30,24 @@ export const parametersNavigationConfig = [
   { title: <Trans>Testeurs externes</Trans>, path: PATH_PARAMETERS.externalTesters },
   { title: <Trans>Personnalisation</Trans>, path: PATH_PARAMETERS.customize }
 ];
+
+const organizationsNavigationConfig = [
+  {
+    title: <Trans>Créer une organisation</Trans>,
+    path: PATH_ORGANISATIONS.add
+  }
+];
+
+// Global
+// ----------------------------------------------------------------------
+export const globalNavigationConfig = [
+  ...generalNavigationConfig,
+  ...parametersNavigationConfig,
+  ...organizationsNavigationConfig
+];
+
+export interface globalNavigationConfigType {
+  title: ReactNode;
+  path: string;
+  icon?: string;
+}

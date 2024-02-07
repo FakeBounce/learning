@@ -19,6 +19,7 @@ export default function ActionButton({
     return (
       <LoadingButton
         sx={{
+          minWidth: 100,
           borderRadius: 2,
           bgcolor: theme.palette.grey[400],
           color: 'white',
@@ -37,6 +38,7 @@ export default function ActionButton({
   return (
     <LoadingButton
       sx={{
+        minWidth: 100,
         borderRadius: 2,
         bgcolor: theme.palette.green[700],
         color: 'white',
