@@ -3,9 +3,9 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
 import { LMSCard } from '@src/components/lms';
-import { PATH_AFTER_LOGIN } from '@src/config-global';
 import LoginFooter from '@src/pages/login/LoginFooter';
 import LoginHeader from '@src/pages/login/LoginHeader';
+import { PATH_DASHBOARD } from '@utils/navigation/paths.ts';
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
@@ -56,7 +56,7 @@ export default function Login() {
   const onSubmit = async (data: any) => {
     try {
       await login(data.login, data.password, data.organization_id);
-      navigate(PATH_AFTER_LOGIN);
+      navigate(PATH_DASHBOARD.root);
     } catch (error) {
       const errorMessage = error as { response: { data: { message: { value: string } } } };
       enqueueSnackbar(errorMessage.response.data.message.value, { variant: 'error' });

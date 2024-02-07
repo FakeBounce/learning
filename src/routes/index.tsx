@@ -1,44 +1,31 @@
 import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
-import { Navigate, useRoutes } from 'react-router-dom';
-import { LoginPage, Page404 } from '@src/routes/elements';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import { LoginPage, Page404 } from 'src/routes/elements';
+import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
 // ----------------------------------------------------------------------
 
 const Router = () => {
-  return useRoutes([
-    // Auth
-    {
-      path: 'auth',
-      children: [
-        {
-          path: 'login',
-          element: (
-            <GuestGuard>
-              <LoginPage />
-            </GuestGuard>
-          )
+  return (
+    <Routes>
+      <Route
+        element={
+          <AuthGuard>
+            <MainLayout />
+          </AuthGuard>
         }
-      ]
-    },
+      >
+        <Route path="/" element={<>Dashboard content</>} />
+      </Route>
 
-    // Dashboard
-    {
-      path: 'dashboard/',
-      element: (
-        <AuthGuard>
-          <>Bienvenue sur le dashboard</>
-        </AuthGuard>
-      )
-    },
-
-    // Errors
-    {
-      path: '404',
-      element: <Page404 />
-    },
-    { path: '*', element: <Navigate to="/404" replace /> }
-  ]);
+      <Route element={<GuestGuard />}>
+        <Route path="/login" element={<LoginPage />} />
+      </Route>
+      <Route path="/404" element={<Page404 />} />
+      <Route path="*" element={<Navigate to="/404" />} />
+    </Routes>
+  );
 };
 
 export default Router;
