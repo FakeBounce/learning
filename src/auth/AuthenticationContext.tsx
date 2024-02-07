@@ -32,9 +32,9 @@ const useAuthenticationContext = () => {
 };
 
 /*
-    * AuthenticationProvider
-    * This provider is used to manage the authentication state of the application
-    * Never move in Reducer store due to javascript security
+ * AuthenticationProvider
+ * This provider is used to manage the authentication state of the application
+ * Never move in Reducer store due to javascript security
  */
 function AuthenticationProvider({ children }: { children: ReactNode }) {
   const [, fetchUser] = useGetQuery({
@@ -45,11 +45,17 @@ function AuthenticationProvider({ children }: { children: ReactNode }) {
   });
 
   const [, postLogin] = usePostQuery({
-    endpoint: '/users/login'
+    endpoint: '/users/login',
+    options: {
+      manual: true
+    }
   });
 
   const [, deleteLogout] = useDeleteQuery({
-    endpoint: '/users/logout'
+    endpoint: '/users/logout',
+    options: {
+      manual: true
+    }
   });
 
   try {

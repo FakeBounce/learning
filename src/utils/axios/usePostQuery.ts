@@ -7,7 +7,7 @@ interface usePostQueryProps {
 export const usePostQuery = (props: usePostQueryProps) => {
   const { endpoint, options } = props;
 
-  const defaultOptions = { manual: true, useCache: false };
+  const defaultOptions = { manual: false, useCache: false };
 
   const mergedOptions = { ...defaultOptions, ...options };
 
