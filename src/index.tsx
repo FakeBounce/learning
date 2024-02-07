@@ -2,7 +2,6 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals.js';
-import 'material-icons/iconfont/material-icons.css';
 
 // ----------------------------------------------------------------------
 const container = document.getElementById('root');
