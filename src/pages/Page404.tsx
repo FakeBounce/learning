@@ -24,7 +24,7 @@ export default function Page404() {
         }}
       />
       <Box alignItems="center" width="100%" display="flex" justifyContent="center">
-        <Button component={RouterLink} to="/" size="large" variant="contained">
+        <Button component={RouterLink} to="/login" size="large" variant="contained">
           Go to Home
         </Button>
       </Box>

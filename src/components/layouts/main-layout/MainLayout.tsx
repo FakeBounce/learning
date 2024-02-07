@@ -3,18 +3,22 @@ import { Breadcrumbs, Link, Stack, Typography } from '@mui/material';
 import HeaderRightContent from '@src/components/layouts/main-layout/HeaderRightContent.tsx';
 import { Sidebar } from '@src/components/layouts/sidebar';
 import theme from '@theme';
-import { ReactNode, useState } from 'react';
+import { useState } from 'react';
 import Box from '@mui/material/Box';
+import { Outlet } from 'react-router';
+import { useLocation } from 'react-router-dom';
 
-export default function MainLayout({ children }: { children: ReactNode }) {
+export default function MainLayout() {
   const [open, setOpen] = useState(true);
+  const { pathname } = useLocation();
+  console.log('path', pathname);
 
   return (
     <Box display={'flex'} width="100%">
       <Sidebar open={open} setOpen={setOpen} />
       <Stack mt={3} px={2} width="100%">
-        <Box display="flex" justifyContent="space-between">
-          <Box display="flex">
+        <Box  ml={2} display="flex" justifyContent="space-between">
+          <Box display="flex" alignItems="center">
             <Typography sx={{ fontWeight: theme.fonts.weight.medium }}>Market Academy</Typography>
             <Typography ml={0.5}>
               <Trans>(global)</Trans>
@@ -23,7 +27,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
 
           <HeaderRightContent />
         </Box>
-        <Breadcrumbs>
+        <Breadcrumbs sx={{ml:4, mt:2}}>
           <Link color="inherit" href="components/mui#">
             Material-UI
           </Link>
@@ -32,8 +36,8 @@ export default function MainLayout({ children }: { children: ReactNode }) {
           </Link>
           <Typography sx={{ color: 'text.primary' }}>Breadcrumb</Typography>
         </Breadcrumbs>
-        <Box display={'flex'} width="100%">
-          {children}
+        <Box display={'flex'} width="100%" mt={3}>
+          <Outlet />
         </Box>
       </Stack>
     </Box>
