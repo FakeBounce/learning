@@ -23,15 +23,15 @@ export default function App() {
     <BrowserRouter>
       <AxiosConfiguration>
         <AuthenticationProvider>
-          <ReduxProvider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-              <I18nProvider i18n={i18n}>
-                <SnackbarProvider>
+          <SnackbarProvider>
+            <ReduxProvider store={store}>
+              <PersistGate loading={null} persistor={persistor}>
+                <I18nProvider i18n={i18n}>
                   <Router />
-                </SnackbarProvider>
-              </I18nProvider>
-            </PersistGate>
-          </ReduxProvider>
+                </I18nProvider>
+              </PersistGate>
+            </ReduxProvider>
+          </SnackbarProvider>
         </AuthenticationProvider>
       </AxiosConfiguration>
     </BrowserRouter>

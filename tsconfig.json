@@ -30,6 +30,7 @@
       "@src/*": ["./src/*"],
       "@utils/*": ["./src/utils/*"],
       "@redux/*": ["./src/redux/*"],
+      "@services/*": ["./src/services/*"],
       "@theme": ["./src/components/theme.ts"],
       "@testProvider": ["./src/testProvider.tsx"]
     },

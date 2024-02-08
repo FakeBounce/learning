@@ -7,7 +7,7 @@ interface usePutQueryProps {
 export const usePutQuery = (props: usePutQueryProps) => {
   const { endpoint, options } = props;
 
-  const defaultOptions = { manual: true, useCache: false };
+  const defaultOptions = { manual: false, useCache: false };
 
   const mergedOptions = { ...defaultOptions, ...options };
 

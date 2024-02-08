@@ -3,13 +3,13 @@ import useAxios, { Options } from 'axios-hooks';
 interface useQueryProps {
   endpoint: string;
   method: string;
-  isManual: boolean;
+  isManual?: boolean;
   params?: Record<string, any>;
   options: Options;
 }
 
 export const useQuery = (props: useQueryProps) => {
-  const { method, endpoint, isManual, options, params } = props;
+  const { method, endpoint, isManual = false, options, params } = props;
 
   const defaultOptions = { manual: isManual, useCache: false };
 
