@@ -7,7 +7,7 @@ import { configure } from 'axios-hooks';
 import { setSession } from './session';
 import localStorageAvailable from '../localStorageAvailable';
 // paths
-import { PATH_AUTH } from 'src/utils/navigation/paths.ts';
+import { PATH_AUTH } from 'src/utils/navigation/paths';
 
 // ----------------------------------------------------------------------
 

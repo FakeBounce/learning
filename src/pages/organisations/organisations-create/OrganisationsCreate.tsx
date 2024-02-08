@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
-import ActionButton from '@src/components/lms/ActionButton.tsx';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths.ts';
+import ActionButton from '@src/components/lms/ActionButton';
+import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 
 export default function OrganisationsCreate() {

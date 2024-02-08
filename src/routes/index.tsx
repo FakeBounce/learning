@@ -1,7 +1,7 @@
 import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
 import { Organisations, OrganisationsCreate } from '@src/pages/organisations';
-import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from '@utils/navigation/paths.ts';
+import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { LoginPage, Page404 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';

@@ -1,6 +1,6 @@
-import Iconify from '@src/components/iconify/Iconify.tsx';
+import Iconify from '@src/components/iconify/Iconify';
 import SidebarGeneralList from '@src/components/layouts/sidebar/SidebarGeneralList';
-import SidebarParametersList from '@src/components/layouts/sidebar/SidebarParametersList.tsx';
+import SidebarParametersList from '@src/components/layouts/sidebar/SidebarParametersList';
 import SidebarUser from '@src/components/layouts/sidebar/SidebarUser';
 import { Drawer, DrawerHeader, drawerWidth } from './styles';
 import theme from '@theme';

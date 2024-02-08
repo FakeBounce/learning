@@ -1,9 +1,20 @@
 import {
   GetOrganisationsRequest,
-  GetOrganisationsResponse
-} from '@services/organisations/interfaces';
+  GetOrganisationsResponse,
+  UpdateOrganisationsBlockRequest,
+  UpdateOrganisationsBlockResponse
+} from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
+
+export const updateOrganisationsBlock = async (
+  args: UpdateOrganisationsBlockRequest
+): Promise<AxiosResponse<UpdateOrganisationsBlockResponse>> => {
+  const { setActive, organisationId } = args;
+  const correctPath = setActive ? 'unblock' : 'block';
+
+  return axios.post(`/organizations/${correctPath}/${organisationId}`);
+};
 
 export const getOrganisations = async (
   args: GetOrganisationsRequest

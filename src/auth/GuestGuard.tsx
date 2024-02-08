@@ -1,5 +1,5 @@
 import { Skeleton } from '@mui/material';
-import { PATH_DASHBOARD } from '@utils/navigation/paths.ts';
+import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import { memo } from 'react';
 import { Outlet } from 'react-router';
 import { Navigate } from 'react-router-dom';

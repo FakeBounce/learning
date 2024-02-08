@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link, Stack } from '@mui/material';
-import { PATH_AUTH } from '@utils/navigation/paths.ts';
+import { PATH_AUTH } from '@utils/navigation/paths';
 import { RHFTextField, RHFTextFieldAdornement } from '@src/components/hook-form';
 
 interface LoginFormProps {

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
-import HeaderBreadcrumbs from '@src/components/layouts/main-layout/HeaderBreadcrumbs.tsx';
+import HeaderBreadcrumbs from '@src/components/layouts/main-layout/HeaderBreadcrumbs';
 import HeaderRightContent from '@src/components/layouts/main-layout/HeaderRightContent';
 import theme from '@theme';
 import Box from '@mui/material/Box';

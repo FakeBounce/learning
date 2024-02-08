@@ -1,5 +1,5 @@
 import './App.css';
-import { dynamicActivate, getLocale } from '@src/i18n.ts';
+import { dynamicActivate, getLocale } from '@src/i18n';
 import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
