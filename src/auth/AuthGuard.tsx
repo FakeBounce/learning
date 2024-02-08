@@ -2,7 +2,7 @@ import { Skeleton } from '@mui/material';
 import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
 import { memo, ReactNode, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { PATH_AUTH } from '@utils/navigation/paths.ts';
+import { PATH_AUTH } from '@utils/navigation/paths';
 
 // ----------------------------------------------------------------------
 

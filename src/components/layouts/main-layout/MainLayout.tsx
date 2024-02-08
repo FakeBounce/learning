@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import Header, { HEADER_HEIGHT } from '@src/components/layouts/main-layout/Header.tsx';
+import Header, { HEADER_HEIGHT } from '@src/components/layouts/main-layout/Header';
 import { Sidebar } from '@src/components/layouts/sidebar';
 import { useState } from 'react';
 import Box from '@mui/material/Box';

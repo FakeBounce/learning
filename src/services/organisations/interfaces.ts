@@ -1,8 +1,4 @@
-import {
-  ApiRequestSort,
-  ApiResponseMessage,
-  ApiResponsePagination
-} from '../interfaces.ts';
+import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '../interfaces';
 
 export interface Organisation {
   id: number;
@@ -13,6 +9,11 @@ export interface Organisation {
   city: string;
   use_double_auth: boolean;
 }
+
+/*
+ * API Request and Response
+ * To get a list of organisations
+ */
 export interface GetOrganisationsRequest {
   currentPage: number;
   rowsPerPage: number;
@@ -29,8 +30,17 @@ export interface GetOrganisationsResponse {
   };
 }
 
-export interface GetOrganisationsResponseError {
+/*
+ * API Request and Response
+ * To toggle organisation block
+ */
+export interface UpdateOrganisationsBlockRequest {
+  setActive: boolean;
+  organisationId: number;
+}
+
+export interface UpdateOrganisationsBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: [];
+  data: Organisation;
 }

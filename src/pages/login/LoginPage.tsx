@@ -5,7 +5,7 @@ import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
 import { LMSCard } from '@src/components/lms';
 import LoginFooter from '@src/pages/login/LoginFooter';
 import LoginHeader from '@src/pages/login/LoginHeader';
-import { PATH_DASHBOARD } from '@utils/navigation/paths.ts';
+import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import { useSnackbar } from 'notistack';
 import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';

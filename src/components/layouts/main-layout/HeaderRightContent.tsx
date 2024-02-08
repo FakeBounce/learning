@@ -1,6 +1,6 @@
 import { InputBase } from '@mui/material';
 import { styled } from '@mui/system';
-import Iconify from '@src/components/iconify/Iconify.tsx';
+import Iconify from '@src/components/iconify/Iconify';
 import Box from '@mui/material/Box';
 
 const Search = styled('div')(({ theme }) => ({

@@ -1,6 +1,6 @@
 import { Breadcrumbs } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
-import HeaderBreadcrumbItem from '@src/components/layouts/main-layout/HeaderBreadcrumbItem.tsx';
+import HeaderBreadcrumbItem from '@src/components/layouts/main-layout/HeaderBreadcrumbItem';
 import { globalNavigationConfig } from '@utils/navigation/configNavigation';
 import { useLocation } from 'react-router-dom';
 

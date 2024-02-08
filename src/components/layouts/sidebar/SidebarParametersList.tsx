@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import Iconify from '@src/components/iconify/Iconify.tsx';
-import { parametersNavigationConfig } from '@utils/navigation/configNavigation.tsx';
+import Iconify from '@src/components/iconify/Iconify';
+import { parametersNavigationConfig } from '@utils/navigation/configNavigation';
 import { useState } from 'react';
 import theme from '@theme';
 import Box from '@mui/material/Box';

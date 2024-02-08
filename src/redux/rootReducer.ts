@@ -1,10 +1,8 @@
 import organisationsReducer from '@redux/reducers/organisationsReducer';
-import exampleReducer from '@src/redux/reducers/ExampleReducer';
+import userReducer from '@redux/reducers/userReducer';
 import { combineReducers } from 'redux';
 // import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-// slices
-// Add import slices here
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +14,7 @@ export const rootPersistConfig = {
 };
 
 const rootReducer = combineReducers({
-  example: exampleReducer,
+  user: userReducer,
   organisations: organisationsReducer
   // kanban: kanbanReducer, // Example of reducer non-persisted
   // product: persistReducer(rootPersistConfig, productReducer) // Example of reducer persisted

@@ -1,7 +1,9 @@
 import {
   GetOrganisationsRequest,
   GetOrganisationsResponse,
-  Organisation
+  Organisation,
+  UpdateOrganisationsBlockRequest,
+  UpdateOrganisationsBlockResponse
 } from '@services/organisations/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as OrganisationsServices from '@services/organisations/organisationsAPI';
@@ -10,18 +12,20 @@ import { RootState } from '../store';
 
 interface OrganisationState {
   organisation: Organisation | undefined;
-  organisationListLoading: boolean;
-  organisationListError: string | undefined;
-  organisationList: any;
-  organisationListTotalCount: number | null;
+  organisationList: {
+    organisationListData: Organisation[];
+    organisationListLoading: boolean;
+    organisationListTotalCount: number | null;
+  };
 }
 
 const initialState: OrganisationState = {
   organisation: {} as Organisation,
-  organisationListLoading: false,
-  organisationListError: undefined,
-  organisationList: [],
-  organisationListTotalCount: null
+  organisationList: {
+    organisationListData: [],
+    organisationListLoading: false,
+    organisationListTotalCount: null
+  }
 };
 
 export const getOrganisationsList = createAsyncThunk(
@@ -37,34 +41,65 @@ export const getOrganisationsList = createAsyncThunk(
   }
 );
 
+export const toggleOrganisationsBlock = createAsyncThunk(
+  'organisations/toggleBlock',
+  async (arg: UpdateOrganisationsBlockRequest, { rejectWithValue }) => {
+    try {
+      const response = await OrganisationsServices.updateOrganisationsBlock(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
 export const organisationSlice = createSlice({
-  name: 'organisation',
+  name: 'organisations',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getOrganisationsList.pending, (state) => {
-        state.organisationListLoading = true;
-        state.organisationListError = undefined;
+        state.organisationList.organisationListLoading = true;
       })
       .addCase(
         getOrganisationsList.fulfilled,
         (state, action: { payload: GetOrganisationsResponse }) => {
-          state.organisationListLoading = false;
-          state.organisationList = action.payload.data.rows;
-          state.organisationListTotalCount = action.payload.data.pagination.total_results;
+          state.organisationList.organisationListLoading = false;
+          state.organisationList.organisationListData = action.payload.data.rows;
+          state.organisationList.organisationListTotalCount =
+            action.payload.data.pagination.total_results;
         }
       )
       .addCase(getOrganisationsList.rejected, (state, action: AnyAction) => {
-        state.organisationListLoading = false;
+        state.organisationList.organisationListLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      //  @todo Should we display loading ?
+      .addCase(toggleOrganisationsBlock.pending, (_) => {})
+      .addCase(
+        toggleOrganisationsBlock.fulfilled,
+        (state, action: { payload: UpdateOrganisationsBlockResponse }) => {
+          // Find the organisation in the list and update it
+          const organisationIndex = state.organisationList.organisationListData.findIndex(
+            (org) => org.id === action.payload.data.id
+          );
+          if (organisationIndex > -1) {
+            state.organisationList.organisationListData[organisationIndex] = action.payload.data;
+          }
+        }
+      )
+      .addCase(toggleOrganisationsBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       });
   }
 });
 
-export const selectOrganisationListState = createSelector(
-  (state: RootState) => state.organisationList,
+export const selectOrganisationState = createSelector(
+  (state: RootState) => state.organisations,
   (s) => s
 );
 
