@@ -80,7 +80,7 @@ export default function OrganisationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box px={[0, 2]} width="100%" sx={{ overflowX: 'hidden' }}>
+    <Box px={[0, 2]} display="flex" width="100%" boxSizing='border-box'>
       <LMSCard isPageCard>
         <OrganisationsListHeader />
         <Box
@@ -111,7 +111,7 @@ export default function OrganisationsList() {
           />
         </Box>
       </LMSCard>
-      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end">
+      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{zIndex:9}}>
         <OrganisationsListPopperContent
           setAnchorEl={setAnchorEl}
           setOrganisationSelected={setOrganisationSelected}

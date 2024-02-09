@@ -1,4 +1,5 @@
 import {
+  CreateOrganisationsRequest,
   GetOrganisationsRequest,
   GetOrganisationsResponse,
   UpdateOrganisationsBlockRequest,
@@ -6,6 +7,16 @@ import {
 } from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
+
+export const createOrganisations = async (
+  args: CreateOrganisationsRequest
+): Promise<AxiosResponse<any>> => {
+  return axios.post(`/organizations`, args, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+};
 
 export const updateOrganisationsBlock = async (
   args: UpdateOrganisationsBlockRequest

@@ -7,3 +7,12 @@ export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/L
 
 // MAIN
 export const Page404 = LoadableComponent(lazy(() => import('../pages/Page404')));
+
+// Organisations
+
+export const Organisations = LoadableComponent(
+  lazy(() => import('@src/pages/organisations/organisations-list/OrganisationsList'))
+);
+export const OrganisationsForm = LoadableComponent(
+  lazy(() => import('@src/pages/organisations/organisations-create/OrganisationsCreate'))
+);

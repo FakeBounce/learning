@@ -6,9 +6,12 @@ import { useState } from 'react';
 import theme from '@theme';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
+import { useNavigate } from 'react-router-dom';
 
 export default function SidebarParametersList({ open }: { open: boolean }) {
   const [parametersOpen, setParametersOpen] = useState(true);
+
+  const navigate = useNavigate();
 
   if (!open) {
     return (
@@ -60,6 +63,9 @@ export default function SidebarParametersList({ open }: { open: boolean }) {
                 justifyContent: open ? 'initial' : 'center',
                 px: 2.5,
                 py: 0.5
+              }}
+              onClick={() => {
+                navigate(navItem.path);
               }}
             >
               <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />

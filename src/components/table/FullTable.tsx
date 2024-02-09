@@ -21,7 +21,7 @@ export default function FullTable({
   return (
     <TableContainer sx={{ maxHeight: maxHeigth }}>
       <Table stickyHeader aria-label="sticky table">
-        <TableHead sx={{ position: 'sticky' }}>
+        <TableHead>
           <TableRow>{headerRenderer}</TableRow>
         </TableHead>
         <TableBody>

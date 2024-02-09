@@ -11,7 +11,7 @@ export default function MainLayout() {
   return (
     <Box display={'flex'} width="100%">
       <Sidebar open={open} setOpen={setOpen} />
-      <Stack height="100vh" width={open ? 'calc(100% - 245px)' : 'calc(100% - 60px)'}>
+      <Stack height="100vh" width="100%">
         <Header />
         <Box
           display={'flex'}

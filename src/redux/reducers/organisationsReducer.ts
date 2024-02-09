@@ -1,4 +1,7 @@
+import { t } from '@lingui/macro';
 import {
+  CreateOrganisationsRequest,
+  CreateOrganisationsResponse,
   GetOrganisationsRequest,
   GetOrganisationsResponse,
   Organisation,
@@ -17,16 +20,37 @@ interface OrganisationState {
     organisationListLoading: boolean;
     organisationListTotalCount: number | null;
   };
+  organisationCreate: {
+    organisationCreateLoading: boolean;
+    organisationCreateData: Organisation | null;
+  };
 }
 
 const initialState: OrganisationState = {
   organisation: {} as Organisation,
+  organisationCreate: {
+    organisationCreateLoading: false,
+    organisationCreateData: null
+  },
   organisationList: {
     organisationListData: [],
     organisationListLoading: false,
     organisationListTotalCount: null
   }
 };
+
+export const createOrganisations = createAsyncThunk(
+  'organisations/create',
+  async (arg: CreateOrganisationsRequest, { rejectWithValue }) => {
+    try {
+      const response = await OrganisationsServices.createOrganisations(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
 
 export const getOrganisationsList = createAsyncThunk(
   'organisations/list',
@@ -67,9 +91,19 @@ export const organisationSlice = createSlice({
         getOrganisationsList.fulfilled,
         (state, action: { payload: GetOrganisationsResponse }) => {
           state.organisationList.organisationListLoading = false;
-          state.organisationList.organisationListData = action.payload.data.rows;
-          state.organisationList.organisationListTotalCount =
-            action.payload.data.pagination.total_results;
+
+          // @todo This is probably a temporary solution
+          // The back should return the correct amount of total results, despite adding a new organisation
+          let mergedDatas = action.payload.data.rows;
+          let totalResults = action.payload.data.pagination.total_results;
+
+          if (state.organisationCreate.organisationCreateData !== null) {
+            mergedDatas = [state.organisationCreate.organisationCreateData, ...mergedDatas];
+            totalResults += 1;
+          }
+
+          state.organisationList.organisationListData = mergedDatas;
+          state.organisationList.organisationListTotalCount = totalResults;
         }
       )
       .addCase(getOrganisationsList.rejected, (state, action: AnyAction) => {
@@ -94,6 +128,27 @@ export const organisationSlice = createSlice({
       .addCase(toggleOrganisationsBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(createOrganisations.pending, (state) => {
+        state.organisationCreate.organisationCreateLoading = true;
+      })
+      .addCase(
+        createOrganisations.fulfilled,
+        (state, action: { payload: CreateOrganisationsResponse }) => {
+          // Decide what to do with the response
+          state.organisationCreate.organisationCreateLoading = false;
+          state.organisationCreate.organisationCreateData = action.payload.data;
+          enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
+        }
+      )
+      .addCase(createOrganisations.rejected, (state, action: AnyAction) => {
+        state.organisationCreate.organisationCreateLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        // @todo This is a temporary solution, we should handle the error message in a better way
+        // Get first key of object data in payload.data and use it as the error message
+        const specificError = action.payload.data[Object.keys(action.payload.data)[0]][0];
+
+        enqueueSnackbar(`${errorMessage} : ${specificError}`, { variant: 'error' });
       });
   }
 });

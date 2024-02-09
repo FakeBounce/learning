@@ -15,7 +15,7 @@ interface SidebarProps {
 // @todo - Need rework; Lot of UX pieces are missing
 export default function Sidebar({ open, setOpen }: SidebarProps) {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', maxWidth: drawerWidth }}>
       <Drawer
         variant="permanent"
         open={open}

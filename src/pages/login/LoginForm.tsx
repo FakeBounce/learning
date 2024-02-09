@@ -14,8 +14,8 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
     <>
       <Stack spacing={3}>
         <RHFTextField
-          className="MuiFormLabel-asterisk"
           name="organization_id"
+          size="medium"
           label={
             <>
               <Trans>Organisation ID</Trans>
@@ -25,6 +25,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
         />
 
         <RHFTextField
+          size="medium"
           label={
             <>
               <Trans>Login</Trans>
@@ -36,6 +37,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
 
         <RHFTextFieldAdornement
           name="password"
+          size="medium"
           label={
             <>
               <Trans>Mot de passe</Trans>

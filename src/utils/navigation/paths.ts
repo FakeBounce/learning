@@ -33,5 +33,6 @@ export const PATH_PARAMETERS = {
 const ROOT_ORGANISATIONS = PATH_PARAMETERS.organisations;
 export const PATH_ORGANISATIONS = {
   root: ROOT_ORGANISATIONS,
-  add: path(ROOT_ORGANISATIONS, '/creation')
+  add: path(ROOT_ORGANISATIONS, '/creation'),
+  update: path(ROOT_ORGANISATIONS, '/update/:id')
 }
