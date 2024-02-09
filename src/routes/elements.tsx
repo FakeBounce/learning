@@ -13,6 +13,10 @@ export const Page404 = LoadableComponent(lazy(() => import('../pages/Page404')))
 export const Organisations = LoadableComponent(
   lazy(() => import('@src/pages/organisations/organisations-list/OrganisationsList'))
 );
-export const OrganisationsForm = LoadableComponent(
+export const OrganisationsCreate = LoadableComponent(
   lazy(() => import('@src/pages/organisations/organisations-create/OrganisationsCreate'))
+);
+
+export const OrganisationsUpdate = LoadableComponent(
+    lazy(() => import('@src/pages/organisations/organisations-update/OrganisationsUpdate'))
 );

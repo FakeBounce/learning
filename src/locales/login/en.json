@@ -14,6 +14,11 @@
     "message": "Se connecter",
     "comments": []
   },
+  "NDUWrS": {
+    "translation": "",
+    "message": "Organization id is required",
+    "comments": []
+  },
   "SDTSUy": {
     "translation": "",
     "message": "Organisation ID",
@@ -22,6 +27,16 @@
   "X1Endn": {
     "translation": "",
     "message": "Pas encore de compte ?",
+    "comments": []
+  },
+  "ZsZeV2": {
+    "translation": "",
+    "message": "Email is required",
+    "comments": []
+  },
+  "chRwq/": {
+    "translation": "",
+    "message": "Password is required",
     "comments": []
   },
   "nZGv/s": {

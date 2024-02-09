@@ -1,22 +1,7 @@
 {
-  "+oarE7": {
-    "translation": "",
-    "message": "404 Title",
-    "comments": []
-  },
-  "247qoZ": {
-    "translation": "",
-    "message": "Créer un compte",
-    "comments": []
-  },
   "4kCp92": {
     "translation": "",
     "message": "L'email de l'admin est requis",
-    "comments": []
-  },
-  "5HgdeO": {
-    "translation": "",
-    "message": "Connexion",
     "comments": []
   },
   "7uQ5BG": {
@@ -79,19 +64,9 @@
     "message": "Statut",
     "comments": []
   },
-  "NDUWrS": {
-    "translation": "",
-    "message": "Organization id is required",
-    "comments": []
-  },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": []
-  },
-  "SDTSUy": {
-    "translation": "",
-    "message": "Organisation ID",
     "comments": []
   },
   "ShMuaQ": {
@@ -104,11 +79,6 @@
     "message": "Aucune modification n'a été effectuée",
     "comments": []
   },
-  "X1Endn": {
-    "translation": "",
-    "message": "Pas encore de compte ?",
-    "comments": []
-  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
@@ -117,16 +87,6 @@
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
-    "comments": []
-  },
-  "ZsZeV2": {
-    "translation": "",
-    "message": "Email is required",
-    "comments": []
-  },
-  "chRwq/": {
-    "translation": "",
-    "message": "Password is required",
     "comments": []
   },
   "fu2rxk": {
@@ -152,11 +112,6 @@
   "kSDjJh": {
     "translation": "",
     "message": "Le nom de l'admin est requis",
-    "comments": []
-  },
-  "nZGv/s": {
-    "translation": "",
-    "message": "Mot de passe oublié ?",
     "comments": []
   },
   "q+G9Ft": {
@@ -187,11 +142,6 @@
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": []
-  },
-  "uXStqy": {
-    "translation": "",
-    "message": "Mot de passe",
     "comments": []
   },
   "z0t9bb": {

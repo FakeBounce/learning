@@ -1,21 +1,42 @@
 import {
   CreateOrganisationsRequest,
+  CreateOrganisationsResponse,
   GetOrganisationsRequest,
   GetOrganisationsResponse,
+  GetSingleOrganisationResponse,
   UpdateOrganisationsBlockRequest,
-  UpdateOrganisationsBlockResponse
+  UpdateOrganisationsBlockResponse, UpdateOrganisationsRequest, UpdateOrganisationsResponse
 } from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
 
 export const createOrganisations = async (
   args: CreateOrganisationsRequest
-): Promise<AxiosResponse<any>> => {
+): Promise<AxiosResponse<CreateOrganisationsResponse>> => {
   return axios.post(`/organizations`, args, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
   });
+};
+
+export const updateOrganisations = async (
+  args: UpdateOrganisationsRequest
+): Promise<AxiosResponse<UpdateOrganisationsResponse>> => {
+  const { id, name, address_id, logo } = args;
+  return axios.put(
+    `/organizations/${id}`,
+    {
+      name,
+      address_id,
+      logo
+    },
+    {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+  );
 };
 
 export const updateOrganisationsBlock = async (
@@ -25,6 +46,12 @@ export const updateOrganisationsBlock = async (
   const correctPath = setActive ? 'unblock' : 'block';
 
   return axios.post(`/organizations/${correctPath}/${organisationId}`);
+};
+
+export const getSingleOrganisation = async (
+  id: number
+): Promise<AxiosResponse<GetSingleOrganisationResponse>> => {
+  return axios.get(`/organizations/${id}`);
 };
 
 export const getOrganisations = async (

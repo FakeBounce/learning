@@ -9,9 +9,59 @@
     "message": "Créer un compte",
     "comments": []
   },
+  "4kCp92": {
+    "translation": "L'email de l'admin est requis",
+    "message": "L'email de l'admin est requis",
+    "comments": []
+  },
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
+    "comments": []
+  },
+  "7uQ5BG": {
+    "translation": "Adresse siège social",
+    "message": "Adresse siège social",
+    "comments": []
+  },
+  "Be0x4u": {
+    "translation": "Prénom admin client",
+    "message": "Prénom admin client",
+    "comments": []
+  },
+  "C1e9Kp": {
+    "translation": "Le prénom de l'admin est requis",
+    "message": "Le prénom de l'admin est requis",
+    "comments": []
+  },
+  "CdGMiD": {
+    "translation": "L'email de l'admin est invalide",
+    "message": "L'email de l'admin est invalide",
+    "comments": []
+  },
+  "F8ESDf": {
+    "translation": "Activé",
+    "message": "Activé",
+    "comments": []
+  },
+  "GAxRw0": {
+    "translation": "Ville",
+    "message": "Ville",
+    "comments": []
+  },
+  "GoZkew": {
+    "translation": "Organisations",
+    "message": "Organisations",
+    "comments": []
+  },
+  "HGYOb+": {
+    "translation": "Bloqué",
+    "message": "Bloqué",
+    "comments": []
+  },
+  "HdNGur": {
+    "translation": "Bloquer",
+    "message": "Bloquer",
     "comments": []
   },
   "JSaiRe": {
@@ -19,9 +69,39 @@
     "message": "Se connecter",
     "comments": []
   },
+  "JoxuHW": {
+    "translation": "L'adresse est requise",
+    "message": "L'adresse est requise",
+    "comments": []
+  },
+  "MZX/LX": {
+    "translation": "Statut",
+    "message": "Statut",
+    "comments": []
+  },
+  "NDUWrS": {
+    "translation": "Organization id is required",
+    "message": "Organization id is required",
+    "comments": []
+  },
+  "OQ8lVl": {
+    "translation": "Modifier",
+    "message": "Modifier",
+    "comments": []
+  },
   "SDTSUy": {
     "translation": "Organisation ID",
     "message": "Organisation ID",
+    "comments": []
+  },
+  "ShMuaQ": {
+    "translation": "Le nom est requis",
+    "message": "Le nom est requis",
+    "comments": []
+  },
+  "W3FHUJ": {
+    "translation": "Aucune modification n'a été effectuée",
+    "message": "Aucune modification n'a été effectuée",
     "comments": []
   },
   "X1Endn": {
@@ -29,9 +109,84 @@
     "message": "Pas encore de compte ?",
     "comments": []
   },
+  "Xukbwg": {
+    "translation": "Modifier une organisation",
+    "message": "Modifier une organisation",
+    "comments": []
+  },
+  "ZpEiaW": {
+    "translation": "Veuillez ajouter un logo",
+    "message": "Veuillez ajouter un logo",
+    "comments": []
+  },
+  "ZsZeV2": {
+    "translation": "Email is required",
+    "message": "Email is required",
+    "comments": []
+  },
+  "chRwq/": {
+    "translation": "Password is required",
+    "message": "Password is required",
+    "comments": []
+  },
+  "fu2rxk": {
+    "translation": "Enregistrer",
+    "message": "Enregistrer",
+    "comments": []
+  },
+  "funWao": {
+    "translation": "Nom admin client",
+    "message": "Nom admin client",
+    "comments": []
+  },
+  "g+hxtQ": {
+    "translation": "Créer",
+    "message": "Créer",
+    "comments": []
+  },
+  "iAKACc": {
+    "translation": "Nom",
+    "message": "Nom",
+    "comments": []
+  },
+  "kSDjJh": {
+    "translation": "Le nom de l'admin est requis",
+    "message": "Le nom de l'admin est requis",
+    "comments": []
+  },
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
+    "comments": []
+  },
+  "q+G9Ft": {
+    "translation": "Créer une organisation",
+    "message": "Créer une organisation",
+    "comments": []
+  },
+  "rBTdOL": {
+    "translation": "L'identifiant est requis",
+    "message": "L'identifiant est requis",
+    "comments": []
+  },
+  "rKvP91": {
+    "translation": "Email admin client",
+    "message": "Email admin client",
+    "comments": []
+  },
+  "sAl4AV": {
+    "translation": "Téléchargez une photo",
+    "message": "Téléchargez une photo",
+    "comments": []
+  },
+  "tALayW": {
+    "translation": "Annuler",
+    "message": "Annuler",
+    "comments": []
+  },
+  "u3n1/X": {
+    "translation": "Débloquer",
+    "message": "Débloquer",
     "comments": []
   },
   "uXStqy": {

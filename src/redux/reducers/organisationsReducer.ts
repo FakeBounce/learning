@@ -6,7 +6,9 @@ import {
   GetOrganisationsResponse,
   Organisation,
   UpdateOrganisationsBlockRequest,
-  UpdateOrganisationsBlockResponse
+  UpdateOrganisationsBlockResponse,
+  UpdateOrganisationsRequest,
+  UpdateOrganisationsResponse
 } from '@services/organisations/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as OrganisationsServices from '@services/organisations/organisationsAPI';
@@ -14,7 +16,10 @@ import { AnyAction, createAsyncThunk, createSelector, createSlice } from '@redux
 import { RootState } from '../store';
 
 interface OrganisationState {
-  organisation: Organisation | undefined;
+  currentOrganisation: {
+    currentOrganisationData: Organisation | null;
+    currentOrganisationLoading: boolean;
+  };
   organisationList: {
     organisationListData: Organisation[];
     organisationListLoading: boolean;
@@ -22,20 +27,27 @@ interface OrganisationState {
   };
   organisationCreate: {
     organisationCreateLoading: boolean;
-    organisationCreateData: Organisation | null;
+  };
+  organisationUpdate: {
+    organisationUpdateLoading: boolean;
   };
 }
 
 const initialState: OrganisationState = {
-  organisation: {} as Organisation,
-  organisationCreate: {
-    organisationCreateLoading: false,
-    organisationCreateData: null
+  currentOrganisation: {
+    currentOrganisationData: null,
+    currentOrganisationLoading: false
   },
   organisationList: {
     organisationListData: [],
     organisationListLoading: false,
     organisationListTotalCount: null
+  },
+  organisationCreate: {
+    organisationCreateLoading: false
+  },
+  organisationUpdate: {
+    organisationUpdateLoading: false
   }
 };
 
@@ -44,6 +56,32 @@ export const createOrganisations = createAsyncThunk(
   async (arg: CreateOrganisationsRequest, { rejectWithValue }) => {
     try {
       const response = await OrganisationsServices.createOrganisations(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const getSingleOrganisation = createAsyncThunk(
+  'organisations/fetchSingle',
+  async (id: number, { rejectWithValue }) => {
+    try {
+      const response = await OrganisationsServices.getSingleOrganisation(id);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const updateOrganisations = createAsyncThunk(
+  'organisations/update',
+  async (arg: UpdateOrganisationsRequest, { rejectWithValue }) => {
+    try {
+      const response = await OrganisationsServices.updateOrganisations(arg);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
@@ -84,26 +122,39 @@ export const organisationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      /*
+          Fetch Single Organisation Reducers
+           */
+      .addCase(getSingleOrganisation.pending, (state) => {
+        state.currentOrganisation.currentOrganisationLoading = true;
+      })
+      .addCase(
+        getSingleOrganisation.fulfilled,
+        (state, action: { payload: UpdateOrganisationsResponse }) => {
+          // Decide what to do with the response
+          state.currentOrganisation.currentOrganisationLoading = false;
+          state.currentOrganisation.currentOrganisationData = action.payload.data;
+        }
+      )
+      .addCase(getSingleOrganisation.rejected, (state, action: AnyAction) => {
+        state.currentOrganisation.currentOrganisationLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
+      })
+      /*
+        List Organisation Reducers
+         */
       .addCase(getOrganisationsList.pending, (state) => {
         state.organisationList.organisationListLoading = true;
+        state.currentOrganisation.currentOrganisationData = null;
       })
       .addCase(
         getOrganisationsList.fulfilled,
         (state, action: { payload: GetOrganisationsResponse }) => {
           state.organisationList.organisationListLoading = false;
-
-          // @todo This is probably a temporary solution
-          // The back should return the correct amount of total results, despite adding a new organisation
-          let mergedDatas = action.payload.data.rows;
-          let totalResults = action.payload.data.pagination.total_results;
-
-          if (state.organisationCreate.organisationCreateData !== null) {
-            mergedDatas = [state.organisationCreate.organisationCreateData, ...mergedDatas];
-            totalResults += 1;
-          }
-
-          state.organisationList.organisationListData = mergedDatas;
-          state.organisationList.organisationListTotalCount = totalResults;
+          state.organisationList.organisationListData = action.payload.data.rows;
+          state.organisationList.organisationListTotalCount =
+            action.payload.data.pagination.total_results;
         }
       )
       .addCase(getOrganisationsList.rejected, (state, action: AnyAction) => {
@@ -111,6 +162,9 @@ export const organisationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
+      /*
+        Organisations Block Reducers
+         */
       //  @todo Should we display loading ?
       .addCase(toggleOrganisationsBlock.pending, (_) => {})
       .addCase(
@@ -129,6 +183,31 @@ export const organisationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
+      /*
+            Update Organisation Reducers
+            We update the current organisation data in .fullfilled cause that's the one we are currently viewing
+            Through the fetch single organisation action
+             */
+      .addCase(updateOrganisations.pending, (state) => {
+        state.organisationUpdate.organisationUpdateLoading = true;
+      })
+      .addCase(
+        updateOrganisations.fulfilled,
+        (state, action: { payload: UpdateOrganisationsResponse }) => {
+          // Decide what to do with the response
+          state.organisationUpdate.organisationUpdateLoading = false;
+          state.currentOrganisation.currentOrganisationData = action.payload.data;
+          enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
+        }
+      )
+      .addCase(updateOrganisations.rejected, (state, action: AnyAction) => {
+        state.organisationUpdate.organisationUpdateLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
+      })
+      /*
+        Create Organisation Reducers
+         */
       .addCase(createOrganisations.pending, (state) => {
         state.organisationCreate.organisationCreateLoading = true;
       })
@@ -137,7 +216,7 @@ export const organisationSlice = createSlice({
         (state, action: { payload: CreateOrganisationsResponse }) => {
           // Decide what to do with the response
           state.organisationCreate.organisationCreateLoading = false;
-          state.organisationCreate.organisationCreateData = action.payload.data;
+          state.currentOrganisation.currentOrganisationData = action.payload.data;
           enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )

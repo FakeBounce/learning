@@ -5,7 +5,15 @@ import { RHFTextField } from '@src/components/hook-form';
 import Iconify from '@src/components/iconify/Iconify';
 import theme from '@theme';
 import { uploader } from '@utils/fileUploader';
-import { ChangeEvent, ReactNode, useRef, useState } from 'react';
+import {
+  ChangeEvent,
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState
+} from 'react';
 
 const StyledImageDisplayContainer = styled(Box)(() => ({
   width: 128,
@@ -34,9 +42,21 @@ const labelWithRequired = (label: ReactNode) => (
   </>
 );
 
-export default function OrganisationsCreateForm({ setImage }: { setImage: (image: File) => void }) {
-  const [result, setResult] = useState<string | null>('');
+export default function OrganisationsUpdateForm({
+  image,
+  setImage
+}: {
+  image: string | File;
+  setImage: Dispatch<SetStateAction<string | File>>;
+}) {
+  const [result, setResult] = useState<string | null>(null);
   const imageRef = useRef(null);
+
+  useEffect(() => {
+    if (image !== '' && typeof image === 'string') {
+      setResult(image);
+    }
+  }, [image]);
 
   return (
     <Stack
@@ -64,7 +84,7 @@ export default function OrganisationsCreateForm({ setImage }: { setImage: (image
             )}
           </Stack>
           <RHFTextField
-            name="logo"
+            name="image"
             type={'file'}
             accept="image/*"
             value={''}
@@ -84,25 +104,6 @@ export default function OrganisationsCreateForm({ setImage }: { setImage: (image
         <RHFTextField
           name={'address'}
           label={labelWithRequired(<Trans>Adresse siège social</Trans>)}
-        />
-      </Box>
-
-      <Box display="flex">
-        <RHFTextField
-          name={'adminLastName'}
-          label={labelWithRequired(<Trans>Nom admin client</Trans>)}
-        />
-        <RHFTextField
-          name={'adminFirstName'}
-          label={labelWithRequired(<Trans>Prénom admin client</Trans>)}
-        />
-      </Box>
-
-      <Box display="flex">
-        <RHFTextField name={'login'} label={labelWithRequired(<Trans>Login</Trans>)} />
-        <RHFTextField
-          name={'adminEmail'}
-          label={labelWithRequired(<Trans>Email admin client</Trans>)}
         />
       </Box>
     </Stack>
