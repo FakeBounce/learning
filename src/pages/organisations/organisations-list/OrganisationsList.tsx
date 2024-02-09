@@ -80,27 +80,37 @@ export default function OrganisationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box px={[0, 2]} display="flex" width="100%" boxSizing='border-box'>
-      <LMSCard isPageCard>
+    <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
+      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
         <OrganisationsListHeader />
         <Box
           sx={{
             maxWidth: '100%',
             maxHeight: '68vh',
             padding: 0,
-            position: 'relative',
-            overflowX: ['hidden', 'scroll']
+            position: 'relative'
           }}
         >
           <FullTable
+            maxHeigth={'62vh'}
             headerRenderer={organisationsTableHeaderRenderer(handleSort, orderBy)}
             bodyRenderer={organisationsTableRowsRenderer(organisationListData, handleClick)}
             isLoading={organisationListLoading}
             rowsNum={rowsPerPage}
             colsNum={organisationsColumns.length}
           />
+        </Box>
+        <Box
+          sx={{
+            minHeight: 46,
+            position: 'absolute',
+            bottom: 0,
+            width: '100%',
+            display: 'flex',
+            justifyContent:'flex-end'
+          }}
+        >
           <TablePagination
-            sx={{ height: '6vh', position: 'sticky', right: 0, bottom: 0 }}
             rowsPerPageOptions={[10, 25, 100]}
             component="div"
             count={organisationListTotalCount || 0}
@@ -111,7 +121,7 @@ export default function OrganisationsList() {
           />
         </Box>
       </LMSCard>
-      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{zIndex:9}}>
+      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{ zIndex: 9 }}>
         <OrganisationsListPopperContent
           setAnchorEl={setAnchorEl}
           setOrganisationSelected={setOrganisationSelected}
