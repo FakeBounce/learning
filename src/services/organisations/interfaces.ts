@@ -12,6 +12,17 @@ export interface Organisation {
 
 /*
  * API Request and Response
+ * To get a specific organisation
+ */
+
+export interface GetSingleOrganisationResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Organisation;
+}
+
+/*
+ * API Request and Response
  * To get a list of organisations
  */
 export interface GetOrganisationsRequest {
@@ -52,7 +63,7 @@ export interface UpdateOrganisationsBlockResponse {
 export interface CreateOrganisationsRequest {
   name: string;
   address_id: string;
-  logo: File;
+  logo: File | string;
   use_double_auth: 0 | 1;
   client_admin: {
     login: string;
@@ -63,6 +74,24 @@ export interface CreateOrganisationsRequest {
 }
 
 export interface CreateOrganisationsResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Organisation;
+}
+
+
+/*
+ * API Request and Response
+ * To create an organisation
+ */
+export interface UpdateOrganisationsRequest {
+  id: number;
+  name?: string;
+  address_id?: string;
+  logo?: File | string;
+}
+
+export interface UpdateOrganisationsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Organisation;

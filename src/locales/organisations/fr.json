@@ -1,201 +1,151 @@
 {
-  "+oarE7": {
-    "translation": "",
-    "message": "404 Title",
-    "comments": []
-  },
-  "247qoZ": {
-    "translation": "",
-    "message": "Créer un compte",
-    "comments": []
-  },
   "4kCp92": {
-    "translation": "",
+    "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
     "comments": []
   },
-  "5HgdeO": {
-    "translation": "",
-    "message": "Connexion",
-    "comments": []
-  },
   "7uQ5BG": {
-    "translation": "",
+    "translation": "Adresse siège social",
     "message": "Adresse siège social",
     "comments": []
   },
   "Be0x4u": {
-    "translation": "",
+    "translation": "Prénom admin client",
     "message": "Prénom admin client",
     "comments": []
   },
   "C1e9Kp": {
-    "translation": "",
+    "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
     "comments": []
   },
   "CdGMiD": {
-    "translation": "",
+    "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
     "comments": []
   },
   "F8ESDf": {
-    "translation": "",
+    "translation": "Activé",
     "message": "Activé",
     "comments": []
   },
   "GAxRw0": {
-    "translation": "",
+    "translation": "Ville",
     "message": "Ville",
     "comments": []
   },
   "GoZkew": {
-    "translation": "",
+    "translation": "Organisations",
     "message": "Organisations",
     "comments": []
   },
   "HGYOb+": {
-    "translation": "",
+    "translation": "Bloqué",
     "message": "Bloqué",
     "comments": []
   },
   "HdNGur": {
-    "translation": "",
+    "translation": "Bloquer",
     "message": "Bloquer",
     "comments": []
   },
   "JSaiRe": {
-    "translation": "",
+    "translation": "Se connecter",
     "message": "Se connecter",
     "comments": []
   },
   "JoxuHW": {
-    "translation": "",
+    "translation": "L'adresse est requise",
     "message": "L'adresse est requise",
     "comments": []
   },
   "MZX/LX": {
-    "translation": "",
+    "translation": "Statut",
     "message": "Statut",
     "comments": []
   },
-  "NDUWrS": {
-    "translation": "",
-    "message": "Organization id is required",
-    "comments": []
-  },
   "OQ8lVl": {
-    "translation": "",
+    "translation": "Modifier",
     "message": "Modifier",
     "comments": []
   },
-  "SDTSUy": {
-    "translation": "",
-    "message": "Organisation ID",
-    "comments": []
-  },
   "ShMuaQ": {
-    "translation": "",
+    "translation": "Le nom est requis",
     "message": "Le nom est requis",
     "comments": []
   },
   "W3FHUJ": {
-    "translation": "",
+    "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
     "comments": []
   },
-  "X1Endn": {
-    "translation": "",
-    "message": "Pas encore de compte ?",
-    "comments": []
-  },
   "Xukbwg": {
-    "translation": "",
+    "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
     "comments": []
   },
   "ZpEiaW": {
-    "translation": "",
+    "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
     "comments": []
   },
-  "ZsZeV2": {
-    "translation": "",
-    "message": "Email is required",
-    "comments": []
-  },
-  "chRwq/": {
-    "translation": "",
-    "message": "Password is required",
-    "comments": []
-  },
   "fu2rxk": {
-    "translation": "",
+    "translation": "Enregistrer",
     "message": "Enregistrer",
     "comments": []
   },
   "funWao": {
-    "translation": "",
+    "translation": "Nom admin client",
     "message": "Nom admin client",
     "comments": []
   },
   "g+hxtQ": {
-    "translation": "",
+    "translation": "Créer",
     "message": "Créer",
     "comments": []
   },
   "iAKACc": {
-    "translation": "",
+    "translation": "Nom",
     "message": "Nom",
     "comments": []
   },
   "kSDjJh": {
-    "translation": "",
+    "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
     "comments": []
   },
-  "nZGv/s": {
-    "translation": "",
-    "message": "Mot de passe oublié ?",
-    "comments": []
-  },
   "q+G9Ft": {
-    "translation": "",
+    "translation": "Créer une organisation",
     "message": "Créer une organisation",
     "comments": []
   },
   "rBTdOL": {
-    "translation": "",
+    "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
     "comments": []
   },
   "rKvP91": {
-    "translation": "",
+    "translation": "Email admin client",
     "message": "Email admin client",
     "comments": []
   },
   "sAl4AV": {
-    "translation": "",
+    "translation": "Téléchargez une photo",
     "message": "Téléchargez une photo",
     "comments": []
   },
   "tALayW": {
-    "translation": "",
+    "translation": "Annuler",
     "message": "Annuler",
     "comments": []
   },
   "u3n1/X": {
-    "translation": "",
+    "translation": "Débloquer",
     "message": "Débloquer",
     "comments": []
   },
-  "uXStqy": {
-    "translation": "",
-    "message": "Mot de passe",
-    "comments": []
-  },
   "z0t9bb": {
-    "translation": "",
+    "translation": "Login",
     "message": "Login",
     "comments": []
   }

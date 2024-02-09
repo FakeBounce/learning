@@ -2,7 +2,13 @@ import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
 import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { LoginPage, Page404, Organisations, OrganisationsForm } from 'src/routes/elements';
+import {
+  LoginPage,
+  Page404,
+  Organisations,
+  OrganisationsCreate,
+  OrganisationsUpdate
+} from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
 // ----------------------------------------------------------------------
@@ -19,8 +25,8 @@ const Router = () => {
       >
         <Route path={PATH_DASHBOARD.root} element={<>Dashboard content</>} />
         <Route path={PATH_PARAMETERS.organisations} element={<Organisations />} />
-        <Route path={PATH_ORGANISATIONS.add} element={<OrganisationsForm />} />
-        <Route path={PATH_ORGANISATIONS.update} element={<OrganisationsForm />} />
+        <Route path={PATH_ORGANISATIONS.add} element={<OrganisationsCreate />} />
+        <Route path={PATH_ORGANISATIONS.update} element={<OrganisationsUpdate />} />
       </Route>
 
       <Route element={<GuestGuard />}>

@@ -35,6 +35,10 @@ const organizationsNavigationConfig = [
   {
     title: <Trans>Créer une organisation</Trans>,
     path: PATH_ORGANISATIONS.add
+  },
+  {
+    title: <Trans>Modifier une organisation</Trans>,
+    path: PATH_ORGANISATIONS.update
   }
 ];
 

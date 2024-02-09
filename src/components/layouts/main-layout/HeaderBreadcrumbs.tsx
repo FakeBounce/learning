@@ -18,9 +18,13 @@ export default function HeaderBreadcrumbs() {
     const pathArray = pathname.split('/');
     const breadCrumbs = pathArray.map((_, index) => {
       const currentPath = pathArray.slice(0, index + 1).join('/') || '/';
-      const currentPathConfig = globalNavigationConfig.find(
-        (config) => config.path === currentPath
-      );
+      const currentPathConfig = globalNavigationConfig.find((config) => {
+        if (config.path.includes(':')) {
+          return currentPath.includes(config.path.split(':')[0]);
+        }
+
+        return config.path === currentPath;
+      });
       if (currentPathConfig) {
         const isLast = pathArray.length > 1 && index === pathArray.length - 1;
         return (
