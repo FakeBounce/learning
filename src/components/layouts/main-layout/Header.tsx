@@ -13,9 +13,10 @@ export default function Header() {
         height={`${HEADER_HEIGHT}vh`}
         pt={1}
         ml={2}
-        px={[0,2]}
+        px={[0, 2]}
         display="flex"
         justifyContent="space-between"
+        boxSizing="border-box"
       >
         <Box display="flex" alignItems="center">
           <Typography sx={{ fontWeight: theme.fonts.weight.medium }}>Market Academy</Typography>

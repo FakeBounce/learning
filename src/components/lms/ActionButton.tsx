@@ -26,6 +26,7 @@ export default function ActionButton({
           '&:hover': {
             bgcolor: theme.palette.grey[600]
           },
+          textTransform: 'none',
           ...sx
         }}
         {...other}
@@ -45,6 +46,7 @@ export default function ActionButton({
         '&:hover': {
           bgcolor: theme.palette.green[800]
         },
+        textTransform: 'none',
         ...sx
       }}
       {...other}

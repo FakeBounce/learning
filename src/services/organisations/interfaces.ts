@@ -44,3 +44,26 @@ export interface UpdateOrganisationsBlockResponse {
   message: ApiResponseMessage;
   data: Organisation;
 }
+
+/*
+ * API Request and Response
+ * To create an organisation
+ */
+export interface CreateOrganisationsRequest {
+  name: string;
+  address_id: string;
+  logo: File;
+  use_double_auth: 0 | 1;
+  client_admin: {
+    login: string;
+    firstname: string;
+    lastname: string;
+    email: string;
+  };
+}
+
+export interface CreateOrganisationsResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Organisation;
+}

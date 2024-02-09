@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { t } from '@lingui/macro';
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
@@ -25,9 +26,9 @@ const StyledLoginContainerBox = styled(Box)(() => ({
 }));
 
 const LoginSchema = Yup.object().shape({
-  login: Yup.string().required('Email is required'),
-  password: Yup.string().required('Password is required'),
-  organization_id: Yup.string().required('Organization id is required')
+  login: Yup.string().required(t`Email is required`),
+  password: Yup.string().required(t`Password is required`),
+  organization_id: Yup.string().required(t`Organization id is required`)
 });
 
 const defaultValues = {
@@ -37,12 +38,11 @@ const defaultValues = {
 };
 
 export default function Login() {
-  const { login } = useAuthenticationContext();
-  const { enqueueSnackbar } = useSnackbar();
-
-  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
+  const { login } = useAuthenticationContext();
+  const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
   const methods = useForm({
     resolver: yupResolver(LoginSchema),
     defaultValues

@@ -9,10 +9,16 @@ import { TextField } from '@mui/material';
 interface RHFTextFieldProps {
   name: string;
   helperText?: ReactNode;
+  size?: 'small' | 'medium';
   [x: string]: any;
 }
 
-export default function RHFTextField({ name, helperText, ...other }: RHFTextFieldProps) {
+export default function RHFTextField({
+  name,
+  helperText,
+  size = 'small',
+  ...other
+}: RHFTextFieldProps) {
   const { control } = useFormContext();
 
   return (
@@ -26,6 +32,7 @@ export default function RHFTextField({ name, helperText, ...other }: RHFTextFiel
           value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
           error={!!error}
           helperText={error ? error?.message : helperText}
+          size={size}
           {...other}
         />
       )}
