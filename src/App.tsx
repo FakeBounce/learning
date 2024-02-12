@@ -1,5 +1,6 @@
 import './App.css';
 import { dynamicActivate, getLocale } from '@src/i18n';
+import ThemeProvider from '@src/theme';
 import { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider as ReduxProvider } from 'react-redux';
@@ -23,15 +24,17 @@ export default function App() {
     <BrowserRouter>
       <AxiosConfiguration>
         <AuthenticationProvider>
-          <SnackbarProvider>
-            <ReduxProvider store={store}>
-              <PersistGate loading={null} persistor={persistor}>
-                <I18nProvider i18n={i18n}>
-                  <Router />
-                </I18nProvider>
-              </PersistGate>
-            </ReduxProvider>
-          </SnackbarProvider>
+          <ThemeProvider>
+            <SnackbarProvider>
+              <ReduxProvider store={store}>
+                <PersistGate loading={null} persistor={persistor}>
+                  <I18nProvider i18n={i18n}>
+                    <Router />
+                  </I18nProvider>
+                </PersistGate>
+              </ReduxProvider>
+            </SnackbarProvider>
+          </ThemeProvider>
         </AuthenticationProvider>
       </AxiosConfiguration>
     </BrowserRouter>
