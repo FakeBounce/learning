@@ -3,11 +3,10 @@ import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/system';
 import { RHFTextField } from '@src/components/hook-form';
 import Iconify from '@src/components/iconify/Iconify';
-import theme from '@theme';
 import { uploader } from '@utils/fileUploader';
 import { ChangeEvent, ReactNode, useRef, useState } from 'react';
 
-const StyledImageDisplayContainer = styled(Box)(() => ({
+const StyledImageDisplayContainer = styled(Box)(({ theme }) => ({
   width: 128,
   height: 128,
   border: `1px dashed ${theme.palette.grey[200]}`,
@@ -17,7 +16,7 @@ const StyledImageDisplayContainer = styled(Box)(() => ({
   alignItems: 'center'
 }));
 
-const StyledImageDisplayer = styled(Box)(() => ({
+const StyledImageDisplayer = styled(Box)(({ theme }) => ({
   width: 112,
   height: 112,
   backgroundColor: theme.palette.grey[200],

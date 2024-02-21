@@ -1,6 +1,12 @@
-import { alpha } from '@mui/material/styles';
+import { PaletteMode } from '@mui/material';
+import { alpha, PaletteColor } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
+
+interface CustomPaletteColor extends PaletteColor {
+  lighter: string;
+  darker: string;
+}
 
 // SETUP COLORS
 
@@ -73,8 +79,8 @@ const ERROR = {
 
 const COMMON = {
   common: { black: '#000', white: '#fff' },
-  primary: PRIMARY,
-  secondary: SECONDARY,
+  primary: PRIMARY as CustomPaletteColor,
+  secondary: SECONDARY as CustomPaletteColor,
   info: INFO,
   success: SUCCESS,
   warning: WARNING,
@@ -95,7 +101,7 @@ const COMMON = {
 export default function palette() {
   const light = {
     ...COMMON,
-    mode: 'light',
+    mode: 'light' as PaletteMode,
     text: {
       primary: GREY[800],
       secondary: GREY[600],
@@ -108,6 +114,7 @@ export default function palette() {
     }
   };
 
+  // If we want to use a dark mode
   // const dark = {
   //   ...COMMON,
   //   mode: 'dark',

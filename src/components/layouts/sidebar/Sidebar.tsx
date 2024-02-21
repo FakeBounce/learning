@@ -1,9 +1,9 @@
+import { useTheme } from '@mui/material/styles';
 import Iconify from '@src/components/iconify/Iconify';
 import SidebarGeneralList from '@src/components/layouts/sidebar/SidebarGeneralList';
 import SidebarParametersList from '@src/components/layouts/sidebar/SidebarParametersList';
 import SidebarUser from '@src/components/layouts/sidebar/SidebarUser';
 import { Drawer, DrawerHeader, drawerWidth } from './styles';
-import theme from '@theme';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 
@@ -14,6 +14,7 @@ interface SidebarProps {
 
 // @todo - Need rework; Lot of UX pieces are missing
 export default function Sidebar({ open, setOpen }: SidebarProps) {
+  const theme = useTheme();
   return (
     <Box sx={{ display: 'flex', maxWidth: drawerWidth }}>
       <Drawer
@@ -22,7 +23,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
         PaperProps={{
           sx: {
             width: drawerWidth,
-            backgroundColor: theme.palette.grey[25],
+            backgroundColor: theme.palette.grey[100],
             borderRightStyle: 'dashed'
           }
         }}

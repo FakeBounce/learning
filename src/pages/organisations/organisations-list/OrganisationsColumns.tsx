@@ -1,8 +1,8 @@
 import { Trans } from '@lingui/macro';
 import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { Organisation } from '@services/organisations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
-import theme from '@theme';
 import { ReactNode, MouseEvent } from 'react';
 
 export interface OrderBy {
@@ -26,11 +26,12 @@ export const organisationsColumns: readonly OrganisationColumn[] = [
     id: 'name',
     label: <Trans>Nom</Trans>,
     renderCell: (row) => {
+      const theme = useTheme();
       const logo = row.logo || row.name[0];
       return (
         <Box display="flex" alignItems="center">
           <Avatar src={logo}>{logo}</Avatar>
-          <Typography fontSize={theme.fonts.size.sm} ml={1}>
+          <Typography fontSize={theme.typography.body2.fontSize} ml={1}>
             {row.name}
           </Typography>
         </Box>
@@ -44,14 +45,17 @@ export const organisationsColumns: readonly OrganisationColumn[] = [
     maxWidth: 120,
     padding: 'none',
     renderCell: (row, handleClick) => {
+      const theme = useTheme();
       const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
       return (
         <Box display="flex" alignItems="center">
           <Chip
             sx={{
               borderRadius: 1,
-              backgroundColor: row.is_active ? theme.palette.green[200] : theme.palette.grey[200],
-              color: row.is_active ? theme.palette.green[800] : theme.palette.grey[900]
+              backgroundColor: row.is_active
+                ? theme.palette.primary.light
+                : theme.palette.grey[200],
+              color: row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
             }}
             label={activatedText}
           />
@@ -68,6 +72,7 @@ export const organisationsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
   orderBy: OrderBy | null
 ) => {
+  const theme = useTheme();
   return organisationsColumns.map((column) => (
     <TableCell
       key={column.id}

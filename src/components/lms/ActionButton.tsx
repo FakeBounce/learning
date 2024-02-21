@@ -1,5 +1,5 @@
 import { LoadingButton, LoadingButtonProps } from '@mui/lab';
-import theme from '@theme';
+import { useTheme } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
 // ----------------------------------------------------------------------
@@ -15,6 +15,8 @@ export default function ActionButton({
   sx,
   ...other
 }: ActionButtonProps) {
+  const theme = useTheme();
+
   if (actionType === 'cancel') {
     return (
       <LoadingButton
@@ -41,10 +43,10 @@ export default function ActionButton({
       sx={{
         minWidth: 100,
         borderRadius: 2,
-        bgcolor: theme.palette.green[700],
+        bgcolor: theme.palette.primary.dark,
         color: 'white',
         '&:hover': {
-          bgcolor: theme.palette.green[800]
+          bgcolor: theme.palette.primary.darker
         },
         textTransform: 'none',
         ...sx
