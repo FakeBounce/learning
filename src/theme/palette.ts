@@ -1,3 +1,4 @@
+import { PaletteMode } from '@mui/material';
 import { alpha } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
@@ -95,7 +96,7 @@ const COMMON = {
 export default function palette() {
   const light = {
     ...COMMON,
-    mode: 'light',
+    mode: 'light' as PaletteMode,
     text: {
       primary: GREY[800],
       secondary: GREY[600],
@@ -108,6 +109,7 @@ export default function palette() {
     }
   };
 
+  // If we want to use a dark mode
   // const dark = {
   //   ...COMMON,
   //   mode: 'dark',

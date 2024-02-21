@@ -1,12 +1,11 @@
 // import { useTheme } from '@mui/material/styles';
 import { GlobalStyles } from '@mui/material';
-import theme from '@theme';
+import { useTheme } from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
 export default function StyledNotistack() {
-  // @Todo rework theme to use MUI
-  // const theme = useTheme();
+  const theme = useTheme();
 
   const inputGlobalStyles = (
     <GlobalStyles
@@ -15,14 +14,14 @@ export default function StyledNotistack() {
           '.notistack-MuiContent': {
             minWidth: '80vw',
             paddingLeft: '1rem',
-            boxShadow: 'none',
+            boxShadow: 'none'
           },
           '.notistack-MuiContent-success': {
-            backgroundColor: theme.palette.green[100],
-            color: theme.palette.green[700],
-            borderRadius: 12,
+            backgroundColor: theme.palette.primary.lighter,
+            color: theme.palette.primary.dark,
+            borderRadius: theme.shape.borderRadius,
             svg: {
-              color: theme.palette.green[700]
+              color: theme.palette.primary.dark
             }
           }
         }

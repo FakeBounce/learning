@@ -1,8 +1,9 @@
-import theme from '@theme';
 import { Box, Stack, Avatar } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 // ----------------------------------------------------------------------
 
 export default function SidebarUser({ open }: { open: boolean }) {
+  const theme = useTheme();
   if (!open) {
     return (
       <Stack
