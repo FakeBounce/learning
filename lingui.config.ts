@@ -8,8 +8,8 @@ export default {
   catalogs: [
     {
       path: 'src/locales/{name}/{locale}',
-      include: ['src/components/{name}', 'src/pages/{name}', 'src/utils/{name}'],
-      exclude: ['**/node_modules/**', 'src/components/**', 'src/pages/index.ts']
+      include: ['src/components/{name}', 'src/pages/{name}', 'src/utils/navigation'],
+      exclude: ['**/node_modules/**', 'src/components/**', 'src/pages/index.ts', 'src/utils/**']
     },
     {
       path: 'src/locales/{locale}',

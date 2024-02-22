@@ -1,12 +1,32 @@
 {
+  "2mcnZQ": {
+    "translation": "Utilisateurs",
+    "message": "Utilisateurs",
+    "comments": []
+  },
+  "3RK7em": {
+    "translation": "Liste des modules",
+    "message": "Liste des modules",
+    "comments": []
+  },
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
     "comments": []
   },
+  "7p5kLi": {
+    "translation": "Dashboard",
+    "message": "Dashboard",
+    "comments": []
+  },
   "7uQ5BG": {
     "translation": "Adresse siège social",
     "message": "Adresse siège social",
+    "comments": []
+  },
+  "9wYFQH": {
+    "translation": "Groupes",
+    "message": "Groupes",
     "comments": []
   },
   "Be0x4u": {
@@ -22,6 +42,11 @@
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
+    "comments": []
+  },
+  "EIxP9b": {
+    "translation": "Gestion des rôles",
+    "message": "Gestion des rôles",
     "comments": []
   },
   "F8ESDf": {
@@ -42,6 +67,11 @@
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
+    "comments": []
+  },
+  "HbvbX+": {
+    "translation": "Personnalisation",
+    "message": "Personnalisation",
     "comments": []
   },
   "HdNGur": {
@@ -89,6 +119,11 @@
     "message": "Veuillez ajouter un logo",
     "comments": []
   },
+  "eoO6cw": {
+    "translation": "Liste des Parcours",
+    "message": "Liste des Parcours",
+    "comments": []
+  },
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
@@ -102,6 +137,11 @@
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
+    "comments": []
+  },
+  "hsf9ph": {
+    "translation": "Étudiants",
+    "message": "Étudiants",
     "comments": []
   },
   "iAKACc": {
@@ -142,6 +182,11 @@
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
+    "comments": []
+  },
+  "v+QFYv": {
+    "translation": "Testeurs externes",
+    "message": "Testeurs externes",
     "comments": []
   },
   "z0t9bb": {
