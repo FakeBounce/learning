@@ -47,6 +47,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
           type={showPassword ? 'text' : 'password'}
           onClick={() => setShowPassword(!showPassword)}
           icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'}
+          data-testid="password-adornment"
         />
       </Stack>
 

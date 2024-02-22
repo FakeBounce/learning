@@ -1,11 +1,15 @@
+import { i18n } from '@lingui/core';
+import { I18nProvider } from '@lingui/react';
+import SnackbarProvider from '@src/components/snackbar';
+import { dynamicActivate } from '@src/i18n';
+import ThemeProvider from '@src/theme';
 import React, { ReactNode } from 'react';
-import { RenderOptions, render as rtlRender } from '@testing-library/react';
+import { RenderOptions, render as rtlRender, act } from '@testing-library/react';
 
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/rootReducer';
-import './locales/i18n';
 
 function customRender(
   ui: React.ReactElement,
@@ -45,7 +49,17 @@ const AppWrapper: React.FC<{ children: ReactNode }> = ({ children }) => {
     }))
   });
 
-  return <>{children}</>;
+  act(() => {
+    dynamicActivate('fr');
+  });
+
+  return (
+    <ThemeProvider>
+      <SnackbarProvider>
+        <I18nProvider i18n={i18n}>{children}</I18nProvider>
+      </SnackbarProvider>
+    </ThemeProvider>
+  );
 };
 
 export * from '@testing-library/react';

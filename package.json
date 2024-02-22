@@ -46,11 +46,7 @@
     "@mui/material": "^5.15.7",
     "@mui/system": "^5.10.15",
     "@reduxjs/toolkit": "^1.9.7",
-    "@testing-library/dom": "7.21.4",
-    "@testing-library/jest-dom": "^6.4.1",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "axios": "^1.2.0",
+    "axios": "^1.6.7",
     "axios-hooks": "^4.0.0",
     "notistack": "^3.0.1",
     "react": "^18.2.0",
@@ -69,6 +65,10 @@
     "@lingui/cli": "^4.7.0",
     "@lingui/macro": "^4.7.0",
     "@reduxjs/toolkit": "^1.9.7",
+    "@testing-library/dom": "7.21.4",
+    "@testing-library/jest-dom": "^6.4.1",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^29.5.11",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
@@ -102,7 +102,7 @@
       "<rootDir>/src/App.tsx"
     ],
     "testMatch": [
-      "<rootDir>/src/tests/**/*.test.tsx"
+      "<rootDir>/src/tests/**/*.test.{ts,tsx}"
     ],
     "moduleNameMapper": {
       "^@components(.*)$": "<rootDir>/src/components$1",
@@ -110,7 +110,9 @@
       "^@redux/(.*)$": "<rootDir>/src/redux/$1",
       "^@services/(.*)$": "<rootDir>/src/services/$1",
       "^@utils(.*)$": "<rootDir>/src/utils$1",
-      "@testProvider": "<rootDir>/src/testProvider.tsx"
+      "@testProvider": "<rootDir>/src/testProvider.tsx",
+      "^axios-hooks$": "axios-hooks/cjs/index.js",
+      "^axios": "axios/dist/node/axios.cjs"
     }
   }
 }
