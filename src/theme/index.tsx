@@ -17,7 +17,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
     () => ({
       palette: palette(),
       typography: typography as TypographyOptions,
-      shape: { borderRadius: 8 },
+      shape: { borderRadius: 4 },
       shadows: shadows() as Shadows
     }),
     []

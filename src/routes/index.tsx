@@ -7,7 +7,8 @@ import {
   Page404,
   Organisations,
   OrganisationsCreate,
-  OrganisationsUpdate
+  OrganisationsUpdate,
+  Users
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
@@ -27,6 +28,7 @@ const Router = () => {
         <Route path={PATH_PARAMETERS.organisations} element={<Organisations />} />
         <Route path={PATH_ORGANISATIONS.add} element={<OrganisationsCreate />} />
         <Route path={PATH_ORGANISATIONS.update} element={<OrganisationsUpdate />} />
+        <Route path={PATH_PARAMETERS.users} element={<Users />} />
       </Route>
 
       <Route element={<GuestGuard />}>

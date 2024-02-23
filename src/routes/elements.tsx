@@ -18,5 +18,9 @@ export const OrganisationsCreate = LoadableComponent(
 );
 
 export const OrganisationsUpdate = LoadableComponent(
-    lazy(() => import('@src/pages/organisations/organisations-update/OrganisationsUpdate'))
+  lazy(() => import('@src/pages/organisations/organisations-update/OrganisationsUpdate'))
 );
+
+//Users
+
+export const Users = LoadableComponent(lazy(() => import('@src/pages/users/users-list/UsersList')));

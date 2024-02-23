@@ -1,9 +1,9 @@
 import {
   UpdateOrganisationViewRequest,
   UpdateOrganisationViewResponse
-} from '@services/user/interfaces';
+} from '@services/connected-user/interfaces';
 import { enqueueSnackbar } from 'notistack';
-import * as UserServices from '@services/user/userAPI';
+import * as UserServices from '@services/connected-user/connectedUserAPI.ts';
 import { createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
 import { AnyAction } from 'redux';
 import { RootState } from '../store';
@@ -17,7 +17,7 @@ const initialState: UserState = {
 };
 
 export const changeOrganisationView = createAsyncThunk(
-  'user/changeOrganisationView',
+  'connected-user/changeOrganisationView',
   async (arg: UpdateOrganisationViewRequest, { rejectWithValue }) => {
     try {
       const response = await UserServices.updateOrganisationView(arg);
@@ -29,8 +29,8 @@ export const changeOrganisationView = createAsyncThunk(
   }
 );
 
-export const userSlice = createSlice({
-  name: 'user',
+export const connectedUserSlice = createSlice({
+  name: 'connectedUser',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
@@ -55,4 +55,4 @@ export const selectUserState = createSelector(
   (s) => s
 );
 
-export default userSlice.reducer;
+export default connectedUserSlice.reducer;

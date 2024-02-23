@@ -35,4 +35,13 @@ export const PATH_ORGANISATIONS = {
   root: ROOT_ORGANISATIONS,
   add: path(ROOT_ORGANISATIONS, '/creation'),
   update: path(ROOT_ORGANISATIONS, '/update/:id')
-}
+};
+
+//Users
+const ROOT_USERS = PATH_PARAMETERS.users;
+export const PATH_USERS = {
+  root: ROOT_USERS,
+  add: path(ROOT_USERS, '/creation'),
+  addMassive: path(ROOT_USERS, '/creation-massive'),
+  update: path(ROOT_USERS, '/update/:id')
+};

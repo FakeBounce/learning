@@ -43,10 +43,11 @@ export default function ActionButton({
       sx={{
         minWidth: 100,
         borderRadius: 2,
-        bgcolor: theme.palette.primary.dark,
+        paddingX: 2,
+        bgcolor: theme.palette.primary.main,
         color: 'white',
         '&:hover': {
-          bgcolor: theme.palette.primary.darker
+          bgcolor: theme.palette.primary.dark
         },
         textTransform: 'none',
         ...sx
