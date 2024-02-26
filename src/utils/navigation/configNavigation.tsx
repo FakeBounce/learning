@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
-import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from './paths';
+import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
 
 // GENERAL
 // ----------------------------------------------------------------------
@@ -42,12 +42,20 @@ const organizationsNavigationConfig = [
   }
 ];
 
+const usersNavigationConfig = [
+  {
+    title: <Trans>Profil</Trans>,
+    path: PATH_USERS.profile
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
   ...generalNavigationConfig,
   ...parametersNavigationConfig,
-  ...organizationsNavigationConfig
+  ...organizationsNavigationConfig,
+  ...usersNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

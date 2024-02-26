@@ -14,7 +14,7 @@ export default function HeaderBreadcrumbItem({
   const theme = useTheme();
   return (
     <Link
-      color={isLast ? theme.palette.secondary.dark : theme.palette.grey[800]}
+      color={isLast ? theme.palette.secondary.main : theme.palette.grey[800]}
       fontWeight={isLast ? theme.typography.fontWeightMedium : theme.typography.fontWeightRegular}
       href={currentPathConfig.path}
       underline="none"

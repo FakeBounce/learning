@@ -1,6 +1,6 @@
 import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
-import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS } from '@utils/navigation/paths';
+import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS, PATH_USERS } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   LoginPage,
@@ -8,7 +8,8 @@ import {
   Organisations,
   OrganisationsCreate,
   OrganisationsUpdate,
-  Users
+  Users,
+  UserProfile
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
@@ -29,6 +30,7 @@ const Router = () => {
         <Route path={PATH_ORGANISATIONS.add} element={<OrganisationsCreate />} />
         <Route path={PATH_ORGANISATIONS.update} element={<OrganisationsUpdate />} />
         <Route path={PATH_PARAMETERS.users} element={<Users />} />
+        <Route path={PATH_USERS.profile} element={<UserProfile />} />
       </Route>
 
       <Route element={<GuestGuard />}>

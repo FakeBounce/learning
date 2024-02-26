@@ -43,5 +43,6 @@ export const PATH_USERS = {
   root: ROOT_USERS,
   add: path(ROOT_USERS, '/creation'),
   addMassive: path(ROOT_USERS, '/creation-massive'),
+  profile: path(ROOT_USERS, '/profile/:id'),
   update: path(ROOT_USERS, '/update/:id')
 };

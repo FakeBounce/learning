@@ -3,6 +3,7 @@
  * To change the organisation view of the connected user
  */
 import { ApiResponseMessage } from '@services/interfaces';
+import { Group } from '@services/groups/interfaces.ts';
 
 export interface User {
   id: number;
@@ -15,6 +16,8 @@ export interface User {
   is_active: boolean;
   email_verified_at: Date;
   use_double_auth: boolean;
+  groups: Group[];
+  roles: [];
 }
 
 export interface UpdateOrganisationViewRequest {

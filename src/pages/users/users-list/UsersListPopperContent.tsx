@@ -20,7 +20,7 @@ export default function UsersListPopperContent({
 
   const goToUserProfile = () => {
     if (userSelected !== null) {
-      navigate(`/user/profile/${userSelected.id}`);
+      navigate(`/users/profile/${userSelected.id}`, { state: { user: userSelected } });
     }
   };
 
