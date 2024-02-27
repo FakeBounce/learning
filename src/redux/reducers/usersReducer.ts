@@ -1,19 +1,29 @@
 import { User } from '@services/connected-user/interfaces';
 import {
+  GetSingleUserResponse,
   GetUsersRequest,
   GetUsersResponse,
   UpdateUserBlockRequest,
-  UpdateUserBlockResponse
-} from '@services/users/interfaces.ts';
+  UpdateUserBlockResponse, UpdateUserRequest, UpdateUserResponse
+} from '@services/users/interfaces';
 import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as UsersServices from '@services/users/usersAPI';
 import { enqueueSnackbar } from 'notistack';
+import { t } from '@lingui/macro';
 
 interface UsersState {
   usersList: {
     usersListData: User[];
     usersListLoading: boolean;
     usersListTotalCount: number | null;
+  };
+  currentUser: {
+    currentUserData: User | null;
+    currentUserLoading: boolean;
+  };
+  updatedUser: {
+    // updatedUserData: User | null;
+    updatedUserLoading: boolean;
   };
 }
 
@@ -22,6 +32,14 @@ const initialState: UsersState = {
     usersListData: [],
     usersListLoading: false,
     usersListTotalCount: null
+  },
+  currentUser: {
+    currentUserData: null,
+    currentUserLoading: false
+  },
+  updatedUser: {
+    // updatedUserData: null,
+    updatedUserLoading: false
   }
 };
 
@@ -30,6 +48,32 @@ export const getUsersList = createAsyncThunk(
   async (arg: GetUsersRequest, { rejectWithValue }) => {
     try {
       const response = await UsersServices.getUsers(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const getSingleUser = createAsyncThunk(
+  'users/fetchSingle',
+  async (id: number, { rejectWithValue }) => {
+    try {
+      const response = await UsersServices.getSingleUser(id);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const updateUser = createAsyncThunk(
+  'users/update',
+  async (arg: UpdateUserRequest, { rejectWithValue }) => {
+    try {
+      const response = await UsersServices.updateUser(arg);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
@@ -71,6 +115,34 @@ export const usersSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
+
+      // Fetch Single User Reducers
+      .addCase(getSingleUser.pending, (state) => {
+        state.currentUser.currentUserLoading = true;
+      })
+      .addCase(getSingleUser.fulfilled, (state, action: { payload: GetSingleUserResponse }) => {
+        state.currentUser.currentUserLoading = false;
+        state.currentUser.currentUserData = action.payload.data;
+      })
+      .addCase(getSingleUser.rejected, (state, action: AnyAction) => {
+        state.currentUser.currentUserLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+
+      // Update User Reducers
+      .addCase(updateUser.pending, (state) => {
+        state.updatedUser.updatedUserLoading = true;
+      })
+      .addCase(updateUser.fulfilled, (state, action: { payload: UpdateUserResponse }) => {
+        state.currentUser.currentUserData = action.payload.data;
+        enqueueSnackbar(t`Utilisateur enregistré !`, { variant: 'success' });
+      })
+      .addCase(updateUser.rejected, (_, action: AnyAction) => {
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+
       // Users Block Reducers
       .addCase(toggleUserBlock.pending, (_) => {})
       .addCase(toggleUserBlock.fulfilled, (state, action: { payload: UpdateUserBlockResponse }) => {

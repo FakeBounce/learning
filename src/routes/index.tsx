@@ -9,7 +9,8 @@ import {
   OrganisationsCreate,
   OrganisationsUpdate,
   Users,
-  UserProfile
+  UserProfile,
+  UserEdit
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 
@@ -31,6 +32,7 @@ const Router = () => {
         <Route path={PATH_ORGANISATIONS.update} element={<OrganisationsUpdate />} />
         <Route path={PATH_PARAMETERS.users} element={<Users />} />
         <Route path={PATH_USERS.profile} element={<UserProfile />} />
+        <Route path={PATH_USERS.edit} element={<UserEdit />} />
       </Route>
 
       <Route element={<GuestGuard />}>

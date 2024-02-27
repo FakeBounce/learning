@@ -1,11 +1,14 @@
 import { AxiosResponse } from 'axios';
 import axios from '@utils/axios';
 import {
+  GetSingleUserResponse,
   GetUsersRequest,
   GetUsersResponse,
   UpdateUserBlockRequest,
-  UpdateUserBlockResponse
-} from './interfaces.ts';
+  UpdateUserBlockResponse,
+  UpdateUserRequest,
+  UpdateUserResponse
+} from './interfaces';
 
 export const getUsers = async (args: GetUsersRequest): Promise<AxiosResponse<GetUsersResponse>> => {
   const { currentPage, rowsPerPage, sort, filters } = args;
@@ -16,6 +19,30 @@ export const getUsers = async (args: GetUsersRequest): Promise<AxiosResponse<Get
     filters: filters,
     sort: sort
   });
+};
+
+export const getSingleUser = async (id: number): Promise<AxiosResponse<GetSingleUserResponse>> => {
+  return axios.get(`/users/${id}`);
+};
+
+export const updateUser = async (
+  args: UpdateUserRequest
+): Promise<AxiosResponse<UpdateUserResponse>> => {
+  const {id, lastname, firstname, email, login, use_double_auth } = args;
+  return axios.put(
+    `/users/${id}`, {
+      lastname,
+      firstname,
+      email,
+      login,
+      use_double_auth
+    },
+    {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }
+  );
 };
 
 export const toggleUserBlock = async (

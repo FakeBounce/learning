@@ -46,6 +46,10 @@ const usersNavigationConfig = [
   {
     title: <Trans>Profil</Trans>,
     path: PATH_USERS.profile
+  },
+  {
+    title: <Trans>Modifier un utilisateur</Trans>,
+    path: PATH_USERS.edit
   }
 ];
 

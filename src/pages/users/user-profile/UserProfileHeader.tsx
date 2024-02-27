@@ -3,12 +3,14 @@ import ActionButton from '@src/components/lms/ActionButton.tsx';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { User } from '@services/connected-user/interfaces.ts';
+import { useNavigate } from 'react-router-dom';
 
 interface UserProfileHeaderProps {
   user: User;
 }
 export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <Box p={2} display='flex'>
@@ -29,6 +31,7 @@ export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
           },
           marginX: 2,
         }}
+        onClick={() => navigate(`/users/edit/${user.id}`)}
       >
         <Trans>Modifier</Trans>
       </ActionButton>

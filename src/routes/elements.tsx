@@ -25,3 +25,5 @@ export const OrganisationsUpdate = LoadableComponent(
 
 export const Users = LoadableComponent(lazy(() => import('@src/pages/users/users-list/UsersList')));
 export const UserProfile = LoadableComponent(lazy(() => import('@src/pages/users/user-profile/UserProfile')));
+
+export const UserEdit = LoadableComponent(lazy(() => import('@src/pages/users/user-edit/UserEdit.tsx')));
