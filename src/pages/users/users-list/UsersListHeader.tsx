@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { Trans } from '@lingui/macro';
-import ActionButton from '@src/components/lms/ActionButton.tsx';
+import ActionButton from '@src/components/lms/ActionButton';
 
 export default function UsersListHeader() {
   // const navigate = useNavigate();
