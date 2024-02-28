@@ -31,9 +31,6 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 15,
     height: 15,
     borderRadius: 8,
-    transition: theme.transitions.create(['width'], {
-      duration: 200,
-    }),
   },
   '& .MuiSwitch-track': {
     borderRadius: 16,
