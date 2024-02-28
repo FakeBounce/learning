@@ -28,20 +28,8 @@ export const getSingleUser = async (id: number): Promise<AxiosResponse<GetSingle
 export const updateUser = async (
   args: UpdateUserRequest
 ): Promise<AxiosResponse<UpdateUserResponse>> => {
-  const {id, lastname, firstname, email, login, use_double_auth } = args;
   return axios.put(
-    `/users/${id}`, {
-      lastname,
-      firstname,
-      email,
-      login,
-      use_double_auth
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    }
+    `/users/${args.id}`, { args }
   );
 };
 

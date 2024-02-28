@@ -2,9 +2,9 @@ import { MouseEvent, ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { User } from '@services/connected-user/interfaces.ts';
-import StatusChip from '@src/components/lms/StatusChip.tsx';
-import Iconify from '@src/components/iconify/Iconify.tsx';
+import { User } from '@services/connected-user/interfaces';
+import StatusChip from '@src/components/lms/StatusChip';
+import Iconify from '@src/components/iconify/Iconify';
 
 export interface OrderBy {
   id: string;

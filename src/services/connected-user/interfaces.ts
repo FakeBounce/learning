@@ -3,7 +3,7 @@
  * To change the organisation view of the connected user
  */
 import { ApiResponseMessage } from '@services/interfaces';
-import { Group } from '@services/groups/interfaces.ts';
+import { Group } from '@services/groups/interfaces';
 
 export interface User {
   id: number;

@@ -17,12 +17,11 @@ interface UsersState {
     usersListLoading: boolean;
     usersListTotalCount: number | null;
   };
-  currentUser: {
-    currentUserData: User | null;
-    currentUserLoading: boolean;
+  singleUser: {
+    singleUserData: User | null;
+    singleUserLoading: boolean;
   };
   updatedUser: {
-    // updatedUserData: User | null;
     updatedUserLoading: boolean;
   };
 }
@@ -33,12 +32,11 @@ const initialState: UsersState = {
     usersListLoading: false,
     usersListTotalCount: null
   },
-  currentUser: {
-    currentUserData: null,
-    currentUserLoading: false
+  singleUser: {
+    singleUserData: null,
+    singleUserLoading: false
   },
   updatedUser: {
-    // updatedUserData: null,
     updatedUserLoading: false
   }
 };
@@ -118,14 +116,14 @@ export const usersSlice = createSlice({
 
       // Fetch Single User Reducers
       .addCase(getSingleUser.pending, (state) => {
-        state.currentUser.currentUserLoading = true;
+        state.singleUser.singleUserLoading = true;
       })
       .addCase(getSingleUser.fulfilled, (state, action: { payload: GetSingleUserResponse }) => {
-        state.currentUser.currentUserLoading = false;
-        state.currentUser.currentUserData = action.payload.data;
+        state.singleUser.singleUserLoading = false;
+        state.singleUser.singleUserData = action.payload.data;
       })
       .addCase(getSingleUser.rejected, (state, action: AnyAction) => {
-        state.currentUser.currentUserLoading = false;
+        state.singleUser.singleUserLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
@@ -135,7 +133,7 @@ export const usersSlice = createSlice({
         state.updatedUser.updatedUserLoading = true;
       })
       .addCase(updateUser.fulfilled, (state, action: { payload: UpdateUserResponse }) => {
-        state.currentUser.currentUserData = action.payload.data;
+        state.singleUser.singleUserData = action.payload.data;
         enqueueSnackbar(t`Utilisateur enregistré !`, { variant: 'success' });
       })
       .addCase(updateUser.rejected, (_, action: AnyAction) => {

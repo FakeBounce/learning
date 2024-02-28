@@ -1,8 +1,9 @@
-import ActionButton from '@src/components/lms/ActionButton.tsx';
+import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { useNavigate } from 'react-router-dom';
+import { PATH_USERS } from '@utils/navigation/paths';
 
 export default function UserEditFooter() {
   const theme = useTheme();
@@ -17,7 +18,7 @@ export default function UserEditFooter() {
             bgcolor: theme.palette.grey[600]
           },
         }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate(PATH_USERS.profile)}
       >
         <Trans>Annuler</Trans>
       </ActionButton>

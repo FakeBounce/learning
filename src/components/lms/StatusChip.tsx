@@ -1,5 +1,5 @@
 import { Box, Chip, IconButton } from '@mui/material';
-import Iconify from '@src/components/iconify/Iconify.tsx';
+import Iconify from '@src/components/iconify/Iconify';
 import { useTheme } from '@mui/material/styles';
 import { ReactNode } from 'react';
 

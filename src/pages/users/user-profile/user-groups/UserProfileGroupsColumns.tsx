@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Group } from '@services/groups/interfaces.ts';
+import { Group } from '@services/groups/interfaces';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';

@@ -8,30 +8,29 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSingleUser } from '@redux/reducers/usersReducer';
-import { User } from '@services/connected-user/interfaces.ts';
+import { User } from '@services/connected-user/interfaces';
 
 export default function UserProfile() {
   const dispatch = useAppDispatch();
   const [user, setUser] = useState<User>({} as User);
 
-  const { currentUserData } = useAppSelector(
-    (state) => state.users.currentUser
+  const { singleUserData } = useAppSelector(
+    (state) => state.users.singleUser
   );
   const { pathname } = useLocation();
   const userId = Number(pathname.split('/').pop());
 
   useEffect(() => {
-    console.log("je passe ici");
     if(userId) {
       dispatch(getSingleUser(userId));
     }
   }, []);
 
   useEffect(() => {
-    if (currentUserData) {
-      setUser(currentUserData);
+    if (singleUserData) {
+      setUser(singleUserData);
     }
-  }, [currentUserData]);
+  }, [singleUserData]);
 
   return (
     <Box px={[0, 2]} display='flex' width="100%">

@@ -2,8 +2,8 @@ import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { useNavigate } from 'react-router-dom';
-import { User } from '@services/connected-user/interfaces.ts';
-import { toggleUserBlock } from '@redux/reducers/usersReducer.ts';
+import { User } from '@services/connected-user/interfaces';
+import { toggleUserBlock } from '@redux/reducers/usersReducer';
 
 interface UsersListPopperContentProps {
   setAnchorEl: (value: HTMLElement | null) => void;
@@ -20,7 +20,7 @@ export default function UsersListPopperContent({
 
   const goToUserProfile = () => {
     if (userSelected !== null) {
-      navigate(`/users/profile/${userSelected.id}`, { state: { user: userSelected } });
+      navigate(`/users/profile/${userSelected.id}`);
     }
   };
 

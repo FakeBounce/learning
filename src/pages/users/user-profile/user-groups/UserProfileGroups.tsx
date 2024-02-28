@@ -1,42 +1,52 @@
 import { Box, Typography } from '@mui/material';
-import FullTable from '@src/components/table/FullTable.tsx';
+import FullTable from '@src/components/table/FullTable';
 import {
   userProfileGroupsColumns,
   userProfileGroupsHeaderRender,
   userProfileGroupsRowRender
-} from '@src/pages/users/user-profile/user-groups/UserProfileGroupsColumns.tsx';
-import { Group } from '@services/groups/interfaces.ts';
+} from '@src/pages/users/user-profile/user-groups/UserProfileGroupsColumns';
+import { Group } from '@services/groups/interfaces';
 import { LMSCard } from '@src/components/lms';
+import { useTheme } from '@mui/material/styles';
+import { Trans } from '@lingui/macro';
+import { useAppSelector } from '@redux/hooks';
 
 interface UserProfileGroupsProps {
   groups: Group[]
 }
 
 export default function UserProfileGroups({groups}: UserProfileGroupsProps) {
+  const theme = useTheme();
+  const { singleUserLoading } = useAppSelector(
+    (state) => state.users.singleUser
+  );
 
   return (
     <Box px={[0, 2]} marginY={3} width="100%">
       <Typography
         sx={{
-          fontSize: 24,
+          fontSize: theme.typography.h3.fontSize,
+          fontWeight: theme.typography.fontWeightRegular,
+          marginBottom: 3
         }}
       >
-        Groupes
+        <Trans>Groupes</Trans>
       </Typography>
-      <br/>
       {
        groups.length > 0 ?
          <LMSCard isPageCard cardCss={{ position: 'relative' }}>
            <FullTable
              headerRenderer={userProfileGroupsHeaderRender()}
              bodyRenderer={userProfileGroupsRowRender(groups)}
-             isLoading={false}
+             isLoading={singleUserLoading}
              rowsNum={5}
              colsNum={userProfileGroupsColumns.length}
            />
          </LMSCard>
          :
-         <Typography>Aucun groupe défini.</Typography>
+         <Typography>
+           <Trans>Aucun groupe défini.</Trans>
+         </Typography>
       }
     </Box>
   );

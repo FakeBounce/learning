@@ -38,14 +38,12 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   '& .MuiSwitch-track': {
     borderRadius: 16,
     opacity: 1,
-    backgroundColor:
-      theme.palette.mode === 'dark' ? 'rgba(255,255,255,.35)' : 'rgba(0,0,0,.25)',
+    backgroundColor: 'rgba(0,0,0,.25)',
     boxSizing: 'border-box',
   },
 }));
 
 interface LMSSwitchProps {
-  // name: string;
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }

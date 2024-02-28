@@ -10,11 +10,11 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { useLocation } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 import { getSingleUser, updateUser } from '@redux/reducers/usersReducer';
-import UserEditFooter from '@src/pages/users/user-edit/UserEditFooter.tsx';
+import UserEditFooter from '@src/pages/users/user-edit/UserEditFooter';
 
 const EditUserSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom est requis`),
-  firstname: Yup.string().required(t`Le nom est requis`),
+  firstname: Yup.string().required(t`Le prénom est requis`),
   email: Yup.string().required(t`L'email est requis`),
   login: Yup.string().required(t`Le login est requis`),
   use_double_auth: Yup.boolean().required(t`La double authentification est requise`),
@@ -43,8 +43,8 @@ export default function UserEdit() {
   const { pathname } = useLocation();
   const userId = Number(pathname.split('/').pop());
 
-  const { currentUserData } = useAppSelector(
-    (state) => state.users.currentUser
+  const { singleUserData } = useAppSelector(
+    (state) => state.users.singleUser
   );
 
   // Update the form if we are on the update page
@@ -57,10 +57,10 @@ export default function UserEdit() {
   }, []);
 
   useEffect(() => {
-    if (currentUserData) {
-      setUser(currentUserData);
+    if (singleUserData) {
+      setUser(singleUserData);
     }
-  }, [currentUserData]);
+  }, [singleUserData]);
 
   const methods = useForm({
     resolver: yupResolver(EditUserSchema),

@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
-import { User } from '@services/connected-user/interfaces.ts';
+import { User } from '@services/connected-user/interfaces';
 
 interface UserProfileInfosProps {
   user: User;
@@ -49,7 +49,11 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
               Double authentification
             </Trans>
           </Typography>
-          <Typography>{user.use_double_auth ? "OUI" : "NON"}</Typography>
+          <Typography>{user.use_double_auth ?
+            <Trans>OUI</Trans>
+            :
+            <Trans>NON</Trans>
+          }</Typography>
         </Box>
       </Box>
       <Box width='50%'>

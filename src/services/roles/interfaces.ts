@@ -1,5 +1,5 @@
-import { Group } from '@services/groups/interfaces.ts';
-import { User } from '@services/connected-user/interfaces.ts';
+import { Group } from '@services/groups/interfaces';
+import { User } from '@services/connected-user/interfaces';
 
 export interface Role {
   id: number;

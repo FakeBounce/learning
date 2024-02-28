@@ -2,9 +2,9 @@ import { ReactNode } from 'react';
 import { Box, FormControlLabel, Stack, Typography } from '@mui/material';
 import { RHFTextField } from '@src/components/hook-form';
 import { Trans } from '@lingui/macro';
-import LMSSwitch from '@src/components/lms/LMSSwitch.tsx';
+import LMSSwitch from '@src/components/lms/LMSSwitch';
 import { Control, Controller } from 'react-hook-form';
-import { EditUserForm } from '@src/pages/users/user-edit/UserEdit.tsx';
+import { EditUserForm } from '@src/pages/users/user-edit/UserEdit';
 
 const labelWithRequired = (label: ReactNode) => (
   <>
@@ -22,7 +22,7 @@ export default function UserEditForm({ control }: UserEditFormProps) {
     <Stack
       spacing={3}
       sx={{
-        '& .MuiTextField-root:nth-child(1), & .MuiTextField-root:nth-child(3)': { mr: 4 }
+        '& .MuiTextField-root:nth-of-type(odd)': { mr: 4 }
       }}
     >
       <Box display="flex">
@@ -39,7 +39,7 @@ export default function UserEditForm({ control }: UserEditFormProps) {
           <Controller
             name='use_double_auth'
             control={control}
-            defaultValue={true}
+            defaultValue={control._defaultValues.use_double_auth}
             render={
               ({ field: {onChange, value} }) => {
                 return (

@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { Role } from '@services/roles/interfaces.ts';
+import { Role } from '@services/roles/interfaces';
 
 export interface UserProfileRolesColumns {
   id: 'name' | 'description';

@@ -1,8 +1,8 @@
 import { Box, Typography } from '@mui/material';
-import ActionButton from '@src/components/lms/ActionButton.tsx';
+import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
-import { User } from '@services/connected-user/interfaces.ts';
+import { User } from '@services/connected-user/interfaces';
 import { useNavigate } from 'react-router-dom';
 
 interface UserProfileHeaderProps {
@@ -17,8 +17,8 @@ export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
       <Typography
         sx={{
           color: theme.palette.secondary.main,
-          fontWeight: 'bold',
-          fontSize: 24,
+          fontSize: theme.typography.h3.fontSize,
+          fontWeight: theme.typography.fontWeightBold,
         }}
       >
         {user.lastname} {user.firstname}
