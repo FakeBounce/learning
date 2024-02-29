@@ -11,7 +11,7 @@ export default function SidebarUser({ open }: { open: boolean }) {
   const { logout } = useAuthenticationContext();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleClick = () => (event: MouseEvent<HTMLElement>) => {
+  const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -60,7 +60,7 @@ export default function SidebarUser({ open }: { open: boolean }) {
           transition: 'background-color 0.5s ease',
           cursor: 'pointer'
         }}
-        onClick={handleClick()}
+        onClick={(e) => handleClick(e)}
       >
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 2, mr: 2 }}>
           <Avatar alt="Avatar photo" src="/assets/shape_avatar.svg" />

@@ -28,7 +28,7 @@ export default function LMSPopover(
         <Paper
           elevation={10}
           sx={{
-            borderRadius: 2,
+            borderRadius: theme.shape.borderRadius / 2,
             minWidth: 160,
             '&:hover': { color: theme.palette.secondary.main },
           }}
