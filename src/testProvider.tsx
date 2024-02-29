@@ -5,8 +5,7 @@ import { dynamicActivate } from '@src/i18n';
 import ThemeProvider from '@src/theme';
 import React, { ReactNode } from 'react';
 import { RenderOptions, render as rtlRender, act } from '@testing-library/react';
-
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/rootReducer';
@@ -16,19 +15,21 @@ function customRender(
   {
     preloadedState,
     store = configureStore({ reducer: rootReducer, preloadedState }),
+    customHistory = ['/'],
     ...renderOptions
   }: {
     preloadedState?: any;
     store?: any;
+    customHistory?: string[];
   } & RenderOptions = {}
 ) {
   function Wrapper({ children }: { children: ReactNode }) {
     return (
-      <BrowserRouter>
+      <MemoryRouter initialEntries={customHistory}>
         <Provider store={store}>
           <AppWrapper>{children}</AppWrapper>
         </Provider>
-      </BrowserRouter>
+      </MemoryRouter>
     );
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });

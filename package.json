@@ -77,6 +77,7 @@
     "@typescript-eslint/eslint-plugin": "^6.18.1",
     "@typescript-eslint/parser": "^6.18.1",
     "@vitejs/plugin-react": "^4.2.1",
+    "axios-mock-adapter": "^1.22.0",
     "babel-plugin-macros": "^3.1.0",
     "csstype": "^3.0.10",
     "eslint": "^8.55.0",
@@ -112,7 +113,7 @@
       "^@utils(.*)$": "<rootDir>/src/utils$1",
       "@testProvider": "<rootDir>/src/testProvider.tsx",
       "^axios-hooks$": "axios-hooks/cjs/index.js",
-      "^axios": "axios/dist/node/axios.cjs"
+      "^axios$": "axios/dist/node/axios.cjs"
     }
   }
 }

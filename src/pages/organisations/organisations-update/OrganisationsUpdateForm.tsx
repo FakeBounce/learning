@@ -69,6 +69,7 @@ export default function OrganisationsUpdateForm({
           <Stack alignItems="center" spacing={1}>
             {result ? (
               <Avatar
+                data-testid="avatar"
                 ref={imageRef}
                 src={result}
                 sx={{ width: 112, height: 112, borderRadius: 56 }}
@@ -85,6 +86,7 @@ export default function OrganisationsUpdateForm({
           <RHFTextField
             name="image"
             type={'file'}
+            data-testid="file-upload"
             accept="image/*"
             value={''}
             sx={{ display: 'none' }}
