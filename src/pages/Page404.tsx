@@ -1,4 +1,3 @@
-import { Link as RouterLink } from 'react-router-dom';
 import { Trans } from '@lingui/macro';
 import { Box, Button, Typography } from '@mui/material';
 import PageNotFoundIllustration from '@src/assets/illustrations/PageNotFoundIllustration';
@@ -24,7 +23,7 @@ export default function Page404() {
         }}
       />
       <Box alignItems="center" width="100%" display="flex" justifyContent="center">
-        <Button component={RouterLink} to="/login" size="large" variant="contained">
+        <Button component={'a'} href="/login" size="large" variant="contained">
           Go to Home
         </Button>
       </Box>

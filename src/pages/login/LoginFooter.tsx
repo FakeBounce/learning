@@ -9,6 +9,7 @@ export default function LoginFooter({ isLoading }: { isLoading: boolean }) {
       fullWidth
       size="large"
       type="submit"
+      role="submit"
       loading={isLoading}
       sx={{ textTransform: 'uppercase' }}
     >
