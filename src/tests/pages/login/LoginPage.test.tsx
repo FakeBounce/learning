@@ -19,14 +19,13 @@ describe('Login component', () => {
   it('renders Login component and submit correctly', async () => {
     // Mock the login function in useAuthenticationContext
     const loginMock = jest.fn().mockResolvedValueOnce({});
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-
     // Mock useAuthenticationContext to return the mock login function
     (useAuthenticationContext as jest.Mock).mockReturnValue({
       login: loginMock
     });
 
     // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
     // Render the Login component

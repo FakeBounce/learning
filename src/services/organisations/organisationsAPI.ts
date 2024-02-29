@@ -5,20 +5,21 @@ import {
   GetOrganisationsResponse,
   GetSingleOrganisationResponse,
   UpdateOrganisationsBlockRequest,
-  UpdateOrganisationsBlockResponse, UpdateOrganisationsRequest, UpdateOrganisationsResponse
+  UpdateOrganisationsBlockResponse,
+  UpdateOrganisationsRequest,
+  UpdateOrganisationsResponse
 } from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
 
 export const createOrganisations = async (
   args: CreateOrganisationsRequest
-): Promise<AxiosResponse<CreateOrganisationsResponse>> => {
-  return axios.post(`/organizations`, args, {
+): Promise<AxiosResponse<CreateOrganisationsResponse>> =>
+  axios.post(`/organizations`, args, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
   });
-};
 
 export const updateOrganisations = async (
   args: UpdateOrganisationsRequest

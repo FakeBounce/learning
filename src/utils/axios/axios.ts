@@ -1,9 +1,5 @@
+import { getEnvVariable } from '@utils/environnement';
 import axios, { AxiosInstance } from 'axios';
-
-// Function to get environment variable
-const getEnvVariable = (variableName: string): string | undefined => {
-  return process.env[variableName];
-};
 
 // Create axios instance with dynamic baseURL
 const axiosInstance: AxiosInstance = (() => {
