@@ -60,7 +60,7 @@ export default function SidebarUser({ open }: { open: boolean }) {
           transition: 'background-color 0.5s ease',
           cursor: 'pointer'
         }}
-        onClick={(e) => handleClick(e)}
+        onClick={handleClick}
       >
         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 2, mr: 2 }}>
           <Avatar alt="Avatar photo" src="/assets/shape_avatar.svg" />
