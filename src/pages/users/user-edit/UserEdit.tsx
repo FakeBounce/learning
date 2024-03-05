@@ -17,7 +17,7 @@ const EditUserSchema = Yup.object().shape({
   firstname: Yup.string().required(t`Le prénom est requis`),
   email: Yup.string().required(t`L'email est requis`),
   login: Yup.string().required(t`Le login est requis`),
-  use_double_auth: Yup.boolean().required(t`La double authentification est requise`),
+  use_double_auth: Yup.boolean().required(t`La double authentification est requise`)
 });
 
 const defaultValues = {
@@ -25,7 +25,7 @@ const defaultValues = {
   firstname: '',
   email: '',
   login: '',
-  use_double_auth: false,
+  use_double_auth: false
 };
 
 export interface EditUserForm {
@@ -43,9 +43,7 @@ export default function UserEdit() {
   const { pathname } = useLocation();
   const userId = Number(pathname.split('/').pop());
 
-  const { singleUserData } = useAppSelector(
-    (state) => state.users.singleUser
-  );
+  const { singleUserData } = useAppSelector((state) => state.users.singleUser);
 
   // Update the form if we are on the update page
   useEffect(() => {
@@ -65,7 +63,7 @@ export default function UserEdit() {
   const methods = useForm({
     resolver: yupResolver(EditUserSchema),
     defaultValues: user,
-    values: user,
+    values: user
   });
 
   const {
@@ -81,21 +79,21 @@ export default function UserEdit() {
       newUserData[key] = data[key as keyof EditUserForm];
     });
 
-    if(Object.keys(newUserData).length > 0) {
+    if (Object.keys(newUserData).length > 0) {
       dispatch(updateUser({ id: userId, ...newUserData }));
     } else {
       enqueueSnackbar(t`Aucune modification n'a été apportée`, { variant: 'warning' });
     }
-  }
+  };
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: "100%" }}>
+      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
         <Box px={[0, 2]} display="flex">
           <LMSCard
-            cardCss={{ maxWidth: '100%', padding: 3}}
+            cardCss={{ maxWidth: '100%', padding: 3 }}
             header={
-              <Typography variant='h4' sx={{ fontWeight: 'normal' }}>
+              <Typography variant="h4" sx={{ fontWeight: 'normal' }}>
                 <Trans>Modifier un utilisateur</Trans>
               </Typography>
             }

@@ -1,30 +1,29 @@
 # LMS FRONT
 
-## Install Yarn 
+## Install Yarn
 
-```npm -g install yarn```
+`npm -g install yarn`
 
 ## Install dependencies
 
-```yarn install```
+`yarn install`
 
 ## Copy the .env.example file to .env and fill the variables
 
-```cp .env.example .env```
+`cp .env.example .env`
 
 ## You're all set ! Run the project
 
-```yarn dev```
+`yarn dev`
 
 ## Run the tests
 
-```yarn test```
+`yarn test`
 
 ## Run the tests with coverage
 
-```yarn test:coverage```
+`yarn test:coverage`
 
 ## Access coverage report
 
-```open coverage/lcov-report/index.html```
-
+`open coverage/lcov-report/index.html`

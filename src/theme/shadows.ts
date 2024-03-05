@@ -11,7 +11,7 @@ const LIGHT_MODE = themeColor.grey[500];
 
 const DARK_MODE = themeColor.common.black;
 
-function createShadow(color:string) {
+function createShadow(color: string) {
   const transparent1 = alpha(color, 0.2);
   const transparent2 = alpha(color, 0.14);
   const transparent3 = alpha(color, 0.12);

@@ -12,14 +12,12 @@ import { Trans } from '@lingui/macro';
 import { useAppSelector } from '@redux/hooks';
 
 interface UserProfileGroupsProps {
-  groups: Group[]
+  groups: Group[];
 }
 
-export default function UserProfileGroups({groups}: UserProfileGroupsProps) {
+export default function UserProfileGroups({ groups }: UserProfileGroupsProps) {
   const theme = useTheme();
-  const { singleUserLoading } = useAppSelector(
-    (state) => state.users.singleUser
-  );
+  const { singleUserLoading } = useAppSelector((state) => state.users.singleUser);
 
   return (
     <Box px={[0, 2]} marginY={3} width="100%">
@@ -32,22 +30,21 @@ export default function UserProfileGroups({groups}: UserProfileGroupsProps) {
       >
         <Trans>Groupes</Trans>
       </Typography>
-      {
-       groups.length > 0 ?
-         <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-           <FullTable
-             headerRenderer={userProfileGroupsHeaderRender()}
-             bodyRenderer={userProfileGroupsRowRender(groups)}
-             isLoading={singleUserLoading}
-             rowsNum={5}
-             colsNum={userProfileGroupsColumns.length}
-           />
-         </LMSCard>
-         :
-         <Typography>
-           <Trans>Aucun groupe défini.</Trans>
-         </Typography>
-      }
+      {groups.length > 0 ? (
+        <LMSCard isPageCard cardCss={{ position: 'relative' }}>
+          <FullTable
+            headerRenderer={userProfileGroupsHeaderRender()}
+            bodyRenderer={userProfileGroupsRowRender(groups)}
+            isLoading={singleUserLoading}
+            rowsNum={5}
+            colsNum={userProfileGroupsColumns.length}
+          />
+        </LMSCard>
+      ) : (
+        <Typography>
+          <Trans>Aucun groupe défini.</Trans>
+        </Typography>
+      )}
     </Box>
   );
 }

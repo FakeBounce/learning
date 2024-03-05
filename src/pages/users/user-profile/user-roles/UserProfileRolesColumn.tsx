@@ -20,7 +20,7 @@ export const userProfileRolesColumns: readonly UserProfileRolesColumns[] = [
     renderCell: (row) => {
       const theme = useTheme();
 
-      return(
+      return (
         <Box display="flex" alignItems="center">
           <Typography fontSize={theme.typography.body2.fontSize}>{row.name}</Typography>
         </Box>
@@ -33,7 +33,7 @@ export const userProfileRolesColumns: readonly UserProfileRolesColumns[] = [
     renderCell: (row) => {
       const theme = useTheme();
 
-      return(
+      return (
         <Box display="flex" alignItems="center">
           <Typography fontSize={theme.typography.body2.fontSize}>{row.description}</Typography>
         </Box>
@@ -59,11 +59,9 @@ export const userProfileRolesHeaderRender = () => {
       {column.label}
     </TableCell>
   ));
-}
+};
 
-export const userProfileRolesRowRender = (
-  listData: Role[]
-) => {
+export const userProfileRolesRowRender = (listData: Role[]) => {
   return listData.map((row: Role, index) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={index}>
@@ -85,4 +83,4 @@ export const userProfileRolesRowRender = (
       </TableRow>
     );
   });
-}
+};

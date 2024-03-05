@@ -34,31 +34,25 @@ export default function UserEditForm({ control }: UserEditFormProps) {
         <RHFTextField name={'login'} label={labelWithRequired('Login')} />
       </Box>
       <Box>
-        <Typography variant="body2"><Trans>Double authentification</Trans></Typography>
+        <Typography variant="body2">
+          <Trans>Double authentification</Trans>
+        </Typography>
         <Box ml={1.5} mt={1}>
           <Controller
-            name='use_double_auth'
+            name="use_double_auth"
             control={control}
             defaultValue={control._defaultValues.use_double_auth}
-            render={
-              ({ field: {onChange, value} }) => {
-                return (
-                  <FormControlLabel
-                    control={
-                      <LMSSwitch
-                        checked={value}
-                        handleChange={onChange}
-                      />
-                    }
-                    label=""
-                  />
-                )
-              }
-            }
+            render={({ field: { onChange, value } }) => {
+              return (
+                <FormControlLabel
+                  control={<LMSSwitch checked={value} handleChange={onChange} />}
+                  label=""
+                />
+              );
+            }}
           />
         </Box>
       </Box>
     </Stack>
   );
-
 }

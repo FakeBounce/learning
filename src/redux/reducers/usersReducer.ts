@@ -4,7 +4,9 @@ import {
   GetUsersRequest,
   GetUsersResponse,
   UpdateUserBlockRequest,
-  UpdateUserBlockResponse, UpdateUserRequest, UpdateUserResponse
+  UpdateUserBlockResponse,
+  UpdateUserRequest,
+  UpdateUserResponse
 } from '@services/users/interfaces';
 import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as UsersServices from '@services/users/usersAPI';

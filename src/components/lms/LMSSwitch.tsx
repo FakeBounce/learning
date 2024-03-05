@@ -9,11 +9,11 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   display: 'flex',
   '&:active': {
     '& .MuiSwitch-thumb': {
-      width: 18,
+      width: 18
     },
     '& .MuiSwitch-switchBase.Mui-checked': {
-      transform: 'translateX(9px)',
-    },
+      transform: 'translateX(9px)'
+    }
   },
   '& .MuiSwitch-switchBase': {
     padding: 2,
@@ -22,22 +22,22 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
       color: '#fff',
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme.palette.primary.main,
-      },
-    },
+        backgroundColor: theme.palette.primary.main
+      }
+    }
   },
   '& .MuiSwitch-thumb': {
     boxShadow: '0 2px 4px 0 rgb(0 35 11 / 20%)',
     width: 15,
     height: 15,
-    borderRadius: 8,
+    borderRadius: 8
   },
   '& .MuiSwitch-track': {
     borderRadius: 16,
     opacity: 1,
     backgroundColor: 'rgba(0,0,0,.25)',
-    boxSizing: 'border-box',
-  },
+    boxSizing: 'border-box'
+  }
 }));
 
 interface LMSSwitchProps {
@@ -46,6 +46,5 @@ interface LMSSwitchProps {
 }
 
 export default function LMSSwitch({ handleChange, checked }: LMSSwitchProps) {
-
- return <AntSwitch onChange={handleChange} checked={checked} />;
+  return <AntSwitch onChange={handleChange} checked={checked} />;
 }

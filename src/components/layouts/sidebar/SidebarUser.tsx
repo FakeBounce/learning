@@ -68,12 +68,7 @@ export default function SidebarUser({ open }: { open: boolean }) {
         <Stack py={2} spacing={1}>
           <Box>Nom / Prénom</Box> <Box> Rôle</Box>
         </Stack>
-        <LMSPopover
-          id={id}
-          anchorEl={anchorEl}
-          popoverOpen={popoverOpen}
-          onClose={handleClose}
-        >
+        <LMSPopover id={id} anchorEl={anchorEl} popoverOpen={popoverOpen} onClose={handleClose}>
           <ListItem disablePadding sx={{ display: 'block' }}>
             <ListItemButton
               onClick={() => {

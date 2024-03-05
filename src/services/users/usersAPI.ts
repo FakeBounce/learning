@@ -28,10 +28,8 @@ export const getSingleUser = async (id: number): Promise<AxiosResponse<GetSingle
 export const updateUser = async (
   args: UpdateUserRequest
 ): Promise<AxiosResponse<UpdateUserResponse>> => {
-  const { id , ...body} = args;
-  return axios.put(
-    `/users/${id}`, body
-  );
+  const { id, ...body } = args;
+  return axios.put(`/users/${id}`, body);
 };
 
 export const toggleUserBlock = async (

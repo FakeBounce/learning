@@ -13,12 +13,12 @@ export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
   const navigate = useNavigate();
 
   return (
-    <Box p={2} display='flex'>
+    <Box p={2} display="flex">
       <Typography
         sx={{
           color: theme.palette.secondary.main,
           fontSize: theme.typography.h3.fontSize,
-          fontWeight: theme.typography.fontWeightBold,
+          fontWeight: theme.typography.fontWeightBold
         }}
       >
         {user.lastname} {user.firstname}
@@ -29,7 +29,7 @@ export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
           '&:hover': {
             bgcolor: theme.palette.secondary.dark
           },
-          marginX: 2,
+          marginX: 2
         }}
         onClick={() => navigate(`/users/edit/${user.id}`)}
       >
@@ -37,4 +37,4 @@ export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
       </ActionButton>
     </Box>
   );
-} 
+}
