@@ -8,13 +8,7 @@ export default function OrganisationsListHeader() {
   const navigate = useNavigate();
 
   return (
-    <Box
-      px={3}
-      height="10vh"
-      display="flex"
-      alignItems="center"
-      position="sticky"
-    >
+    <Box px={3} height="10vh" display="flex" alignItems="center" position="sticky">
       <Typography variant="h5">
         <Trans>Organisations</Trans>
       </Typography>

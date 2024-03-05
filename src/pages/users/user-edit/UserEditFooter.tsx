@@ -16,7 +16,7 @@ export default function UserEditFooter() {
           bgcolor: theme.palette.grey[400],
           '&:hover': {
             bgcolor: theme.palette.grey[600]
-          },
+          }
         }}
         onClick={() => navigate(PATH_USERS.profile)}
       >
@@ -29,7 +29,7 @@ export default function UserEditFooter() {
           '&:hover': {
             bgcolor: theme.palette.primary.dark
           },
-          marginX: 2,
+          marginX: 2
         }}
       >
         <Trans>Enregistrer</Trans>

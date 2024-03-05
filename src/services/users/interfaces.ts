@@ -22,9 +22,9 @@ export interface GetUsersResponse {
 }
 
 /*
-  * API Request and Response
-  * To get a specific user
-*/
+ * API Request and Response
+ * To get a specific user
+ */
 export interface GetSingleUserResponse {
   success: boolean;
   message: ApiResponseMessage;
@@ -32,9 +32,9 @@ export interface GetSingleUserResponse {
 }
 
 /*
-  * API Request and Response
-  * To update user
-*/
+ * API Request and Response
+ * To update user
+ */
 export interface UpdateUserRequest {
   id: number;
   lastname?: string;

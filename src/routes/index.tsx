@@ -1,6 +1,11 @@
 import GuestGuard from '@src/auth/GuestGuard';
 import AuthGuard from '@src/auth/AuthGuard';
-import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS, PATH_USERS } from '@utils/navigation/paths';
+import {
+  PATH_DASHBOARD,
+  PATH_ORGANISATIONS,
+  PATH_PARAMETERS,
+  PATH_USERS
+} from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   LoginPage,

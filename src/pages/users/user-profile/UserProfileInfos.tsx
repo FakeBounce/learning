@@ -11,21 +11,19 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
   const theme = useTheme();
   const captionStyle = {
     marginY: 0.5,
-    ...theme.typography.caption,
+    ...theme.typography.caption
   };
 
   return (
-    <Box px={[0, 4]} display='flex'>
-      <Box width='50%'>
+    <Box px={[0, 4]} display="flex">
+      <Box width="50%">
         <Box
           sx={{
-            marginY: 2,
+            marginY: 2
           }}
         >
           <Typography sx={captionStyle}>
-            <Trans>
-              Nom
-            </Trans>
+            <Trans>Nom</Trans>
           </Typography>
           <Typography>{user.lastname}</Typography>
         </Box>
@@ -36,45 +34,33 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
           }}
         >
           <Typography sx={captionStyle}>
-            <Trans>
-              Email
-            </Trans>
+            <Trans>Email</Trans>
           </Typography>
           <Typography sx={theme.typography.body1}>{user.email}</Typography>
         </Box>
 
         <Box>
           <Typography sx={captionStyle}>
-            <Trans>
-              Double authentification
-            </Trans>
+            <Trans>Double authentification</Trans>
           </Typography>
-          <Typography>{user.use_double_auth ?
-            <Trans>OUI</Trans>
-            :
-            <Trans>NON</Trans>
-          }</Typography>
+          <Typography>{user.use_double_auth ? <Trans>OUI</Trans> : <Trans>NON</Trans>}</Typography>
         </Box>
       </Box>
-      <Box width='50%'>
+      <Box width="50%">
         <Box
           sx={{
-            marginY: 2,
+            marginY: 2
           }}
         >
           <Typography sx={captionStyle}>
-            <Trans>
-              Prénom
-            </Trans>
+            <Trans>Prénom</Trans>
           </Typography>
           <Typography>{user.firstname}</Typography>
         </Box>
 
         <Box>
           <Typography sx={captionStyle}>
-            <Trans>
-              Login
-            </Trans>
+            <Trans>Login</Trans>
           </Typography>
           <Typography>{user.login}</Typography>
         </Box>

@@ -107,7 +107,7 @@ export default function OrganisationsList() {
             bottom: 0,
             width: '100%',
             display: 'flex',
-            justifyContent:'flex-end'
+            justifyContent: 'flex-end'
           }}
         >
           <TablePagination

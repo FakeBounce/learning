@@ -7,7 +7,5 @@
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": [
-    "vite.config.mts"
-  ]
+  "include": ["vite.config.mts"]
 }

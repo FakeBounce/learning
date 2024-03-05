@@ -20,7 +20,7 @@ export const userProfileGroupsColumns: readonly UserProfileGroupsColumns[] = [
     renderCell: (row) => {
       const theme = useTheme();
 
-      return(
+      return (
         <Box display="flex" alignItems="center">
           <Typography fontSize={theme.typography.body2.fontSize}>{row.name}</Typography>
         </Box>
@@ -33,7 +33,7 @@ export const userProfileGroupsColumns: readonly UserProfileGroupsColumns[] = [
     renderCell: (row) => {
       const theme = useTheme();
 
-      return(
+      return (
         <Box display="flex" alignItems="center">
           <Typography fontSize={theme.typography.body2.fontSize}>{row.description}</Typography>
         </Box>
@@ -59,11 +59,9 @@ export const userProfileGroupsHeaderRender = () => {
       {column.label}
     </TableCell>
   ));
-}
+};
 
-export const userProfileGroupsRowRender = (
-  listData: Group[]
-) => {
+export const userProfileGroupsRowRender = (listData: Group[]) => {
   return listData.map((row: Group, index) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={index}>
@@ -85,4 +83,4 @@ export const userProfileGroupsRowRender = (
       </TableRow>
     );
   });
-}
+};

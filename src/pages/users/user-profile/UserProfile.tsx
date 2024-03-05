@@ -14,14 +14,12 @@ export default function UserProfile() {
   const dispatch = useAppDispatch();
   const [user, setUser] = useState<User>({} as User);
 
-  const { singleUserData } = useAppSelector(
-    (state) => state.users.singleUser
-  );
+  const { singleUserData } = useAppSelector((state) => state.users.singleUser);
   const { pathname } = useLocation();
   const userId = Number(pathname.split('/').pop());
 
   useEffect(() => {
-    if(userId) {
+    if (userId) {
       dispatch(getSingleUser(userId));
     }
   }, []);
@@ -33,7 +31,7 @@ export default function UserProfile() {
   }, [singleUserData]);
 
   return (
-    <Box px={[0, 2]} display='flex' width="100%">
+    <Box px={[0, 2]} display="flex" width="100%">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
         <UserProfileHeader user={user} />
 

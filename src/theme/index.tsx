@@ -23,7 +23,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
           small: 2,
           medium: 4,
           large: 8,
-          whole: 9999,
+          whole: 9999
         }
       },
       shadows: shadows() as Shadows

@@ -79,7 +79,6 @@ export interface CreateOrganisationsResponse {
   data: Organisation;
 }
 
-
 /*
  * API Request and Response
  * To create an organisation
