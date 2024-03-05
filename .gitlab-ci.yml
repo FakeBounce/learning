@@ -26,7 +26,8 @@ stages: # List of stages for jobs, and their order of execution
 build-job: # This job runs in the build stage, which runs first.
   stage: build
   script:
-    - echo "Compiling the code..."
+    - echo "Creating node modules..."
+    - export VITE_HOST_API_KEY=$VITE_HOST_API_KEY
     - yarn
     - echo "Compile complete."
   artifacts:
@@ -47,7 +48,11 @@ unit-test-job: # This job runs in the test stage.
 lint-test-job: # This job also runs in the test stage.
   stage: test # It can run at the same time as unit-test-job (in parallel).
   script:
-    - echo "Linting code... This will take about 10 seconds."
+    - echo "Linting code..."
+    - # Install ESLint in this docker container
+    - npm install -g eslint
+    # Configure ESLint (will read your .eslintrc file)
+    - eslint --init
     - eslint . --fix
     - prettier . --write --check
     - echo "No lint issues found."
