@@ -89,7 +89,11 @@ export const logout = createAsyncThunk('connectedUser/logout', async (_, { rejec
 export const connectedUserSlice = createSlice({
   name: 'connectedUser',
   initialState,
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.organisationId = null;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(login.pending, (state) => {
