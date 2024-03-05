@@ -17,21 +17,9 @@
     "comments": [],
     "obsolete": false
   },
-  "4kCp92": {
-    "translation": "",
-    "message": "L'email de l'admin est requis",
-    "comments": [],
-    "obsolete": false
-  },
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
-  },
-  "7uQ5BG": {
-    "translation": "",
-    "message": "Adresse siège social",
     "comments": [],
     "obsolete": false
   },
@@ -41,21 +29,15 @@
     "comments": [],
     "obsolete": false
   },
-  "Be0x4u": {
+  "BSb8d9": {
     "translation": "",
-    "message": "Prénom admin client",
+    "message": "Double authentification",
     "comments": [],
     "obsolete": false
   },
-  "C1e9Kp": {
+  "Bmo0y3": {
     "translation": "",
-    "message": "Le prénom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
-  },
-  "CdGMiD": {
-    "translation": "",
-    "message": "L'email de l'admin est invalide",
+    "message": "OUI",
     "comments": [],
     "obsolete": false
   },
@@ -77,15 +59,21 @@
     "comments": [],
     "obsolete": false
   },
-  "GAxRw0": {
+  "GF/eyq": {
     "translation": "",
-    "message": "Ville",
+    "message": "Ajouter en masse",
     "comments": [],
     "obsolete": false
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
+    "comments": [],
+    "obsolete": false
+  },
+  "H1+RH6": {
+    "translation": "",
+    "message": "Aucun groupe défini.",
     "comments": [],
     "obsolete": false
   },
@@ -107,21 +95,33 @@
     "comments": [],
     "obsolete": false
   },
-  "JSaiRe": {
+  "JMJBle": {
     "translation": "",
-    "message": "Se connecter",
+    "message": "La double authentification est requise",
     "comments": [],
     "obsolete": false
   },
-  "JoxuHW": {
+  "MCvCnO": {
     "translation": "",
-    "message": "L'adresse est requise",
+    "message": "Prénom",
     "comments": [],
     "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
+    "comments": [],
+    "obsolete": false
+  },
+  "Nu4oKW": {
+    "translation": "",
+    "message": "Description",
+    "comments": [],
+    "obsolete": false
+  },
+  "O3oNi5": {
+    "translation": "",
+    "message": "Email",
     "comments": [],
     "obsolete": false
   },
@@ -137,21 +137,21 @@
     "comments": [],
     "obsolete": false
   },
-  "W3FHUJ": {
-    "translation": "",
-    "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
-  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
     "comments": [],
     "obsolete": false
   },
-  "ZpEiaW": {
+  "YNznY8": {
     "translation": "",
-    "message": "Veuillez ajouter un logo",
+    "message": "Ajouter",
+    "comments": [],
+    "obsolete": false
+  },
+  "dEcezs": {
+    "translation": "",
+    "message": "L'email est requis",
     "comments": [],
     "obsolete": false
   },
@@ -161,21 +161,21 @@
     "comments": [],
     "obsolete": false
   },
+  "fojDKu": {
+    "translation": "",
+    "message": "Le prénom est requis",
+    "comments": [],
+    "obsolete": false
+  },
   "fu2rxk": {
     "translation": "",
     "message": "Enregistrer",
     "comments": [],
     "obsolete": false
   },
-  "funWao": {
+  "hMJAZ/": {
     "translation": "",
-    "message": "Nom admin client",
-    "comments": [],
-    "obsolete": false
-  },
-  "g+hxtQ": {
-    "translation": "",
-    "message": "Créer",
+    "message": "Aucune modification n'a été apportée",
     "comments": [],
     "obsolete": false
   },
@@ -185,15 +185,15 @@
     "comments": [],
     "obsolete": false
   },
-  "iAKACc": {
+  "i0ke3s": {
     "translation": "",
-    "message": "Nom",
+    "message": "Aucun rôle défini.",
     "comments": [],
     "obsolete": false
   },
-  "kSDjJh": {
+  "iAKACc": {
     "translation": "",
-    "message": "Le nom de l'admin est requis",
+    "message": "Nom",
     "comments": [],
     "obsolete": false
   },
@@ -203,27 +203,15 @@
     "comments": [],
     "obsolete": false
   },
-  "rBTdOL": {
-    "translation": "",
-    "message": "L'identifiant est requis",
-    "comments": [],
-    "obsolete": false
-  },
-  "rKvP91": {
-    "translation": "",
-    "message": "Email admin client",
-    "comments": [],
-    "obsolete": false
-  },
-  "sAl4AV": {
-    "translation": "",
-    "message": "Téléchargez une photo",
-    "comments": [],
-    "obsolete": false
-  },
   "tALayW": {
     "translation": "",
     "message": "Annuler",
+    "comments": [],
+    "obsolete": false
+  },
+  "u2iZug": {
+    "translation": "",
+    "message": "Le login est requis",
     "comments": [],
     "obsolete": false
   },
@@ -236,6 +224,18 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "xj9DHS": {
+    "translation": "",
+    "message": "NON",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

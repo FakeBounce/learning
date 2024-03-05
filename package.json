@@ -7,10 +7,26 @@
   "scripts": {
     "dev": "yarn run vite -- --port 30000 --host",
     "test": "react-scripts test",
+    "test:all": "yarn test --bail --watchAll=false --coverage --findRelatedTests",
     "build": "vite build",
     "preview": "vite preview",
     "extract": "lingui extract",
-    "compile": "lingui compile"
+    "compile": "lingui compile --typescript",
+    "lint-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint . --fix",
+      "prettier --write",
+      "yarn test:all",
+      "yarn extract",
+      "yarn compile"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "set CI=true && lint-staged"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -81,6 +97,8 @@
     "babel-plugin-macros": "^3.1.0",
     "csstype": "^3.0.10",
     "eslint": "^8.55.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^2.8.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
