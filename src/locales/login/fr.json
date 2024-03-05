@@ -74,7 +74,8 @@
   "NDUWrS": {
     "translation": "Organization id is required",
     "message": "Organization id is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SDTSUy": {
     "translation": "Organisation ID",
@@ -97,12 +98,14 @@
   "ZsZeV2": {
     "translation": "Email is required",
     "message": "Email is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "chRwq/": {
     "translation": "Password is required",
     "message": "Password is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",

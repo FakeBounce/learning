@@ -74,7 +74,8 @@
   "NDUWrS": {
     "translation": "",
     "message": "Organization id is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SDTSUy": {
     "translation": "",
@@ -97,12 +98,14 @@
   "ZsZeV2": {
     "translation": "",
     "message": "Email is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "chRwq/": {
     "translation": "",
     "message": "Password is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",

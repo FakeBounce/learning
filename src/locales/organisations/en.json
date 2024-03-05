@@ -74,22 +74,26 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -100,12 +104,14 @@
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JSaiRe": {
     "translation": "",
     "message": "Se connecter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JoxuHW": {
     "translation": "",
@@ -116,12 +122,14 @@
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
@@ -168,7 +176,8 @@
   "g+hxtQ": {
     "translation": "",
     "message": "Créer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -179,7 +188,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kSDjJh": {
     "translation": "",
@@ -220,7 +230,8 @@
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "",
