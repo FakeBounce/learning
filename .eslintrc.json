@@ -15,7 +15,7 @@
   },
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "no-unused-vars": 1,
+    "no-unused-vars": [1, { "argsIgnorePattern": "params" }],
     "@typescript-eslint/no-unused-vars": [1],
     "@typescript-eslint/no-explicit-any": "off",
     // No longer necessary to import react in each file

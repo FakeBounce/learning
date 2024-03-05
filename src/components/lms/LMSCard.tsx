@@ -14,8 +14,10 @@ interface LMSCardProps {
 }
 
 const defaultCss = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: '1 1 0',
   maxWidth: 500,
-  width: '100%',
   paddingX: 5,
   paddingY: 4,
   borderColor: 'transparent',
@@ -23,12 +25,11 @@ const defaultCss = {
 };
 
 const pageCardCss = {
+  display: 'flex',
+  flexDirection: 'column',
+  flex: '1 1 0',
   borderColor: 'transparent',
   borderRadius: 4,
-  maxWidth: '100%',
-  width: '100%',
-  maxHeight: '78vh',
-  height: '100%',
   padding: 0
 };
 

@@ -1,5 +1,5 @@
 import { Stack } from '@mui/material';
-import Header, { HEADER_HEIGHT } from '@src/components/layouts/main-layout/Header';
+import Header from '@src/components/layouts/main-layout/Header';
 import { Sidebar } from '@src/components/layouts/sidebar';
 import { useState } from 'react';
 import Box from '@mui/material/Box';
@@ -13,14 +13,7 @@ export default function MainLayout() {
       <Sidebar open={open} setOpen={setOpen} />
       <Stack height="100vh" width="100%">
         <Header />
-        <Box
-          display={'flex'}
-          maxHeight={`${100 - HEADER_HEIGHT}vh`}
-          height="100%"
-          width="100%"
-          mt={3}
-          mb={2}
-        >
+        <Box display={'flex'} flex={'1 1 0'} height="100%" width="100%" mt={3} mb={2}>
           <Outlet />
         </Box>
       </Stack>

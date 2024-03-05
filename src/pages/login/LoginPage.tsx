@@ -16,13 +16,13 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 
 // ----------------------------------------------------------------------
 
-const StyledLoginContainerBox = styled(Box)(() => ({
+const StyledLoginContainerBox = styled(Box)(({ theme }) => ({
   display: 'flex',
   height: '100vh',
   justifyContent: 'center',
   alignItems: 'center',
   margin: 0,
-  padding: '0 1rem'
+  padding: `0 ${theme.spacing(2)}`
 }));
 
 const LoginSchema = Yup.object().shape({
@@ -37,7 +37,7 @@ const defaultValues = {
   organization_id: ''
 };
 
-export default function Login() {
+export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const { loading } = useAppSelector((state) => state.connectedUser.login);
   const isAuthenticated = useAppSelector((state) => state.connectedUser.login.isAuthenticated);

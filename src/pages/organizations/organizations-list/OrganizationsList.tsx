@@ -1,4 +1,4 @@
-import { Box, Popper, TablePagination } from '@mui/material';
+import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getOrganizationsList } from '@redux/reducers/organizationsReducer';
 import { Organization } from '@services/organizations/interfaces';
@@ -13,6 +13,8 @@ import {
 import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
 import OrganizationsListPopperContent from '@src/pages/organizations/organizations-list/OrganizationsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
+import Pagination from '@src/components/table/Pagination';
+import LMSPopover from '@src/components/lms/LMSPopover';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();
@@ -80,8 +82,9 @@ export default function OrganizationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
+    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
+<<<<<<< HEAD:src/pages/organizations/organizations-list/OrganizationsList.tsx
         <OrganizationsListHeader />
         <Box
           sx={{
@@ -123,11 +126,32 @@ export default function OrganizationsList() {
       </LMSCard>
       <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{ zIndex: 9 }}>
         <OrganizationsListPopperContent
+=======
+        <OrganisationsListHeader />
+
+        <FullTable
+          headerRenderer={organisationsTableHeaderRenderer(handleSort, orderBy)}
+          bodyRenderer={organisationsTableRowsRenderer(organisationListData, handleClick)}
+          isLoading={organisationListLoading}
+          rowsNum={rowsPerPage}
+          colsNum={organisationsColumns.length}
+        />
+        <Pagination
+          totalCount={organisationListTotalCount || 0}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </LMSCard>
+      <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
+        <OrganisationsListPopperContent
+>>>>>>> 409eb46 (Fixed theme and layouts. Added logout button for organizations and clean state on change view):src/pages/organisations/organisations-list/OrganisationsList.tsx
           setAnchorEl={setAnchorEl}
           setOrganizationSelected={setOrganizationSelected}
           organizationSelected={organizationSelected}
         />
-      </Popper>
+      </LMSPopover>
     </Box>
   );
 }

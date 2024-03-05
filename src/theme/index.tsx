@@ -1,5 +1,4 @@
 import { TypographyOptions } from '@mui/material/styles/createTypography';
-import { Shadows } from '@mui/material/styles/shadows';
 import { ReactNode, useMemo } from 'react';
 import { CssBaseline } from '@mui/material';
 import {
@@ -26,7 +25,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
           whole: 9999
         }
       },
-      shadows: shadows() as Shadows
+      shadows: shadows()
     }),
     []
   );
