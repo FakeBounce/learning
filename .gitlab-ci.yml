@@ -49,8 +49,9 @@ lint-test-job: # This job also runs in the test stage.
   stage: test # It can run at the same time as unit-test-job (in parallel).
   script:
     - echo "Linting code..." # Install ESLint in this docker container
-    - npm install -g eslint  # Configure ESLint (will read the .eslintrc file)
-    - eslint --init
+    - yarn global add eslint prettier
+    - echo "Linting code..."
+    - eslint --init # Configure ESLint (will read your .eslintrc file)
     - eslint . --fix
     - prettier . --write --check
     - echo "No lint issues found."
