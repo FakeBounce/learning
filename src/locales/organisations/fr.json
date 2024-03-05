@@ -74,26 +74,22 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "Personnalisation",
@@ -104,14 +100,12 @@
   "HdNGur": {
     "translation": "Bloquer",
     "message": "Bloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JSaiRe": {
     "translation": "Se connecter",
     "message": "Se connecter",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JoxuHW": {
     "translation": "L'adresse est requise",
@@ -122,14 +116,12 @@
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -176,8 +168,7 @@
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -188,8 +179,7 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
@@ -230,8 +220,7 @@
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "Testeurs externes",

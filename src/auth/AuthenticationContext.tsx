@@ -114,8 +114,6 @@ function AuthenticationProvider({ children }: { children: ReactNode }) {
         const user = await fetchUser();
         const { userData } = user.data.data;
 
-        console.log('user', user);
-
         dispatch({
           type: 'LOGIN',
           payload: {
