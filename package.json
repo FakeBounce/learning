@@ -26,7 +26,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "set CI=true && lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "eslintConfig": {
