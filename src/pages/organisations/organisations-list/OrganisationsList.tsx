@@ -1,15 +1,15 @@
 import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { getOrganisationsList } from '@redux/reducers/organisationsReducer';
+import { getOrganisationsList } from '@redux/actions/organisationsActions';
 import { Organisation } from '@services/organisations/interfaces';
 import { LMSCard } from '@src/components/lms';
 import FullTable from '@src/components/table/FullTable';
 import {
   OrderBy,
-  organisationsColumns,
+  organisationsListColumns,
   organisationsTableHeaderRenderer,
   organisationsTableRowsRenderer
-} from '@src/pages/organisations/organisations-list/OrganisationsColumns';
+} from '@src/pages/organisations/organisations-list/OrganisationsListColumns';
 import OrganisationsListHeader from '@src/pages/organisations/organisations-list/OrganisationsListHeader';
 import OrganisationsListPopperContent from '@src/pages/organisations/organisations-list/OrganisationsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
@@ -70,12 +70,16 @@ export default function OrganisationsList() {
   // Popper handlers
   const handleClick = (newOrganisation: Organisation) => (event: MouseEvent<HTMLElement>) => {
     if (newOrganisation.id === organisationSelected?.id) {
-      setOrganisationSelected(null);
-      setAnchorEl(null);
+      handlePopperClose();
       return;
     }
     setOrganisationSelected(newOrganisation);
     setAnchorEl(event.currentTarget);
+  };
+
+  const handlePopperClose = () => {
+    setAnchorEl(null);
+    setOrganisationSelected(null);
   };
 
   const open = Boolean(anchorEl);
@@ -91,7 +95,7 @@ export default function OrganisationsList() {
           bodyRenderer={organisationsTableRowsRenderer(organisationListData, handleClick)}
           isLoading={organisationListLoading}
           rowsNum={rowsPerPage}
-          colsNum={organisationsColumns.length}
+          colsNum={organisationsListColumns.length}
         />
         <Pagination
           totalCount={organisationListTotalCount || 0}
@@ -103,7 +107,7 @@ export default function OrganisationsList() {
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
         <OrganisationsListPopperContent
-          setAnchorEl={setAnchorEl}
+          onClose={handlePopperClose}
           setOrganisationSelected={setOrganisationSelected}
           organisationSelected={organisationSelected}
         />

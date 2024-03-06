@@ -1,26 +1,35 @@
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
-import { useAppDispatch } from '@redux/hooks';
-import { toggleOrganisationsBlock } from '@redux/reducers/organisationsReducer';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { toggleOrganisationsBlock } from '@redux/actions/organisationsActions';
 import { changeOrganisationView } from '@redux/reducers/connectedUserReducer';
 import { Organisation } from '@services/organisations/interfaces';
 import { useNavigate } from 'react-router-dom';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
+import { useSnackbar } from 'notistack';
 
 interface OrganisationsListPopperContentProps {
-  setAnchorEl: (value: HTMLElement | null) => void;
+  onClose: () => void;
   setOrganisationSelected: (value: Organisation | null) => void;
   organisationSelected: Organisation | null;
 }
 export default function OrganisationsListPopperContent({
-  setAnchorEl,
+  onClose,
   setOrganisationSelected,
   organisationSelected
 }: OrganisationsListPopperContentProps) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { enqueueSnackbar } = useSnackbar();
+  const { organisationId } = useAppSelector((state) => state.connectedUser);
 
   const handleChangeView = () => {
+    if (organisationId === organisationSelected?.id) {
+      onClose();
+      enqueueSnackbar(t`Vous êtes déjà connecté à cette organisation`, { variant: 'info' });
+      return;
+    }
+
     if (organisationSelected !== null) {
       dispatch(
         changeOrganisationView({
@@ -46,7 +55,7 @@ export default function OrganisationsListPopperContent({
         })
       ).then(() => {
         // Reset the popper
-        setAnchorEl(null);
+        onClose();
         setOrganisationSelected(null);
       });
     }
