@@ -1,10 +1,21 @@
-import { setupSuccessAxiosMock } from '@src/tests/pages/organisations/organisations-update/OrganisationsUpdateMock';
-import { render, screen, fireEvent, waitFor, act } from '@testProvider';
+import OrganisationsUpdateMock, {
+  setupSuccessAxiosMock,
+  setupErrorAxiosMock
+} from '@src/tests/pages/organisations/organisations-update/OrganisationsUpdateMock';
+import { render, screen, fireEvent, waitFor, act, cleanup } from '@testProvider';
 import OrganisationsUpdate from '@src/pages/organisations/organisations-update/OrganisationsUpdate';
-import { updateOrganisations, getSingleOrganisation } from '@redux/reducers/organisationsReducer';
 import { PATH_PARAMETERS } from '@utils/navigation/paths';
 
 describe('OrganisationsUpdate', () => {
+  beforeEach(() => {
+    setupSuccessAxiosMock();
+  });
+  afterEach(() => {
+    // Clear the Axios mock
+    OrganisationsUpdateMock.reset();
+    cleanup();
+  });
+
   it('renders correctly and handles form submission', async () => {
     setupSuccessAxiosMock();
 
@@ -26,52 +37,101 @@ describe('OrganisationsUpdate', () => {
     // Check if the "Modifier une organisation" header is rendered
     expect(screen.getByText(/Modifier une organisation/i)).toBeInTheDocument();
 
-    // @Todo : finish test
-    // await waitFor(() => {
-    //   act(() => {
-    //     // Check if the form is rendered with preloaded data
-    //     expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
-    //     expect(screen.getByLabelText(/Adresse siège social \*/i)).toHaveValue('Test Address');
-    //   });
-    // });
+    await waitFor(() => {
+      // Check if the form is rendered with preloaded data
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
+    });
 
+    await act(() => {
+      fireEvent.input(screen.getByLabelText(/Nom \*/i), {
+        target: { value: 'New test Organisation' }
+      });
+    });
 
-    // // Simulate form submission
-    // fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
-    //
-    // // Wait for form submission to complete
-    // await waitFor(() => {
-    //   // Check if updateOrganisations and getSingleOrganisation were called with the expected arguments
-    //   expect(updateOrganisations).toHaveBeenCalledWith({
-    //     id: 1,
-    //     name: 'Test Organisation',
-    //     address_id: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
-    //     logo: 'https://via.placeholder.com/150'
-    //   });
-    //   expect(getSingleOrganisation).toHaveBeenCalledWith(1);
-    // });
-    //
-    // // Check if the "Annuler" button triggers navigation to the correct path
-    // fireEvent.click(screen.getByText(/Annuler/i));
-    // // expect(dispatchMock).toHaveBeenCalledWith('/path/to/organisations/root');
+    // Simulate form submission
+    await act(async () => {
+      fireEvent.submit(screen.getByRole('submit'));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      // Check if updateOrganisations and getSingleOrganisation were called with the expected arguments
+      expect(OrganisationsUpdateMock.history.put.length).toBe(1);
+      expect(screen.getByText('Organisation enregistrée !')).toBeInTheDocument();
+    });
   });
 
+  it('handles form submission with no changes', async () => {
+    render(<OrganisationsUpdate />, {
+      preloadedState: {
+        organisations: {
+          organisationUpdate: {
+            organisationUpdateLoading: false
+          },
+          currentOrganisation: {
+            currentOrganisationData: null,
+            currentOrganisationLoading: false
+          }
+        }
+      },
+      customHistory: [`/${PATH_PARAMETERS.organisations}/update/1`]
+    });
 
-  //
-  // it('renders correctly with no data and handles form submission with no changes', async () => {
-  //   render(<OrganisationsUpdate />);
-  //
-  //   // Check if the form is rendered with default values
-  //   expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('');
-  //   expect(screen.getByLabelText(/Adresse siège social \*/i)).toHaveValue('');
-  //
-  //   // Simulate form submission
-  //   fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
-  //
-  //   // Wait for form submission to complete
-  //   await waitFor(() => {
-  //     // Check if enqueueSnackbar was called with the expected warning message
-  //     expect(screen.getByText("Aucune modification n'a été effectuée")).toBeInTheDocument();
-  //   });
-  // });
+    await waitFor(() => {
+      // Check if the form is rendered with preloaded data
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
+    });
+
+    // Simulate form submission
+    await act(async () => {
+      fireEvent.submit(screen.getByRole('submit'));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      expect(screen.getByText("Aucune modification n'a été effectuée")).toBeInTheDocument();
+      // Check if updateOrganisations and getSingleOrganisation were called with the expected arguments
+      expect(OrganisationsUpdateMock.history.put.length).toBe(0);
+    });
+  });
+
+  it('handles axios errors', async () => {
+    setupErrorAxiosMock();
+    render(<OrganisationsUpdate />, {
+      preloadedState: {
+        organisations: {
+          organisationUpdate: {
+            organisationUpdateLoading: false
+          },
+          currentOrganisation: {
+            currentOrganisationData: null,
+            currentOrganisationLoading: false
+          }
+        }
+      },
+      customHistory: [`/${PATH_PARAMETERS.organisations}/update/1`]
+    });
+
+    await waitFor(() => {
+      // Check if the form is rendered with preloaded data
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
+    });
+
+    await act(() => {
+      fireEvent.input(screen.getByLabelText(/Nom \*/i), {
+        target: { value: 'New test Organisation' }
+      });
+
+      // Simulate form submission
+      fireEvent.submit(screen.getByRole('submit'));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      // Check if enqueueSnackbar was called with the expected warning message
+      expect(
+        screen.getByText('An error occurred while updating the organisation. Please try again.')
+      ).toBeInTheDocument();
+    });
+  });
 });

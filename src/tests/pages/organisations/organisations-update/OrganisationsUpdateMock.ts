@@ -30,6 +30,7 @@ export const setupSuccessAxiosMock = () => {
         id: 1,
         name: 'Test Organisation',
         address_id: '1',
+        address: 'Some address',
         logo: 'Some logo url',
         use_double_auth: 0,
         client_admin: {
@@ -44,18 +45,12 @@ export const setupSuccessAxiosMock = () => {
 
 export const setupErrorAxiosMock = () => {
   // Mock the updateOrganisations and getSingleOrganisation endpoints
-  OrganisationsUpdateMock.onPut(/\/organizations\/\d+/)
-    .reply(422, {
-      success: false,
-      message: {
-        value: 'An error occurred while updating the organisation. Please try again.'
-      }
-    })
-    .onGet(/\/organizations\/\d+/)
-    .reply(404, {
-      success: false,
-      message: 'Organisation not found'
-    });
+  OrganisationsUpdateMock.onPut(/\/organizations\/\d+/).reply(422, {
+    success: false,
+    message: {
+      value: 'An error occurred while updating the organisation. Please try again.'
+    }
+  });
 };
 
 export default OrganisationsUpdateMock;

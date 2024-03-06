@@ -81,6 +81,7 @@ export default function OrganisationsUpdate() {
     if (image !== organisation.logo) {
       newOrganisationValues = { ...newOrganisationValues, logo: image };
     }
+
     if (Object.keys(newOrganisationValues).length > 0) {
       // Handle update with image
       dispatch(updateOrganisations({ id: organisationId, ...newOrganisationValues }));
