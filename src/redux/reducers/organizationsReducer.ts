@@ -12,8 +12,7 @@ import {
 } from '@services/organizations/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as organizationsServices from '@services/organizations/organizationsAPI';
-import { AnyAction, createAsyncThunk, createSelector, createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
+import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 interface organizationState {
   currentOrganization: {
@@ -231,10 +230,5 @@ export const organizationSlice = createSlice({
       });
   }
 });
-
-export const selectorganizationState = createSelector(
-  (state: RootState) => state.organizations,
-  (s) => s
-);
 
 export default organizationSlice.reducer;

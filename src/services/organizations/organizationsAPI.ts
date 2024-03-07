@@ -1,6 +1,6 @@
 import {
   CreateOrganizationsRequest,
-  CreateorganizationsResponse,
+  CreateOrganizationsResponse,
   GetOrganizationsRequest,
   GetOrganizationsResponse,
   GetSingleOrganizationResponse,
@@ -14,7 +14,7 @@ import { AxiosResponse } from 'axios';
 
 export const createOrganizations = async (
   args: CreateOrganizationsRequest
-): Promise<AxiosResponse<CreateorganizationsResponse>> =>
+): Promise<AxiosResponse<CreateOrganizationsResponse>> =>
   axios.post(`/organizations`, args, {
     headers: {
       'Content-Type': 'multipart/form-data'
@@ -25,19 +25,11 @@ export const updateOrganizations = async (
   args: updateOrganizationsRequest
 ): Promise<AxiosResponse<updateOrganizationsResponse>> => {
   const { id, name, address_id, logo } = args;
-  return axios.put(
-    `/organizations/${id}`,
-    {
-      name,
-      address_id,
-      logo
-    },
-    {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }
-  );
+  return axios.put(`/organizations/${id}`, {
+    name,
+    address_id,
+    logo
+  });
 };
 
 export const updateOrganizationsBlock = async (

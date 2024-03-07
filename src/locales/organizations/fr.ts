@@ -1,0 +1,1 @@
+/*eslint-disable*/export const messages=JSON.parse("{\"fu2rxk\":\"Enregistrer\",\"tALayW\":\"Annuler\"}");
