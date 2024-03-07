@@ -4,10 +4,10 @@ import {
   GetOrganizationsRequest,
   GetOrganizationsResponse,
   GetSingleOrganizationResponse,
-  updateOrganizationsBlockRequest,
-  updateOrganizationsBlockResponse,
-  updateOrganizationsRequest,
-  updateOrganizationsResponse
+  UpdateOrganizationsBlockRequest,
+  UpdateOrganizationsBlockResponse,
+  UpdateOrganizationsRequest,
+  UpdateOrganizationsResponse
 } from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
@@ -22,8 +22,8 @@ export const createOrganizations = async (
   });
 
 export const updateOrganizations = async (
-  args: updateOrganizationsRequest
-): Promise<AxiosResponse<updateOrganizationsResponse>> => {
+  args: UpdateOrganizationsRequest
+): Promise<AxiosResponse<UpdateOrganizationsResponse>> => {
   const { id, name, address_id, logo } = args;
   return axios.put(`/organizations/${id}`, {
     name,
@@ -33,8 +33,8 @@ export const updateOrganizations = async (
 };
 
 export const updateOrganizationsBlock = async (
-  args: updateOrganizationsBlockRequest
-): Promise<AxiosResponse<updateOrganizationsBlockResponse>> => {
+  args: UpdateOrganizationsBlockRequest
+): Promise<AxiosResponse<UpdateOrganizationsBlockResponse>> => {
   const { setActive, organizationId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 

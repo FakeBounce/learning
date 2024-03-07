@@ -5,10 +5,10 @@ import {
   GetOrganizationsRequest,
   GetOrganizationsResponse,
   Organization,
-  updateOrganizationsBlockRequest,
-  updateOrganizationsBlockResponse,
-  updateOrganizationsRequest,
-  updateOrganizationsResponse
+  UpdateOrganizationsBlockRequest,
+  UpdateOrganizationsBlockResponse,
+  UpdateOrganizationsRequest,
+  UpdateOrganizationsResponse
 } from '@services/organizations/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as organizationsServices from '@services/organizations/organizationsAPI';
@@ -78,7 +78,7 @@ export const getSingleOrganization = createAsyncThunk(
 
 export const updateOrganizations = createAsyncThunk(
   'organizations/update',
-  async (arg: updateOrganizationsRequest, { rejectWithValue }) => {
+  async (arg: UpdateOrganizationsRequest, { rejectWithValue }) => {
     try {
       const response = await organizationsServices.updateOrganizations(arg);
       return response.data;
@@ -104,7 +104,7 @@ export const getOrganizationsList = createAsyncThunk(
 
 export const toggleOrganizationsBlock = createAsyncThunk(
   'organizations/toggleBlock',
-  async (arg: updateOrganizationsBlockRequest, { rejectWithValue }) => {
+  async (arg: UpdateOrganizationsBlockRequest, { rejectWithValue }) => {
     try {
       const response = await organizationsServices.updateOrganizationsBlock(arg);
       return response.data;
@@ -129,7 +129,7 @@ export const organizationSlice = createSlice({
       })
       .addCase(
         getSingleOrganization.fulfilled,
-        (state, action: { payload: updateOrganizationsResponse }) => {
+        (state, action: { payload: UpdateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.currentOrganization.currentOrganizationLoading = false;
           state.currentOrganization.currentOrganizationData = action.payload.data;
@@ -168,7 +168,7 @@ export const organizationSlice = createSlice({
       .addCase(toggleOrganizationsBlock.pending, (_) => {})
       .addCase(
         toggleOrganizationsBlock.fulfilled,
-        (state, action: { payload: updateOrganizationsBlockResponse }) => {
+        (state, action: { payload: UpdateOrganizationsBlockResponse }) => {
           // Find the organization in the list and update it
           const organizationIndex = state.organizationList.organizationListData.findIndex(
             (org) => org.id === action.payload.data.id
@@ -192,7 +192,7 @@ export const organizationSlice = createSlice({
       })
       .addCase(
         updateOrganizations.fulfilled,
-        (state, action: { payload: updateOrganizationsResponse }) => {
+        (state, action: { payload: UpdateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.organizationUpdate.organizationUpdateLoading = false;
           state.currentOrganization.currentOrganizationData = action.payload.data;

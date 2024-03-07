@@ -45,12 +45,12 @@ export interface GetOrganizationsResponse {
  * API Request and Response
  * To toggle organization block
  */
-export interface updateOrganizationsBlockRequest {
+export interface UpdateOrganizationsBlockRequest {
   setActive: boolean;
   organizationId: number;
 }
 
-export interface updateOrganizationsBlockResponse {
+export interface UpdateOrganizationsBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Organization;
@@ -83,14 +83,14 @@ export interface CreateOrganizationsResponse {
  * API Request and Response
  * To create an organization
  */
-export interface updateOrganizationsRequest {
+export interface UpdateOrganizationsRequest {
   id: number;
   name?: string;
   address_id?: string;
   logo?: File | string;
 }
 
-export interface updateOrganizationsResponse {
+export interface UpdateOrganizationsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Organization;
