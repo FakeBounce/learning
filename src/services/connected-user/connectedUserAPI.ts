@@ -1,11 +1,33 @@
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
-import { UpdateOrganisationViewRequest, UpdateOrganisationViewResponse } from './interfaces';
+import {
+  GetConnectedUserResponse,
+  LoginRequest,
+  LoginResponse,
+  UpdateOrganizationViewRequest,
+  UpdateOrganizationViewResponse
+} from './interfaces';
 
-export const updateOrganisationView = async (
-  args: UpdateOrganisationViewRequest
-): Promise<AxiosResponse<UpdateOrganisationViewResponse>> => {
-  const { organisationId } = args;
+export const updateOrganizationView = async (
+  args: UpdateOrganizationViewRequest
+): Promise<AxiosResponse<UpdateOrganizationViewResponse>> => {
+  const { organizationId } = args;
 
-  return axios.post(`/organizations/change-view/${organisationId}`);
+  return axios.post(`/organizations/change-view/${organizationId}`);
+};
+
+export const getUser = async (): Promise<AxiosResponse<GetConnectedUserResponse>> => {
+  return axios.get('/user');
+};
+
+export const login = async (args: LoginRequest): Promise<AxiosResponse<LoginResponse>> => {
+  return axios.post('/users/login', args);
+};
+
+export const refresh = async (): Promise<AxiosResponse<LoginResponse>> => {
+  return axios.post('/users/refresh');
+};
+
+export const logout = async (): Promise<AxiosResponse<LoginResponse>> => {
+  return axios.delete('/users/logout');
 };

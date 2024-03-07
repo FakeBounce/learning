@@ -18,7 +18,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
           size="medium"
           label={
             <>
-              <Trans>Organisation ID</Trans>
+              <Trans>Organization ID</Trans>
               <span className="MuiFormLabel-asterisk"> *</span>
             </>
           }

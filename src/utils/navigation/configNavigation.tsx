@@ -1,7 +1,7 @@
 // ----------------------------------------------------------------------
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
-import { PATH_DASHBOARD, PATH_ORGANISATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
+import { PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
 
 // GENERAL
 // ----------------------------------------------------------------------
@@ -23,7 +23,7 @@ export const generalNavigationConfig = [
 // ----------------------------------------------------------------------
 export const parametersNavigationConfig = [
   { title: <Trans>Gestion des rôles</Trans>, path: PATH_PARAMETERS.roles },
-  { title: <Trans>Organisations</Trans>, path: PATH_PARAMETERS.organisations },
+  { title: <Trans>Organizations</Trans>, path: PATH_PARAMETERS.organizations },
   { title: <Trans>Groupes</Trans>, path: PATH_PARAMETERS.groups },
   { title: <Trans>Utilisateurs</Trans>, path: PATH_PARAMETERS.users },
   { title: <Trans>Étudiants</Trans>, path: PATH_PARAMETERS.students },
@@ -33,12 +33,12 @@ export const parametersNavigationConfig = [
 
 const organizationsNavigationConfig = [
   {
-    title: <Trans>Créer une organisation</Trans>,
-    path: PATH_ORGANISATIONS.add
+    title: <Trans>Créer une organization</Trans>,
+    path: PATH_ORGANIZATIONS.add
   },
   {
-    title: <Trans>Modifier une organisation</Trans>,
-    path: PATH_ORGANISATIONS.update
+    title: <Trans>Modifier une organization</Trans>,
+    path: PATH_ORGANIZATIONS.update
   }
 ];
 

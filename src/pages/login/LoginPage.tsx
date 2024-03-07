@@ -2,17 +2,17 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { t } from '@lingui/macro';
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
-import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
 import { LMSCard } from '@src/components/lms';
 import LoginFooter from '@src/pages/login/LoginFooter';
 import LoginHeader from '@src/pages/login/LoginHeader';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
-import { useSnackbar } from 'notistack';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from 'src/pages/login/LoginForm';
 import * as Yup from 'yup';
+import { login } from '@redux/reducers/connectedUserReducer';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 
 // ----------------------------------------------------------------------
 
@@ -39,35 +39,35 @@ const defaultValues = {
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
-
-  const { login } = useAuthenticationContext();
-  const { enqueueSnackbar } = useSnackbar();
+  const { loading } = useAppSelector((state) => state.connectedUser.login);
+  const isAuthenticated = useAppSelector((state) => state.connectedUser.login.isAuthenticated);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(PATH_DASHBOARD.root);
+    }
+  }, [isAuthenticated]);
+
+  const dispatch = useAppDispatch();
   const methods = useForm({
     resolver: yupResolver(LoginSchema),
     defaultValues
   });
 
-  const {
-    handleSubmit,
-    formState: { isLoading }
-  } = methods;
+  const { handleSubmit } = methods;
 
   const onSubmit = async (data: any) => {
-    try {
-      await login(data.login, data.password, data.organization_id);
-      navigate(PATH_DASHBOARD.root);
-    } catch (error) {
-      const errorMessage = error as { response: { data: { message: { value: string } } } };
-      enqueueSnackbar(errorMessage.response.data.message.value, { variant: 'error' });
-    }
+    dispatch(
+      login({ login: data.login, password: data.password, organization_uuid: data.organization_id })
+    );
   };
 
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <StyledLoginContainerBox>
-          <LMSCard header={<LoginHeader />} footer={<LoginFooter isLoading={!isLoading} />}>
+          <LMSCard header={<LoginHeader />} footer={<LoginFooter isLoading={loading} />}>
             <LoginForm setShowPassword={setShowPassword} showPassword={showPassword} />
           </LMSCard>
         </StyledLoginContainerBox>
