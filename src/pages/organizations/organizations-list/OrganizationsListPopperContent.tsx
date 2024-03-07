@@ -1,15 +1,9 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
-<<<<<<< HEAD:src/pages/organizations/organizations-list/OrganizationsListPopperContent.tsx
 import { toggleOrganizationsBlock } from '@redux/reducers/organizationsReducer';
 import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
 import { Organization } from '@services/organizations/interfaces';
-=======
-import { toggleOrganisationsBlock } from '@redux/reducers/organisationsReducer';
-import { changeOrganisationView } from '@redux/reducers/connectedUserReducer';
-import { Organisation } from '@services/organisations/interfaces';
->>>>>>> 409eb46 (Fixed theme and layouts. Added logout button for organizations and clean state on change view):src/pages/organisations/organisations-list/OrganisationsListPopperContent.tsx
 import { useNavigate } from 'react-router-dom';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
 

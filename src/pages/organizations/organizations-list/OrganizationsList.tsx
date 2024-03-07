@@ -84,60 +84,17 @@ export default function OrganizationsList() {
   return (
     <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-<<<<<<< HEAD:src/pages/organizations/organizations-list/OrganizationsList.tsx
         <OrganizationsListHeader />
-        <Box
-          sx={{
-            maxWidth: '100%',
-            maxHeight: '68vh',
-            padding: 0,
-            position: 'relative'
-          }}
-        >
-          <FullTable
-            maxHeigth={'62vh'}
-            headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
-            bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
-            isLoading={organizationListLoading}
-            rowsNum={rowsPerPage}
-            colsNum={organizationsColumns.length}
-          />
-        </Box>
-        <Box
-          sx={{
-            minHeight: 46,
-            position: 'absolute',
-            bottom: 0,
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'flex-end'
-          }}
-        >
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={organizationListTotalCount || 0}
-            rowsPerPage={rowsPerPage}
-            page={currentPage}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Box>
-      </LMSCard>
-      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{ zIndex: 9 }}>
-        <OrganizationsListPopperContent
-=======
-        <OrganisationsListHeader />
 
         <FullTable
-          headerRenderer={organisationsTableHeaderRenderer(handleSort, orderBy)}
-          bodyRenderer={organisationsTableRowsRenderer(organisationListData, handleClick)}
-          isLoading={organisationListLoading}
+          headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
+          bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
+          isLoading={organizationListLoading}
           rowsNum={rowsPerPage}
-          colsNum={organisationsColumns.length}
+          colsNum={organizationsColumns.length}
         />
         <Pagination
-          totalCount={organisationListTotalCount || 0}
+          totalCount={organizationListTotalCount || 0}
           rowsPerPage={rowsPerPage}
           currentPage={currentPage}
           onPageChange={handleChangePage}
@@ -145,8 +102,7 @@ export default function OrganizationsList() {
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
-        <OrganisationsListPopperContent
->>>>>>> 409eb46 (Fixed theme and layouts. Added logout button for organizations and clean state on change view):src/pages/organisations/organisations-list/OrganisationsList.tsx
+        <OrganizationsListPopperContent
           setAnchorEl={setAnchorEl}
           setOrganizationSelected={setOrganizationSelected}
           organizationSelected={organizationSelected}

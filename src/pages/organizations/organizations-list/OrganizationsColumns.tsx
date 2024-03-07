@@ -1,12 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
-<<<<<<< HEAD:src/pages/organizations/organizations-list/OrganizationsColumns.tsx
-import { useTheme } from '@mui/material/styles';
-import { Organization } from '@services/organizations/interfaces';
-=======
 import { Theme } from '@mui/material/styles';
-import { Organisation } from '@services/organisations/interfaces';
->>>>>>> 409eb46 (Fixed theme and layouts. Added logout button for organizations and clean state on change view):src/pages/organisations/organisations-list/OrganisationsColumns.tsx
+import { Organization } from '@services/organizations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
 
@@ -78,12 +73,7 @@ export const organizationsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
   orderBy: OrderBy | null
 ) => {
-<<<<<<< HEAD:src/pages/organizations/organizations-list/OrganizationsColumns.tsx
-  const theme = useTheme();
   return organizationsColumns.map((column) => (
-=======
-  return organisationsColumns.map((column) => (
->>>>>>> 409eb46 (Fixed theme and layouts. Added logout button for organizations and clean state on change view):src/pages/organisations/organisations-list/OrganisationsColumns.tsx
     <TableCell
       key={column.id}
       align={column.align}
