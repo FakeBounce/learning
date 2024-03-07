@@ -2,26 +2,26 @@ import { Trans } from '@lingui/macro';
 import { Box } from '@mui/material';
 import { useAppSelector } from '@redux/hooks';
 import ActionButton from '@src/components/lms/ActionButton';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 
-export default function OrganisationsUpdateFooter() {
+export default function OrganizationsCreateFooter() {
   const navigate = useNavigate();
 
-  const { organisationUpdateLoading } = useAppSelector(
-    (state) => state.organisations.organisationUpdate.organisationUpdateLoading
+  const { organizationCreateLoading } = useAppSelector(
+    (state) => state.organizations.organizationCreate
   );
 
   return (
     <Box display="flex">
       <ActionButton
         actionType="cancel"
-        loading={organisationUpdateLoading}
-        onClick={() => navigate(PATH_ORGANISATIONS.root)}
+        loading={organizationCreateLoading}
+        onClick={() => navigate(PATH_ORGANIZATIONS.root)}
       >
         <Trans>Annuler</Trans>
       </ActionButton>
-      <ActionButton type="submit" role="submit" sx={{ ml: 2 }} loading={organisationUpdateLoading}>
+      <ActionButton type="submit" sx={{ ml: 2 }} loading={organizationCreateLoading}>
         <Trans>Enregistrer</Trans>
       </ActionButton>
     </Box>

@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testProvider';
-import OrganisationsCreateFooter from '@src/pages/organisations/organisations-create/OrganisationsCreateFooter';
+import OrganizationsCreateFooter from '@src/pages/organizations/organizations-create/OrganizationsCreateFooter';
 import { useAppSelector } from '@redux/hooks';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { act } from 'react-dom/test-utils';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,19 +15,19 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
-describe('OrganisationsCreateFooter', () => {
-  it('renders OrganisationsCreateFooter correctly', () => {
+describe('OrganizationsCreateFooter', () => {
+  it('renders OrganizationsCreateFooter correctly', () => {
     // Mock useAppSelector to provide the desired state
     (useAppSelector as jest.Mock).mockReturnValue({
-      organisationCreateLoading: false
+      organizationCreateLoading: false
     });
 
     // Mock useNavigate
     const navigateMock = jest.fn();
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    // Render the OrganisationsCreateFooter component
-    render(<OrganisationsCreateFooter />);
+    // Render the OrganizationsCreateFooter component
+    render(<OrganizationsCreateFooter />);
 
     // Ensure that the "Annuler" button is present
     const cancelButton = screen.getByText(/Annuler/i);
@@ -41,15 +41,15 @@ describe('OrganisationsCreateFooter', () => {
   it('handles button clicks correctly', async () => {
     // Mock useAppSelector to provide the desired state
     (useAppSelector as jest.Mock).mockReturnValue({
-      organisationCreateLoading: false
+      organizationCreateLoading: false
     });
 
     // Mock useNavigate
     const navigateMock = jest.fn();
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    // Render the OrganisationsCreateFooter component
-    render(<OrganisationsCreateFooter />);
+    // Render the OrganizationsCreateFooter component
+    render(<OrganizationsCreateFooter />);
 
     // Simulate click on the "Annuler" button
     act(() => {
@@ -57,7 +57,7 @@ describe('OrganisationsCreateFooter', () => {
     });
 
     // Ensure that useNavigate has been called with the correct path
-    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANISATIONS.root);
+    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANIZATIONS.root);
 
     // Simulate click on the "Enregistrer" button
     act(() => {

@@ -1,29 +1,29 @@
 import { Box, Popper, TablePagination } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { getOrganisationsList } from '@redux/reducers/organisationsReducer';
-import { Organisation } from '@services/organisations/interfaces';
+import { getOrganizationsList } from '@redux/reducers/organizationsReducer';
+import { Organization } from '@services/organizations/interfaces';
 import { LMSCard } from '@src/components/lms';
 import FullTable from '@src/components/table/FullTable';
 import {
   OrderBy,
-  organisationsColumns,
-  organisationsTableHeaderRenderer,
-  organisationsTableRowsRenderer
-} from '@src/pages/organisations/organisations-list/OrganisationsColumns';
-import OrganisationsListHeader from '@src/pages/organisations/organisations-list/OrganisationsListHeader';
-import OrganisationsListPopperContent from '@src/pages/organisations/organisations-list/OrganisationsListPopperContent';
+  organizationsColumns,
+  organizationsTableHeaderRenderer,
+  organizationsTableRowsRenderer
+} from '@src/pages/organizations/organizations-list/OrganizationsColumns';
+import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
+import OrganizationsListPopperContent from '@src/pages/organizations/organizations-list/OrganizationsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 
-export default function OrganisationsList() {
+export default function OrganizationsList() {
   const dispatch = useAppDispatch();
 
-  const { organisationListData, organisationListLoading, organisationListTotalCount } =
-    useAppSelector((state) => state.organisations.organisationList);
+  const { organizationListData, organizationListLoading, organizationListTotalCount } =
+    useAppSelector((state) => state.organizations.organizationList);
 
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
-  const [organisationSelected, setOrganisationSelected] = useState<Organisation | null>(null);
+  const [organizationSelected, setOrganizationSelected] = useState<Organization | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleChangePage = (_: unknown, newPage: number) => {
@@ -36,20 +36,20 @@ export default function OrganisationsList() {
   };
 
   useEffect(() => {
-    const defaultOrganisationListRequestConfig = {
+    const defaultOrganizationListRequestConfig = {
       currentPage: currentPage,
       rowsPerPage: rowsPerPage
     };
 
-    const organisationRequestConfig =
+    const organizationRequestConfig =
       orderBy === null
-        ? { ...defaultOrganisationListRequestConfig }
+        ? { ...defaultOrganizationListRequestConfig }
         : {
-            ...defaultOrganisationListRequestConfig,
+            ...defaultOrganizationListRequestConfig,
             sort: { field: orderBy.id, direction: orderBy.direction }
           };
 
-    dispatch(getOrganisationsList(organisationRequestConfig));
+    dispatch(getOrganizationsList(organizationRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);
 
   const handleSort = (id: 'name' | 'city' | 'is_active') => {
@@ -66,13 +66,13 @@ export default function OrganisationsList() {
   };
 
   // Popper handlers
-  const handleClick = (newOrganisation: Organisation) => (event: MouseEvent<HTMLElement>) => {
-    if (newOrganisation.id === organisationSelected?.id) {
-      setOrganisationSelected(null);
+  const handleClick = (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => {
+    if (newOrganization.id === organizationSelected?.id) {
+      setOrganizationSelected(null);
       setAnchorEl(null);
       return;
     }
-    setOrganisationSelected(newOrganisation);
+    setOrganizationSelected(newOrganization);
     setAnchorEl(event.currentTarget);
   };
 
@@ -82,7 +82,7 @@ export default function OrganisationsList() {
   return (
     <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <OrganisationsListHeader />
+        <OrganizationsListHeader />
         <Box
           sx={{
             maxWidth: '100%',
@@ -93,11 +93,11 @@ export default function OrganisationsList() {
         >
           <FullTable
             maxHeigth={'62vh'}
-            headerRenderer={organisationsTableHeaderRenderer(handleSort, orderBy)}
-            bodyRenderer={organisationsTableRowsRenderer(organisationListData, handleClick)}
-            isLoading={organisationListLoading}
+            headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
+            bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
+            isLoading={organizationListLoading}
             rowsNum={rowsPerPage}
-            colsNum={organisationsColumns.length}
+            colsNum={organizationsColumns.length}
           />
         </Box>
         <Box
@@ -113,7 +113,7 @@ export default function OrganisationsList() {
           <TablePagination
             rowsPerPageOptions={[10, 25, 100]}
             component="div"
-            count={organisationListTotalCount || 0}
+            count={organizationListTotalCount || 0}
             rowsPerPage={rowsPerPage}
             page={currentPage}
             onPageChange={handleChangePage}
@@ -122,10 +122,10 @@ export default function OrganisationsList() {
         </Box>
       </LMSCard>
       <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{ zIndex: 9 }}>
-        <OrganisationsListPopperContent
+        <OrganizationsListPopperContent
           setAnchorEl={setAnchorEl}
-          setOrganisationSelected={setOrganisationSelected}
-          organisationSelected={organisationSelected}
+          setOrganizationSelected={setOrganizationSelected}
+          organizationSelected={organizationSelected}
         />
       </Popper>
     </Box>

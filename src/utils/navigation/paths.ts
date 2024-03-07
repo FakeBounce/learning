@@ -22,7 +22,7 @@ export const PATH_DASHBOARD = {
 export const PATH_PARAMETERS = {
   root: ROOTS_DASHBOARD,
   roles: path(ROOTS_DASHBOARD, 'roles'),
-  organisations: path(ROOTS_DASHBOARD, 'organisations'),
+  organizations: path(ROOTS_DASHBOARD, 'organizations'),
   groups: path(ROOTS_DASHBOARD, 'groups'),
   users: path(ROOTS_DASHBOARD, 'users'),
   students: path(ROOTS_DASHBOARD, 'students'),
@@ -30,11 +30,11 @@ export const PATH_PARAMETERS = {
   customize: path(ROOTS_DASHBOARD, 'customize')
 };
 
-const ROOT_ORGANISATIONS = PATH_PARAMETERS.organisations;
-export const PATH_ORGANISATIONS = {
-  root: ROOT_ORGANISATIONS,
-  add: path(ROOT_ORGANISATIONS, '/creation'),
-  update: path(ROOT_ORGANISATIONS, '/update/:id')
+const ROOT_ORGANIZATIONS = PATH_PARAMETERS.organizations;
+export const PATH_ORGANIZATIONS = {
+  root: ROOT_ORGANIZATIONS,
+  add: path(ROOT_ORGANIZATIONS, '/creation'),
+  update: path(ROOT_ORGANIZATIONS, '/update/:id')
 };
 
 //Users

@@ -8,17 +8,17 @@ export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/L
 // MAIN
 export const Page404 = LoadableComponent(lazy(() => import('../pages/Page404')));
 
-// Organisations
+// Organizations
 
-export const Organisations = LoadableComponent(
-  lazy(() => import('@src/pages/organisations/organisations-list/OrganisationsList'))
+export const Organizations = LoadableComponent(
+  lazy(() => import('@src/pages/organizations/organizations-list/OrganizationsList'))
 );
-export const OrganisationsCreate = LoadableComponent(
-  lazy(() => import('@src/pages/organisations/organisations-create/OrganisationsCreate'))
+export const OrganizationsCreate = LoadableComponent(
+  lazy(() => import('@src/pages/organizations/organizations-create/OrganizationsCreate'))
 );
 
-export const OrganisationsUpdate = LoadableComponent(
-  lazy(() => import('@src/pages/organisations/organisations-update/OrganisationsUpdate'))
+export const OrganizationsUpdate = LoadableComponent(
+  lazy(() => import('@src/pages/organizations/organizations-update/OrganizationsUpdate'))
 );
 
 //Users

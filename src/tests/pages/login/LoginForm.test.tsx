@@ -16,8 +16,8 @@ describe('LoginForm', () => {
       </FormProvider>
     );
 
-    // Ensure that the "Organisation ID" label is present
-    const orgIdLabel = screen.getAllByText(/Organisation ID/i);
+    // Ensure that the "Organization ID" label is present
+    const orgIdLabel = screen.getAllByText(/Organization ID/i);
     expect(orgIdLabel.length).toBeGreaterThan(0);
 
     // Ensure that the "Login" label is present

@@ -1,18 +1,18 @@
 import { render, screen, fireEvent, act, renderHook, waitFor } from '@testProvider';
-import OrganisationsCreateForm from '@src/pages/organisations/organisations-create/OrganisationsCreateForm';
+import OrganizationsCreateForm from '@src/pages/organizations/organizations-create/OrganizationsCreateForm';
 import { FormProvider, useForm } from 'react-hook-form';
 
-describe('OrganisationsCreateForm', () => {
-  it('renders OrganisationsCreateForm correctly', () => {
+describe('OrganizationsCreateForm', () => {
+  it('renders OrganizationsCreateForm correctly', () => {
     // Mock setImage function
     const setImageMock = jest.fn();
 
     const methods = renderHook(() => useForm()).result.current;
-    // Render the OrganisationsCreateForm component
+    // Render the OrganizationsCreateForm component
     render(
       <FormProvider {...methods}>
         <form>
-          <OrganisationsCreateForm setImage={setImageMock} />
+          <OrganizationsCreateForm setImage={setImageMock} />
         </form>
       </FormProvider>
     );
@@ -43,11 +43,11 @@ describe('OrganisationsCreateForm', () => {
     const setImageMock = jest.fn();
 
     const methods = renderHook(() => useForm()).result.current;
-    // Render the OrganisationsCreateForm component
+    // Render the OrganizationsCreateForm component
     render(
       <FormProvider {...methods}>
         <form>
-          <OrganisationsCreateForm setImage={setImageMock} />
+          <OrganizationsCreateForm setImage={setImageMock} />
         </form>
       </FormProvider>
     );

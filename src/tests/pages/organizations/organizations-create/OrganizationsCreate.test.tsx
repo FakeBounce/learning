@@ -1,11 +1,11 @@
-import { createOrganisations } from '@services/organisations/organisationsAPI';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
-import OrganisationsCreateMock, {
+import { createOrganizations } from '@services/organizations/organizationsAPI';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
+import OrganizationsCreateMock, {
   setupErrorAxiosMock,
   setupSuccessAxiosMock
-} from './OrganisationsCreateMock';
-import { render, screen, fireEvent, act, waitFor } from '@testProvider';
-import OrganisationsCreate from '@src/pages/organisations/organisations-create/OrganisationsCreate';
+} from './OrganizationsCreateMock';
+import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
+import OrganizationsCreate from '@src/pages/organizations/organizations-create/OrganizationsCreate';
 import { useNavigate } from 'react-router-dom';
 
 // Mock useNavigate
@@ -14,10 +14,11 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
-describe('OrganisationsCreate', () => {
+describe('OrganizationsCreate', () => {
   afterEach(() => {
     // Clear the Axios mock
-    OrganisationsCreateMock.reset();
+    OrganizationsCreateMock.reset();
+    cleanup();
   });
 
   it('handles successful form submission', async () => {
@@ -26,11 +27,11 @@ describe('OrganisationsCreate', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    // Render the OrganisationsCreate component
-    render(<OrganisationsCreate />);
+    // Render the OrganizationsCreate component
+    render(<OrganizationsCreate />);
 
     // Update the form values
-    fireEvent.input(screen.getByLabelText(/Nom \*/i), { target: { value: 'Test Organisation' } });
+    fireEvent.input(screen.getByLabelText(/Nom \*/i), { target: { value: 'Test Organization' } });
     fireEvent.input(screen.getByLabelText(/Adresse siège social \*/i), {
       target: { value: 'Test Address' }
     });
@@ -56,10 +57,10 @@ describe('OrganisationsCreate', () => {
     });
 
     // @todo find a way to upload a file correctly
-    await createOrganisations({
+    await createOrganizations({
       // Expected request payload
       logo: 'something',
-      name: 'Test Organisation',
+      name: 'Test Organization',
       address_id: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
       use_double_auth: 0,
       client_admin: {
@@ -75,10 +76,10 @@ describe('OrganisationsCreate', () => {
     //   fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
     // });
 
-    // Wait for the createOrganisations function to be called
+    // Wait for the createOrganizations function to be called
     await waitFor(() => {
       // Get the first request made by the Axios mock
-      const request = OrganisationsCreateMock.history.post[0];
+      const request = OrganizationsCreateMock.history.post[0];
 
       // Check if the request has the expected properties
       expect(request.url).toBe('/organizations');
@@ -90,12 +91,12 @@ describe('OrganisationsCreate', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    // Render the OrganisationsCreate component
-    render(<OrganisationsCreate />, {
+    // Render the OrganizationsCreate component
+    render(<OrganizationsCreate />, {
       preloadedState: {
-        organisations: {
-          currentOrganisation: {
-            currentOrganisationData: {
+        organizations: {
+          currentOrganization: {
+            currentOrganizationData: {
               id: 1,
               logo: 'someLogo',
               name: 'some name',
@@ -104,34 +105,34 @@ describe('OrganisationsCreate', () => {
               city: 'some city',
               use_double_auth: false
             },
-            currentOrganisationLoading: false
+            currentOrganizationLoading: false
           },
-          organisationCreate: {
-            organisationCreateLoading: false
+          organizationCreate: {
+            organizationCreateLoading: false
           }
         }
       }
     });
 
     await waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANISATIONS.root);
+      expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANIZATIONS.root);
     });
   });
 
   it('handles form submission error', async () => {
     setupErrorAxiosMock();
-    // Render the OrganisationsCreate component
-    render(<OrganisationsCreate />);
+    // Render the OrganizationsCreate component
+    render(<OrganizationsCreate />);
 
     // Submit the form to trigger the error scenario
     await act(async () => {
       fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
     });
 
-    expect(OrganisationsCreateMock.history.post.length).toBe(0);
+    expect(OrganizationsCreateMock.history.post.length).toBe(0);
 
     // Update the form values
-    fireEvent.input(screen.getByLabelText(/Nom \*/i), { target: { value: 'Test Organisation' } });
+    fireEvent.input(screen.getByLabelText(/Nom \*/i), { target: { value: 'Test Organization' } });
     fireEvent.input(screen.getByLabelText(/Adresse siège social \*/i), {
       target: { value: 'Test Address' }
     });

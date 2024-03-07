@@ -2,18 +2,18 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { createOrganisations } from '@redux/reducers/organisationsReducer';
+import { createOrganizations } from '@redux/reducers/organizationsReducer';
 import { LMSCard } from '@src/components/lms';
-import OrganisationsCreateFooter from '@src/pages/organisations/organisations-create/OrganisationsCreateFooter';
-import OrganisationsCreateForm from '@src/pages/organisations/organisations-create/OrganisationsCreateForm';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
+import OrganizationsCreateFooter from '@src/pages/organizations/organizations-create/OrganizationsCreateFooter';
+import OrganizationsCreateForm from '@src/pages/organizations/organizations-create/OrganizationsCreateForm';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { enqueueSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
-const CreateOrganisationSchema = Yup.object().shape({
+const createOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
   login: Yup.string().required(t`L'identifiant est requis`),
   address: Yup.string().required(t`L'adresse est requise`),
@@ -33,7 +33,7 @@ const defaultValues = {
   adminEmail: ''
 };
 
-interface CreateOrganisationForm {
+interface CreateOrganizationForm {
   name: string;
   login: string;
   address: string;
@@ -42,36 +42,36 @@ interface CreateOrganisationForm {
   adminEmail: string;
 }
 
-export default function OrganisationsCreate() {
+export default function OrganizationsCreate() {
   const [image, setImage] = useState<'' | File>('');
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const { currentOrganisationData } = useAppSelector(
-    (state) => state.organisations.currentOrganisation
+  const { currentOrganizationData } = useAppSelector(
+    (state) => state.organizations.currentOrganization
   );
   const methods = useForm({
-    resolver: yupResolver(CreateOrganisationSchema),
+    resolver: yupResolver(createOrganizationschema),
     defaultValues
   });
 
-  // Go to OrganisationsList if an organisation has been updated or created
+  // Go to OrganizationsList if an organization has been updated or created
   useEffect(() => {
-    if (currentOrganisationData) {
-      navigate(PATH_ORGANISATIONS.root);
+    if (currentOrganizationData) {
+      navigate(PATH_ORGANIZATIONS.root);
     }
-  }, [currentOrganisationData]);
+  }, [currentOrganizationData]);
 
   const { handleSubmit } = methods;
 
-  const onSubmit = async (data: CreateOrganisationForm) => {
+  const onSubmit = async (data: CreateOrganizationForm) => {
     if (image === '') {
       enqueueSnackbar(t`Veuillez ajouter un logo`, { variant: 'error' });
     } else {
       // Handle add
       dispatch(
-        createOrganisations({
+        createOrganizations({
           logo: image,
           name: data.name,
           // @todo - Use google API on front and not through the backend to prevent multiplicating requests
@@ -97,12 +97,12 @@ export default function OrganisationsCreate() {
             cardCss={{ maxWidth: '100%' }}
             header={
               <Typography variant="h5">
-                <Trans>Créer une organisation</Trans>
+                <Trans>Créer une organization</Trans>
               </Typography>
             }
-            footer={<OrganisationsCreateFooter />}
+            footer={<OrganizationsCreateFooter />}
           >
-            <OrganisationsCreateForm setImage={setImage} />
+            <OrganizationsCreateForm setImage={setImage} />
           </LMSCard>
         </Box>
       </form>

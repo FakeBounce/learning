@@ -1,19 +1,36 @@
 import { Skeleton } from '@mui/material';
-import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
-import { memo, ReactNode, useState } from 'react';
+import { memo, ReactNode, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { PATH_AUTH } from '@utils/navigation/paths';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { getSession } from '@utils/axios/session';
+import { getUser, refresh } from '@redux/reducers/connectedUserReducer';
 
 // ----------------------------------------------------------------------
 
 function AuthGuard({ children }: { children: ReactNode }) {
-  const { isAuthenticated, isInitialized } = useAuthenticationContext();
-
-  const { pathname } = useLocation();
-
+  const {
+    globalLoading,
+    user: { id },
+    login: { loading, isAuthenticated }
+  } = useAppSelector((state) => state.connectedUser);
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
 
-  if (!isInitialized) {
+  const { pathname } = useLocation();
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    if (isAuthenticated && id) {
+      const storageToken = getSession();
+      if (storageToken !== null && storageToken.refresh_token !== null) {
+        dispatch(refresh());
+      }
+    } else if (isAuthenticated && !id) {
+      dispatch(getUser());
+    }
+  }, [isAuthenticated]);
+
+  if (loading || globalLoading) {
     return <Skeleton variant="rectangular" width={210} height={118} />;
   }
 
@@ -21,6 +38,7 @@ function AuthGuard({ children }: { children: ReactNode }) {
     if (pathname !== requestedLocation) {
       setRequestedLocation(pathname);
     }
+
     return <Navigate to={PATH_AUTH.login} />;
   }
 

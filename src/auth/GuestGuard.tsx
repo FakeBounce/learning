@@ -1,21 +1,31 @@
-import { Skeleton } from '@mui/material';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { Outlet } from 'react-router';
-import { Navigate } from 'react-router-dom';
-import { useAuthenticationContext } from './AuthenticationContext';
+import { useNavigate } from 'react-router-dom';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { getSession } from '@utils/axios/session';
+import { refresh } from '@redux/reducers/connectedUserReducer';
 // ----------------------------------------------------------------------
 
 function GuestGuard() {
-  const { isAuthenticated, isInitialized } = useAuthenticationContext();
+  const { isAuthenticated } = useAppSelector((state) => state.connectedUser.login);
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
-  if (isAuthenticated) {
-    return <Navigate to={PATH_DASHBOARD.root} />;
-  }
+  useEffect(() => {
+    if (!isAuthenticated) {
+      const storageToken = getSession();
+      if (storageToken !== null && storageToken.refresh_token !== null) {
+        dispatch(refresh());
+      }
+    }
+  }, [isAuthenticated]);
 
-  if (!isInitialized) {
-    return <Skeleton variant="rectangular" width={210} height={118} />;
-  }
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate(PATH_DASHBOARD.root);
+    }
+  }, [isAuthenticated]);
 
   return <Outlet />;
 }

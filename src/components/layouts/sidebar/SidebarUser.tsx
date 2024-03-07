@@ -3,19 +3,23 @@ import { useTheme } from '@mui/material/styles';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Trans } from '@lingui/macro';
 import { MouseEvent, useState } from 'react';
-import { useAuthenticationContext } from '@src/auth/AuthenticationContext';
+import { logout } from '@redux/reducers/connectedUserReducer';
+import { useAppDispatch } from '@redux/hooks';
 // ----------------------------------------------------------------------
 
 export default function SidebarUser({ open }: { open: boolean }) {
-  const theme = useTheme();
-  const { logout } = useAuthenticationContext();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const theme = useTheme();
+  const dispatch = useAppDispatch();
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => setAnchorEl(null);
+  const handleClose = () => {
+    setAnchorEl(null);
+    dispatch(logout());
+  };
 
   const popoverOpen = Boolean(anchorEl);
   const id = popoverOpen ? 'logout-popover' : undefined;
@@ -70,12 +74,7 @@ export default function SidebarUser({ open }: { open: boolean }) {
         </Stack>
         <LMSPopover id={id} anchorEl={anchorEl} popoverOpen={popoverOpen} onClose={handleClose}>
           <ListItem disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              onClick={() => {
-                handleClose();
-                logout();
-              }}
-            >
+            <ListItemButton onClick={handleClose}>
               <ListItemText primary={<Trans>Déconnexion</Trans>} />
             </ListItemButton>
           </ListItem>

@@ -1,6 +1,6 @@
 import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '../interfaces';
 
-export interface Organisation {
+export interface Organization {
   id: number;
   logo: string;
   name: string;
@@ -12,55 +12,55 @@ export interface Organisation {
 
 /*
  * API Request and Response
- * To get a specific organisation
+ * To get a specific organization
  */
 
-export interface GetSingleOrganisationResponse {
+export interface GetSingleOrganizationResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: Organisation;
+  data: Organization;
 }
 
 /*
  * API Request and Response
- * To get a list of organisations
+ * To get a list of organizations
  */
-export interface GetOrganisationsRequest {
+export interface GetOrganizationsRequest {
   currentPage: number;
   rowsPerPage: number;
   sort?: ApiRequestSort;
   filters?: any;
 }
 
-export interface GetOrganisationsResponse {
+export interface GetOrganizationsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: Organisation[];
+    rows: Organization[];
     pagination: ApiResponsePagination;
   };
 }
 
 /*
  * API Request and Response
- * To toggle organisation block
+ * To toggle organization block
  */
-export interface UpdateOrganisationsBlockRequest {
+export interface updateOrganizationsBlockRequest {
   setActive: boolean;
-  organisationId: number;
+  organizationId: number;
 }
 
-export interface UpdateOrganisationsBlockResponse {
+export interface updateOrganizationsBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: Organisation;
+  data: Organization;
 }
 
 /*
  * API Request and Response
- * To create an organisation
+ * To create an organization
  */
-export interface CreateOrganisationsRequest {
+export interface CreateorganizationsRequest {
   name: string;
   address_id: string;
   logo: File | string;
@@ -73,25 +73,25 @@ export interface CreateOrganisationsRequest {
   };
 }
 
-export interface CreateOrganisationsResponse {
+export interface CreateorganizationsResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: Organisation;
+  data: Organization;
 }
 
 /*
  * API Request and Response
- * To create an organisation
+ * To create an organization
  */
-export interface UpdateOrganisationsRequest {
+export interface updateOrganizationsRequest {
   id: number;
   name?: string;
   address_id?: string;
   logo?: File | string;
 }
 
-export interface UpdateOrganisationsResponse {
+export interface updateOrganizationsResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: Organisation;
+  data: Organization;
 }

@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
-import { Organisation } from '@services/organisations/interfaces';
+import { Organization } from '@services/organizations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
 
@@ -9,19 +9,19 @@ export interface OrderBy {
   id: string;
   direction: 'DESC' | 'ASC';
 }
-export interface OrganisationColumn {
+export interface OrganizationColumn {
   id: 'name' | 'city' | 'is_active';
   label: ReactNode;
   maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
   align?: 'right' | 'center';
   renderCell?: (
-    row: Organisation,
-    handleClick: (newOrganisation: Organisation) => (event: MouseEvent<HTMLElement>) => void
+    row: Organization,
+    handleClick: (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => void
   ) => ReactNode;
 }
 
-export const organisationsColumns: readonly OrganisationColumn[] = [
+export const organizationsColumns: readonly OrganizationColumn[] = [
   {
     id: 'name',
     label: <Trans>Nom</Trans>,
@@ -68,12 +68,12 @@ export const organisationsColumns: readonly OrganisationColumn[] = [
   }
 ];
 
-export const organisationsTableHeaderRenderer = (
+export const organizationsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
   orderBy: OrderBy | null
 ) => {
   const theme = useTheme();
-  return organisationsColumns.map((column) => (
+  return organizationsColumns.map((column) => (
     <TableCell
       key={column.id}
       align={column.align}
@@ -102,14 +102,14 @@ export const organisationsTableHeaderRenderer = (
   ));
 };
 
-export const organisationsTableRowsRenderer = (
-  listData: Organisation[],
-  handleClick: (newOrganisation: Organisation) => (event: MouseEvent<HTMLElement>) => void
+export const organizationsTableRowsRenderer = (
+  listData: Organization[],
+  handleClick: (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => void
 ) => {
-  return listData.map((row: Organisation) => {
+  return listData.map((row: Organization) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-        {organisationsColumns.map((column: OrganisationColumn) => {
+        {organizationsColumns.map((column: OrganizationColumn) => {
           if (column.renderCell) {
             return (
               <TableCell key={column.id} padding={column.padding || 'normal'}>
