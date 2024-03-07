@@ -1,14 +1,59 @@
 {
+  "F8ESDf": {
+    "translation": "Activé",
+    "message": "Activé",
+    "comments": []
+  },
+  "GAxRw0": {
+    "translation": "Ville",
+    "message": "Ville",
+    "comments": []
+  },
+  "HGYOb+": {
+    "translation": "Bloqué",
+    "message": "Bloqué",
+    "comments": []
+  },
+  "HdNGur": {
+    "translation": "Bloquer",
+    "message": "Bloquer",
+    "comments": []
+  },
+  "JSaiRe": {
+    "translation": "Se connecter",
+    "message": "Se connecter",
+    "comments": []
+  },
+  "MZX/LX": {
+    "translation": "Statut",
+    "message": "Statut",
+    "comments": []
+  },
+  "OQ8lVl": {
+    "translation": "Modifier",
+    "message": "Modifier",
+    "comments": []
+  },
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
     "comments": [],
     "obsolete": false
   },
+  "iAKACc": {
+    "translation": "Nom",
+    "message": "Nom",
+    "comments": []
+  },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
     "comments": [],
     "obsolete": false
+  },
+  "u3n1/X": {
+    "translation": "Débloquer",
+    "message": "Débloquer",
+    "comments": []
   }
 }

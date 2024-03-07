@@ -16,13 +16,15 @@ export default function SidebarUser({ open }: { open: boolean }) {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleLogout = () => {
     setAnchorEl(null);
     dispatch(logout());
   };
 
   const popoverOpen = Boolean(anchorEl);
   const id = popoverOpen ? 'logout-popover' : undefined;
+
+  console.log('id', id, popoverOpen);
 
   if (!open) {
     return (
@@ -72,9 +74,14 @@ export default function SidebarUser({ open }: { open: boolean }) {
         <Stack py={2} spacing={1}>
           <Box>Nom / Prénom</Box> <Box> Rôle</Box>
         </Stack>
-        <LMSPopover id={id} anchorEl={anchorEl} popoverOpen={popoverOpen} onClose={handleClose}>
+        <LMSPopover
+          id={id}
+          anchorEl={anchorEl}
+          open={popoverOpen}
+          onClose={() => setAnchorEl(null)}
+        >
           <ListItem disablePadding sx={{ display: 'block' }}>
-            <ListItemButton onClick={handleClose}>
+            <ListItemButton onClick={handleLogout}>
               <ListItemText primary={<Trans>Déconnexion</Trans>} />
             </ListItemButton>
           </ListItem>

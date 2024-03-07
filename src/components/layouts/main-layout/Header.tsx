@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import HeaderBreadcrumbs from '@src/components/layouts/main-layout/HeaderBreadcrumbs';
 import HeaderRightContent from '@src/components/layouts/main-layout/HeaderRightContent';
 import { useAppDispatch } from '@redux/hooks';
-import { changeOrganisationView } from '@redux/reducers/connectedUserReducer';
+import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,9 +13,9 @@ export default function Header() {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const handleOrganisationLogout = () => {
+  const handleOrganizationLogout = () => {
     // @todo We should have an attribute saying the default organisation id for the user instead of plain id
-    dispatch(changeOrganisationView({ organisationId: 1 }));
+    dispatch(changeOrganizationView({ organizationId: 1 }));
     navigate(PATH_DASHBOARD.root);
   };
 
@@ -39,7 +39,7 @@ export default function Header() {
           <Chip
             sx={{ marginLeft: theme.spacing(2) }}
             label={<Trans>Déconnexion</Trans>}
-            onDelete={handleOrganisationLogout}
+            onDelete={handleOrganizationLogout}
           />
         </Box>
         <HeaderRightContent />
