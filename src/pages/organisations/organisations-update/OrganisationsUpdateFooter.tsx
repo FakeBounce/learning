@@ -21,7 +21,7 @@ export default function OrganisationsUpdateFooter() {
       >
         <Trans>Annuler</Trans>
       </ActionButton>
-      <ActionButton type="submit" sx={{ ml: 2 }} loading={false}>
+      <ActionButton type="submit" role="submit" sx={{ ml: 2 }} loading={organisationUpdateLoading}>
         <Trans>Enregistrer</Trans>
       </ActionButton>
     </Box>

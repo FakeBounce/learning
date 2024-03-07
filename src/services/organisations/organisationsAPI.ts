@@ -25,19 +25,11 @@ export const updateOrganisations = async (
   args: UpdateOrganisationsRequest
 ): Promise<AxiosResponse<UpdateOrganisationsResponse>> => {
   const { id, name, address_id, logo } = args;
-  return axios.put(
-    `/organizations/${id}`,
-    {
-      name,
-      address_id,
-      logo
-    },
-    {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    }
-  );
+  return axios.put(`/organizations/${id}`, {
+    name,
+    address_id,
+    logo
+  });
 };
 
 export const updateOrganisationsBlock = async (
