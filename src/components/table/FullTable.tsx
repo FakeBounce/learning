@@ -1,9 +1,18 @@
-import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material';
+import { Table, TableBody, TableContainer, TableHead, TableRow, Box } from '@mui/material';
 import { TableSkeletonLoader } from '@src/components/table/TableSkeletonLoader';
 import { ReactNode } from 'react';
+import { styled } from '@mui/system';
+
+const StyledFullTableContainer = styled(Box)(() => ({
+  display: 'flex',
+  flex: '1 1 0',
+  overflow: 'auto',
+  maxWidth: '100%',
+  padding: 0,
+  position: 'relative'
+}));
 
 interface FullTableProps {
-  maxHeigth?: string | number;
   headerRenderer: ReactNode;
   bodyRenderer: ReactNode;
   isLoading: boolean;
@@ -11,7 +20,6 @@ interface FullTableProps {
   colsNum: number;
 }
 export default function FullTable({
-  maxHeigth = '61vh',
   headerRenderer,
   bodyRenderer,
   isLoading,
@@ -19,15 +27,17 @@ export default function FullTable({
   colsNum
 }: FullTableProps) {
   return (
-    <TableContainer sx={{ maxHeight: maxHeigth }}>
-      <Table stickyHeader aria-label="sticky table">
-        <TableHead>
-          <TableRow>{headerRenderer}</TableRow>
-        </TableHead>
-        <TableBody>
-          {isLoading ? <TableSkeletonLoader rowsNum={rowsNum} colsNum={colsNum} /> : bodyRenderer}
-        </TableBody>
-      </Table>
-    </TableContainer>
+    <StyledFullTableContainer>
+      <TableContainer sx={{ height: '100%' }}>
+        <Table stickyHeader aria-label="sticky table">
+          <TableHead>
+            <TableRow>{headerRenderer}</TableRow>
+          </TableHead>
+          <TableBody>
+            {isLoading ? <TableSkeletonLoader rowsNum={rowsNum} colsNum={colsNum} /> : bodyRenderer}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </StyledFullTableContainer>
   );
 }

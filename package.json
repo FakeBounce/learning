@@ -60,7 +60,7 @@
     "@lingui/format-json": "^4.7.0",
     "@lingui/react": "^4.7.0",
     "@mui/lab": "^5.0.0-alpha.109",
-    "@mui/material": "^5.15.7",
+    "@mui/material": "^5.15.11",
     "@mui/system": "^5.10.15",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.7",

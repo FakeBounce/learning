@@ -16,7 +16,7 @@ export default function StatusChip({ row, activatedText, handleClick }: StatisCh
     <Box display="flex" alignItems="center">
       <Chip
         sx={{
-          borderRadius: 1,
+          borderRadius: theme.shape.customBorderRadius.small,
           backgroundColor: row.is_active ? theme.palette.primary.light : theme.palette.grey[300],
           color: row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
         }}

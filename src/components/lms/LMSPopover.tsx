@@ -1,34 +1,37 @@
-import React from 'react';
-import { ClickAwayListener, Paper, Popover } from '@mui/material';
+import { ClickAwayListener, Paper, Popper, PopperPlacementType, PopperProps } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { ReactNode } from 'react';
 
-interface LMSPopoverProps {
+interface LMSPopoverProps extends PopperProps {
   id?: string;
-  popoverOpen: boolean;
-  onClose: () => void;
+  open: boolean;
+  onClose?: () => void;
   anchorEl: HTMLElement | null;
-  children: React.ReactNode;
+  placement?: PopperPlacementType;
+  children: ReactNode;
 }
+
 export default function LMSPopover({
   id,
-  popoverOpen,
-  onClose,
+  open = false,
+  onClose = undefined,
   anchorEl,
-  children
+  placement = 'top-end',
+  children,
+  ...other
 }: LMSPopoverProps) {
   const theme = useTheme();
 
   return (
-    <Popover
+    <Popper
       id={id}
-      open={popoverOpen}
+      open={open}
       anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: 15,
-        horizontal: 'center'
-      }}
+      placement={placement}
+      sx={{ zIndex: 1200 }} // We shouldn't do 1200 but something is set to 1199
+      {...other}
     >
-      <ClickAwayListener onClickAway={onClose}>
+      <ClickAwayListener onClickAway={() => onClose && onClose()}>
         <Paper
           elevation={10}
           sx={{
@@ -40,6 +43,6 @@ export default function LMSPopover({
           {children}
         </Paper>
       </ClickAwayListener>
-    </Popover>
+    </Popper>
   );
 }

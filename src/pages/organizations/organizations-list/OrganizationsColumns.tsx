@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 import { Organization } from '@services/organizations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
@@ -26,12 +26,11 @@ export const organizationsColumns: readonly OrganizationColumn[] = [
     id: 'name',
     label: <Trans>Nom</Trans>,
     renderCell: (row) => {
-      const theme = useTheme();
       const logo = row.logo || row.name[0];
       return (
         <Box display="flex" alignItems="center">
           <Avatar src={logo}>{logo}</Avatar>
-          <Typography fontSize={theme.typography.body2.fontSize} ml={1}>
+          <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
             {row.name}
           </Typography>
         </Box>
@@ -45,22 +44,24 @@ export const organizationsColumns: readonly OrganizationColumn[] = [
     maxWidth: 120,
     padding: 'none',
     renderCell: (row, handleClick) => {
-      const theme = useTheme();
       const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
       return (
         <Box display="flex" alignItems="center">
           <Chip
             sx={{
               borderRadius: 1,
-              backgroundColor: row.is_active
-                ? theme.palette.primary.light
-                : theme.palette.grey[200],
-              color: row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
+              backgroundColor: (theme: Theme) =>
+                row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
+              color: (theme: Theme) =>
+                row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
             }}
             label={activatedText}
           />
           <IconButton onClick={handleClick(row)} sx={{ boxShadow: 'none' }}>
-            <Iconify sx={{ color: theme.palette.grey[900] }} icon={'pepicons-pop:dots-y'} />
+            <Iconify
+              sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
+              icon={'pepicons-pop:dots-y'}
+            />
           </IconButton>
         </Box>
       );
@@ -72,15 +73,14 @@ export const organizationsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
   orderBy: OrderBy | null
 ) => {
-  const theme = useTheme();
   return organizationsColumns.map((column) => (
     <TableCell
       key={column.id}
       align={column.align}
       padding={column.padding || 'normal'}
-      style={{
+      sx={{
         width: column.maxWidth,
-        backgroundColor: theme.palette.grey[200],
+        backgroundColor: (theme: Theme) => theme.palette.grey[200],
         height: '3vh',
         cursor: 'pointer'
       }}

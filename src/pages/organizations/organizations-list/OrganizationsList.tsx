@@ -1,4 +1,4 @@
-import { Box, Popper, TablePagination } from '@mui/material';
+import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getOrganizationsList } from '@redux/reducers/organizationsReducer';
 import { Organization } from '@services/organizations/interfaces';
@@ -13,6 +13,8 @@ import {
 import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
 import OrganizationsListPopperContent from '@src/pages/organizations/organizations-list/OrganizationsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
+import Pagination from '@src/components/table/Pagination';
+import LMSPopover from '@src/components/lms/LMSPopover';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();
@@ -80,54 +82,32 @@ export default function OrganizationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
+    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
         <OrganizationsListHeader />
-        <Box
-          sx={{
-            maxWidth: '100%',
-            maxHeight: '68vh',
-            padding: 0,
-            position: 'relative'
-          }}
-        >
-          <FullTable
-            maxHeigth={'62vh'}
-            headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
-            bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
-            isLoading={organizationListLoading}
-            rowsNum={rowsPerPage}
-            colsNum={organizationsColumns.length}
-          />
-        </Box>
-        <Box
-          sx={{
-            minHeight: 46,
-            position: 'absolute',
-            bottom: 0,
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'flex-end'
-          }}
-        >
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={organizationListTotalCount || 0}
-            rowsPerPage={rowsPerPage}
-            page={currentPage}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Box>
+
+        <FullTable
+          headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
+          bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
+          isLoading={organizationListLoading}
+          rowsNum={rowsPerPage}
+          colsNum={organizationsColumns.length}
+        />
+        <Pagination
+          totalCount={organizationListTotalCount || 0}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </LMSCard>
-      <Popper id={id} open={open} anchorEl={anchorEl} placement="top-end" sx={{ zIndex: 9 }}>
+      <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
         <OrganizationsListPopperContent
           setAnchorEl={setAnchorEl}
           setOrganizationSelected={setOrganizationSelected}
           organizationSelected={organizationSelected}
         />
-      </Popper>
+      </LMSPopover>
     </Box>
   );
 }

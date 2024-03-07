@@ -5,6 +5,7 @@ import { toggleOrganizationsBlock } from '@redux/reducers/organizationsReducer';
 import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
 import { Organization } from '@services/organizations/interfaces';
 import { useNavigate } from 'react-router-dom';
+import { PATH_DASHBOARD } from '@utils/navigation/paths';
 
 interface OrganizationsListPopperContentProps {
   setAnchorEl: (value: HTMLElement | null) => void;
@@ -26,6 +27,7 @@ export default function OrganizationsListPopperContent({
           organizationId: organizationSelected.id
         })
       );
+      navigate(PATH_DASHBOARD.root);
     }
   };
 

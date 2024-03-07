@@ -12,6 +12,7 @@ import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as UsersServices from '@services/users/usersAPI';
 import { enqueueSnackbar } from 'notistack';
 import { t } from '@lingui/macro';
+import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
 
 interface UsersState {
   usersList: {
@@ -157,6 +158,10 @@ export const usersSlice = createSlice({
       .addCase(toggleUserBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(changeOrganizationView.fulfilled, (state) => {
+        state.usersList = initialState.usersList;
+        state.singleUser = initialState.singleUser;
       });
   }
 });

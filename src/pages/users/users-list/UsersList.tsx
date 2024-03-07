@@ -1,4 +1,4 @@
-import { Box, Popover, TablePagination } from '@mui/material';
+import { Box } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import FullTable from '@src/components/table/FullTable';
@@ -13,6 +13,8 @@ import { useState, MouseEvent, useEffect, ChangeEvent } from 'react';
 import { User } from '@services/connected-user/interfaces';
 import { getUsersList } from '@redux/reducers/usersReducer';
 import UsersListPopperContent from '@src/pages/users/users-list/UsersListPopperContent';
+import Pagination from '@src/components/table/Pagination';
+import LMSPopover from '@src/components/lms/LMSPopover';
 
 export default function UsersList() {
   const dispatch = useAppDispatch();
@@ -78,57 +80,28 @@ export default function UsersList() {
     <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
         <UsersListHeader />
-        <Box
-          sx={{
-            maxWidth: '100%',
-            maxHeight: '68vh',
-            padding: 0,
-            position: 'relative'
-          }}
-        >
-          <FullTable
-            maxHeigth={'62vh'}
-            headerRenderer={usersTableHeaderRender(handleSort, orderBy)}
-            bodyRenderer={usersTableRowsRender(usersListData, handleClick)}
-            isLoading={usersListLoading}
-            rowsNum={rowsPerPage}
-            colsNum={usersColumns.length}
-          />
-        </Box>
-        <Box
-          sx={{
-            minHeight: 46,
-            position: 'absolute',
-            bottom: 0,
-            width: '100%',
-            display: 'flex',
-            justifyContent: 'flex-end'
-          }}
-        >
-          <TablePagination
-            rowsPerPageOptions={[10, 25, 100]}
-            component="div"
-            count={usersListTotalCount || 0}
-            rowsPerPage={rowsPerPage}
-            page={currentPage}
-            onPageChange={handleChangePage}
-            onRowsPerPageChange={handleChangeRowsPerPage}
-          />
-        </Box>
+        <FullTable
+          headerRenderer={usersTableHeaderRender(handleSort, orderBy)}
+          bodyRenderer={usersTableRowsRender(usersListData, handleClick)}
+          isLoading={usersListLoading}
+          rowsNum={rowsPerPage}
+          colsNum={usersColumns.length}
+        />
+        <Pagination
+          totalCount={usersListTotalCount || 0}
+          rowsPerPage={rowsPerPage}
+          currentPage={currentPage}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
       </LMSCard>
-      <Popover
-        id={id}
-        open={open}
-        anchorEl={anchorEl}
-        onClose={() => setAnchorEl(null)}
-        sx={{ zIndex: 9 }}
-      >
+      <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
         <UsersListPopperContent
           setAnchorEl={setAnchorEl}
           setUserSelected={setUserSelected}
           userSelected={userSelected}
         />
-      </Popover>
+      </LMSPopover>
     </Box>
   );
 }
