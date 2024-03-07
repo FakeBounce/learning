@@ -35,7 +35,7 @@ export const organizationsColumns: readonly OrganizationColumn[] = [
       return (
         <Box display="flex" alignItems="center">
           <Avatar src={logo}>{logo}</Avatar>
-          <Typography fontSize={(theme) => theme.typography.body2.fontSize} ml={1}>
+          <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
             {row.name}
           </Typography>
         </Box>
@@ -55,7 +55,7 @@ export const organizationsColumns: readonly OrganizationColumn[] = [
           <Chip
             sx={{
               borderRadius: 1,
-              backgroundColor: (theme) =>
+              backgroundColor: (theme: Theme) =>
                 row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
               color: (theme: Theme) =>
                 row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
@@ -90,7 +90,7 @@ export const organizationsTableHeaderRenderer = (
       padding={column.padding || 'normal'}
       sx={{
         width: column.maxWidth,
-        backgroundColor: (theme) => theme.palette.grey[200],
+        backgroundColor: (theme: Theme) => theme.palette.grey[200],
         height: '3vh',
         cursor: 'pointer'
       }}
