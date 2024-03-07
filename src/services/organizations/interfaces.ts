@@ -60,7 +60,7 @@ export interface updateOrganizationsBlockResponse {
  * API Request and Response
  * To create an organization
  */
-export interface CreateorganizationsRequest {
+export interface CreateOrganizationsRequest {
   name: string;
   address_id: string;
   logo: File | string;
@@ -73,7 +73,7 @@ export interface CreateorganizationsRequest {
   };
 }
 
-export interface CreateorganizationsResponse {
+export interface CreateOrganizationsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Organization;

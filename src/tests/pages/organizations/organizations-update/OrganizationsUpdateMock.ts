@@ -1,17 +1,17 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
 
-const OrganisationsUpdateMock = new MockAdapter(axios);
+const OrganizationsUpdateMock = new MockAdapter(axios);
 
 export const setupSuccessAxiosMock = () => {
-  // Mock the updateOrganisations and getSingleOrganisation endpoints
-  OrganisationsUpdateMock.onPut(/\/organizations\/\d+/)
+  // Mock the updateOrganizations and getSingleOrganization endpoints
+  OrganizationsUpdateMock.onPut(/\/organizations\/\d+/)
     .reply(200, {
       success: true,
-      message: 'Organisation updated successfully',
+      message: 'Organization updated successfully',
       data: {
         id: 1,
-        name: 'Test Organisation',
+        name: 'Test Organization',
         address_id: '1',
         logo: 'Some logo url',
         use_double_auth: 0,
@@ -28,7 +28,7 @@ export const setupSuccessAxiosMock = () => {
       success: true,
       data: {
         id: 1,
-        name: 'Test Organisation',
+        name: 'Test Organization',
         address_id: '1',
         address: 'Some address',
         logo: 'Some logo url',
@@ -44,13 +44,13 @@ export const setupSuccessAxiosMock = () => {
 };
 
 export const setupErrorAxiosMock = () => {
-  // Mock the updateOrganisations and getSingleOrganisation endpoints
-  OrganisationsUpdateMock.onPut(/\/organizations\/\d+/).reply(422, {
+  // Mock the updateOrganizations and getSingleOrganization endpoints
+  OrganizationsUpdateMock.onPut(/\/organizations\/\d+/).reply(422, {
     success: false,
     message: {
-      value: 'An error occurred while updating the organisation. Please try again.'
+      value: 'An error occurred while updating the organization. Please try again.'
     }
   });
 };
 
-export default OrganisationsUpdateMock;
+export default OrganizationsUpdateMock;

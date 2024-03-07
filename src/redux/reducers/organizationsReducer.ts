@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro';
 import {
-  CreateorganizationsRequest,
-  CreateorganizationsResponse,
+  CreateOrganizationsRequest,
+  CreateOrganizationsResponse,
   GetOrganizationsRequest,
   GetOrganizationsResponse,
   Organization,
@@ -53,7 +53,7 @@ const initialState: organizationState = {
 
 export const createOrganizations = createAsyncThunk(
   'organizations/create',
-  async (arg: CreateorganizationsRequest, { rejectWithValue }) => {
+  async (arg: CreateOrganizationsRequest, { rejectWithValue }) => {
     try {
       const response = await organizationsServices.createOrganizations(arg);
       return response.data;
@@ -94,7 +94,7 @@ export const getOrganizationsList = createAsyncThunk(
   'organizations/list',
   async (arg: GetOrganizationsRequest, { rejectWithValue }) => {
     try {
-      const response = await organizationsServices.getorganizations(arg);
+      const response = await organizationsServices.getOrganizations(arg);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
@@ -197,7 +197,7 @@ export const organizationSlice = createSlice({
           // Decide what to do with the response
           state.organizationUpdate.organizationUpdateLoading = false;
           state.currentOrganization.currentOrganizationData = action.payload.data;
-          enqueueSnackbar(t`organization enregistrée !`, { variant: 'success' });
+          enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )
       .addCase(updateOrganizations.rejected, (state, action: AnyAction) => {
@@ -213,11 +213,11 @@ export const organizationSlice = createSlice({
       })
       .addCase(
         createOrganizations.fulfilled,
-        (state, action: { payload: CreateorganizationsResponse }) => {
+        (state, action: { payload: CreateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.organizationCreate.organizationCreateLoading = false;
           state.currentOrganization.currentOrganizationData = action.payload.data;
-          enqueueSnackbar(t`organization enregistrée !`, { variant: 'success' });
+          enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )
       .addCase(createOrganizations.rejected, (state, action: AnyAction) => {

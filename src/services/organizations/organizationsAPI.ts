@@ -1,5 +1,5 @@
 import {
-  CreateorganizationsRequest,
+  CreateOrganizationsRequest,
   CreateorganizationsResponse,
   GetOrganizationsRequest,
   GetOrganizationsResponse,
@@ -13,7 +13,7 @@ import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
 
 export const createOrganizations = async (
-  args: CreateorganizationsRequest
+  args: CreateOrganizationsRequest
 ): Promise<AxiosResponse<CreateorganizationsResponse>> =>
   axios.post(`/organizations`, args, {
     headers: {
@@ -55,7 +55,7 @@ export const getSingleOrganization = async (
   return axios.get(`/organizations/${id}`);
 };
 
-export const getorganizations = async (
+export const getOrganizations = async (
   args: GetOrganizationsRequest
 ): Promise<AxiosResponse<GetOrganizationsResponse>> => {
   const { currentPage, rowsPerPage, sort, filters } = args;

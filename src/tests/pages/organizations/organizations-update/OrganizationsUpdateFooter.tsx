@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testProvider';
-import OrganisationsUpdateFooter from '@src/pages/organisations/organisations-update/OrganisationsUpdateFooter';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
+import OrganizationsUpdateFooter from '@src/pages/organizations/organizations-update/OrganizationsUpdateFooter';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -8,12 +8,12 @@ jest.mock('react-router-dom', () => ({
   useNavigate: () => navigateMock
 }));
 
-describe('OrganisationsUpdateFooter', () => {
+describe('OrganizationsUpdateFooter', () => {
   it('renders correctly and handles cancel and submit actions', () => {
-    render(<OrganisationsUpdateFooter />, {
+    render(<OrganizationsUpdateFooter />, {
       preloadedState: {
-        organisations: {
-          organisationUpdateLoading: false
+        organizations: {
+          organizationUpdateLoading: false
         }
       }
     });
@@ -22,7 +22,7 @@ describe('OrganisationsUpdateFooter', () => {
     const cancelButton = screen.getByText(/Annuler/i);
     expect(cancelButton).toBeInTheDocument();
     fireEvent.click(cancelButton);
-    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANISATIONS.root);
+    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANIZATIONS.root);
 
     // Check if the "Enregistrer" button is rendered
     const submitButton = screen.getByText(/Enregistrer/i);
@@ -32,10 +32,10 @@ describe('OrganisationsUpdateFooter', () => {
   });
 
   it('renders correctly and handles is disabled when loading is true', () => {
-    render(<OrganisationsUpdateFooter />, {
+    render(<OrganizationsUpdateFooter />, {
       preloadedState: {
-        organisations: {
-          organisationUpdateLoading: true
+        organizations: {
+          organizationUpdateLoading: true
         }
       }
     });

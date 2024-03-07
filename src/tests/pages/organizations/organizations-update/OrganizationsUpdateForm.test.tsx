@@ -1,17 +1,17 @@
 import { render, screen, waitFor, renderHook } from '@testProvider';
-import OrganisationsUpdateForm from '@src/pages/organisations/organisations-update/OrganisationsUpdateForm';
+import OrganizationsUpdateForm from '@src/pages/organizations/organizations-update/OrganizationsUpdateForm';
 import { FormProvider, useForm } from 'react-hook-form';
 
-describe('OrganisationsUpdateForm', () => {
+describe('OrganizationsUpdateForm', () => {
   it('renders correctly and handles file upload', async () => {
     const setImageMock = jest.fn();
 
     const methods = renderHook(() => useForm()).result.current;
-    // Render the OrganisationsCreateForm component
+    // Render the OrganizationsCreateForm component
     render(
       <FormProvider {...methods}>
         <form>
-          <OrganisationsUpdateForm image={'Some image'} setImage={setImageMock} />
+          <OrganizationsUpdateForm image={'Some image'} setImage={setImageMock} />
         </form>
       </FormProvider>
     );

@@ -1,29 +1,29 @@
 import {
-  CreateOrganisationsRequest,
-  CreateOrganisationsResponse,
-  GetOrganisationsRequest,
-  GetOrganisationsResponse,
-  GetSingleOrganisationResponse,
-  UpdateOrganisationsBlockRequest,
-  UpdateOrganisationsBlockResponse,
-  UpdateOrganisationsRequest,
-  UpdateOrganisationsResponse
+  CreateOrganizationsRequest,
+  CreateOrganizationsResponse,
+  GetOrganizationsRequest,
+  GetOrganizationsResponse,
+  GetSingleOrganizationResponse,
+  UpdateOrganizationsBlockRequest,
+  UpdateOrganizationsBlockResponse,
+  UpdateOrganizationsRequest,
+  UpdateOrganizationsResponse
 } from './interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
 
-export const createOrganisations = async (
-  args: CreateOrganisationsRequest
-): Promise<AxiosResponse<CreateOrganisationsResponse>> =>
+export const createOrganizations = async (
+  args: CreateOrganizationsRequest
+): Promise<AxiosResponse<CreateOrganizationsResponse>> =>
   axios.post(`/organizations`, args, {
     headers: {
       'Content-Type': 'multipart/form-data'
     }
   });
 
-export const updateOrganisations = async (
-  args: UpdateOrganisationsRequest
-): Promise<AxiosResponse<UpdateOrganisationsResponse>> => {
+export const updateOrganizations = async (
+  args: UpdateOrganizationsRequest
+): Promise<AxiosResponse<UpdateOrganizationsResponse>> => {
   const { id, name, address_id, logo } = args;
   return axios.put(`/organizations/${id}`, {
     name,
@@ -32,24 +32,24 @@ export const updateOrganisations = async (
   });
 };
 
-export const updateOrganisationsBlock = async (
-  args: UpdateOrganisationsBlockRequest
-): Promise<AxiosResponse<UpdateOrganisationsBlockResponse>> => {
-  const { setActive, organisationId } = args;
+export const updateOrganizationsBlock = async (
+  args: UpdateOrganizationsBlockRequest
+): Promise<AxiosResponse<UpdateOrganizationsBlockResponse>> => {
+  const { setActive, organizationId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  return axios.post(`/organizations/${correctPath}/${organisationId}`);
+  return axios.post(`/organizations/${correctPath}/${organizationId}`);
 };
 
-export const getSingleOrganisation = async (
+export const getSingleOrganization = async (
   id: number
-): Promise<AxiosResponse<GetSingleOrganisationResponse>> => {
+): Promise<AxiosResponse<GetSingleOrganizationResponse>> => {
   return axios.get(`/organizations/${id}`);
 };
 
-export const getOrganisations = async (
-  args: GetOrganisationsRequest
-): Promise<AxiosResponse<GetOrganisationsResponse>> => {
+export const getOrganizations = async (
+  args: GetOrganizationsRequest
+): Promise<AxiosResponse<GetOrganizationsResponse>> => {
   const { currentPage, rowsPerPage, sort, filters } = args;
 
   return axios.post('/organizations/filter', {
