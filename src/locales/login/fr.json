@@ -5,6 +5,12 @@
     "comments": [],
     "obsolete": false
   },
+  "0xb6pr": {
+    "translation": "Modifier une organization",
+    "message": "Modifier une organization",
+    "comments": [],
+    "obsolete": false
+  },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
@@ -77,6 +83,12 @@
     "comments": [],
     "obsolete": false
   },
+  "PedA04": {
+    "translation": "Créer une organization",
+    "message": "Créer une organization",
+    "comments": [],
+    "obsolete": false
+  },
   "SDTSUy": {
     "translation": "Organisation ID",
     "message": "Organisation ID",
@@ -113,9 +125,21 @@
     "comments": [],
     "obsolete": false
   },
+  "flJGrT": {
+    "translation": "Organization ID",
+    "message": "Organization ID",
+    "comments": [],
+    "obsolete": false
+  },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
+    "comments": [],
+    "obsolete": false
+  },
+  "jiE6Vn": {
+    "translation": "Organizations",
+    "message": "Organizations",
     "comments": [],
     "obsolete": false
   },

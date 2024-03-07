@@ -24,8 +24,6 @@ export default function SidebarUser({ open }: { open: boolean }) {
   const popoverOpen = Boolean(anchorEl);
   const id = popoverOpen ? 'logout-popover' : undefined;
 
-  console.log('id', id, popoverOpen);
-
   if (!open) {
     return (
       <Stack
