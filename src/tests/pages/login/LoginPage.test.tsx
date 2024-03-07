@@ -19,6 +19,11 @@ describe('Login component', () => {
 
   it('renders Login component and submit correctly', async () => {
     setupSuccessAxiosMock();
+
+    // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+
     // Render the Login component
     render(<Login />);
 
@@ -43,26 +48,25 @@ describe('Login component', () => {
     });
   });
 
-  // @TODO: This test fails in pipeline git, he is not important but we should check the reason of the failure
-  // it('should navigate if is already Authenticated', async () => {
-  //   // Mock useNavigate
-  //   const navigateMock = jest.fn().mockResolvedValueOnce({});
-  //   (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-  //
-  //   // Render the Login component
-  //   render(<Login />, {
-  //     preloadedState: {
-  //       connectedUser: {
-  //         login: {
-  //           isAuthenticated: true
-  //         }
-  //       }
-  //     }
-  //   });
-  //
-  //   await waitFor(() => {
-  //     // Check if the navigate function has been called
-  //     expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);
-  //   });
-  // });
+  it('should navigate if is already Authenticated', async () => {
+    // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+
+    // Render the Login component
+    render(<Login />, {
+      preloadedState: {
+        connectedUser: {
+          login: {
+            isAuthenticated: true
+          }
+        }
+      }
+    });
+
+    await waitFor(() => {
+      // Check if the navigate function has been called
+      expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);
+    });
+  });
 });
