@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { createOrganizations } from '@redux/reducers/organizationsReducer';
+import { createOrganizations } from '@redux/actions/organizationsActions';
 import { LMSCard } from '@src/components/lms';
 import OrganizationsCreateFooter from '@src/pages/organizations/organizations-create/OrganizationsCreateFooter';
 import OrganizationsCreateForm from '@src/pages/organizations/organizations-create/OrganizationsCreateForm';
