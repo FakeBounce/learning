@@ -2,325 +2,385 @@
   "+oarE7": {
     "translation": "404 Title",
     "message": "404 Title",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "0xb6pr": {
     "translation": "Modifier une organization",
     "message": "Modifier une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7uQ5BG": {
     "translation": "Adresse siège social",
     "message": "Adresse siège social",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "BSb8d9": {
     "translation": "Double authentification",
     "message": "Double authentification",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Be0x4u": {
     "translation": "Prénom admin client",
     "message": "Prénom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "OUI",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "C1e9Kp": {
     "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "H1+RH6": {
     "translation": "Aucun groupe défini.",
     "message": "Aucun groupe défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "Bloquer",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JMJBle": {
     "translation": "La double authentification est requise",
     "message": "La double authentification est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JSaiRe": {
     "translation": "Se connecter",
     "message": "Se connecter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JoxuHW": {
     "translation": "L'adresse est requise",
     "message": "L'adresse est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "NDUWrS": {
     "translation": "Organization id is required",
     "message": "Organization id is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SDTSUy": {
     "translation": "Organisation ID",
     "message": "Organisation ID",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "X1Endn": {
     "translation": "Pas encore de compte ?",
     "message": "Pas encore de compte ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZsZeV2": {
     "translation": "Email is required",
     "message": "Email is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "chRwq/": {
     "translation": "Password is required",
     "message": "Password is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "flJGrT": {
     "translation": "Organization ID",
     "message": "Organization ID",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "funWao": {
     "translation": "Nom admin client",
     "message": "Nom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hMJAZ/": {
     "translation": "Aucune modification n'a été apportée",
     "message": "Aucune modification n'a été apportée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "i0ke3s": {
     "translation": "Aucun rôle défini.",
     "message": "Aucun rôle défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jiE6Vn": {
     "translation": "Organizations",
     "message": "Organizations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rKvP91": {
     "translation": "Email admin client",
     "message": "Email admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "sAl4AV": {
     "translation": "Téléchargez une photo",
     "message": "Téléchargez une photo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u2iZug": {
     "translation": "Le login est requis",
     "message": "Le login est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "NON",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

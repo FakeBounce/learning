@@ -1,4 +1,9 @@
 {
+  "+71k1w": {
+    "translation": "Vous êtes déjà connecté à cette organisation",
+    "message": "Vous êtes déjà connecté à cette organisation",
+    "comments": []
+  },
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
@@ -7,7 +12,8 @@
   "0xb6pr": {
     "translation": "Modifier une organization",
     "message": "Modifier une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -22,7 +28,8 @@
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -32,7 +39,8 @@
   "7uQ5BG": {
     "translation": "Adresse siège social",
     "message": "Adresse siège social",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
@@ -42,17 +50,20 @@
   "Be0x4u": {
     "translation": "Prénom admin client",
     "message": "Prénom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "C1e9Kp": {
     "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
@@ -72,6 +83,11 @@
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
+    "comments": []
+  },
+  "GoZkew": {
+    "translation": "Organisations",
+    "message": "Organisations",
     "comments": []
   },
   "HGYOb+": {
@@ -112,7 +128,8 @@
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -124,10 +141,16 @@
     "message": "Aucune modification n'a été effectuée",
     "comments": []
   },
+  "Xukbwg": {
+    "translation": "Modifier une organisation",
+    "message": "Modifier une organisation",
+    "comments": []
+  },
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -137,12 +160,14 @@
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "funWao": {
     "translation": "Nom admin client",
     "message": "Nom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "g+hxtQ": {
     "translation": "Créer",
@@ -162,32 +187,43 @@
   "jiE6Vn": {
     "translation": "Organizations",
     "message": "Organizations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
+    "comments": [],
+    "obsolete": false
+  },
+  "q+G9Ft": {
+    "translation": "Créer une organisation",
+    "message": "Créer une organisation",
     "comments": []
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rKvP91": {
     "translation": "Email admin client",
     "message": "Email admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "sAl4AV": {
     "translation": "Téléchargez une photo",
     "message": "Téléchargez une photo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "Débloquer",
@@ -202,6 +238,7 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

@@ -7,7 +7,8 @@
   "0xb6pr": {
     "translation": "",
     "message": "Modifier une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
@@ -32,12 +33,14 @@
   "BSb8d9": {
     "translation": "",
     "message": "Double authentification",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "",
@@ -52,28 +55,31 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "H1+RH6": {
     "translation": "",
     "message": "Aucun groupe défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -83,63 +89,73 @@
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JMJBle": {
     "translation": "",
     "message": "La double authentification est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -149,17 +165,20 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "",
     "message": "Enregistrer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hMJAZ/": {
     "translation": "",
     "message": "Aucune modification n'a été apportée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -169,38 +188,43 @@
   "i0ke3s": {
     "translation": "",
     "message": "Aucun rôle défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jiE6Vn": {
     "translation": "",
     "message": "Organizations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "tALayW": {
     "translation": "",
     "message": "Annuler",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u2iZug": {
     "translation": "",
     "message": "Le login est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "",
@@ -210,16 +234,19 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

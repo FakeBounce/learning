@@ -7,12 +7,14 @@
   "0xb6pr": {
     "translation": "Modifier une organization",
     "message": "Modifier une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -27,7 +29,8 @@
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -52,8 +55,7 @@
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "HbvbX+": {
     "translation": "Personnalisation",
@@ -63,44 +65,49 @@
   "JSaiRe": {
     "translation": "Se connecter",
     "message": "Se connecter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "NDUWrS": {
     "translation": "Organization id is required",
     "message": "Organization id is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SDTSUy": {
     "translation": "Organisation ID",
     "message": "Organisation ID",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "X1Endn": {
     "translation": "Pas encore de compte ?",
     "message": "Pas encore de compte ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "ZsZeV2": {
     "translation": "Email is required",
     "message": "Email is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "chRwq/": {
     "translation": "Password is required",
     "message": "Password is required",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -110,7 +117,8 @@
   "flJGrT": {
     "translation": "Organization ID",
     "message": "Organization ID",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -120,23 +128,25 @@
   "jiE6Vn": {
     "translation": "Organizations",
     "message": "Organizations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": true
+    "comments": []
   },
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
@@ -146,6 +156,7 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }
