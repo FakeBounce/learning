@@ -17,11 +17,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "yarn extract",
+      "yarn compile",
       "eslint . --fix",
       "yarn prettier . --write --check",
-      "yarn test:all",
-      "yarn extract",
-      "yarn compile"
+      "yarn test:all"
     ]
   },
   "husky": {
