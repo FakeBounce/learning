@@ -12,7 +12,7 @@ import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as UsersServices from '@services/users/usersAPI';
 import { enqueueSnackbar } from 'notistack';
 import { t } from '@lingui/macro';
-import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
+import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 
 interface UsersState {
   usersList: {

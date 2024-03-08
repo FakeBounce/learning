@@ -4,6 +4,7 @@
  */
 import { ApiResponseMessage } from '@services/interfaces';
 import { Group } from '@services/groups/interfaces';
+import { UserRole } from '@services/roles/interfaces';
 
 export interface User {
   id: number;
@@ -17,7 +18,7 @@ export interface User {
   emailVerifiedAt?: Date;
   useDoubleAuth: boolean;
   groups: Group[];
-  roles: [];
+  roles: UserRole[];
 }
 
 export interface UserFromAPI {
@@ -32,7 +33,7 @@ export interface UserFromAPI {
   email_verified_at?: Date;
   use_double_auth: boolean;
   groups: Group[];
-  roles: [];
+  roles: UserRole[];
 }
 
 export interface UpdateOrganizationViewRequest {

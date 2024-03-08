@@ -4,14 +4,15 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { PATH_AUTH } from '@utils/navigation/paths';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getSession } from '@utils/axios/session';
-import { getUser, refresh } from '@redux/reducers/connectedUserReducer';
+import { getUser, refresh } from '@redux/actions/connectedUserActions';
+import { getRolePermissions } from '@redux/actions/rolesActions';
 
 // ----------------------------------------------------------------------
 
 function AuthGuard({ children }: { children: ReactNode }) {
   const {
     globalLoading,
-    user: { id },
+    user: { id, roles },
     login: { loading, isAuthenticated }
   } = useAppSelector((state) => state.connectedUser);
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
@@ -29,6 +30,12 @@ function AuthGuard({ children }: { children: ReactNode }) {
       dispatch(getUser());
     }
   }, [isAuthenticated]);
+
+  useEffect(() => {
+    if (isAuthenticated && roles && roles[0].id) {
+      dispatch(getRolePermissions({ roleId: roles[0].id }));
+    }
+  }, [isAuthenticated, roles]);
 
   if (loading || globalLoading) {
     return <Skeleton variant="rectangular" width={210} height={118} />;

@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles';
 import HeaderBreadcrumbs from '@src/components/layouts/main-layout/HeaderBreadcrumbs';
 import HeaderRightContent from '@src/components/layouts/main-layout/HeaderRightContent';
 import { useAppDispatch } from '@redux/hooks';
-import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
+import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 

@@ -11,6 +11,11 @@ export const PATH_AUTH = {
   resetPassword: '/reset-password'
 };
 
+export const PATH_ERRORS = {
+  root: '/404',
+  '403': '/403'
+};
+
 // Used for dashboard navigation
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,

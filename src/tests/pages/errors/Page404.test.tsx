@@ -1,7 +1,7 @@
 import { render, screen } from '@testProvider';
 import { Route, Routes } from 'react-router-dom';
 
-import Page404 from '@src/pages/Page404';
+import Page404 from '@src/pages/errors/Page404';
 
 describe('Page404 component', () => {
   test('renders without errors', () => {

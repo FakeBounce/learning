@@ -4,7 +4,7 @@ import { Outlet } from 'react-router';
 import { useNavigate } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getSession } from '@utils/axios/session';
-import { refresh } from '@redux/reducers/connectedUserReducer';
+import { refresh } from '@redux/actions/connectedUserActions';
 // ----------------------------------------------------------------------
 
 function GuestGuard() {

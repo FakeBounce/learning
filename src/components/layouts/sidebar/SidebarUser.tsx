@@ -3,7 +3,7 @@ import { useTheme } from '@mui/material/styles';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Trans } from '@lingui/macro';
 import { MouseEvent, useState } from 'react';
-import { logout } from '@redux/reducers/connectedUserReducer';
+import { logout } from '@redux/actions/connectedUserActions';
 import { useAppDispatch } from '@redux/hooks';
 // ----------------------------------------------------------------------
 
