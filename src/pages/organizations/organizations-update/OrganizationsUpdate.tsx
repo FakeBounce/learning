@@ -98,7 +98,7 @@ export default function OrganizationsUpdate() {
             cardCss={{ maxWidth: '100%' }}
             header={
               <Typography variant="h5">
-                <Trans>Modifier une organization</Trans>
+                <Trans>Modifier une organisation</Trans>
               </Typography>
             }
             footer={<OrganizationsUpdateFooter />}

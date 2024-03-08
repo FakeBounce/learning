@@ -34,17 +34,17 @@ describe('OrganizationsUpdate', () => {
       customHistory: [`/${PATH_PARAMETERS.organizations}/update/1`]
     });
 
-    // Check if the "Modifier une organization" header is rendered
-    expect(screen.getByText(/Modifier une organization/i)).toBeInTheDocument();
+    // Check if the "Modifier une organisation" header is rendered
+    expect(screen.getByText(/Modifier une organisation/i)).toBeInTheDocument();
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organization');
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
     });
 
     await act(() => {
       fireEvent.input(screen.getByLabelText(/Nom \*/i), {
-        target: { value: 'New test Organization' }
+        target: { value: 'New test Organisation' }
       });
     });
 
@@ -79,7 +79,7 @@ describe('OrganizationsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organization');
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
     });
 
     // Simulate form submission
@@ -114,12 +114,12 @@ describe('OrganizationsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organization');
+      expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
     });
 
     await act(() => {
       fireEvent.input(screen.getByLabelText(/Nom \*/i), {
-        target: { value: 'New test Organization' }
+        target: { value: 'New test Organisation' }
       });
 
       // Simulate form submission

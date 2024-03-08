@@ -1,6 +1,6 @@
-import { Organisation } from '@services/organisations/interfaces';
+import { Organization } from '@services/organizations/interfaces';
 
-export const defaultOrganisation = {
+export const defaultOrganization = {
   id: 1,
   name: 'Test Organisation',
   logo: 'Some logo url',
@@ -8,29 +8,29 @@ export const defaultOrganisation = {
   is_active: true,
   address: 'Some address',
   city: 'Some city'
-} as Organisation;
+} as Organization;
 
-export const blockedOrganisation = {
+export const blockedOrganization = {
   id: 3,
-  name: 'Test Organisation',
+  name: 'Blocked Organisation',
   logo: 'Some logo url',
   use_double_auth: false,
   is_active: false,
   address: 'Some address',
   city: 'Some city'
-} as Organisation;
+} as Organization;
 
-export const unlockedOrganisation = {
-  id: 3,
-  name: 'Test Organisation',
+export const unlockedOrganization = {
+  id: 4,
+  name: 'Unlocked Organisation',
   logo: 'Some logo url',
   use_double_auth: false,
   is_active: true,
   address: 'Some address',
   city: 'Some city'
-} as Organisation;
+} as Organization;
 
-export const newOrganisation = {
+export const newOrganization = {
   id: 2,
   name: 'New organisation',
   logo: 'Some logo url',
@@ -38,4 +38,4 @@ export const newOrganisation = {
   is_active: true,
   address: 'Some address',
   city: 'Some city'
-} as Organisation;
+} as Organization;

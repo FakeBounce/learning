@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testProvider';
-import OrganisationsListHeader from '@src/pages/organisations/organisations-list/OrganisationsListHeader';
-import { PATH_ORGANISATIONS } from '@utils/navigation/paths';
+import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 
 // Mock useNavigate
@@ -9,14 +9,13 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
-describe('OrganisationsListHeader', () => {
-  it('renders OrganisationsListHeader correctly', () => {
+describe('OrganizationsListHeader', () => {
+  it('renders OrganizationsListHeader correctly', () => {
     // Mock useNavigate
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    // Render the OrganisationsCreateFooter component
-    render(<OrganisationsListHeader />);
+    render(<OrganizationsListHeader />);
 
     expect(screen.getByText(/Organisations/i)).toBeInTheDocument();
 
@@ -29,6 +28,6 @@ describe('OrganisationsListHeader', () => {
     });
 
     // Check if the navigate function has been called
-    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANISATIONS.add);
+    expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANIZATIONS.add);
   });
 });

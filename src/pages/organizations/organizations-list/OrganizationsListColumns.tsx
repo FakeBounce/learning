@@ -49,7 +49,7 @@ export const organizationsListColumns: readonly OrganizationColumn[] = [
         <Box display="flex" alignItems="center">
           <Chip
             sx={{
-              borderRadius: 1,
+              borderRadius: (theme: Theme) => theme.shape.customBorderRadius.small,
               backgroundColor: (theme: Theme) =>
                 row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
               color: (theme: Theme) =>
