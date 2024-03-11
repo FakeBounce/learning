@@ -14,12 +14,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "Modifier une organization",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
@@ -165,12 +159,6 @@
     "message": "Créer une organization",
     "comments": []
   },
-  "SDTSUy": {
-    "translation": "Organisation ID",
-    "message": "Organisation ID",
-    "comments": [],
-    "obsolete": true
-  },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
@@ -256,12 +244,6 @@
     "message": "Nom",
     "comments": []
   },
-  "jiE6Vn": {
-    "translation": "Organizations",
-    "message": "Organizations",
-    "comments": [],
-    "obsolete": true
-  },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
@@ -271,12 +253,6 @@
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
     "comments": []
-  },
-  "q+G9Ft": {
-    "translation": "Créer une organisation",
-    "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": true
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",

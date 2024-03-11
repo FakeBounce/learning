@@ -4,12 +4,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "Modifier une organization",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
@@ -50,12 +44,6 @@
     "message": "Gestion des rôles",
     "comments": []
   },
-  "GoZkew": {
-    "translation": "Organisations",
-    "message": "Organisations",
-    "comments": [],
-    "obsolete": true
-  },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
@@ -70,18 +58,6 @@
     "translation": "Organization id is required",
     "message": "Organization id is required",
     "comments": []
-  },
-  "PedA04": {
-    "translation": "Créer une organization",
-    "message": "Créer une organization",
-    "comments": [],
-    "obsolete": true
-  },
-  "SDTSUy": {
-    "translation": "Organisation ID",
-    "message": "Organisation ID",
-    "comments": [],
-    "obsolete": true
   },
   "X1Endn": {
     "translation": "Pas encore de compte ?",

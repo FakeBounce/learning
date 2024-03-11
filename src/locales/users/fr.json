@@ -4,12 +4,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "Modifier une organization",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
@@ -60,12 +54,6 @@
     "message": "Ajouter en masse",
     "comments": []
   },
-  "GoZkew": {
-    "translation": "Organisations",
-    "message": "Organisations",
-    "comments": [],
-    "obsolete": true
-  },
   "H1+RH6": {
     "translation": "Aucun groupe défini.",
     "message": "Aucun groupe défini.",
@@ -115,12 +103,6 @@
     "translation": "Modifier",
     "message": "Modifier",
     "comments": []
-  },
-  "PedA04": {
-    "translation": "Créer une organization",
-    "message": "Créer une organization",
-    "comments": [],
-    "obsolete": true
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
