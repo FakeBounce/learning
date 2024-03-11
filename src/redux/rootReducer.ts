@@ -17,8 +17,7 @@ export const rootPersistConfig = {
 export const connectedUserPersistConfig = {
   key: 'connectedUser',
   storage,
-  keyPrefix: 'redux-',
-  whitelist: []
+  blacklist: ['permissions']
 };
 
 const rootReducer = combineReducers({

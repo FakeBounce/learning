@@ -65,8 +65,8 @@ export const connectedUserSlice = createSlice({
       })
       .addCase(UserActions.logout.fulfilled, (state) => {
         state.login.isAuthenticated = false;
-        state.user = {} as User;
-        state.permissions = {};
+        state.user = initialState.user;
+        state.permissions = initialState.permissions;
         setSession(null);
       })
       .addCase(UserActions.logout.rejected, (_, action: AnyAction) => {

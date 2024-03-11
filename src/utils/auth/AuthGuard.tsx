@@ -13,7 +13,8 @@ function AuthGuard({ children }: { children: ReactNode }) {
   const {
     globalLoading,
     user: { id, roles },
-    login: { loading, isAuthenticated }
+    login: { loading, isAuthenticated },
+    permissions
   } = useAppSelector((state) => state.connectedUser);
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
 
@@ -24,7 +25,9 @@ function AuthGuard({ children }: { children: ReactNode }) {
     if (isAuthenticated && id) {
       const storageToken = getSession();
       if (storageToken !== null && storageToken.refresh_token !== null) {
-        dispatch(refresh());
+        dispatch(refresh()).then(() => {
+          dispatch(getRolePermissions({ roleId: roles[0].id }));
+        });
       }
     } else if (isAuthenticated && !id) {
       dispatch(getUser());
@@ -32,10 +35,10 @@ function AuthGuard({ children }: { children: ReactNode }) {
   }, [isAuthenticated]);
 
   useEffect(() => {
-    if (isAuthenticated && roles && roles[0].id) {
+    if (isAuthenticated && id && roles && roles[0].id && Object.keys(permissions).length === 0) {
       dispatch(getRolePermissions({ roleId: roles[0].id }));
     }
-  }, [isAuthenticated, roles]);
+  }, [isAuthenticated, id]);
 
   if (loading || globalLoading) {
     return <Skeleton variant="rectangular" width={210} height={118} />;
