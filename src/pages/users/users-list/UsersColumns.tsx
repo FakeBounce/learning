@@ -1,7 +1,7 @@
 import { MouseEvent, ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { User } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/connected-user/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import Iconify from '@src/components/iconify/Iconify';
 
@@ -16,8 +16,8 @@ export interface UsersColumn {
   padding?: 'normal' | 'checkbox' | 'none';
   align?: 'right' | 'center';
   renderCell?: (
-    row: User,
-    handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
+    row: UserFromAPI,
+    handleClick: (newUser: UserFromAPI) => (event: MouseEvent<HTMLElement>) => void
   ) => ReactNode;
 }
 
@@ -109,10 +109,10 @@ export const usersTableHeaderRender = (
 };
 
 export const usersTableRowsRender = (
-  listData: User[],
-  handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
+  listData: UserFromAPI[],
+  handleClick: (newUser: UserFromAPI) => (event: MouseEvent<HTMLElement>) => void
 ) => {
-  return listData.map((row: User) => {
+  return listData.map((row: UserFromAPI) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
         {usersColumns.map((column: UsersColumn) => {

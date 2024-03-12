@@ -30,7 +30,8 @@ const pageCardCss = {
   flex: '1 1 0',
   borderColor: 'transparent',
   borderRadius: 4,
-  padding: 0
+  padding: 0,
+  maxWidth: '100%'
 };
 
 export default function LMSCard({

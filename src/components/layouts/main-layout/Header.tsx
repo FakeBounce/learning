@@ -22,11 +22,13 @@ export default function Header() {
   return (
     <>
       <Box
-        py={2}
+        p={2}
         ml={2}
-        px={[0, 2]}
+        gap={2}
         display="flex"
-        justifyContent="space-between"
+        flexDirection={['column', 'row']}
+        justifyContent={['center', 'space-between']}
+        alignItems={['center', 'center']}
         boxSizing="border-box"
       >
         <Box display="flex" alignItems="center">

@@ -33,8 +33,10 @@ export const applicantSlice = createSlice({
         (state, action: { payload: GetApplicantsListResponse }) => {
           state.applicantList.applicantListLoading = false;
           state.applicantList.applicantListData = action.payload.data.rows;
-          state.applicantList.applicantListTotalCount =
-            action.payload.data.pagination.total_results;
+          // @todo : Remove this line when the API will be ready
+          state.applicantList.applicantListTotalCount = 2;
+          // state.applicantList.applicantListTotalCount =
+          //   action.payload.data.pagination.total_results;
         }
       )
       .addCase(ApplicantsActions.getApplicantsList.rejected, (state, action: AnyAction) => {

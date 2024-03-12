@@ -50,6 +50,7 @@ export const applicantsColumns: readonly ApplicantColumn[] = [
     id: 'birth_date',
     label: <Trans>Date naiss.</Trans>,
     renderCell: (row) => {
+      if (!row.birth_date) return <Trans>/</Trans>;
       const birthDate = new Date(row.birth_date).toLocaleDateString();
       return <Typography>{birthDate}</Typography>;
     }

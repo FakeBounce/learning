@@ -24,7 +24,8 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
           sx: {
             width: drawerWidth,
             backgroundColor: theme.palette.grey[100],
-            borderRightStyle: 'dashed'
+            borderRightStyle: 'dashed',
+            position: 'relative'
           }
         }}
       >
