@@ -43,3 +43,14 @@ export interface GetApplicantsListResponse {
     pagination: ApiResponsePagination;
   };
 }
+
+export interface UpdateApplicantBlockRequest {
+  setActive: boolean;
+  applicantId: number;
+}
+
+export interface UpdateApplicantBlockResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Applicant;
+}

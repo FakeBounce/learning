@@ -1,10 +1,10 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
-// import { toggleOrganizationsBlock } from '@redux/reducers/organizationsReducer';
-// import { changeOrganizationView } from '@redux/actions/connectedUserActions';
+import { toggleApplicantBlock } from '@redux/actions/applicantsActions';
 import { useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
+import { PATH_APPLICANTS } from '@utils/navigation/paths';
 
 interface OrganizationsListPopperContentProps {
   setAnchorEl: (value: HTMLElement | null) => void;
@@ -19,42 +19,37 @@ export default function OrganizationsListPopperContent({
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  const handleChangeView = () => {
-    // if (organizationSelected !== null) {
-    //   dispatch(
-    //     changeOrganizationView({
-    //       organizationId: organizationSelected.id
-    //     })
-    //   );
-    //   navigate(PATH_DASHBOARD.root);
-    // }
+  const goToApplicantProfile = () => {
+    if (applicantSelected !== null) {
+      navigate(`${PATH_APPLICANTS.root}/${applicantSelected.id}`);
+    }
   };
 
-  const goToUpdateApplicant = () => {
-    // if (organizationSelected !== null) {
-    //   navigate(`/applicants/update/${organizationSelected.id}`);
-    // }
+  const goToApplicantUpdate = () => {
+    if (applicantSelected !== null) {
+      navigate(`${PATH_APPLICANTS.root}/update/${applicantSelected.id}`);
+    }
   };
 
   const toggleBlock = () => {
-    // if (organizationSelected !== null) {
-    //   dispatch(
-    //     toggleOrganizationsBlock({
-    //       setActive: !organizationSelected.is_active,
-    //       organizationId: organizationSelected.id
-    //     })
-    //   ).then(() => {
-    //     // Reset the popper
-    //     setAnchorEl(null);
-    //     setOrganizationSelected(null);
-    //   });
-    // }
+    if (applicantSelected !== null) {
+      dispatch(
+        toggleApplicantBlock({
+          setActive: !applicantSelected.is_active,
+          applicantId: applicantSelected.id
+        })
+      ).then(() => {
+        // Reset the popper
+        setAnchorEl(null);
+        setApplicantSelected(null);
+      });
+    }
   };
 
   return (
     <Paper elevation={3} sx={{ borderRadius: 2, minWidth: 160 }}>
       <ListItem disablePadding sx={{ display: 'block' }}>
-        <ListItemButton onClick={handleChangeView}>
+        <ListItemButton onClick={goToApplicantProfile}>
           <ListItemText primary={<Trans>Profil</Trans>} />
         </ListItemButton>
         <ListItemButton onClick={toggleBlock}>
@@ -64,7 +59,7 @@ export default function OrganizationsListPopperContent({
             }
           />
         </ListItemButton>
-        <ListItemButton onClick={goToUpdateApplicant}>
+        <ListItemButton onClick={goToApplicantUpdate}>
           <ListItemText primary={<Trans>Mettre à jour</Trans>} />
         </ListItemButton>
       </ListItem>

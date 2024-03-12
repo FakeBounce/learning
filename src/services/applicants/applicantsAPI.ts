@@ -1,7 +1,9 @@
 import {
   ApplicantType,
   GetApplicantsListRequest,
-  GetApplicantsListResponse
+  GetApplicantsListResponse,
+  UpdateApplicantBlockRequest,
+  UpdateApplicantBlockResponse
 } from '@services/applicants/interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
@@ -18,4 +20,14 @@ export const getApplicants = async (
     filters,
     sort
   });
+};
+
+export const updateApplicantBlock = async (
+  args: UpdateApplicantBlockRequest
+): Promise<AxiosResponse<UpdateApplicantBlockResponse>> => {
+  const { applicantId, setActive } = args;
+  const correctPath = setActive ? 'unblock' : 'block';
+
+  // @todo Not working right now
+  return axios.put(`/applicants/${applicantId}/${correctPath}`);
 };
