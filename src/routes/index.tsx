@@ -1,6 +1,12 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { PATH_AUTH, PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_USERS } from '@utils/navigation/paths';
+import {
+  PATH_APPLICANTS,
+  PATH_AUTH,
+  PATH_DASHBOARD,
+  PATH_ORGANIZATIONS,
+  PATH_USERS
+} from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   LoginPage,
@@ -10,7 +16,8 @@ import {
   OrganizationsUpdate,
   Users,
   UserProfile,
-  UserEdit
+  UserEdit,
+  Applicants
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
@@ -38,6 +45,9 @@ const Router = () => {
           <Route path={PATH_USERS.root} element={<Users />} />
           <Route path={PATH_USERS.profile} element={<UserProfile />} />
           <Route path={PATH_USERS.edit} element={<UserEdit />} />
+        </Route>
+        <Route element={<FeatureFlagedRoute pagePermissionType={PermissionTypeEnum.SUPER_ADMIN} />}>
+          <Route path={PATH_APPLICANTS.root} element={<Applicants />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

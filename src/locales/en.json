@@ -154,6 +154,11 @@
     "message": "Modifier",
     "comments": []
   },
+  "P3YkHZ": {
+    "translation": "",
+    "message": "Mettre à jour",
+    "comments": []
+  },
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
@@ -162,6 +167,11 @@
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
+    "comments": []
+  },
+  "UDTsGF": {
+    "translation": "",
+    "message": "Id externe",
     "comments": []
   },
   "W3FHUJ": {
@@ -234,6 +244,11 @@
     "message": "Aucune modification n'a été apportée",
     "comments": []
   },
+  "hsf9ph": {
+    "translation": "",
+    "message": "Étudiants",
+    "comments": []
+  },
   "i0ke3s": {
     "translation": "",
     "message": "Aucun rôle défini.",
@@ -287,6 +302,16 @@
   "uXStqy": {
     "translation": "",
     "message": "Mot de passe",
+    "comments": []
+  },
+  "vm08uh": {
+    "translation": "",
+    "message": "Téléphone",
+    "comments": []
+  },
+  "wB7q3X": {
+    "translation": "",
+    "message": "Date naiss.",
     "comments": []
   },
   "xj9DHS": {

@@ -5,6 +5,7 @@ import rolesReducer from '@redux/reducers/rolesReducer';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import applicantsReducer from '@redux/reducers/applicantsReducer';
 // ----------------------------------------------------------------------
 
 export const rootPersistConfig = {
@@ -24,7 +25,8 @@ const rootReducer = combineReducers({
   connectedUser: persistReducer(connectedUserPersistConfig, connectedUserReducer),
   organizations: organizationsReducer,
   users: usersReducer,
-  roles: rolesReducer
+  roles: rolesReducer,
+  applicants: applicantsReducer
 });
 
 export default rootReducer;

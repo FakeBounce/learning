@@ -8,7 +8,9 @@ export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/L
 // MAIN
 export const Page404 = LoadableComponent(lazy(() => import('../pages/errors/Page404')));
 
-// Organizations
+/**
+ Organizations
+ **/
 
 export const Organizations = LoadableComponent(
   lazy(() => import('@src/pages/organizations/organizations-list/OrganizationsList'))
@@ -30,4 +32,11 @@ export const UserProfile = LoadableComponent(
 
 export const UserEdit = LoadableComponent(
   lazy(() => import('@src/pages/users/user-edit/UserEdit'))
+);
+
+/**
+ Applicants
+ **/
+export const Applicants = LoadableComponent(
+  lazy(() => import('@src/pages/applicants/applicants-list/ApplicantsList'))
 );

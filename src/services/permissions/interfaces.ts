@@ -34,7 +34,7 @@ export enum PermissionTypeEnum {
   PERSONALIZATION = 'personalization',
   USERS = 'users',
   TESTERS = 'testers',
-  STUDENTS = 'students',
+  APPLICANTS = 'students',
   ROLES = 'roles',
   GROUPS = 'groups',
   MODULES = 'modules',
