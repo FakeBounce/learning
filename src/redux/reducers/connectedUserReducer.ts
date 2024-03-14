@@ -61,6 +61,9 @@ export const connectedUserSlice = createSlice({
         setSession(action.payload.data);
       })
       .addCase(UserActions.refresh.rejected, (state) => {
+        state.login.isAuthenticated = false;
+        state.user = initialState.user;
+        state.permissions = initialState.permissions;
         state.login.loading = false;
       })
       .addCase(UserActions.logout.fulfilled, (state) => {

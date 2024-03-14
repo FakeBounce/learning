@@ -2,7 +2,7 @@ export interface PermissionTypeList {
   [PermissionTypeEnum.PERSONALIZATION]?: Permission;
   [PermissionTypeEnum.USERS]?: Permission;
   [PermissionTypeEnum.TESTERS]?: Permission;
-  [PermissionTypeEnum.STUDENTS]?: Permission;
+  [PermissionTypeEnum.APPLICANTS]?: Permission;
   [PermissionTypeEnum.ROLES]?: Permission;
   [PermissionTypeEnum.GROUPS]?: Permission;
   [PermissionTypeEnum.MODULES]?: Permission;
