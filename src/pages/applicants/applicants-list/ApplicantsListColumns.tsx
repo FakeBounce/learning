@@ -33,7 +33,7 @@ export interface ApplicantColumn {
 export const applicantsColumns: readonly ApplicantColumn[] = [
   {
     id: 'id',
-    label: <Trans>Nom</Trans>,
+    label: '',
     renderCell: (row) => {
       const logo = row.profile_picture || row.lastname[0];
       return (

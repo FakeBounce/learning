@@ -59,6 +59,11 @@
     "message": "Bloquer",
     "comments": []
   },
+  "LgoIGo": {
+    "translation": "dans",
+    "message": "dans",
+    "comments": []
+  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
@@ -94,14 +99,29 @@
     "message": "Modifier une organisation",
     "comments": []
   },
+  "ZG+LqI": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
+    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
+    "comments": []
+  },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
     "comments": []
   },
+  "f3LmJs": {
+    "translation": "Bloquer un étudiant",
+    "message": "Bloquer un étudiant",
+    "comments": []
+  },
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
+    "comments": []
+  },
+  "hsXO/7": {
+    "translation": "toutes les organisations",
+    "message": "toutes les organisations",
     "comments": []
   },
   "hsf9ph": {
@@ -117,6 +137,11 @@
   "jiE6Vn": {
     "translation": "Organizations",
     "message": "Organizations",
+    "comments": []
+  },
+  "k441hZ": {
+    "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
+    "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
     "comments": []
   },
   "q+G9Ft": {

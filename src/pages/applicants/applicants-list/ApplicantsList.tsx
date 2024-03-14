@@ -15,6 +15,7 @@ import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Applicant } from '@services/applicants/interfaces';
+import ApplicantsListModal from '@src/pages/applicants/applicants-list/ApplicantsListModal';
 
 export default function ApplicantsList() {
   const dispatch = useAppDispatch();
@@ -28,6 +29,7 @@ export default function ApplicantsList() {
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
   const [applicantSelected, setApplicantSelected] = useState<Applicant | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChangePage = (_: unknown, newPage: number) => {
     setCurrentPage(newPage);
@@ -79,6 +81,13 @@ export default function ApplicantsList() {
     }
   };
 
+  const cancelModal = () => {
+    // Reset the popper
+    setAnchorEl(null);
+    setApplicantSelected(null);
+    setIsModalOpen(false);
+  };
+
   // Popper handlers
   const handleClick = (newApplicant: Applicant) => (event: MouseEvent<HTMLElement>) => {
     if (newApplicant.id === applicantSelected?.id) {
@@ -115,11 +124,16 @@ export default function ApplicantsList() {
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
         <ApplicantsListPopperContent
-          setAnchorEl={setAnchorEl}
-          setApplicantSelected={setApplicantSelected}
+          handleToggleBlock={() => setIsModalOpen(true)}
           applicantSelected={applicantSelected}
         />
       </LMSPopover>
+      <ApplicantsListModal
+        applicantSelected={applicantSelected}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        cancelModal={cancelModal}
+      />
     </Box>
   );
 }

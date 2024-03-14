@@ -8,6 +8,7 @@ declare module '@mui/material/styles' {
         small: number;
         medium: number;
         large: number;
+        extraLarge: number;
         whole: number;
       };
     };
@@ -19,6 +20,7 @@ declare module '@mui/material/styles' {
       customBorderRadius: {
         small: number;
         medium: number;
+        extraLarge: number;
         large: number;
         whole: number;
       };

@@ -124,6 +124,11 @@
     "message": "L'adresse est requise",
     "comments": []
   },
+  "LgoIGo": {
+    "translation": "",
+    "message": "dans",
+    "comments": []
+  },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
@@ -199,6 +204,11 @@
     "message": "Ajouter",
     "comments": []
   },
+  "ZG+LqI": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
+    "comments": []
+  },
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
@@ -217,6 +227,11 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
+    "comments": []
+  },
+  "f3LmJs": {
+    "translation": "",
+    "message": "Bloquer un étudiant",
     "comments": []
   },
   "flJGrT": {
@@ -249,6 +264,11 @@
     "message": "Aucune modification n'a été apportée",
     "comments": []
   },
+  "hsXO/7": {
+    "translation": "",
+    "message": "toutes les organisations",
+    "comments": []
+  },
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
@@ -262,6 +282,11 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
+    "comments": []
+  },
+  "k441hZ": {
+    "translation": "",
+    "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
     "comments": []
   },
   "kSDjJh": {
