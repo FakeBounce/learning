@@ -18,7 +18,7 @@ export const FeatureFlagContext = createContext<{
     permissionType: PermissionTypeEnum,
     permissionAsked: PermissionEnum
   ) => boolean;
-  canSeePage: (pageAsked: PermissionTypeEnum) => boolean;
+  canSeePage: (pageAsked: PermissionTypeEnum[]) => boolean;
 }>({
   isAuthorizedByPermissionsTo: () => false,
   canSeePage: () => false
@@ -57,18 +57,28 @@ const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
   };
 
   // @Todo : Might not the correct method cause there is doubt about how permissions works
-  const canSeePage = (pageAsked: PermissionTypeEnum): boolean => {
+  const canSeePage = (pageAsked: PermissionTypeEnum[]): boolean => {
+    let hasPermission = false;
+    pageAsked.forEach((page) => {
+      if (pagePermissionCheck(page)) {
+        hasPermission = true;
+      }
+    });
+    return hasPermission;
+  };
+
+  const pagePermissionCheck = (pageAskedPermission: PermissionTypeEnum) => {
     // @Todo : Unless we are on main organization, in which case we can only see SUPER_ADMIN pages
-    if (user.organizationId === 1 && pageAsked !== PermissionTypeEnum.SUPER_ADMIN) {
+    if (user.organizationId === 1 && pageAskedPermission !== PermissionTypeEnum.SUPER_ADMIN) {
       return false;
     }
-    if (pageAsked === PermissionTypeEnum.SUPER_ADMIN) {
+    if (pageAskedPermission === PermissionTypeEnum.SUPER_ADMIN) {
       return isUserAdmin === HasAdminRights.SUPER_ADMIN && user.organizationId === 1;
     }
     if (isUserAdmin >= HasAdminRights.CLIENT_ADMIN) {
       return true;
     }
-    return Object.prototype.hasOwnProperty.call(permissions, pageAsked);
+    return Object.prototype.hasOwnProperty.call(permissions, pageAskedPermission);
   };
 
   return (

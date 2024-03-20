@@ -53,18 +53,18 @@ export const connectedUserSlice = createSlice({
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
       .addCase(UserActions.refresh.pending, (state) => {
-        state.login.loading = true;
+        state.globalLoading = true;
       })
       .addCase(UserActions.refresh.fulfilled, (state, action: { payload: LoginResponse }) => {
-        state.login.loading = false;
+        state.globalLoading = false;
         state.login.isAuthenticated = true;
         setSession(action.payload.data);
       })
       .addCase(UserActions.refresh.rejected, (state) => {
+        state.globalLoading = false;
         state.login.isAuthenticated = false;
         state.user = initialState.user;
         state.permissions = initialState.permissions;
-        state.login.loading = false;
       })
       .addCase(UserActions.logout.fulfilled, (state) => {
         state.login.isAuthenticated = false;
@@ -113,13 +113,18 @@ export const connectedUserSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
+      .addCase(RolesActions.getRolePermissions.pending, (state) => {
+        state.globalLoading = true;
+      })
       .addCase(
         RolesActions.getRolePermissions.fulfilled,
         (state, action: { payload: GetRolePermissionsResponse }) => {
+          state.globalLoading = false;
           state.permissions = action.payload.data;
         }
       )
-      .addCase(RolesActions.getRolePermissions.rejected, (_, action: AnyAction) => {
+      .addCase(RolesActions.getRolePermissions.rejected, (state, action: AnyAction) => {
+        state.globalLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       });

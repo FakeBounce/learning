@@ -115,7 +115,7 @@ export default function ApplicantsList() {
           colsNum={applicantsColumns.length}
         />
         <Pagination
-          totalCount={applicantListTotalCount || 0}
+          totalCount={applicantListTotalCount}
           rowsPerPage={rowsPerPage}
           currentPage={currentPage}
           onPageChange={handleChangePage}
@@ -128,12 +128,14 @@ export default function ApplicantsList() {
           applicantSelected={applicantSelected}
         />
       </LMSPopover>
-      <ApplicantsListModal
-        applicantSelected={applicantSelected}
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-        cancelModal={cancelModal}
-      />
+      {applicantSelected && (
+        <ApplicantsListModal
+          applicantSelected={applicantSelected}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          cancelModal={cancelModal}
+        />
+      )}
     </Box>
   );
 }

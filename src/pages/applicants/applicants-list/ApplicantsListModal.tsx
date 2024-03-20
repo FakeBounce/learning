@@ -5,8 +5,82 @@ import { Applicant } from '@services/applicants/interfaces';
 import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
 
+const titleToDisplay = (applicantSelected: Applicant) => {
+  if (!applicantSelected.is_active) {
+    return <Trans>Débloquer un étudiant</Trans>;
+  }
+  return <Trans>Bloquer un étudiant</Trans>;
+};
+
+const textToDisplay = (applicantSelected: Applicant) => {
+  if (!applicantSelected.is_active) {
+    return (
+      <Typography>
+        <Trans>Êtes-vous sûr de vouloir débloquer l’étudiant</Trans>{' '}
+        <Box
+          component={'span'}
+          sx={{
+            fontWeight: (theme) => theme.typography.fontWeightMedium,
+            textTransform: 'uppercase'
+          }}
+        >
+          {applicantSelected.lastname}
+        </Box>{' '}
+        <Box
+          component={'span'}
+          sx={{
+            fontWeight: (theme) => theme.typography.fontWeightMedium
+          }}
+        >
+          {applicantSelected.firstname}
+        </Box>{' '}
+        <Trans>dans</Trans>{' '}
+        <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
+          <Trans>toutes les organisations</Trans>
+        </Box>{' '}
+        ?
+      </Typography>
+    );
+  }
+
+  return (
+    <>
+      <Typography>
+        <Trans>Êtes-vous sûr de vouloir bloquer l’étudiant</Trans>{' '}
+        <Box
+          component={'span'}
+          sx={{
+            fontWeight: (theme) => theme.typography.fontWeightMedium,
+            textTransform: 'uppercase'
+          }}
+        >
+          {applicantSelected.lastname}
+        </Box>{' '}
+        <Box
+          component={'span'}
+          sx={{
+            fontWeight: (theme) => theme.typography.fontWeightMedium
+          }}
+        >
+          {applicantSelected.firstname}
+        </Box>{' '}
+        <Trans>dans</Trans>{' '}
+        <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
+          <Trans>toutes les organisations</Trans>
+        </Box>{' '}
+        ?
+      </Typography>
+      <Typography>
+        <Trans>
+          Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.
+        </Trans>
+      </Typography>
+    </>
+  );
+};
+
 interface ApplicantsListModalProps {
-  applicantSelected: Applicant | null;
+  applicantSelected: Applicant;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
   cancelModal: () => void;
@@ -36,7 +110,7 @@ export default function ApplicantsListModal({
 
   return (
     <LMSModal
-      title={<Trans>Bloquer un étudiant</Trans>}
+      title={titleToDisplay(applicantSelected)}
       open={isModalOpen}
       onClose={() => {
         setIsModalOpen(false);
@@ -44,36 +118,7 @@ export default function ApplicantsListModal({
       validateAction={toggleBlock}
       cancelAction={cancelModal}
     >
-      <Typography>
-        <Trans>Êtes-vous sûr de vouloir bloquer l’étudiant</Trans>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-            textTransform: 'uppercase'
-          }}
-        >
-          {applicantSelected?.lastname}
-        </Box>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium
-          }}
-        >
-          {applicantSelected?.firstname}
-        </Box>{' '}
-        <Trans>dans</Trans>{' '}
-        <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
-          <Trans>toutes les organisations</Trans>
-        </Box>{' '}
-        ?
-      </Typography>
-      <Typography>
-        <Trans>
-          Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.
-        </Trans>
-      </Typography>
+      {textToDisplay(applicantSelected)}
     </LMSModal>
   );
 }

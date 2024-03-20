@@ -15,6 +15,7 @@ import OrganizationsListPopperContent from '@src/pages/organizations/organizatio
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
+import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();
@@ -27,6 +28,7 @@ export default function OrganizationsList() {
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
   const [organizationSelected, setOrganizationSelected] = useState<Organization | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChangePage = (_: unknown, newPage: number) => {
     setCurrentPage(newPage);
@@ -70,16 +72,19 @@ export default function OrganizationsList() {
   // Popper handlers
   const handleClick = (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => {
     if (newOrganization.id === organizationSelected?.id) {
-      handlePopperClose();
+      setOrganizationSelected(null);
+      setAnchorEl(null);
       return;
     }
     setOrganizationSelected(newOrganization);
     setAnchorEl(event.currentTarget);
   };
 
-  const handlePopperClose = () => {
+  const cancelModal = () => {
+    // Reset the popper
     setAnchorEl(null);
     setOrganizationSelected(null);
+    setIsModalOpen(false);
   };
 
   const open = Boolean(anchorEl);
@@ -98,7 +103,7 @@ export default function OrganizationsList() {
           colsNum={organizationsListColumns.length}
         />
         <Pagination
-          totalCount={organizationListTotalCount || 0}
+          totalCount={organizationListTotalCount}
           rowsPerPage={rowsPerPage}
           currentPage={currentPage}
           onPageChange={handleChangePage}
@@ -107,11 +112,18 @@ export default function OrganizationsList() {
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
         <OrganizationsListPopperContent
-          onClose={handlePopperClose}
-          setOrganizationSelected={setOrganizationSelected}
+          handleToggleBlock={() => setIsModalOpen(true)}
           organizationSelected={organizationSelected}
         />
       </LMSPopover>
+      {organizationSelected && (
+        <OrganizationsListModal
+          organizationSelected={organizationSelected}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          cancelModal={cancelModal}
+        />
+      )}
     </Box>
   );
 }
