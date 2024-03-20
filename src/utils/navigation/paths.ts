@@ -39,14 +39,15 @@ const ROOT_ORGANIZATIONS = PATH_PARAMETERS.organizations;
 export const PATH_ORGANIZATIONS = {
   root: ROOT_ORGANIZATIONS,
   add: path(ROOT_ORGANIZATIONS, '/creation'),
-  update: path(ROOT_ORGANIZATIONS, '/update/:id')
+  update: path(ROOT_ORGANIZATIONS, '/update/:organizationId')
 };
 
 const ROOT_APPLICANTS = PATH_PARAMETERS.applicants;
 export const PATH_APPLICANTS = {
   root: ROOT_APPLICANTS,
+  profile: path(ROOT_APPLICANTS, '/profile/:applicantId'),
   add: path(ROOT_APPLICANTS, '/creation'),
-  update: path(ROOT_APPLICANTS, '/update/:id')
+  update: path(ROOT_APPLICANTS, '/update/:applicantId')
 };
 
 //Users

@@ -13,7 +13,20 @@ describe('OrganizationsUpdateForm', () => {
         <form>
           <OrganizationsUpdateForm image={'Some image'} setImage={setImageMock} />
         </form>
-      </FormProvider>
+      </FormProvider>,
+      {
+        preloadedState: {
+          organizations: {
+            currentOrganization: {
+              currentOrganizationData: {
+                id: 1,
+                name: 'Organization name',
+                email: ''
+              }
+            }
+          }
+        }
+      }
     );
 
     // Check if the image is displayed

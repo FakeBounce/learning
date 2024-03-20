@@ -17,14 +17,12 @@ describe('ApplicantsListPopperContent', () => {
   });
 
   it('renders ApplicantsListPopperContent correctly', () => {
-    const setAnchorElMock = jest.fn();
-    const setApplicantSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <ApplicantsListPopperContent
-        setAnchorEl={setAnchorElMock}
+        handleToggleBlock={handleToggleBlockMock}
         applicantSelected={null}
-        setApplicantSelected={setApplicantSelectedMock}
       />
     );
 
@@ -34,14 +32,12 @@ describe('ApplicantsListPopperContent', () => {
   });
 
   it('renders ApplicantsListPopperContent correctly with applicant', () => {
-    const setAnchorElMock = jest.fn();
-    const setApplicantSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <ApplicantsListPopperContent
-        setAnchorEl={setAnchorElMock}
+        handleToggleBlock={handleToggleBlockMock}
         applicantSelected={defaultApplicant}
-        setApplicantSelected={setApplicantSelectedMock}
       />
     );
 
@@ -53,14 +49,12 @@ describe('ApplicantsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const setAnchorElMock = jest.fn();
-    const setApplicantSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <ApplicantsListPopperContent
-        setAnchorEl={setAnchorElMock}
+        handleToggleBlock={handleToggleBlockMock}
         applicantSelected={defaultApplicant}
-        setApplicantSelected={setApplicantSelectedMock}
       />
     );
 
@@ -79,14 +73,12 @@ describe('ApplicantsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const setAnchorElMock = jest.fn();
-    const setApplicantSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <ApplicantsListPopperContent
-        setAnchorEl={setAnchorElMock}
+        handleToggleBlock={handleToggleBlockMock}
         applicantSelected={null}
-        setApplicantSelected={setApplicantSelectedMock}
       />
     );
 
@@ -103,14 +95,12 @@ describe('ApplicantsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const setAnchorElMock = jest.fn();
-    const setApplicantSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <ApplicantsListPopperContent
-        setAnchorEl={setAnchorElMock}
+        handleToggleBlock={handleToggleBlockMock}
         applicantSelected={defaultApplicant}
-        setApplicantSelected={setApplicantSelectedMock}
       />
     );
 
@@ -119,7 +109,9 @@ describe('ApplicantsListPopperContent', () => {
     });
 
     // Check if the navigate function has been called
-    expect(navigateMock).toHaveBeenCalledWith(`${PATH_APPLICANTS.root}/${defaultApplicant.id}`);
+    expect(navigateMock).toHaveBeenCalledWith(
+      PATH_APPLICANTS.profile.replace(':applicantId', defaultApplicant.id.toString())
+    );
   });
 
   // @TODO: Test the toggleBlock when we do the confirmation modal as logic might change

@@ -1,6 +1,12 @@
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
-import { PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
+import {
+  PATH_APPLICANTS,
+  PATH_DASHBOARD,
+  PATH_ORGANIZATIONS,
+  PATH_PARAMETERS,
+  PATH_USERS
+} from './paths';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 
 // GENERAL
@@ -28,7 +34,7 @@ export const parametersNavigationConfig = [
     restrictedTo: pageRestrictionsList.roles
   },
   {
-    title: <Trans>Organizations</Trans>,
+    title: <Trans>Organisations</Trans>,
     path: PATH_PARAMETERS.organizations,
     restrictedTo: pageRestrictionsList.organizations
   },
@@ -81,13 +87,21 @@ const usersNavigationConfig = [
   }
 ];
 
+const applicantsNavigationConfig = [
+  {
+    title: <Trans>Profil</Trans>,
+    path: PATH_APPLICANTS.profile
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
   ...generalNavigationConfig,
   ...parametersNavigationConfig,
   ...organizationsNavigationConfig,
-  ...usersNavigationConfig
+  ...usersNavigationConfig,
+  ...applicantsNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

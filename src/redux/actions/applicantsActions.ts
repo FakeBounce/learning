@@ -18,6 +18,19 @@ export const getApplicantsList = createAsyncThunk(
   }
 );
 
+export const getSingleApplicant = createAsyncThunk(
+  'applicants/fetchSingle',
+  async (id: number, { rejectWithValue }) => {
+    try {
+      const response = await ApplicantsServices.getSingleApplicant(id);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
 export const toggleApplicantBlock = createAsyncThunk(
   'applicants/toggleBlock',
   async (arg: UpdateApplicantBlockRequest, { rejectWithValue }) => {

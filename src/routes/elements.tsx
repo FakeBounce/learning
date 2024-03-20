@@ -40,3 +40,6 @@ export const UserEdit = LoadableComponent(
 export const Applicants = LoadableComponent(
   lazy(() => import('@src/pages/applicants/applicants-list/ApplicantsList'))
 );
+export const ApplicantProfile = LoadableComponent(
+  lazy(() => import('@src/pages/applicants/applicants-profile/ApplicantProfile'))
+);

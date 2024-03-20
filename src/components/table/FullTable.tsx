@@ -1,5 +1,5 @@
 import { Table, TableBody, TableContainer, TableHead, TableRow, Box } from '@mui/material';
-import { TableSkeletonLoader } from '@src/components/table/TableSkeletonLoader';
+import { TableSkeletonLoader } from '@src/components/skeletons/TableSkeletonLoader';
 import { ReactNode } from 'react';
 import { styled } from '@mui/system';
 
