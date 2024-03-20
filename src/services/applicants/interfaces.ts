@@ -16,7 +16,7 @@ export interface ApplicantListState {
   applicantListTotalCount: number | null;
 }
 
-export interface Applicant {
+interface BaseApplicant {
   id: number;
   profilePicture: string | undefined;
   email: string;
@@ -30,8 +30,12 @@ export interface Applicant {
   birthDate: string;
   city: string;
   notifications: ApplicantNotifications;
-  [key: string]: string | number | null | boolean | ApplicantNotifications | undefined;
 }
+interface AdditionalApplicantProperties {
+  [key: string]: string | number | null | boolean | undefined;
+}
+
+export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
 export interface ApplicantFromApi {
   id: number;
