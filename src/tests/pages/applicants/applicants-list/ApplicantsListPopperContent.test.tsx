@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act, cleanup } from '@testProvider';
 import ApplicantsListPopperContent from '@src/pages/applicants/applicants-list/ApplicantsListPopperContent';
-import { defaultApplicant } from '../DefaultApplicants';
+import { stateApplicant } from '../DefaultApplicants';
 import { useNavigate } from 'react-router-dom';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 
@@ -37,7 +37,7 @@ describe('ApplicantsListPopperContent', () => {
     render(
       <ApplicantsListPopperContent
         handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
       />
     );
 
@@ -54,7 +54,7 @@ describe('ApplicantsListPopperContent', () => {
     render(
       <ApplicantsListPopperContent
         handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
       />
     );
 
@@ -64,7 +64,7 @@ describe('ApplicantsListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      `${PATH_APPLICANTS.root}/update/${defaultApplicant.id}`
+      `${PATH_APPLICANTS.root}/update/${stateApplicant.id}`
     );
   });
 
@@ -100,7 +100,7 @@ describe('ApplicantsListPopperContent', () => {
     render(
       <ApplicantsListPopperContent
         handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
       />
     );
 
@@ -110,7 +110,7 @@ describe('ApplicantsListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      PATH_APPLICANTS.profile.replace(':applicantId', defaultApplicant.id.toString())
+      PATH_APPLICANTS.profile.replace(':applicantId', stateApplicant.id.toString())
     );
   });
 

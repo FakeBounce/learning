@@ -30,7 +30,7 @@ export const setupSuccessAxiosMock = () => {
       data: {
         rows: [defaultApplicant, blockedApplicant, unlockedApplicant, newApplicant],
         pagination: {
-          total: 1,
+          total: 4,
           page: 1,
           row_per_page: 10
         }

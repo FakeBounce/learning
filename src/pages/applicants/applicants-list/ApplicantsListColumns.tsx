@@ -12,14 +12,14 @@ export interface OrderBy {
 export interface ApplicantColumn {
   id:
     | 'id'
-    | 'external_id'
+    | 'externalId'
     | 'email'
     | 'lastname'
     | 'firstname'
-    | 'birth_date'
+    | 'birthDate'
     | 'phone'
     | 'city'
-    | 'is_active';
+    | 'isActive';
   label: ReactNode;
   maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
@@ -43,14 +43,14 @@ export const applicantsColumns: readonly ApplicantColumn[] = [
       );
     }
   },
-  { id: 'external_id', label: <Trans>Id externe</Trans> },
+  { id: 'externalId', label: <Trans>Id externe</Trans> },
   { id: 'lastname', label: <Trans>Nom</Trans> },
   { id: 'firstname', label: <Trans>Prénom</Trans> },
   {
-    id: 'birth_date',
+    id: 'birthDate',
     label: <Trans>Date naiss.</Trans>,
     renderCell: (row) => {
-      if (!row.birth_date) return <Trans>/</Trans>;
+      if (!row.birthDate) return <Trans>/</Trans>;
       const birthDate = new Date(row.birthDate).toLocaleDateString();
       return <Typography>{birthDate}</Typography>;
     }
@@ -59,21 +59,21 @@ export const applicantsColumns: readonly ApplicantColumn[] = [
   { id: 'phone', label: <Trans>Téléphone</Trans> },
   { id: 'city', label: <Trans>Ville</Trans> },
   {
-    id: 'is_active',
+    id: 'isActive',
     label: <Trans>Statut</Trans>,
     maxWidth: 120,
     padding: 'none',
     renderCell: (row, handleClick) => {
-      const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
+      const activatedText = row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
       return (
         <Box display="flex" alignItems="center">
           <Chip
             sx={{
               borderRadius: 1,
               backgroundColor: (theme: Theme) =>
-                row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
+                row.isActive ? theme.palette.primary.light : theme.palette.grey[200],
               color: (theme: Theme) =>
-                row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
+                row.isActive ? theme.palette.primary.darker : theme.palette.grey[900]
             }}
             label={activatedText}
           />
@@ -94,13 +94,13 @@ export const applicantsTableHeaderRenderer = (
     id:
       | 'id'
       | 'email'
-      | 'external_id'
+      | 'externalId'
       | 'lastname'
       | 'firstname'
-      | 'birth_date'
+      | 'birthDate'
       | 'phone'
       | 'city'
-      | 'is_active'
+      | 'isActive'
   ) => void,
   orderBy: OrderBy | null
 ) => {

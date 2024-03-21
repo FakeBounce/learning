@@ -1,7 +1,7 @@
 import { Box, Chip, IconButton } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
 import { useTheme } from '@mui/material/styles';
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 interface StatisChipProps {
   row: any;
@@ -17,8 +17,8 @@ export default function StatusChip({ row, activatedText, handleClick }: StatisCh
       <Chip
         sx={{
           borderRadius: theme.shape.customBorderRadius.small,
-          backgroundColor: row.is_active ? theme.palette.primary.light : theme.palette.grey[300],
-          color: row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
+          backgroundColor: row.isActive ? theme.palette.primary.light : theme.palette.grey[300],
+          color: row.isActive ? theme.palette.primary.darker : theme.palette.grey[900]
         }}
         label={activatedText}
       />

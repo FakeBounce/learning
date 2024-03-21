@@ -1,4 +1,4 @@
-import { Applicant, ApplicantType } from '@services/applicants/interfaces';
+import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants/interfaces';
 
 export const defaultApplicant = {
   id: 1,
@@ -10,7 +10,6 @@ export const defaultApplicant = {
   lastname: 'applicant',
   phone: '0123456789',
   is_active: true,
-  other_data: [],
   birth_name: null,
   birth_date: '1990-01-01',
   city: 'defaultApplicantCity',
@@ -19,7 +18,7 @@ export const defaultApplicant = {
     sms: '1',
     email: '1'
   }
-} as Applicant;
+} as ApplicantFromApi;
 
 export const blockedApplicant = {
   id: 2,
@@ -31,7 +30,6 @@ export const blockedApplicant = {
   lastname: 'applicant',
   phone: '0123456789',
   is_active: false,
-  other_data: [],
   birth_name: null,
   birth_date: '1990-01-01',
   city: 'blockedApplicantCity',
@@ -40,7 +38,7 @@ export const blockedApplicant = {
     sms: '1',
     email: '1'
   }
-} as Applicant;
+} as ApplicantFromApi;
 
 export const unlockedApplicant = {
   id: 3,
@@ -52,7 +50,6 @@ export const unlockedApplicant = {
   lastname: 'applicant',
   phone: '0123456789',
   is_active: true,
-  other_data: [],
   birth_name: null,
   birth_date: '1990-01-01',
   city: 'unlockedApplicantCity',
@@ -61,7 +58,7 @@ export const unlockedApplicant = {
     sms: '1',
     email: '1'
   }
-} as Applicant;
+} as ApplicantFromApi;
 
 export const newApplicant = {
   id: 4,
@@ -73,7 +70,6 @@ export const newApplicant = {
   lastname: 'applicant',
   phone: '0123456789',
   is_active: true,
-  other_data: [],
   birth_name: null,
   birth_date: '1990-01-01',
   city: 'newApplicantCity',
@@ -82,4 +78,66 @@ export const newApplicant = {
     sms: '1',
     email: '1'
   }
+} as ApplicantFromApi;
+
+export const stateApplicant = {
+  id: 1,
+  profilePicture: 'stateApplicantPicture',
+  email: 'stateApplicant@test.fr',
+  type: ApplicantType.STUDENT,
+  externalId: null,
+  firstname: 'state',
+  lastname: 'applicant',
+  phone: '0123456789',
+  isActive: true,
+  birthName: null,
+  birthDate: '1990-01-01',
+  city: 'stateApplicantCity',
+  notifications: {
+    app: '1',
+    sms: '1',
+    email: '1'
+  }
 } as Applicant;
+
+export const stateApplicantDisabled = {
+  id: 2,
+  profilePicture: 'stateApplicantPicture',
+  email: 'stateApplicant@test.fr',
+  type: ApplicantType.STUDENT,
+  externalId: 1,
+  firstname: 'state',
+  lastname: 'applicant',
+  phone: '0123456789',
+  isActive: false,
+  birthName: 'stateApplicantBirthName',
+  birthDate: '1990-01-01',
+  city: 'stateApplicantCity',
+  notifications: {
+    app: '0',
+    sms: '0',
+    email: '0'
+  }
+} as Applicant;
+
+export const singleApplicant = {
+  id: 5,
+  profile_picture: 'singleApplicantPicture',
+  email: 'singleApplicant@email.fr',
+  type: ApplicantType.STUDENT,
+  external_id: null,
+  is_active: true,
+  notifications: {
+    app: '1',
+    sms: '1',
+    email: '0'
+  },
+  current_values: {
+    firstname: 'single',
+    lastname: 'applicant',
+    phone: '0123456789',
+    birth_name: null,
+    birth_date: '1990-01-01',
+    city: 'singleApplicantCity'
+  }
+};

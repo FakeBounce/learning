@@ -60,14 +60,14 @@ export default function ApplicantsList() {
   const handleSort = (
     id:
       | 'id'
-      | 'external_id'
+      | 'externalId'
       | 'email'
       | 'lastname'
       | 'firstname'
-      | 'birth_date'
+      | 'birthDate'
       | 'phone'
       | 'city'
-      | 'is_active'
+      | 'isActive'
   ) => {
     if (orderBy?.id === id) {
       if (orderBy.direction === 'DESC') {

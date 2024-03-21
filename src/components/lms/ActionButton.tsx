@@ -2,8 +2,6 @@ import { LoadingButton, LoadingButtonProps } from '@mui/lab';
 import { useTheme } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
-// ----------------------------------------------------------------------
-
 interface ActionButtonProps extends LoadingButtonProps {
   children: ReactNode;
   actionType?: 'action' | 'cancel' | 'update';

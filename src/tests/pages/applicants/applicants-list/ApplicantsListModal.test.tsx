@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act } from '@testProvider';
 import ApplicantsListModal from '@src/pages/applicants/applicants-list/ApplicantsListModal';
-import { defaultApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
+import { stateApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import ApplicantsListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-list/ApplicantsListMock';
@@ -12,7 +12,7 @@ describe('ApplicantsListModal', () => {
 
     render(
       <ApplicantsListModal
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
         cancelModal={cancelModalMock}
         isModalOpen={true}
         setIsModalOpen={setIsModalOpenMock}
@@ -20,7 +20,7 @@ describe('ApplicantsListModal', () => {
     );
 
     expect(screen.getByText(/Êtes-vous sûr de vouloir bloquer l’étudiant/i)).toBeInTheDocument();
-    expect(screen.getByText(defaultApplicant.lastname)).toBeInTheDocument();
+    expect(screen.getByText(stateApplicant.firstname)).toBeInTheDocument();
   });
 
   it('close modal correctly', async () => {
@@ -28,7 +28,7 @@ describe('ApplicantsListModal', () => {
     const setIsModalOpenMock = jest.fn();
     render(
       <ApplicantsListModal
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
         cancelModal={cancelModalMock}
         isModalOpen={true}
         setIsModalOpen={setIsModalOpenMock}
@@ -52,7 +52,7 @@ describe('ApplicantsListModal', () => {
 
     render(
       <ApplicantsListModal
-        applicantSelected={defaultApplicant}
+        applicantSelected={stateApplicant}
         cancelModal={cancelModalMock}
         isModalOpen={true}
         setIsModalOpen={setIsModalOpenMock}
@@ -67,6 +67,6 @@ describe('ApplicantsListModal', () => {
     });
 
     expect(ApplicantsListMock.history.put).toHaveLength(1);
-    expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/block/${defaultApplicant.id}`);
+    expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/block/${stateApplicant.id}`);
   });
 });

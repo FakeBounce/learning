@@ -6,14 +6,14 @@ import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
 
 const titleToDisplay = (applicantSelected: Applicant) => {
-  if (!applicantSelected.is_active) {
+  if (!applicantSelected.isActive) {
     return <Trans>Débloquer un étudiant</Trans>;
   }
   return <Trans>Bloquer un étudiant</Trans>;
 };
 
 const textToDisplay = (applicantSelected: Applicant) => {
-  if (!applicantSelected.is_active) {
+  if (!applicantSelected.isActive) {
     return (
       <Typography>
         <Trans>Êtes-vous sûr de vouloir débloquer l’étudiant</Trans>{' '}
@@ -98,7 +98,7 @@ export default function ApplicantsListModal({
     if (applicantSelected !== null) {
       dispatch(
         toggleApplicantBlock({
-          setActive: !applicantSelected.is_active,
+          setActive: !applicantSelected.isActive,
           applicantId: applicantSelected.id
         })
       ).then(() => {

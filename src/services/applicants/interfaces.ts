@@ -97,7 +97,7 @@ export interface GetApplicantsListResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: Applicant[];
+    rows: ApplicantFromApi[];
     pagination: ApiResponsePagination;
   };
 }
