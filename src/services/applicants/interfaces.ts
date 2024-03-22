@@ -3,6 +3,7 @@ import { ApiResponseMessage, ApiResponsePagination } from '@services/interfaces'
 export interface ApplicantState {
   applicantList: ApplicantListState;
   applicantProfile: ApplicantProfileState;
+  applicantUpdate: ApplicantUpdateState;
 }
 
 export interface ApplicantProfileState {
@@ -16,12 +17,17 @@ export interface ApplicantListState {
   applicantListTotalCount: number | null;
 }
 
+export interface ApplicantUpdateState {
+  applicantUpdateLoading: boolean;
+  isEditing: boolean;
+}
+
 interface BaseApplicant {
   id: number;
   profilePicture: string | undefined;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  externalId: number | null;
+  externalId: string | null;
   firstname: string;
   lastname: string;
   phone: string | null;
@@ -37,12 +43,12 @@ interface AdditionalApplicantProperties {
 
 export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
-export interface ApplicantFromApi {
+interface BaseApplicantFromApi {
   id: number;
   profile_picture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  external_id: number | null;
+  external_id: string | null;
   firstname: string;
   lastname: string;
   phone: string | null;
@@ -51,29 +57,29 @@ export interface ApplicantFromApi {
   birth_date: string;
   city: string;
   notifications: ApplicantNotifications;
-  [key: string]: string | number | null | boolean | ApplicantNotifications;
 }
+export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
 
 export interface SingleApplicantFromApi {
   id: number;
   profile_picture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  external_id: number | null;
+  external_id: string | null;
   is_active: boolean;
   notifications: ApplicantNotifications;
   current_values: ApplicantValues;
 }
 
-export interface ApplicantValues {
+export interface BaseApplicantValues {
   firstname: string;
   lastname: string;
   phone: string | null;
   birth_name: null | string;
   birth_date: string;
   city: string;
-  [key: string]: string | number | null | boolean;
 }
+export type ApplicantValues = BaseApplicantValues & AdditionalApplicantProperties;
 
 export interface ApplicantNotifications {
   app: '0' | '1';
@@ -116,5 +122,17 @@ export interface UpdateApplicantBlockRequest {
 export interface UpdateApplicantBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: Applicant;
+  data: ApplicantFromApi;
+}
+
+export interface UpdateApplicantRequest {
+  applicantId: number;
+  applicant: Partial<Applicant>;
+  profilePicture: string | File | undefined;
+}
+
+export interface UpdateApplicantResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ApplicantFromApi;
 }

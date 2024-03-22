@@ -1,7 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   GetApplicantsListRequest,
-  UpdateApplicantBlockRequest
+  UpdateApplicantBlockRequest,
+  UpdateApplicantRequest
 } from '@services/applicants/interfaces';
 import * as ApplicantsServices from '@services/applicants/applicantsAPI';
 
@@ -36,6 +37,19 @@ export const toggleApplicantBlock = createAsyncThunk(
   async (arg: UpdateApplicantBlockRequest, { rejectWithValue }) => {
     try {
       const response = await ApplicantsServices.updateApplicantBlock(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const updateApplicant = createAsyncThunk(
+  'applicants/update',
+  async (arg: UpdateApplicantRequest, { rejectWithValue }) => {
+    try {
+      const response = await ApplicantsServices.updateApplicant(arg);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);

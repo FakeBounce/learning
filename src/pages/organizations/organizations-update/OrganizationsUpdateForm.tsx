@@ -79,7 +79,6 @@ export default function OrganizationsUpdateForm({
           name="image"
           type={'file'}
           data-testid="file-upload"
-          accept="image/*"
           value={''}
           sx={{ display: 'none' }}
           onChange={(e: ChangeEvent<HTMLInputElement>) => {

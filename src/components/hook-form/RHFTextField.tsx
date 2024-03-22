@@ -2,16 +2,17 @@ import { ReactNode } from 'react';
 // form
 import { useFormContext, Controller } from 'react-hook-form';
 // @mui
-import { TextField } from '@mui/material';
+import { TextField, TextFieldProps } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-interface RHFTextFieldProps {
+interface BaseRHFTextFieldProps {
   name: string;
   helperText?: ReactNode;
   size?: 'small' | 'medium';
-  [x: string]: any;
 }
+
+type RHFTextFieldProps = BaseRHFTextFieldProps & Omit<TextFieldProps, 'name' | 'size'>;
 
 export default function RHFTextField({
   name,

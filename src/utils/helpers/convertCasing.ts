@@ -13,3 +13,20 @@ export const pascalizeObject = (obj: any) =>
 
     acc[camelKey] = typeof value === 'object' && value !== null ? pascalizeObject(value) : value;
   });
+
+/**
+ Convert PascalCase to SnakeCase
+ **/
+export const convertPascalToSnake = (key: string) => {
+  return key
+    .split(/\.?(?=[A-Z])/)
+    .join('_')
+    .toLowerCase();
+};
+
+export const snakizeObject = (obj: any) =>
+  transform(obj, (acc: any, value, key, target) => {
+    const camelKey = Array.isArray(target) ? key : convertPascalToSnake(String(key));
+
+    acc[camelKey] = typeof value === 'object' && value !== null ? snakizeObject(value) : value;
+  });

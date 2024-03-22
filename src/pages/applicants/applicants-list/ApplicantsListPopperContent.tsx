@@ -3,6 +3,8 @@ import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
+import { useAppDispatch } from '@redux/hooks';
 
 interface OrganizationsListPopperContentProps {
   handleToggleBlock: () => void;
@@ -13,6 +15,7 @@ export default function OrganizationsListPopperContent({
   applicantSelected
 }: OrganizationsListPopperContentProps) {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
@@ -22,7 +25,8 @@ export default function OrganizationsListPopperContent({
 
   const goToApplicantUpdate = () => {
     if (applicantSelected !== null) {
-      navigate(PATH_APPLICANTS.update.replace(':applicantId', String(applicantSelected.id)));
+      dispatch(startEditingApplicant());
+      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
     }
   };
 

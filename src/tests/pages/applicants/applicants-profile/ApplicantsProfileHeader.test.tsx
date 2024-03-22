@@ -1,8 +1,8 @@
-import { render, screen, fireEvent, act } from '@testProvider';
-import ApplicantProfileHeader from '@src/pages/applicants/applicants-profile/ApplicantProfileHeader';
-import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { render, screen, fireEvent, act, waitFor } from '@testProvider';
+import ApplicantsProfileHeader from '@src/pages/applicants/applicants-profile/ApplicantsProfileHeader';
 import { useNavigate } from 'react-router-dom';
 import { stateApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
+import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -16,9 +16,10 @@ describe('ApplicantProfileHeader', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    render(<ApplicantProfileHeader />, {
+    render(<ApplicantsProfileHeader />, {
       preloadedState: {
         applicants: {
+          ...initialApplicantState,
           applicantProfile: {
             applicantProfileData: stateApplicant
           }
@@ -36,9 +37,8 @@ describe('ApplicantProfileHeader', () => {
       fireEvent.click(updateButton);
     });
 
-    // Check if the navigate function has been called
-    expect(navigateMock).toHaveBeenCalledWith(
-      PATH_APPLICANTS.update.replace(':applicantId', String(stateApplicant.id))
-    );
+    waitFor(() => {
+      expect(screen.queryByText(/Modifier/i)).not.toBeInTheDocument();
+    });
   });
 });

@@ -3,7 +3,7 @@ import {
   ApplicantFromApi,
   SingleApplicantFromApi
 } from '@services/applicants/interfaces';
-import { pascalizeObject } from '@utils/helpers/convertSnakeToPascal';
+import { pascalizeObject } from '@utils/helpers/convertCasing';
 
 /**
  * Convert the values of the applicant object to the correct format
