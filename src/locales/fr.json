@@ -24,6 +24,11 @@
     "message": "L'email de l'admin est requis",
     "comments": []
   },
+  "4kUPlv": {
+    "translation": "Notifications app",
+    "message": "Notifications app",
+    "comments": []
+  },
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
@@ -37,6 +42,16 @@
   "8/pAPk": {
     "translation": "Nom de naissance",
     "message": "Nom de naissance",
+    "comments": []
+  },
+  "8N1T4V": {
+    "translation": "La notification email est requis",
+    "message": "La notification email est requis",
+    "comments": []
+  },
+  "9HM7Cg": {
+    "translation": "Notification email",
+    "message": "Notification email",
     "comments": []
   },
   "9wYFQH": {
@@ -64,6 +79,16 @@
     "message": "Le prénom de l'admin est requis",
     "comments": []
   },
+  "CInq4A": {
+    "translation": "Notifications email",
+    "message": "Notifications email",
+    "comments": []
+  },
+  "CVT4YH": {
+    "translation": "Notification app",
+    "message": "Notification app",
+    "comments": []
+  },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
@@ -84,14 +109,29 @@
     "message": "Profil",
     "comments": []
   },
-  "DZsKmY": {
-    "translation": "Notification App",
-    "message": "Notification App",
+  "E1oq0K": {
+    "translation": "Vous avez modifier les champs suivants :",
+    "message": "Vous avez modifier les champs suivants :",
+    "comments": []
+  },
+  "EK4bIm": {
+    "translation": "Le fichier est requis",
+    "message": "Le fichier est requis",
     "comments": []
   },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
+    "comments": []
+  },
+  "FBQvDW": {
+    "translation": "Modification du profil",
+    "message": "Modification du profil",
+    "comments": []
+  },
+  "G3BWrC": {
+    "translation": "Ces champs sont utiles lors de la connexion.",
+    "message": "Ces champs sont utiles lors de la connexion.",
     "comments": []
   },
   "GAxRw0": {
@@ -127,6 +167,11 @@
   "IAAmKF": {
     "translation": "Non renseigné",
     "message": "Non renseigné",
+    "comments": []
+  },
+  "IRPK7p": {
+    "translation": "La notification app est requise",
+    "message": "La notification app est requise",
     "comments": []
   },
   "JMJBle": {
@@ -209,6 +254,11 @@
     "message": "Le nom est requis",
     "comments": []
   },
+  "Ttle7P": {
+    "translation": "Identifiant externe",
+    "message": "Identifiant externe",
+    "comments": []
+  },
   "Tvgy+o": {
     "translation": "Notification SMS",
     "message": "Notification SMS",
@@ -222,6 +272,16 @@
   "UHDGIH": {
     "translation": "/",
     "message": "/",
+    "comments": []
+  },
+  "UU1Jg5": {
+    "translation": "La date de naissance est requise",
+    "message": "La date de naissance est requise",
+    "comments": []
+  },
+  "VsENqL": {
+    "translation": "Êtes-vous sûrs de vouloir les modifier ?",
+    "message": "Êtes-vous sûrs de vouloir les modifier ?",
     "comments": []
   },
   "W3FHUJ": {
@@ -279,6 +339,16 @@
     "message": "L'organisation n'existe pas",
     "comments": []
   },
+  "eFlGiu": {
+    "translation": "Le fichier est trop volumineux",
+    "message": "Le fichier est trop volumineux",
+    "comments": []
+  },
+  "eeDRWI": {
+    "translation": "La notification sms est requise",
+    "message": "La notification sms est requise",
+    "comments": []
+  },
   "f3LmJs": {
     "translation": "Bloquer un étudiant",
     "message": "Bloquer un étudiant",
@@ -314,6 +384,11 @@
     "message": "Aucune modification n'a été apportée",
     "comments": []
   },
+  "hW6LJA": {
+    "translation": "L'email est invalide",
+    "message": "L'email est invalide",
+    "comments": []
+  },
   "hsXO/7": {
     "translation": "toutes les organisations",
     "message": "toutes les organisations",
@@ -334,9 +409,9 @@
     "message": "Nom",
     "comments": []
   },
-  "k2SOMs": {
-    "translation": "Notification Email",
-    "message": "Notification Email",
+  "ikKkoV": {
+    "translation": "Le nom de famille est requis",
+    "message": "Le nom de famille est requis",
     "comments": []
   },
   "k441hZ": {
@@ -399,6 +474,11 @@
     "message": "Mot de passe",
     "comments": []
   },
+  "vdb2j0": {
+    "translation": "Notifications SMS",
+    "message": "Notifications SMS",
+    "comments": []
+  },
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
@@ -422,6 +502,11 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
+    "comments": []
+  },
+  "zKPyEG": {
+    "translation": "Au moins un groupe est requis",
+    "message": "Au moins un groupe est requis",
     "comments": []
   }
 }

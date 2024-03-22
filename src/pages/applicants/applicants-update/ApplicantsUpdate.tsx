@@ -15,7 +15,8 @@ import {
   Applicant,
   ApplicantNotifications,
   ApplicantProfileState,
-  ApplicantUpdateState
+  ApplicantUpdateState,
+  UpdateApplicantRequest
 } from '@services/applicants/interfaces';
 import ApplicantsProfileHeader from '@src/pages/applicants/applicants-profile/ApplicantsProfileHeader';
 import {
@@ -90,7 +91,6 @@ export default function ApplicantsUpdate() {
   const handleUpdate = async (data: UpdateApplicantForm) => {
     setIsModalOpen(false);
     const newApplicantValues = {} as Partial<Applicant>;
-    let profilePicture = applicantProfileData?.profilePicture as string | File | undefined;
     Object.keys(dirtyFields).forEach((key) => {
       const typedKey = key as keyof UpdateApplicantForm;
       if (typedKey === 'profilePicture' || typedKey === 'notifications' || typedKey === 'groups')
@@ -109,22 +109,21 @@ export default function ApplicantsUpdate() {
       });
     }
 
-    if (image !== applicantProfileData?.profilePicture) {
-      profilePicture = image;
-    }
-
     // @todo - Handle groups update
     if (Object.keys(newApplicantValues).length > 0) {
+      const updateApplicantFormToSubmit = {
+        applicantId: Number(applicantId),
+        applicant: {
+          ...newApplicantValues
+        }
+      } as UpdateApplicantRequest;
+
+      if (image !== applicantProfileData?.profilePicture) {
+        updateApplicantFormToSubmit.profilePicture = image;
+      }
+
       // Handle update with image
-      dispatch(
-        updateApplicant({
-          applicantId: Number(applicantId),
-          applicant: {
-            ...newApplicantValues
-          },
-          profilePicture
-        })
-      );
+      dispatch(updateApplicant(updateApplicantFormToSubmit));
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }

@@ -14,6 +14,11 @@
     "message": "Liste des modules",
     "comments": []
   },
+  "4kUPlv": {
+    "translation": "Notifications app",
+    "message": "Notifications app",
+    "comments": []
+  },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
@@ -22,6 +27,16 @@
   "8/pAPk": {
     "translation": "Nom de naissance",
     "message": "Nom de naissance",
+    "comments": []
+  },
+  "8N1T4V": {
+    "translation": "La notification email est requis",
+    "message": "La notification email est requis",
+    "comments": []
+  },
+  "9HM7Cg": {
+    "translation": "Notification email",
+    "message": "Notification email",
     "comments": []
   },
   "9wYFQH": {
@@ -34,6 +49,16 @@
     "message": "OUI",
     "comments": []
   },
+  "CInq4A": {
+    "translation": "Notifications email",
+    "message": "Notifications email",
+    "comments": []
+  },
+  "CVT4YH": {
+    "translation": "Notification app",
+    "message": "Notification app",
+    "comments": []
+  },
   "D/HeUe": {
     "translation": "L'étudiant n'existe pas",
     "message": "L'étudiant n'existe pas",
@@ -44,9 +69,9 @@
     "message": "Profil",
     "comments": []
   },
-  "DZsKmY": {
-    "translation": "Notification App",
-    "message": "Notification App",
+  "E1oq0K": {
+    "translation": "Vous avez modifier les champs suivants :",
+    "message": "Vous avez modifier les champs suivants :",
     "comments": []
   },
   "EIxP9b": {
@@ -54,9 +79,24 @@
     "message": "Gestion des rôles",
     "comments": []
   },
+  "EK4bIm": {
+    "translation": "Le fichier est requis",
+    "message": "Le fichier est requis",
+    "comments": []
+  },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
+    "comments": []
+  },
+  "FBQvDW": {
+    "translation": "Modification du profil",
+    "message": "Modification du profil",
+    "comments": []
+  },
+  "G3BWrC": {
+    "translation": "Ces champs sont utiles lors de la connexion.",
+    "message": "Ces champs sont utiles lors de la connexion.",
     "comments": []
   },
   "GAxRw0": {
@@ -87,6 +127,11 @@
   "IAAmKF": {
     "translation": "Non renseigné",
     "message": "Non renseigné",
+    "comments": []
+  },
+  "IRPK7p": {
+    "translation": "La notification app est requise",
+    "message": "La notification app est requise",
     "comments": []
   },
   "LgoIGo": {
@@ -134,6 +179,11 @@
     "message": "Débloquer un étudiant",
     "comments": []
   },
+  "Ttle7P": {
+    "translation": "Identifiant externe",
+    "message": "Identifiant externe",
+    "comments": []
+  },
   "Tvgy+o": {
     "translation": "Notification SMS",
     "message": "Notification SMS",
@@ -149,6 +199,21 @@
     "message": "/",
     "comments": []
   },
+  "UU1Jg5": {
+    "translation": "La date de naissance est requise",
+    "message": "La date de naissance est requise",
+    "comments": []
+  },
+  "VsENqL": {
+    "translation": "Êtes-vous sûrs de vouloir les modifier ?",
+    "message": "Êtes-vous sûrs de vouloir les modifier ?",
+    "comments": []
+  },
+  "W3FHUJ": {
+    "translation": "Aucune modification n'a été effectuée",
+    "message": "Aucune modification n'a été effectuée",
+    "comments": []
+  },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
@@ -157,6 +222,21 @@
   "ZG+LqI": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
+    "comments": []
+  },
+  "dEcezs": {
+    "translation": "L'email est requis",
+    "message": "L'email est requis",
+    "comments": []
+  },
+  "eFlGiu": {
+    "translation": "Le fichier est trop volumineux",
+    "message": "Le fichier est trop volumineux",
+    "comments": []
+  },
+  "eeDRWI": {
+    "translation": "La notification sms est requise",
+    "message": "La notification sms est requise",
     "comments": []
   },
   "eoO6cw": {
@@ -169,9 +249,24 @@
     "message": "Bloquer un étudiant",
     "comments": []
   },
+  "fojDKu": {
+    "translation": "Le prénom est requis",
+    "message": "Le prénom est requis",
+    "comments": []
+  },
+  "fu2rxk": {
+    "translation": "Enregistrer",
+    "message": "Enregistrer",
+    "comments": []
+  },
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
+    "comments": []
+  },
+  "hW6LJA": {
+    "translation": "L'email est invalide",
+    "message": "L'email est invalide",
     "comments": []
   },
   "hsXO/7": {
@@ -189,9 +284,9 @@
     "message": "Nom",
     "comments": []
   },
-  "k2SOMs": {
-    "translation": "Notification Email",
-    "message": "Notification Email",
+  "ikKkoV": {
+    "translation": "Le nom de famille est requis",
+    "message": "Le nom de famille est requis",
     "comments": []
   },
   "k441hZ": {
@@ -204,6 +299,11 @@
     "message": "Créer une organisation",
     "comments": []
   },
+  "tALayW": {
+    "translation": "Annuler",
+    "message": "Annuler",
+    "comments": []
+  },
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
@@ -212,6 +312,11 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
+    "comments": []
+  },
+  "vdb2j0": {
+    "translation": "Notifications SMS",
+    "message": "Notifications SMS",
     "comments": []
   },
   "vm08uh": {
@@ -227,6 +332,11 @@
   "xj9DHS": {
     "translation": "NON",
     "message": "NON",
+    "comments": []
+  },
+  "zKPyEG": {
+    "translation": "Au moins un groupe est requis",
+    "message": "Au moins un groupe est requis",
     "comments": []
   }
 }

@@ -7,7 +7,7 @@ interface ProfileSkeletonProps {
 
 export const ProfileSkeleton = ({ rows, cols }: ProfileSkeletonProps) => {
   return (
-    <Box display="flex" flexDirection="column" px={2}>
+    <Box data-testid="profile-skeleton" display="flex" flexDirection="column" px={2}>
       <Box display="flex">
         <Skeleton variant="circular" height={80} width={80} />
       </Box>
