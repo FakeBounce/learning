@@ -138,7 +138,7 @@ describe('ApplicantsUpdate', () => {
 
     // Update the email
     const emailInput = screen.getByLabelText(/Email/i);
-    fireEvent.change(emailInput, { target: { value: 'UpdatedEmail' } });
+    fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
 
     // Simulate form submission
     await act(async () => {
@@ -148,6 +148,23 @@ describe('ApplicantsUpdate', () => {
     // A modal should be displayed
     await waitFor(() => {
       expect(ApplicantsUpdateMock.history.put.length).toBe(0);
+      expect(screen.getByText(/Vous avez modifier les champs suivants :/i)).toBeInTheDocument();
+    });
+
+    // Confirm the modal
+    await act(async () => {
+      fireEvent.click(screen.getByText(/Valider/i));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      // Check if updateApplicant was called with the expected arguments
+      expect(ApplicantsUpdateMock.history.put.length).toBe(1);
+      expect(ApplicantsUpdateMock.history.put[0].data).toBe(
+        JSON.stringify({
+          email: 'UpdatedEmail@test.fr'
+        })
+      );
     });
   });
 });
