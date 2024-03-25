@@ -27,8 +27,7 @@
   "7uQ5BG": {
     "translation": "",
     "message": "Adresse siège social",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "",
@@ -178,8 +177,7 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kBPLqk": {
     "translation": "",
@@ -194,6 +192,11 @@
   "lHMRD2": {
     "translation": "",
     "message": "Bloquer une organisation",
+    "comments": []
+  },
+  "lPgC5g": {
+    "translation": "",
+    "message": "Créer un étudiant",
     "comments": []
   },
   "q+G9Ft": {
@@ -214,8 +217,7 @@
   "sAl4AV": {
     "translation": "",
     "message": "Téléchargez une photo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "tALayW": {
     "translation": "",

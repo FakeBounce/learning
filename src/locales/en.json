@@ -9,6 +9,11 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
+  "0uOGoh": {
+    "translation": "",
+    "message": "Le format est invalide",
+    "comments": []
+  },
   "247qoZ": {
     "translation": "",
     "message": "Créer un compte",
@@ -112,11 +117,6 @@
   "E1oq0K": {
     "translation": "",
     "message": "Vous avez modifier les champs suivants :",
-    "comments": []
-  },
-  "EK4bIm": {
-    "translation": "",
-    "message": "Le fichier est requis",
     "comments": []
   },
   "F8ESDf": {
@@ -244,6 +244,11 @@
     "message": "Date de naissance",
     "comments": []
   },
+  "QThGLQ": {
+    "translation": "",
+    "message": "Le numéro de téléphone est invalide",
+    "comments": []
+  },
   "SNbh3h": {
     "translation": "",
     "message": "Débloquer un étudiant",
@@ -304,6 +309,11 @@
     "message": "Ajouter",
     "comments": []
   },
+  "YS+12y": {
+    "translation": "",
+    "message": "Ajouter un étudiant",
+    "comments": []
+  },
   "ZG+LqI": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
@@ -337,11 +347,6 @@
   "dg0WGC": {
     "translation": "",
     "message": "L'organisation n'existe pas",
-    "comments": []
-  },
-  "eFlGiu": {
-    "translation": "",
-    "message": "Le fichier est trop volumineux",
     "comments": []
   },
   "eeDRWI": {

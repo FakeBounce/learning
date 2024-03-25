@@ -16,12 +16,12 @@ import {
   updateApplicantSchema
 } from '@src/pages/applicants/applicants-update/ApplicantsUpdateSchema';
 import ApplicantsCreateHeader from '@src/pages/applicants/applicants-create/ApplicantsCreateHeader';
-import ApplicantsUpdateFooter from '@src/pages/applicants/applicants-update/ApplicantsUpdateFooter';
 import ApplicantsUpdateForm from '@src/pages/applicants/applicants-update/ApplicantsUpdateForm';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 import { resetCreatingApplicant } from '@redux/reducers/applicantsReducer';
-import { verifyFileForUpload } from '@utils/validators';
+import { verifyFileForUpload } from '@utils/helpers/validators';
+import ApplicantsCreateFooter from '@src/pages/applicants/applicants-create/ApplicantsCreateFooter';
 
 export default function ApplicantsCreate() {
   const [image, setImage] = useState<string | File>('');
@@ -83,7 +83,7 @@ export default function ApplicantsCreate() {
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
         <Box px={[0, 2]} display="flex">
-          <LMSCard isPageCard cardCss={{ maxWidth: '100%' }} footer={<ApplicantsUpdateFooter />}>
+          <LMSCard isPageCard cardCss={{ maxWidth: '100%' }} footer={<ApplicantsCreateFooter />}>
             <ApplicantsCreateHeader />
             <ApplicantsUpdateForm image={image} setImage={setImage} />
           </LMSCard>
