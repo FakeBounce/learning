@@ -27,6 +27,10 @@ export const initialApplicantState: ApplicantState = {
   applicantUpdate: {
     applicantUpdateLoading: false,
     isEditing: false
+  },
+  applicantCreate: {
+    applicantCreateLoading: false,
+    hasCreated: false
   }
 };
 
@@ -39,6 +43,9 @@ export const applicantSlice = createSlice({
     },
     startEditingApplicant: (state) => {
       state.applicantUpdate.isEditing = true;
+    },
+    resetCreatingApplicant: (state) => {
+      state.applicantCreate.hasCreated = false;
     }
   },
   extraReducers: (builder) => {
@@ -95,10 +102,25 @@ export const applicantSlice = createSlice({
         state.applicantUpdate.applicantUpdateLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(ApplicantsActions.createApplicant.pending, (state) => {
+        state.applicantCreate.applicantCreateLoading = true;
+        state.applicantCreate.hasCreated = false;
+      })
+      .addCase(ApplicantsActions.createApplicant.fulfilled, (state) => {
+        state.applicantCreate.applicantCreateLoading = false;
+        state.applicantCreate.hasCreated = true;
+        enqueueSnackbar(t`L'étudiant à bien été enregistré`, { variant: 'success' });
+      })
+      .addCase(ApplicantsActions.createApplicant.rejected, (state, action: AnyAction) => {
+        state.applicantCreate.applicantCreateLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
       });
   }
 });
 
-export const { startEditingApplicant, cancelEditingApplicant } = applicantSlice.actions;
+export const { startEditingApplicant, cancelEditingApplicant, resetCreatingApplicant } =
+  applicantSlice.actions;
 
 export default applicantSlice.reducer;

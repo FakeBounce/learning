@@ -4,6 +4,7 @@ export interface ApplicantState {
   applicantList: ApplicantListState;
   applicantProfile: ApplicantProfileState;
   applicantUpdate: ApplicantUpdateState;
+  applicantCreate: ApplicantCreateState;
 }
 
 export interface ApplicantProfileState {
@@ -22,6 +23,11 @@ export interface ApplicantUpdateState {
   isEditing: boolean;
 }
 
+export interface ApplicantCreateState {
+  applicantCreateLoading: boolean;
+  hasCreated: boolean;
+}
+
 interface BaseApplicant {
   id: number;
   profilePicture: string | undefined;
@@ -34,8 +40,9 @@ interface BaseApplicant {
   isActive: boolean;
   birthName: null | string;
   birthDate: string;
-  city: string;
+  city: string | null;
   notifications: ApplicantNotifications;
+  groups: string[];
 }
 interface AdditionalApplicantProperties {
   [key: string]: string | number | null | boolean | undefined;
@@ -55,7 +62,7 @@ interface BaseApplicantFromApi {
   is_active: boolean;
   birth_name: null | string;
   birth_date: string;
-  city: string;
+  city: string | null;
   notifications: ApplicantNotifications;
 }
 export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
@@ -132,6 +139,17 @@ export interface UpdateApplicantRequest {
 }
 
 export interface UpdateApplicantResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ApplicantFromApi;
+}
+
+export interface CreateApplicantRequest {
+  applicant: Omit<BaseApplicant, 'profilePicture' | 'id' | 'isActive'>;
+  profilePicture?: string | File | undefined;
+}
+
+export interface CreateApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: ApplicantFromApi;

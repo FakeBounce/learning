@@ -12,6 +12,7 @@ import { setSession } from '@utils/axios/session';
 import * as RolesActions from '@redux/actions/rolesActions';
 import { GetRolePermissionsResponse } from '@services/roles/interfaces';
 import { PermissionTypeList } from '@services/permissions/interfaces';
+import { resetApp } from '@redux/actions/globalActions';
 
 interface UserState {
   user: User;
@@ -127,6 +128,12 @@ export const connectedUserSlice = createSlice({
         state.globalLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(resetApp, (state) => {
+        state.login.isAuthenticated = false;
+        state.user = initialState.user;
+        state.permissions = initialState.permissions;
+        setSession(null);
       });
   }
 });

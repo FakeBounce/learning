@@ -21,7 +21,7 @@ export default function MainLayout() {
         }}
       >
         <Header />
-        <Box display={'flex'} flex={'1 1 0'} height="100%" width="100%" mt={3} mb={2}>
+        <Box display={'flex'} flex={'1 1 0'} mt={3} mb={2}>
           <Outlet />
         </Box>
       </Stack>

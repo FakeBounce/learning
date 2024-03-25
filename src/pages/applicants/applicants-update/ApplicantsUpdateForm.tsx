@@ -38,7 +38,7 @@ export default function ApplicantsUpdateForm({
         alignItems={['flex-start', 'flex-start', 'flex-end']}
         justifyContent={['flex-end', 'flex-end', 'flex-start']}
       >
-        <StyledApplicantColumn>
+        <StyledApplicantColumn sx={{ gap: 0 }}>
           <RHFAvatar name={'profilePicture'} image={image} setImage={setImage} />
         </StyledApplicantColumn>
 

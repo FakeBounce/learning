@@ -1,5 +1,7 @@
 import {
   ApplicantType,
+  CreateApplicantRequest,
+  CreateApplicantResponse,
   GetApplicantsListRequest,
   GetApplicantsListResponse,
   GetSingleApplicantResponse,
@@ -54,4 +56,24 @@ export const updateApplicant = async (
   }
 
   return axios.put(`/applicants/${applicantId}`, formData);
+};
+
+export const createApplicant = async (
+  args: CreateApplicantRequest
+): Promise<AxiosResponse<CreateApplicantResponse>> => {
+  const applicantForApi = snakizeObject(args.applicant);
+
+  const formData = {
+    ...applicantForApi,
+    groups_id: args.applicant.groups
+  };
+  if (args.profilePicture) {
+    formData['profile_picture'] = args.profilePicture;
+  }
+
+  return axios.post(`/applicants`, formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
 };
