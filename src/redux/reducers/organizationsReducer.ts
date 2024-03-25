@@ -9,7 +9,7 @@ import {
 import { enqueueSnackbar } from 'notistack';
 import * as OrganizationsActions from '../actions/organizationsActions';
 import { AnyAction, createSlice } from '@reduxjs/toolkit';
-import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
+import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 
 interface organizationState {
   currentOrganization: {
