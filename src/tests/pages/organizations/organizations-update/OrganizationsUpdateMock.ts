@@ -1,5 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
+import { defaultOrganization } from '@src/tests/pages/organizations/DefaultOrganization';
 
 const OrganizationsUpdateMock = new MockAdapter(axios);
 
@@ -8,7 +9,7 @@ export const setupSuccessAxiosMock = () => {
   OrganizationsUpdateMock.onPut(/\/organizations\/\d+/)
     .reply(200, {
       success: true,
-      message: 'Organization updated successfully',
+      message: { value: 'Organization updated successfully' },
       data: {
         id: 1,
         name: 'Test Organization',
@@ -26,20 +27,7 @@ export const setupSuccessAxiosMock = () => {
     .onGet(/\/organizations\/\d+/)
     .reply(200, {
       success: true,
-      data: {
-        id: 1,
-        name: 'Test Organization',
-        address_id: '1',
-        address: 'Some address',
-        logo: 'Some logo url',
-        use_double_auth: 0,
-        client_admin: {
-          login: 'test',
-          firstname: 'Test',
-          lastname: 'User',
-          email: 'test@test.fr'
-        }
-      }
+      data: defaultOrganization
     });
 };
 

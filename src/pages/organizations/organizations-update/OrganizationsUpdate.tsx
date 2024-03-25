@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { updateOrganizations, getSingleOrganization } from '@redux/reducers/organizationsReducer';
+import { updateOrganizations, getSingleOrganization } from '@redux/actions/organizationsActions';
 import { LMSCard } from '@src/components/lms';
 import OrganizationsUpdateFooter from '@src/pages/organizations/organizations-update/OrganizationsUpdateFooter';
 import OrganizationsUpdateForm from '@src/pages/organizations/organizations-update/OrganizationsUpdateForm';
@@ -98,7 +98,7 @@ export default function OrganizationsUpdate() {
             cardCss={{ maxWidth: '100%' }}
             header={
               <Typography variant="h5">
-                <Trans>Modifier une organization</Trans>
+                <Trans>Modifier une organisation</Trans>
               </Typography>
             }
             footer={<OrganizationsUpdateFooter />}

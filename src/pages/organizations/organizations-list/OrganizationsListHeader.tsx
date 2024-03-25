@@ -10,7 +10,7 @@ export default function OrganizationsListHeader() {
   return (
     <Box px={3} minHeight="10vh" display="flex" alignItems="center" position="sticky">
       <Typography variant="h5">
-        <Trans>Organizations</Trans>
+        <Trans>Organisations</Trans>
       </Typography>
       <ActionButton
         sx={{ textTransform: 'none', ml: 2 }}

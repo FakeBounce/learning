@@ -21,7 +21,7 @@ export interface OrganizationColumn {
   ) => ReactNode;
 }
 
-export const organizationsColumns: readonly OrganizationColumn[] = [
+export const organizationsListColumns: readonly OrganizationColumn[] = [
   {
     id: 'name',
     label: <Trans>Nom</Trans>,
@@ -49,7 +49,7 @@ export const organizationsColumns: readonly OrganizationColumn[] = [
         <Box display="flex" alignItems="center">
           <Chip
             sx={{
-              borderRadius: 1,
+              borderRadius: (theme: Theme) => theme.shape.customBorderRadius.small,
               backgroundColor: (theme: Theme) =>
                 row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
               color: (theme: Theme) =>
@@ -73,7 +73,7 @@ export const organizationsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
   orderBy: OrderBy | null
 ) => {
-  return organizationsColumns.map((column) => (
+  return organizationsListColumns.map((column) => (
     <TableCell
       key={column.id}
       align={column.align}
@@ -109,7 +109,7 @@ export const organizationsTableRowsRenderer = (
   return listData.map((row: Organization) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-        {organizationsColumns.map((column: OrganizationColumn) => {
+        {organizationsListColumns.map((column: OrganizationColumn) => {
           if (column.renderCell) {
             return (
               <TableCell key={column.id} padding={column.padding || 'normal'}>

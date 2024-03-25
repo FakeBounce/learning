@@ -22,7 +22,9 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  user: {} as User,
+  user: {
+    organizationId: undefined
+  } as User,
   globalLoading: false,
   login: {
     loading: false,
@@ -118,7 +120,7 @@ export const connectedUserSlice = createSlice({
       })
       .addCase(logout.fulfilled, (state) => {
         state.login.isAuthenticated = false;
-        state.user = {} as User;
+        state.user = initialState.user;
         setSession(null);
       })
       .addCase(logout.rejected, (_, action: AnyAction) => {
@@ -149,7 +151,11 @@ export const connectedUserSlice = createSlice({
       .addCase(
         changeOrganizationView.fulfilled,
         (state, action: { payload: UpdateOrganizationViewResponse }) => {
-          state.user.organizationId = action.payload.data.id;
+          state.user = {
+            ...state.user,
+            organizationId: action.payload.data.id
+          };
+          enqueueSnackbar(action.payload.message.value, { variant: 'success' });
         }
       )
       .addCase(changeOrganizationView.rejected, (_, action: AnyAction) => {

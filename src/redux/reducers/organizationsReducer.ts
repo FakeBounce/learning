@@ -1,18 +1,15 @@
 import { t } from '@lingui/macro';
 import {
-  CreateOrganizationsRequest,
   CreateOrganizationsResponse,
-  GetOrganizationsRequest,
   GetOrganizationsResponse,
   Organization,
-  UpdateOrganizationsBlockRequest,
   UpdateOrganizationsBlockResponse,
-  UpdateOrganizationsRequest,
   UpdateOrganizationsResponse
 } from '@services/organizations/interfaces';
 import { enqueueSnackbar } from 'notistack';
-import * as organizationsServices from '@services/organizations/organizationsAPI';
-import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import * as OrganizationsActions from '../actions/organizationsActions';
+import { AnyAction, createSlice } from '@reduxjs/toolkit';
+import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
 
 interface organizationState {
   currentOrganization: {
@@ -50,71 +47,6 @@ const initialState: organizationState = {
   }
 };
 
-export const createOrganizations = createAsyncThunk(
-  'organizations/create',
-  async (arg: CreateOrganizationsRequest, { rejectWithValue }) => {
-    try {
-      const response = await organizationsServices.createOrganizations(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const getSingleOrganization = createAsyncThunk(
-  'organizations/fetchSingle',
-  async (id: number, { rejectWithValue }) => {
-    try {
-      const response = await organizationsServices.getSingleOrganization(id);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const updateOrganizations = createAsyncThunk(
-  'organizations/update',
-  async (arg: UpdateOrganizationsRequest, { rejectWithValue }) => {
-    try {
-      const response = await organizationsServices.updateOrganizations(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const getOrganizationsList = createAsyncThunk(
-  'organizations/list',
-  async (arg: GetOrganizationsRequest, { rejectWithValue }) => {
-    try {
-      const response = await organizationsServices.getOrganizations(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const toggleOrganizationsBlock = createAsyncThunk(
-  'organizations/toggleBlock',
-  async (arg: UpdateOrganizationsBlockRequest, { rejectWithValue }) => {
-    try {
-      const response = await organizationsServices.updateOrganizationsBlock(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
 export const organizationSlice = createSlice({
   name: 'organizations',
   initialState,
@@ -124,18 +56,18 @@ export const organizationSlice = createSlice({
       /*
           Fetch Single organization Reducers
            */
-      .addCase(getSingleOrganization.pending, (state) => {
+      .addCase(OrganizationsActions.getSingleOrganization.pending, (state) => {
         state.currentOrganization.currentOrganizationLoading = true;
       })
       .addCase(
-        getSingleOrganization.fulfilled,
+        OrganizationsActions.getSingleOrganization.fulfilled,
         (state, action: { payload: UpdateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.currentOrganization.currentOrganizationLoading = false;
           state.currentOrganization.currentOrganizationData = action.payload.data;
         }
       )
-      .addCase(getSingleOrganization.rejected, (state, action: AnyAction) => {
+      .addCase(OrganizationsActions.getSingleOrganization.rejected, (state, action: AnyAction) => {
         state.currentOrganization.currentOrganizationLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
@@ -143,12 +75,12 @@ export const organizationSlice = createSlice({
       /*
         List organization Reducers
          */
-      .addCase(getOrganizationsList.pending, (state) => {
+      .addCase(OrganizationsActions.getOrganizationsList.pending, (state) => {
         state.organizationList.organizationListLoading = true;
         state.currentOrganization.currentOrganizationData = null;
       })
       .addCase(
-        getOrganizationsList.fulfilled,
+        OrganizationsActions.getOrganizationsList.fulfilled,
         (state, action: { payload: GetOrganizationsResponse }) => {
           state.organizationList.organizationListLoading = false;
           state.organizationList.organizationListData = action.payload.data.rows;
@@ -156,7 +88,7 @@ export const organizationSlice = createSlice({
             action.payload.data.pagination.total_results;
         }
       )
-      .addCase(getOrganizationsList.rejected, (state, action: AnyAction) => {
+      .addCase(OrganizationsActions.getOrganizationsList.rejected, (state, action: AnyAction) => {
         state.organizationList.organizationListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
@@ -165,9 +97,9 @@ export const organizationSlice = createSlice({
         organizations Block Reducers
          */
       //  @todo Should we display loading ?
-      .addCase(toggleOrganizationsBlock.pending, (_) => {})
+      .addCase(OrganizationsActions.toggleOrganizationsBlock.pending, (_) => {})
       .addCase(
-        toggleOrganizationsBlock.fulfilled,
+        OrganizationsActions.toggleOrganizationsBlock.fulfilled,
         (state, action: { payload: UpdateOrganizationsBlockResponse }) => {
           // Find the organization in the list and update it
           const organizationIndex = state.organizationList.organizationListData.findIndex(
@@ -178,7 +110,7 @@ export const organizationSlice = createSlice({
           }
         }
       )
-      .addCase(toggleOrganizationsBlock.rejected, (_, action: AnyAction) => {
+      .addCase(OrganizationsActions.toggleOrganizationsBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
@@ -187,11 +119,11 @@ export const organizationSlice = createSlice({
             We update the current organization data in .fullfilled cause that's the one we are currently viewing
             Through the fetch single organization action
              */
-      .addCase(updateOrganizations.pending, (state) => {
+      .addCase(OrganizationsActions.updateOrganizations.pending, (state) => {
         state.organizationUpdate.organizationUpdateLoading = true;
       })
       .addCase(
-        updateOrganizations.fulfilled,
+        OrganizationsActions.updateOrganizations.fulfilled,
         (state, action: { payload: UpdateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.organizationUpdate.organizationUpdateLoading = false;
@@ -199,7 +131,7 @@ export const organizationSlice = createSlice({
           enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )
-      .addCase(updateOrganizations.rejected, (state, action: AnyAction) => {
+      .addCase(OrganizationsActions.updateOrganizations.rejected, (state, action: AnyAction) => {
         state.organizationUpdate.organizationUpdateLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
@@ -207,11 +139,11 @@ export const organizationSlice = createSlice({
       /*
         Create organization Reducers
          */
-      .addCase(createOrganizations.pending, (state) => {
+      .addCase(OrganizationsActions.createOrganizations.pending, (state) => {
         state.organizationCreate.organizationCreateLoading = true;
       })
       .addCase(
-        createOrganizations.fulfilled,
+        OrganizationsActions.createOrganizations.fulfilled,
         (state, action: { payload: CreateOrganizationsResponse }) => {
           // Decide what to do with the response
           state.organizationCreate.organizationCreateLoading = false;
@@ -219,7 +151,7 @@ export const organizationSlice = createSlice({
           enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )
-      .addCase(createOrganizations.rejected, (state, action: AnyAction) => {
+      .addCase(OrganizationsActions.createOrganizations.rejected, (state, action: AnyAction) => {
         state.organizationCreate.organizationCreateLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         // @todo This is a temporary solution, we should handle the error message in a better way
@@ -227,6 +159,10 @@ export const organizationSlice = createSlice({
         const specificError = action.payload.data[Object.keys(action.payload.data)[0]][0];
 
         enqueueSnackbar(`${errorMessage} : ${specificError}`, { variant: 'error' });
+      })
+      .addCase(changeOrganizationView.fulfilled, (state) => {
+        state.organizationList = initialState.organizationList;
+        state.currentOrganization = initialState.currentOrganization;
       });
   }
 });
