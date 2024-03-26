@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
-import { toggleOrganizationsBlock } from '@redux/reducers/organizationsReducer';
+import { toggleOrganizationsBlock } from '@redux/actions/organizationsActions';
 import { Organization } from '@services/organizations/interfaces';
 
 const titleToDisplay = (organizationSelected: Organization) => {
