@@ -35,7 +35,7 @@ export default function OrganizationsListPopperContent({
         <ListItemButton onClick={handleToggleBlock}>
           <ListItemText
             primary={
-              applicantSelected?.is_active ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>
+              applicantSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>
             }
           />
         </ListItemButton>

@@ -98,7 +98,11 @@ export default function ApplicantProfileInfos() {
               <Trans>Notification App</Trans>
             </StyledApplicantProfileTypography>
             <Typography>
-              {applicantProfileData.notifications.app ? <Trans>OUI</Trans> : <Trans>NON</Trans>}
+              {applicantProfileData.notifications.app === '1' ? (
+                <Trans>OUI</Trans>
+              ) : (
+                <Trans>NON</Trans>
+              )}
             </Typography>
           </StyledApplicantProfileRow>
           <StyledApplicantProfileRow>
@@ -106,7 +110,11 @@ export default function ApplicantProfileInfos() {
               <Trans>Notification SMS</Trans>
             </StyledApplicantProfileTypography>
             <Typography>
-              {applicantProfileData.notifications.sms ? <Trans>OUI</Trans> : <Trans>NON</Trans>}
+              {applicantProfileData.notifications.sms === '1' ? (
+                <Trans>OUI</Trans>
+              ) : (
+                <Trans>NON</Trans>
+              )}
             </Typography>
           </StyledApplicantProfileRow>
           <StyledApplicantProfileRow>
@@ -114,7 +122,11 @@ export default function ApplicantProfileInfos() {
               <Trans>Notification Email</Trans>
             </StyledApplicantProfileTypography>
             <Typography>
-              {applicantProfileData.notifications.email ? <Trans>OUI</Trans> : <Trans>NON</Trans>}
+              {applicantProfileData.notifications.email === '1' ? (
+                <Trans>OUI</Trans>
+              ) : (
+                <Trans>NON</Trans>
+              )}
             </Typography>
           </StyledApplicantProfileRow>
         </Box>

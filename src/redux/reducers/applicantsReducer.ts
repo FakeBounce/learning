@@ -6,7 +6,10 @@ import {
 import { enqueueSnackbar } from 'notistack';
 import * as ApplicantsActions from '@redux/actions/applicantsActions';
 import { AnyAction, createSlice } from '@reduxjs/toolkit';
-import { convertApplicantValues } from '@utils/helpers/convertApplicantValues';
+import {
+  convertApplicantArrayValues,
+  convertApplicantValues
+} from '@utils/helpers/convertApplicantValues';
 
 export interface ApplicantState {
   applicantList: {
@@ -45,7 +48,9 @@ export const applicantSlice = createSlice({
         ApplicantsActions.getApplicantsList.fulfilled,
         (state, action: { payload: GetApplicantsListResponse }) => {
           state.applicantList.applicantListLoading = false;
-          state.applicantList.applicantListData = action.payload.data.rows;
+          state.applicantList.applicantListData = convertApplicantArrayValues(
+            action.payload.data.rows
+          );
           // @todo : Remove this line when the API will be ready
           state.applicantList.applicantListTotalCount = 2;
           // state.applicantList.applicantListTotalCount =
