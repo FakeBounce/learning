@@ -134,12 +134,6 @@
     "message": "La notification app est requise",
     "comments": []
   },
-  "LgoIGo": {
-    "translation": "dans",
-    "message": "dans",
-    "comments": [],
-    "obsolete": true
-  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
@@ -154,12 +148,6 @@
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
     "comments": []
-  },
-  "MjUBQq": {
-    "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "message": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "comments": [],
-    "obsolete": true
   },
   "O3oNi5": {
     "translation": "Email",
@@ -246,12 +234,6 @@
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
-  "ZG+LqI": {
-    "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "comments": [],
-    "obsolete": true
-  },
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
@@ -291,12 +273,6 @@
     "translation": "L'email est invalide",
     "message": "L'email est invalide",
     "comments": []
-  },
-  "hsXO/7": {
-    "translation": "toutes les organisations",
-    "message": "toutes les organisations",
-    "comments": [],
-    "obsolete": true
   },
   "hsf9ph": {
     "translation": "Étudiants",

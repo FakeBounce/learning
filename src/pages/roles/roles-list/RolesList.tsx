@@ -21,8 +21,9 @@ import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 export default function RolesList() {
   const dispatch = useAppDispatch();
 
-  const { rolesListData, rolesListLoading, rolesListTotalCount } =
-    useAppSelector((state) => state.roles.rolesList);
+  const { rolesListData, rolesListLoading, rolesListTotalCount } = useAppSelector(
+    (state) => state.roles.rolesList
+  );
 
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -41,9 +42,9 @@ export default function RolesList() {
       orderBy === null
         ? { ...defaultRoleListRequestConfig }
         : {
-          ...defaultRoleListRequestConfig,
-          sort: { field: orderBy.id, direction: orderBy.direction }
-        };
+            ...defaultRoleListRequestConfig,
+            sort: { field: orderBy.id, direction: orderBy.direction }
+          };
 
     dispatch(getRolesList(rolesRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);

@@ -36,7 +36,7 @@ export default function LMSPopover({
           elevation={10}
           sx={{
             borderRadius: theme.shape.customBorderRadius.small,
-            minWidth: 160,
+            minWidth: 160
           }}
         >
           {children}

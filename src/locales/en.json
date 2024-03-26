@@ -229,12 +229,6 @@
     "message": "L'adresse est requise",
     "comments": []
   },
-  "LgoIGo": {
-    "translation": "",
-    "message": "dans",
-    "comments": [],
-    "obsolete": true
-  },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
@@ -254,12 +248,6 @@
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
-  },
-  "MjUBQq": {
-    "translation": "",
-    "message": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "comments": [],
-    "obsolete": true
   },
   "NDUWrS": {
     "translation": "",
@@ -381,12 +369,6 @@
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
-  "ZG+LqI": {
-    "translation": "",
-    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "comments": [],
-    "obsolete": true
-  },
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
@@ -461,12 +443,6 @@
     "translation": "",
     "message": "L'email est invalide",
     "comments": []
-  },
-  "hsXO/7": {
-    "translation": "",
-    "message": "toutes les organisations",
-    "comments": [],
-    "obsolete": true
   },
   "hsf9ph": {
     "translation": "",

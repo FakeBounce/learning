@@ -16,11 +16,10 @@ export default function RolesListModal({
   setIsModalOpen,
   cancelModal
 }: RolesListModalProps) {
-
   const deleteRole = () => {
     if (roleSelected !== null) {
       //@TODO : call the delete action
-      enqueueSnackbar(t`Rôle supprimé !`, { variant: 'success' })
+      enqueueSnackbar(t`Rôle supprimé !`, { variant: 'success' });
       // Reset the popper
       cancelModal();
     }
@@ -51,7 +50,7 @@ export default function RolesListModal({
           <Box
             component={'span'}
             sx={{
-              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              fontWeight: (theme) => theme.typography.fontWeightMedium
             }}
           >
             groupes
@@ -60,7 +59,7 @@ export default function RolesListModal({
           <Box
             component={'span'}
             sx={{
-              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              fontWeight: (theme) => theme.typography.fontWeightMedium
             }}
           >
             utilisateurs
