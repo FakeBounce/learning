@@ -30,7 +30,7 @@ describe('ApplicantProfileInfos', () => {
 
     expect(screen.getByText(stateApplicant.firstname)).toBeInTheDocument();
     expect(screen.getByText(stateApplicant.lastname)).toBeInTheDocument();
-    expect(screen.getByText(stateApplicant.city)).toBeInTheDocument();
+    expect(screen.getByText(stateApplicant.city as string)).toBeInTheDocument();
     expect(screen.getByText(stateApplicant.email)).toBeInTheDocument();
     expect(screen.getAllByText(/Oui/i)).toHaveLength(3);
   });

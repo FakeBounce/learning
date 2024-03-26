@@ -82,16 +82,16 @@ export const populateUpdateApplicantForm = (applicant: Applicant) => {
     firstname: applicant.firstname,
     lastname: applicant.lastname,
     email: applicant.email,
-    birthDate: new Date(applicant.birthDate).toLocaleDateString(),
+    birthDate: applicant.birthDate ? new Date(applicant.birthDate).toLocaleDateString() : '',
     phone: applicant.phone || '',
     city: applicant.city || '',
     externalId: applicant.externalId || '',
     birthName: applicant.birthName || '',
     profilePicture: applicant.profilePicture || '',
     notifications: {
-      email: applicant.notifications.email === '1',
-      sms: applicant.notifications.sms === '1',
-      app: applicant.notifications.app === '1'
+      email: applicant.notifications?.email === '1',
+      sms: applicant.notifications?.sms === '1',
+      app: applicant.notifications?.app === '1'
     },
     groups: []
   };

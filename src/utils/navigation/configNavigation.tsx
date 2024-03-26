@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import {
   PATH_APPLICANTS,
   PATH_DASHBOARD,
+  PATH_EXTERNAL_TESTERS,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
   PATH_USERS
@@ -98,6 +99,17 @@ const applicantsNavigationConfig = [
   }
 ];
 
+const externalTestersNavigationConfig = [
+  {
+    title: <Trans>Profil</Trans>,
+    path: PATH_EXTERNAL_TESTERS.profile
+  },
+  {
+    title: <Trans>Créer un testeur externe</Trans>,
+    path: PATH_EXTERNAL_TESTERS.add
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
@@ -105,7 +117,8 @@ export const globalNavigationConfig = [
   ...parametersNavigationConfig,
   ...organizationsNavigationConfig,
   ...usersNavigationConfig,
-  ...applicantsNavigationConfig
+  ...applicantsNavigationConfig,
+  ...externalTestersNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

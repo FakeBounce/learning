@@ -49,6 +49,13 @@ export const PATH_APPLICANTS = {
   add: path(ROOT_APPLICANTS, '/creation')
 };
 
+const ROOT_EXTERNAL_TESTERS = PATH_PARAMETERS.externalTesters;
+export const PATH_EXTERNAL_TESTERS = {
+  root: ROOT_EXTERNAL_TESTERS,
+  profile: path(ROOT_EXTERNAL_TESTERS, '/profile/:applicantId'),
+  add: path(ROOT_EXTERNAL_TESTERS, '/creation')
+};
+
 //Users
 const ROOT_USERS = PATH_PARAMETERS.users;
 export const PATH_USERS = {

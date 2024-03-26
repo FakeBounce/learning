@@ -24,16 +24,6 @@
     "message": "Groupes",
     "comments": []
   },
-  "BSb8d9": {
-    "translation": "Double authentification",
-    "message": "Double authentification",
-    "comments": []
-  },
-  "Bmo0y3": {
-    "translation": "OUI",
-    "message": "OUI",
-    "comments": []
-  },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
@@ -44,29 +34,14 @@
     "message": "Gestion des rôles",
     "comments": []
   },
-  "F8ESDf": {
-    "translation": "Activé",
-    "message": "Activé",
-    "comments": []
-  },
-  "GF/eyq": {
-    "translation": "Ajouter en masse",
-    "message": "Ajouter en masse",
-    "comments": []
-  },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
     "comments": []
   },
-  "H1+RH6": {
-    "translation": "Aucun groupe défini.",
-    "message": "Aucun groupe défini.",
-    "comments": []
-  },
-  "HGYOb+": {
-    "translation": "Bloqué",
-    "message": "Bloqué",
+  "GroyQn": {
+    "translation": "Le testeur n'existe pas",
+    "message": "Le testeur n'existe pas",
     "comments": []
   },
   "HbvbX+": {
@@ -74,14 +49,9 @@
     "message": "Personnalisation",
     "comments": []
   },
-  "HdNGur": {
-    "translation": "Bloquer",
-    "message": "Bloquer",
-    "comments": []
-  },
-  "JMJBle": {
-    "translation": "La double authentification est requise",
-    "message": "La double authentification est requise",
+  "IAAmKF": {
+    "translation": "Non renseigné",
+    "message": "Non renseigné",
     "comments": []
   },
   "MCvCnO": {
@@ -89,19 +59,9 @@
     "message": "Prénom",
     "comments": []
   },
-  "MZX/LX": {
-    "translation": "Statut",
-    "message": "Statut",
-    "comments": []
-  },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
-  },
-  "Nu4oKW": {
-    "translation": "Description",
-    "message": "Description",
     "comments": []
   },
   "O3oNi5": {
@@ -109,24 +69,24 @@
     "message": "Email",
     "comments": []
   },
-  "OQ8lVl": {
-    "translation": "Modifier",
-    "message": "Modifier",
+  "QThGLQ": {
+    "translation": "Le numéro de téléphone est invalide",
+    "message": "Le numéro de téléphone est invalide",
     "comments": []
   },
-  "ShMuaQ": {
-    "translation": "Le nom est requis",
-    "message": "Le nom est requis",
+  "UDTsGF": {
+    "translation": "Id externe",
+    "message": "Id externe",
+    "comments": []
+  },
+  "W3FHUJ": {
+    "translation": "Aucune modification n'a été effectuée",
+    "message": "Aucune modification n'a été effectuée",
     "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
-  },
-  "YNznY8": {
-    "translation": "Ajouter",
-    "message": "Ajouter",
     "comments": []
   },
   "dEcezs": {
@@ -144,14 +104,9 @@
     "message": "Le prénom est requis",
     "comments": []
   },
-  "fu2rxk": {
-    "translation": "Enregistrer",
-    "message": "Enregistrer",
-    "comments": []
-  },
-  "hMJAZ/": {
-    "translation": "Aucune modification n'a été apportée",
-    "message": "Aucune modification n'a été apportée",
+  "hW6LJA": {
+    "translation": "L'email est invalide",
+    "message": "L'email est invalide",
     "comments": []
   },
   "hsf9ph": {
@@ -159,14 +114,14 @@
     "message": "Étudiants",
     "comments": []
   },
-  "i0ke3s": {
-    "translation": "Aucun rôle défini.",
-    "message": "Aucun rôle défini.",
-    "comments": []
-  },
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
+    "comments": []
+  },
+  "ikKkoV": {
+    "translation": "Le nom de famille est requis",
+    "message": "Le nom de famille est requis",
     "comments": []
   },
   "lPgC5g": {
@@ -179,39 +134,19 @@
     "message": "Créer une organisation",
     "comments": []
   },
-  "tALayW": {
-    "translation": "Annuler",
-    "message": "Annuler",
-    "comments": []
-  },
-  "u2iZug": {
-    "translation": "Le login est requis",
-    "message": "Le login est requis",
-    "comments": []
-  },
-  "u3n1/X": {
-    "translation": "Débloquer",
-    "message": "Débloquer",
-    "comments": []
-  },
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
     "comments": []
   },
-  "xj9DHS": {
-    "translation": "NON",
-    "message": "NON",
+  "vm08uh": {
+    "translation": "Téléphone",
+    "message": "Téléphone",
     "comments": []
   },
-  "yZC9OF": {
-    "translation": "Rôles",
-    "message": "Rôles",
-    "comments": []
-  },
-  "z0t9bb": {
-    "translation": "Login",
-    "message": "Login",
+  "zKPyEG": {
+    "translation": "Au moins un groupe est requis",
+    "message": "Au moins un groupe est requis",
     "comments": []
   }
 }
