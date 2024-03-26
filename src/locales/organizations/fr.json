@@ -13,7 +13,7 @@
     "translation": "Modifier une organization",
     "message": "Modifier une organization",
     "comments": [],
-    "obsolete": false
+    "obsolete": true
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -28,8 +28,7 @@
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -39,8 +38,7 @@
   "7uQ5BG": {
     "translation": "Adresse siège social",
     "message": "Adresse siège social",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "Groupes",
@@ -50,20 +48,17 @@
   "Be0x4u": {
     "translation": "Prénom admin client",
     "message": "Prénom admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "C1e9Kp": {
     "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "Profil",
@@ -128,8 +123,7 @@
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -149,8 +143,7 @@
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -160,14 +153,12 @@
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "funWao": {
     "translation": "Nom admin client",
     "message": "Nom admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "g+hxtQ": {
     "translation": "Créer",
@@ -187,14 +178,12 @@
   "jiE6Vn": {
     "translation": "Organizations",
     "message": "Organizations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
@@ -204,26 +193,22 @@
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rKvP91": {
     "translation": "Email admin client",
     "message": "Email admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "sAl4AV": {
     "translation": "Téléchargez une photo",
     "message": "Téléchargez une photo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "u3n1/X": {
     "translation": "Débloquer",
@@ -238,7 +223,6 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

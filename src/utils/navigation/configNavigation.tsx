@@ -1,7 +1,7 @@
-// ----------------------------------------------------------------------
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
 import { PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
+import { PermissionTypeEnum } from '@services/permissions/interfaces';
 
 // GENERAL
 // ----------------------------------------------------------------------
@@ -22,13 +22,41 @@ export const generalNavigationConfig = [
 // Parameters
 // ----------------------------------------------------------------------
 export const parametersNavigationConfig = [
-  { title: <Trans>Gestion des rôles</Trans>, path: PATH_PARAMETERS.roles },
-  { title: <Trans>Organisations</Trans>, path: PATH_PARAMETERS.organizations },
-  { title: <Trans>Groupes</Trans>, path: PATH_PARAMETERS.groups },
-  { title: <Trans>Utilisateurs</Trans>, path: PATH_PARAMETERS.users },
-  { title: <Trans>Étudiants</Trans>, path: PATH_PARAMETERS.students },
-  { title: <Trans>Testeurs externes</Trans>, path: PATH_PARAMETERS.externalTesters },
-  { title: <Trans>Personnalisation</Trans>, path: PATH_PARAMETERS.customize }
+  {
+    title: <Trans>Gestion des rôles</Trans>,
+    path: PATH_PARAMETERS.roles,
+    restrictedTo: PermissionTypeEnum.ROLES
+  },
+  {
+    title: <Trans>Organizations</Trans>,
+    path: PATH_PARAMETERS.organizations,
+    restrictedTo: PermissionTypeEnum.SUPER_ADMIN
+  },
+  {
+    title: <Trans>Groupes</Trans>,
+    path: PATH_PARAMETERS.groups,
+    restrictedTo: PermissionTypeEnum.GROUPS
+  },
+  {
+    title: <Trans>Utilisateurs</Trans>,
+    path: PATH_PARAMETERS.users,
+    restrictedTo: PermissionTypeEnum.USERS
+  },
+  {
+    title: <Trans>Étudiants</Trans>,
+    path: PATH_PARAMETERS.students,
+    restrictedTo: PermissionTypeEnum.STUDENTS
+  },
+  {
+    title: <Trans>Testeurs externes</Trans>,
+    path: PATH_PARAMETERS.externalTesters,
+    restrictedTo: PermissionTypeEnum.TESTERS
+  },
+  {
+    title: <Trans>Personnalisation</Trans>,
+    path: PATH_PARAMETERS.customize,
+    restrictedTo: PermissionTypeEnum.PERSONALIZATION
+  }
 ];
 
 const organizationsNavigationConfig = [

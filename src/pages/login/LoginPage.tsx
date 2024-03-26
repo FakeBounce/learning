@@ -11,7 +11,7 @@ import { useForm, FormProvider } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import LoginForm from 'src/pages/login/LoginForm';
 import * as Yup from 'yup';
-import { login } from '@redux/reducers/connectedUserReducer';
+import { login } from '@redux/actions/connectedUserActions';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 
 // ----------------------------------------------------------------------

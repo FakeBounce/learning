@@ -2,7 +2,7 @@ import { t, Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { toggleOrganizationsBlock } from '@redux/actions/organizationsActions';
-import { changeOrganizationView } from '@redux/reducers/connectedUserReducer';
+import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { Organization } from '@services/organizations/interfaces';
 import { useNavigate } from 'react-router-dom';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';

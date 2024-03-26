@@ -6,7 +6,7 @@ import { lazy } from 'react';
 export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/LoginPage')));
 
 // MAIN
-export const Page404 = LoadableComponent(lazy(() => import('../pages/Page404')));
+export const Page404 = LoadableComponent(lazy(() => import('../pages/errors/Page404')));
 
 // Organizations
 

@@ -1,12 +1,6 @@
-import GuestGuard from '@src/auth/GuestGuard';
-import AuthGuard from '@src/auth/AuthGuard';
-import {
-  PATH_AUTH,
-  PATH_DASHBOARD,
-  PATH_ORGANIZATIONS,
-  PATH_PARAMETERS,
-  PATH_USERS
-} from '@utils/navigation/paths';
+import GuestGuard from '@utils/auth/GuestGuard';
+import AuthGuard from '@utils/auth/AuthGuard';
+import { PATH_AUTH, PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_USERS } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import {
   LoginPage,
@@ -19,6 +13,8 @@ import {
   UserEdit
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
+import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 
 // ----------------------------------------------------------------------
 
@@ -33,19 +29,23 @@ const Router = () => {
         }
       >
         <Route path={PATH_DASHBOARD.root} element={<>Dashboard content</>} />
-        <Route path={PATH_PARAMETERS.organizations} element={<Organizations />} />
-        <Route path={PATH_ORGANIZATIONS.add} element={<OrganizationsCreate />} />
-        <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
-        <Route path={PATH_PARAMETERS.users} element={<Users />} />
-        <Route path={PATH_USERS.profile} element={<UserProfile />} />
-        <Route path={PATH_USERS.edit} element={<UserEdit />} />
+        <Route element={<FeatureFlagedRoute pagePermissionType={PermissionTypeEnum.SUPER_ADMIN} />}>
+          <Route path={PATH_ORGANIZATIONS.root} element={<Organizations />} />
+          <Route path={PATH_ORGANIZATIONS.add} element={<OrganizationsCreate />} />
+          <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
+        </Route>
+        <Route element={<FeatureFlagedRoute pagePermissionType={PermissionTypeEnum.USERS} />}>
+          <Route path={PATH_USERS.root} element={<Users />} />
+          <Route path={PATH_USERS.profile} element={<UserProfile />} />
+          <Route path={PATH_USERS.edit} element={<UserEdit />} />
+        </Route>
+        <Route path="/404" element={<Page404 />} />
+        <Route path="*" element={<Navigate to="/404" />} />
       </Route>
 
       <Route element={<GuestGuard />}>
         <Route path={PATH_AUTH.login} element={<LoginPage />} />
       </Route>
-      <Route path="/404" element={<Page404 />} />
-      <Route path="*" element={<Navigate to="/404" />} />
     </Routes>
   );
 };
