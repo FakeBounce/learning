@@ -68,7 +68,11 @@ export const usersColumns: readonly UsersColumn[] = [
 
       return (
         <Box display="flex" alignItems="center">
-          <StatusChip row={row} activatedText={activatedText} handleClick={handleClick} />
+          <StatusChip
+            isActive={row.is_active}
+            activatedText={activatedText}
+            handleClick={handleClick(row)}
+          />
         </Box>
       );
     }

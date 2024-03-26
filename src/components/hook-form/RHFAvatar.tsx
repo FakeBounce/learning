@@ -71,7 +71,7 @@ export default function RHFAvatar({
               value={field.value instanceof File ? field.value : ''}
               error={!!error}
               type={'file'}
-              inputProps={{ accept: 'image/png,image/jpeg,image/gif' }}
+              inputProps={{ accept: '.png,.jpeg,.gif, .jpg' }}
               sx={{ display: 'none' }}
               data-testid="file-upload"
               hidden

@@ -1,9 +1,10 @@
 import { Trans } from '@lingui/macro';
-import { Avatar, Box, Chip, IconButton, TableCell, TableRow, Typography } from '@mui/material';
+import { Avatar, Box, TableCell, TableRow, Typography } from '@mui/material';
 import { Theme } from '@mui/material/styles';
 import { Organization } from '@services/organizations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
+import StatusChip from '@src/components/lms/StatusChip';
 
 export interface OrderBy {
   id: string;
@@ -47,22 +48,11 @@ export const organizationsListColumns: readonly OrganizationColumn[] = [
       const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
       return (
         <Box display="flex" alignItems="center">
-          <Chip
-            sx={{
-              borderRadius: (theme: Theme) => theme.shape.customBorderRadius.small,
-              backgroundColor: (theme: Theme) =>
-                row.is_active ? theme.palette.primary.light : theme.palette.grey[200],
-              color: (theme: Theme) =>
-                row.is_active ? theme.palette.primary.darker : theme.palette.grey[900]
-            }}
-            label={activatedText}
+          <StatusChip
+            isActive={row.is_active}
+            activatedText={activatedText}
+            handleClick={handleClick(row)}
           />
-          <IconButton onClick={handleClick(row)} sx={{ boxShadow: 'none' }}>
-            <Iconify
-              sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
-              icon={'pepicons-pop:dots-y'}
-            />
-          </IconButton>
         </Box>
       );
     }

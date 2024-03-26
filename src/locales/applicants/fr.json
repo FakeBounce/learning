@@ -2,17 +2,26 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "0uOGoh": {
+    "translation": "Le format est invalide",
+    "message": "Le format est invalide",
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "4kUPlv": {
     "translation": "Notifications app",
@@ -23,7 +32,8 @@
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8/pAPk": {
     "translation": "Nom de naissance",
@@ -46,7 +56,8 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "OUI",
@@ -87,18 +98,14 @@
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": []
-  },
-  "EK4bIm": {
-    "translation": "Le fichier est requis",
-    "message": "Le fichier est requis",
     "comments": [],
     "obsolete": false
   },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FBQvDW": {
     "translation": "Modification du profil",
@@ -121,17 +128,20 @@
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "Bloquer",
@@ -154,7 +164,8 @@
   "LgoIGo": {
     "translation": "dans",
     "message": "dans",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "Prénom",
@@ -165,12 +176,14 @@
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MjUBQq": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "Email",
@@ -196,10 +209,17 @@
     "comments": [],
     "obsolete": false
   },
+  "QThGLQ": {
+    "translation": "Le numéro de téléphone est invalide",
+    "message": "Le numéro de téléphone est invalide",
+    "comments": [],
+    "obsolete": false
+  },
   "SNbh3h": {
     "translation": "Débloquer un étudiant",
     "message": "Débloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Ttle7P": {
     "translation": "Identifiant externe",
@@ -222,7 +242,8 @@
   "UHDGIH": {
     "translation": "/",
     "message": "/",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UU1Jg5": {
     "translation": "La date de naissance est requise",
@@ -245,22 +266,24 @@
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "YS+12y": {
+    "translation": "Ajouter un étudiant",
+    "message": "Ajouter un étudiant",
+    "comments": [],
+    "obsolete": false
   },
   "ZG+LqI": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": [],
-    "obsolete": false
-  },
-  "eFlGiu": {
-    "translation": "Le fichier est trop volumineux",
-    "message": "Le fichier est trop volumineux",
     "comments": [],
     "obsolete": false
   },
@@ -273,12 +296,14 @@
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "f3LmJs": {
     "translation": "Bloquer un étudiant",
     "message": "Bloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "Le prénom est requis",
@@ -295,7 +320,8 @@
   "g+hxtQ": {
     "translation": "Créer",
     "message": "Créer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hW6LJA": {
     "translation": "L'email est invalide",
@@ -306,12 +332,14 @@
   "hsXO/7": {
     "translation": "toutes les organisations",
     "message": "toutes les organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "Nom",
@@ -328,12 +356,20 @@
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
     "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "lPgC5g": {
+    "translation": "Créer un étudiant",
+    "message": "Créer un étudiant",
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",
@@ -350,7 +386,8 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vdb2j0": {
     "translation": "Notifications SMS",
@@ -367,7 +404,8 @@
   "wB7q3X": {
     "translation": "Date naiss.",
     "message": "Date naiss.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "NON",
