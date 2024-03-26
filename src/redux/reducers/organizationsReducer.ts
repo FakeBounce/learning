@@ -37,7 +37,7 @@ const initialState: organizationState = {
   organizationList: {
     organizationListData: [],
     organizationListLoading: false,
-    organizationListTotalCount: null
+    organizationListTotalCount: 0
   },
   organizationCreate: {
     organizationCreateLoading: false

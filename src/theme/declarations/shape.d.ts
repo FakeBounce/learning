@@ -7,6 +7,7 @@ declare module '@mui/system/createTheme/shape' {
       small: number;
       medium: number;
       large: number;
+      extraLarge: number;
       whole: number;
     };
   }

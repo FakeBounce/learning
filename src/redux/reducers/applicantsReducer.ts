@@ -15,7 +15,7 @@ const initialState: applicantState = {
   applicantList: {
     applicantListData: [],
     applicantListLoading: false,
-    applicantListTotalCount: null
+    applicantListTotalCount: 0
   }
 };
 

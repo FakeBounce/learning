@@ -1,23 +1,18 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
-import { useAppDispatch } from '@redux/hooks';
-import { toggleApplicantBlock } from '@redux/actions/applicantsActions';
 import { useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 
 interface OrganizationsListPopperContentProps {
-  setAnchorEl: (value: HTMLElement | null) => void;
-  setApplicantSelected: (value: Applicant | null) => void;
+  handleToggleBlock: () => void;
   applicantSelected: Applicant | null;
 }
 export default function OrganizationsListPopperContent({
-  setAnchorEl,
-  setApplicantSelected,
+  handleToggleBlock,
   applicantSelected
 }: OrganizationsListPopperContentProps) {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
@@ -31,28 +26,13 @@ export default function OrganizationsListPopperContent({
     }
   };
 
-  const toggleBlock = () => {
-    if (applicantSelected !== null) {
-      dispatch(
-        toggleApplicantBlock({
-          setActive: !applicantSelected.is_active,
-          applicantId: applicantSelected.id
-        })
-      ).then(() => {
-        // Reset the popper
-        setAnchorEl(null);
-        setApplicantSelected(null);
-      });
-    }
-  };
-
   return (
     <Paper elevation={3} sx={{ borderRadius: 2, minWidth: 160 }}>
       <ListItem disablePadding sx={{ display: 'block' }}>
         <ListItemButton onClick={goToApplicantProfile}>
           <ListItemText primary={<Trans>Profil</Trans>} />
         </ListItemButton>
-        <ListItemButton onClick={toggleBlock}>
+        <ListItemButton onClick={handleToggleBlock}>
           <ListItemText
             primary={
               applicantSelected?.is_active ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>

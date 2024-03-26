@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
 import { PATH_DASHBOARD, PATH_ORGANIZATIONS, PATH_PARAMETERS, PATH_USERS } from './paths';
-import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 
 // GENERAL
 // ----------------------------------------------------------------------
@@ -25,37 +25,37 @@ export const parametersNavigationConfig = [
   {
     title: <Trans>Gestion des rôles</Trans>,
     path: PATH_PARAMETERS.roles,
-    restrictedTo: PermissionTypeEnum.ROLES
+    restrictedTo: pageRestrictionsList.roles
   },
   {
     title: <Trans>Organizations</Trans>,
     path: PATH_PARAMETERS.organizations,
-    restrictedTo: PermissionTypeEnum.SUPER_ADMIN
+    restrictedTo: pageRestrictionsList.organizations
   },
   {
     title: <Trans>Groupes</Trans>,
     path: PATH_PARAMETERS.groups,
-    restrictedTo: PermissionTypeEnum.GROUPS
+    restrictedTo: pageRestrictionsList.groups
   },
   {
     title: <Trans>Utilisateurs</Trans>,
     path: PATH_PARAMETERS.users,
-    restrictedTo: PermissionTypeEnum.USERS
+    restrictedTo: pageRestrictionsList.users
   },
   {
     title: <Trans>Étudiants</Trans>,
     path: PATH_PARAMETERS.applicants,
-    restrictedTo: PermissionTypeEnum.SUPER_ADMIN
+    restrictedTo: pageRestrictionsList.applicants
   },
   {
     title: <Trans>Testeurs externes</Trans>,
     path: PATH_PARAMETERS.externalTesters,
-    restrictedTo: PermissionTypeEnum.TESTERS
+    restrictedTo: pageRestrictionsList.externalTesters
   },
   {
     title: <Trans>Personnalisation</Trans>,
     path: PATH_PARAMETERS.customize,
-    restrictedTo: PermissionTypeEnum.PERSONALIZATION
+    restrictedTo: pageRestrictionsList.customize
   }
 ];
 
