@@ -3,13 +3,13 @@ import Iconify from '@src/components/iconify/Iconify';
 import { useTheme } from '@mui/material/styles';
 import React, { ReactNode } from 'react';
 
-interface StatisChipProps {
+interface StatusChipProps {
   isActive: boolean;
   activatedText: ReactNode;
   handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export default function StatusChip({ isActive, activatedText, handleClick }: StatisChipProps) {
+export default function StatusChip({ isActive, activatedText, handleClick }: StatusChipProps) {
   const theme = useTheme();
 
   return (
