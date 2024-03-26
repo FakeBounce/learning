@@ -20,14 +20,16 @@ describe('OrganizationsListPopperContent', () => {
   });
 
   it('renders OrganizationsListPopperContent correctly', () => {
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+    // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={null}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />
     );
 
@@ -37,14 +39,16 @@ describe('OrganizationsListPopperContent', () => {
   });
 
   it('renders OrganizationsListPopperContent correctly with organization', () => {
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+    // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={defaultOrganization}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />
     );
 
@@ -56,14 +60,12 @@ describe('OrganizationsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={defaultOrganization}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />
     );
 
@@ -80,14 +82,12 @@ describe('OrganizationsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={null}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />
     );
 
@@ -105,14 +105,12 @@ describe('OrganizationsListPopperContent', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={defaultOrganization}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />
     );
 
@@ -129,14 +127,17 @@ describe('OrganizationsListPopperContent', () => {
 
   it('should display an info if the user is already connected to the organization', async () => {
     setupSuccessAxiosMock();
-    const onCloseMock = jest.fn();
-    const setOrganizationSelectedMock = jest.fn();
+
+    // Mock useNavigate
+    const navigateMock = jest.fn().mockResolvedValueOnce({});
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+
+    const handleToggleBlockMock = jest.fn();
 
     render(
       <OrganizationsListPopperContent
-        onClose={onCloseMock}
         organizationSelected={defaultOrganization}
-        setOrganizationSelected={setOrganizationSelectedMock}
+        handleToggleBlock={handleToggleBlockMock}
       />,
       {
         preloadedState: {
@@ -152,7 +153,7 @@ describe('OrganizationsListPopperContent', () => {
     });
 
     waitFor(() => {
-      expect(onCloseMock).toHaveBeenCalled();
+      expect(handleToggleBlockMock).toHaveBeenCalled();
       expect(screen.getByText(/Vous êtes déjà connecté à cette organisation/i)).toBeInTheDocument();
     });
   });
