@@ -19,7 +19,7 @@ export default function HeaderBreadcrumbs() {
     const breadCrumbs = pathArray.map((_, index) => {
       const currentPath = pathArray.slice(0, index + 1).join('/') || '/';
       const currentPathConfig = globalNavigationConfig.find((config) => {
-        if (config.path.includes(':')) {
+        if (config.path && config.path.includes(':')) {
           return currentPath.includes(config.path.split(':')[0]);
         }
 

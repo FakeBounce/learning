@@ -30,7 +30,7 @@ export const PATH_PARAMETERS = {
   organizations: path(ROOTS_DASHBOARD, 'organizations'),
   groups: path(ROOTS_DASHBOARD, 'groups'),
   users: path(ROOTS_DASHBOARD, 'users'),
-  students: path(ROOTS_DASHBOARD, 'students'),
+  applicants: path(ROOTS_DASHBOARD, 'applicants'),
   externalTesters: path(ROOTS_DASHBOARD, 'external-testers'),
   customize: path(ROOTS_DASHBOARD, 'customize')
 };
@@ -40,6 +40,13 @@ export const PATH_ORGANIZATIONS = {
   root: ROOT_ORGANIZATIONS,
   add: path(ROOT_ORGANIZATIONS, '/creation'),
   update: path(ROOT_ORGANIZATIONS, '/update/:id')
+};
+
+const ROOT_APPLICANTS = PATH_PARAMETERS.applicants;
+export const PATH_APPLICANTS = {
+  root: ROOT_APPLICANTS,
+  add: path(ROOT_APPLICANTS, '/creation'),
+  update: path(ROOT_APPLICANTS, '/update/:id')
 };
 
 //Users

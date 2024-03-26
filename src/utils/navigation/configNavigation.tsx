@@ -44,8 +44,8 @@ export const parametersNavigationConfig = [
   },
   {
     title: <Trans>Étudiants</Trans>,
-    path: PATH_PARAMETERS.students,
-    restrictedTo: PermissionTypeEnum.STUDENTS
+    path: PATH_PARAMETERS.applicants,
+    restrictedTo: PermissionTypeEnum.SUPER_ADMIN
   },
   {
     title: <Trans>Testeurs externes</Trans>,

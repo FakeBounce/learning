@@ -4,12 +4,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
@@ -53,18 +47,13 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
     "comments": []
-  },
-  "GoZkew": {
-    "translation": "",
-    "message": "Organisations",
-    "comments": [],
-    "obsolete": true
   },
   "H1+RH6": {
     "translation": "",
@@ -74,7 +63,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -94,12 +84,14 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "",
@@ -109,18 +101,13 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
     "comments": []
-  },
-  "PedA04": {
-    "translation": "",
-    "message": "Créer une organization",
-    "comments": [],
-    "obsolete": true
   },
   "ShMuaQ": {
     "translation": "",
@@ -175,7 +162,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jiE6Vn": {
     "translation": "",

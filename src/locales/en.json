@@ -14,12 +14,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "247qoZ": {
     "translation": "",
     "message": "Créer un compte",
@@ -160,20 +154,29 @@
     "message": "Modifier",
     "comments": []
   },
+  "P3YkHZ": {
+    "translation": "",
+    "message": "Mettre à jour",
+    "comments": []
+  },
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
     "comments": []
   },
-  "SDTSUy": {
-    "translation": "",
-    "message": "Organisation ID",
-    "comments": [],
-    "obsolete": true
-  },
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
+    "comments": []
+  },
+  "UDTsGF": {
+    "translation": "",
+    "message": "Id externe",
+    "comments": []
+  },
+  "UHDGIH": {
+    "translation": "",
+    "message": "/",
     "comments": []
   },
   "W3FHUJ": {
@@ -246,6 +249,11 @@
     "message": "Aucune modification n'a été apportée",
     "comments": []
   },
+  "hsf9ph": {
+    "translation": "",
+    "message": "Étudiants",
+    "comments": []
+  },
   "i0ke3s": {
     "translation": "",
     "message": "Aucun rôle défini.",
@@ -256,12 +264,6 @@
     "message": "Nom",
     "comments": []
   },
-  "jiE6Vn": {
-    "translation": "",
-    "message": "Organizations",
-    "comments": [],
-    "obsolete": true
-  },
   "kSDjJh": {
     "translation": "",
     "message": "Le nom de l'admin est requis",
@@ -271,12 +273,6 @@
     "translation": "",
     "message": "Mot de passe oublié ?",
     "comments": []
-  },
-  "q+G9Ft": {
-    "translation": "",
-    "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": true
   },
   "rBTdOL": {
     "translation": "",
@@ -311,6 +307,16 @@
   "uXStqy": {
     "translation": "",
     "message": "Mot de passe",
+    "comments": []
+  },
+  "vm08uh": {
+    "translation": "",
+    "message": "Téléphone",
+    "comments": []
+  },
+  "wB7q3X": {
+    "translation": "",
+    "message": "Date naiss.",
     "comments": []
   },
   "xj9DHS": {

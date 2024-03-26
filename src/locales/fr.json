@@ -14,12 +14,6 @@
     "message": "Modifier un utilisateur",
     "comments": []
   },
-  "0xb6pr": {
-    "translation": "Modifier une organization",
-    "message": "Modifier une organization",
-    "comments": [],
-    "obsolete": true
-  },
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
@@ -160,20 +154,29 @@
     "message": "Modifier",
     "comments": []
   },
+  "P3YkHZ": {
+    "translation": "Mettre à jour",
+    "message": "Mettre à jour",
+    "comments": []
+  },
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
     "comments": []
   },
-  "SDTSUy": {
-    "translation": "Organisation ID",
-    "message": "Organisation ID",
-    "comments": [],
-    "obsolete": true
-  },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
+    "comments": []
+  },
+  "UDTsGF": {
+    "translation": "Id externe",
+    "message": "Id externe",
+    "comments": []
+  },
+  "UHDGIH": {
+    "translation": "/",
+    "message": "/",
     "comments": []
   },
   "W3FHUJ": {
@@ -246,6 +249,11 @@
     "message": "Aucune modification n'a été apportée",
     "comments": []
   },
+  "hsf9ph": {
+    "translation": "Étudiants",
+    "message": "Étudiants",
+    "comments": []
+  },
   "i0ke3s": {
     "translation": "Aucun rôle défini.",
     "message": "Aucun rôle défini.",
@@ -256,12 +264,6 @@
     "message": "Nom",
     "comments": []
   },
-  "jiE6Vn": {
-    "translation": "Organizations",
-    "message": "Organizations",
-    "comments": [],
-    "obsolete": true
-  },
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
@@ -271,12 +273,6 @@
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
     "comments": []
-  },
-  "q+G9Ft": {
-    "translation": "Créer une organisation",
-    "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": true
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
@@ -311,6 +307,16 @@
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
+    "comments": []
+  },
+  "vm08uh": {
+    "translation": "Téléphone",
+    "message": "Téléphone",
+    "comments": []
+  },
+  "wB7q3X": {
+    "translation": "Date naiss.",
+    "message": "Date naiss.",
     "comments": []
   },
   "xj9DHS": {

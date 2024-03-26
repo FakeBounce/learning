@@ -24,16 +24,6 @@
     "message": "Groupes",
     "comments": []
   },
-  "BSb8d9": {
-    "translation": "Double authentification",
-    "message": "Double authentification",
-    "comments": []
-  },
-  "Bmo0y3": {
-    "translation": "OUI",
-    "message": "OUI",
-    "comments": []
-  },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
@@ -50,15 +40,11 @@
     "comments": [],
     "obsolete": false
   },
-  "GF/eyq": {
-    "translation": "Ajouter en masse",
-    "message": "Ajouter en masse",
-    "comments": []
-  },
-  "H1+RH6": {
-    "translation": "Aucun groupe défini.",
-    "message": "Aucun groupe défini.",
-    "comments": []
+  "GAxRw0": {
+    "translation": "Ville",
+    "message": "Ville",
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -76,11 +62,6 @@
     "message": "Bloquer",
     "comments": []
   },
-  "JMJBle": {
-    "translation": "La double authentification est requise",
-    "message": "La double authentification est requise",
-    "comments": []
-  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
@@ -93,40 +74,32 @@
     "comments": [],
     "obsolete": false
   },
-  "Nu4oKW": {
-    "translation": "Description",
-    "message": "Description",
-    "comments": []
-  },
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
     "comments": [],
     "obsolete": false
   },
-  "OQ8lVl": {
-    "translation": "Modifier",
-    "message": "Modifier",
+  "P3YkHZ": {
+    "translation": "Mettre à jour",
+    "message": "Mettre à jour",
     "comments": []
   },
-  "ShMuaQ": {
-    "translation": "Le nom est requis",
-    "message": "Le nom est requis",
-    "comments": []
+  "UDTsGF": {
+    "translation": "Id externe",
+    "message": "Id externe",
+    "comments": [],
+    "obsolete": false
+  },
+  "UHDGIH": {
+    "translation": "/",
+    "message": "/",
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
-  },
-  "YNznY8": {
-    "translation": "Ajouter",
-    "message": "Ajouter",
-    "comments": []
-  },
-  "dEcezs": {
-    "translation": "L'email est requis",
-    "message": "L'email est requis",
     "comments": []
   },
   "eoO6cw": {
@@ -134,29 +107,14 @@
     "message": "Liste des Parcours",
     "comments": []
   },
-  "fojDKu": {
-    "translation": "Le prénom est requis",
-    "message": "Le prénom est requis",
-    "comments": []
-  },
-  "fu2rxk": {
-    "translation": "Enregistrer",
-    "message": "Enregistrer",
-    "comments": []
-  },
-  "hMJAZ/": {
-    "translation": "Aucune modification n'a été apportée",
-    "message": "Aucune modification n'a été apportée",
+  "g+hxtQ": {
+    "translation": "Créer",
+    "message": "Créer",
     "comments": []
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
-  },
-  "i0ke3s": {
-    "translation": "Aucun rôle défini.",
-    "message": "Aucun rôle défini.",
     "comments": []
   },
   "iAKACc": {
@@ -175,16 +133,6 @@
     "message": "Créer une organisation",
     "comments": []
   },
-  "tALayW": {
-    "translation": "Annuler",
-    "message": "Annuler",
-    "comments": []
-  },
-  "u2iZug": {
-    "translation": "Le login est requis",
-    "message": "Le login est requis",
-    "comments": []
-  },
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
@@ -195,19 +143,16 @@
     "message": "Testeurs externes",
     "comments": []
   },
-  "xj9DHS": {
-    "translation": "NON",
-    "message": "NON",
-    "comments": []
+  "vm08uh": {
+    "translation": "Téléphone",
+    "message": "Téléphone",
+    "comments": [],
+    "obsolete": false
   },
-  "yZC9OF": {
-    "translation": "Rôles",
-    "message": "Rôles",
-    "comments": []
-  },
-  "z0t9bb": {
-    "translation": "Login",
-    "message": "Login",
-    "comments": []
+  "wB7q3X": {
+    "translation": "Date naiss.",
+    "message": "Date naiss.",
+    "comments": [],
+    "obsolete": false
   }
 }

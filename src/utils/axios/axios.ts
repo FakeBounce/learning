@@ -9,7 +9,7 @@ const axiosInstance: AxiosInstance = (() => {
     throw new Error('VITE_HOST_API_KEY environment variable not defined.');
   }
 
-  return axios.create({ baseURL });
+  return axios.create({ baseURL, timeout: 1000 });
 })();
 
 export default axiosInstance;
