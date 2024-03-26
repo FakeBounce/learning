@@ -2,6 +2,7 @@ import {
   ApplicantType,
   GetApplicantsListRequest,
   GetApplicantsListResponse,
+  GetSingleApplicantResponse,
   UpdateApplicantBlockRequest,
   UpdateApplicantBlockResponse
 } from '@services/applicants/interfaces';
@@ -20,6 +21,12 @@ export const getApplicants = async (
     filters,
     sort
   });
+};
+
+export const getSingleApplicant = async (
+  id: number
+): Promise<AxiosResponse<GetSingleApplicantResponse>> => {
+  return axios.get(`/applicants/${id}`);
 };
 
 export const updateApplicantBlock = async (

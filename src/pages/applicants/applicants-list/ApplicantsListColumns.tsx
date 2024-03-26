@@ -35,7 +35,7 @@ export const applicantsColumns: readonly ApplicantColumn[] = [
     id: 'id',
     label: '',
     renderCell: (row) => {
-      const logo = row.profile_picture || row.lastname[0];
+      const logo = row.profilePicture || row.lastname[0];
       return (
         <Box display="flex" alignItems="center">
           <Avatar src={logo}>{logo}</Avatar>
@@ -51,7 +51,7 @@ export const applicantsColumns: readonly ApplicantColumn[] = [
     label: <Trans>Date naiss.</Trans>,
     renderCell: (row) => {
       if (!row.birth_date) return <Trans>/</Trans>;
-      const birthDate = new Date(row.birth_date).toLocaleDateString();
+      const birthDate = new Date(row.birthDate).toLocaleDateString();
       return <Typography>{birthDate}</Typography>;
     }
   },

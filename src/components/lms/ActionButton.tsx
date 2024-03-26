@@ -6,7 +6,7 @@ import { ReactNode } from 'react';
 
 interface ActionButtonProps extends LoadingButtonProps {
   children: ReactNode;
-  actionType?: 'action' | 'cancel';
+  actionType?: 'action' | 'cancel' | 'update';
   sx?: Record<string, any>;
 }
 export default function ActionButton({
@@ -17,39 +17,35 @@ export default function ActionButton({
 }: ActionButtonProps) {
   const theme = useTheme();
 
-  if (actionType === 'cancel') {
-    return (
-      <LoadingButton
-        sx={{
-          minWidth: 100,
-          borderRadius: 2,
-          bgcolor: theme.palette.grey[400],
-          color: 'white',
-          '&:hover': {
-            bgcolor: theme.palette.grey[600]
-          },
-          textTransform: 'none',
-          ...sx
-        }}
-        {...other}
-      >
-        {children}
-      </LoadingButton>
-    );
-  }
-
+  const sxConfig = {
+    action: {
+      bgcolor: theme.palette.primary.main,
+      '&:hover': {
+        bgcolor: theme.palette.primary.dark
+      }
+    },
+    cancel: {
+      bgcolor: theme.palette.grey[400],
+      '&:hover': {
+        bgcolor: theme.palette.grey[600]
+      }
+    },
+    update: {
+      bgcolor: theme.palette.secondary.main,
+      '&:hover': {
+        bgcolor: theme.palette.secondary.dark
+      }
+    }
+  };
   return (
     <LoadingButton
       sx={{
         minWidth: 100,
         borderRadius: 2,
         paddingX: 2,
-        bgcolor: theme.palette.primary.main,
-        color: 'white',
-        '&:hover': {
-          bgcolor: theme.palette.primary.dark
-        },
         textTransform: 'none',
+        color: 'white',
+        ...sxConfig[actionType],
         ...sx
       }}
       {...other}

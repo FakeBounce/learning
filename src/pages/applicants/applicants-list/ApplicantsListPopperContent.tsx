@@ -16,13 +16,13 @@ export default function OrganizationsListPopperContent({
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
-      navigate(`${PATH_APPLICANTS.root}/${applicantSelected.id}`);
+      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
     }
   };
 
   const goToApplicantUpdate = () => {
     if (applicantSelected !== null) {
-      navigate(`${PATH_APPLICANTS.root}/update/${applicantSelected.id}`);
+      navigate(PATH_APPLICANTS.update.replace(':applicantId', String(applicantSelected.id)));
     }
   };
 

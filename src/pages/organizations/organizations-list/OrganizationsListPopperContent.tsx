@@ -4,7 +4,7 @@ import { useAppDispatch } from '@redux/hooks';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { Organization } from '@services/organizations/interfaces';
 import { useNavigate } from 'react-router-dom';
-import { PATH_DASHBOARD } from '@utils/navigation/paths';
+import { PATH_DASHBOARD, PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 
 interface OrganizationsListPopperContentProps {
   handleToggleBlock: () => void;
@@ -30,7 +30,9 @@ export default function OrganizationsListPopperContent({
 
   const goToUpdateOrganization = () => {
     if (organizationSelected !== null) {
-      navigate(`/organizations/update/${organizationSelected.id}`);
+      navigate(
+        PATH_ORGANIZATIONS.update.replace(':organizationId', String(organizationSelected.id))
+      );
     }
   };
 

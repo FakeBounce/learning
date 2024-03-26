@@ -1,6 +1,43 @@
 import { ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
 
-export interface Applicant {
+export interface ApplicantState {
+  applicantList: ApplicantListState;
+  applicantProfile: ApplicantProfileState;
+}
+
+export interface ApplicantProfileState {
+  applicantProfileData: Applicant | null;
+  applicantProfileLoading: boolean;
+}
+
+export interface ApplicantListState {
+  applicantListData: Applicant[];
+  applicantListLoading: boolean;
+  applicantListTotalCount: number | null;
+}
+
+interface BaseApplicant {
+  id: number;
+  profilePicture: string | undefined;
+  email: string;
+  type: ApplicantType.STUDENT | ApplicantType.TESTER;
+  externalId: number | null;
+  firstname: string;
+  lastname: string;
+  phone: string | null;
+  isActive: boolean;
+  birthName: null | string;
+  birthDate: string;
+  city: string;
+  notifications: ApplicantNotifications;
+}
+interface AdditionalApplicantProperties {
+  [key: string]: string | number | null | boolean | undefined;
+}
+
+export type Applicant = BaseApplicant & AdditionalApplicantProperties;
+
+export interface ApplicantFromApi {
   id: number;
   profile_picture: string | null;
   email: string;
@@ -10,11 +47,32 @@ export interface Applicant {
   lastname: string;
   phone: string | null;
   is_active: boolean;
-  other_data: string[];
   birth_name: null | string;
   birth_date: string;
   city: string;
   notifications: ApplicantNotifications;
+  [key: string]: string | number | null | boolean | ApplicantNotifications;
+}
+
+export interface SingleApplicantFromApi {
+  id: number;
+  profile_picture: string | null;
+  email: string;
+  type: ApplicantType.STUDENT | ApplicantType.TESTER;
+  external_id: number | null;
+  is_active: boolean;
+  notifications: ApplicantNotifications;
+  current_values: ApplicantValues;
+}
+
+export interface ApplicantValues {
+  firstname: string;
+  lastname: string;
+  phone: string | null;
+  birth_name: null | string;
+  birth_date: string;
+  city: string;
+  [key: string]: string | number | null | boolean;
 }
 
 export interface ApplicantNotifications {
@@ -42,6 +100,12 @@ export interface GetApplicantsListResponse {
     rows: Applicant[];
     pagination: ApiResponsePagination;
   };
+}
+
+export interface GetSingleApplicantResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: SingleApplicantFromApi;
 }
 
 export interface UpdateApplicantBlockRequest {

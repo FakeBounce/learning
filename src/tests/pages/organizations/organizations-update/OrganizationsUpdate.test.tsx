@@ -4,7 +4,8 @@ import OrganizationsUpdateMock, {
 } from '@src/tests/pages/organizations/organizations-update/OrganizationsUpdateMock';
 import { render, screen, fireEvent, waitFor, act, cleanup } from '@testProvider';
 import OrganizationsUpdate from '@src/pages/organizations/organizations-update/OrganizationsUpdate';
-import { PATH_PARAMETERS } from '@utils/navigation/paths';
+import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
+import { Route, Routes } from 'react-router';
 
 describe('OrganizationsUpdate', () => {
   beforeEach(() => {
@@ -19,20 +20,25 @@ describe('OrganizationsUpdate', () => {
   it('renders correctly and handles form submission', async () => {
     setupSuccessAxiosMock();
 
-    render(<OrganizationsUpdate />, {
-      preloadedState: {
-        organizations: {
-          organizationUpdate: {
-            organizationUpdateLoading: false
-          },
-          currentOrganization: {
-            currentOrganizationData: null,
-            currentOrganizationLoading: false
+    render(
+      <Routes>
+        <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
+      </Routes>,
+      {
+        preloadedState: {
+          organizations: {
+            organizationUpdate: {
+              organizationUpdateLoading: false
+            },
+            currentOrganization: {
+              currentOrganizationData: null,
+              currentOrganizationLoading: false
+            }
           }
-        }
-      },
-      customHistory: [`/${PATH_PARAMETERS.organizations}/update/1`]
-    });
+        },
+        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+      }
+    );
 
     // Check if the "Modifier une organisation" header is rendered
     expect(screen.getByText(/Modifier une organisation/i)).toBeInTheDocument();
@@ -62,20 +68,25 @@ describe('OrganizationsUpdate', () => {
   });
 
   it('handles form submission with no changes', async () => {
-    render(<OrganizationsUpdate />, {
-      preloadedState: {
-        organizations: {
-          organizationUpdate: {
-            organizationUpdateLoading: false
-          },
-          currentOrganization: {
-            currentOrganizationData: null,
-            currentOrganizationLoading: false
+    render(
+      <Routes>
+        <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
+      </Routes>,
+      {
+        preloadedState: {
+          organizations: {
+            organizationUpdate: {
+              organizationUpdateLoading: false
+            },
+            currentOrganization: {
+              currentOrganizationData: null,
+              currentOrganizationLoading: false
+            }
           }
-        }
-      },
-      customHistory: [`/${PATH_PARAMETERS.organizations}/update/1`]
-    });
+        },
+        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+      }
+    );
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
@@ -97,20 +108,25 @@ describe('OrganizationsUpdate', () => {
 
   it('handles axios errors', async () => {
     setupErrorAxiosMock();
-    render(<OrganizationsUpdate />, {
-      preloadedState: {
-        organizations: {
-          organizationUpdate: {
-            organizationUpdateLoading: false
-          },
-          currentOrganization: {
-            currentOrganizationData: null,
-            currentOrganizationLoading: false
+    render(
+      <Routes>
+        <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
+      </Routes>,
+      {
+        preloadedState: {
+          organizations: {
+            organizationUpdate: {
+              organizationUpdateLoading: false
+            },
+            currentOrganization: {
+              currentOrganizationData: null,
+              currentOrganizationLoading: false
+            }
           }
-        }
-      },
-      customHistory: [`/${PATH_PARAMETERS.organizations}/update/1`]
-    });
+        },
+        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+      }
+    );
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data

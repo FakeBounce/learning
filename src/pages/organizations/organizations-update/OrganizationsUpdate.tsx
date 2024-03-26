@@ -9,8 +9,9 @@ import OrganizationsUpdateForm from '@src/pages/organizations/organizations-upda
 import { enqueueSnackbar } from 'notistack';
 import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useLocation } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
+import { PATH_ERRORS } from '@utils/navigation/paths';
 
 const updateOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
@@ -32,9 +33,8 @@ export default function OrganizationsUpdate() {
   const [organization, setOrganization] = useState<UpdateOrganizationForm>(defaultValues);
   const [image, setImage] = useState<string | File>('');
   const dispatch = useAppDispatch();
-
-  const { pathname } = useLocation();
-  const organizationId = Number(pathname.split('/').pop());
+  const { organizationId } = useParams();
+  const navigate = useNavigate();
 
   const { currentOrganizationData } = useAppSelector(
     (state) => state.organizations.currentOrganization
@@ -42,10 +42,16 @@ export default function OrganizationsUpdate() {
 
   // Update the form if we are on the update page
   useEffect(() => {
-    if (pathname.includes('update')) {
-      if (organizationId) {
-        dispatch(getSingleOrganization(organizationId));
+    try {
+      const organizationIdToFetch = Number(organizationId);
+      if (!isNaN(organizationIdToFetch)) {
+        dispatch(getSingleOrganization(organizationIdToFetch));
+      } else {
+        throw new Error();
       }
+    } catch (_) {
+      navigate(PATH_ERRORS.root);
+      enqueueSnackbar(t`L'organisation n'existe pas`, { variant: 'error' });
     }
   }, []);
 
@@ -84,7 +90,7 @@ export default function OrganizationsUpdate() {
 
     if (Object.keys(newOrganizationValues).length > 0) {
       // Handle update with image
-      dispatch(updateOrganizations({ id: organizationId, ...newOrganizationValues }));
+      dispatch(updateOrganizations({ id: Number(organizationId), ...newOrganizationValues }));
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }
