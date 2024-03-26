@@ -1,5 +1,5 @@
 import { cleanup, render, screen, act } from '@testProvider';
-import ApplicantProfile from '@src/pages/applicants/applicants-profile/ApplicantProfile';
+import ApplicantsProfile from '@src/pages/applicants/applicants-update/ApplicantsUpdate';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
 import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
@@ -7,7 +7,7 @@ import { Routes, Route } from 'react-router';
 import { waitFor } from '@testing-library/dom';
 import ApplicantProfileMock, {
   setupSuccessAxiosMock
-} from '@src/tests/pages/applicants/applicants-profile/ApplicantProfileMock';
+} from '@src/tests/pages/applicants/applicants-profile/ApplicantsProfileMock';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -15,7 +15,7 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
-jest.mock('@src/pages/applicants/applicants-profile/ApplicantProfileHeader', () => jest.fn());
+jest.mock('@src/pages/applicants/applicants-profile/ApplicantsProfileHeader', () => jest.fn());
 
 describe('ApplicantProfile', () => {
   beforeEach(() => {
@@ -35,7 +35,7 @@ describe('ApplicantProfile', () => {
     await act(() => {
       render(
         <Routes>
-          <Route path={PATH_APPLICANTS.profile} element={<ApplicantProfile />} />
+          <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
         </Routes>,
         {
           customHistory: [
@@ -60,7 +60,7 @@ describe('ApplicantProfile', () => {
     await act(() => {
       render(
         <Routes>
-          <Route path={PATH_APPLICANTS.profile} element={<ApplicantProfile />} />
+          <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
         </Routes>,
         {
           customHistory: [PATH_APPLICANTS.profile.replace(':applicantId', 'invalid')]

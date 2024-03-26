@@ -18,7 +18,7 @@ import {
   UserProfile,
   UserEdit,
   Applicants,
-  ApplicantProfile
+  ApplicantsUpdate
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
@@ -53,7 +53,7 @@ const Router = () => {
           element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.applicants} />}
         >
           <Route path={PATH_APPLICANTS.root} element={<Applicants />} />
-          <Route path={PATH_APPLICANTS.profile} element={<ApplicantProfile />} />
+          <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

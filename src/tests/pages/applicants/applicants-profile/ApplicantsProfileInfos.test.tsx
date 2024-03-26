@@ -1,5 +1,5 @@
 import { render, screen } from '@testProvider';
-import ApplicantProfileInfos from '@src/pages/applicants/applicants-profile/ApplicantProfileInfos';
+import ApplicantsProfileInfos from '@src/pages/applicants/applicants-profile/ApplicantsProfileInfos';
 import { useNavigate } from 'react-router-dom';
 import {
   stateApplicant,
@@ -18,7 +18,7 @@ describe('ApplicantProfileInfos', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    render(<ApplicantProfileInfos />, {
+    render(<ApplicantsProfileInfos />, {
       preloadedState: {
         applicants: {
           applicantProfile: {
@@ -40,7 +40,7 @@ describe('ApplicantProfileInfos', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    render(<ApplicantProfileInfos />, {
+    render(<ApplicantsProfileInfos />, {
       preloadedState: {
         applicants: {
           applicantProfile: {

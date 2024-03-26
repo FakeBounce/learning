@@ -1,7 +1,8 @@
 import {
-  Applicant,
+  ApplicantState,
   GetApplicantsListResponse,
-  GetSingleApplicantResponse
+  GetSingleApplicantResponse,
+  UpdateApplicantResponse
 } from '@services/applicants/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as ApplicantsActions from '@redux/actions/applicantsActions';
@@ -10,20 +11,10 @@ import {
   convertApplicantArrayValues,
   convertApplicantValues
 } from '@utils/helpers/convertApplicantValues';
+import { t } from '@lingui/macro';
+import { pascalizeObject } from '@utils/helpers/convertCasing';
 
-export interface ApplicantState {
-  applicantList: {
-    applicantListData: Applicant[];
-    applicantListLoading: boolean;
-    applicantListTotalCount: number | null;
-  };
-  applicantProfile: {
-    applicantProfileData: Applicant | null;
-    applicantProfileLoading: boolean;
-  };
-}
-
-const initialState: ApplicantState = {
+export const initialApplicantState: ApplicantState = {
   applicantList: {
     applicantListData: [],
     applicantListLoading: false,
@@ -32,13 +23,24 @@ const initialState: ApplicantState = {
   applicantProfile: {
     applicantProfileData: null,
     applicantProfileLoading: false
+  },
+  applicantUpdate: {
+    applicantUpdateLoading: false,
+    isEditing: false
   }
 };
 
 export const applicantSlice = createSlice({
   name: 'applicants',
-  initialState,
-  reducers: {},
+  initialState: initialApplicantState,
+  reducers: {
+    cancelEditingApplicant: (state) => {
+      state.applicantUpdate.isEditing = false;
+    },
+    startEditingApplicant: (state) => {
+      state.applicantUpdate.isEditing = true;
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(ApplicantsActions.getApplicantsList.pending, (state) => {
@@ -76,8 +78,27 @@ export const applicantSlice = createSlice({
         state.applicantProfile.applicantProfileLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(ApplicantsActions.updateApplicant.pending, (state) => {
+        state.applicantUpdate.applicantUpdateLoading = true;
+      })
+      .addCase(
+        ApplicantsActions.updateApplicant.fulfilled,
+        (state, action: { payload: UpdateApplicantResponse }) => {
+          state.applicantUpdate.applicantUpdateLoading = false;
+          state.applicantProfile.applicantProfileData = pascalizeObject(action.payload.data);
+          state.applicantUpdate.isEditing = false;
+          enqueueSnackbar(t`Les modifications ont bien été enregistrées`, { variant: 'success' });
+        }
+      )
+      .addCase(ApplicantsActions.updateApplicant.rejected, (state, action: AnyAction) => {
+        state.applicantUpdate.applicantUpdateLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
       });
   }
 });
+
+export const { startEditingApplicant, cancelEditingApplicant } = applicantSlice.actions;
 
 export default applicantSlice.reducer;

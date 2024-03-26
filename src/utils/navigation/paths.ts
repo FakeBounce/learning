@@ -46,8 +46,7 @@ const ROOT_APPLICANTS = PATH_PARAMETERS.applicants;
 export const PATH_APPLICANTS = {
   root: ROOT_APPLICANTS,
   profile: path(ROOT_APPLICANTS, '/profile/:applicantId'),
-  add: path(ROOT_APPLICANTS, '/creation'),
-  update: path(ROOT_APPLICANTS, '/update/:applicantId')
+  add: path(ROOT_APPLICANTS, '/creation')
 };
 
 //Users

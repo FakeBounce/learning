@@ -1,19 +1,18 @@
 import { Box, Skeleton, Typography } from '@mui/material';
 import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
-import { useNavigate } from 'react-router-dom';
-import { useAppSelector } from '@redux/hooks';
-import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
 
-export default function ApplicantProfileHeader() {
+export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate?: boolean }) {
   const { applicantProfileData, applicantProfileLoading } = useAppSelector(
     (state) => state.applicants.applicantProfile
   );
-  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const navigateToEdit = () => {
     if (applicantProfileData === null) return;
-    navigate(PATH_APPLICANTS.update.replace(':applicantId', String(applicantProfileData.id)));
+    dispatch(startEditingApplicant());
   };
 
   const displayName = () => {
@@ -23,7 +22,8 @@ export default function ApplicantProfileHeader() {
           sx={{
             color: (theme) => theme.palette.secondary.main,
             fontSize: (theme) => theme.typography.h3.fontSize,
-            fontWeight: (theme) => theme.typography.fontWeightBold
+            fontWeight: (theme) => theme.typography.fontWeightBold,
+            paddingX: 2
           }}
         >
           <Box component="span" sx={{ textTransform: 'uppercase' }}>
@@ -39,9 +39,11 @@ export default function ApplicantProfileHeader() {
   return (
     <Box p={2} display="flex" gap={2}>
       {displayName()}
-      <ActionButton actionType="update" onClick={navigateToEdit}>
-        <Trans>Modifier</Trans>
-      </ActionButton>
+      {!isUpdate && (
+        <ActionButton actionType="update" onClick={navigateToEdit}>
+          <Trans>Modifier</Trans>
+        </ActionButton>
+      )}
     </Box>
   );
 }

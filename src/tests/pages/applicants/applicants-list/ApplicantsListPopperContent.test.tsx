@@ -64,7 +64,7 @@ describe('ApplicantsListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      `${PATH_APPLICANTS.root}/update/${stateApplicant.id}`
+      PATH_APPLICANTS.profile.replace(':applicantId', stateApplicant.id.toString())
     );
   });
 
