@@ -20,7 +20,7 @@ const generateFieldsText = (fieldsUpdated: string[]) => {
         if (index === 0) {
           return convertFieldsToText(field);
         }
-        return <>, {convertFieldsToText(field)}</>;
+        return <span key={field}>, {convertFieldsToText(field)}</span>;
       })}
     </>
   );

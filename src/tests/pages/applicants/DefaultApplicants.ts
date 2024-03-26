@@ -105,7 +105,7 @@ export const stateApplicantDisabled = {
   profilePicture: 'stateApplicantPicture',
   email: 'stateApplicant@test.fr',
   type: ApplicantType.STUDENT,
-  externalId: 1,
+  externalId: '1',
   firstname: 'state',
   lastname: 'applicant',
   phone: '0123456789',

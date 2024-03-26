@@ -128,7 +128,7 @@ export interface UpdateApplicantBlockResponse {
 export interface UpdateApplicantRequest {
   applicantId: number;
   applicant: Partial<Applicant>;
-  profilePicture: string | File | undefined;
+  profilePicture?: string | File | undefined;
 }
 
 export interface UpdateApplicantResponse {
