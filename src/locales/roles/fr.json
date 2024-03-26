@@ -1,0 +1,132 @@
+{
+  "/Wfz2D": {
+    "translation": "Modifier un utilisateur",
+    "message": "Modifier un utilisateur",
+    "comments": []
+  },
+  "2mcnZQ": {
+    "translation": "Utilisateurs",
+    "message": "Utilisateurs",
+    "comments": []
+  },
+  "3RK7em": {
+    "translation": "Liste des modules",
+    "message": "Liste des modules",
+    "comments": []
+  },
+  "5HGTfB": {
+    "translation": "Supprimer un rôle",
+    "message": "Supprimer un rôle",
+    "comments": []
+  },
+  "5qQosN": {
+    "translation": "Supprimer",
+    "message": "Supprimer",
+    "comments": []
+  },
+  "7p5kLi": {
+    "translation": "Dashboard",
+    "message": "Dashboard",
+    "comments": []
+  },
+  "9wYFQH": {
+    "translation": "Groupes",
+    "message": "Groupes",
+    "comments": []
+  },
+  "DDwdL4": {
+    "translation": "Profil",
+    "message": "Profil",
+    "comments": []
+  },
+  "DolR28": {
+    "translation": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "comments": []
+  },
+  "EIxP9b": {
+    "translation": "Gestion des rôles",
+    "message": "Gestion des rôles",
+    "comments": []
+  },
+  "FLD9GE": {
+    "translation": "Modifier les utilisateurs",
+    "message": "Modifier les utilisateurs",
+    "comments": []
+  },
+  "GoZkew": {
+    "translation": "Organisations",
+    "message": "Organisations",
+    "comments": []
+  },
+  "HbvbX+": {
+    "translation": "Personnalisation",
+    "message": "Personnalisation",
+    "comments": []
+  },
+  "MeRGCv": {
+    "translation": "Créer un testeur externe",
+    "message": "Créer un testeur externe",
+    "comments": []
+  },
+  "Nu4oKW": {
+    "translation": "Description",
+    "message": "Description",
+    "comments": []
+  },
+  "Xukbwg": {
+    "translation": "Modifier une organisation",
+    "message": "Modifier une organisation",
+    "comments": []
+  },
+  "YNznY8": {
+    "translation": "Ajouter",
+    "message": "Ajouter",
+    "comments": []
+  },
+  "eoO6cw": {
+    "translation": "Liste des Parcours",
+    "message": "Liste des Parcours",
+    "comments": []
+  },
+  "hsf9ph": {
+    "translation": "Étudiants",
+    "message": "Étudiants",
+    "comments": []
+  },
+  "iAKACc": {
+    "translation": "Nom",
+    "message": "Nom",
+    "comments": []
+  },
+  "lPgC5g": {
+    "translation": "Créer un étudiant",
+    "message": "Créer un étudiant",
+    "comments": []
+  },
+  "posy4G": {
+    "translation": "Gérer les permissions",
+    "message": "Gérer les permissions",
+    "comments": []
+  },
+  "q+G9Ft": {
+    "translation": "Créer une organisation",
+    "message": "Créer une organisation",
+    "comments": []
+  },
+  "tNU7H1": {
+    "translation": "Rôle supprimé !",
+    "message": "Rôle supprimé !",
+    "comments": []
+  },
+  "v+QFYv": {
+    "translation": "Testeurs externes",
+    "message": "Testeurs externes",
+    "comments": []
+  },
+  "yZC9OF": {
+    "translation": "Rôles",
+    "message": "Rôles",
+    "comments": []
+  }
+}

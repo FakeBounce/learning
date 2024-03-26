@@ -1,18 +1,7 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import {
-  ExternalTesters,
-  ExternalTestersUpdate,
-  LoginPage,
-  Page404,
-  Roles
-} from 'src/routes/elements';
-import {
-  PATH_AUTH,
-  PATH_DASHBOARD,
-  PATH_EXTERNAL_TESTERS,
-  PATH_ROLES
-} from '@utils/navigation/paths';
+import { LoginPage, Page404, Roles } from 'src/routes/elements';
+import { PATH_AUTH, PATH_DASHBOARD, PATH_ROLES } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
@@ -21,6 +10,7 @@ import UsersRoutes from '@src/routes/UsersRoutes';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import ExternalTestersRoutes from '@src/routes/ExternalTestersRoutes';
 
 const Router = () => {
   return (
@@ -36,16 +26,7 @@ const Router = () => {
         {OrganizationsRoutes()}
         {UsersRoutes()}
         {ApplicantsRoutes()}
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.TESTERS}
-              permissionsAuthorized={pageRestrictionsList.externalTesters}
-            />
-          }
-        >
-          <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
-        </Route>
+        {ExternalTestersRoutes()}
         <Route
           element={
             <FeatureFlagedRoute
@@ -55,16 +36,6 @@ const Router = () => {
           }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
-        </Route>
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.TESTERS}
-              permissionsAuthorized={pageRestrictionsList.externalTesters}
-            />
-          }
-        >
-          <Route path={PATH_EXTERNAL_TESTERS.root} element={<ExternalTesters />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

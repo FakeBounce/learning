@@ -14,6 +14,11 @@
     "message": "Liste des modules",
     "comments": []
   },
+  "46dzgL": {
+    "translation": "",
+    "message": "Bloquer un testeur",
+    "comments": []
+  },
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
@@ -34,6 +39,16 @@
     "message": "Gestion des rôles",
     "comments": []
   },
+  "F8ESDf": {
+    "translation": "",
+    "message": "Activé",
+    "comments": []
+  },
+  "FhV/c/": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir débloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": []
+  },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
@@ -44,9 +59,24 @@
     "message": "Le testeur n'existe pas",
     "comments": []
   },
+  "Gt66tb": {
+    "translation": "",
+    "message": "Débloquer un testeur",
+    "comments": []
+  },
+  "HGYOb+": {
+    "translation": "",
+    "message": "Bloqué",
+    "comments": []
+  },
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
+    "comments": []
+  },
+  "HdNGur": {
+    "translation": "",
+    "message": "Bloquer",
     "comments": []
   },
   "IAAmKF": {
@@ -59,6 +89,21 @@
     "message": "Prénom",
     "comments": []
   },
+  "MZX/LX": {
+    "translation": "",
+    "message": "Statut",
+    "comments": []
+  },
+  "MZdToq": {
+    "translation": "",
+    "message": "Testeurs",
+    "comments": []
+  },
+  "Mbj9Lm": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir bloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": []
+  },
   "MeRGCv": {
     "translation": "",
     "message": "Créer un testeur externe",
@@ -69,9 +114,19 @@
     "message": "Email",
     "comments": []
   },
+  "P3YkHZ": {
+    "translation": "",
+    "message": "Mettre à jour",
+    "comments": []
+  },
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
+    "comments": []
+  },
+  "TOpCm4": {
+    "translation": "",
+    "message": "Ajouter un testeur",
     "comments": []
   },
   "UDTsGF": {
@@ -104,6 +159,16 @@
     "message": "Le prénom est requis",
     "comments": []
   },
+  "fu2rxk": {
+    "translation": "",
+    "message": "Enregistrer",
+    "comments": []
+  },
+  "g+hxtQ": {
+    "translation": "",
+    "message": "Créer",
+    "comments": []
+  },
   "hW6LJA": {
     "translation": "",
     "message": "L'email est invalide",
@@ -124,6 +189,11 @@
     "message": "Le nom de famille est requis",
     "comments": []
   },
+  "k441hZ": {
+    "translation": "",
+    "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
+    "comments": []
+  },
   "lPgC5g": {
     "translation": "",
     "message": "Créer un étudiant",
@@ -132,6 +202,16 @@
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
+    "comments": []
+  },
+  "tALayW": {
+    "translation": "",
+    "message": "Annuler",
+    "comments": []
+  },
+  "u3n1/X": {
+    "translation": "",
+    "message": "Débloquer",
     "comments": []
   },
   "v+QFYv": {

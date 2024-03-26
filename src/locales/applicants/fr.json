@@ -137,7 +137,8 @@
   "LgoIGo": {
     "translation": "dans",
     "message": "dans",
-    "comments": []
+    "comments": [],
+    "obsolete": true
   },
   "MCvCnO": {
     "translation": "Prénom",
@@ -157,7 +158,8 @@
   "MjUBQq": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": true
   },
   "O3oNi5": {
     "translation": "Email",
@@ -172,6 +174,11 @@
   "P3YkHZ": {
     "translation": "Mettre à jour",
     "message": "Mettre à jour",
+    "comments": []
+  },
+  "PsHtRs": {
+    "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
   "QOV2qe": {
@@ -234,10 +241,16 @@
     "message": "Ajouter un étudiant",
     "comments": []
   },
+  "YlStRO": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": []
+  },
   "ZG+LqI": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": true
   },
   "dEcezs": {
     "translation": "L'email est requis",
@@ -282,7 +295,8 @@
   "hsXO/7": {
     "translation": "toutes les organisations",
     "message": "toutes les organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": true
   },
   "hsf9ph": {
     "translation": "Étudiants",
