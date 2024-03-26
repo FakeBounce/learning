@@ -137,7 +137,7 @@ export default function ApplicantsUpdate() {
     <>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-          <Box px={[0, 2]} display="flex">
+          <Box px={[0, 2]} mb={2} display="flex">
             <LMSCard
               isPageCard
               cardCss={{ maxWidth: '100%' }}
@@ -149,6 +149,7 @@ export default function ApplicantsUpdate() {
               ) : (
                 <>
                   <ApplicantsProfileInfos />
+                  {/* @todo -> Replace with the applicant group */}
                   <UserProfileGroups groups={[]} />
                 </>
               )}

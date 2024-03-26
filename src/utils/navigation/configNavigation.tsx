@@ -91,6 +91,10 @@ const applicantsNavigationConfig = [
   {
     title: <Trans>Profil</Trans>,
     path: PATH_APPLICANTS.profile
+  },
+  {
+    title: <Trans>Créer un étudiant</Trans>,
+    path: PATH_APPLICANTS.add
   }
 ];
 

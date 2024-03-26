@@ -69,7 +69,8 @@
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "",
@@ -80,7 +81,8 @@
   "E1oq0K": {
     "translation": "",
     "message": "Vous avez modifier les champs suivants :",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "",
@@ -101,12 +103,14 @@
   "FBQvDW": {
     "translation": "",
     "message": "Modification du profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "G3BWrC": {
     "translation": "",
     "message": "Ces champs sont utiles lors de la connexion.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GAxRw0": {
     "translation": "",
@@ -171,7 +175,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -199,7 +204,8 @@
   "Ttle7P": {
     "translation": "",
     "message": "Identifiant externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Tvgy+o": {
     "translation": "",
@@ -227,12 +233,14 @@
   "VsENqL": {
     "translation": "",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",

@@ -69,7 +69,8 @@
   "D/HeUe": {
     "translation": "L'étudiant n'existe pas",
     "message": "L'étudiant n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
@@ -80,7 +81,8 @@
   "E1oq0K": {
     "translation": "Vous avez modifier les champs suivants :",
     "message": "Vous avez modifier les champs suivants :",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
@@ -101,12 +103,14 @@
   "FBQvDW": {
     "translation": "Modification du profil",
     "message": "Modification du profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "G3BWrC": {
     "translation": "Ces champs sont utiles lors de la connexion.",
     "message": "Ces champs sont utiles lors de la connexion.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GAxRw0": {
     "translation": "Ville",
@@ -171,7 +175,8 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -199,7 +204,8 @@
   "Ttle7P": {
     "translation": "Identifiant externe",
     "message": "Identifiant externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Tvgy+o": {
     "translation": "Notification SMS",
@@ -227,12 +233,14 @@
   "VsENqL": {
     "translation": "Êtes-vous sûrs de vouloir les modifier ?",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",

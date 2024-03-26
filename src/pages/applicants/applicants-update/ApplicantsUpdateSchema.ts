@@ -1,11 +1,14 @@
 import { t } from '@lingui/macro';
 import * as Yup from 'yup';
 import { Applicant } from '@services/applicants/interfaces';
+import { format } from 'date-fns';
 
 export const updateApplicantSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom de famille est requis`),
   firstname: Yup.string().required(t`Le prénom est requis`),
-  phone: Yup.string().optional(),
+  phone: Yup.string()
+    .optional()
+    .matches(/^$|^\+?[0-9]{8,15}$/, t`Le numéro de téléphone est invalide`),
   externalId: Yup.string().optional(),
   birthName: Yup.string().optional(),
   city: Yup.string().optional(),
@@ -15,11 +18,20 @@ export const updateApplicantSchema = Yup.object().shape({
   email: Yup.string()
     .required(t`L'email est requis`)
     .email(t`L'email est invalide`),
+  // birthDate: Yup.string().required(t`La date de naissance est requise`),
   birthDate: Yup.string()
-    .transform((value) => {
-      return value ? new Date(value).toLocaleDateString() : value;
+    .required(t`La date de naissance est requise`)
+    .test('is-valid-date', t`Le format est invalide`, (value) => {
+      if (!value) return true; // Allow empty string if field is not required
+      // Check if the value is a valid date
+      return !isNaN(Date.parse(value));
     })
-    .required(t`La date de naissance est requise`),
+    .transform((value) => {
+      if (!isNaN(Date.parse(value))) {
+        return format(new Date(value), 'yyyy-MM-dd HH:mm:ss');
+      }
+      return value;
+    }),
   // groups: Yup.array().required(t`Le nom de famille est requis`),
   notifications: Yup.object().shape({
     email: Yup.boolean().required(t`La notification email est requis`),
@@ -27,16 +39,17 @@ export const updateApplicantSchema = Yup.object().shape({
     app: Yup.boolean().required(t`La notification app est requise`)
   }),
   profilePicture: Yup.mixed<File | string>()
-    .test(
-      'fileSize',
-      t`Le fichier est trop volumineux`,
-      (value: File | string | undefined | null) => {
-        if (!value) return true; // no file to upload
-        if (typeof value === 'string') return true; // no file to upload
-        return value?.size <= 200000;
+    .test('fileRequired', t`La photo de profil est requise`, (value) => {
+      return !!value; // File or empty string, validation passes
+    })
+    .test('fileSize', t`Le fichier est trop volumineux`, (value: File | string | undefined) => {
+      if (!value) return true; // No file uploaded, validation fails
+      if (typeof value === 'string' && !value.trim()) return false; // Empty string, validation fails
+      if (value instanceof File) {
+        return value.size <= 200000; // Adjust file size limit as needed (200000 bytes = 200kb)
       }
-    )
-    .required(t`Le fichier est requis`)
+      return true; // Non-empty string (filename), validation passes
+    })
 });
 
 export const updateApplicantFormDefaultValues = {
@@ -66,7 +79,7 @@ export interface UpdateApplicantForm {
   externalId?: string;
   birthName?: string;
   city?: string;
-  profilePicture: NonNullable<File | string | undefined>;
+  profilePicture?: File | string | undefined;
   groups: (string | undefined)[];
   notifications: {
     email: boolean;
