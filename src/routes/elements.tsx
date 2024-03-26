@@ -51,6 +51,10 @@ export const ApplicantsCreate = LoadableComponent(
 /**
  External Testers
  **/
+
+export const ExternalTesters = LoadableComponent(
+  lazy(() => import('@src/pages/externalTesters/externalTesters-list/ExternalTestersList'))
+);
 export const ExternalTestersUpdate = LoadableComponent(
   lazy(() => import('@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate'))
 );
@@ -58,6 +62,4 @@ export const ExternalTestersUpdate = LoadableComponent(
 /**
  Roles
  **/
-export const Roles = LoadableComponent(
-  lazy(() => import('@src/pages/roles/roles-list/RolesList'))
-);
+export const Roles = LoadableComponent(lazy(() => import('@src/pages/roles/roles-list/RolesList')));

@@ -7,9 +7,9 @@ import { Trans } from '@lingui/macro';
 
 const titleToDisplay = (applicantSelected: Applicant) => {
   if (!applicantSelected.isActive) {
-    return <Trans>Débloquer un étudiant</Trans>;
+    return <Trans>Débloquer un testeur</Trans>;
   }
-  return <Trans>Bloquer un étudiant</Trans>;
+  return <Trans>Bloquer un testeur</Trans>;
 };
 
 const textToDisplay = (applicantSelected: Applicant) => {
@@ -17,7 +17,7 @@ const textToDisplay = (applicantSelected: Applicant) => {
     return (
       <Typography>
         <Trans>
-          Êtes-vous sûr de vouloir débloquer l’étudiant{' '}
+          Êtes-vous sûr de vouloir débloquer le testeur{' '}
           <Box
             component={'span'}
             sx={{
@@ -49,7 +49,7 @@ const textToDisplay = (applicantSelected: Applicant) => {
     <>
       <Typography>
         <Trans>
-          Êtes-vous sûr de vouloir bloquer l’étudiant{' '}
+          Êtes-vous sûr de vouloir bloquer le testeur{' '}
           <Box
             component={'span'}
             sx={{
@@ -83,19 +83,19 @@ const textToDisplay = (applicantSelected: Applicant) => {
   );
 };
 
-interface ApplicantsListModalProps {
+interface ExternalTestersListModalProps {
   applicantSelected: Applicant;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
   cancelModal: () => void;
 }
 
-export default function ApplicantsListModal({
+export default function ExternalTestersListModal({
   applicantSelected,
   isModalOpen,
   setIsModalOpen,
   cancelModal
-}: ApplicantsListModalProps) {
+}: ExternalTestersListModalProps) {
   const dispatch = useAppDispatch();
 
   const toggleBlock = () => {

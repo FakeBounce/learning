@@ -1,5 +1,4 @@
 import {
-  ApplicantType,
   CreateApplicantRequest,
   CreateApplicantResponse,
   GetApplicantsListRequest,
@@ -17,10 +16,10 @@ import { snakizeObject } from '@utils/helpers/convertCasing';
 export const getApplicants = async (
   args: GetApplicantsListRequest
 ): Promise<AxiosResponse<GetApplicantsListResponse>> => {
-  const { currentPage, rowsPerPage, sort, filters } = args;
+  const { currentPage, rowsPerPage, type, sort, filters } = args;
 
   return axios.post('/applicants/filter', {
-    type: ApplicantType.STUDENT,
+    type,
     page: currentPage,
     row_per_page: rowsPerPage,
     filters,
