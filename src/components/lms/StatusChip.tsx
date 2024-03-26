@@ -4,12 +4,12 @@ import { useTheme } from '@mui/material/styles';
 import React, { ReactNode } from 'react';
 
 interface StatisChipProps {
-  row: any;
+  isActive: boolean;
   activatedText: ReactNode;
-  handleClick: (row: any) => (event: React.MouseEvent<HTMLElement>) => void;
+  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export default function StatusChip({ row, activatedText, handleClick }: StatisChipProps) {
+export default function StatusChip({ isActive, activatedText, handleClick }: StatisChipProps) {
   const theme = useTheme();
 
   return (
@@ -17,12 +17,12 @@ export default function StatusChip({ row, activatedText, handleClick }: StatisCh
       <Chip
         sx={{
           borderRadius: theme.shape.customBorderRadius.small,
-          backgroundColor: row.isActive ? theme.palette.primary.light : theme.palette.grey[300],
-          color: row.isActive ? theme.palette.primary.darker : theme.palette.grey[900]
+          backgroundColor: isActive ? theme.palette.primary.light : theme.palette.grey[300],
+          color: isActive ? theme.palette.primary.darker : theme.palette.grey[900]
         }}
         label={activatedText}
       />
-      <IconButton onClick={handleClick(row)} sx={{ boxShadow: 'none' }}>
+      <IconButton onClick={handleClick} sx={{ boxShadow: 'none' }}>
         <Iconify sx={{ color: theme.palette.grey[900] }} icon={'pepicons-pop:dots-y'} />
       </IconButton>
     </Box>
