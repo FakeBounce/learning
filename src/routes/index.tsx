@@ -4,7 +4,7 @@ import {
   PATH_APPLICANTS,
   PATH_AUTH,
   PATH_DASHBOARD,
-  PATH_ORGANIZATIONS,
+  PATH_ORGANIZATIONS, PATH_ROLES,
   PATH_USERS
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -19,7 +19,8 @@ import {
   UserEdit,
   Applicants,
   ApplicantsUpdate,
-  ApplicantsCreate
+  ApplicantsCreate,
+  Roles,
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
@@ -56,6 +57,11 @@ const Router = () => {
           <Route path={PATH_APPLICANTS.root} element={<Applicants />} />
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
           <Route path={PATH_APPLICANTS.add} element={<ApplicantsCreate />} />
+        </Route>
+        <Route
+          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.roles} />}
+        >
+          <Route path={PATH_ROLES.root} element={<Roles />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

@@ -37,7 +37,6 @@ export default function LMSPopover({
           sx={{
             borderRadius: theme.shape.customBorderRadius.small,
             minWidth: 160,
-            '&:hover': { color: theme.palette.secondary.main }
           }}
         >
           {children}

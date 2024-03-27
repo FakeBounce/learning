@@ -47,3 +47,10 @@ export const ApplicantsUpdate = LoadableComponent(
 export const ApplicantsCreate = LoadableComponent(
   lazy(() => import('@src/pages/applicants/applicants-create/ApplicantsCreate'))
 );
+
+/**
+ Roles
+ **/
+export const Roles = LoadableComponent(
+  lazy(() => import('@src/pages/roles/roles-list/RolesList'))
+);

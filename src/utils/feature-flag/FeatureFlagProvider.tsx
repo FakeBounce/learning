@@ -25,7 +25,7 @@ export const FeatureFlagContext = createContext<{
 });
 
 const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
-  const [isUserAdmin, setIsUserAdmin] = useState<HasAdminRights>(HasAdminRights.NO);
+  const [isUserAdmin, setIsUserAdmin] = useState<HasAdminRights>(HasAdminRights.SUPER_ADMIN);
   const { permissions, user } = useAppSelector((state) => state.connectedUser);
 
   useEffect(() => {

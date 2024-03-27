@@ -2,13 +2,13 @@ import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { useNavigate } from 'react-router-dom';
-import { User } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/connected-user/interfaces';
 import { toggleUserBlock } from '@redux/reducers/usersReducer';
 
 interface UsersListPopperContentProps {
   setAnchorEl: (value: HTMLElement | null) => void;
-  setUserSelected: (value: User | null) => void;
-  userSelected: User | null;
+  setUserSelected: (value: UserFromAPI | null) => void;
+  userSelected: UserFromAPI | null;
 }
 export default function UsersListPopperContent({
   setAnchorEl,

@@ -49,6 +49,11 @@ export const PATH_APPLICANTS = {
   add: path(ROOT_APPLICANTS, '/creation')
 };
 
+const ROOT_ROLES = PATH_PARAMETERS.roles;
+export const PATH_ROLES = {
+  root: ROOT_ROLES,
+};
+
 //Users
 const ROOT_USERS = PATH_PARAMETERS.users;
 export const PATH_USERS = {
