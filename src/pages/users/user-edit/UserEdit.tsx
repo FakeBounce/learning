@@ -91,7 +91,7 @@ export default function UserEdit() {
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
         <Box px={[0, 2]} display="flex">
           <LMSCard
-            cardCss={{ maxWidth: '100%', padding: 3 }}
+            cardCss={{ padding: 3 }}
             header={
               <Typography variant="h4" sx={{ fontWeight: 'normal' }}>
                 <Trans>Modifier un utilisateur</Trans>

@@ -55,7 +55,7 @@ describe('ApplicantsListHeader', () => {
     expect(screen.getByText(/Étudiants/i)).toBeInTheDocument();
 
     // Ensure that the "Annuler" button is present
-    const createButton = screen.getByText(/Ajouter/i);
+    const createButton = screen.getByText('Ajouter');
     expect(createButton).toBeInTheDocument();
 
     act(() => {

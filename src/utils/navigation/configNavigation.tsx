@@ -96,6 +96,10 @@ const applicantsNavigationConfig = [
   {
     title: <Trans>Créer un étudiant</Trans>,
     path: PATH_APPLICANTS.add
+  },
+  {
+    title: <Trans>Ajouter en masse</Trans>,
+    path: PATH_APPLICANTS.bulkAdd
   }
 ];
 
