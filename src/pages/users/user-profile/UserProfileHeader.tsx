@@ -2,11 +2,11 @@ import { Box, Typography } from '@mui/material';
 import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
-import { User } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/users/interfaces';
 import { useNavigate } from 'react-router-dom';
 
 interface UserProfileHeaderProps {
-  user: User;
+  user: UserFromAPI;
 }
 export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
   const theme = useTheme();

@@ -1,34 +1,20 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
+import { ExternalTestersUpdate, LoginPage, Page404, Roles } from 'src/routes/elements';
 import {
-  PATH_APPLICANTS,
   PATH_AUTH,
   PATH_DASHBOARD,
   PATH_EXTERNAL_TESTERS,
-  PATH_ORGANIZATIONS, PATH_ROLES,
-  PATH_USERS
+  PATH_ROLES
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import {
-  LoginPage,
-  Page404,
-  Organizations,
-  OrganizationsCreate,
-  OrganizationsUpdate,
-  Users,
-  UserProfile,
-  UserEdit,
-  Applicants,
-  ApplicantsUpdate,
-  ApplicantsCreate,
-  ExternalTestersUpdate,
-  Roles,
-} from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
+import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
+import OrganizationsRoutes from '@src/routes/OrganizationsRoutes';
+import UsersRoutes from '@src/routes/UsersRoutes';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
-
-// ----------------------------------------------------------------------
+import { PermissionTypeEnum } from '@services/permissions/interfaces';
 
 const Router = () => {
   return (
@@ -41,32 +27,26 @@ const Router = () => {
         }
       >
         <Route path={PATH_DASHBOARD.root} element={<>Dashboard content</>} />
+        {OrganizationsRoutes()}
+        {UsersRoutes()}
+        {ApplicantsRoutes()}
         <Route
-          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.organizations} />}
-        >
-          <Route path={PATH_ORGANIZATIONS.root} element={<Organizations />} />
-          <Route path={PATH_ORGANIZATIONS.add} element={<OrganizationsCreate />} />
-          <Route path={PATH_ORGANIZATIONS.update} element={<OrganizationsUpdate />} />
-        </Route>
-        <Route element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.users} />}>
-          <Route path={PATH_USERS.root} element={<Users />} />
-          <Route path={PATH_USERS.profile} element={<UserProfile />} />
-          <Route path={PATH_USERS.edit} element={<UserEdit />} />
-        </Route>
-        <Route
-          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.applicants} />}
-        >
-          <Route path={PATH_APPLICANTS.root} element={<Applicants />} />
-          <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
-          <Route path={PATH_APPLICANTS.add} element={<ApplicantsCreate />} />
-        </Route>
-        <Route
-          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.externalTesters} />}
+          element={
+            <FeatureFlagedRoute
+              pageType={PermissionTypeEnum.TESTERS}
+              permissionsAuthorized={pageRestrictionsList.externalTesters}
+            />
+          }
         >
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
         </Route>
         <Route
-          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.roles} />}
+          element={
+            <FeatureFlagedRoute
+              pageType={PermissionTypeEnum.ROLES}
+              permissionsAuthorized={pageRestrictionsList.roles}
+            />
+          }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
         </Route>

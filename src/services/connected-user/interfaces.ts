@@ -3,37 +3,52 @@
  * To change the organization view of the connected user
  */
 import { ApiResponseMessage } from '@services/interfaces';
-import { Group } from '@services/groups/interfaces';
-import { UserRole } from '@services/roles/interfaces';
+import { PermissionTypeList } from '@services/permissions/interfaces';
 
-export interface User {
+export interface ConnectedUserOrganization {
   id: number;
-  lastname: string;
-  firstname: string;
-  login: string;
-  email: string;
-  password: string;
-  organizationId?: number;
+  logo: string;
   isActive: boolean;
-  emailVerifiedAt?: Date;
+  isMain: boolean;
+  name: string;
   useDoubleAuth: boolean;
-  groups: Group[];
-  roles: UserRole[];
+  city: string;
+  address: string;
 }
 
-export interface UserFromAPI {
+export interface ConnectedUser {
   id: number;
   lastname: string;
   firstname: string;
   login: string;
   email: string;
-  password: string;
-  organization_id?: number;
+  isClientAdmin: boolean;
+  isSuperAdmin: boolean;
+  permissions: PermissionTypeList;
+  currentOrganization: ConnectedUserOrganization;
+}
+
+export interface ConnectedUserOrganizationFromAPI {
+  id: number;
+  logo: string;
   is_active: boolean;
-  email_verified_at?: Date;
+  is_main: boolean;
+  name: string;
   use_double_auth: boolean;
-  groups: Group[];
-  roles: UserRole[];
+  city: string;
+  address: string;
+}
+
+export interface ConnectedUserFromAPI {
+  id: number;
+  lastname: string;
+  firstname: string;
+  login: string;
+  email: string;
+  is_client_admin: boolean;
+  is_super_admin: boolean;
+  permissions: PermissionTypeList;
+  current_organisation: ConnectedUserOrganizationFromAPI;
 }
 
 export interface UpdateOrganizationViewRequest {
@@ -43,15 +58,13 @@ export interface UpdateOrganizationViewRequest {
 export interface UpdateOrganizationViewResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: {
-    id: number;
-  };
+  data: ConnectedUserOrganizationFromAPI;
 }
 
 export interface GetConnectedUserResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: UserFromAPI;
+  data: ConnectedUserFromAPI;
 }
 
 export interface LoginInformations {

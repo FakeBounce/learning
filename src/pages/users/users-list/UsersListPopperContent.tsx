@@ -2,7 +2,7 @@ import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { useNavigate } from 'react-router-dom';
-import { UserFromAPI } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/users/interfaces';
 import { toggleUserBlock } from '@redux/reducers/usersReducer';
 
 interface UsersListPopperContentProps {

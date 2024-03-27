@@ -7,11 +7,23 @@ import {
   unlockedApplicant
 } from '../DefaultApplicants';
 import ApplicantsListMock, { setupSuccessAxiosMock } from './ApplicantsListMock';
+import { useOutletContext } from 'react-router';
+import { PermissionTypeEnum } from '@services/permissions/interfaces';
+
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useOutletContext: jest.fn()
+}));
 
 // Mock Pagination as it is not relevant for this test
 jest.mock('@src/components/table/Pagination', () => jest.fn());
 
 describe('ApplicantsList', () => {
+  beforeEach(() => {
+    const mockPageType = PermissionTypeEnum.APPLICANTS;
+    (useOutletContext as jest.Mock).mockReturnValue({ pageType: mockPageType });
+  });
+
   afterEach(() => {
     cleanup();
     ApplicantsListMock.reset();
@@ -22,10 +34,10 @@ describe('ApplicantsList', () => {
     render(<ApplicantsList />);
 
     await waitFor(() => {
-      expect(screen.getByText(defaultApplicant.city)).toBeInTheDocument();
-      expect(screen.getByText(newApplicant.city)).toBeInTheDocument();
-      expect(screen.getByText(blockedApplicant.city)).toBeInTheDocument();
-      expect(screen.getByText(unlockedApplicant.city)).toBeInTheDocument();
+      expect(screen.getByText(defaultApplicant.city as string)).toBeInTheDocument();
+      expect(screen.getByText(newApplicant.city as string)).toBeInTheDocument();
+      expect(screen.getByText(blockedApplicant.city as string)).toBeInTheDocument();
+      expect(screen.getByText(unlockedApplicant.city as string)).toBeInTheDocument();
     });
   });
 
@@ -34,7 +46,7 @@ describe('ApplicantsList', () => {
     render(<ApplicantsList />);
 
     await waitFor(() => {
-      expect(screen.getByText(defaultApplicant.city)).toBeInTheDocument();
+      expect(screen.getByText(defaultApplicant.city as string)).toBeInTheDocument();
     });
 
     await act(async () => {

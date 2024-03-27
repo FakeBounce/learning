@@ -10,7 +10,7 @@ import {
   OrderBy
 } from '@src/pages/users/users-list/UsersColumns';
 import { useState, MouseEvent, useEffect, ChangeEvent } from 'react';
-import { UserFromAPI } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/users/interfaces';
 import { getUsersList } from '@redux/reducers/usersReducer';
 import UsersListPopperContent from '@src/pages/users/users-list/UsersListPopperContent';
 import Pagination from '@src/components/table/Pagination';

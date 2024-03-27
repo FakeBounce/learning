@@ -2,21 +2,20 @@ import {
   GetConnectedUserResponse,
   LoginResponse,
   UpdateOrganizationViewResponse,
-  User
+  ConnectedUser,
+  ConnectedUserOrganization
 } from '@services/connected-user/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as UserActions from '../actions/connectedUserActions';
 import { createSlice } from '@reduxjs/toolkit';
 import { AnyAction } from 'redux';
 import { setSession } from '@utils/axios/session';
-import * as RolesActions from '@redux/actions/rolesActions';
-import { GetRolePermissionsResponse } from '@services/roles/interfaces';
-import { PermissionTypeList } from '@services/permissions/interfaces';
 import { resetApp } from '@redux/actions/globalActions';
+import { pascalizeObject } from '@utils/helpers/convertCasing';
 
 interface UserState {
-  user: User;
-  permissions: PermissionTypeList;
+  user: ConnectedUser;
+  mainOrganization: ConnectedUserOrganization;
   globalLoading: boolean;
   login: {
     loading: boolean;
@@ -25,8 +24,8 @@ interface UserState {
 }
 
 const initialState: UserState = {
-  user: {} as User,
-  permissions: {},
+  user: {} as ConnectedUser,
+  mainOrganization: {} as ConnectedUserOrganization,
   globalLoading: false,
   login: {
     loading: false,
@@ -46,6 +45,7 @@ export const connectedUserSlice = createSlice({
       .addCase(UserActions.login.fulfilled, (state, action: { payload: LoginResponse }) => {
         state.login.loading = false;
         state.login.isAuthenticated = true;
+        state.globalLoading = true;
         setSession(action.payload.data);
       })
       .addCase(UserActions.login.rejected, (state, action: AnyAction) => {
@@ -57,7 +57,6 @@ export const connectedUserSlice = createSlice({
         state.globalLoading = true;
       })
       .addCase(UserActions.refresh.fulfilled, (state, action: { payload: LoginResponse }) => {
-        state.globalLoading = false;
         state.login.isAuthenticated = true;
         setSession(action.payload.data);
       })
@@ -65,12 +64,10 @@ export const connectedUserSlice = createSlice({
         state.globalLoading = false;
         state.login.isAuthenticated = false;
         state.user = initialState.user;
-        state.permissions = initialState.permissions;
       })
       .addCase(UserActions.logout.fulfilled, (state) => {
         state.login.isAuthenticated = false;
         state.user = initialState.user;
-        state.permissions = initialState.permissions;
         setSession(null);
       })
       .addCase(UserActions.logout.rejected, (_, action: AnyAction) => {
@@ -83,13 +80,16 @@ export const connectedUserSlice = createSlice({
       .addCase(
         UserActions.getUser.fulfilled,
         (state, action: { payload: GetConnectedUserResponse }) => {
+          const newUser = pascalizeObject(action.payload.data);
+          // @todo : Remove this when the when API type fixed
           state.user = {
-            ...action.payload.data,
-            organizationId: action.payload.data.organization_id,
-            emailVerifiedAt: action.payload.data.email_verified_at,
-            useDoubleAuth: action.payload.data.use_double_auth,
-            isActive: action.payload.data.is_active
+            ...newUser,
+            currentOrganization: newUser.currentOrganisation,
+            currentOrganisation: undefined
           };
+          if (newUser.currentOrganisation.isMain) {
+            state.mainOrganization = { ...newUser.currentOrganisation };
+          }
           state.globalLoading = false;
         }
       )
@@ -105,7 +105,7 @@ export const connectedUserSlice = createSlice({
         (state, action: { payload: UpdateOrganizationViewResponse }) => {
           state.user = {
             ...state.user,
-            organizationId: action.payload.data.id
+            currentOrganization: pascalizeObject(action.payload.data)
           };
           enqueueSnackbar(action.payload.message.value, { variant: 'success' });
         }
@@ -114,25 +114,9 @@ export const connectedUserSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(RolesActions.getRolePermissions.pending, (state) => {
-        state.globalLoading = true;
-      })
-      .addCase(
-        RolesActions.getRolePermissions.fulfilled,
-        (state, action: { payload: GetRolePermissionsResponse }) => {
-          state.globalLoading = false;
-          state.permissions = action.payload.data;
-        }
-      )
-      .addCase(RolesActions.getRolePermissions.rejected, (state, action: AnyAction) => {
-        state.globalLoading = false;
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
-      })
       .addCase(resetApp, (state) => {
         state.login.isAuthenticated = false;
         state.user = initialState.user;
-        state.permissions = initialState.permissions;
         setSession(null);
       });
   }

@@ -1,6 +1,6 @@
 import { Group } from '@services/groups/interfaces';
-import { User } from '@services/connected-user/interfaces';
 import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import { User } from '@services/users/interfaces';
 import { PermissionTypeList } from '@services/permissions/interfaces';
 
 export interface UserRole {
