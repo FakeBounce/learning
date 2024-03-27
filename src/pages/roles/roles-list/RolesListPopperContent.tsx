@@ -11,18 +11,29 @@ interface RolesListPopperContentProps {
 export default function RolesListPopperContent({ roleSelected, handleDelete }: RolesListPopperContentProps) {
   const theme = useTheme();
 
-  const handleChangeView = () => {
+  const handleChangeView = (type: string) => {
     if (roleSelected !== null) {
-      //todo: navigate to the right page
+      //@TODO: uncomment when pages is ready
+      switch(type) {
+        case 'update':
+          // navigate(PATH_ROLES.update);
+          break;
+        case 'manage':
+          // navigate(PATH_ROLES.managePermission);
+          break;
+        default:
+          break;
+      }
+
     }
   };
 
   return (
     <ListItem disablePadding sx={{ display: 'block' }}>
-      <ListItemButton onClick={handleChangeView} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
+      <ListItemButton onClick={() => handleChangeView('update')} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
         <ListItemText primary={<Trans>Modifier les utilisateurs</Trans>}/>
       </ListItemButton>
-      <ListItemButton onClick={handleChangeView} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
+      <ListItemButton onClick={() => handleChangeView('manage')} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
         <ListItemText primary={<Trans>Gérer les permissions</Trans>} />
       </ListItemButton>
       { !roleSelected?.isClientAdmin &&

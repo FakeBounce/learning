@@ -1,4 +1,3 @@
-// Mock useNavigate
 import { useNavigate } from 'react-router-dom';
 import { act, fireEvent, render, screen } from '@testProvider';
 import RolesListHeader from '@src/pages/roles/roles-list/RolesListHeader';
@@ -26,7 +25,7 @@ describe('RolesListHeader', () => {
       fireEvent.click(createButton);
     });
 
-    //todo: Check if the navigate function has been called when create view is ready
+    //@TODO: Check if the navigate function has been called when create view is ready
     //expect(navigateMock).toHaveBeenCalledWith(PATH_ROLES.add);
   });
 });

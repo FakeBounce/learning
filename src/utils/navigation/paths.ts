@@ -52,6 +52,9 @@ export const PATH_APPLICANTS = {
 const ROOT_ROLES = PATH_PARAMETERS.roles;
 export const PATH_ROLES = {
   root: ROOT_ROLES,
+  add: path(ROOT_ROLES, '/create'),
+  update: path(ROOT_ROLES, '/update/:roleId'),
+  managePermission: path(ROOT_ROLES, '/manage-permissions/:roleId')
 };
 
 //Users

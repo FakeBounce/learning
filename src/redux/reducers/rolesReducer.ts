@@ -51,7 +51,7 @@ export const rolesSlice = createSlice({
       .addCase(getRolesList.rejected, (state, action: AnyAction) => {
         state.rolesList.rolesListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
+        enqueueSnackbar(errorMessage, { variant: 'error' });
       });
   }
 });

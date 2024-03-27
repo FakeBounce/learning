@@ -19,7 +19,7 @@ export default function RolesListModal({
 
   const deleteRole = () => {
     if (roleSelected !== null) {
-      //todo : call the delete action
+      //@TODO : call the delete action
       enqueueSnackbar(t`Rôle supprimé !`, { variant: 'success' })
       // Reset the popper
       cancelModal();
@@ -36,35 +36,37 @@ export default function RolesListModal({
       cancelAction={cancelModal}
     >
       <Typography>
-        Êtes-vous sûr de vouloir supprimer le rôle{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-            textTransform: 'uppercase'
-          }}
-        >
-          {roleSelected.name}
-        </Box>{' '}
-        ainsi que tous les{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-          }}
-        >
-          groupes
-        </Box>{' '}
-        et{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-          }}
-        >
-          utilisateurs
-        </Box>{' '}
-        lui étant rattachés ?
+        <Trans>
+          Êtes-vous sûr de vouloir supprimer le rôle{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              textTransform: 'uppercase'
+            }}
+          >
+            {roleSelected.name}
+          </Box>{' '}
+          ainsi que tous les{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+            }}
+          >
+            groupes
+          </Box>{' '}
+          et{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+            }}
+          >
+            utilisateurs
+          </Box>{' '}
+          lui étant rattachés ?
+        </Trans>
       </Typography>
     </LMSModal>
   );

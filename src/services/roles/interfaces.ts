@@ -1,6 +1,6 @@
 import { Group } from '@services/groups/interfaces';
 import { User } from '@services/connected-user/interfaces';
-import { ApiRequestSort, ApiResponseMessage } from '@services/interfaces';
+import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
 import { PermissionTypeList } from '@services/permissions/interfaces';
 
 export interface UserRole {
@@ -31,7 +31,7 @@ export interface GetRolesResponse {
   message: ApiResponseMessage;
   data: {
     rows: Role[];
-    pagination: any;
+    pagination: ApiResponsePagination;
   };
 }
 
