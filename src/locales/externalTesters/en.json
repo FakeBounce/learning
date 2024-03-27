@@ -1,9 +1,4 @@
 {
-  "+oarE7": {
-    "translation": "",
-    "message": "404 Title",
-    "comments": []
-  },
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
@@ -44,9 +39,24 @@
     "message": "Organisations",
     "comments": []
   },
+  "GroyQn": {
+    "translation": "",
+    "message": "Le testeur n'existe pas",
+    "comments": []
+  },
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
+    "comments": []
+  },
+  "IAAmKF": {
+    "translation": "",
+    "message": "Non renseigné",
+    "comments": []
+  },
+  "MCvCnO": {
+    "translation": "",
+    "message": "Prénom",
     "comments": []
   },
   "MeRGCv": {
@@ -54,9 +64,34 @@
     "message": "Créer un testeur externe",
     "comments": []
   },
+  "O3oNi5": {
+    "translation": "",
+    "message": "Email",
+    "comments": []
+  },
+  "QThGLQ": {
+    "translation": "",
+    "message": "Le numéro de téléphone est invalide",
+    "comments": []
+  },
+  "UDTsGF": {
+    "translation": "",
+    "message": "Id externe",
+    "comments": []
+  },
+  "W3FHUJ": {
+    "translation": "",
+    "message": "Aucune modification n'a été effectuée",
+    "comments": []
+  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
+    "comments": []
+  },
+  "dEcezs": {
+    "translation": "",
+    "message": "L'email est requis",
     "comments": []
   },
   "eoO6cw": {
@@ -64,9 +99,29 @@
     "message": "Liste des Parcours",
     "comments": []
   },
+  "fojDKu": {
+    "translation": "",
+    "message": "Le prénom est requis",
+    "comments": []
+  },
+  "hW6LJA": {
+    "translation": "",
+    "message": "L'email est invalide",
+    "comments": []
+  },
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
+    "comments": []
+  },
+  "iAKACc": {
+    "translation": "",
+    "message": "Nom",
+    "comments": []
+  },
+  "ikKkoV": {
+    "translation": "",
+    "message": "Le nom de famille est requis",
     "comments": []
   },
   "lPgC5g": {
@@ -82,6 +137,16 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
+    "comments": []
+  },
+  "vm08uh": {
+    "translation": "",
+    "message": "Téléphone",
+    "comments": []
+  },
+  "zKPyEG": {
+    "translation": "",
+    "message": "Au moins un groupe est requis",
     "comments": []
   }
 }

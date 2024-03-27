@@ -38,10 +38,10 @@ interface BaseApplicant {
   lastname: string;
   phone: string | null;
   isActive: boolean;
-  birthName: null | string;
-  birthDate: string;
-  city: string | null;
-  notifications: ApplicantNotifications;
+  birthName?: null | string;
+  birthDate?: string;
+  city?: string | null;
+  notifications?: ApplicantNotifications;
   groups: string[];
 }
 interface AdditionalApplicantProperties {
@@ -60,10 +60,10 @@ interface BaseApplicantFromApi {
   lastname: string;
   phone: string | null;
   is_active: boolean;
-  birth_name: null | string;
-  birth_date: string;
-  city: string | null;
-  notifications: ApplicantNotifications;
+  birth_name?: null | string;
+  birth_date?: string;
+  city?: string | null;
+  notifications?: ApplicantNotifications;
 }
 export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
 

@@ -56,7 +56,7 @@ export default function ApplicantsProfileInfos() {
                 <Trans>Notification app</Trans>
               </StyledApplicantTypography>
               <Typography>
-                {applicantProfileData.notifications.app === '1' ? (
+                {applicantProfileData.notifications?.app === '1' ? (
                   <Trans>OUI</Trans>
                 ) : (
                   <Trans>NON</Trans>
@@ -68,7 +68,7 @@ export default function ApplicantsProfileInfos() {
                 <Trans>Notification SMS</Trans>
               </StyledApplicantTypography>
               <Typography>
-                {applicantProfileData.notifications.sms === '1' ? (
+                {applicantProfileData.notifications?.sms === '1' ? (
                   <Trans>OUI</Trans>
                 ) : (
                   <Trans>NON</Trans>
@@ -80,7 +80,7 @@ export default function ApplicantsProfileInfos() {
                 <Trans>Notification email</Trans>
               </StyledApplicantTypography>
               <Typography>
-                {applicantProfileData.notifications.email === '1' ? (
+                {applicantProfileData.notifications?.email === '1' ? (
                   <Trans>OUI</Trans>
                 ) : (
                   <Trans>NON</Trans>
@@ -132,7 +132,9 @@ export default function ApplicantsProfileInfos() {
               <Trans>Date de naissance</Trans>
             </StyledApplicantTypography>
             <Typography sx={{ textTransform: 'uppercase' }}>
-              {new Date(applicantProfileData.birthDate).toLocaleDateString() || emptyField}
+              {applicantProfileData.birthDate
+                ? new Date(applicantProfileData.birthDate).toLocaleDateString()
+                : emptyField}
             </Typography>
           </StyledApplicantRow>
         </StyledApplicantColumn>

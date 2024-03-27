@@ -47,3 +47,10 @@ export const ApplicantsUpdate = LoadableComponent(
 export const ApplicantsCreate = LoadableComponent(
   lazy(() => import('@src/pages/applicants/applicants-create/ApplicantsCreate'))
 );
+
+/**
+ External Testers
+ **/
+export const ExternalTestersUpdate = LoadableComponent(
+  lazy(() => import('@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate'))
+);

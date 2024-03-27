@@ -6,6 +6,6 @@ export const pageRestrictionsList = {
   groups: [PermissionTypeEnum.GROUPS],
   users: [PermissionTypeEnum.USERS],
   applicants: [PermissionTypeEnum.SUPER_ADMIN, PermissionTypeEnum.APPLICANTS],
-  externalTesters: [PermissionTypeEnum.TESTERS],
+  externalTesters: [PermissionTypeEnum.SUPER_ADMIN, PermissionTypeEnum.TESTERS],
   customize: [PermissionTypeEnum.PERSONALIZATION]
 };
