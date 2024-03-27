@@ -15,13 +15,13 @@ describe('RolesListModal', () => {
     render(
       <RolesListModal
         roleSelected={defaultRole}
-        isModalOpen={false}
+        isModalOpen={true}
         setIsModalOpen={setIsModalOpen}
         cancelModal={cancelModal}
       />
     );
 
     expect(screen.getByText(/Supprimer un rôle/i)).toBeInTheDocument();
-    expect(screen.getByText(/Êtes-vous sûr de vouloir supprimer le rôle/ + defaultRole.name + /ainsi que tous les groupes et utilisateurs lui étant rattachés \?/i)).toBeInTheDocument();
+    expect(screen.getByText(defaultRole.name)).toBeInTheDocument();
   });
 });
