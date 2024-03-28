@@ -48,7 +48,7 @@ export interface ConnectedUserFromAPI {
   is_client_admin: boolean;
   is_super_admin: boolean;
   permissions: PermissionTypeList;
-  current_organisation: ConnectedUserOrganizationFromAPI;
+  current_organization: ConnectedUserOrganizationFromAPI;
 }
 
 export interface UpdateOrganizationViewRequest {

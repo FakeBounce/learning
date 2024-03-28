@@ -81,14 +81,11 @@ export const connectedUserSlice = createSlice({
         UserActions.getUser.fulfilled,
         (state, action: { payload: GetConnectedUserResponse }) => {
           const newUser = pascalizeObject(action.payload.data);
-          // @todo : Remove this when the when API type fixed
           state.user = {
-            ...newUser,
-            currentOrganization: newUser.currentOrganisation,
-            currentOrganisation: undefined
+            ...newUser
           };
-          if (newUser.currentOrganisation.isMain) {
-            state.mainOrganization = { ...newUser.currentOrganisation };
+          if (newUser.currentOrganization && newUser.currentOrganization.isMain) {
+            state.mainOrganization = { ...newUser.currentOrganization };
           }
           state.globalLoading = false;
         }
