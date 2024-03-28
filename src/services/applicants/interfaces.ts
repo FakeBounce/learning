@@ -50,6 +50,17 @@ interface AdditionalApplicantProperties {
 
 export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
+export interface ApplicantForBulk {
+  externalId: string | null;
+  email: string | null;
+  firstname: string | null;
+  lastname: string | null;
+  birthDate: string | null;
+  birthName: string | null;
+  phone: string | null;
+  city: string | null;
+}
+
 interface BaseApplicantFromApi {
   id: number;
   profilePicture: string | null;

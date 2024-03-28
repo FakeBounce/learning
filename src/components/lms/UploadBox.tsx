@@ -12,7 +12,6 @@ const StyledDropZone = styled('div')(({ theme }) => ({
   cursor: 'pointer',
   alignItems: 'center',
   justifyContent: 'center',
-  margin: theme.spacing(0.5),
   color: theme.palette.text.disabled,
   borderRadius: theme.shape.borderRadius,
   border: `dashed 1px ${theme.palette.divider}`,

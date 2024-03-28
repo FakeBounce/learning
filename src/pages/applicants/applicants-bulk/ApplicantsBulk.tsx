@@ -7,9 +7,17 @@ import { Trans } from '@lingui/macro';
 import Iconify from '@src/components/iconify/Iconify';
 import { useCallback, useState } from 'react';
 import { extractApplicantsFromCsv } from '@utils/helpers/csvExtractor';
+import { ApplicantForBulk } from '@services/applicants/interfaces';
+import FullTable from '@src/components/table/FullTable';
+import {
+  applicantsBulkTableHeaderRenderer,
+  applicantsBulkTableRowsRenderer
+} from '@src/pages/applicants/applicants-bulk/ApplicantsBulkColumns';
 
 export default function ApplicantsBulk() {
   const [error, setError] = useState<string>('');
+  const [validRows, setValidRows] = useState<ApplicantForBulk[]>([]);
+  const [faultyRows, setFaultyRows] = useState<ApplicantForBulk[]>([]);
 
   const handleDropAvatar = useCallback(async (acceptedFiles: any) => {
     setError('');
@@ -33,6 +41,8 @@ export default function ApplicantsBulk() {
 
     try {
       const { validRows, faultyRows } = extractApplicantsFromCsv(_data);
+      setValidRows(validRows);
+      setFaultyRows(faultyRows);
       console.log('Valid Rows:', validRows);
       console.log('Faulty Rows:', faultyRows);
     } catch (error: any) {
@@ -43,7 +53,7 @@ export default function ApplicantsBulk() {
   }, []);
 
   return (
-    <Box px={[0, 2]} display="flex" flex="1 1 0">
+    <Box px={[0, 2]} display="flex" flex="1 1 0" sx={{ overflow: 'auto' }}>
       <LMSCard isPageCard header={<ApplicantsCreateHeader />} footer={<ApplicantsCreateFooter />}>
         <Box display="flex" px={2}>
           <UploadBox
@@ -67,13 +77,37 @@ export default function ApplicantsBulk() {
             }
           />
         </Box>
-        <Box display="flex" p={2}>
-          {error && (
+        {error && (
+          <Box display="flex" p={2}>
             <Typography variant="body2" color="error">
               {error}
             </Typography>
-          )}
-        </Box>
+          </Box>
+        )}
+
+        {validRows.length > 0 && (
+          <Box display="flex" flex="1 1 0" maxWidth="100%">
+            <FullTable
+              headerRenderer={applicantsBulkTableHeaderRenderer()}
+              bodyRenderer={applicantsBulkTableRowsRenderer(validRows)}
+              isLoading={false}
+              rowsNum={2}
+              colsNum={8}
+            />
+          </Box>
+        )}
+
+        {faultyRows.length > 0 && (
+          <Box display="flex" flex="1 1 0" maxWidth="100%">
+            <FullTable
+              headerRenderer={applicantsBulkTableHeaderRenderer()}
+              bodyRenderer={applicantsBulkTableRowsRenderer(faultyRows)}
+              isLoading={false}
+              rowsNum={2}
+              colsNum={8}
+            />
+          </Box>
+        )}
       </LMSCard>
     </Box>
   );
