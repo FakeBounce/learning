@@ -1,7 +1,7 @@
 import { MouseEvent, ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { UserFromAPI } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/users/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import Iconify from '@src/components/iconify/Iconify';
 

@@ -1,11 +1,10 @@
-import { ReactNode, useState, createContext, useEffect } from 'react';
+import { ReactNode, useState, createContext, useEffect, useCallback } from 'react';
 import {
   PermissionAction,
   PermissionEnum,
   PermissionTypeEnum
 } from '@services/permissions/interfaces';
 import { useAppSelector } from '@redux/hooks';
-import { UserRole } from '@services/roles/interfaces';
 
 enum HasAdminRights {
   NO = 0,
@@ -15,7 +14,7 @@ enum HasAdminRights {
 
 export const FeatureFlagContext = createContext<{
   isAuthorizedByPermissionsTo: (
-    permissionType: PermissionTypeEnum,
+    pageType: PermissionTypeEnum,
     permissionAsked: PermissionEnum
   ) => boolean;
   canSeePage: (pageAsked: PermissionTypeEnum[]) => boolean;
@@ -26,37 +25,57 @@ export const FeatureFlagContext = createContext<{
 
 const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
   const [isUserAdmin, setIsUserAdmin] = useState<HasAdminRights>(HasAdminRights.NO);
-  const { permissions, user } = useAppSelector((state) => state.connectedUser);
+  const { isSuperAdmin, isClientAdmin, permissions, currentOrganization } = useAppSelector(
+    (state) => state.connectedUser.user
+  );
 
   useEffect(() => {
-    if (user && user.roles) {
-      // Browse roles to see if the user is super-admin
-      user.roles.find((role: UserRole) => {
-        if (role.name === PermissionTypeEnum.CLIENT_ADMIN) {
-          setIsUserAdmin(HasAdminRights.CLIENT_ADMIN);
-        } else if (role.name === PermissionTypeEnum.SUPER_ADMIN) {
-          setIsUserAdmin(HasAdminRights.SUPER_ADMIN);
+    if (isSuperAdmin) {
+      setIsUserAdmin(HasAdminRights.SUPER_ADMIN);
+    } else if (isClientAdmin) {
+      setIsUserAdmin(HasAdminRights.CLIENT_ADMIN);
+    }
+  }, [isSuperAdmin, isClientAdmin]);
+
+  const isAuthorizedByPermissionsTo = useCallback(
+    (pageType: PermissionTypeEnum, permissionAsked: PermissionEnum): boolean => {
+      if (isUserAdmin) {
+        return true;
+      }
+      if (permissions[pageType] && permissions[pageType].actions) {
+        // If the permission asked is READ, we check if the permission exists in the array
+        if (permissionAsked === PermissionEnum.READ) {
+          const hasKeyIndex = permissions[pageType].actions.findIndex(
+            (action: PermissionAction) => action.name === PermissionEnum.READ
+          );
+          if (hasKeyIndex !== -1) {
+            return permissions[pageType].actions[hasKeyIndex].enabled;
+          }
+          // If the permission doesn't exist, that means everyone can visualize it
+          return true;
         }
-      });
-    }
-  }, [user]);
+        return permissions[pageType].actions.some(
+          (action: PermissionAction) => action.name === permissionAsked && action.enabled
+        );
+      }
+      return false;
+    },
+    [permissions, isUserAdmin]
+  );
 
-  const isAuthorizedByPermissionsTo = (
-    permissionType: PermissionTypeEnum,
-    permissionAsked: PermissionEnum
-  ): boolean => {
-    if (isUserAdmin) {
-      return true;
-    }
-    if (permissions[permissionType] && permissions[permissionType].actions) {
-      return permissions[permissionType].actions.some(
-        (action: PermissionAction) => action.name === permissionAsked && action.enabled
-      );
-    }
-    return false;
-  };
+  const pagePermissionCheck = useCallback(
+    (pageAskedPermission: PermissionTypeEnum) => {
+      if (currentOrganization.isMain && pageAskedPermission !== PermissionTypeEnum.SUPER_ADMIN) {
+        return false;
+      }
+      if (pageAskedPermission === PermissionTypeEnum.SUPER_ADMIN) {
+        return isUserAdmin === HasAdminRights.SUPER_ADMIN && currentOrganization.isMain;
+      }
+      return isAuthorizedByPermissionsTo(pageAskedPermission, PermissionEnum.READ);
+    },
+    [currentOrganization, isUserAdmin]
+  );
 
-  // @Todo : Might not the correct method cause there is doubt about how permissions works
   const canSeePage = (pageAsked: PermissionTypeEnum[]): boolean => {
     let hasPermission = false;
     pageAsked.forEach((page) => {
@@ -65,20 +84,6 @@ const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
       }
     });
     return hasPermission;
-  };
-
-  const pagePermissionCheck = (pageAskedPermission: PermissionTypeEnum) => {
-    // @Todo : Unless we are on main organization, in which case we can only see SUPER_ADMIN pages
-    if (user.organizationId === 1 && pageAskedPermission !== PermissionTypeEnum.SUPER_ADMIN) {
-      return false;
-    }
-    if (pageAskedPermission === PermissionTypeEnum.SUPER_ADMIN) {
-      return isUserAdmin === HasAdminRights.SUPER_ADMIN && user.organizationId === 1;
-    }
-    if (isUserAdmin >= HasAdminRights.CLIENT_ADMIN) {
-      return true;
-    }
-    return Object.prototype.hasOwnProperty.call(permissions, pageAskedPermission);
   };
 
   return (
