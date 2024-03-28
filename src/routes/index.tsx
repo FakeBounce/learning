@@ -5,7 +5,7 @@ import {
   PATH_AUTH,
   PATH_DASHBOARD,
   PATH_EXTERNAL_TESTERS,
-  PATH_ORGANIZATIONS,
+  PATH_ORGANIZATIONS, PATH_ROLES,
   PATH_USERS
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -21,7 +21,8 @@ import {
   Applicants,
   ApplicantsUpdate,
   ApplicantsCreate,
-  ExternalTestersUpdate
+  ExternalTestersUpdate,
+  Roles,
 } from 'src/routes/elements';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
@@ -63,6 +64,11 @@ const Router = () => {
           element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.externalTesters} />}
         >
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
+        </Route>
+        <Route
+          element={<FeatureFlagedRoute pagePermissionType={pageRestrictionsList.roles} />}
+        >
+          <Route path={PATH_ROLES.root} element={<Roles />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

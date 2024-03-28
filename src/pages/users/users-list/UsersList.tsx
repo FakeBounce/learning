@@ -10,7 +10,7 @@ import {
   OrderBy
 } from '@src/pages/users/users-list/UsersColumns';
 import { useState, MouseEvent, useEffect, ChangeEvent } from 'react';
-import { User } from '@services/connected-user/interfaces';
+import { UserFromAPI } from '@services/connected-user/interfaces';
 import { getUsersList } from '@redux/reducers/usersReducer';
 import UsersListPopperContent from '@src/pages/users/users-list/UsersListPopperContent';
 import Pagination from '@src/components/table/Pagination';
@@ -26,7 +26,7 @@ export default function UsersList() {
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
-  const [userSelected, setUserSelected] = useState<User | null>(null);
+  const [userSelected, setUserSelected] = useState<UserFromAPI | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleChangePage = (_: unknown, newPage: number) => {
@@ -68,7 +68,7 @@ export default function UsersList() {
     }
   };
 
-  const handleClick = (newUser: User) => (event: MouseEvent<HTMLElement>) => {
+  const handleClick = (newUser: UserFromAPI) => (event: MouseEvent<HTMLElement>) => {
     setUserSelected(newUser);
     setAnchorEl(event.currentTarget);
   };

@@ -1,6 +1,11 @@
 import { AxiosResponse } from 'axios';
 import axios from '@utils/axios/axios';
-import { GetRolePermissionsRequest, GetRolePermissionsResponse } from '@services/roles/interfaces';
+import {
+  GetRolePermissionsRequest,
+  GetRolePermissionsResponse,
+  GetRolesRequest,
+  GetRolesResponse
+} from '@services/roles/interfaces';
 
 export const getRolePermissions = async (
   args: GetRolePermissionsRequest
@@ -9,3 +14,16 @@ export const getRolePermissions = async (
 
   return axios.get(`/roles/${roleId}/permissions`);
 };
+
+export const getRoles = async (
+  args: GetRolesRequest
+): Promise<AxiosResponse<GetRolesResponse>> => {
+  const { currentPage, rowsPerPage, sort, filters } = args;
+
+  return axios.post('/roles/filter', {
+    page: currentPage,
+    row_per_page: rowsPerPage,
+    filters,
+    sort
+  });
+}

@@ -56,6 +56,14 @@ export const PATH_EXTERNAL_TESTERS = {
   add: path(ROOT_EXTERNAL_TESTERS, '/creation')
 };
 
+const ROOT_ROLES = PATH_PARAMETERS.roles;
+export const PATH_ROLES = {
+  root: ROOT_ROLES,
+  add: path(ROOT_ROLES, '/create'),
+  update: path(ROOT_ROLES, '/update/:roleId'),
+  managePermission: path(ROOT_ROLES, '/manage-permissions/:roleId')
+};
+
 //Users
 const ROOT_USERS = PATH_PARAMETERS.users;
 export const PATH_USERS = {
