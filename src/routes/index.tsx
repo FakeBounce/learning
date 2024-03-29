@@ -1,10 +1,10 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { ExternalTestersUpdate, LoginPage, Page404, Roles } from 'src/routes/elements';
+import { ExternalTestersUpdate, Groups, LoginPage, Page404, Roles } from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
-  PATH_EXTERNAL_TESTERS,
+  PATH_EXTERNAL_TESTERS, PATH_GROUPS,
   PATH_ROLES
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -49,6 +49,16 @@ const Router = () => {
           }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
+        </Route>
+        <Route
+          element={
+            <FeatureFlagedRoute
+              pageType={PermissionTypeEnum.GROUPS}
+              permissionsAuthorized={pageRestrictionsList.groups}
+            />
+          }
+        >
+          <Route path={PATH_GROUPS.root} element={<Groups />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

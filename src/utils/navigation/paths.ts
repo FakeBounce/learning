@@ -73,3 +73,11 @@ export const PATH_USERS = {
   profile: path(ROOT_USERS, '/profile/:id'),
   edit: path(ROOT_USERS, '/edit/:id')
 };
+
+//Groups
+const ROOT_GROUPS = PATH_PARAMETERS.groups;
+export const PATH_GROUPS = {
+  root: ROOT_GROUPS,
+  add: path(ROOT_GROUPS, '/create'),
+  update: path(ROOT_GROUPS, '/update/:roleId'),
+};

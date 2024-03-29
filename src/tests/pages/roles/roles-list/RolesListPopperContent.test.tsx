@@ -19,7 +19,7 @@ describe('RolesListPopperContent', () => {
 
     render(
       <RolesListPopperContent
-        roleSelected={null}
+        roleSelected={defaultRole}
         handleDelete={handleDelete}
       />
     );
