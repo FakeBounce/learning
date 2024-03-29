@@ -1,6 +1,12 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { ExternalTestersUpdate, LoginPage, Page404, Roles } from 'src/routes/elements';
+import {
+  ExternalTestersUpdate,
+  ForgotPasswordPage,
+  LoginPage,
+  Page404,
+  Roles
+} from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
@@ -56,6 +62,7 @@ const Router = () => {
 
       <Route element={<GuestGuard />}>
         <Route path={PATH_AUTH.login} element={<LoginPage />} />
+        <Route path={PATH_AUTH.forgotPassword} element={<ForgotPasswordPage />} />
       </Route>
     </Routes>
   );

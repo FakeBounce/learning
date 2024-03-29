@@ -4,6 +4,7 @@ import { lazy } from 'react';
 
 // AUTH
 export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/LoginPage')));
+export const ForgotPasswordPage = LoadableComponent(lazy(() => import('@src/pages/login/forgot-password/ForgotPasswordPage')));
 
 // MAIN
 export const Page404 = LoadableComponent(lazy(() => import('../pages/errors/Page404')));

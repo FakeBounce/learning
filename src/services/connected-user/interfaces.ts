@@ -90,3 +90,8 @@ export interface LogoutResponse {
   message: ApiResponseMessage;
   data?: any; // @TODO: Define the data
 }
+
+export interface ForgotPasswordRequest {
+  email: string;
+  organization_uuid: string;
+}
