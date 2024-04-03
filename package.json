@@ -17,11 +17,12 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
+      "eslint . --fix",
+      "yarn test:all",
       "yarn extract",
       "yarn compile",
-      "eslint . --fix",
-      "yarn prettier . --write --check",
-      "yarn test:all"
+      "git-format-staged --formatter 'prettier --stdin-filepath \"{}\"' 'src/*.ts' 'src/*.tsx'",
+      "git add src/locales"
     ]
   },
   "husky": {
@@ -100,6 +101,7 @@
     "babel-plugin-macros": "^3.1.0",
     "csstype": "^3.0.10",
     "eslint": "^8.55.0",
+    "git-format-staged": "^3.1.1",
     "husky": "^9.0.11",
     "jest-junit": "^16.0.0",
     "lint-staged": "^15.2.2",
