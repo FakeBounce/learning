@@ -1,5 +1,7 @@
 import {
   ApplicantState,
+  ApplicantType,
+  CreateApplicantResponse,
   GetApplicantsListResponse,
   GetSingleApplicantResponse,
   UpdateApplicantResponse
@@ -107,11 +109,18 @@ export const applicantSlice = createSlice({
         state.applicantCreate.applicantCreateLoading = true;
         state.applicantCreate.hasCreated = false;
       })
-      .addCase(ApplicantsActions.createApplicant.fulfilled, (state) => {
-        state.applicantCreate.applicantCreateLoading = false;
-        state.applicantCreate.hasCreated = true;
-        enqueueSnackbar(t`L'étudiant à bien été enregistré`, { variant: 'success' });
-      })
+      .addCase(
+        ApplicantsActions.createApplicant.fulfilled,
+        (state, action: { payload: CreateApplicantResponse }) => {
+          state.applicantCreate.applicantCreateLoading = false;
+          state.applicantCreate.hasCreated = true;
+          const messageToDisplay =
+            action.payload.data.type === ApplicantType.TESTER
+              ? t`Le testeur à bien été enregistré`
+              : t`L'étudiant à bien été enregistré`;
+          enqueueSnackbar(messageToDisplay, { variant: 'success' });
+        }
+      )
       .addCase(ApplicantsActions.createApplicant.rejected, (state, action: AnyAction) => {
         state.applicantCreate.applicantCreateLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;

@@ -1,6 +1,12 @@
+import { ApplicantType } from '@services/applicants/interfaces';
+
 function path(root: string, sublink: string) {
   return `${root}${sublink}`;
 }
+
+export const getApplicantPath = (type: ApplicantType) => {
+  return type === ApplicantType.TESTER ? PATH_EXTERNAL_TESTERS : PATH_APPLICANTS;
+};
 
 const ROOTS_DASHBOARD = '/';
 

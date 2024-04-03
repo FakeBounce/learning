@@ -3,19 +3,19 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getApplicantsList } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
 import FullTable from '@src/components/table/FullTable';
-import {
-  OrderBy,
-  applicantsColumns,
-  applicantsTableRowsRenderer,
-  applicantsTableHeaderRenderer
-} from './ApplicantsListColumns';
-import ApplicantsListHeader from './ApplicantsListHeader';
-import ApplicantsListPopperContent from './ApplicantsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Applicant, ApplicantType } from '@services/applicants/interfaces';
-import ApplicantsListModal from '@src/pages/applicants/applicants-list/ApplicantsListModal';
+import {
+  externalTestersTableHeaderRenderer,
+  externalTestersTableRowsRenderer,
+  OrderBy,
+  externalTestersColumns
+} from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListColumns';
+import ExternalTestersListHeader from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListHeader';
+import ExternalTestersListModal from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListModal';
+import ExternalTestersListPopperContent from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListPopperContent';
 
 export default function ApplicantsList() {
   const dispatch = useAppDispatch();
@@ -44,7 +44,7 @@ export default function ApplicantsList() {
     const defaultApplicantListRequestConfig = {
       currentPage: currentPage,
       rowsPerPage: rowsPerPage,
-      type: ApplicantType.STUDENT
+      type: ApplicantType.TESTER
     };
 
     const applicantRequestConfig =
@@ -59,16 +59,7 @@ export default function ApplicantsList() {
   }, [currentPage, rowsPerPage, orderBy]);
 
   const handleSort = (
-    id:
-      | 'id'
-      | 'externalId'
-      | 'email'
-      | 'lastname'
-      | 'firstname'
-      | 'birthDate'
-      | 'phone'
-      | 'city'
-      | 'isActive'
+    id: 'id' | 'externalId' | 'email' | 'lastname' | 'firstname' | 'phone' | 'isActive'
   ) => {
     if (orderBy?.id === id) {
       if (orderBy.direction === 'DESC') {
@@ -106,14 +97,14 @@ export default function ApplicantsList() {
   return (
     <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
       <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <ApplicantsListHeader />
+        <ExternalTestersListHeader />
 
         <FullTable
-          headerRenderer={applicantsTableHeaderRenderer(handleSort, orderBy)}
-          bodyRenderer={applicantsTableRowsRenderer(applicantListData, handleClick)}
+          headerRenderer={externalTestersTableHeaderRenderer(handleSort, orderBy)}
+          bodyRenderer={externalTestersTableRowsRenderer(applicantListData, handleClick)}
           isLoading={applicantListLoading}
           rowsNum={rowsPerPage}
-          colsNum={applicantsColumns.length}
+          colsNum={externalTestersColumns.length}
         />
         <Pagination
           totalCount={applicantListTotalCount}
@@ -124,13 +115,13 @@ export default function ApplicantsList() {
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">
-        <ApplicantsListPopperContent
+        <ExternalTestersListPopperContent
           handleToggleBlock={() => setIsModalOpen(true)}
           applicantSelected={applicantSelected}
         />
       </LMSPopover>
       {applicantSelected && (
-        <ApplicantsListModal
+        <ExternalTestersListModal
           applicantSelected={applicantSelected}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}

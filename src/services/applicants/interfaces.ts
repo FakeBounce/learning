@@ -42,7 +42,7 @@ interface BaseApplicant {
   birthDate?: string;
   city?: string | null;
   notifications?: ApplicantNotifications;
-  groups: string[];
+  groups?: string[];
 }
 interface AdditionalApplicantProperties {
   [key: string]: string | number | null | boolean | undefined;
@@ -60,9 +60,9 @@ interface BaseApplicantFromApi {
   lastname: string;
   phone: string | null;
   is_active: boolean;
-  birth_name?: null | string;
-  birth_date?: string;
-  city?: string | null;
+  birth_name: null | string;
+  birth_date: string;
+  city: string | null;
   notifications?: ApplicantNotifications;
 }
 export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
@@ -74,7 +74,7 @@ export interface SingleApplicantFromApi {
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
   external_id: string | null;
   is_active: boolean;
-  notifications: ApplicantNotifications;
+  notifications?: ApplicantNotifications;
   current_values: ApplicantValues;
 }
 
@@ -102,6 +102,7 @@ export enum ApplicantType {
 export interface GetApplicantsListRequest {
   currentPage: number;
   rowsPerPage: number;
+  type: ApplicantType;
   sort?: { field: string; direction: 'ASC' | 'DESC' };
   filters?: any;
 }

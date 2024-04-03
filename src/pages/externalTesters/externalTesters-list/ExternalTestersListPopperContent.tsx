@@ -2,31 +2,31 @@ import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
-import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
 import { useAppDispatch } from '@redux/hooks';
 
-interface ApplicantsListPopperContentProps {
+interface ExternalTestersListPopperContentProps {
   handleToggleBlock: () => void;
   applicantSelected: Applicant | null;
 }
-export default function ApplicantsListPopperContent({
+export default function ExternalTestersListPopperContent({
   handleToggleBlock,
   applicantSelected
-}: ApplicantsListPopperContentProps) {
+}: ExternalTestersListPopperContentProps) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
-      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', String(applicantSelected.id)));
     }
   };
 
   const goToApplicantUpdate = () => {
     if (applicantSelected !== null) {
       dispatch(startEditingApplicant());
-      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', String(applicantSelected.id)));
     }
   };
 

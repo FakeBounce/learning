@@ -1,6 +1,12 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { ExternalTestersUpdate, LoginPage, Page404, Roles } from 'src/routes/elements';
+import {
+  ExternalTesters,
+  ExternalTestersUpdate,
+  LoginPage,
+  Page404,
+  Roles
+} from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
@@ -49,6 +55,16 @@ const Router = () => {
           }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
+        </Route>
+        <Route
+          element={
+            <FeatureFlagedRoute
+              pageType={PermissionTypeEnum.TESTERS}
+              permissionsAuthorized={pageRestrictionsList.externalTesters}
+            />
+          }
+        >
+          <Route path={PATH_EXTERNAL_TESTERS.root} element={<ExternalTesters />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />
