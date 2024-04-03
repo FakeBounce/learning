@@ -3,6 +3,8 @@ import axios from '@utils/axios';
 import {
   DeleteGroupRequest,
   DeleteGroupResponse,
+  CreateGroupRequest,
+  CreateGroupResponse,
   GetGroupsRequest,
   GetGroupsResponse
 } from '@services/groups/interfaces';
@@ -26,4 +28,10 @@ export const deleteGroup = async (
   const { groupId } = args;
 
   return axios.delete(`/groups/${groupId}`);
+};
+
+export const createGroup = async (
+  args: CreateGroupRequest
+): Promise<AxiosResponse<CreateGroupResponse>> => {
+  return axios.post(`/groups`, args);
 };

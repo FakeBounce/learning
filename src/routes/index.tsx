@@ -1,17 +1,32 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
 import {
+<<<<<<< HEAD
   ForgotPasswordPage,
   LoginPage,
   Page404,
   Roles,
   Groups
+=======
+  ExternalTestersUpdate,
+  Groups,
+  GroupsCreate,
+  LoginPage,
+  Page404,
+  Roles
+>>>>>>> f91ab0a (WIP - Group creation)
 } from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
+<<<<<<< HEAD
   PATH_ROLES,
   PATH_GROUPS
+=======
+  PATH_EXTERNAL_TESTERS,
+  PATH_GROUPS,
+  PATH_ROLES
+>>>>>>> f91ab0a (WIP - Group creation)
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
@@ -57,6 +72,7 @@ const Router = () => {
           }
         >
           <Route path={PATH_GROUPS.root} element={<Groups />} />
+          <Route path={PATH_GROUPS.add} element={<GroupsCreate />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

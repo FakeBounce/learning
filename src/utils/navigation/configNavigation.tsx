@@ -4,6 +4,7 @@ import {
   PATH_APPLICANTS,
   PATH_DASHBOARD,
   PATH_EXTERNAL_TESTERS,
+  PATH_GROUPS,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
   PATH_USERS
@@ -118,6 +119,13 @@ const externalTestersNavigationConfig = [
   }
 ];
 
+const groupsNavigationConfig = [
+  {
+    title: <Trans>Ajouter un groupe</Trans>,
+    path: PATH_GROUPS.add
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
@@ -126,7 +134,8 @@ export const globalNavigationConfig = [
   ...organizationsNavigationConfig,
   ...usersNavigationConfig,
   ...applicantsNavigationConfig,
-  ...externalTestersNavigationConfig
+  ...externalTestersNavigationConfig,
+  ...groupsNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

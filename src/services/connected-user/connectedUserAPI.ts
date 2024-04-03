@@ -15,7 +15,7 @@ export const updateOrganizationView = async (
 ): Promise<AxiosResponse<UpdateOrganizationViewResponse>> => {
   const { organizationId } = args;
 
-  return axios.post(`/organizations/${organizationId}/change-view`);
+  return axios.post(`/organizations/change-view/${organizationId}`);
 };
 
 export const getUser = async (): Promise<AxiosResponse<GetConnectedUserResponse>> => {

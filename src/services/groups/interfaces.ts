@@ -42,3 +42,15 @@ export interface DeleteGroupResponse {
   success: boolean;
   message: ApiResponseMessage;
 }
+
+export interface CreateGroupRequest {
+  name: string;
+  description?: string;
+  usersId?: number[];
+}
+
+export interface CreateGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Group;
+}
