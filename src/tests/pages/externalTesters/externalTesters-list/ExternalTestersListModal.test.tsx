@@ -67,6 +67,6 @@ describe('ExternalTestersListModal', () => {
     });
 
     expect(ExternalTestersListMock.history.put).toHaveLength(1);
-    expect(ExternalTestersListMock.history.put[0].url).toBe(`/applicants/block/${stateTester.id}`);
+    expect(ExternalTestersListMock.history.put[0].url).toBe(`/applicants/${stateTester.id}/block`);
   });
 });

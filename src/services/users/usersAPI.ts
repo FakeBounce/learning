@@ -38,5 +38,5 @@ export const toggleUserBlock = async (
   const { setActive, userId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  return axios.put(`/users/${correctPath}/${userId}`);
+  return axios.put(`/users/${userId}/${correctPath}`);
 };

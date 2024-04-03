@@ -40,7 +40,7 @@ export const updateApplicantBlock = async (
   const correctPath = setActive ? 'unblock' : 'block';
 
   // @todo Not working right now
-  return axios.put(`/applicants/${correctPath}/${applicantId}`);
+  return axios.put(`/applicants/${applicantId}/${correctPath}`);
 };
 
 export const updateApplicant = async (
