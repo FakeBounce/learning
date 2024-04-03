@@ -24,6 +24,11 @@
     "message": "Utilisateurs",
     "comments": []
   },
+  "46dzgL": {
+    "translation": "Bloquer un testeur",
+    "message": "Bloquer un testeur",
+    "comments": []
+  },
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
@@ -34,9 +39,19 @@
     "message": "Notifications app",
     "comments": []
   },
+  "5HGTfB": {
+    "translation": "Supprimer un rôle",
+    "message": "Supprimer un rôle",
+    "comments": []
+  },
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
+    "comments": []
+  },
+  "5qQosN": {
+    "translation": "Supprimer",
+    "message": "Supprimer",
     "comments": []
   },
   "7uQ5BG": {
@@ -114,6 +129,11 @@
     "message": "Profil",
     "comments": []
   },
+  "DolR28": {
+    "translation": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "comments": []
+  },
   "E1oq0K": {
     "translation": "Vous avez modifier les champs suivants :",
     "message": "Vous avez modifier les champs suivants :",
@@ -127,6 +147,16 @@
   "FBQvDW": {
     "translation": "Modification du profil",
     "message": "Modification du profil",
+    "comments": []
+  },
+  "FLD9GE": {
+    "translation": "Modifier les utilisateurs",
+    "message": "Modifier les utilisateurs",
+    "comments": []
+  },
+  "FhV/c/": {
+    "translation": "Êtes-vous sûr de vouloir débloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir débloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
   "G3BWrC": {
@@ -152,6 +182,11 @@
   "GroyQn": {
     "translation": "Le testeur n'existe pas",
     "message": "Le testeur n'existe pas",
+    "comments": []
+  },
+  "Gt66tb": {
+    "translation": "Débloquer un testeur",
+    "message": "Débloquer un testeur",
     "comments": []
   },
   "H1+RH6": {
@@ -194,11 +229,6 @@
     "message": "L'adresse est requise",
     "comments": []
   },
-  "LgoIGo": {
-    "translation": "dans",
-    "message": "dans",
-    "comments": []
-  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
@@ -209,9 +239,14 @@
     "message": "Statut",
     "comments": []
   },
-  "MjUBQq": {
-    "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant",
-    "message": "Êtes-vous sûr de vouloir débloquer l’étudiant",
+  "MZdToq": {
+    "translation": "Testeurs",
+    "message": "Testeurs",
+    "comments": []
+  },
+  "Mbj9Lm": {
+    "translation": "Êtes-vous sûr de vouloir bloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir bloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
   "NDUWrS": {
@@ -244,6 +279,11 @@
     "message": "Créer une organization",
     "comments": []
   },
+  "PsHtRs": {
+    "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": []
+  },
   "QOV2qe": {
     "translation": "Date de naissance",
     "message": "Date de naissance",
@@ -262,6 +302,11 @@
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
+    "comments": []
+  },
+  "TOpCm4": {
+    "translation": "Ajouter un testeur",
+    "message": "Ajouter un testeur",
     "comments": []
   },
   "Ttle7P": {
@@ -319,9 +364,9 @@
     "message": "Ajouter un étudiant",
     "comments": []
   },
-  "ZG+LqI": {
-    "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant",
-    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant",
+  "YlStRO": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "comments": []
   },
   "ZpEiaW": {
@@ -399,11 +444,6 @@
     "message": "L'email est invalide",
     "comments": []
   },
-  "hsXO/7": {
-    "translation": "toutes les organisations",
-    "message": "toutes les organisations",
-    "comments": []
-  },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
@@ -449,6 +489,11 @@
     "message": "Mot de passe oublié ?",
     "comments": []
   },
+  "posy4G": {
+    "translation": "Gérer les permissions",
+    "message": "Gérer les permissions",
+    "comments": []
+  },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
@@ -467,6 +512,11 @@
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
+    "comments": []
+  },
+  "tNU7H1": {
+    "translation": "Rôle supprimé !",
+    "message": "Rôle supprimé !",
     "comments": []
   },
   "u2iZug": {

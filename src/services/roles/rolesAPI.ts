@@ -15,9 +15,7 @@ export const getRolePermissions = async (
   return axios.get(`/roles/${roleId}/permissions`);
 };
 
-export const getRoles = async (
-  args: GetRolesRequest
-): Promise<AxiosResponse<GetRolesResponse>> => {
+export const getRoles = async (args: GetRolesRequest): Promise<AxiosResponse<GetRolesResponse>> => {
   const { currentPage, rowsPerPage, sort, filters } = args;
 
   return axios.post('/roles/filter', {
@@ -26,4 +24,4 @@ export const getRoles = async (
     filters,
     sort
   });
-}
+};

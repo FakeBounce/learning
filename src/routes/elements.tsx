@@ -55,6 +55,9 @@ export const ApplicantsCreate = LoadableComponent(
 export const ExternalTesters = LoadableComponent(
   lazy(() => import('@src/pages/externalTesters/externalTesters-list/ExternalTestersList'))
 );
+export const ExternalTestersCreate = LoadableComponent(
+  lazy(() => import('@src/pages/externalTesters/externalTesters-create/ExternalTestersCreate'))
+);
 export const ExternalTestersUpdate = LoadableComponent(
   lazy(() => import('@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate'))
 );

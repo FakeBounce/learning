@@ -18,7 +18,7 @@ const initialState: RolesState = {
     rolesListData: [],
     rolesListLoading: false,
     rolesListTotalCount: 0
-  },
+  }
 };
 
 export const getRolesList = createAsyncThunk(
