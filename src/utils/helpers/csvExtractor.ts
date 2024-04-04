@@ -12,7 +12,7 @@ interface CsvValidationResult {
 }
 
 const mappingTableApplicant: MappingTable = {
-  externalId: ['Id externe', 'External id'],
+  externalId: ['Id externe', 'External id', 'externalId'],
   firstname: ['Prénom', 'firstname', 'prenom'],
   lastname: ['Nom de naissance', 'Lastname', 'Nom de famille', 'Nom'],
   email: ['Email', 'Email'],
@@ -25,8 +25,8 @@ const mappingTableApplicant: MappingTable = {
     'Numero de telephone'
   ],
   city: ['Ville', 'City'],
-  birthDate: ['Date de naissance', 'Birth date'],
-  birthName: ['Nom de naissance', 'Birth name']
+  birthDate: ['Date de naissance', 'Birth date', 'birthDate'],
+  birthName: ['Nom de naissance', 'Birth name', 'birthName']
 };
 
 const mappingTableTester: MappingTable = {

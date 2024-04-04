@@ -4,6 +4,8 @@ import { Theme } from '@mui/material/styles';
 import { ApplicantForBulk } from '@services/applicants/interfaces';
 import { ReactNode } from 'react';
 import { isValid } from 'date-fns';
+import { OrderBy } from '@services/interfaces';
+import Iconify from '@src/components/iconify/Iconify';
 
 export interface ApplicantsBulkColumn {
   id:
@@ -16,9 +18,7 @@ export interface ApplicantsBulkColumn {
     | 'phone'
     | 'city';
   label: ReactNode;
-  maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
-  align?: 'right' | 'center';
   renderCell?: (row: ApplicantForBulk) => ReactNode;
 }
 
@@ -128,21 +128,42 @@ export const applicantsBulkColumns: readonly ApplicantsBulkColumn[] = [
   }
 ];
 
-export const applicantsBulkTableHeaderRenderer = () => {
+export const applicantsBulkTableHeaderRenderer = (
+  setOrderBy: (
+    id:
+      | 'externalId'
+      | 'email'
+      | 'lastname'
+      | 'firstname'
+      | 'birthDate'
+      | 'birthName'
+      | 'phone'
+      | 'city'
+  ) => void,
+  orderBy: OrderBy | null
+) => {
   return applicantsBulkColumns.map((column) => (
     <TableCell
       key={column.id}
-      align={column.align}
       padding={column.padding || 'normal'}
       sx={{
-        width: column.maxWidth,
         backgroundColor: (theme: Theme) => theme.palette.grey[200],
         height: '3vh',
         cursor: 'pointer'
       }}
+      onClick={() => setOrderBy(column.id)}
     >
       <Box display="flex" alignItems="center">
         {column.label}
+        {orderBy?.id === column.id ? (
+          <Iconify
+            icon={
+              orderBy.direction === 'ASC'
+                ? 'fluent:arrow-sort-up-24-filled'
+                : 'fluent:arrow-sort-down-20-filled'
+            }
+          />
+        ) : null}
       </Box>
     </TableCell>
   ));

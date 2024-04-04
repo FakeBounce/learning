@@ -5,6 +5,7 @@ export interface ApplicantState {
   applicantProfile: ApplicantProfileState;
   applicantUpdate: ApplicantUpdateState;
   applicantCreate: ApplicantCreateState;
+  applicantBulk: ApplicantBulkState;
 }
 
 export interface ApplicantProfileState {
@@ -26,6 +27,10 @@ export interface ApplicantUpdateState {
 export interface ApplicantCreateState {
   applicantCreateLoading: boolean;
   hasCreated: boolean;
+}
+export interface ApplicantBulkState {
+  applicantBulkLoading: boolean;
+  hasCreatedBulk: boolean;
 }
 
 interface BaseApplicant {
@@ -56,9 +61,9 @@ export interface ApplicantForBulk {
   firstname: string | null;
   lastname: string | null;
   birthDate: string | null;
-  birthName: string | null;
-  phone: string | null;
-  city: string | null;
+  birthName?: string | null;
+  phone?: string | null;
+  city?: string | null;
 }
 
 interface BaseApplicantFromApi {
@@ -165,4 +170,15 @@ export interface CreateApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: ApplicantFromApi;
+}
+
+export interface CreateBulkApplicantRequest {
+  applicantList: ApplicantForBulk[];
+  type: ApplicantType;
+}
+
+export interface CreateBulkApplicantResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: { rows: ApplicantFromApi[] };
 }

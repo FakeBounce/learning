@@ -15,22 +15,32 @@ export default function ApplicantsListHeader() {
   const canCreateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE);
   const canCreateBulkApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE_BULK);
 
+  const goToCreateApplicant = () => {
+    navigate(PATH_APPLICANTS.add);
+  };
+
+  const goToCreateBulkApplicant = () => {
+    navigate(PATH_APPLICANTS.addBulk);
+  };
+
   const applicantsListHeaderActions = () => {
     const actions = [];
     if (canCreateApplicant) {
       actions.push({
-        action: navigate(PATH_APPLICANTS.add),
+        action: goToCreateApplicant,
         actionText: <Trans>Ajouter</Trans>
       });
     }
     if (canCreateBulkApplicant) {
       actions.push({
-        action: navigate(PATH_APPLICANTS.addBulk),
+        action: goToCreateBulkApplicant,
         actionText: <Trans>Ajouter en masse</Trans>
       });
     }
     return actions;
   };
 
-  return <CardHeader headerText={<Trans>Étudiants</Trans>} actions={applicantsListHeaderActions()} />;
+  return (
+    <CardHeader headerText={<Trans>Étudiants</Trans>} actions={applicantsListHeaderActions()} />
+  );
 }

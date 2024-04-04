@@ -3,7 +3,7 @@ import { memo, ReactNode } from 'react';
 import ActionButton from '@src/components/lms/ActionButton';
 
 interface CardHeaderActionProps {
-  action: VoidFunction;
+  action: () => void | VoidFunction;
   actionType?: 'cancel' | 'update' | 'action';
   actionText: ReactNode;
 }
@@ -26,7 +26,6 @@ function CardHeader({ headerText, headerColor, actions = null }: CardHeaderProps
       >
         {headerText}
       </Typography>
-
       {actions &&
         actions.map((action, index) => (
           <ActionButton

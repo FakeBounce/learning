@@ -38,8 +38,7 @@
   "8/pAPk": {
     "translation": "Nom de naissance",
     "message": "Nom de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8N1T4V": {
     "translation": "La notification email est requis",
@@ -58,6 +57,11 @@
     "message": "Groupes",
     "comments": [],
     "obsolete": false
+  },
+  "AAjpHB": {
+    "translation": "Aucun étudiant valide à ajouter",
+    "message": "Aucun étudiant valide à ajouter",
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "OUI",
@@ -107,6 +111,11 @@
     "comments": [],
     "obsolete": false
   },
+  "FABypk": {
+    "translation": "Sélectionnez un fichier",
+    "message": "Sélectionnez un fichier",
+    "comments": []
+  },
   "FBQvDW": {
     "translation": "Modification du profil",
     "message": "Modification du profil",
@@ -122,8 +131,7 @@
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "Organisations",
@@ -161,11 +169,15 @@
     "comments": [],
     "obsolete": false
   },
+  "K+tHTS": {
+    "translation": "Format incorrect",
+    "message": "Format incorrect",
+    "comments": []
+  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -182,8 +194,7 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -236,8 +247,7 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UHDGIH": {
     "translation": "/",
@@ -251,6 +261,21 @@
     "comments": [],
     "obsolete": false
   },
+  "UeDwla": {
+    "translation": "Information obligatoire",
+    "message": "Information obligatoire",
+    "comments": []
+  },
+  "UyAuoq": {
+    "translation": "Liste des étudiants valides",
+    "message": "Liste des étudiants valides",
+    "comments": []
+  },
+  "VXxxDw": {
+    "translation": "Liste des étudiants invalides",
+    "message": "Liste des étudiants invalides",
+    "comments": []
+  },
   "VsENqL": {
     "translation": "Êtes-vous sûrs de vouloir les modifier ?",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
@@ -262,6 +287,11 @@
     "message": "Aucune modification n'a été effectuée",
     "comments": [],
     "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "Fichier .csv / Max : 3 Mo",
+    "message": "Fichier .csv / Max : 3 Mo",
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -344,14 +374,18 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
     "message": "Le nom de famille est requis",
     "comments": [],
     "obsolete": false
+  },
+  "jP37N3": {
+    "translation": "Ajouter des étudiants en masse",
+    "message": "Ajouter des étudiants en masse",
+    "comments": []
   },
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
@@ -370,6 +404,11 @@
     "message": "Créer une organisation",
     "comments": [],
     "obsolete": false
+  },
+  "rmmVFd": {
+    "translation": "Veillez sélectionner un fichier",
+    "message": "Veillez sélectionner un fichier",
+    "comments": []
   },
   "tALayW": {
     "translation": "Annuler",
@@ -398,14 +437,12 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "wB7q3X": {
     "translation": "Date naiss.",
     "message": "Date naiss.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "xj9DHS": {
     "translation": "NON",
