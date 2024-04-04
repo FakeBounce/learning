@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
 import UserProfileInfos from '@src/pages/users/user-profile/UserProfileInfos';
 import UserProfileHeader from '@src/pages/users/user-profile/UserProfileHeader';
@@ -31,16 +30,12 @@ export default function UserProfile() {
   }, [singleUserData]);
 
   return (
-    <Box px={[0, 2]} display="flex" width="100%">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <UserProfileHeader user={user} />
+    <LMSCard isPageCard header={<UserProfileHeader user={user} />}>
+      <UserProfileInfos user={user} />
 
-        <UserProfileInfos user={user} />
+      <UserProfileGroups groups={user.groups ?? []} />
 
-        <UserProfileGroups groups={user.groups ?? []} />
-
-        <UserProfileRoles roles={user.roles ?? []} />
-      </LMSCard>
-    </Box>
+      <UserProfileRoles roles={user.roles ?? []} />
+    </LMSCard>
   );
 }

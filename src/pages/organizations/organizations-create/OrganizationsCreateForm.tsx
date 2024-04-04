@@ -13,14 +13,9 @@ export default function OrganizationsCreateForm({
   image: string | File;
 }) {
   return (
-    <Stack
-      spacing={3}
-      sx={{
-        '& .MuiTextField-root': { mr: 4 }
-      }}
-    >
+    <Stack spacing={3}>
       <RHFAvatar name={'logo'} image={image} setImage={setImage} />
-      <Box display="flex">
+      <Box display="flex" gap={4}>
         <RHFTextField name={'name'} label={<LabelWithRequired label={<Trans>Nom</Trans>} />} />
         <RHFTextField
           name={'address'}
@@ -28,7 +23,7 @@ export default function OrganizationsCreateForm({
         />
       </Box>
 
-      <Box display="flex">
+      <Box display="flex" gap={4}>
         <RHFTextField
           name={'adminLastName'}
           label={<LabelWithRequired label={<Trans>Nom admin client</Trans>} />}
@@ -39,7 +34,7 @@ export default function OrganizationsCreateForm({
         />
       </Box>
 
-      <Box display="flex">
+      <Box display="flex" gap={4}>
         <RHFTextField name={'login'} label={<LabelWithRequired label={<Trans>Login</Trans>} />} />
         <RHFTextField
           name={'adminEmail'}

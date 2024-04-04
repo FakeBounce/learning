@@ -1,20 +1,19 @@
 import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 
-export const StyledApplicantColumn = styled(Box)(({ theme }) => ({
+export const StyledFormColumn = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   flex: '1 1 0',
-  gap: theme.spacing(3),
-  padding: `0 ${theme.spacing(2)}`
+  gap: theme.spacing(3)
 }));
 
-export const StyledApplicantRow = styled(Box)(({ theme }) => ({
+export const StyledFormRow = styled(Box)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   gap: theme.spacing(0.5)
 }));
 
-export const StyledApplicantTypography = styled(Typography)(({ theme }) => ({
+export const StyledFormTypography = styled(Typography)(({ theme }) => ({
   ...theme.typography.caption
 }));

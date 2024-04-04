@@ -9,10 +9,10 @@ import RHFSwitch from '@src/components/hook-form/RHFSwitch';
 import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
 import RHFAvatar from '@src/components/hook-form/RHFAvatar';
 import {
-  StyledApplicantColumn,
-  StyledApplicantRow,
-  StyledApplicantTypography
-} from '@src/pages/applicants/ApplicantsStyles';
+  StyledFormColumn,
+  StyledFormRow,
+  StyledFormTypography
+} from '@src/components/layouts/form/FormStyles';
 
 export default function ApplicantsUpdateForm({
   image,
@@ -30,7 +30,7 @@ export default function ApplicantsUpdateForm({
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2} px={2}>
+    <Box display="flex" flexDirection="column" gap={2}>
       <Box
         display="flex"
         flexDirection={['column', 'column', 'row']}
@@ -38,96 +38,96 @@ export default function ApplicantsUpdateForm({
         alignItems={['flex-start', 'flex-start', 'flex-end']}
         justifyContent={['flex-end', 'flex-end', 'flex-start']}
       >
-        <StyledApplicantColumn sx={{ gap: 0 }}>
+        <StyledFormColumn sx={{ gap: 0 }}>
           <RHFAvatar name={'profilePicture'} image={image} setImage={setImage} />
-        </StyledApplicantColumn>
+        </StyledFormColumn>
 
-        <StyledApplicantColumn>
+        <StyledFormColumn>
           <Box display="flex" gap={2} alignItems={['flex-start', 'flex-start', 'flex-end']}>
-            <StyledApplicantRow>
+            <StyledFormRow>
               <RHFSwitch
                 name={'notifications[app]'}
                 label={
-                  <StyledApplicantTypography>
+                  <StyledFormTypography>
                     <Trans>Notifications app</Trans>
-                  </StyledApplicantTypography>
+                  </StyledFormTypography>
                 }
               />
-            </StyledApplicantRow>
-            <StyledApplicantRow>
+            </StyledFormRow>
+            <StyledFormRow>
               <RHFSwitch
                 name={'notifications[sms]'}
                 label={
-                  <StyledApplicantTypography>
+                  <StyledFormTypography>
                     <Trans>Notifications SMS</Trans>
-                  </StyledApplicantTypography>
+                  </StyledFormTypography>
                 }
               />
-            </StyledApplicantRow>
-            <StyledApplicantRow>
+            </StyledFormRow>
+            <StyledFormRow>
               <RHFSwitch
                 name={'notifications[email]'}
                 label={
-                  <StyledApplicantTypography>
+                  <StyledFormTypography>
                     <Trans>Notifications email</Trans>
-                  </StyledApplicantTypography>
+                  </StyledFormTypography>
                 }
               />
-            </StyledApplicantRow>
+            </StyledFormRow>
           </Box>
-          <StyledApplicantRow>
+          <StyledFormRow>
             <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />
-          </StyledApplicantRow>
-        </StyledApplicantColumn>
+          </StyledFormRow>
+        </StyledFormColumn>
       </Box>
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
+        <StyledFormColumn>
+          <StyledFormRow>
             <RHFTextField
               name={'lastname'}
               label={<LabelWithRequired label={<Trans>Nom</Trans>} />}
             />
-          </StyledApplicantRow>
-          <StyledApplicantRow>
+          </StyledFormRow>
+          <StyledFormRow>
             <RHFTextField
               name={'firstname'}
               label={<LabelWithRequired label={<Trans>Prénom</Trans>} />}
             />
-          </StyledApplicantRow>
+          </StyledFormRow>
 
-          <StyledApplicantRow>
+          <StyledFormRow>
             <RHFTextField
               name={'email'}
               label={<LabelWithRequired label={<Trans>Email</Trans>} />}
             />
-          </StyledApplicantRow>
+          </StyledFormRow>
 
-          <StyledApplicantRow>
+          <StyledFormRow>
             <RHFTextField
               name={'birthDate'}
               label={<LabelWithRequired label={<Trans>Date de naissance</Trans>} />}
             />
-          </StyledApplicantRow>
-        </StyledApplicantColumn>
+          </StyledFormRow>
+        </StyledFormColumn>
 
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
+        <StyledFormColumn>
+          <StyledFormRow>
             <RHFTextField name={'birthName'} label={<Trans>Nom de naissance</Trans>} />
-          </StyledApplicantRow>
-          <StyledApplicantRow>
+          </StyledFormRow>
+          <StyledFormRow>
             <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
-          </StyledApplicantRow>
-          <StyledApplicantRow>
+          </StyledFormRow>
+          <StyledFormRow>
             <RHFTextField name={'city'} label={<Trans>Ville</Trans>} />
-          </StyledApplicantRow>
+          </StyledFormRow>
           {/* @todo Add when groups are down and we can select some */}
-          {/*<StyledApplicantRow>*/}
+          {/*<StyledFormRow>*/}
           {/*  <RHFTextField*/}
           {/*    name={'groups'}*/}
           {/*    label={<LabelWithRequired label={<Trans>Groupe(s) lié(s)</Trans>} />}*/}
           {/*  />*/}
-          {/*</StyledApplicantRow>*/}
-        </StyledApplicantColumn>
+          {/*</StyledFormRow>*/}
+        </StyledFormColumn>
       </Box>
     </Box>
   );

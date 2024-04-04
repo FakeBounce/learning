@@ -8,8 +8,7 @@
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "",
@@ -26,20 +25,17 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "BSb8d9": {
     "translation": "",
     "message": "Double authentification",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
@@ -62,8 +58,7 @@
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "",
@@ -74,8 +69,7 @@
   "H1+RH6": {
     "translation": "",
     "message": "Aucun groupe défini.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "",
@@ -104,8 +98,7 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
@@ -128,14 +121,12 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "",
@@ -152,8 +143,7 @@
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dEcezs": {
     "translation": "",
@@ -200,8 +190,7 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "",
@@ -242,8 +231,7 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "yZC9OF": {
     "translation": "",
@@ -254,7 +242,6 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

@@ -26,8 +26,7 @@
   "4kUPlv": {
     "translation": "",
     "message": "Notifications app",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7p5kLi": {
     "translation": "",
@@ -38,8 +37,7 @@
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8N1T4V": {
     "translation": "",
@@ -50,8 +48,7 @@
   "9HM7Cg": {
     "translation": "",
     "message": "Notification email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "",
@@ -62,31 +59,28 @@
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "CInq4A": {
     "translation": "",
     "message": "Notifications email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "CVT4YH": {
     "translation": "",
     "message": "Notification app",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "E1oq0K": {
     "translation": "",
@@ -121,8 +115,7 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "",
@@ -145,13 +138,13 @@
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "IRPK7p": {
     "translation": "",
@@ -162,8 +155,7 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
@@ -180,19 +172,18 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P3YkHZ": {
     "translation": "",
     "message": "Mettre à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "PsHtRs": {
     "translation": "",
@@ -203,8 +194,7 @@
   "QOV2qe": {
     "translation": "",
     "message": "Date de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "QThGLQ": {
     "translation": "",
@@ -227,14 +217,12 @@
   "Tvgy+o": {
     "translation": "",
     "message": "Notification SMS",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UHDGIH": {
     "translation": "",
@@ -257,8 +245,7 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "",
@@ -266,11 +253,15 @@
     "comments": [],
     "obsolete": false
   },
+  "YNznY8": {
+    "translation": "",
+    "message": "Ajouter",
+    "comments": []
+  },
   "YS+12y": {
     "translation": "",
     "message": "Ajouter un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YlStRO": {
     "translation": "",
@@ -329,14 +320,12 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ikKkoV": {
     "translation": "",
@@ -371,7 +360,8 @@
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "",
@@ -382,14 +372,12 @@
   "vdb2j0": {
     "translation": "",
     "message": "Notifications SMS",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "wB7q3X": {
     "translation": "",
@@ -400,8 +388,7 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "zKPyEG": {
     "translation": "",

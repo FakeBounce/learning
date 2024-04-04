@@ -61,9 +61,9 @@ describe('OrganizationsCreate', () => {
       // Expected request payload
       logo: 'something',
       name: 'Test Organization',
-      address_id: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
-      use_double_auth: 0,
-      client_admin: {
+      addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
+      useDoubleAuth: 0,
+      clientAdmin: {
         firstname: 'Test',
         lastname: 'Admin',
         email: 'admin@test.com',
@@ -103,7 +103,7 @@ describe('OrganizationsCreate', () => {
               isActive: true,
               address: 'some address',
               city: 'some city',
-              use_double_auth: false
+              useDoubleAuth: false
             },
             currentOrganizationLoading: false
           },
@@ -126,7 +126,7 @@ describe('OrganizationsCreate', () => {
 
     // Submit the form to trigger the error scenario
     await act(async () => {
-      fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     expect(OrganizationsCreateMock.history.post.length).toBe(0);
@@ -149,7 +149,7 @@ describe('OrganizationsCreate', () => {
 
     // Submit the form to trigger the error scenario
     await act(async () => {
-      fireEvent.submit(screen.getByRole('button', { name: /enregistrer/i }));
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     await waitFor(() => {

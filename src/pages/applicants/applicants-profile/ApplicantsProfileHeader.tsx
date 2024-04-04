@@ -1,14 +1,16 @@
-import { Box, Skeleton, Typography } from '@mui/material';
-import ActionButton from '@src/components/lms/ActionButton';
+import { Box, Skeleton } from '@mui/material';
 import { Trans } from '@lingui/macro';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
+import CardHeader from '@src/components/cards/CardHeader';
+import { useTheme } from '@mui/material/styles';
 
 export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate?: boolean }) {
   const { applicantProfileData, applicantProfileLoading } = useAppSelector(
     (state) => state.applicants.applicantProfile
   );
   const dispatch = useAppDispatch();
+  const theme = useTheme();
 
   const navigateToEdit = () => {
     if (applicantProfileData === null) return;
@@ -18,32 +20,28 @@ export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate
   const displayName = () => {
     if (!applicantProfileLoading && applicantProfileData !== null) {
       return (
-        <Typography
-          sx={{
-            color: (theme) => theme.palette.secondary.main,
-            fontSize: (theme) => theme.typography.h3.fontSize,
-            fontWeight: (theme) => theme.typography.fontWeightBold,
-            paddingX: 2
-          }}
-        >
+        <>
           <Box component="span" sx={{ textTransform: 'uppercase' }}>
             {applicantProfileData.lastname}
           </Box>{' '}
           {applicantProfileData.firstname}
-        </Typography>
+        </>
       );
     }
     return <Skeleton animation="pulse" variant="text" width="30%" />;
   };
 
+  if (isUpdate) {
+    return <CardHeader headerText={displayName()} actions={null} />;
+  }
+
   return (
-    <Box p={2} display="flex" gap={2}>
-      {displayName()}
-      {!isUpdate && (
-        <ActionButton actionType="update" onClick={navigateToEdit}>
-          <Trans>Modifier</Trans>
-        </ActionButton>
-      )}
-    </Box>
+    <CardHeader
+      headerText={displayName()}
+      headerColor={theme.palette.secondary.main}
+      actions={[
+        { action: navigateToEdit, actionText: <Trans>Modifier</Trans>, actionType: 'update' }
+      ]}
+    />
   );
 }

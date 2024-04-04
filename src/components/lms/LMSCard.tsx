@@ -11,6 +11,7 @@ interface LMSCardProps {
   header?: ReactNode;
   footer?: ReactNode;
   children: ReactNode;
+  contentPadding?: number;
 }
 
 const defaultCss = {
@@ -25,13 +26,15 @@ const defaultCss = {
 };
 
 const pageCardCss = {
+  boxSizing: 'border-box',
   display: 'flex',
   flexDirection: 'column',
   flex: '1 1 0',
   borderColor: 'transparent',
   borderRadius: 4,
   padding: 0,
-  maxWidth: '100%'
+  maxWidth: '100%',
+  marginBottom: 0.5
 };
 
 export default function LMSCard({
@@ -39,7 +42,8 @@ export default function LMSCard({
   isPageCard = false,
   header,
   footer,
-  children
+  children,
+  contentPadding = 4
 }: LMSCardProps) {
   // Keep theme and matches in case need later
   // const theme = useTheme();
@@ -51,19 +55,30 @@ export default function LMSCard({
     ...cardCss
   };
 
-  return (
+  const CardContent = (
     <Paper elevation={3} sx={{ ...mergedCardCss }}>
       {header && (
-        <Stack spacing={2} sx={{ mb: 4 }}>
+        <Stack spacing={2} p={2} px={4}>
           {header}
         </Stack>
       )}
-      {children}
+      <Stack spacing={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
+        {children}
+      </Stack>
       {footer && (
-        <Stack spacing={2} sx={{ mt: 4 }}>
+        <Stack spacing={2} p={2} px={4} sx={{ mt: 2 }}>
           {footer}
         </Stack>
       )}
     </Paper>
   );
+
+  if (isPageCard) {
+    return (
+      <Stack px={2} maxWidth="100%" flex={'1 1 0'}>
+        {CardContent}
+      </Stack>
+    );
+  }
+  return CardContent;
 }

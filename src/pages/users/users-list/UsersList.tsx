@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import FullTable from '@src/components/table/FullTable';
@@ -77,9 +76,8 @@ export default function UsersList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box px={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <UsersListHeader />
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<UsersListHeader />}>
         <FullTable
           headerRenderer={usersTableHeaderRender(handleSort, orderBy)}
           bodyRenderer={usersTableRowsRender(usersListData, handleClick)}
@@ -102,6 +100,6 @@ export default function UsersList() {
           userSelected={userSelected}
         />
       </LMSPopover>
-    </Box>
+    </>
   );
 }

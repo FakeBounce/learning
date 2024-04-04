@@ -38,7 +38,8 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
@@ -58,6 +59,11 @@
     "comments": [],
     "obsolete": false
   },
+  "GF/eyq": {
+    "translation": "Ajouter en masse",
+    "message": "Ajouter en masse",
+    "comments": []
+  },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
@@ -67,8 +73,7 @@
   "GroyQn": {
     "translation": "Le testeur n'existe pas",
     "message": "Le testeur n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Gt66tb": {
     "translation": "Débloquer un testeur",
@@ -91,19 +96,18 @@
   "HdNGur": {
     "translation": "Bloquer",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "IAAmKF": {
     "translation": "Non renseigné",
     "message": "Non renseigné",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -114,8 +118,7 @@
   "MZdToq": {
     "translation": "Testeurs",
     "message": "Testeurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Mbj9Lm": {
     "translation": "Êtes-vous sûr de vouloir bloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -132,13 +135,13 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
     "message": "Mettre à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
@@ -149,26 +152,28 @@
   "TOpCm4": {
     "translation": "Ajouter un testeur",
     "message": "Ajouter un testeur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
     "comments": [],
     "obsolete": false
+  },
+  "YNznY8": {
+    "translation": "Ajouter",
+    "message": "Ajouter",
+    "comments": []
   },
   "dEcezs": {
     "translation": "L'email est requis",
@@ -215,8 +220,7 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -251,7 +255,8 @@
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
@@ -262,8 +267,7 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",

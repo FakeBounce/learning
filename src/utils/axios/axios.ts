@@ -2,7 +2,7 @@ import { getEnvVariable } from '@utils/environnement';
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { handle401Error } from '@utils/axios/handle401';
 import { ApiResponseMessage } from '@services/interfaces';
-import { pascalizeObject, snakizeObject } from '@utils/helpers/convertCasing';
+import { camelizeObject, snakizeObject } from '@utils/helpers/convertCasing';
 
 interface AxiosDefaultResponse {
   success: boolean;
@@ -30,7 +30,7 @@ const axiosInstance: AxiosInstance = (() => {
         data: {
           success: response.data.success,
           message: response.data.message,
-          data: pascalizeObject(response.data.data)
+          data: camelizeObject(response.data.data)
         }
       };
     },

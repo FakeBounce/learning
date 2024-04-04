@@ -6,6 +6,9 @@ import { ApplicantType } from '@services/applicants/interfaces';
 
 // Mock Pagination as it is not relevant for this test
 jest.mock('@src/components/table/Pagination', () => jest.fn());
+jest.mock('@src/pages/externalTesters/externalTesters-list/ExternalTestersListHeader', () =>
+  jest.fn()
+);
 
 describe('ExternalTestersList', () => {
   afterEach(() => {

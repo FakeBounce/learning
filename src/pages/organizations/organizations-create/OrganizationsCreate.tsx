@@ -1,6 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
-import { Box, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { createOrganizations } from '@redux/actions/organizationsActions';
 import { LMSCard } from '@src/components/lms';
@@ -12,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import CardHeader from '@src/components/cards/CardHeader';
 
 const createOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
@@ -43,7 +43,7 @@ interface CreateOrganizationForm {
 }
 
 export default function OrganizationsCreate() {
-  const [image, setImage] = useState<'' | File>('');
+  const [image, setImage] = useState<string | File>('');
 
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -75,7 +75,7 @@ export default function OrganizationsCreate() {
           logo: image,
           name: data.name,
           // @todo - Use google API on front and not through the backend to prevent multiplicating requests
-          // So for now we use this default address_id
+          // So for now we use this default addressId
           addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
           useDoubleAuth: 0,
           clientAdmin: {
@@ -92,19 +92,13 @@ export default function OrganizationsCreate() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-        <Box px={[0, 2]} display="flex">
-          <LMSCard
-            cardCss={{ maxWidth: '100%' }}
-            header={
-              <Typography variant="h5">
-                <Trans>Créer une organization</Trans>
-              </Typography>
-            }
-            footer={<OrganizationsCreateFooter />}
-          >
-            <OrganizationsCreateForm setImage={setImage} />
-          </LMSCard>
-        </Box>
+        <LMSCard
+          isPageCard
+          header={<CardHeader headerText={<Trans>Créer une organization</Trans>} />}
+          footer={<OrganizationsCreateFooter />}
+        >
+          <OrganizationsCreateForm image={image} setImage={setImage} />
+        </LMSCard>
       </form>
     </FormProvider>
   );

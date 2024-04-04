@@ -1,6 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t } from '@lingui/macro';
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getSingleApplicant, updateApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
@@ -137,24 +136,21 @@ export default function ApplicantsUpdate() {
     <>
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-          <Box px={[0, 2]} mb={2} display="flex">
-            <LMSCard
-              isPageCard
-              cardCss={{ maxWidth: '100%' }}
-              footer={isEditing ? <ApplicantsUpdateFooter /> : null}
-            >
-              <ApplicantsProfileHeader isUpdate={isEditing} />
-              {isEditing ? (
-                <ApplicantsUpdateForm image={image} setImage={setImage} />
-              ) : (
-                <>
-                  <ApplicantsProfileInfos />
-                  {/* @todo -> Replace with the applicant group */}
-                  <UserProfileGroups groups={[]} />
-                </>
-              )}
-            </LMSCard>
-          </Box>
+          <LMSCard
+            isPageCard
+            header={<ApplicantsProfileHeader isUpdate={isEditing} />}
+            footer={isEditing ? <ApplicantsUpdateFooter /> : null}
+          >
+            {isEditing ? (
+              <ApplicantsUpdateForm image={image} setImage={setImage} />
+            ) : (
+              <>
+                <ApplicantsProfileInfos />
+                {/* @todo -> Replace with the applicant group */}
+                <UserProfileGroups groups={[]} />
+              </>
+            )}
+          </LMSCard>
         </form>
       </FormProvider>
       {isModalOpen && isEditing && (

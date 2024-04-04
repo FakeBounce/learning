@@ -4,10 +4,10 @@ import { useAppSelector } from '@redux/hooks';
 import { ProfileSkeleton } from '@src/components/skeletons/ProfileSkeleton';
 import { ApplicantProfileState } from '@services/applicants/interfaces';
 import {
-  StyledApplicantColumn,
-  StyledApplicantRow,
-  StyledApplicantTypography
-} from '@src/pages/applicants/ApplicantsStyles';
+  StyledFormColumn,
+  StyledFormRow,
+  StyledFormTypography
+} from '@src/components/layouts/form/FormStyles';
 
 const emptyField = (
   <Box component="span" sx={{ textTransform: 'initial' }}>
@@ -25,55 +25,55 @@ export default function ExternalTestersProfileInfos() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2} px={2}>
+    <Box display="flex" flexDirection="column" gap={2}>
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
-            <StyledApplicantTypography>
+        <StyledFormColumn>
+          <StyledFormRow>
+            <StyledFormTypography>
               <Trans>Nom</Trans>
-            </StyledApplicantTypography>
+            </StyledFormTypography>
             <Typography sx={{ textTransform: 'uppercase' }}>
               {applicantProfileData.lastname}
             </Typography>
-          </StyledApplicantRow>
+          </StyledFormRow>
 
-          <StyledApplicantRow>
-            <StyledApplicantTypography>
+          <StyledFormRow>
+            <StyledFormTypography>
               <Trans>Prénom</Trans>
-            </StyledApplicantTypography>
+            </StyledFormTypography>
             <Typography sx={{ textTransform: 'capitalize' }}>
               {applicantProfileData.firstname}
             </Typography>
-          </StyledApplicantRow>
+          </StyledFormRow>
 
-          <StyledApplicantRow>
-            <StyledApplicantTypography>
+          <StyledFormRow>
+            <StyledFormTypography>
               <Trans>Email</Trans>
-            </StyledApplicantTypography>
+            </StyledFormTypography>
             <Typography sx={{ fontSize: (theme) => theme.typography.body1 }}>
               {applicantProfileData.email}
             </Typography>
-          </StyledApplicantRow>
-        </StyledApplicantColumn>
+          </StyledFormRow>
+        </StyledFormColumn>
 
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
-            <StyledApplicantTypography>
+        <StyledFormColumn>
+          <StyledFormRow>
+            <StyledFormTypography>
               <Trans>Id externe</Trans>
-            </StyledApplicantTypography>
+            </StyledFormTypography>
             <Typography sx={{ textTransform: 'uppercase' }}>
               {applicantProfileData.externalId || emptyField}
             </Typography>
-          </StyledApplicantRow>
-          <StyledApplicantRow>
-            <StyledApplicantTypography>
+          </StyledFormRow>
+          <StyledFormRow>
+            <StyledFormTypography>
               <Trans>Téléphone</Trans>
-            </StyledApplicantTypography>
+            </StyledFormTypography>
             <Typography sx={{ fontSize: (theme) => theme.typography.body1 }}>
               {applicantProfileData.phone || emptyField}
             </Typography>
-          </StyledApplicantRow>
-        </StyledApplicantColumn>
+          </StyledFormRow>
+        </StyledFormColumn>
       </Box>
     </Box>
   );

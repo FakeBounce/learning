@@ -26,7 +26,7 @@ export enum PermissionEnum {
   READ = 'Visualiser',
   UPDATE = 'Modifier',
   DELETE = 'Supprimer',
-  ADD_BULK = 'Ajouter en masse',
+  CREATE_BULK = 'Ajouter en masse',
   BLOCK_UNBLOCK = 'Bloquer/Débloquer'
 }
 

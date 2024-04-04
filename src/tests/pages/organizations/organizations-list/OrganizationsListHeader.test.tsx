@@ -20,7 +20,7 @@ describe('OrganizationsListHeader', () => {
     expect(screen.getByText(/Organisations/i)).toBeInTheDocument();
 
     // Ensure that the "Annuler" button is present
-    const createButton = screen.getByText(/Créer/i);
+    const createButton = screen.getByText(/Ajouter/i);
     expect(createButton).toBeInTheDocument();
 
     act(() => {

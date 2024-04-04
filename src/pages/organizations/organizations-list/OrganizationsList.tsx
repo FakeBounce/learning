@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getOrganizationsList } from '@redux/actions/organizationsActions';
 import { Organization } from '@services/organizations/interfaces';
@@ -91,10 +90,8 @@ export default function OrganizationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <OrganizationsListHeader />
-
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<OrganizationsListHeader />}>
         <FullTable
           headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
           bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
@@ -124,6 +121,6 @@ export default function OrganizationsList() {
           cancelModal={cancelModal}
         />
       )}
-    </Box>
+    </>
   );
 }

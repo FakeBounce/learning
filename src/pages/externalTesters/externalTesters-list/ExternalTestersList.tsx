@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getApplicantsList } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
@@ -95,10 +94,8 @@ export default function ApplicantsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <ExternalTestersListHeader />
-
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<ExternalTestersListHeader />}>
         <FullTable
           headerRenderer={externalTestersTableHeaderRenderer(handleSort, orderBy)}
           bodyRenderer={externalTestersTableRowsRenderer(applicantListData, handleClick)}
@@ -128,6 +125,6 @@ export default function ApplicantsList() {
           cancelModal={cancelModal}
         />
       )}
-    </Box>
+    </>
   );
 }
