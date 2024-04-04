@@ -6,6 +6,7 @@ import { render, screen, fireEvent, waitFor, act, cleanup } from '@testProvider'
 import OrganizationsUpdate from '@src/pages/organizations/organizations-update/OrganizationsUpdate';
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { Route, Routes } from 'react-router';
+import { generatePath } from 'react-router-dom';
 
 describe('OrganizationsUpdate', () => {
   beforeEach(() => {
@@ -36,7 +37,7 @@ describe('OrganizationsUpdate', () => {
             }
           }
         },
-        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+        customHistory: [generatePath(PATH_ORGANIZATIONS.update, { organizationId: '1' })]
       }
     );
 
@@ -48,7 +49,7 @@ describe('OrganizationsUpdate', () => {
       expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
     });
 
-    await act(() => {
+    await act(async () => {
       fireEvent.input(screen.getByLabelText(/Nom \*/i), {
         target: { value: 'New test Organisation' }
       });
@@ -84,7 +85,7 @@ describe('OrganizationsUpdate', () => {
             }
           }
         },
-        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+        customHistory: [generatePath(PATH_ORGANIZATIONS.update, { organizationId: '1' })]
       }
     );
 
@@ -124,7 +125,7 @@ describe('OrganizationsUpdate', () => {
             }
           }
         },
-        customHistory: [PATH_ORGANIZATIONS.update.replace(':organizationId', '1')]
+        customHistory: [generatePath(PATH_ORGANIZATIONS.update, { organizationId: '1' })]
       }
     );
 
@@ -133,7 +134,7 @@ describe('OrganizationsUpdate', () => {
       expect(screen.getByLabelText(/Nom \*/i)).toHaveValue('Test Organisation');
     });
 
-    await act(() => {
+    await act(async () => {
       fireEvent.input(screen.getByLabelText(/Nom \*/i), {
         target: { value: 'New test Organisation' }
       });

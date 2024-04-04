@@ -3,7 +3,7 @@ import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { Organization } from '@services/organizations/interfaces';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_DASHBOARD, PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 
 interface OrganizationsListPopperContentProps {
@@ -31,7 +31,7 @@ export default function OrganizationsListPopperContent({
   const goToUpdateOrganization = () => {
     if (organizationSelected !== null) {
       navigate(
-        PATH_ORGANIZATIONS.update.replace(':organizationId', String(organizationSelected.id))
+        generatePath(PATH_ORGANIZATIONS.update, { organizationId: String(organizationSelected.id) })
       );
     }
   };

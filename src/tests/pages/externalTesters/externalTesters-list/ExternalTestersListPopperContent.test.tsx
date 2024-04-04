@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, act, cleanup } from '@testProvider';
 import ExternalTestersListPopperContent from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListPopperContent';
 import { stateTester } from '../DefaultTesters';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 
 // Mock useNavigate
@@ -64,7 +64,7 @@ describe('ExternalTestersListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', stateTester.id.toString())
+      generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: stateTester.id.toString() })
     );
   });
 
@@ -110,7 +110,7 @@ describe('ExternalTestersListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', stateTester.id.toString())
+      generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: stateTester.id.toString() })
     );
   });
 });

@@ -1,6 +1,6 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
 import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
@@ -19,14 +19,18 @@ export default function ExternalTestersListPopperContent({
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
-      navigate(PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(
+        generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: String(applicantSelected.id) })
+      );
     }
   };
 
   const goToApplicantUpdate = () => {
     if (applicantSelected !== null) {
       dispatch(startEditingApplicant());
-      navigate(PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(
+        generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: String(applicantSelected.id) })
+      );
     }
   };
 
