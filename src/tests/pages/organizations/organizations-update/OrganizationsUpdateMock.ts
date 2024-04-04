@@ -15,7 +15,7 @@ export const setupSuccessAxiosMock = () => {
         name: 'Test Organization',
         address_id: '1',
         logo: 'Some logo url',
-        use_double_auth: 0,
+        useDoubleAuth: 0,
         client_admin: {
           login: 'test',
           firstname: 'Test',

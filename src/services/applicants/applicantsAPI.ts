@@ -11,7 +11,6 @@ import {
 } from '@services/applicants/interfaces';
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
-import { snakizeObject } from '@utils/helpers/convertCasing';
 
 export const getApplicants = async (
   args: GetApplicantsListRequest
@@ -21,7 +20,7 @@ export const getApplicants = async (
   return axios.post('/applicants/filter', {
     type,
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters,
     sort
   });
@@ -46,13 +45,12 @@ export const updateApplicantBlock = async (
 export const updateApplicant = async (
   args: UpdateApplicantRequest
 ): Promise<AxiosResponse<UpdateApplicantResponse>> => {
-  const { applicantId } = args;
-  const applicantForApi = snakizeObject(args.applicant);
+  const { applicantId, applicant } = args;
 
-  const formData = { ...applicantForApi };
-  if (args.profilePicture) {
-    formData['profile_picture'] = args.profilePicture;
-  }
+  const formData = { ...applicant };
+  // if (args.profilePicture) {
+  //   formData['profilePicture'] = args.profilePicture;
+  // }
 
   return axios.put(`/applicants/${applicantId}`, formData);
 };
@@ -60,15 +58,15 @@ export const updateApplicant = async (
 export const createApplicant = async (
   args: CreateApplicantRequest
 ): Promise<AxiosResponse<CreateApplicantResponse>> => {
-  const applicantForApi = snakizeObject(args.applicant);
+  const applicantForApi = args.applicant;
 
   const formData = {
     ...applicantForApi,
     groups_id: args.applicant.groups
   };
-  if (args.profilePicture) {
-    formData['profile_picture'] = args.profilePicture;
-  }
+  // if (args.profilePicture) {
+  //   formData['profile_picture'] = args.profilePicture;
+  // }
 
   return axios.post(`/applicants`, formData, {
     headers: {

@@ -11,7 +11,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { AnyAction } from 'redux';
 import { setSession } from '@utils/axios/session';
 import { resetApp } from '@redux/actions/globalActions';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
 
 interface UserState {
   user: ConnectedUser;
@@ -80,7 +79,7 @@ export const connectedUserSlice = createSlice({
       .addCase(
         UserActions.getUser.fulfilled,
         (state, action: { payload: GetConnectedUserResponse }) => {
-          const newUser = pascalizeObject(action.payload.data);
+          const newUser = action.payload.data;
           state.user = {
             ...newUser
           };
@@ -102,7 +101,7 @@ export const connectedUserSlice = createSlice({
         (state, action: { payload: UpdateOrganizationViewResponse }) => {
           state.user = {
             ...state.user,
-            currentOrganization: pascalizeObject(action.payload.data)
+            currentOrganization: action.payload.data
           };
           enqueueSnackbar(action.payload.message.value, { variant: 'success' });
         }

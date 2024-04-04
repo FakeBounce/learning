@@ -13,7 +13,7 @@ export default function UsersListHeader() {
       <ActionButton
         sx={{ textTransform: 'none', ml: 2 }}
         onClick={() => {
-          //TODO: Décommenter quand la page sera créée
+          // @TODO: Décommenter quand la page sera créée
           //navigate(PATH_USERS.add);
         }}
       >
@@ -22,7 +22,7 @@ export default function UsersListHeader() {
       <ActionButton
         sx={{ textTransform: 'none', ml: 2 }}
         onClick={() => {
-          //TODO: Décommenter quand la page sera créée
+          // @TODO: Décommenter quand la page sera créée
           //navigate(PATH_USERS.addMassive);
         }}
       >

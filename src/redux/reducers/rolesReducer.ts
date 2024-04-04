@@ -3,7 +3,6 @@ import { GetRolesRequest, Role } from '@services/roles/interfaces';
 import * as rolesServices from '@services/roles/rolesAPI';
 import { enqueueSnackbar } from 'notistack';
 import { AnyAction } from 'redux';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
 
 interface RolesState {
   rolesList: {
@@ -44,8 +43,8 @@ export const rolesSlice = createSlice({
         state.rolesList.rolesListLoading = true;
       })
       .addCase(getRolesList.fulfilled, (state, action) => {
-        state.rolesList.rolesListData = pascalizeObject(action.payload.data.rows);
-        state.rolesList.rolesListTotalCount = action.payload.data.pagination.total_results;
+        state.rolesList.rolesListData = action.payload.data.rows;
+        state.rolesList.rolesListTotalCount = action.payload.data.pagination.totalResults;
         state.rolesList.rolesListLoading = false;
       })
       .addCase(getRolesList.rejected, (state, action: AnyAction) => {

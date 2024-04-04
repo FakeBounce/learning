@@ -76,9 +76,9 @@ export default function OrganizationsCreate() {
           name: data.name,
           // @todo - Use google API on front and not through the backend to prevent multiplicating requests
           // So for now we use this default address_id
-          address_id: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
-          use_double_auth: 0,
-          client_admin: {
+          addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
+          useDoubleAuth: 0,
+          clientAdmin: {
             firstname: data.adminFirstName,
             lastname: data.adminLastName,
             email: data.adminEmail,

@@ -2,16 +2,16 @@ import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants
 
 export const defaultApplicant = {
   id: 1,
-  profile_picture: 'defaultApplicantPicture',
+  profilePicture: 'defaultApplicantPicture',
   email: 'defaultApplicant@test.fr',
   type: ApplicantType.STUDENT,
-  external_id: null,
+  externalId: null,
   firstname: 'default',
   lastname: 'applicant',
   phone: '0123456789',
-  is_active: true,
-  birth_name: null,
-  birth_date: '1990-01-01',
+  isActive: true,
+  birthName: null,
+  birthDate: '1990-01-01',
   city: 'defaultApplicantCity',
   notifications: {
     app: '1',
@@ -22,16 +22,16 @@ export const defaultApplicant = {
 
 export const blockedApplicant = {
   id: 2,
-  profile_picture: 'blockedApplicantPicture',
+  profilePicture: 'blockedApplicantPicture',
   email: 'blockedApplicant@test.fr',
   type: ApplicantType.STUDENT,
-  external_id: null,
+  externalId: null,
   firstname: 'blocked',
   lastname: 'applicant',
   phone: '0123456789',
-  is_active: false,
-  birth_name: null,
-  birth_date: '1990-01-01',
+  isActive: false,
+  birthName: null,
+  birthDate: '1990-01-01',
   city: 'blockedApplicantCity',
   notifications: {
     app: '1',
@@ -42,16 +42,16 @@ export const blockedApplicant = {
 
 export const unlockedApplicant = {
   id: 3,
-  profile_picture: 'unlockedApplicantPicture',
+  profilePicture: 'unlockedApplicantPicture',
   email: 'unlockedApplicant@test.fr',
   type: ApplicantType.STUDENT,
-  external_id: null,
+  externalId: null,
   firstname: 'unlocked',
   lastname: 'applicant',
   phone: '0123456789',
-  is_active: true,
-  birth_name: null,
-  birth_date: '1990-01-01',
+  isActive: true,
+  birthName: null,
+  birthDate: '1990-01-01',
   city: 'unlockedApplicantCity',
   notifications: {
     app: '1',
@@ -62,16 +62,16 @@ export const unlockedApplicant = {
 
 export const newApplicant = {
   id: 4,
-  profile_picture: 'newApplicantPicture',
+  profilePicture: 'newApplicantPicture',
   email: 'newApplicant@test.fr',
   type: ApplicantType.STUDENT,
-  external_id: null,
+  externalId: null,
   firstname: 'new',
   lastname: 'applicant',
   phone: '0123456789',
-  is_active: true,
-  birth_name: null,
-  birth_date: '1990-01-01',
+  isActive: true,
+  birthName: null,
+  birthDate: '1990-01-01',
   city: 'newApplicantCity',
   notifications: {
     app: '1',
@@ -126,7 +126,7 @@ export const singleApplicant = {
   email: 'singleApplicant@email.fr',
   type: ApplicantType.STUDENT,
   external_id: null,
-  is_active: true,
+  isActive: true,
   notifications: {
     app: '1',
     sms: '1',
@@ -136,8 +136,8 @@ export const singleApplicant = {
     firstname: 'single',
     lastname: 'applicant',
     phone: '0123456789',
-    birth_name: null,
-    birth_date: '1990-01-01',
+    birthName: null,
+    birthDate: '1990-01-01',
     city: 'singleApplicantCity'
   }
 };

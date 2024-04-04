@@ -68,8 +68,7 @@
   "JSaiRe": {
     "translation": "",
     "message": "Se connecter",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "",
@@ -80,8 +79,7 @@
   "NDUWrS": {
     "translation": "",
     "message": "Organization id is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "X1Endn": {
     "translation": "",
@@ -98,14 +96,12 @@
   "ZsZeV2": {
     "translation": "",
     "message": "Email is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "chRwq/": {
     "translation": "",
     "message": "Password is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
@@ -116,8 +112,7 @@
   "flJGrT": {
     "translation": "",
     "message": "Organization ID",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "",
@@ -134,8 +129,7 @@
   "nZGv/s": {
     "translation": "",
     "message": "Mot de passe oublié ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "",
@@ -146,8 +140,7 @@
   "uXStqy": {
     "translation": "",
     "message": "Mot de passe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
@@ -158,7 +151,6 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

@@ -26,8 +26,8 @@ export const getSession = () => {
     const storageItem = localStorage.getItem('LMS_TOKEN');
     if (storageItem) {
       const tokenDatas = JSON.parse(storageItem);
-      if (tokenDatas && tokenDatas.refresh_token) {
-        axios.defaults.headers.common.Authorization = `Bearer ${tokenDatas.refresh_token}`;
+      if (tokenDatas && tokenDatas.refreshToken) {
+        axios.defaults.headers.common.Authorization = `Bearer ${tokenDatas.refreshToken}`;
         return tokenDatas;
       }
     }

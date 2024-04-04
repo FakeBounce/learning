@@ -13,6 +13,7 @@ import LoginForm from 'src/pages/login/LoginForm';
 import * as Yup from 'yup';
 import { login } from '@redux/actions/connectedUserActions';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { LoginRequest } from '@services/connected-user/interfaces';
 
 // ----------------------------------------------------------------------
 
@@ -28,13 +29,13 @@ const StyledLoginContainerBox = styled(Box)(({ theme }) => ({
 const LoginSchema = Yup.object().shape({
   login: Yup.string().required(t`Email is required`),
   password: Yup.string().required(t`Password is required`),
-  organization_id: Yup.string().required(t`Organization id is required`)
+  organizationUuid: Yup.string().required(t`Organization id is required`)
 });
 
 const defaultValues = {
   login: '',
   password: '',
-  organization_id: ''
+  organizationUuid: ''
 };
 
 export default function LoginPage() {
@@ -57,10 +58,8 @@ export default function LoginPage() {
 
   const { handleSubmit } = methods;
 
-  const onSubmit = async (data: any) => {
-    dispatch(
-      login({ login: data.login, password: data.password, organization_uuid: data.organization_id })
-    );
+  const onSubmit = async (data: LoginRequest) => {
+    dispatch(login(data));
   };
 
   return (

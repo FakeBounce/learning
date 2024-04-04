@@ -24,10 +24,10 @@ export const createOrganizations = async (
 export const updateOrganizations = async (
   args: UpdateOrganizationsRequest
 ): Promise<AxiosResponse<UpdateOrganizationsResponse>> => {
-  const { id, name, address_id, logo } = args;
+  const { id, name, addressId, logo } = args;
   return axios.put(`/organizations/${id}`, {
     name,
-    address_id,
+    addressId,
     logo
   });
 };
@@ -54,7 +54,7 @@ export const getOrganizations = async (
 
   return axios.post('/organizations/filter', {
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters,
     sort
   });

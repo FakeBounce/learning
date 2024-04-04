@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { getSingleUser } from '@redux/reducers/usersReducer';
-import { User } from '@services/connected-user/interfaces';
+import { User } from '@services/users/interfaces';
 
 export default function UserProfile() {
   const dispatch = useAppDispatch();

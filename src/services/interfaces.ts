@@ -9,7 +9,7 @@ export interface ApiRequestSort {
 
 export interface ApiResponsePagination {
   page: number;
-  row_per_page: number;
-  total_results: number;
-  total_pages: number;
+  rowPerPage: number;
+  totalResults: number;
+  totalPages: number;
 }

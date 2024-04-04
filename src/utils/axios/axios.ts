@@ -1,7 +1,14 @@
 import { getEnvVariable } from '@utils/environnement';
-import axios, { AxiosInstance } from 'axios';
+import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { handle401Error } from '@utils/axios/handle401';
+import { ApiResponseMessage } from '@services/interfaces';
+import { pascalizeObject, snakizeObject } from '@utils/helpers/convertCasing';
 
+interface AxiosDefaultResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: any;
+}
 // Create axios instance with dynamic baseURL
 const axiosInstance: AxiosInstance = (() => {
   const baseURL = getEnvVariable('VITE_HOST_API_KEY');
@@ -12,9 +19,20 @@ const axiosInstance: AxiosInstance = (() => {
 
   const newInstance = axios.create({ baseURL, timeout: 1000 });
 
+  newInstance.interceptors.request.use((config) => {
+    return { ...config, data: snakizeObject(config.data) };
+  });
+
   newInstance.interceptors.response.use(
-    (response) => {
-      return response;
+    (response: AxiosResponse<AxiosDefaultResponse>) => {
+      return {
+        ...response,
+        data: {
+          success: response.data.success,
+          message: response.data.message,
+          data: pascalizeObject(response.data.data)
+        }
+      };
     },
     (error) => {
       if (error.response.status === 401) {

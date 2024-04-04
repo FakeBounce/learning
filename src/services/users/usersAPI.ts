@@ -15,7 +15,7 @@ export const getUsers = async (args: GetUsersRequest): Promise<AxiosResponse<Get
 
   return axios.post('/users/filter', {
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters: filters,
     sort: sort
   });

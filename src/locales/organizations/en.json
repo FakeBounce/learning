@@ -20,8 +20,7 @@
   "4kCp92": {
     "translation": "",
     "message": "L'email de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7p5kLi": {
     "translation": "",
@@ -32,8 +31,7 @@
   "7uQ5BG": {
     "translation": "",
     "message": "Adresse siège social",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "",
@@ -44,26 +42,22 @@
   "Be0x4u": {
     "translation": "",
     "message": "Prénom admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "C1e9Kp": {
     "translation": "",
     "message": "Le prénom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "CdGMiD": {
     "translation": "",
     "message": "L'email de l'admin est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Cm37TD": {
     "translation": "",
     "message": "et tout ses utilisateurs ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
@@ -80,14 +74,12 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "",
@@ -98,8 +90,7 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "",
@@ -110,26 +101,22 @@
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JSaiRe": {
     "translation": "",
     "message": "Se connecter",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JoxuHW": {
     "translation": "",
     "message": "L'adresse est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "",
@@ -140,20 +127,17 @@
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "W3FHUJ": {
     "translation": "",
@@ -170,14 +154,12 @@
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "b+/aiw": {
     "translation": "",
     "message": "Débloquer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dg0WGC": {
     "translation": "",
@@ -200,8 +182,7 @@
   "funWao": {
     "translation": "",
     "message": "Nom admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "g+hxtQ": {
     "translation": "",
@@ -218,26 +199,22 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kBPLqk": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kSDjJh": {
     "translation": "",
     "message": "Le nom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lHMRD2": {
     "translation": "",
     "message": "Bloquer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "",
@@ -254,14 +231,12 @@
   "rBTdOL": {
     "translation": "",
     "message": "L'identifiant est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rKvP91": {
     "translation": "",
     "message": "Email admin client",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "sAl4AV": {
     "translation": "",
@@ -278,8 +253,7 @@
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
@@ -290,7 +264,6 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

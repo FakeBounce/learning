@@ -15,7 +15,7 @@ function GuestGuard() {
   useEffect(() => {
     if (!isAuthenticated) {
       const storageToken = getSession();
-      if (storageToken !== null && storageToken.refresh_token !== null) {
+      if (storageToken !== null && storageToken.refreshToken !== null) {
         dispatch(refresh());
       }
     }

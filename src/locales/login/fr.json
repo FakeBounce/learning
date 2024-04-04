@@ -68,8 +68,7 @@
   "JSaiRe": {
     "translation": "Se connecter",
     "message": "Se connecter",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
@@ -80,8 +79,7 @@
   "NDUWrS": {
     "translation": "Organization id is required",
     "message": "Organization id is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "X1Endn": {
     "translation": "Pas encore de compte ?",
@@ -98,14 +96,12 @@
   "ZsZeV2": {
     "translation": "Email is required",
     "message": "Email is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "chRwq/": {
     "translation": "Password is required",
     "message": "Password is required",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -116,8 +112,7 @@
   "flJGrT": {
     "translation": "Organization ID",
     "message": "Organization ID",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -134,8 +129,7 @@
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
@@ -146,8 +140,7 @@
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
@@ -158,7 +151,6 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

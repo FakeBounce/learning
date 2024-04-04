@@ -17,7 +17,7 @@ const EditUserSchema = Yup.object().shape({
   firstname: Yup.string().required(t`Le prénom est requis`),
   email: Yup.string().required(t`L'email est requis`),
   login: Yup.string().required(t`Le login est requis`),
-  use_double_auth: Yup.boolean().required(t`La double authentification est requise`)
+  useDoubleAuth: Yup.boolean().required(t`La double authentification est requise`)
 });
 
 const defaultValues = {
@@ -25,7 +25,7 @@ const defaultValues = {
   firstname: '',
   email: '',
   login: '',
-  use_double_auth: false
+  useDoubleAuth: false
 };
 
 export interface EditUserForm {
@@ -33,7 +33,7 @@ export interface EditUserForm {
   firstname: string;
   email: string;
   login: string;
-  use_double_auth: boolean;
+  useDoubleAuth: boolean;
 }
 
 export default function UserEdit() {

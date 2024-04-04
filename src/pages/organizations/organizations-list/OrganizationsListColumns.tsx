@@ -11,7 +11,7 @@ export interface OrderBy {
   direction: 'DESC' | 'ASC';
 }
 export interface OrganizationColumn {
-  id: 'name' | 'city' | 'is_active';
+  id: 'name' | 'city' | 'isActive';
   label: ReactNode;
   maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
@@ -40,16 +40,16 @@ export const organizationsListColumns: readonly OrganizationColumn[] = [
   },
   { id: 'city', label: <Trans>Ville</Trans> },
   {
-    id: 'is_active',
+    id: 'isActive',
     label: <Trans>Statut</Trans>,
     maxWidth: 120,
     padding: 'none',
     renderCell: (row, handleClick) => {
-      const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
+      const activatedText = row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
       return (
         <Box display="flex" alignItems="center">
           <StatusChip
-            isActive={row.is_active}
+            isActive={row.isActive}
             activatedText={activatedText}
             handleClick={handleClick(row)}
           />
@@ -60,7 +60,7 @@ export const organizationsListColumns: readonly OrganizationColumn[] = [
 ];
 
 export const organizationsTableHeaderRenderer = (
-  setOrderBy: (id: 'name' | 'city' | 'is_active') => void,
+  setOrderBy: (id: 'name' | 'city' | 'isActive') => void,
   orderBy: OrderBy | null
 ) => {
   return organizationsListColumns.map((column) => (

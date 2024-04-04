@@ -1,22 +1,17 @@
 import { Trans } from '@lingui/macro';
-import { Avatar, Box, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { RHFTextField } from '@src/components/hook-form';
-import Iconify from '@src/components/iconify/Iconify';
-import { uploader } from '@utils/fileUploader';
-import { ChangeEvent, ReactNode, useRef, useState } from 'react';
-import CircledAvatar from '@src/components/lms/CircledAvatar';
+import { Dispatch, SetStateAction } from 'react';
+import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
+import RHFAvatar from '../../../components/hook-form/RHFAvatar';
 
-const labelWithRequired = (label: ReactNode) => (
-  <>
-    {label}
-    <span className="MuiFormLabel-asterisk"> *</span>
-  </>
-);
-
-export default function OrganizationsCreateForm({ setImage }: { setImage: (image: File) => void }) {
-  const [result, setResult] = useState<string | null>('');
-  const imageRef = useRef(null);
-
+export default function OrganizationsCreateForm({
+  image,
+  setImage
+}: {
+  setImage: Dispatch<SetStateAction<string | File>>;
+  image: string | File;
+}) {
   return (
     <Stack
       spacing={3}
@@ -24,62 +19,31 @@ export default function OrganizationsCreateForm({ setImage }: { setImage: (image
         '& .MuiTextField-root': { mr: 4 }
       }}
     >
-      <CircledAvatar>
-        <Stack alignItems="center" spacing={1}>
-          {result ? (
-            <Avatar
-              ref={imageRef}
-              src={result}
-              sx={{ width: 112, height: 112, borderRadius: 56 }}
-            />
-          ) : (
-            <>
-              <Iconify icon="majesticons:file-plus-line" />
-              <Typography fontSize="10px">
-                <Trans>Téléchargez une photo</Trans>
-              </Typography>
-            </>
-          )}
-        </Stack>
-        <RHFTextField
-          name="logo"
-          type={'file'}
-          accept="image/*"
-          value={''}
-          sx={{ display: 'none' }}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            if (e.target.files) {
-              setImage(e.target.files[0]);
-              uploader(e, setResult);
-            }
-          }}
-          hidden
-        />
-      </CircledAvatar>
+      <RHFAvatar name={'logo'} image={image} setImage={setImage} />
       <Box display="flex">
-        <RHFTextField name={'name'} label={labelWithRequired(<Trans>Nom</Trans>)} />
+        <RHFTextField name={'name'} label={<LabelWithRequired label={<Trans>Nom</Trans>} />} />
         <RHFTextField
           name={'address'}
-          label={labelWithRequired(<Trans>Adresse siège social</Trans>)}
+          label={<LabelWithRequired label={<Trans>Adresse siège social</Trans>} />}
         />
       </Box>
 
       <Box display="flex">
         <RHFTextField
           name={'adminLastName'}
-          label={labelWithRequired(<Trans>Nom admin client</Trans>)}
+          label={<LabelWithRequired label={<Trans>Nom admin client</Trans>} />}
         />
         <RHFTextField
           name={'adminFirstName'}
-          label={labelWithRequired(<Trans>Prénom admin client</Trans>)}
+          label={<LabelWithRequired label={<Trans>Prénom admin client</Trans>} />}
         />
       </Box>
 
       <Box display="flex">
-        <RHFTextField name={'login'} label={labelWithRequired(<Trans>Login</Trans>)} />
+        <RHFTextField name={'login'} label={<LabelWithRequired label={<Trans>Login</Trans>} />} />
         <RHFTextField
           name={'adminEmail'}
-          label={labelWithRequired(<Trans>Email admin client</Trans>)}
+          label={<LabelWithRequired label={<Trans>Email admin client</Trans>} />}
         />
       </Box>
     </Stack>

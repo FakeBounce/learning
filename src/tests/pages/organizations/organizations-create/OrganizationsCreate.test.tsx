@@ -100,7 +100,7 @@ describe('OrganizationsCreate', () => {
               id: 1,
               logo: 'someLogo',
               name: 'some name',
-              is_active: true,
+              isActive: true,
               address: 'some address',
               city: 'some city',
               use_double_auth: false

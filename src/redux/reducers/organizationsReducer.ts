@@ -53,9 +53,9 @@ export const organizationSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      /*
+      /**
           Fetch Single organization Reducers
-           */
+           **/
       .addCase(OrganizationsActions.getSingleOrganization.pending, (state) => {
         state.currentOrganization.currentOrganizationLoading = true;
       })
@@ -72,9 +72,9 @@ export const organizationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
       })
-      /*
+      /**
         List organization Reducers
-         */
+         **/
       .addCase(OrganizationsActions.getOrganizationsList.pending, (state) => {
         state.organizationList.organizationListLoading = true;
         state.currentOrganization.currentOrganizationData = null;
@@ -85,7 +85,7 @@ export const organizationSlice = createSlice({
           state.organizationList.organizationListLoading = false;
           state.organizationList.organizationListData = action.payload.data.rows;
           state.organizationList.organizationListTotalCount =
-            action.payload.data.pagination.total_results;
+            action.payload.data.pagination.totalResults;
         }
       )
       .addCase(OrganizationsActions.getOrganizationsList.rejected, (state, action: AnyAction) => {
@@ -93,9 +93,9 @@ export const organizationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      /*
+      /**
         organizations Block Reducers
-         */
+         **/
       //  @todo Should we display loading ?
       .addCase(OrganizationsActions.toggleOrganizationsBlock.pending, (_) => {})
       .addCase(
@@ -114,11 +114,11 @@ export const organizationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      /*
+      /**
             Update organization Reducers
             We update the current organization data in .fullfilled cause that's the one we are currently viewing
             Through the fetch single organization action
-             */
+             **/
       .addCase(OrganizationsActions.updateOrganizations.pending, (state) => {
         state.organizationUpdate.organizationUpdateLoading = true;
       })
@@ -136,9 +136,9 @@ export const organizationSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(`${errorMessage}`, { variant: 'error' });
       })
-      /*
+      /**
         Create organization Reducers
-         */
+         **/
       .addCase(OrganizationsActions.createOrganizations.pending, (state) => {
         state.organizationCreate.organizationCreateLoading = true;
       })

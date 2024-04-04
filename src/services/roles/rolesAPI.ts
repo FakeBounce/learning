@@ -20,7 +20,7 @@ export const getRoles = async (args: GetRolesRequest): Promise<AxiosResponse<Get
 
   return axios.post('/roles/filter', {
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters,
     sort
   });

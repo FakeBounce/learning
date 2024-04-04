@@ -14,7 +14,6 @@ import {
   convertApplicantValues
 } from '@utils/helpers/convertApplicantValues';
 import { t } from '@lingui/macro';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
 
 export const initialApplicantState: ApplicantState = {
   applicantList: {
@@ -62,10 +61,7 @@ export const applicantSlice = createSlice({
           state.applicantList.applicantListData = convertApplicantArrayValues(
             action.payload.data.rows
           );
-          // @todo : Remove this line when the API will be ready
-          state.applicantList.applicantListTotalCount = 2;
-          // state.applicantList.applicantListTotalCount =
-          //   action.payload.data.pagination.total_results;
+          state.applicantList.applicantListTotalCount = action.payload.data.pagination.totalResults;
         }
       )
       .addCase(ApplicantsActions.getApplicantsList.rejected, (state, action: AnyAction) => {
@@ -95,7 +91,7 @@ export const applicantSlice = createSlice({
         ApplicantsActions.updateApplicant.fulfilled,
         (state, action: { payload: UpdateApplicantResponse }) => {
           state.applicantUpdate.applicantUpdateLoading = false;
-          state.applicantProfile.applicantProfileData = pascalizeObject(action.payload.data);
+          state.applicantProfile.applicantProfileData = action.payload.data;
           state.applicantUpdate.isEditing = false;
           enqueueSnackbar(t`Les modifications ont bien été enregistrées`, { variant: 'success' });
         }

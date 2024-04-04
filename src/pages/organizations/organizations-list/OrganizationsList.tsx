@@ -56,7 +56,7 @@ export default function OrganizationsList() {
     dispatch(getOrganizationsList(organizationRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);
 
-  const handleSort = (id: 'name' | 'city' | 'is_active') => {
+  const handleSort = (id: 'name' | 'city' | 'isActive') => {
     if (orderBy?.id === id) {
       if (orderBy.direction === 'DESC') {
         setOrderBy(null);
