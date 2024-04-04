@@ -34,7 +34,7 @@ const pageCardCss = {
   borderRadius: 4,
   padding: 0,
   maxWidth: '100%',
-  marginBottom: 0.5
+  marginBottom: 2
 };
 
 export default function LMSCard({
@@ -55,30 +55,40 @@ export default function LMSCard({
     ...cardCss
   };
 
-  const CardContent = (
+  if (isPageCard) {
+    return (
+      <Stack px={2} maxWidth="100%" flex={'1 1 0'}>
+        <Paper elevation={3} sx={{ ...mergedCardCss }}>
+          {header && (
+            <Stack spacing={2} p={2} px={4}>
+              {header}
+            </Stack>
+          )}
+          <Stack spacing={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
+            {children}
+          </Stack>
+          {footer && (
+            <Stack spacing={2} p={2} px={4} sx={{ mt: 2 }}>
+              {footer}
+            </Stack>
+          )}
+        </Paper>
+      </Stack>
+    );
+  }
+  return (
     <Paper elevation={3} sx={{ ...mergedCardCss }}>
       {header && (
-        <Stack spacing={2} p={2} px={4}>
+        <Stack spacing={2} mb={2}>
           {header}
         </Stack>
       )}
-      <Stack spacing={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
-        {children}
-      </Stack>
+      {children}
       {footer && (
-        <Stack spacing={2} p={2} px={4} sx={{ mt: 2 }}>
+        <Stack spacing={2} sx={{ mt: 2 }}>
           {footer}
         </Stack>
       )}
     </Paper>
   );
-
-  if (isPageCard) {
-    return (
-      <Stack px={2} maxWidth="100%" flex={'1 1 0'}>
-        {CardContent}
-      </Stack>
-    );
-  }
-  return CardContent;
 }

@@ -20,7 +20,8 @@
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -31,7 +32,8 @@
   "7uQ5BG": {
     "translation": "Adresse siège social",
     "message": "Adresse siège social",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
@@ -42,17 +44,20 @@
   "Be0x4u": {
     "translation": "Prénom admin client",
     "message": "Prénom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "C1e9Kp": {
     "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Cm37TD": {
     "translation": "et tout ses utilisateurs ?",
@@ -87,7 +92,8 @@
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -116,7 +122,8 @@
   "JoxuHW": {
     "translation": "L'adresse est requise",
     "message": "L'adresse est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -139,32 +146,38 @@
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "b+/aiw": {
     "translation": "Débloquer une organisation",
@@ -175,7 +188,8 @@
   "dg0WGC": {
     "translation": "L'organisation n'existe pas",
     "message": "L'organisation n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -192,7 +206,8 @@
   "funWao": {
     "translation": "Nom admin client",
     "message": "Nom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "g+hxtQ": {
     "translation": "Créer",
@@ -209,7 +224,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
@@ -220,7 +236,8 @@
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lHMRD2": {
     "translation": "Bloquer une organisation",
@@ -243,12 +260,14 @@
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rKvP91": {
     "translation": "Email admin client",
     "message": "Email admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "sAl4AV": {
     "translation": "Téléchargez une photo",
@@ -277,6 +296,7 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

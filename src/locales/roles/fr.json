@@ -98,7 +98,8 @@
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -151,6 +152,7 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

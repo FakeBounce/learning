@@ -98,7 +98,8 @@
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -151,6 +152,7 @@
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

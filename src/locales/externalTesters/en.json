@@ -62,7 +62,8 @@
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
@@ -73,7 +74,8 @@
   "GroyQn": {
     "translation": "",
     "message": "Le testeur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Gt66tb": {
     "translation": "",
@@ -102,12 +104,14 @@
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -118,7 +122,8 @@
   "MZdToq": {
     "translation": "",
     "message": "Testeurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Mbj9Lm": {
     "translation": "",
@@ -135,7 +140,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "",
@@ -152,17 +158,20 @@
   "TOpCm4": {
     "translation": "",
     "message": "Ajouter un testeur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -173,7 +182,8 @@
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "",
@@ -220,7 +230,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -267,7 +278,8 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "zKPyEG": {
     "translation": "",

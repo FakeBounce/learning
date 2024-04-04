@@ -26,7 +26,8 @@
   "4kUPlv": {
     "translation": "",
     "message": "Notifications app",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -37,7 +38,8 @@
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8N1T4V": {
     "translation": "",
@@ -48,7 +50,8 @@
   "9HM7Cg": {
     "translation": "",
     "message": "Notification email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "",
@@ -59,22 +62,26 @@
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CInq4A": {
     "translation": "",
     "message": "Notifications email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CVT4YH": {
     "translation": "",
     "message": "Notification app",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "",
@@ -115,7 +122,8 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
@@ -144,7 +152,8 @@
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "IRPK7p": {
     "translation": "",
@@ -155,7 +164,8 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -172,12 +182,14 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "",
@@ -194,7 +206,8 @@
   "QOV2qe": {
     "translation": "",
     "message": "Date de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QThGLQ": {
     "translation": "",
@@ -217,12 +230,14 @@
   "Tvgy+o": {
     "translation": "",
     "message": "Notification SMS",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "",
@@ -245,7 +260,8 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -256,12 +272,14 @@
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YS+12y": {
     "translation": "",
     "message": "Ajouter un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YlStRO": {
     "translation": "",
@@ -320,12 +338,14 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -372,12 +392,14 @@
   "vdb2j0": {
     "translation": "",
     "message": "Notifications SMS",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wB7q3X": {
     "translation": "",
@@ -388,7 +410,8 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "zKPyEG": {
     "translation": "",

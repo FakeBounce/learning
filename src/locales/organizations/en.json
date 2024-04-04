@@ -20,7 +20,8 @@
   "4kCp92": {
     "translation": "",
     "message": "L'email de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -31,7 +32,8 @@
   "7uQ5BG": {
     "translation": "",
     "message": "Adresse siège social",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "",
@@ -42,17 +44,20 @@
   "Be0x4u": {
     "translation": "",
     "message": "Prénom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "C1e9Kp": {
     "translation": "",
     "message": "Le prénom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CdGMiD": {
     "translation": "",
     "message": "L'email de l'admin est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Cm37TD": {
     "translation": "",
@@ -87,7 +92,8 @@
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "",
@@ -116,7 +122,8 @@
   "JoxuHW": {
     "translation": "",
     "message": "L'adresse est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -139,32 +146,38 @@
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "b+/aiw": {
     "translation": "",
@@ -175,7 +188,8 @@
   "dg0WGC": {
     "translation": "",
     "message": "L'organisation n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -192,7 +206,8 @@
   "funWao": {
     "translation": "",
     "message": "Nom admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "g+hxtQ": {
     "translation": "",
@@ -209,7 +224,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "",
@@ -220,7 +236,8 @@
   "kSDjJh": {
     "translation": "",
     "message": "Le nom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lHMRD2": {
     "translation": "",
@@ -243,12 +260,14 @@
   "rBTdOL": {
     "translation": "",
     "message": "L'identifiant est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rKvP91": {
     "translation": "",
     "message": "Email admin client",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "sAl4AV": {
     "translation": "",
@@ -277,6 +296,7 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }
