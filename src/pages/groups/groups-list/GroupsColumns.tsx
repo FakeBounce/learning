@@ -22,7 +22,24 @@ export interface GroupsColumn {
   ) => ReactNode;
 }
 
-export const groupsColumns: readonly GroupsColumn[] = [
+const groupsAction: GroupsColumn = {
+  id: 'nbUsers',
+  label: "",
+  renderCell: (row, handleClick) => {
+    return(
+      <Box display={"flex"} alignItems={"center"} justifyContent={"end"}>
+        <IconButton onClick={handleClick(row)} sx={{ boxShadow: 'none' }}>
+          <Iconify
+            sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
+            icon={'pepicons-pop:dots-y'}
+          />
+        </IconButton>
+      </Box>
+    );
+  }
+};
+
+export const groupsColumns: GroupsColumn[] = [
   {
     id: 'name',
     label: <Trans>Nom</Trans>,
@@ -51,19 +68,13 @@ export const groupsColumns: readonly GroupsColumn[] = [
   },
   {
     id: 'nbUsers',
-    label: <Trans>{'Nombre d\'utilisateurs'}</Trans>,
-    renderCell: (row, handleClick) => {
+    label: <Trans>Nombre d'utilisateurs</Trans>,
+    renderCell: (row) => {
       return(
         <Box display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
           <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
             {row.nbUsers}
           </Typography>
-          <IconButton onClick={handleClick(row)} sx={{ boxShadow: 'none' }}>
-            <Iconify
-              sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
-              icon={'pepicons-pop:dots-y'}
-            />
-          </IconButton>
         </Box>
       );
     }
@@ -72,11 +83,15 @@ export const groupsColumns: readonly GroupsColumn[] = [
 
 export const groupsTableHeaderRenderer = (
   setOrderBy: (id: 'name' | 'description' | 'nbUsers') => void,
-  orderBy: OrderBy | null
+  orderBy: OrderBy | null,
+  hasPermission: boolean
 ) => {
-  return groupsColumns.map((column) => (
+  if (hasPermission) {
+    if(!groupsColumns.includes(groupsAction)) groupsColumns.push(groupsAction);
+  }
+  return groupsColumns.map((column, index) => (
     <TableCell
-      key={column.id}
+      key={`${column.id}-${index}`}
       align={column.align}
       padding={column.padding || 'normal'}
       sx={{
@@ -105,15 +120,15 @@ export const groupsTableHeaderRenderer = (
 
 export const groupsTableRowsRenderer = (
   groups: Group[],
-  handleClick: (newGroup: Group) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (newGroup: Group) => (event: MouseEvent<HTMLElement>) => void,
 ) => {
   return groups.map((row: Group) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
-        {groupsColumns.map((column: GroupsColumn) => {
+        {groupsColumns.map((column: GroupsColumn, index) => {
           if (column.renderCell) {
             return (
-              <TableCell key={column.id} padding={column.padding || 'normal'}>
+              <TableCell key={`${column.id}-${index}`} padding={column.padding || 'normal'}>
                 {column.renderCell(row, handleClick)}
               </TableCell>
             );

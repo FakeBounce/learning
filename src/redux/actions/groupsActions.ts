@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { GetGroupsRequest } from '@services/groups/interfaces';
 import * as GroupsServices from '@services/groups/groupsAPI';
 
-export const getGroups = createAsyncThunk(
+export const getGroupsList = createAsyncThunk(
   'groups/getGroups',
   async (args: GetGroupsRequest, { rejectWithValue }) => {
     try {

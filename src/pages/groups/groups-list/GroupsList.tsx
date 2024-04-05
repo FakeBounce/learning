@@ -1,4 +1,4 @@
-import { MouseEvent } from 'react';
+import { MouseEvent, useContext } from 'react';
 import { Box } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
 import GroupsListHeader from '@src/pages/groups/groups-list/GroupsListHeader';
@@ -14,9 +14,12 @@ import {
 import { Group } from '@services/groups/interfaces';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
-import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 import GroupsListPopperContent from '@src/pages/groups/groups-list/GroupsListPopperContent';
-import { getGroupsList } from '@redux/reducers/groupsReducer';
+import { getGroupsList } from '@redux/actions/groupsActions';
+import GroupsListModal from '@src/pages/groups/groups-list/GroupsListModal';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 export default function GroupsList() {
   const dispatch= useAppDispatch();
@@ -28,6 +31,12 @@ export default function GroupsList() {
   const [groupSelected, setGroupSelected] = useState<Group | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
+  const canUpdateGroup = isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE);
+  const canDeleteGroup = isAuthorizedByPermissionsTo(pageType, PermissionEnum.DELETE);
 
   useEffect(() => {
     const defaultRoleListRequestConfig = {
@@ -43,7 +52,6 @@ export default function GroupsList() {
           sort: { field: orderBy.id, direction: orderBy.direction }
         };
 
-    //@TODO: implement getGroupsList
     dispatch(getGroupsList(groupsRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);
 
@@ -56,7 +64,7 @@ export default function GroupsList() {
     setCurrentPage(0);
   };
 
-  const handleSort = (id: 'name' | 'description' | 'nbUsers') => {
+  const handleSort = (id: 'name' | 'description' | 'nbUsers' | 'actions') => {
     if (orderBy?.id === id) {
       if (orderBy.direction === 'DESC') {
         setOrderBy(null);
@@ -91,7 +99,7 @@ export default function GroupsList() {
         <GroupsListHeader />
 
         <FullTable
-          headerRenderer={groupsTableHeaderRenderer(handleSort, orderBy)}
+          headerRenderer={groupsTableHeaderRenderer(handleSort, orderBy, (canUpdateGroup || canDeleteGroup))}
           bodyRenderer={groupsTableRowsRenderer(groupsListData, handleClick)}
           isLoading={groupsListLoading}
           rowsNum={rowsPerPage}
@@ -112,8 +120,8 @@ export default function GroupsList() {
         />
       </LMSPopover>
       {groupSelected && (
-        <RolesListModal
-          roleSelected={groupSelected}
+        <GroupsListModal
+          groupSelected={groupSelected}
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           cancelModal={cancelModal}
