@@ -30,11 +30,9 @@ export interface ApplicantUpdateState {
 
 export interface ApplicantCreateState {
   applicantCreateLoading: boolean;
-  hasCreated: boolean;
 }
 export interface ApplicantBulkState {
   applicantBulkLoading: boolean;
-  hasCreatedBulk: boolean;
 }
 
 interface BaseApplicant {

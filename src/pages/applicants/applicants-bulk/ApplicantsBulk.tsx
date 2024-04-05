@@ -1,15 +1,16 @@
 import { t } from '@lingui/macro';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { extractApplicantsFromCsv } from '@utils/helpers/csvExtractor';
 import { ApplicantForBulk, ApplicantType } from '@services/applicants/interfaces';
 import { FormProvider, useForm } from 'react-hook-form';
-import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { useAppDispatch } from '@redux/hooks';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
-import { resetCreatingBulkApplicant } from '@redux/reducers/applicantsReducer';
+import { resetApplicantState } from '@redux/reducers/applicantsReducer';
 import { createBulkApplicant } from '@redux/actions/applicantsActions';
 import { format } from 'date-fns';
 import ApplicantsBulkContent from '@src/pages/applicants/applicants-bulk/ApplicantsBulkContent';
+import { enqueueSnackbar } from 'notistack';
 
 export default function ApplicantsBulk() {
   const [fileError, setFileError] = useState<string | null>(null);
@@ -18,15 +19,7 @@ export default function ApplicantsBulk() {
   const [faultyRows, setFaultyRows] = useState<ApplicantForBulk[]>([]);
 
   const dispatch = useAppDispatch();
-  const { hasCreatedBulk } = useAppSelector((state) => state.applicants.applicantBulk);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (hasCreatedBulk) {
-      navigate(PATH_APPLICANTS.root);
-      dispatch(resetCreatingBulkApplicant());
-    }
-  }, [hasCreatedBulk]);
 
   const handleDropAvatar = useCallback(async (acceptedFiles: any) => {
     setFileError(null);
@@ -68,7 +61,7 @@ export default function ApplicantsBulk() {
 
   const onSubmit = async () => {
     if (!fileUploaded) {
-      setFileError(t`Veillez sélectionner un fichier`);
+      setFileError(t`Veuillez sélectionner un fichier`);
       return;
     }
     if (validRows.length === 0) {
@@ -82,9 +75,16 @@ export default function ApplicantsBulk() {
       // @todo - Wait for API to accept regular phone numbers
       phone: applicantForBulk.phone === '' ? undefined : `+${applicantForBulk.phone}`
     }));
-    dispatch(
-      createBulkApplicant({ applicantList: bulkApplicantRequest, type: ApplicantType.STUDENT })
-    );
+
+    try {
+      await dispatch(
+        createBulkApplicant({ applicantList: bulkApplicantRequest, type: ApplicantType.STUDENT })
+      );
+      navigate(PATH_APPLICANTS.root);
+    } catch (error) {
+      enqueueSnackbar(error as string, { variant: 'error' });
+      dispatch(resetApplicantState());
+    }
   };
 
   return (

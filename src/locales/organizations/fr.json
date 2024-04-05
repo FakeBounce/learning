@@ -20,8 +20,7 @@
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
     "message": "L'email de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -50,14 +49,12 @@
   "C1e9Kp": {
     "translation": "Le prénom de l'admin est requis",
     "message": "Le prénom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "CdGMiD": {
     "translation": "L'email de l'admin est invalide",
     "message": "L'email de l'admin est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Cm37TD": {
     "translation": "et tout ses utilisateurs ?",
@@ -122,8 +119,7 @@
   "JoxuHW": {
     "translation": "L'adresse est requise",
     "message": "L'adresse est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -146,14 +142,12 @@
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
@@ -176,8 +170,7 @@
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
     "message": "Veuillez ajouter un logo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "b+/aiw": {
     "translation": "Débloquer une organisation",
@@ -236,8 +229,7 @@
   "kSDjJh": {
     "translation": "Le nom de l'admin est requis",
     "message": "Le nom de l'admin est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lHMRD2": {
     "translation": "Bloquer une organisation",
@@ -260,8 +252,7 @@
   "rBTdOL": {
     "translation": "L'identifiant est requis",
     "message": "L'identifiant est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rKvP91": {
     "translation": "Email admin client",

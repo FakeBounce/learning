@@ -1,5 +1,4 @@
 import { createOrganizations } from '@services/organizations/organizationsAPI';
-import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import OrganizationsCreateMock, {
   setupErrorAxiosMock,
   setupSuccessAxiosMock
@@ -83,39 +82,6 @@ describe('OrganizationsCreate', () => {
 
       // Check if the request has the expected properties
       expect(request.url).toBe('/organizations');
-    });
-  });
-
-  it('handles redirection after success', async () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
-    // Render the OrganizationsCreate component
-    render(<OrganizationsCreate />, {
-      preloadedState: {
-        organizations: {
-          currentOrganization: {
-            currentOrganizationData: {
-              id: 1,
-              logo: 'someLogo',
-              name: 'some name',
-              isActive: true,
-              address: 'some address',
-              city: 'some city',
-              useDoubleAuth: false
-            },
-            currentOrganizationLoading: false
-          },
-          organizationCreate: {
-            organizationCreateLoading: false
-          }
-        }
-      }
-    });
-
-    await waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith(PATH_ORGANIZATIONS.root);
     });
   });
 

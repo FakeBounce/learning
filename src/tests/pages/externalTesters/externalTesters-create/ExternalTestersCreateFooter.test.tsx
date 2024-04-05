@@ -16,7 +16,6 @@ describe('ExternalTestersCreateFooter', () => {
         applicants: {
           ...initialApplicantState,
           applicantCreate: {
-            hasCreated: false,
             applicantCreateLoading: false
           }
         }
@@ -42,7 +41,6 @@ describe('ExternalTestersCreateFooter', () => {
         applicants: {
           ...initialApplicantState,
           applicantCreate: {
-            hasCreated: false,
             applicantCreateLoading: true
           }
         }

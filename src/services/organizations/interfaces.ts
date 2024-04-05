@@ -59,7 +59,7 @@ export interface CreateOrganizationsRequest {
   name: string;
   addressId: string;
   logo: File | string;
-  useDoubleAuth: 0 | 1;
+  useDoubleAuth: boolean;
   clientAdmin: {
     login: string;
     firstname: string;

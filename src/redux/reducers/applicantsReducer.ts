@@ -31,12 +31,10 @@ export const initialApplicantState: ApplicantState = {
     isEditing: false
   },
   applicantCreate: {
-    applicantCreateLoading: false,
-    hasCreated: false
+    applicantCreateLoading: false
   },
   applicantBulk: {
-    applicantBulkLoading: false,
-    hasCreatedBulk: false
+    applicantBulkLoading: false
   }
 };
 
@@ -50,12 +48,7 @@ export const applicantSlice = createSlice({
     startEditingApplicant: (state) => {
       state.applicantUpdate.isEditing = true;
     },
-    resetCreatingApplicant: (state) => {
-      state.applicantCreate.hasCreated = false;
-    },
-    resetCreatingBulkApplicant: (state) => {
-      state.applicantBulk.hasCreatedBulk = false;
-    }
+    resetApplicantState: () => initialApplicantState
   },
   extraReducers: (builder) => {
     builder
@@ -111,13 +104,11 @@ export const applicantSlice = createSlice({
       })
       .addCase(ApplicantsActions.createApplicant.pending, (state) => {
         state.applicantCreate.applicantCreateLoading = true;
-        state.applicantCreate.hasCreated = false;
       })
       .addCase(
         ApplicantsActions.createApplicant.fulfilled,
         (state, action: { payload: CreateApplicantResponse }) => {
           state.applicantCreate.applicantCreateLoading = false;
-          state.applicantCreate.hasCreated = true;
           const messageToDisplay =
             action.payload.data.type === ApplicantType.TESTER
               ? t`Le testeur à bien été enregistré`
@@ -125,40 +116,30 @@ export const applicantSlice = createSlice({
           enqueueSnackbar(messageToDisplay, { variant: 'success' });
         }
       )
-      .addCase(ApplicantsActions.createApplicant.rejected, (state, action: AnyAction) => {
-        state.applicantCreate.applicantCreateLoading = false;
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
+      .addCase(ApplicantsActions.createApplicant.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       })
       .addCase(ApplicantsActions.createBulkApplicant.pending, (state) => {
         state.applicantBulk.applicantBulkLoading = true;
-        state.applicantBulk.hasCreatedBulk = false;
       })
       .addCase(
         ApplicantsActions.createBulkApplicant.fulfilled,
         (state, action: { payload: CreateBulkApplicantResponse }) => {
           state.applicantBulk.applicantBulkLoading = false;
-          state.applicantBulk.hasCreatedBulk = true;
           const messageToDisplay =
             action.payload.data.rows[0].type === ApplicantType.TESTER
-              ? t`Les testeur ont bien été enregistrés`
-              : t`Les étudiant ont bien été enregistrés`;
+              ? t`Les testeurs ont bien été enregistrés`
+              : t`Les étudiants ont bien été enregistrés`;
           enqueueSnackbar(messageToDisplay, { variant: 'success' });
         }
       )
-      .addCase(ApplicantsActions.createBulkApplicant.rejected, (state, action: AnyAction) => {
-        state.applicantBulk.applicantBulkLoading = false;
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
+      .addCase(ApplicantsActions.createBulkApplicant.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const {
-  startEditingApplicant,
-  cancelEditingApplicant,
-  resetCreatingApplicant,
-  resetCreatingBulkApplicant
-} = applicantSlice.actions;
+export const { startEditingApplicant, cancelEditingApplicant, resetApplicantState } =
+  applicantSlice.actions;
 
 export default applicantSlice.reducer;
