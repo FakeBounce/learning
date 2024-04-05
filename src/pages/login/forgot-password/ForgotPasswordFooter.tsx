@@ -3,9 +3,12 @@ import { Trans } from '@lingui/macro';
 import { Box, Link } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
 import { PATH_AUTH } from '@utils/navigation/paths';
+import { useAppSelector } from '@redux/hooks';
 
 
-export default function ForgotPasswordFooter({ isLoading }: { isLoading: boolean }) {
+export default function ForgotPasswordFooter() {
+  const { loading } = useAppSelector((state) => state.connectedUser.forgotPassword);
+
   return (
     <Box>
       <ActionButton
@@ -13,7 +16,7 @@ export default function ForgotPasswordFooter({ isLoading }: { isLoading: boolean
         size="large"
         type="submit"
         role="submit"
-        loading={isLoading}
+        loading={loading}
         sx={{ textTransform: 'uppercase' }}
       >
         <Trans>Réinitialiser</Trans>

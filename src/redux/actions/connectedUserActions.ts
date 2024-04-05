@@ -1,8 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { LoginRequest, UpdateOrganizationViewRequest } from '@services/connected-user/interfaces';
 import * as UserServices from '@services/connected-user/connectedUserAPI';
-import { useNavigate } from 'react-router-dom';
-import { PATH_AUTH } from '@utils/navigation/paths';
 
 export const changeOrganizationView = createAsyncThunk(
   'connectedUser/changeOrganizationView',
@@ -63,10 +61,6 @@ export const logout = createAsyncThunk('connectedUser/logout', async (_, { rejec
 export const forgotPassword = createAsyncThunk('connectedUser/forgotPassword', async (arg: any, { rejectWithValue }) => {
   try {
     const response = await UserServices.forgotPassword(arg);
-    const navigate = useNavigate();
-    if(response.status === 200) {
-      navigate(PATH_AUTH.login);
-    }
     return response.data;
   } catch (e: any) {
     if (e.response.data) return rejectWithValue(e.response.data);

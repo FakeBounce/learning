@@ -15,11 +15,11 @@ describe('ForgotPasswordForm', () => {
     );
 
     //Ensure that the "Organization ID" label is present
-    const orgIdLabel = screen.getAllByText(/Organisation ID/i);
-    expect(orgIdLabel.length).toBeGreaterThan(0);
+    const orgIdLabel = screen.getByLabelText(/Organisation ID/i);
+    expect(orgIdLabel).toBeInTheDocument();
 
-    //Ensure that the "Adresse mail" label is present
-    const emailLabel = screen.getAllByText(/Adresse mail/i);
-    expect(emailLabel.length).toBeGreaterThan(0);
+    //Ensure that the "Adresse mail" label is presentf
+    const emailLabel = screen.getByLabelText(/Adresse mail/i);
+    expect(emailLabel).toBeInTheDocument();
   });
 });

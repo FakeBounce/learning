@@ -10,7 +10,7 @@ describe('ForgotPasswordHeader', () => {
     expect(forgotPasswordText).toBeInTheDocument();
 
     //Ensure that the paragraph text is present
-    const forgotPasswordParagraph = screen.getByText(/Veuillez renseigner l'adresse mail asociée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe./i);
+    const forgotPasswordParagraph = screen.getByText(/Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe./i);
     expect(forgotPasswordParagraph).toBeInTheDocument();
   });
 });

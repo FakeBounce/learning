@@ -3,12 +3,9 @@ import { t } from '@lingui/macro';
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 import { LMSCard } from '@src/components/lms';
-import { PATH_DASHBOARD } from '@utils/navigation/paths';
-import { useEffect } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
-import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { useAppDispatch } from '@redux/hooks';
 import ForgotPasswordHeader from '@src/pages/login/forgot-password/ForgotPasswordHeader';
 import ForgotPasswordFooter from '@src/pages/login/forgot-password/ForgotPasswordFooter';
 import ForgotPasswordForm from '@src/pages/login/forgot-password/ForgotPasswordForm';
@@ -26,25 +23,16 @@ const StyledLoginContainerBox = styled(Box)(({ theme }) => ({
 }));
 
 const LoginSchema = Yup.object().shape({
-  organization_id: Yup.string().required(t`L'organisation ID est obligatoire`),
+  organizationId: Yup.string().required(t`L'organisation ID est obligatoire`),
   email: Yup.string().required(t`L'email est obligatoire`)
 });
 
 const defaultValues = {
-  organization_id: '',
+  organizationId: '',
   email: ''
 };
 
 export default function ForgotPasswordPage() {
-  const { loading } = useAppSelector((state) => state.connectedUser.forgotPassword);
-  const isAuthenticated = useAppSelector((state) => state.connectedUser.login.isAuthenticated);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate(PATH_DASHBOARD.root);
-    }
-  }, [isAuthenticated]);
 
   const dispatch = useAppDispatch();
   const methods = useForm({
@@ -56,7 +44,7 @@ export default function ForgotPasswordPage() {
 
   const onSubmit = async (data: any) => {
     dispatch(
-      forgotPassword({ email: data.email, organization_uuid: data.organization_id })
+      forgotPassword({ email: data.email, organization_uuid: data.organizationId })
     );
   };
 
@@ -64,7 +52,7 @@ export default function ForgotPasswordPage() {
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
         <StyledLoginContainerBox>
-          <LMSCard header={<ForgotPasswordHeader />} footer={<ForgotPasswordFooter isLoading={loading} />}>
+          <LMSCard header={<ForgotPasswordHeader />} footer={<ForgotPasswordFooter />}>
             <ForgotPasswordForm />
           </LMSCard>
         </StyledLoginContainerBox>

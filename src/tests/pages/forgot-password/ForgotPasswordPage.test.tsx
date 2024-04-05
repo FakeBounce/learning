@@ -4,7 +4,6 @@ import ForgotPasswordAxiosMock, {
 } from '@src/tests/pages/forgot-password/ForgotPasswordAxiosMock';
 import { useNavigate } from 'react-router-dom';
 import ForgotPasswordPage from '@src/pages/login/forgot-password/ForgotPasswordPage';
-import { PATH_DASHBOARD } from '@utils/navigation/paths';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -44,30 +43,6 @@ describe('ForgotPasswordPage', () => {
         organization_uuid: 'testorg',
         email: 'testmail'
       });
-    });
-  });
-
-  it('should navigate if is already Authenticated', async () => {
-    //Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
-    //Render the ForgotPasswordPage component
-    render(<ForgotPasswordPage />, {
-      preloadedState: {
-        connectedUser: {
-          forgotPassword: {
-            loading: false
-          },
-          login: {
-            isAuthenticated: true
-          }
-        }
-      }
-    });
-
-    await waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);
     });
   });
 });

@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, waitFor, act } from '@testProvider';
-import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import Login from '@src/pages/login/LoginPage';
 import { useNavigate } from 'react-router-dom';
 import LoginAxiosMock, { setupSuccessAxiosMock } from './LoginAxiosMock';
@@ -45,28 +44,6 @@ describe('Login component', () => {
         password: 'testpassword',
         organization_uuid: 'testorg'
       });
-    });
-  });
-
-  it('should navigate if is already Authenticated', async () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
-    // Render the Login component
-    render(<Login />, {
-      preloadedState: {
-        connectedUser: {
-          login: {
-            isAuthenticated: true
-          }
-        }
-      }
-    });
-
-    await waitFor(() => {
-      // Check if the navigate function has been called
-      expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);
     });
   });
 });

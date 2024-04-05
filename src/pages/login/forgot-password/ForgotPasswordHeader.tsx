@@ -14,12 +14,7 @@ export default function ForgotPasswordHeader() {
         <Trans>Mot de passe oublié ?</Trans>
       </Typography>
       <Typography mt={4} align="center">
-        <Trans>
-          {
-            "Veuillez renseigner l'adresse mail asociée à votre compte " +
-            "et nous vous enverrons un lien pour réinitialiser votre mot de passe."
-          }
-        </Trans>
+        <Trans>Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.</Trans>
       </Typography>
     </Box>
   );

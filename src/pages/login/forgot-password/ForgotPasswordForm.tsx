@@ -1,5 +1,6 @@
 import { Stack } from '@mui/material';
 import { LabelWithRequired, RHFTextField } from '@src/components/hook-form';
+import { Trans } from '@lingui/macro';
 
 export default function ForgotPasswordForm() {
   return (
@@ -7,15 +8,19 @@ export default function ForgotPasswordForm() {
       spacing={3}
     >
       <RHFTextField
-        name={'organization_id'}
+        name={'organizationId'}
         label={
-          LabelWithRequired({ label: <label>Organisation ID</label> })
+          LabelWithRequired({
+            label: <Trans>Organisation ID</Trans>
+          })
         }
       />
       <RHFTextField
         name={'email'}
         label={
-          LabelWithRequired({ label: <label>Adresse mail</label> })
+          LabelWithRequired({
+            label: <Trans>Adresse mail</Trans>
+          })
         }
       />
     </Stack>

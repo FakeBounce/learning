@@ -3,12 +3,18 @@ import ForgotPasswordFooter from '@src/pages/login/forgot-password/ForgotPasswor
 
 describe('ForgotPasswordFooter', () => {
   it('render ForgotPasswordFooter component with loading state', () => {
-    const isLoading = true;
-    render(<ForgotPasswordFooter isLoading={isLoading}/>);
+    render(<ForgotPasswordFooter />,
+      {
+        preloadedState: {
+          connectedUser: {
+            forgotPassword: { loading: true }
+          }
+        }
+      });
 
     // Ensure that the ActionButton is rendered
     const actionButton = screen.getByRole('submit');
-    expect(actionButton).toBeInTheDocument();
+    expect(actionButton).toBeDisabled();
 
     // Ensure that the "Réinitialiser" text is present
     const resetText = screen.getByText(/Réinitialiser/i);
@@ -16,8 +22,7 @@ describe('ForgotPasswordFooter', () => {
   });
 
   it('render ForgotPasswordFooter component without loading state', () => {
-    const isLoading = false;
-    render(<ForgotPasswordFooter isLoading={isLoading}/>);
+    render(<ForgotPasswordFooter />);
 
     // Ensure that the ActionButton is rendered
     const actionButton = screen.getByRole('submit');
@@ -29,7 +34,6 @@ describe('ForgotPasswordFooter', () => {
   });
 
   it('handles click events', () => {
-    const isLoading = false;
     const onSubmitMock = jest.fn();
     render(
       <form
@@ -38,7 +42,7 @@ describe('ForgotPasswordFooter', () => {
           onSubmitMock();
         }}
       >
-        <ForgotPasswordFooter isLoading={isLoading} />
+        <ForgotPasswordFooter />
       </form>
     );
 

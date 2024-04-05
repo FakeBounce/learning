@@ -20,6 +20,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     // No longer necessary to import react in each file
     "react/jsx-uses-react": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
