@@ -1,4 +1,4 @@
-import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '../interfaces';
+import { ApiResponseMessage, ApiResponsePagination, TableRequestConfig } from '../interfaces';
 
 export interface Organization {
   id: number;
@@ -25,12 +25,7 @@ export interface GetSingleOrganizationResponse {
  * API Request and Response
  * To get a list of organizations
  */
-export interface GetOrganizationsRequest {
-  currentPage: number;
-  rowsPerPage: number;
-  sort?: ApiRequestSort;
-  filters?: any;
-}
+export interface GetOrganizationsRequest extends TableRequestConfig {}
 
 export interface GetOrganizationsResponse {
   success: boolean;

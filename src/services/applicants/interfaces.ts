@@ -1,4 +1,8 @@
-import { ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import {
+  ApiResponseMessage,
+  ApiResponsePagination,
+  TableRequestConfig
+} from '@services/interfaces';
 
 export interface ApplicantState {
   applicantList: ApplicantListState;
@@ -115,12 +119,8 @@ export enum ApplicantType {
   TESTER = 'tester'
 }
 
-export interface GetApplicantsListRequest {
-  currentPage: number;
-  rowsPerPage: number;
+export interface GetApplicantsListRequest extends TableRequestConfig {
   type: ApplicantType;
-  sort?: { field: string; direction: 'ASC' | 'DESC' };
-  filters?: any;
 }
 
 export interface GetApplicantsListResponse {

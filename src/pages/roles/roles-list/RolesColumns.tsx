@@ -4,11 +4,8 @@ import { Box, IconButton, TableCell, TableRow, Typography } from '@mui/material'
 import { Theme } from '@mui/material/styles';
 import Iconify from '@src/components/iconify/Iconify';
 import { Role } from '@services/roles/interfaces';
+import { OrderBy } from '@services/interfaces';
 
-export interface OrderBy {
-  id: string;
-  direction: 'DESC' | 'ASC';
-}
 export interface RolesColumn {
   id: 'name' | 'description';
   label: ReactNode;

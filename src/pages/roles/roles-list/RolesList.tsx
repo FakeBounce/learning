@@ -1,21 +1,19 @@
 import { LMSCard } from '@src/components/lms';
 import RolesListHeader from '@src/pages/roles/roles-list/RolesListHeader';
-import FullTable from '@src/components/table/FullTable';
-
-import Pagination from '@src/components/table/Pagination';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import {
   rolesTableHeaderRenderer,
   rolesTableRowsRenderer,
-  OrderBy,
   rolesColumns
 } from '@src/pages/roles/roles-list/RolesColumns';
-import { ChangeEvent, MouseEvent, useEffect, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import { Role } from '@services/roles/interfaces';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import RolesListPopperContent from '@src/pages/roles/roles-list/RolesListPopperContent';
 import { getRolesList } from '@redux/reducers/rolesReducer';
 import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
+import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
+import { TableRequestConfig } from '@services/interfaces';
 
 export default function RolesList() {
   const dispatch = useAppDispatch();
@@ -24,50 +22,12 @@ export default function RolesList() {
     (state) => state.roles.rolesList
   );
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
   const [roleSelected, setRoleSelected] = useState<Role | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    const defaultRoleListRequestConfig = {
-      currentPage: currentPage,
-      rowsPerPage: rowsPerPage
-    };
-
-    const rolesRequestConfig =
-      orderBy === null
-        ? { ...defaultRoleListRequestConfig }
-        : {
-            ...defaultRoleListRequestConfig,
-            sort: { field: orderBy.id, direction: orderBy.direction }
-          };
-
+  const handleTableChange = (rolesRequestConfig: TableRequestConfig) => {
     dispatch(getRolesList(rolesRequestConfig));
-  }, [currentPage, rowsPerPage, orderBy]);
-
-  const handleChangePage = (_: unknown, newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setCurrentPage(0);
-  };
-
-  const handleSort = (id: 'name' | 'description') => {
-    if (orderBy?.id === id) {
-      if (orderBy.direction === 'DESC') {
-        setOrderBy(null);
-        return;
-      }
-      setOrderBy({ id, direction: 'DESC' });
-      return;
-    } else {
-      setOrderBy({ id, direction: 'ASC' });
-    }
   };
 
   // Popper handlers
@@ -89,19 +49,13 @@ export default function RolesList() {
   return (
     <>
       <LMSCard isPageCard contentPadding={0} header={<RolesListHeader />}>
-        <FullTable
-          headerRenderer={rolesTableHeaderRenderer(handleSort, orderBy)}
-          bodyRenderer={rolesTableRowsRenderer(rolesListData, handleClick)}
-          isLoading={rolesListLoading}
-          rowsNum={rowsPerPage}
-          colsNum={rolesColumns.length}
-        />
-        <Pagination
-          totalCount={rolesListTotalCount}
-          rowsPerPage={rowsPerPage}
-          currentPage={currentPage}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
+        <TableWithSortAndFilter
+          skeletonCols={rolesColumns.length}
+          headerRenderer={rolesTableHeaderRenderer}
+          isTableLoading={rolesListLoading}
+          totalRows={rolesListTotalCount}
+          onChange={handleTableChange}
+          rowsRenderer={rolesTableRowsRenderer(rolesListData, handleClick)}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>

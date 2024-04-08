@@ -1,20 +1,19 @@
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getApplicantsList } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
-import FullTable from '@src/components/table/FullTable';
-import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
-import Pagination from '@src/components/table/Pagination';
+import { MouseEvent, useState } from 'react';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Applicant, ApplicantType } from '@services/applicants/interfaces';
 import {
+  externalTestersColumns,
   externalTestersTableHeaderRenderer,
-  externalTestersTableRowsRenderer,
-  OrderBy,
-  externalTestersColumns
+  externalTestersTableRowsRenderer
 } from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListColumns';
 import ExternalTestersListHeader from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListHeader';
 import ExternalTestersListModal from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListModal';
 import ExternalTestersListPopperContent from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListPopperContent';
+import { TableRequestConfig } from '@services/interfaces';
+import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
 
 export default function ApplicantsList() {
   const dispatch = useAppDispatch();
@@ -23,53 +22,12 @@ export default function ApplicantsList() {
     (state) => state.applicants.applicantList
   );
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
   const [applicantSelected, setApplicantSelected] = useState<Applicant | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleChangePage = (_: unknown, newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setCurrentPage(0);
-  };
-
-  useEffect(() => {
-    const defaultApplicantListRequestConfig = {
-      currentPage: currentPage,
-      rowsPerPage: rowsPerPage,
-      type: ApplicantType.TESTER
-    };
-
-    const applicantRequestConfig =
-      orderBy === null
-        ? { ...defaultApplicantListRequestConfig }
-        : {
-            ...defaultApplicantListRequestConfig,
-            sort: { field: orderBy.id, direction: orderBy.direction }
-          };
-
-    dispatch(getApplicantsList(applicantRequestConfig));
-  }, [currentPage, rowsPerPage, orderBy]);
-
-  const handleSort = (
-    id: 'id' | 'externalId' | 'email' | 'lastname' | 'firstname' | 'phone' | 'isActive'
-  ) => {
-    if (orderBy?.id === id) {
-      if (orderBy.direction === 'DESC') {
-        setOrderBy(null);
-        return;
-      }
-      setOrderBy({ id, direction: 'DESC' });
-      return;
-    } else {
-      setOrderBy({ id, direction: 'ASC' });
-    }
+  const handleTableChange = (applicantRequestConfig: TableRequestConfig) => {
+    dispatch(getApplicantsList({ ...applicantRequestConfig, type: ApplicantType.TESTER }));
   };
 
   const cancelModal = () => {
@@ -96,19 +54,13 @@ export default function ApplicantsList() {
   return (
     <>
       <LMSCard isPageCard contentPadding={0} header={<ExternalTestersListHeader />}>
-        <FullTable
-          headerRenderer={externalTestersTableHeaderRenderer(handleSort, orderBy)}
-          bodyRenderer={externalTestersTableRowsRenderer(applicantListData, handleClick)}
-          isLoading={applicantListLoading}
-          rowsNum={rowsPerPage}
-          colsNum={externalTestersColumns.length}
-        />
-        <Pagination
-          totalCount={applicantListTotalCount}
-          rowsPerPage={rowsPerPage}
-          currentPage={currentPage}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
+        <TableWithSortAndFilter
+          headerRenderer={externalTestersTableHeaderRenderer}
+          rowsRenderer={externalTestersTableRowsRenderer(applicantListData, handleClick)}
+          totalRows={applicantListTotalCount}
+          onChange={handleTableChange}
+          isTableLoading={applicantListLoading}
+          skeletonCols={externalTestersColumns.length}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">

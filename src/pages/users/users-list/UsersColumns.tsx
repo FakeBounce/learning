@@ -4,11 +4,8 @@ import { Box, TableCell, TableRow, Typography } from '@mui/material';
 import { User } from '@services/users/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import Iconify from '@src/components/iconify/Iconify';
+import { OrderBy } from '@services/interfaces';
 
-export interface OrderBy {
-  id: string;
-  direction: 'DESC' | 'ASC';
-}
 export interface UsersColumn {
   id: 'lastname' | 'firstname' | 'email' | 'isActive';
   label: ReactNode;

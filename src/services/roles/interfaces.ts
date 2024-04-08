@@ -1,5 +1,9 @@
 import { Group } from '@services/groups/interfaces';
-import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import {
+  ApiResponseMessage,
+  ApiResponsePagination,
+  TableRequestConfig
+} from '@services/interfaces';
 import { User } from '@services/users/interfaces';
 import { PermissionTypeList } from '@services/permissions/interfaces';
 
@@ -19,12 +23,7 @@ export interface Role {
   isClientAdmin: boolean;
 }
 
-export interface GetRolesRequest {
-  currentPage: number;
-  rowsPerPage: number;
-  sort?: ApiRequestSort;
-  filters?: any;
-}
+export interface GetRolesRequest extends TableRequestConfig {}
 
 export interface GetRolesResponse {
   success: boolean;

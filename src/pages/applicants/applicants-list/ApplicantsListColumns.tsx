@@ -4,11 +4,8 @@ import { Theme } from '@mui/material/styles';
 import { Applicant } from '@services/applicants/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
+import { OrderBy } from '@services/interfaces';
 
-export interface OrderBy {
-  id: string;
-  direction: 'DESC' | 'ASC';
-}
 export interface ApplicantColumn {
   id:
     | 'id'
