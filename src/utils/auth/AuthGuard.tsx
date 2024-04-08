@@ -18,15 +18,17 @@ function AuthGuard({ children }: { children: ReactNode }) {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (isAuthenticated && id) {
-      const storageToken = getSession();
-      if (storageToken !== null && storageToken.refreshToken !== null) {
-        dispatch(refresh()).then(() => {
-          dispatch(getUser());
-        });
+    if (isAuthenticated) {
+      if (id) {
+        const storageToken = getSession();
+        if (storageToken !== null && storageToken.refreshToken !== null) {
+          dispatch(refresh()).then(() => {
+            dispatch(getUser());
+          });
+        }
+      } else {
+        dispatch(getUser());
       }
-    } else {
-      dispatch(getUser());
     }
   }, [isAuthenticated]);
 
