@@ -1,11 +1,7 @@
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getApplicantsList } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
-import {
-  applicantsColumns,
-  applicantsTableHeaderRenderer,
-  applicantsTableRowsRenderer
-} from './ApplicantsListColumns';
+import { applicantsColumns } from './ApplicantsListColumns';
 import ApplicantsListHeader from './ApplicantsListHeader';
 import ApplicantsListPopperContent from './ApplicantsListPopperContent';
 import { MouseEvent, useState } from 'react';
@@ -55,12 +51,11 @@ export default function ApplicantsList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<ApplicantsListHeader />}>
         <TableWithSortAndFilter
-          headerRenderer={applicantsTableHeaderRenderer}
-          rowsRenderer={applicantsTableRowsRenderer(applicantListData, handleClick)}
-          totalRows={applicantListTotalCount}
+          columns={applicantsColumns(handleClick)}
+          rows={applicantListData}
+          loading={applicantListLoading}
+          rowCount={applicantListTotalCount}
           onChange={handleTableChange}
-          isTableLoading={applicantListLoading}
-          skeletonCols={applicantsColumns.length}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">

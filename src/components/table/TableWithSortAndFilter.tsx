@@ -1,85 +1,94 @@
 import FullTable from '@src/components/table/FullTable';
-import Pagination from '@src/components/table/Pagination';
-import { ChangeEvent, memo, ReactNode, useEffect, useState } from 'react';
-import { OrderBy, TableRequestConfig } from '@services/interfaces';
+import { memo, useCallback, useEffect, useState } from 'react';
+import { FilterBy, OrderBy, TableRequestConfig } from '@services/interfaces';
+import { GridFilterModel, GridPaginationModel, GridSortModel } from '@mui/x-data-grid';
+import { FullTableProps } from '@src/components/table/interfaces';
+import { convertCamelToSnake } from '@utils/helpers/convertCasing';
 
-interface TableWithSortAndFilterProps {
-  headerRenderer: (handleSort: (id: string) => void, orderBy: OrderBy | null) => ReactNode;
-  rowsRenderer: ReactNode;
-  isTableLoading?: boolean;
-  totalRows: number;
+interface TableWithSortAndFilterProps
+  extends Omit<
+    FullTableProps,
+    'onSortModelChange' | 'onFilterModelChange' | 'onPaginationModelChange'
+  > {
   onChange: (applicantRequestConfig: TableRequestConfig) => void;
-  skeletonCols?: number;
+  defaultPageSize?: number;
 }
 
 const TableWithSortAndFilter = ({
-  headerRenderer,
-  rowsRenderer,
-  isTableLoading = false,
-  totalRows,
   onChange,
-  skeletonCols = 5
+  defaultPageSize,
+  ...fullTableProps
 }: TableWithSortAndFilterProps) => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [rowsPerPage, setRowsPerPage] = useState(defaultPageSize || 10);
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
+  const [filters, setFilters] = useState<FilterBy | null>(null);
 
-  const handleChangePage = (_: unknown, newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setCurrentPage(0);
-  };
-
-  const handleSort = (id: string) => {
-    if (orderBy?.id === id) {
-      if (orderBy.direction === 'DESC') {
-        setOrderBy(null);
-        return;
-      }
-      setOrderBy({ id, direction: 'DESC' });
+  const handleChangePage = useCallback((gridPaginationModel: GridPaginationModel) => {
+    if (gridPaginationModel.page !== currentPage) {
+      setCurrentPage(gridPaginationModel.page);
       return;
-    } else {
-      setOrderBy({ id, direction: 'ASC' });
     }
-  };
+    if (gridPaginationModel.pageSize !== rowsPerPage) {
+      setRowsPerPage(gridPaginationModel.pageSize);
+      return;
+    }
+  }, []);
+
+  const handleSort = useCallback((gridSortItems: GridSortModel) => {
+    if (gridSortItems.length === 0) {
+      setOrderBy(null);
+      return;
+    } else if (gridSortItems[0].sort) {
+      setOrderBy({
+        field: convertCamelToSnake(gridSortItems[0].field),
+        direction: gridSortItems[0].sort.toUpperCase() as 'ASC' | 'DESC'
+      });
+    }
+  }, []);
+
+  const handleFilterChange = useCallback((filterModel: GridFilterModel) => {
+    if (filterModel.items.length === 0 || !filterModel.items[0].value) {
+      setFilters(null);
+      return;
+    }
+    setFilters({
+      operator: 'AND',
+      items: [
+        {
+          field: convertCamelToSnake(filterModel.items[0].field),
+          operator: filterModel.items[0].operator,
+          value: filterModel.items[0].value
+        }
+      ]
+    });
+  }, []);
 
   useEffect(() => {
-    const defaultTableRequestConfig = {
+    const tableRequestConfig = {
       currentPage: currentPage,
       rowsPerPage: rowsPerPage
-    };
+    } as TableRequestConfig;
 
-    const tableRequestConfig =
-      orderBy === null
-        ? { ...defaultTableRequestConfig }
-        : {
-            ...defaultTableRequestConfig,
-            sort: { field: orderBy.id, direction: orderBy.direction }
-          };
+    if (orderBy) {
+      tableRequestConfig.sort = orderBy;
+    }
+
+    if (filters) {
+      tableRequestConfig.filters = filters;
+    }
 
     onChange(tableRequestConfig);
-  }, [currentPage, rowsPerPage, orderBy]);
+  }, [currentPage, rowsPerPage, orderBy, filters]);
 
   return (
-    <>
-      <FullTable
-        headerRenderer={headerRenderer(handleSort, orderBy)}
-        bodyRenderer={rowsRenderer}
-        isLoading={isTableLoading}
-        rowsNum={rowsPerPage}
-        colsNum={skeletonCols}
-      />
-      <Pagination
-        totalCount={totalRows || 0}
-        rowsPerPage={rowsPerPage}
-        currentPage={currentPage}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-      />
-    </>
+    <FullTable
+      {...fullTableProps}
+      onPaginationModelChange={handleChangePage}
+      onFilterModelChange={handleFilterChange}
+      onSortModelChange={handleSort}
+      defaultPageSize={defaultPageSize}
+    />
   );
 };
 

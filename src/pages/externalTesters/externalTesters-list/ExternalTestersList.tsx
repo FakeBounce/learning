@@ -4,11 +4,7 @@ import { LMSCard } from '@src/components/lms';
 import { MouseEvent, useState } from 'react';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Applicant, ApplicantType } from '@services/applicants/interfaces';
-import {
-  externalTestersColumns,
-  externalTestersTableHeaderRenderer,
-  externalTestersTableRowsRenderer
-} from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListColumns';
+import { externalTestersColumns } from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListColumns';
 import ExternalTestersListHeader from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListHeader';
 import ExternalTestersListModal from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListModal';
 import ExternalTestersListPopperContent from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListPopperContent';
@@ -55,12 +51,11 @@ export default function ApplicantsList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<ExternalTestersListHeader />}>
         <TableWithSortAndFilter
-          headerRenderer={externalTestersTableHeaderRenderer}
-          rowsRenderer={externalTestersTableRowsRenderer(applicantListData, handleClick)}
-          totalRows={applicantListTotalCount}
+          columns={externalTestersColumns(handleClick)}
+          rows={applicantListData}
+          loading={applicantListLoading}
+          rowCount={applicantListTotalCount}
           onChange={handleTableChange}
-          isTableLoading={applicantListLoading}
-          skeletonCols={externalTestersColumns.length}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">

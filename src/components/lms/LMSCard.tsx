@@ -1,4 +1,4 @@
-import { Stack, Paper } from '@mui/material';
+import { Stack, Paper, Box } from '@mui/material';
 // Keep theme and matches in case need later
 // import { Stack, Paper, useMediaQuery } from '@mui/material';
 // import { useTheme } from '@mui/material/styles';
@@ -8,6 +8,7 @@ import { ReactNode } from 'react';
 interface LMSCardProps {
   cardCss?: Record<string, any>;
   isPageCard?: boolean;
+  canExpand?: boolean;
   header?: ReactNode;
   footer?: ReactNode;
   children: ReactNode;
@@ -40,6 +41,7 @@ const pageCardCss = {
 export default function LMSCard({
   cardCss,
   isPageCard = false,
+  canExpand = false,
   header,
   footer,
   children,
@@ -64,9 +66,16 @@ export default function LMSCard({
               {header}
             </Stack>
           )}
-          <Stack spacing={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
-            {children}
-          </Stack>
+          {canExpand ? (
+            <Box gap={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
+              {children}
+            </Box>
+          ) : (
+            <Stack spacing={2} px={contentPadding} sx={{ flex: '1 1 0' }}>
+              {children}
+            </Stack>
+          )}
+
           {footer && (
             <Stack spacing={2} p={2} px={4} sx={{ mt: 2 }}>
               {footer}
@@ -76,6 +85,7 @@ export default function LMSCard({
       </Stack>
     );
   }
+
   return (
     <Paper elevation={3} sx={{ ...mergedCardCss }}>
       {header && (

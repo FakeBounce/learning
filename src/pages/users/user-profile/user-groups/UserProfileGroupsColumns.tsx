@@ -1,86 +1,34 @@
-import { ReactNode } from 'react';
-import { Group } from '@services/groups/interfaces';
 import { Trans } from '@lingui/macro';
-import { useTheme } from '@mui/material/styles';
-import { Box, TableCell, TableRow, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
+import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 
-export interface UserProfileGroupsColumns {
-  id: 'name' | 'description';
-  label: ReactNode;
-  maxWidth?: number;
-  padding?: 'normal' | 'checkbox' | 'none';
-  align?: 'right' | 'center';
-  renderCell?: (row: Group) => ReactNode;
-}
-
-export const userProfileGroupsColumns: readonly UserProfileGroupsColumns[] = [
-  {
-    id: 'name',
-    label: <Trans>Nom</Trans>,
-    renderCell: (row) => {
-      const theme = useTheme();
-
-      return (
-        <Box display="flex" alignItems="center">
-          <Typography fontSize={theme.typography.body2.fontSize}>{row.name}</Typography>
-        </Box>
-      );
+export const userProfileGroupsColumns = () =>
+  [
+    {
+      field: 'name',
+      display: 'flex',
+      flex: 1,
+      renderHeader: () => (
+        <strong>
+          <Trans>Nom</Trans>
+        </strong>
+      ),
+      renderCell: (cell: GridRenderCellParams) => (
+        <Typography fontSize={(theme) => theme.typography.body2.fontSize}>{cell.value}</Typography>
+      )
+    },
+    {
+      field: 'description',
+      type: 'string',
+      display: 'flex',
+      flex: 1,
+      renderHeader: () => (
+        <strong>
+          <Trans>Description</Trans>
+        </strong>
+      ),
+      renderCell: (cell: GridRenderCellParams) => (
+        <Typography fontSize={(theme) => theme.typography.body2.fontSize}>{cell.value}</Typography>
+      )
     }
-  },
-  {
-    id: 'description',
-    label: <Trans>Description</Trans>,
-    renderCell: (row) => {
-      const theme = useTheme();
-
-      return (
-        <Box display="flex" alignItems="center">
-          <Typography fontSize={theme.typography.body2.fontSize}>{row.description}</Typography>
-        </Box>
-      );
-    }
-  }
-];
-
-export const userProfileGroupsHeaderRender = () => {
-  const theme = useTheme();
-
-  return userProfileGroupsColumns.map((column) => (
-    <TableCell
-      key={column.id}
-      align={column.align}
-      style={{
-        maxWidth: column.maxWidth,
-        padding: column.padding || 'normal',
-        backgroundColor: theme.palette.grey[200],
-        height: '3vh'
-      }}
-    >
-      {column.label}
-    </TableCell>
-  ));
-};
-
-export const userProfileGroupsRowRender = (listData: Group[]) => {
-  return listData.map((row: Group, index) => {
-    return (
-      <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-        {userProfileGroupsColumns.map((column: UserProfileGroupsColumns) => {
-          if (column.renderCell) {
-            return (
-              <TableCell key={column.id} padding={column.padding || 'normal'}>
-                {column.renderCell(row)}
-              </TableCell>
-            );
-          }
-          const value = row[column.id];
-          return (
-            <TableCell key={column.id} padding={column.padding || 'normal'}>
-              {value}
-            </TableCell>
-          );
-        })}
-      </TableRow>
-    );
-  });
-};
+  ] as GridColDef[];

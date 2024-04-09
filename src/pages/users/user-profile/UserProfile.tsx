@@ -30,7 +30,7 @@ export default function UserProfile() {
   }, [singleUserData]);
 
   return (
-    <LMSCard isPageCard header={<UserProfileHeader user={user} />}>
+    <LMSCard isPageCard contentPadding={0} header={<UserProfileHeader user={user} />}>
       <UserProfileInfos user={user} />
 
       <UserProfileGroups groups={user.groups ?? []} />

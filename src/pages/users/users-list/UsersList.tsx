@@ -1,11 +1,7 @@
 import { LMSCard } from '@src/components/lms';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import UsersListHeader from '@src/pages/users/users-list/UsersListHeader';
-import {
-  usersColumns,
-  usersTableHeaderRender,
-  usersTableRowsRender
-} from '@src/pages/users/users-list/UsersColumns';
+import { usersColumns } from '@src/pages/users/users-list/UsersColumns';
 import { useState, MouseEvent } from 'react';
 import { User } from '@services/users/interfaces';
 import { getUsersList } from '@redux/reducers/usersReducer';
@@ -40,12 +36,11 @@ export default function UsersList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<UsersListHeader />}>
         <TableWithSortAndFilter
-          skeletonCols={usersColumns.length}
+          columns={usersColumns(handleClick)}
+          rows={usersListData}
+          loading={usersListLoading}
+          rowCount={usersListTotalCount}
           onChange={handleTableChange}
-          headerRenderer={usersTableHeaderRender}
-          rowsRenderer={usersTableRowsRender(usersListData, handleClick)}
-          isTableLoading={usersListLoading}
-          totalRows={usersListTotalCount}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>

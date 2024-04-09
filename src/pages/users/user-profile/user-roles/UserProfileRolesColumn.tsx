@@ -1,86 +1,26 @@
-import { ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
-import { useTheme } from '@mui/material/styles';
-import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { UserRole } from '@services/roles/interfaces';
+import { GridColDef } from '@mui/x-data-grid';
 
-export interface UserProfileRolesColumns {
-  id: 'name' | 'description';
-  label: ReactNode;
-  maxWidth?: number;
-  padding?: 'normal' | 'checkbox' | 'none';
-  align?: 'right' | 'center';
-  renderCell?: (row: UserRole) => ReactNode;
-}
-
-export const userProfileRolesColumns: readonly UserProfileRolesColumns[] = [
-  {
-    id: 'name',
-    label: <Trans>Nom</Trans>,
-    renderCell: (row) => {
-      const theme = useTheme();
-
-      return (
-        <Box display="flex" alignItems="center">
-          <Typography fontSize={theme.typography.body2.fontSize}>{row.name}</Typography>
-        </Box>
-      );
+export const userProfileRolesColumns = () =>
+  [
+    {
+      field: 'name',
+      display: 'flex',
+      flex: 1,
+      renderHeader: () => (
+        <strong>
+          <Trans>Nom</Trans>
+        </strong>
+      )
+    },
+    {
+      field: 'description',
+      display: 'flex',
+      flex: 1,
+      renderHeader: () => (
+        <strong>
+          <Trans>Description</Trans>
+        </strong>
+      )
     }
-  },
-  {
-    id: 'description',
-    label: <Trans>Description</Trans>,
-    renderCell: (row) => {
-      const theme = useTheme();
-
-      return (
-        <Box display="flex" alignItems="center">
-          <Typography fontSize={theme.typography.body2.fontSize}>{row.description}</Typography>
-        </Box>
-      );
-    }
-  }
-];
-
-export const userProfileRolesHeaderRender = () => {
-  const theme = useTheme();
-
-  return userProfileRolesColumns.map((column) => (
-    <TableCell
-      key={column.id}
-      align={column.align}
-      style={{
-        maxWidth: column.maxWidth,
-        padding: column.padding || 'normal',
-        backgroundColor: theme.palette.grey[200],
-        height: '3vh'
-      }}
-    >
-      {column.label}
-    </TableCell>
-  ));
-};
-
-export const userProfileRolesRowRender = (listData: UserRole[]) => {
-  return listData.map((row: UserRole, index) => {
-    return (
-      <TableRow hover role="checkbox" tabIndex={-1} key={index}>
-        {userProfileRolesColumns.map((column: UserProfileRolesColumns) => {
-          if (column.renderCell) {
-            return (
-              <TableCell key={column.id} padding={column.padding || 'normal'}>
-                {column.renderCell(row)}
-              </TableCell>
-            );
-          }
-          const value = row[column.id];
-          return (
-            <TableCell key={column.id} padding={column.padding || 'normal'}>
-              {value}
-            </TableCell>
-          );
-        })}
-      </TableRow>
-    );
-  });
-};
+  ] as GridColDef[];

@@ -1,5 +1,5 @@
 export interface OrderBy {
-  id: string;
+  field: string;
   direction: 'DESC' | 'ASC';
 }
 
@@ -17,7 +17,7 @@ export interface FilterBy {
 export interface TableRequestConfig {
   currentPage: number;
   rowsPerPage: number;
-  sort?: { field: string; direction: 'ASC' | 'DESC' };
+  sort?: ApiRequestSort;
   filters?: FilterBy;
 }
 

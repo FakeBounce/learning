@@ -2,14 +2,10 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getOrganizationsList } from '@redux/actions/organizationsActions';
 import { Organization } from '@services/organizations/interfaces';
 import { LMSCard } from '@src/components/lms';
-import {
-  organizationsListColumns,
-  organizationsTableHeaderRenderer,
-  organizationsTableRowsRenderer
-} from '@src/pages/organizations/organizations-list/OrganizationsListColumns';
+import { organizationsListColumns } from '@src/pages/organizations/organizations-list/OrganizationsListColumns';
 import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
 import OrganizationsListPopperContent from '@src/pages/organizations/organizations-list/OrganizationsListPopperContent';
-import { useState, MouseEvent } from 'react';
+import { useState, MouseEvent, useEffect } from 'react';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
 import { selectOrganizationsList } from '@redux/reducers/organizationsReducer';
@@ -24,6 +20,10 @@ export default function OrganizationsList() {
   const [organizationSelected, setOrganizationSelected] = useState<Organization | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    dispatch(getOrganizationsList({ currentPage: 0, rowsPerPage: 10 }));
+  }, []);
 
   const handleTableChange = (organizationRequestConfig: TableRequestConfig) => {
     dispatch(getOrganizationsList(organizationRequestConfig));
@@ -54,12 +54,11 @@ export default function OrganizationsList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<OrganizationsListHeader />}>
         <TableWithSortAndFilter
-          headerRenderer={organizationsTableHeaderRenderer}
-          skeletonCols={organizationsListColumns.length}
+          columns={organizationsListColumns(handleClick)}
+          rows={organizationListData}
+          loading={organizationListLoading}
+          rowCount={organizationListTotalCount}
           onChange={handleTableChange}
-          rowsRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
-          isTableLoading={organizationListLoading}
-          totalRows={organizationListTotalCount}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} placement="top-end">

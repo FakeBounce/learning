@@ -20,7 +20,7 @@ export interface ApplicantProfileState {
 export interface ApplicantListState {
   applicantListData: Applicant[];
   applicantListLoading: boolean;
-  applicantListTotalCount: number | null;
+  applicantListTotalCount: number;
 }
 
 export interface ApplicantUpdateState {

@@ -1,11 +1,7 @@
 import { LMSCard } from '@src/components/lms';
 import RolesListHeader from '@src/pages/roles/roles-list/RolesListHeader';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import {
-  rolesTableHeaderRenderer,
-  rolesTableRowsRenderer,
-  rolesColumns
-} from '@src/pages/roles/roles-list/RolesColumns';
+import { rolesColumns } from '@src/pages/roles/roles-list/RolesColumns';
 import { MouseEvent, useState } from 'react';
 import { Role } from '@services/roles/interfaces';
 import LMSPopover from '@src/components/lms/LMSPopover';
@@ -50,12 +46,11 @@ export default function RolesList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<RolesListHeader />}>
         <TableWithSortAndFilter
-          skeletonCols={rolesColumns.length}
-          headerRenderer={rolesTableHeaderRenderer}
-          isTableLoading={rolesListLoading}
-          totalRows={rolesListTotalCount}
+          columns={rolesColumns(handleClick)}
+          rows={rolesListData}
+          loading={rolesListLoading}
+          rowCount={rolesListTotalCount}
           onChange={handleTableChange}
-          rowsRenderer={rolesTableRowsRenderer(rolesListData, handleClick)}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>

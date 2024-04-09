@@ -20,7 +20,7 @@ interface OrganizationState {
   organizationList: {
     organizationListData: Organization[];
     organizationListLoading: boolean;
-    organizationListTotalCount: number | null;
+    organizationListTotalCount: number;
   };
   organizationCreate: {
     organizationCreateLoading: boolean;

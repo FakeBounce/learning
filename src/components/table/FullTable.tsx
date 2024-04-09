@@ -1,43 +1,39 @@
-import { Table, TableBody, TableContainer, TableHead, TableRow, Box } from '@mui/material';
-import { TableSkeletonLoader } from '@src/components/skeletons/TableSkeletonLoader';
-import { ReactNode } from 'react';
-import { styled } from '@mui/system';
+import { DataGrid } from '@mui/x-data-grid/DataGrid';
+import { FullTableProps } from '@src/components/table/interfaces';
+import Box from '@mui/material/Box';
 
-const StyledFullTableContainer = styled(Box)(() => ({
-  display: 'flex',
-  flex: '1 1 0',
-  overflow: 'auto',
-  maxWidth: '100%',
-  padding: 0,
-  position: 'relative'
-}));
-
-interface FullTableProps {
-  headerRenderer: ReactNode;
-  bodyRenderer: ReactNode;
-  isLoading: boolean;
-  rowsNum: number;
-  colsNum: number;
-}
 export default function FullTable({
-  headerRenderer,
-  bodyRenderer,
-  isLoading,
-  rowsNum,
-  colsNum
+  columns,
+  rows,
+  defaultPageSize = 10,
+  rowCount = 0,
+  loading = false,
+  pageSizeOptions = [5, 10, 20, 50],
+  onSortModelChange,
+  onFilterModelChange,
+  onPaginationModelChange
 }: FullTableProps) {
   return (
-    <StyledFullTableContainer>
-      <TableContainer sx={{ height: '100%' }}>
-        <Table stickyHeader aria-label="sticky table">
-          <TableHead>
-            <TableRow>{headerRenderer}</TableRow>
-          </TableHead>
-          <TableBody>
-            {isLoading ? <TableSkeletonLoader rowsNum={rowsNum} colsNum={colsNum} /> : bodyRenderer}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </StyledFullTableContainer>
+    <Box display="flex" flex="1 1 0" sx={{ overflow: 'auto' }}>
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        loading={loading}
+        rowCount={rowCount}
+        pageSizeOptions={pageSizeOptions}
+        initialState={{
+          pagination: { paginationModel: { pageSize: defaultPageSize } }
+        }}
+        onSortModelChange={onSortModelChange}
+        onFilterModelChange={onFilterModelChange}
+        onPaginationModelChange={onPaginationModelChange}
+        disableColumnResize
+        disableColumnSelector
+        disableRowSelectionOnClick
+        sortingMode={'server'}
+        filterMode={'server'}
+        paginationMode={'server'}
+      />
+    </Box>
   );
 }
