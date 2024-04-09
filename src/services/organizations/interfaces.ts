@@ -90,3 +90,19 @@ export interface UpdateOrganizationsResponse {
   message: ApiResponseMessage;
   data: Organization;
 }
+
+
+/*
+ * API Request and Response
+ * To create an organization
+ */
+export interface SetOrganizationsLogoRequest {
+  id: number;
+  logo?: File | string;
+}
+
+export interface SetOrganizationsLogoResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Organization;
+}

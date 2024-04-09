@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   CreateOrganizationsRequest,
   GetOrganizationsRequest,
+  SetOrganizationsLogoRequest,
   UpdateOrganizationsBlockRequest,
   UpdateOrganizationsRequest
 } from '@services/organizations/interfaces';
@@ -36,6 +37,28 @@ export const getSingleOrganization = createAsyncThunk(
 export const updateOrganizations = createAsyncThunk(
   'organizations/update',
   async (arg: UpdateOrganizationsRequest, { rejectWithValue }) => {
+    try {
+      if (arg.logo) {
+        const response = await Promise.all([
+          OrganizationsServices.updateOrganizations(arg),
+          OrganizationsServices.setOrganizationsLogo({ id: arg.id, logo: arg.logo })
+        ]);
+        console.log(response);
+        return response[1].data;
+        // return response.data;
+      }
+      const response = await OrganizationsServices.updateOrganizations(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const setOrganizationLogo = createAsyncThunk(
+  'organizations/setLogo',
+  async (arg: SetOrganizationsLogoRequest, { rejectWithValue }) => {
     try {
       const response = await OrganizationsServices.updateOrganizations(arg);
       return response.data;
