@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 const LabelWithRequired = ({ label }: { label: ReactNode }) => (
   <>
@@ -7,4 +7,4 @@ const LabelWithRequired = ({ label }: { label: ReactNode }) => (
   </>
 );
 
-export default LabelWithRequired;
+export default memo(LabelWithRequired);

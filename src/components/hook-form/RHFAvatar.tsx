@@ -5,6 +5,7 @@ import { uploader } from '@utils/fileUploader';
 import {
   ChangeEvent,
   Dispatch,
+  memo,
   ReactNode,
   SetStateAction,
   useEffect,
@@ -22,7 +23,7 @@ interface RHFAvatarProps {
   size?: 'small' | 'medium';
 }
 
-export default function RHFAvatar({
+function RHFAvatar({
   name,
   image,
   setImage,
@@ -95,3 +96,4 @@ export default function RHFAvatar({
     />
   );
 }
+export default memo(RHFAvatar);

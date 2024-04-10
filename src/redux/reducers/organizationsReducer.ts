@@ -8,10 +8,11 @@ import {
 } from '@services/organizations/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as OrganizationsActions from '../actions/organizationsActions';
-import { AnyAction, createSlice } from '@reduxjs/toolkit';
+import { AnyAction, createSelector, createSlice } from '@reduxjs/toolkit';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
+import { RootState } from '@redux/store';
 
-interface organizationState {
+interface OrganizationState {
   currentOrganization: {
     currentOrganizationData: Organization | null;
     currentOrganizationLoading: boolean;
@@ -29,7 +30,7 @@ interface organizationState {
   };
 }
 
-const initialState: organizationState = {
+const initialState: OrganizationState = {
   currentOrganization: {
     currentOrganizationData: null,
     currentOrganizationLoading: false
@@ -102,9 +103,7 @@ export const organizationSlice = createSlice({
         OrganizationsActions.toggleOrganizationsBlock.fulfilled,
         (state, action: { payload: UpdateOrganizationsBlockResponse }) => {
           // Find the organization in the list and update it
-          const organizationIndex = state.organizationList.organizationListData.findIndex(
-            (org) => org.id === action.payload.data.id
-          );
+          const organizationIndex = selectOrganizationFindId(state, action.payload.data.id);
           if (organizationIndex > -1) {
             state.organizationList.organizationListData[organizationIndex] = action.payload.data;
           }
@@ -166,5 +165,18 @@ export const organizationSlice = createSlice({
       });
   }
 });
+
+export const selectOrganizationFindId = createSelector(
+  [
+    (state: OrganizationState) => state.organizationList.organizationListData,
+    (_, idToFind) => idToFind
+  ],
+  (s, idToFind) => s.findIndex((org: Organization) => org.id === idToFind)
+);
+
+export const selectOrganizationsList = createSelector(
+  (state: RootState) => state.organizations.organizationList,
+  (s) => s
+);
 
 export default organizationSlice.reducer;

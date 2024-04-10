@@ -1,11 +1,7 @@
 import Iconify from '@src/components/iconify/Iconify';
-import { ReactNode } from 'react';
-// form
+import { memo, ReactNode } from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import { IconButton, InputAdornment, TextField } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 interface RHFTextFieldProps {
   name: string;
@@ -16,7 +12,7 @@ interface RHFTextFieldProps {
   [x: string]: any;
 }
 
-export default function RHFTextFieldAdornement({
+function RHFTextFieldAdornement({
   name,
   helperText,
   InputProps,
@@ -53,3 +49,5 @@ export default function RHFTextFieldAdornement({
     />
   );
 }
+
+export default memo(RHFTextFieldAdornement);

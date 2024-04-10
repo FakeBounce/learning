@@ -38,7 +38,7 @@ export const updateOrganizationsBlock = async (
   const { setActive, organizationId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  return axios.post(`/organizations/${organizationId}/${correctPath}`);
+  return axios.put(`/organizations/${organizationId}/${correctPath}`);
 };
 
 export const getSingleOrganization = async (

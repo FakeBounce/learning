@@ -15,13 +15,13 @@ import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
+import { selectOrganizationsList } from '@redux/reducers/organizationsReducer';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();
 
   const { organizationListData, organizationListLoading, organizationListTotalCount } =
-    useAppSelector((state) => state.organizations.organizationList);
-
+    useAppSelector(selectOrganizationsList);
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
