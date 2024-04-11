@@ -8,7 +8,8 @@
   "247qoZ": {
     "translation": "",
     "message": "Créer un compte",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
@@ -25,7 +26,8 @@
   "5HgdeO": {
     "translation": "",
     "message": "Connexion",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -84,7 +86,8 @@
   "X1Endn": {
     "translation": "",
     "message": "Pas encore de compte ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -113,7 +116,8 @@
   "flJGrT": {
     "translation": "",
     "message": "Organization ID",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -130,7 +134,8 @@
   "nZGv/s": {
     "translation": "",
     "message": "Mot de passe oublié ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "",
@@ -141,7 +146,8 @@
   "uXStqy": {
     "translation": "",
     "message": "Mot de passe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "",
@@ -152,6 +158,7 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

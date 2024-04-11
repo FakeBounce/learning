@@ -26,7 +26,8 @@
   "4kUPlv": {
     "translation": "Notifications app",
     "message": "Notifications app",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -37,7 +38,8 @@
   "8/pAPk": {
     "translation": "Nom de naissance",
     "message": "Nom de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8N1T4V": {
     "translation": "La notification email est requis",
@@ -72,7 +74,8 @@
   "CInq4A": {
     "translation": "Notifications email",
     "message": "Notifications email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CVT4YH": {
     "translation": "Notification app",
@@ -130,7 +133,8 @@
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
@@ -177,7 +181,8 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -194,7 +199,8 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -217,7 +223,8 @@
   "QOV2qe": {
     "translation": "Date de naissance",
     "message": "Date de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
@@ -246,7 +253,8 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "/",
@@ -374,7 +382,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -433,12 +442,14 @@
   "vdb2j0": {
     "translation": "Notifications SMS",
     "message": "Notifications SMS",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wB7q3X": {
     "translation": "Date naiss.",

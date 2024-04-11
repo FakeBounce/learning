@@ -110,7 +110,8 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -139,7 +140,8 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
@@ -162,7 +164,8 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
@@ -227,7 +230,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -274,7 +278,8 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",

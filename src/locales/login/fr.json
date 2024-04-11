@@ -8,7 +8,8 @@
   "247qoZ": {
     "translation": "Créer un compte",
     "message": "Créer un compte",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -25,7 +26,8 @@
   "5HgdeO": {
     "translation": "Connexion",
     "message": "Connexion",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
@@ -84,7 +86,8 @@
   "X1Endn": {
     "translation": "Pas encore de compte ?",
     "message": "Pas encore de compte ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -113,7 +116,8 @@
   "flJGrT": {
     "translation": "Organization ID",
     "message": "Organization ID",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -130,7 +134,8 @@
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
@@ -141,7 +146,8 @@
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
@@ -152,6 +158,7 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }
