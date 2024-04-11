@@ -11,6 +11,7 @@ junit.xml
 
 # production
 /build
+/storybook-static
 
 # misc
 .env
@@ -34,3 +35,4 @@ ehthumbs.db
 Thumbs.db
 .vscode
 .idea
+*storybook.log

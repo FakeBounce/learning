@@ -3,7 +3,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Link, Stack } from '@mui/material';
 import { PATH_AUTH } from '@utils/navigation/paths';
 import { RHFTextField, RHFTextFieldAdornement } from '@src/components/hook-form';
-import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
 
 interface LoginFormProps {
   showPassword: boolean;
@@ -17,19 +16,17 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
         <RHFTextField
           name="organizationUuid"
           size="medium"
-          label={<LabelWithRequired label={<Trans>Organization ID</Trans>} />}
+          label={<Trans>Organization ID</Trans>}
+          required
         />
 
-        <RHFTextField
-          size="medium"
-          label={<LabelWithRequired label={<Trans>Login</Trans>} />}
-          name="login"
-        />
+        <RHFTextField size="medium" label={<Trans>Login</Trans>} required name="login" />
 
         <RHFTextFieldAdornement
           name="password"
           size="medium"
-          label={<LabelWithRequired label={<Trans>Mot de passe</Trans>} />}
+          label={<Trans>Mot de passe</Trans>}
+          required
           type={showPassword ? 'text' : 'password'}
           onClick={() => setShowPassword(!showPassword)}
           icon={showPassword ? 'eva:eye-fill' : 'eva:eye-off-fill'}

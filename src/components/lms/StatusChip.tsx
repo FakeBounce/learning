@@ -1,12 +1,12 @@
 import { Box, Chip, IconButton } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
 import { Theme } from '@mui/material/styles';
-import React, { memo, ReactNode } from 'react';
+import { memo, MouseEvent, ReactNode } from 'react';
 
 interface StatusChipProps {
   isActive?: boolean;
   activatedText?: ReactNode;
-  handleClick: (event: React.MouseEvent<HTMLElement>) => void;
+  handleClick: (event: MouseEvent<HTMLElement>) => void;
 }
 
 function StatusChip({ isActive = false, activatedText, handleClick }: StatusChipProps) {

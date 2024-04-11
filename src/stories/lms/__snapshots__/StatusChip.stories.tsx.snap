@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/StatusChip Active smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-p8h00o-MuiChip-root">
+    <span class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label">
+      Active
+    </span>
+  </div>
+  <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-9wiwav-MuiButtonBase-root-MuiIconButton-root"
+          tabindex="0"
+          type="button"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         aria-hidden="true"
+         role="img"
+         class="MuiBox-root css-1s0zv5d iconify iconify--pepicons-pop"
+         width="1em"
+         height="1em"
+         viewbox="0 0 20 20"
+    >
+      <g fill="currentColor">
+        <circle cx="10"
+                cy="15"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="10"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="5"
+                r="2"
+        >
+        </circle>
+      </g>
+    </svg>
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Example/StatusChip CustomText smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-p8h00o-MuiChip-root">
+    <span class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label">
+      <p class="MuiTypography-root MuiTypography-body1 css-gkbk35-MuiTypography-root">
+        Custom Text
+      </p>
+    </span>
+  </div>
+  <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-9wiwav-MuiButtonBase-root-MuiIconButton-root"
+          tabindex="0"
+          type="button"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         aria-hidden="true"
+         role="img"
+         class="MuiBox-root css-1s0zv5d iconify iconify--pepicons-pop"
+         width="1em"
+         height="1em"
+         viewbox="0 0 20 20"
+    >
+      <g fill="currentColor">
+        <circle cx="10"
+                cy="15"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="10"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="5"
+                r="2"
+        >
+        </circle>
+      </g>
+    </svg>
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Example/StatusChip Inactive smoke-test 1`] = `
+<div class="MuiBox-root css-70qvj9">
+  <div class="MuiChip-root MuiChip-filled MuiChip-sizeMedium MuiChip-colorDefault MuiChip-filledDefault css-1c2kyo3-MuiChip-root">
+    <span class="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label">
+      Inactive
+    </span>
+  </div>
+  <button class="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-9wiwav-MuiButtonBase-root-MuiIconButton-root"
+          tabindex="0"
+          type="button"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         aria-hidden="true"
+         role="img"
+         class="MuiBox-root css-1s0zv5d iconify iconify--pepicons-pop"
+         width="1em"
+         height="1em"
+         viewbox="0 0 20 20"
+    >
+      <g fill="currentColor">
+        <circle cx="10"
+                cy="15"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="10"
+                r="2"
+        >
+        </circle>
+        <circle cx="10"
+                cy="5"
+                r="2"
+        >
+        </circle>
+      </g>
+    </svg>
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;

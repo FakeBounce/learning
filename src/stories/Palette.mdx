@@ -1,0 +1,97 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks';
+import palette from '../theme/palette';
+
+export const customPalette = palette();
+
+<Meta title="Colors" />
+
+<ColorPalette>
+  <ColorItem
+    title="Greyscale"
+    subtitle="Some of the greys"
+    colors={{
+      '0': customPalette.grey[0],
+      '100': customPalette.grey[100],
+      '200': customPalette.grey[200],
+      '300': customPalette.grey[300],
+      '400': customPalette.grey[400],
+      '500': customPalette.grey[500],
+      '600': customPalette.grey[600],
+      '700': customPalette.grey[700],
+      '800': customPalette.grey[800],
+      '900': customPalette.grey[900]
+    }}
+  />
+  <ColorItem
+    title="Primary"
+    subtitle="Coral"
+    colors={{
+      Lighter: customPalette.primary.lighter,
+      Light: customPalette.primary.light,
+      Main: customPalette.primary.main,
+      Dark: customPalette.primary.dark,
+      Darker: customPalette.primary.darker,
+      ContrastText: customPalette.primary.contrastText
+    }}
+  />
+  <ColorItem
+    title="Secondary"
+    subtitle="Ocean"
+    colors={{
+      Lighter: customPalette.secondary.lighter,
+      Light: customPalette.secondary.light,
+      Main: customPalette.secondary.main,
+      Dark: customPalette.secondary.dark,
+      Darker: customPalette.secondary.darker,
+      ContrastText: customPalette.secondary.contrastText
+    }}
+  />
+  <ColorItem
+    title="Info"
+    subtitle="Info"
+    colors={{
+      Lighter: customPalette.info.lighter,
+      Light: customPalette.info.light,
+      Main: customPalette.info.main,
+      Dark: customPalette.info.dark,
+      Darker: customPalette.info.darker,
+      ContrastText: customPalette.info.contrastText
+    }}
+  />
+  <ColorItem
+    title="Success"
+    subtitle="Green"
+    colors={{
+      Lighter: customPalette.success.lighter,
+      Light: customPalette.success.light,
+      Main: customPalette.success.main,
+      Dark: customPalette.success.dark,
+      Darker: customPalette.success.darker,
+      ContrastText: customPalette.success.contrastText
+    }}
+  />
+  <ColorItem
+    title="Warning"
+    subtitle="Orange"
+    colors={{
+      Lighter: customPalette.warning.lighter,
+      Light: customPalette.warning.light,
+      Main: customPalette.warning.main,
+      Dark: customPalette.warning.dark,
+      Darker: customPalette.warning.darker,
+      ContrastText: customPalette.warning.contrastText
+    }}
+  />
+  <ColorItem
+    title="Error"
+    subtitle="Red"
+    colors={{
+      Lighter: customPalette.error.lighter,
+      Light: customPalette.error.light,
+      Main: customPalette.error.main,
+      Dark: customPalette.error.dark,
+      Darker: customPalette.error.darker,
+      ContrastText: customPalette.error.contrastText
+    }}
+  />
+</ColorPalette>

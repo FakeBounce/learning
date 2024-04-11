@@ -62,7 +62,7 @@ describe('OrganizationsCreate', () => {
       logo: 'something',
       name: 'Test Organization',
       addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
-      useDoubleAuth: 0,
+      useDoubleAuth: false,
       clientAdmin: {
         firstname: 'Test',
         lastname: 'Admin',

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/CircledAvatar Default smoke-test 1`] = `
+<label class="MuiBox-root css-fjsr0d">
+  <div class="MuiBox-root css-jfdah8">
+    Avatar content
+  </div>
+</label>
+`;

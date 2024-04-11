@@ -6,7 +6,7 @@ import { ProfileSkeleton } from '@src/components/skeletons/ProfileSkeleton';
 import { useAppSelector } from '@redux/hooks';
 import { ApplicantProfileState } from '@services/applicants/interfaces';
 import RHFSwitch from '@src/components/hook-form/RHFSwitch';
-import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
+
 import RHFAvatar from '@src/components/hook-form/RHFAvatar';
 import {
   StyledFormColumn,
@@ -83,30 +83,18 @@ export default function ApplicantsUpdateForm({
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
         <StyledFormColumn>
           <StyledFormRow>
-            <RHFTextField
-              name={'lastname'}
-              label={<LabelWithRequired label={<Trans>Nom</Trans>} />}
-            />
+            <RHFTextField name={'lastname'} label={<Trans>Nom</Trans>} required />
           </StyledFormRow>
           <StyledFormRow>
-            <RHFTextField
-              name={'firstname'}
-              label={<LabelWithRequired label={<Trans>Prénom</Trans>} />}
-            />
+            <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFTextField
-              name={'email'}
-              label={<LabelWithRequired label={<Trans>Email</Trans>} />}
-            />
+            <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFTextField
-              name={'birthDate'}
-              label={<LabelWithRequired label={<Trans>Date de naissance</Trans>} />}
-            />
+            <RHFTextField name={'birthDate'} label={<Trans>Date de naissance</Trans>} required />
           </StyledFormRow>
         </StyledFormColumn>
 
@@ -124,7 +112,7 @@ export default function ApplicantsUpdateForm({
           {/*<StyledFormRow>*/}
           {/*  <RHFTextField*/}
           {/*    name={'groups'}*/}
-          {/*    label={<LabelWithRequired label={<Trans>Groupe(s) lié(s)</Trans>} />}*/}
+          {/*    label={<Trans>Groupe(s) lié(s)</Trans>} required*/}
           {/*  />*/}
           {/*</StyledFormRow>*/}
         </StyledFormColumn>

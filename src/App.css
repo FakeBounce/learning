@@ -11,4 +11,10 @@ a {
 
 .MuiFormLabel-asterisk {
   color: #ff6286;
+  margin-left: 2px;
+}
+
+.MuiAvatar-fallback {
+  width: 100%;
+  height: 100%;
 }

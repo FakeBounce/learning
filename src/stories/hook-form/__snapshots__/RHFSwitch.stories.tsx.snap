@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/RHFSwitch Checked smoke-test 1`] = `
+<form>
+  <div class="MuiBox-root css-0">
+    Checked Switch
+    <div class="MuiBox-root css-1ldhbnq">
+      <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1vbggne-MuiFormControlLabel-root">
+        <span class="MuiSwitch-root MuiSwitch-sizeMedium css-tvdqvb-MuiSwitch-root">
+          <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1brz8fh-MuiButtonBase-root-MuiSwitch-switchBase">
+            <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                   type="checkbox"
+            >
+            <span class="MuiSwitch-thumb css-tqmoez-MuiSwitch-thumb">
+            </span>
+            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+            </span>
+          </span>
+          <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+          </span>
+        </span>
+        <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-gkbk35-MuiTypography-root">
+        </span>
+      </label>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFSwitch Default smoke-test 1`] = `
+<form>
+  <div class="MuiBox-root css-0">
+    Default Switch
+    <div class="MuiBox-root css-1ldhbnq">
+      <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1vbggne-MuiFormControlLabel-root">
+        <span class="MuiSwitch-root MuiSwitch-sizeMedium css-tvdqvb-MuiSwitch-root">
+          <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1brz8fh-MuiButtonBase-root-MuiSwitch-switchBase">
+            <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                   type="checkbox"
+            >
+            <span class="MuiSwitch-thumb css-tqmoez-MuiSwitch-thumb">
+            </span>
+            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+            </span>
+          </span>
+          <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+          </span>
+        </span>
+        <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-gkbk35-MuiTypography-root">
+        </span>
+      </label>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFSwitch Required smoke-test 1`] = `
+<form>
+  <div class="MuiBox-root css-0">
+    Required
+    <span class="MuiFormLabel-asterisk">
+      *
+    </span>
+    <div class="MuiBox-root css-1ldhbnq">
+      <label class="MuiFormControlLabel-root MuiFormControlLabel-labelPlacementEnd css-1vbggne-MuiFormControlLabel-root">
+        <span class="MuiSwitch-root MuiSwitch-sizeMedium css-tvdqvb-MuiSwitch-root">
+          <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1brz8fh-MuiButtonBase-root-MuiSwitch-switchBase">
+            <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+                   type="checkbox"
+            >
+            <span class="MuiSwitch-thumb css-tqmoez-MuiSwitch-thumb">
+            </span>
+            <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+            </span>
+          </span>
+          <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+          </span>
+        </span>
+        <span class="MuiTypography-root MuiTypography-body1 MuiFormControlLabel-label css-gkbk35-MuiTypography-root">
+        </span>
+      </label>
+    </div>
+  </div>
+</form>
+`;

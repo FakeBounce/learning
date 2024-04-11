@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/ActionButton Cancel smoke-test 1`] = `
+<button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1nvwnbn-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        tabindex="0"
+        type="button"
+        id=":r1:"
+>
+  Button
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</button>
+`;
+
+exports[`Example/ActionButton Primary smoke-test 1`] = `
+<button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        tabindex="0"
+        type="button"
+        id=":r0:"
+>
+  Button
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</button>
+`;
+
+exports[`Example/ActionButton Update smoke-test 1`] = `
+<button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1gn5gyf-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        tabindex="0"
+        type="button"
+        id=":r2:"
+>
+  Button
+  <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+  </span>
+</button>
+`;
