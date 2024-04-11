@@ -3,7 +3,7 @@ import {
   ApplicantFromApi,
   SingleApplicantFromApi
 } from '@services/applicants/interfaces';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
+import { camelizeObject } from '@utils/helpers/convertCasing';
 
 /**
  * Convert the values of the applicant object to the correct format
@@ -11,7 +11,7 @@ import { pascalizeObject } from '@utils/helpers/convertCasing';
 export const convertApplicantValues = (
   applicant: SingleApplicantFromApi | ApplicantFromApi
 ): Applicant => {
-  const convertedApplicant = pascalizeObject(applicant);
+  const convertedApplicant = camelizeObject(applicant);
 
   if (convertedApplicant.currentValues) {
     Object.keys(convertedApplicant.currentValues).forEach((key) => {

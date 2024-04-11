@@ -1,7 +1,7 @@
 import { MouseEvent, ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { UserFromAPI } from '@services/users/interfaces';
+import { User } from '@services/users/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import Iconify from '@src/components/iconify/Iconify';
 
@@ -10,14 +10,14 @@ export interface OrderBy {
   direction: 'DESC' | 'ASC';
 }
 export interface UsersColumn {
-  id: 'lastname' | 'firstname' | 'email' | 'is_active';
+  id: 'lastname' | 'firstname' | 'email' | 'isActive';
   label: ReactNode;
   maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
   align?: 'right' | 'center';
   renderCell?: (
-    row: UserFromAPI,
-    handleClick: (newUser: UserFromAPI) => (event: MouseEvent<HTMLElement>) => void
+    row: User,
+    handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
   ) => ReactNode;
 }
 
@@ -60,16 +60,16 @@ export const usersColumns: readonly UsersColumn[] = [
     }
   },
   {
-    id: 'is_active',
+    id: 'isActive',
     label: <Trans>Statut</Trans>,
     maxWidth: 100,
     renderCell: (row, handleClick) => {
-      const activatedText = row.is_active ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
+      const activatedText = row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
 
       return (
         <Box display="flex" alignItems="center">
           <StatusChip
-            isActive={row.is_active}
+            isActive={row.isActive}
             activatedText={activatedText}
             handleClick={handleClick(row)}
           />
@@ -80,7 +80,7 @@ export const usersColumns: readonly UsersColumn[] = [
 ];
 
 export const usersTableHeaderRender = (
-  setOrderBy: (id: 'lastname' | 'firstname' | 'email' | 'is_active') => void,
+  setOrderBy: (id: 'lastname' | 'firstname' | 'email' | 'isActive') => void,
   orderBy: OrderBy | null
 ) => {
   return usersColumns.map((column) => (
@@ -113,10 +113,10 @@ export const usersTableHeaderRender = (
 };
 
 export const usersTableRowsRender = (
-  listData: UserFromAPI[],
-  handleClick: (newUser: UserFromAPI) => (event: MouseEvent<HTMLElement>) => void
+  listData: User[],
+  handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
 ) => {
-  return listData.map((row: UserFromAPI) => {
+  return listData.map((row: User) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
         {usersColumns.map((column: UsersColumn) => {

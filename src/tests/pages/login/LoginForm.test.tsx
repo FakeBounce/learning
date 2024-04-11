@@ -31,6 +31,6 @@ describe('LoginForm', () => {
     // Ensure that the "Mot de passe oublié ?" link is present with the correct path
     const forgotPasswordLink = screen.getByText(/Mot de passe oublié ?/i).closest('a');
     expect(forgotPasswordLink).toBeInTheDocument();
-    expect(forgotPasswordLink?.getAttribute('href')).toBe(PATH_AUTH.resetPassword);
+    expect(forgotPasswordLink?.getAttribute('href')).toBe(PATH_AUTH.forgotPassword);
   });
 });

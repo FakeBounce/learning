@@ -15,7 +15,7 @@ interface UserProfileGroupsProps {
   groups: Group[];
 }
 
-export default function UserProfileGroups({ groups }: UserProfileGroupsProps) {
+export default function UserProfileGroups({ groups = [] }: UserProfileGroupsProps) {
   const theme = useTheme();
   const { singleUserLoading } = useAppSelector((state) => state.users.singleUser);
 
@@ -31,7 +31,7 @@ export default function UserProfileGroups({ groups }: UserProfileGroupsProps) {
         <Trans>Groupes</Trans>
       </Typography>
       {groups.length > 0 ? (
-        <LMSCard isPageCard cardCss={{ position: 'relative' }}>
+        <LMSCard isPageCard>
           <FullTable
             headerRenderer={userProfileGroupsHeaderRender()}
             bodyRenderer={userProfileGroupsRowRender(groups)}

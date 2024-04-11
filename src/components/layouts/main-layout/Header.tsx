@@ -32,23 +32,26 @@ export default function Header() {
         alignItems={['center', 'center']}
         boxSizing="border-box"
       >
-        <Box display="flex" alignItems="center">
-          <Typography sx={{ fontWeight: theme.typography.fontWeightMedium }}>
-            {currentOrganization.name}
-          </Typography>
-          {currentOrganization.isMain && (
-            <Typography ml={0.5}>
-              <Trans>(global)</Trans>
+        {currentOrganization && (
+          <Box display="flex" alignItems="center">
+            <Typography sx={{ fontWeight: theme.typography.fontWeightMedium }}>
+              {currentOrganization.name}
             </Typography>
-          )}
-          {!currentOrganization.isMain && (
-            <Chip
-              sx={{ marginLeft: theme.spacing(2) }}
-              label={<Trans>Déconnexion</Trans>}
-              onDelete={handleOrganizationLogout}
-            />
-          )}
-        </Box>
+            {currentOrganization.isMain && (
+              <Typography ml={0.5}>
+                <Trans>(global)</Trans>
+              </Typography>
+            )}
+            {!currentOrganization.isMain && (
+              <Chip
+                sx={{ marginLeft: theme.spacing(2) }}
+                label={<Trans>Déconnexion</Trans>}
+                onDelete={handleOrganizationLogout}
+              />
+            )}
+          </Box>
+        )}
+
         <HeaderRightContent />
       </Box>
       <HeaderBreadcrumbs />

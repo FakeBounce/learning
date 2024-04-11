@@ -1,10 +1,6 @@
-import { ReactNode } from 'react';
-// form
+import { memo, ReactNode } from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
-// @mui
 import { TextField, TextFieldProps } from '@mui/material';
-
-// ----------------------------------------------------------------------
 
 interface BaseRHFTextFieldProps {
   name: string;
@@ -14,12 +10,7 @@ interface BaseRHFTextFieldProps {
 
 type RHFTextFieldProps = BaseRHFTextFieldProps & Omit<TextFieldProps, 'name' | 'size'>;
 
-export default function RHFTextField({
-  name,
-  helperText,
-  size = 'small',
-  ...other
-}: RHFTextFieldProps) {
+function RHFTextField({ name, helperText, size = 'small', ...other }: RHFTextFieldProps) {
   const { control } = useFormContext();
 
   return (
@@ -40,3 +31,5 @@ export default function RHFTextField({
     />
   );
 }
+
+export default memo(RHFTextField);

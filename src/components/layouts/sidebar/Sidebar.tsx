@@ -25,7 +25,7 @@ export default function Sidebar({ open, setOpen }: SidebarProps) {
             width: drawerWidth,
             backgroundColor: theme.palette.grey[100],
             borderRightStyle: 'dashed',
-            position: 'relative'
+            position: 'fixed'
           }
         }}
       >

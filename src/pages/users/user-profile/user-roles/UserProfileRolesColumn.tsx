@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { Box, TableCell, TableRow, Typography } from '@mui/material';
-import { Role } from '@services/roles/interfaces';
+import { UserRole } from '@services/roles/interfaces';
 
 export interface UserProfileRolesColumns {
   id: 'name' | 'description';
@@ -10,7 +10,7 @@ export interface UserProfileRolesColumns {
   maxWidth?: number;
   padding?: 'normal' | 'checkbox' | 'none';
   align?: 'right' | 'center';
-  renderCell?: (row: Role) => ReactNode;
+  renderCell?: (row: UserRole) => ReactNode;
 }
 
 export const userProfileRolesColumns: readonly UserProfileRolesColumns[] = [
@@ -61,8 +61,8 @@ export const userProfileRolesHeaderRender = () => {
   ));
 };
 
-export const userProfileRolesRowRender = (listData: Role[]) => {
-  return listData.map((row: Role, index) => {
+export const userProfileRolesRowRender = (listData: UserRole[]) => {
+  return listData.map((row: UserRole, index) => {
     return (
       <TableRow hover role="checkbox" tabIndex={-1} key={index}>
         {userProfileRolesColumns.map((column: UserProfileRolesColumns) => {

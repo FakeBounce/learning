@@ -87,7 +87,7 @@ export const rolesTableHeaderRenderer = (
       </Box>
     </TableCell>
   ));
-}
+};
 
 export const rolesTableRowsRenderer = (
   listData: Role[],
@@ -114,4 +114,4 @@ export const rolesTableRowsRenderer = (
       </TableRow>
     );
   });
-}
+};

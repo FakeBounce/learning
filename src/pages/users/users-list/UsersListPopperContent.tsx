@@ -2,13 +2,13 @@ import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { useNavigate } from 'react-router-dom';
-import { UserFromAPI } from '@services/users/interfaces';
+import { User } from '@services/users/interfaces';
 import { toggleUserBlock } from '@redux/reducers/usersReducer';
 
 interface UsersListPopperContentProps {
   setAnchorEl: (value: HTMLElement | null) => void;
-  setUserSelected: (value: UserFromAPI | null) => void;
-  userSelected: UserFromAPI | null;
+  setUserSelected: (value: User | null) => void;
+  userSelected: User | null;
 }
 export default function UsersListPopperContent({
   setAnchorEl,
@@ -28,7 +28,7 @@ export default function UsersListPopperContent({
     if (userSelected !== null) {
       dispatch(
         toggleUserBlock({
-          setActive: !userSelected.is_active,
+          setActive: !userSelected.isActive,
           userId: userSelected.id
         })
       ).then(() => {
@@ -47,7 +47,7 @@ export default function UsersListPopperContent({
         </ListItemButton>
         <ListItemButton onClick={toggleBlock}>
           <ListItemText
-            primary={userSelected?.is_active ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>}
+            primary={userSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>}
           />
         </ListItemButton>
       </ListItem>

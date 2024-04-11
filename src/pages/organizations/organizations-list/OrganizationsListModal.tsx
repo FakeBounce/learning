@@ -6,14 +6,14 @@ import { toggleOrganizationsBlock } from '@redux/actions/organizationsActions';
 import { Organization } from '@services/organizations/interfaces';
 
 const titleToDisplay = (organizationSelected: Organization) => {
-  if (!organizationSelected.is_active) {
+  if (!organizationSelected.isActive) {
     return <Trans>Débloquer une organisation</Trans>;
   }
   return <Trans>Bloquer une organisation</Trans>;
 };
 
 const textToDisplay = (organizationSelected: Organization) => {
-  if (organizationSelected.is_active) {
+  if (organizationSelected.isActive) {
     return (
       <Typography>
         Êtes-vous sûr de vouloir débloquer l’organisation{' '}
@@ -66,7 +66,7 @@ export default function OrganizationsListModal({
     if (organizationSelected !== null) {
       dispatch(
         toggleOrganizationsBlock({
-          setActive: !organizationSelected.is_active,
+          setActive: !organizationSelected.isActive,
           organizationId: organizationSelected.id
         })
       ).then(() => {

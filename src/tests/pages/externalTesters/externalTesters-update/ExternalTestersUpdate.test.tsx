@@ -8,6 +8,7 @@ import ExternalTestersUpdateMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
 import { cleanup } from '@testing-library/react';
+import { generatePath } from 'react-router-dom';
 
 const externalTesterUpdateTestConfig = {
   preloadedState: {
@@ -19,7 +20,7 @@ const externalTesterUpdateTestConfig = {
       }
     }
   },
-  customHistory: [PATH_EXTERNAL_TESTERS.profile.replace(':applicantId', String(singleTester.id))]
+  customHistory: [generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: singleTester.id })]
 };
 
 describe('ExternalTestersUpdate', () => {
@@ -34,7 +35,7 @@ describe('ExternalTestersUpdate', () => {
   });
 
   it('renders ExternalTestersUpdate correctly', async () => {
-    await act(() => {
+    act(() => {
       render(
         <Routes>
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
@@ -43,7 +44,7 @@ describe('ExternalTestersUpdate', () => {
       );
     });
 
-    await act(() => {
+    act(() => {
       waitFor(() => {
         expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
         expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
@@ -52,7 +53,7 @@ describe('ExternalTestersUpdate', () => {
   });
 
   it('should display a message if submitting without changes', async () => {
-    await act(() => {
+    act(() => {
       render(
         <Routes>
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
@@ -78,7 +79,7 @@ describe('ExternalTestersUpdate', () => {
   });
 
   it('should call the correct api with only updated fields', async () => {
-    await act(() => {
+    act(() => {
       render(
         <Routes>
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
@@ -114,7 +115,7 @@ describe('ExternalTestersUpdate', () => {
   });
 
   it('should call the prevent user if email is changed', async () => {
-    await act(() => {
+    act(() => {
       render(
         <Routes>
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />

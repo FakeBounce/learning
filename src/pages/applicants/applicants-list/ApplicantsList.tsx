@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getApplicantsList } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
@@ -14,7 +13,7 @@ import ApplicantsListPopperContent from './ApplicantsListPopperContent';
 import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
-import { Applicant } from '@services/applicants/interfaces';
+import { Applicant, ApplicantType } from '@services/applicants/interfaces';
 import ApplicantsListModal from '@src/pages/applicants/applicants-list/ApplicantsListModal';
 
 export default function ApplicantsList() {
@@ -43,7 +42,8 @@ export default function ApplicantsList() {
   useEffect(() => {
     const defaultApplicantListRequestConfig = {
       currentPage: currentPage,
-      rowsPerPage: rowsPerPage
+      rowsPerPage: rowsPerPage,
+      type: ApplicantType.STUDENT
     };
 
     const applicantRequestConfig =
@@ -103,10 +103,8 @@ export default function ApplicantsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <ApplicantsListHeader />
-
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<ApplicantsListHeader />}>
         <FullTable
           headerRenderer={applicantsTableHeaderRenderer(handleSort, orderBy)}
           bodyRenderer={applicantsTableRowsRenderer(applicantListData, handleClick)}
@@ -136,6 +134,6 @@ export default function ApplicantsList() {
           cancelModal={cancelModal}
         />
       )}
-    </Box>
+    </>
   );
 }

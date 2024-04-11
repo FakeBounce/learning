@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 import { Box, FormControlLabel } from '@mui/material';
 import LMSSwitch from '@src/components/lms/LMSSwitch';
 import { Controller, useFormContext } from 'react-hook-form';
@@ -10,7 +10,7 @@ interface RHFSwitchProps {
   label: ReactNode;
 }
 
-export default function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
+function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
   const { control } = useFormContext();
   return (
     <Box>
@@ -33,3 +33,5 @@ export default function RHFSwitch({ name, required = false, label }: RHFSwitchPr
     </Box>
   );
 }
+
+export default memo(RHFSwitch);

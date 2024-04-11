@@ -119,7 +119,9 @@ describe('OrganizationsListPopperContent', () => {
     });
 
     expect(OrganizationsListMock.history.post.length).toBe(1);
-    expect(OrganizationsListMock.history.post[0].url).toBe('/organizations/1/change-view');
+    expect(OrganizationsListMock.history.post[0].url).toBe(
+      `/organizations/${defaultOrganization.id}/change-view`
+    );
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);

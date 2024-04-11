@@ -1,9 +1,7 @@
-import { Trans } from '@lingui/macro';
-import { Box } from '@mui/material';
 import { useAppSelector } from '@redux/hooks';
-import ActionButton from '@src/components/lms/ActionButton';
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
+import CardFooter from '@src/components/cards/CardFooter';
 
 export default function OrganizationsUpdateFooter() {
   const navigate = useNavigate();
@@ -12,18 +10,11 @@ export default function OrganizationsUpdateFooter() {
     (state) => state.organizations.organizationUpdate.organizationUpdateLoading
   );
 
+  const navigateToOrganizationsList = () => {
+    navigate(PATH_ORGANIZATIONS.root);
+  };
+
   return (
-    <Box display="flex">
-      <ActionButton
-        actionType="cancel"
-        loading={organizationUpdateLoading}
-        onClick={() => navigate(PATH_ORGANIZATIONS.root)}
-      >
-        <Trans>Annuler</Trans>
-      </ActionButton>
-      <ActionButton type="submit" role="submit" sx={{ ml: 2 }} loading={organizationUpdateLoading}>
-        <Trans>Enregistrer</Trans>
-      </ActionButton>
-    </Box>
+    <CardFooter cancelAction={navigateToOrganizationsList} isLoading={organizationUpdateLoading} />
   );
 }

@@ -1,7 +1,7 @@
 import { cleanup, render, screen, act } from '@testProvider';
 import ApplicantsProfile from '@src/pages/applicants/applicants-update/ApplicantsUpdate';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import { Routes, Route } from 'react-router';
 import { waitFor } from '@testing-library/dom';
@@ -32,20 +32,20 @@ describe('ApplicantProfile', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
         </Routes>,
         {
           customHistory: [
-            PATH_APPLICANTS.profile.replace(':applicantId', String(singleApplicant.id))
+            generatePath(PATH_APPLICANTS.profile, { applicantId: singleApplicant.id })
           ]
         }
       );
     });
 
-    await act(() => {
+    act(() => {
       waitFor(() => {
         expect(screen.getByText(singleApplicant.email)).toBeInTheDocument();
       });
@@ -57,18 +57,18 @@ describe('ApplicantProfile', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
         </Routes>,
         {
-          customHistory: [PATH_APPLICANTS.profile.replace(':applicantId', 'invalid')]
+          customHistory: [generatePath(PATH_APPLICANTS.profile, { applicantId: 'invalid' })]
         }
       );
     });
 
-    await act(() => {
+    act(() => {
       waitFor(() => {
         expect(screen.getByText(/L'étudiant n'existe pas/i)).toBeInTheDocument();
       });

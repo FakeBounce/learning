@@ -20,7 +20,7 @@ function AuthGuard({ children }: { children: ReactNode }) {
   useEffect(() => {
     if (isAuthenticated && id) {
       const storageToken = getSession();
-      if (storageToken !== null && storageToken.refresh_token !== null) {
+      if (storageToken !== null && storageToken.refreshToken !== null) {
         dispatch(refresh()).then(() => {
           dispatch(getUser());
         });

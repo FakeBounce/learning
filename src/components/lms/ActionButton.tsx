@@ -1,18 +1,13 @@
 import { LoadingButton, LoadingButtonProps } from '@mui/lab';
 import { useTheme } from '@mui/material/styles';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 interface ActionButtonProps extends LoadingButtonProps {
   children: ReactNode;
   actionType?: 'action' | 'cancel' | 'update';
   sx?: Record<string, any>;
 }
-export default function ActionButton({
-  actionType = 'action',
-  children,
-  sx,
-  ...other
-}: ActionButtonProps) {
+function ActionButton({ actionType = 'action', children, sx, ...other }: ActionButtonProps) {
   const theme = useTheme();
 
   const sxConfig = {
@@ -52,3 +47,5 @@ export default function ActionButton({
     </LoadingButton>
   );
 }
+
+export default memo(ActionButton);

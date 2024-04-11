@@ -28,29 +28,6 @@ export interface ConnectedUser {
   currentOrganization: ConnectedUserOrganization;
 }
 
-export interface ConnectedUserOrganizationFromAPI {
-  id: number;
-  logo: string;
-  is_active: boolean;
-  is_main: boolean;
-  name: string;
-  use_double_auth: boolean;
-  city: string;
-  address: string;
-}
-
-export interface ConnectedUserFromAPI {
-  id: number;
-  lastname: string;
-  firstname: string;
-  login: string;
-  email: string;
-  is_client_admin: boolean;
-  is_super_admin: boolean;
-  permissions: PermissionTypeList;
-  current_organization: ConnectedUserOrganizationFromAPI;
-}
-
 export interface UpdateOrganizationViewRequest {
   organizationId: number;
 }
@@ -58,25 +35,25 @@ export interface UpdateOrganizationViewRequest {
 export interface UpdateOrganizationViewResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ConnectedUserOrganizationFromAPI;
+  data: ConnectedUserOrganization;
 }
 
 export interface GetConnectedUserResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ConnectedUserFromAPI;
+  data: ConnectedUser;
 }
 
 export interface LoginInformations {
   token: string;
-  refresh_token: string;
-  expires_at: string;
+  refreshToken: string;
+  expiresAt: string;
 }
 
 export interface LoginRequest {
   login: string;
   password: string;
-  organization_uuid: string;
+  organizationUuid: string;
 }
 
 export interface LoginResponse {
@@ -89,4 +66,9 @@ export interface LogoutResponse {
   success: boolean;
   message: ApiResponseMessage;
   data?: any; // @TODO: Define the data
+}
+
+export interface ForgotPasswordRequest {
+  email: string;
+  organizationUuid: string;
 }

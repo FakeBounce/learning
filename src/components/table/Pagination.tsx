@@ -28,12 +28,12 @@ const Pagination = ({
   totalCount,
   currentPage,
   rowsPerPage,
-  rowsPerPageOptions = [10, 25, 100],
+  rowsPerPageOptions = [5, 10, 25, 100],
   onRowsPerPageChange,
   onPageChange
 }: PaginationProps) => {
   return (
-    <StyledPaginationContainer>
+    <StyledPaginationContainer style={{ marginTop: 0 }}>
       <TablePagination
         rowsPerPageOptions={rowsPerPageOptions}
         component="div"

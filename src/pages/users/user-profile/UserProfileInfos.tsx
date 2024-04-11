@@ -1,7 +1,12 @@
 import { Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
-import { User } from '@services/connected-user/interfaces';
+import { User } from '@services/users/interfaces';
+import {
+  StyledFormColumn,
+  StyledFormRow,
+  StyledFormTypography
+} from '@src/components/layouts/form/FormStyles';
 
 interface UserProfileInfosProps {
   user: User;
@@ -9,62 +14,46 @@ interface UserProfileInfosProps {
 
 export default function UserProfileInfos({ user }: UserProfileInfosProps) {
   const theme = useTheme();
-  const captionStyle = {
-    marginY: 0.5,
-    ...theme.typography.caption
-  };
 
   return (
-    <Box px={[0, 4]} display="flex">
-      <Box width="50%">
-        <Box
-          sx={{
-            marginY: 2
-          }}
-        >
-          <Typography sx={captionStyle}>
+    <Box display="flex" gap={2}>
+      <StyledFormColumn>
+        <StyledFormRow>
+          <StyledFormTypography>
             <Trans>Nom</Trans>
-          </Typography>
+          </StyledFormTypography>
           <Typography>{user.lastname}</Typography>
-        </Box>
+        </StyledFormRow>
 
-        <Box
-          sx={{
-            marginY: 2
-          }}
-        >
-          <Typography sx={captionStyle}>
+        <StyledFormRow>
+          <StyledFormTypography>
             <Trans>Email</Trans>
-          </Typography>
+          </StyledFormTypography>
           <Typography sx={theme.typography.body1}>{user.email}</Typography>
-        </Box>
+        </StyledFormRow>
 
-        <Box>
-          <Typography sx={captionStyle}>
+        <StyledFormRow>
+          <StyledFormTypography>
             <Trans>Double authentification</Trans>
-          </Typography>
-          <Typography>{user.use_double_auth ? <Trans>OUI</Trans> : <Trans>NON</Trans>}</Typography>
-        </Box>
-      </Box>
-      <Box width="50%">
-        <Box
-          sx={{
-            marginY: 2
-          }}
-        >
-          <Typography sx={captionStyle}>
+          </StyledFormTypography>
+          <Typography>{user.useDoubleAuth ? <Trans>OUI</Trans> : <Trans>NON</Trans>}</Typography>
+        </StyledFormRow>
+      </StyledFormColumn>
+      <StyledFormColumn>
+        <StyledFormRow>
+          <StyledFormTypography>
             <Trans>Prénom</Trans>
-          </Typography>
+          </StyledFormTypography>
           <Typography>{user.firstname}</Typography>
-        </Box>
+        </StyledFormRow>
 
-        <Box>
-          <Typography sx={captionStyle}>
+        <StyledFormRow>
+          <StyledFormTypography>
             <Trans>Login</Trans>
-          </Typography>
+          </StyledFormTypography>
           <Typography>{user.login}</Typography>
-        </Box>
-      </Box>
+        </StyledFormRow>
+      </StyledFormColumn>
     </Box>
   );
 }

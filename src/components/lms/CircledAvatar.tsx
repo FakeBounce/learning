@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
-import { ReactNode } from 'react';
+import { memo, ReactNode } from 'react';
 
 const StyledImageDisplayContainer = styled(Box)(({ theme }) => ({
   width: 128,
@@ -27,10 +27,12 @@ interface CircledAvatarProps {
   [key: string]: unknown;
 }
 
-export default function CircledAvatar({ children, ...other }: CircledAvatarProps) {
+function CircledAvatar({ children, ...other }: CircledAvatarProps) {
   return (
     <StyledImageDisplayContainer component="label" {...other}>
       <StyledImageDisplayer>{children}</StyledImageDisplayer>
     </StyledImageDisplayContainer>
   );
 }
+
+export default memo(CircledAvatar);

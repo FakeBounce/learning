@@ -11,7 +11,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { AnyAction } from 'redux';
 import { setSession } from '@utils/axios/session';
 import { resetApp } from '@redux/actions/globalActions';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
+import { t } from '@lingui/macro';
 
 interface UserState {
   user: ConnectedUser;
@@ -21,6 +21,9 @@ interface UserState {
     loading: boolean;
     isAuthenticated: boolean;
   };
+  forgotPassword: {
+    loading: boolean;
+  }
 }
 
 const initialState: UserState = {
@@ -30,6 +33,9 @@ const initialState: UserState = {
   login: {
     loading: false,
     isAuthenticated: false
+  },
+  forgotPassword: {
+    loading: false
   }
 };
 
@@ -77,10 +83,23 @@ export const connectedUserSlice = createSlice({
       .addCase(UserActions.getUser.pending, (state) => {
         state.globalLoading = true;
       })
+      .addCase(UserActions.forgotPassword.pending, (state) => {
+        state.forgotPassword.loading = true;
+      })
+      .addCase(UserActions.forgotPassword.fulfilled, (state) => {
+        state.forgotPassword.loading = false;
+        enqueueSnackbar(t`Demande de réinitialisation de mot de passe envoyée`, { variant: 'success' });
+
+      })
+      .addCase(UserActions.forgotPassword.rejected, (state, action: AnyAction) => {
+        state.forgotPassword.loading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
       .addCase(
         UserActions.getUser.fulfilled,
         (state, action: { payload: GetConnectedUserResponse }) => {
-          const newUser = pascalizeObject(action.payload.data);
+          const newUser = action.payload.data;
           state.user = {
             ...newUser
           };
@@ -102,7 +121,7 @@ export const connectedUserSlice = createSlice({
         (state, action: { payload: UpdateOrganizationViewResponse }) => {
           state.user = {
             ...state.user,
-            currentOrganization: pascalizeObject(action.payload.data)
+            currentOrganization: action.payload.data
           };
           enqueueSnackbar(action.payload.message.value, { variant: 'success' });
         }

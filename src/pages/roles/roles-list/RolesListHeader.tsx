@@ -1,25 +1,25 @@
-import { Box, Typography } from '@mui/material';
 import { Trans } from '@lingui/macro';
-import ActionButton from '@src/components/lms/ActionButton';
-import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
+import { PATH_ROLES } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { useContext } from 'react';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
+import CardHeader from '@src/components/cards/CardHeader';
 
 export default function RolesListHeader() {
   const navigate = useNavigate();
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
 
-  return (
-    <Box px={3} minHeight="10vh" display="flex" alignItems="center" boxSizing="border-box">
-      <Typography variant="h4" fontWeight="normal">
-        <Trans>Rôles</Trans>
-      </Typography>
-      <ActionButton
-        sx={{ textTransform: 'none', ml: 2 }}
-        onClick={() => {
-          navigate(PATH_ORGANIZATIONS.add);
-        }}
-      >
-        <Trans>Ajouter</Trans>
-      </ActionButton>
-    </Box>
-  );
+  const canCreateRole = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE);
+  const goToCreateRole = () => {
+    navigate(PATH_ROLES.add);
+  };
+
+  const rolesListHeaderActions = canCreateRole
+    ? [{ action: goToCreateRole, actionText: <Trans>Ajouter</Trans> }]
+    : null;
+
+  return <CardHeader headerText={<Trans>Rôles</Trans>} actions={rolesListHeaderActions} />;
 }

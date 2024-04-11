@@ -1,7 +1,6 @@
 import { Group } from '@services/groups/interfaces';
 import { createSlice } from '@reduxjs/toolkit';
 import * as GroupsAction from '@redux/actions/groupsActions';
-import { pascalizeObject } from '@utils/helpers/convertCasing';
 import { AnyAction } from 'redux';
 import { enqueueSnackbar } from 'notistack';
 
@@ -31,8 +30,8 @@ export const groupsSlice = createSlice({
         state.groupsList.groupsListLoading = true;
       })
       .addCase(GroupsAction.getGroupsList.fulfilled, (state, action) => {
-        state.groupsList.groupsListData = pascalizeObject(action.payload.data.rows);
-        state.groupsList.groupsListTotalCount = action.payload.data.pagination.total_results;
+        state.groupsList.groupsListData = action.payload.data.rows;
+        state.groupsList.groupsListTotalCount = action.payload.data.pagination.totalResults;
         state.groupsList.groupsListLoading = false;
       })
       .addCase(GroupsAction.getGroupsList.rejected, (state, action: AnyAction) => {

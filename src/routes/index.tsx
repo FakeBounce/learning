@@ -1,11 +1,17 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { ExternalTestersUpdate, Groups, LoginPage, Page404, Roles } from 'src/routes/elements';
+import {
+  ForgotPasswordPage,
+  LoginPage,
+  Page404,
+  Roles,
+  Groups
+} from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
-  PATH_EXTERNAL_TESTERS, PATH_GROUPS,
-  PATH_ROLES
+  PATH_ROLES,
+  PATH_GROUPS
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
@@ -15,6 +21,7 @@ import UsersRoutes from '@src/routes/UsersRoutes';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import ExternalTestersRoutes from '@src/routes/ExternalTestersRoutes';
 
 const Router = () => {
   return (
@@ -30,16 +37,7 @@ const Router = () => {
         {OrganizationsRoutes()}
         {UsersRoutes()}
         {ApplicantsRoutes()}
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.TESTERS}
-              permissionsAuthorized={pageRestrictionsList.externalTesters}
-            />
-          }
-        >
-          <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersUpdate />} />
-        </Route>
+        {ExternalTestersRoutes()}
         <Route
           element={
             <FeatureFlagedRoute
@@ -66,6 +64,7 @@ const Router = () => {
 
       <Route element={<GuestGuard />}>
         <Route path={PATH_AUTH.login} element={<LoginPage />} />
+        <Route path={PATH_AUTH.forgotPassword} element={<ForgotPasswordPage />} />
       </Route>
     </Routes>
   );

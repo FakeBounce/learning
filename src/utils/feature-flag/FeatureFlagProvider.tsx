@@ -65,11 +65,19 @@ const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
 
   const pagePermissionCheck = useCallback(
     (pageAskedPermission: PermissionTypeEnum) => {
-      if (currentOrganization.isMain && pageAskedPermission !== PermissionTypeEnum.SUPER_ADMIN) {
+      if (
+        currentOrganization &&
+        currentOrganization.isMain &&
+        pageAskedPermission !== PermissionTypeEnum.SUPER_ADMIN
+      ) {
         return false;
       }
       if (pageAskedPermission === PermissionTypeEnum.SUPER_ADMIN) {
-        return isUserAdmin === HasAdminRights.SUPER_ADMIN && currentOrganization.isMain;
+        return (
+          isUserAdmin === HasAdminRights.SUPER_ADMIN &&
+          currentOrganization &&
+          currentOrganization.isMain
+        );
       }
       return isAuthorizedByPermissionsTo(pageAskedPermission, PermissionEnum.READ);
     },

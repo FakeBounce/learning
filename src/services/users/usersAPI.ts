@@ -15,7 +15,7 @@ export const getUsers = async (args: GetUsersRequest): Promise<AxiosResponse<Get
 
   return axios.post('/users/filter', {
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters: filters,
     sort: sort
   });
@@ -38,5 +38,5 @@ export const toggleUserBlock = async (
   const { setActive, userId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  return axios.put(`/users/${correctPath}/${userId}`);
+  return axios.put(`/users/${userId}/${correctPath}`);
 };
