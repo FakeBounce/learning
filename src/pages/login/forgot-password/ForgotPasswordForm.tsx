@@ -9,19 +9,11 @@ export default function ForgotPasswordForm() {
     >
       <RHFTextField
         name={'organizationUuid'}
-        label={
-          LabelWithRequired({
-            label: <Trans>Organisation ID</Trans>
-          })
-        }
+        label={<LabelWithRequired label={<Trans>Organisation ID</Trans>} />}
       />
       <RHFTextField
         name={'email'}
-        label={
-          LabelWithRequired({
-            label: <Trans>Adresse mail</Trans>
-          })
-        }
+        label={<LabelWithRequired label={<Trans>Adresse mail</Trans>} />}
       />
     </Stack>
   );
