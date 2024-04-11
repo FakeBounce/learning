@@ -2,50 +2,50 @@ import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants
 
 export const defaultTester = {
   id: 1,
-  profile_picture: 'defaultExternalTesterPicture',
+  profilePicture: 'defaultExternalTesterPicture',
   email: 'defaultTester@test.fr',
   type: ApplicantType.TESTER,
-  external_id: null,
+  externalId: null,
   firstname: 'default',
   lastname: 'tester',
   phone: '0123456789',
-  is_active: true
+  isActive: true
 } as ApplicantFromApi;
 
 export const blockedTester = {
   id: 2,
-  profile_picture: 'blockedTesterPicture',
+  profilePicture: 'blockedTesterPicture',
   email: 'blockedTester@test.fr',
   type: ApplicantType.TESTER,
-  external_id: null,
+  externalId: null,
   firstname: 'blocked',
   lastname: 'tester',
   phone: '0123456789',
-  is_active: false
+  isActive: false
 } as ApplicantFromApi;
 
 export const unlockedTester = {
   id: 3,
-  profile_picture: 'unlockedTesterPicture',
+  profilePicture: 'unlockedTesterPicture',
   email: 'unlockedTester@test.fr',
   type: ApplicantType.TESTER,
-  external_id: null,
+  externalId: null,
   firstname: 'unlocked',
   lastname: 'tester',
   phone: '0123456789',
-  is_active: true
+  isActive: true
 } as ApplicantFromApi;
 
 export const newTester = {
   id: 4,
-  profile_picture: 'newTesterPicture',
+  profilePicture: 'newTesterPicture',
   email: 'newTester@test.fr',
   type: ApplicantType.TESTER,
-  external_id: null,
+  externalId: null,
   firstname: 'new',
   lastname: 'tester',
   phone: '0123456789',
-  is_active: true
+  isActive: true
 } as ApplicantFromApi;
 
 export const stateTester = {
@@ -78,7 +78,7 @@ export const singleTester = {
   email: 'singleTester@email.fr',
   type: ApplicantType.TESTER,
   external_id: null,
-  is_active: true,
+  isActive: true,
   current_values: {
     firstname: 'single',
     lastname: 'tester',

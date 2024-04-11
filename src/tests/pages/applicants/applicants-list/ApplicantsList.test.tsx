@@ -56,7 +56,12 @@ describe('ApplicantsList', () => {
     await waitFor(() => {
       expect(ApplicantsListMock.history.post).toHaveLength(2);
       expect(ApplicantsListMock.history.post[1].data).toEqual(
-        '{"type":"student","page":0,"row_per_page":10,"sort":{"field":"firstname","direction":"ASC"}}'
+        JSON.stringify({
+          type: 'student',
+          page: 0,
+          row_per_page: 10,
+          sort: { field: 'firstname', direction: 'ASC' }
+        })
       );
     });
 
@@ -67,7 +72,12 @@ describe('ApplicantsList', () => {
     await waitFor(() => {
       expect(ApplicantsListMock.history.post).toHaveLength(3);
       expect(ApplicantsListMock.history.post[2].data).toEqual(
-        '{"type":"student","page":0,"row_per_page":10,"sort":{"field":"firstname","direction":"DESC"}}'
+        JSON.stringify({
+          type: 'student',
+          page: 0,
+          row_per_page: 10,
+          sort: { field: 'firstname', direction: 'DESC' }
+        })
       );
     });
 
@@ -78,7 +88,7 @@ describe('ApplicantsList', () => {
     await waitFor(() => {
       expect(ApplicantsListMock.history.post).toHaveLength(4);
       expect(ApplicantsListMock.history.post[3].data).toEqual(
-        '{"type":"student","page":0,"row_per_page":10}'
+        JSON.stringify({ type: 'student', page: 0, row_per_page: 10 })
       );
     });
   });

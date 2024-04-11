@@ -14,18 +14,6 @@ export interface User {
   groups: any[];
 }
 
-export interface UserFromAPI {
-  email: string;
-  firstname: string;
-  id: number;
-  lastname: string;
-  login: string;
-  use_double_auth: boolean;
-  is_active: boolean;
-  roles: UserRole[];
-  // @todo define the type of the groups
-  groups: any[];
-}
 /*
  * API Request and Response
  * To get a list of users
@@ -41,7 +29,7 @@ export interface GetUsersResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: UserFromAPI[];
+    rows: User[];
     pagination: ApiResponsePagination;
   };
 }
@@ -53,7 +41,7 @@ export interface GetUsersResponse {
 export interface GetSingleUserResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: UserFromAPI;
+  data: User;
 }
 
 /*
@@ -66,13 +54,13 @@ export interface UpdateUserRequest {
   firstname?: string;
   email?: string;
   login?: string;
-  use_double_auth?: boolean;
+  useDoubleAuth?: boolean;
 }
 
 export interface UpdateUserResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: UserFromAPI;
+  data: User;
 }
 
 /*
@@ -87,5 +75,5 @@ export interface UpdateUserBlockRequest {
 export interface UpdateUserBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: UserFromAPI;
+  data: User;
 }

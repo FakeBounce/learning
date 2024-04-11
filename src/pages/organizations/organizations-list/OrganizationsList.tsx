@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { getOrganizationsList } from '@redux/actions/organizationsActions';
 import { Organization } from '@services/organizations/interfaces';
@@ -16,13 +15,13 @@ import { ChangeEvent, useEffect, useState, MouseEvent } from 'react';
 import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
+import { selectOrganizationsList } from '@redux/reducers/organizationsReducer';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();
 
   const { organizationListData, organizationListLoading, organizationListTotalCount } =
-    useAppSelector((state) => state.organizations.organizationList);
-
+    useAppSelector(selectOrganizationsList);
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
@@ -56,7 +55,7 @@ export default function OrganizationsList() {
     dispatch(getOrganizationsList(organizationRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);
 
-  const handleSort = (id: 'name' | 'city' | 'is_active') => {
+  const handleSort = (id: 'name' | 'city' | 'isActive') => {
     if (orderBy?.id === id) {
       if (orderBy.direction === 'DESC') {
         setOrderBy(null);
@@ -91,10 +90,8 @@ export default function OrganizationsList() {
   const id = open ? 'simple-popper' : undefined;
 
   return (
-    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <OrganizationsListHeader />
-
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<OrganizationsListHeader />}>
         <FullTable
           headerRenderer={organizationsTableHeaderRenderer(handleSort, orderBy)}
           bodyRenderer={organizationsTableRowsRenderer(organizationListData, handleClick)}
@@ -124,6 +121,6 @@ export default function OrganizationsList() {
           cancelModal={cancelModal}
         />
       )}
-    </Box>
+    </>
   );
 }

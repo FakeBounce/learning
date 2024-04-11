@@ -24,10 +24,10 @@ export const createOrganizations = async (
 export const updateOrganizations = async (
   args: UpdateOrganizationsRequest
 ): Promise<AxiosResponse<UpdateOrganizationsResponse>> => {
-  const { id, name, address_id, logo } = args;
+  const { id, name, addressId, logo } = args;
   return axios.put(`/organizations/${id}`, {
     name,
-    address_id,
+    addressId,
     logo
   });
 };
@@ -38,7 +38,7 @@ export const updateOrganizationsBlock = async (
   const { setActive, organizationId } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  return axios.post(`/organizations/${correctPath}/${organizationId}`);
+  return axios.put(`/organizations/${organizationId}/${correctPath}`);
 };
 
 export const getSingleOrganization = async (
@@ -54,7 +54,7 @@ export const getOrganizations = async (
 
   return axios.post('/organizations/filter', {
     page: currentPage,
-    row_per_page: rowsPerPage,
+    rowPerPage: rowsPerPage,
     filters,
     sort
   });

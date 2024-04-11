@@ -1,5 +1,4 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Box } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
@@ -82,12 +81,9 @@ export default function ApplicantsCreate() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-        <Box px={[0, 2]} display="flex">
-          <LMSCard isPageCard cardCss={{ maxWidth: '100%' }} footer={<ApplicantsCreateFooter />}>
-            <ApplicantsCreateHeader />
-            <ApplicantsUpdateForm image={image} setImage={setImage} />
-          </LMSCard>
-        </Box>
+        <LMSCard isPageCard header={<ApplicantsCreateHeader />} footer={<ApplicantsCreateFooter />}>
+          <ApplicantsUpdateForm image={image} setImage={setImage} />
+        </LMSCard>
       </form>
     </FormProvider>
   );

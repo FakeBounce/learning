@@ -11,13 +11,13 @@ const ApplicantsListMock = new MockAdapter(axios);
 
 export const setupSuccessAxiosMock = () => {
   // Mock the createOrganizations endpoint
-  ApplicantsListMock.onPost(/\/applicants\/block\/\d+/)
+  ApplicantsListMock.onPost(/\/applicants\/\d+\/block/)
     .reply(200, {
       success: true,
       message: { value: 'Applicants blocked successfully' },
       data: defaultApplicant
     })
-    .onPost(/\/applicants\/unblock\/\d+/)
+    .onPost(/\/applicants\/\d+\/unblock/)
     .reply(200, {
       success: true,
       message: { value: 'Applicants unblocked successfully' },

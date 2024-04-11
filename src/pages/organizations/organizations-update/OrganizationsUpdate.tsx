@@ -1,6 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
-import { Box, Typography } from '@mui/material';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { updateOrganizations, getSingleOrganization } from '@redux/actions/organizationsActions';
 import { LMSCard } from '@src/components/lms';
@@ -12,6 +11,7 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import * as Yup from 'yup';
 import { PATH_ERRORS } from '@utils/navigation/paths';
+import CardHeader from '@src/components/cards/CardHeader';
 
 const updateOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
@@ -81,7 +81,7 @@ export default function OrganizationsUpdate() {
       // @todo - Use google API on front and not through the backend to prevent multiplicating requests
       newOrganizationValues = {
         ...newOrganizationValues,
-        address_id: 'ChIJ-U_newOxthIRZKI1ypcmSB8'
+        addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8'
       };
     }
     if (image !== organization.logo) {
@@ -99,19 +99,13 @@ export default function OrganizationsUpdate() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
-        <Box px={[0, 2]} display="flex">
-          <LMSCard
-            cardCss={{ maxWidth: '100%' }}
-            header={
-              <Typography variant="h5">
-                <Trans>Modifier une organisation</Trans>
-              </Typography>
-            }
-            footer={<OrganizationsUpdateFooter />}
-          >
-            <OrganizationsUpdateForm image={image} setImage={setImage} />
-          </LMSCard>
-        </Box>
+        <LMSCard
+          isPageCard
+          header={<CardHeader headerText={<Trans>Modifier une organisation</Trans>} />}
+          footer={<OrganizationsUpdateFooter />}
+        >
+          <OrganizationsUpdateForm image={image} setImage={setImage} />
+        </LMSCard>
       </form>
     </FormProvider>
   );

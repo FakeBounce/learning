@@ -17,12 +17,7 @@ describe('RolesListPopperContent', () => {
   it('renders RolesListPopperContent correctly', () => {
     const handleDelete = jest.fn();
 
-    render(
-      <RolesListPopperContent
-        roleSelected={null}
-        handleDelete={handleDelete}
-      />
-    );
+    render(<RolesListPopperContent roleSelected={null} handleDelete={handleDelete} />);
 
     expect(screen.getByText(/Modifier les utilisateurs/i)).toBeInTheDocument();
     expect(screen.getByText(/Gérer les permissions/i)).toBeInTheDocument();

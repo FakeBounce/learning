@@ -37,7 +37,7 @@ describe('ApplicantsListHeader', () => {
 
     expect(screen.getByText(/Étudiants/i)).toBeInTheDocument();
 
-    expect(screen.queryByText(/Créer/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/Ajouter/i)).not.toBeInTheDocument();
   });
 
   it('should have the create button if user has rights', () => {
@@ -55,7 +55,7 @@ describe('ApplicantsListHeader', () => {
     expect(screen.getByText(/Étudiants/i)).toBeInTheDocument();
 
     // Ensure that the "Annuler" button is present
-    const createButton = screen.getByText(/Créer/i);
+    const createButton = screen.getByText(/Ajouter/i);
     expect(createButton).toBeInTheDocument();
 
     act(() => {

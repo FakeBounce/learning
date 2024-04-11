@@ -8,13 +8,16 @@ interface RolesListPopperContentProps {
   handleDelete: () => void;
 }
 
-export default function RolesListPopperContent({ roleSelected, handleDelete }: RolesListPopperContentProps) {
+export default function RolesListPopperContent({
+  roleSelected,
+  handleDelete
+}: RolesListPopperContentProps) {
   const theme = useTheme();
 
   const handleChangeView = (type: string) => {
     if (roleSelected !== null) {
       //@TODO: uncomment when pages is ready
-      switch(type) {
+      switch (type) {
         case 'update':
           // navigate(PATH_ROLES.update);
           break;
@@ -24,23 +27,31 @@ export default function RolesListPopperContent({ roleSelected, handleDelete }: R
         default:
           break;
       }
-
     }
   };
 
   return (
     <ListItem disablePadding sx={{ display: 'block' }}>
-      <ListItemButton onClick={() => handleChangeView('update')} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
-        <ListItemText primary={<Trans>Modifier les utilisateurs</Trans>}/>
+      <ListItemButton
+        onClick={() => handleChangeView('update')}
+        sx={{ '&:hover': { color: theme.palette.secondary.main } }}
+      >
+        <ListItemText primary={<Trans>Modifier les utilisateurs</Trans>} />
       </ListItemButton>
-      <ListItemButton onClick={() => handleChangeView('manage')} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
+      <ListItemButton
+        onClick={() => handleChangeView('manage')}
+        sx={{ '&:hover': { color: theme.palette.secondary.main } }}
+      >
         <ListItemText primary={<Trans>Gérer les permissions</Trans>} />
       </ListItemButton>
-      { !roleSelected?.isClientAdmin &&
-        <ListItemButton onClick={handleDelete} sx={{'&:hover': { color: theme.palette.secondary.main }}}>
+      {!roleSelected?.isClientAdmin && (
+        <ListItemButton
+          onClick={handleDelete}
+          sx={{ '&:hover': { color: theme.palette.secondary.main } }}
+        >
           <ListItemText primary={<Trans>Supprimer</Trans>} />
         </ListItemButton>
-      }
+      )}
     </ListItem>
   );
 }

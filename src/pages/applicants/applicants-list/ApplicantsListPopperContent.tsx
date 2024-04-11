@@ -1,32 +1,36 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { Applicant } from '@services/applicants/interfaces';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
 import { useAppDispatch } from '@redux/hooks';
 
-interface OrganizationsListPopperContentProps {
+interface ApplicantsListPopperContentProps {
   handleToggleBlock: () => void;
   applicantSelected: Applicant | null;
 }
-export default function OrganizationsListPopperContent({
+export default function ApplicantsListPopperContent({
   handleToggleBlock,
   applicantSelected
-}: OrganizationsListPopperContentProps) {
+}: ApplicantsListPopperContentProps) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
-      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(
+        generatePath(PATH_APPLICANTS.profile, { applicantId: String(applicantSelected.id) })
+      );
     }
   };
 
   const goToApplicantUpdate = () => {
     if (applicantSelected !== null) {
       dispatch(startEditingApplicant());
-      navigate(PATH_APPLICANTS.profile.replace(':applicantId', String(applicantSelected.id)));
+      navigate(
+        generatePath(PATH_APPLICANTS.profile, { applicantId: String(applicantSelected.id) })
+      );
     }
   };
 

@@ -5,6 +5,7 @@ import { defaultRole } from '@src/tests/pages/roles/DefaultRole';
 
 // Mock Pagination as it is not relevant for this test
 jest.mock('@src/components/table/Pagination', () => jest.fn());
+jest.mock('@src/pages/roles/roles-list/RolesListHeader', () => jest.fn());
 
 describe('RolesList', () => {
   it('renders RolesList correctly', async () => {

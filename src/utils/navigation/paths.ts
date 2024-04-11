@@ -1,6 +1,12 @@
+import { ApplicantType } from '@services/applicants/interfaces';
+
 function path(root: string, sublink: string) {
   return `${root}${sublink}`;
 }
+
+export const getApplicantPath = (type: ApplicantType) => {
+  return type === ApplicantType.TESTER ? PATH_EXTERNAL_TESTERS : PATH_APPLICANTS;
+};
 
 const ROOTS_DASHBOARD = '/';
 
@@ -39,7 +45,7 @@ export const PATH_PARAMETERS = {
 const ROOT_ORGANIZATIONS = PATH_PARAMETERS.organizations;
 export const PATH_ORGANIZATIONS = {
   root: ROOT_ORGANIZATIONS,
-  add: path(ROOT_ORGANIZATIONS, '/creation'),
+  add: path(ROOT_ORGANIZATIONS, '/create'),
   update: path(ROOT_ORGANIZATIONS, '/update/:organizationId')
 };
 
@@ -47,14 +53,15 @@ const ROOT_APPLICANTS = PATH_PARAMETERS.applicants;
 export const PATH_APPLICANTS = {
   root: ROOT_APPLICANTS,
   profile: path(ROOT_APPLICANTS, '/profile/:applicantId'),
-  add: path(ROOT_APPLICANTS, '/creation')
+  add: path(ROOT_APPLICANTS, '/create')
 };
 
 const ROOT_EXTERNAL_TESTERS = PATH_PARAMETERS.externalTesters;
 export const PATH_EXTERNAL_TESTERS = {
   root: ROOT_EXTERNAL_TESTERS,
   profile: path(ROOT_EXTERNAL_TESTERS, '/profile/:applicantId'),
-  add: path(ROOT_EXTERNAL_TESTERS, '/creation')
+  add: path(ROOT_EXTERNAL_TESTERS, '/create'),
+  addBulk: path(ROOT_EXTERNAL_TESTERS, '/create-bulk')
 };
 
 const ROOT_ROLES = PATH_PARAMETERS.roles;
@@ -70,7 +77,7 @@ const ROOT_USERS = PATH_PARAMETERS.users;
 export const PATH_USERS = {
   root: ROOT_USERS,
   add: path(ROOT_USERS, '/create'),
-  addMassive: path(ROOT_USERS, '/massive-create'),
+  addBulk: path(ROOT_USERS, '/create-bulk'),
   profile: path(ROOT_USERS, '/profile/:id'),
   edit: path(ROOT_USERS, '/edit/:id')
 };

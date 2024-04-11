@@ -11,19 +11,19 @@ const OrganizationsListMock = new MockAdapter(axios);
 
 export const setupSuccessAxiosMock = () => {
   // Mock the createOrganizations endpoint
-  OrganizationsListMock.onPost(/\/organizations\/change-view\/\d+/)
+  OrganizationsListMock.onPost(/\/organizations\/\d+\/change-view/)
     .reply(200, {
       success: true,
       message: { value: 'View changed successfully' },
       data: newOrganization
     })
-    .onPost(/\/organizations\/block\/\d+/)
+    .onPost(/\/organizations\/\d+\/block/)
     .reply(200, {
       success: true,
       message: { value: 'Organization blocked successfully' },
       data: defaultOrganization
     })
-    .onPost(/\/organizations\/unblock\/\d+/)
+    .onPost(/\/organizations\/\d+\/unblock/)
     .reply(200, {
       success: true,
       message: { value: 'Organization unblocked successfully' },

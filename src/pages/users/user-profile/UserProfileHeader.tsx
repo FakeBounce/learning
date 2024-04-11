@@ -1,40 +1,28 @@
-import { Box, Typography } from '@mui/material';
-import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
-import { UserFromAPI } from '@services/users/interfaces';
 import { useNavigate } from 'react-router-dom';
+import CardHeader from '@src/components/cards/CardHeader';
+import { User } from '@services/users/interfaces';
 
 interface UserProfileHeaderProps {
-  user: UserFromAPI;
+  user: User;
 }
 export default function UserProfileHeader({ user }: UserProfileHeaderProps) {
   const theme = useTheme();
   const navigate = useNavigate();
 
+  // @Todo might need to check the permisisons
   return (
-    <Box p={2} display="flex">
-      <Typography
-        sx={{
-          color: theme.palette.secondary.main,
-          fontSize: theme.typography.h3.fontSize,
-          fontWeight: theme.typography.fontWeightBold
-        }}
-      >
-        {user.lastname} {user.firstname}
-      </Typography>
-      <ActionButton
-        sx={{
-          bgcolor: theme.palette.secondary.main,
-          '&:hover': {
-            bgcolor: theme.palette.secondary.dark
-          },
-          marginX: 2
-        }}
-        onClick={() => navigate(`/users/edit/${user.id}`)}
-      >
-        <Trans>Modifier</Trans>
-      </ActionButton>
-    </Box>
+    <CardHeader
+      headerText={`${user.lastname} ${user.firstname}`}
+      headerColor={theme.palette.secondary.main}
+      actions={[
+        {
+          action: () => navigate(`/users/edit/${user.id}`),
+          actionText: <Trans>Modifier</Trans>,
+          actionType: 'update'
+        }
+      ]}
+    />
   );
 }

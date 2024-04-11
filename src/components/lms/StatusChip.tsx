@@ -1,7 +1,7 @@
 import { Box, Chip, IconButton } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
 import { useTheme } from '@mui/material/styles';
-import React, { ReactNode } from 'react';
+import React, { memo, ReactNode } from 'react';
 
 interface StatusChipProps {
   isActive: boolean;
@@ -9,7 +9,7 @@ interface StatusChipProps {
   handleClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export default function StatusChip({ isActive, activatedText, handleClick }: StatusChipProps) {
+function StatusChip({ isActive, activatedText, handleClick }: StatusChipProps) {
   const theme = useTheme();
 
   return (
@@ -28,3 +28,5 @@ export default function StatusChip({ isActive, activatedText, handleClick }: Sta
     </Box>
   );
 }
+
+export default memo(StatusChip);

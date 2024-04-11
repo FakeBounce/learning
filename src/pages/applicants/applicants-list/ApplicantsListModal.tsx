@@ -16,29 +16,31 @@ const textToDisplay = (applicantSelected: Applicant) => {
   if (!applicantSelected.isActive) {
     return (
       <Typography>
-        <Trans>Êtes-vous sûr de vouloir débloquer l’étudiant</Trans>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-            textTransform: 'uppercase'
-          }}
-        >
-          {applicantSelected.lastname}
-        </Box>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium
-          }}
-        >
-          {applicantSelected.firstname}
-        </Box>{' '}
-        <Trans>dans</Trans>{' '}
-        <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
-          <Trans>toutes les organisations</Trans>
-        </Box>{' '}
-        ?
+        <Trans>
+          Êtes-vous sûr de vouloir débloquer l’étudiant{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              textTransform: 'uppercase'
+            }}
+          >
+            {applicantSelected.lastname}
+          </Box>{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium
+            }}
+          >
+            {applicantSelected.firstname}
+          </Box>{' '}
+          dans{' '}
+          <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
+            toutes les organisations
+          </Box>{' '}
+          ?
+        </Trans>
       </Typography>
     );
   }
@@ -46,29 +48,31 @@ const textToDisplay = (applicantSelected: Applicant) => {
   return (
     <>
       <Typography>
-        <Trans>Êtes-vous sûr de vouloir bloquer l’étudiant</Trans>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium,
-            textTransform: 'uppercase'
-          }}
-        >
-          {applicantSelected.lastname}
-        </Box>{' '}
-        <Box
-          component={'span'}
-          sx={{
-            fontWeight: (theme) => theme.typography.fontWeightMedium
-          }}
-        >
-          {applicantSelected.firstname}
-        </Box>{' '}
-        <Trans>dans</Trans>{' '}
-        <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
-          <Trans>toutes les organisations</Trans>
-        </Box>{' '}
-        ?
+        <Trans>
+          Êtes-vous sûr de vouloir bloquer l’étudiant{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              textTransform: 'uppercase'
+            }}
+          >
+            {applicantSelected.lastname}
+          </Box>{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium
+            }}
+          >
+            {applicantSelected.firstname}
+          </Box>{' '}
+          dans{' '}
+          <Box component={'span'} sx={{ fontWeight: (theme) => theme.typography.fontWeightMedium }}>
+            toutes les organisations
+          </Box>{' '}
+          ?
+        </Trans>
       </Typography>
       <Typography>
         <Trans>

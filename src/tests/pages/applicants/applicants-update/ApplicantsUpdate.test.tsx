@@ -8,6 +8,7 @@ import ApplicantsUpdateMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-update/ApplicantsUpdateMock';
 import { cleanup } from '@testing-library/react';
+import { generatePath } from 'react-router-dom';
 
 const applicantUpdateTestConfig = {
   preloadedState: {
@@ -19,7 +20,7 @@ const applicantUpdateTestConfig = {
       }
     }
   },
-  customHistory: [PATH_APPLICANTS.profile.replace(':applicantId', String(singleApplicant.id))]
+  customHistory: [generatePath(PATH_APPLICANTS.profile, { applicantId: singleApplicant.id })]
 };
 
 describe('ApplicantsUpdate', () => {
@@ -34,7 +35,7 @@ describe('ApplicantsUpdate', () => {
   });
 
   it('renders ApplicantsUpdate correctly', async () => {
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
@@ -43,7 +44,7 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
-    await act(() => {
+    await act(async () => {
       waitFor(() => {
         expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
           singleApplicant.current_values.firstname
@@ -54,7 +55,7 @@ describe('ApplicantsUpdate', () => {
   });
 
   it('should display a message if submitting without changes', async () => {
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
@@ -82,7 +83,7 @@ describe('ApplicantsUpdate', () => {
   });
 
   it('should call the correct api with only updated fields', async () => {
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
@@ -120,7 +121,7 @@ describe('ApplicantsUpdate', () => {
   });
 
   it('should call the prevent user if email is changed', async () => {
-    await act(() => {
+    await act(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />

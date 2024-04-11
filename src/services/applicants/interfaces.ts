@@ -30,7 +30,7 @@ export interface ApplicantCreateState {
 
 interface BaseApplicant {
   id: number;
-  profilePicture: string | undefined;
+  profilePicture: string | undefined | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
   externalId: string | null;
@@ -42,7 +42,7 @@ interface BaseApplicant {
   birthDate?: string;
   city?: string | null;
   notifications?: ApplicantNotifications;
-  groups: string[];
+  groups?: string[];
 }
 interface AdditionalApplicantProperties {
   [key: string]: string | number | null | boolean | undefined;
@@ -52,38 +52,38 @@ export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
 interface BaseApplicantFromApi {
   id: number;
-  profile_picture: string | null;
+  profilePicture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  external_id: string | null;
+  externalId: string | null;
   firstname: string;
   lastname: string;
   phone: string | null;
-  is_active: boolean;
-  birth_name?: null | string;
-  birth_date?: string;
-  city?: string | null;
+  isActive: boolean;
+  birthName: null | string;
+  birthDate: string;
+  city: string | null;
   notifications?: ApplicantNotifications;
 }
 export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
 
 export interface SingleApplicantFromApi {
   id: number;
-  profile_picture: string | null;
+  profilePicture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  external_id: string | null;
-  is_active: boolean;
-  notifications: ApplicantNotifications;
-  current_values: ApplicantValues;
+  externalId: string | null;
+  isActive: boolean;
+  notifications?: ApplicantNotifications;
+  currentValues: ApplicantValues;
 }
 
 export interface BaseApplicantValues {
   firstname: string;
   lastname: string;
   phone: string | null;
-  birth_name: null | string;
-  birth_date: string;
+  birthName: null | string;
+  birthDate: string;
   city: string;
 }
 export type ApplicantValues = BaseApplicantValues & AdditionalApplicantProperties;
@@ -102,6 +102,7 @@ export enum ApplicantType {
 export interface GetApplicantsListRequest {
   currentPage: number;
   rowsPerPage: number;
+  type: ApplicantType;
   sort?: { field: string; direction: 'ASC' | 'DESC' };
   filters?: any;
 }

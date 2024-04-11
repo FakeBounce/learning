@@ -1,4 +1,3 @@
-import { Box } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
 import RolesListHeader from '@src/pages/roles/roles-list/RolesListHeader';
 import FullTable from '@src/components/table/FullTable';
@@ -21,8 +20,9 @@ import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 export default function RolesList() {
   const dispatch = useAppDispatch();
 
-  const { rolesListData, rolesListLoading, rolesListTotalCount } =
-    useAppSelector((state) => state.roles.rolesList);
+  const { rolesListData, rolesListLoading, rolesListTotalCount } = useAppSelector(
+    (state) => state.roles.rolesList
+  );
 
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -41,9 +41,9 @@ export default function RolesList() {
       orderBy === null
         ? { ...defaultRoleListRequestConfig }
         : {
-          ...defaultRoleListRequestConfig,
-          sort: { field: orderBy.id, direction: orderBy.direction }
-        };
+            ...defaultRoleListRequestConfig,
+            sort: { field: orderBy.id, direction: orderBy.direction }
+          };
 
     dispatch(getRolesList(rolesRequestConfig));
   }, [currentPage, rowsPerPage, orderBy]);
@@ -87,10 +87,8 @@ export default function RolesList() {
   const id = open ? 'roles-popper' : undefined;
 
   return (
-    <Box p={[0, 2]} display="flex" width="100%" boxSizing="border-box">
-      <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-        <RolesListHeader />
-
+    <>
+      <LMSCard isPageCard contentPadding={0} header={<RolesListHeader />}>
         <FullTable
           headerRenderer={rolesTableHeaderRenderer(handleSort, orderBy)}
           bodyRenderer={rolesTableRowsRenderer(rolesListData, handleClick)}
@@ -120,6 +118,6 @@ export default function RolesList() {
           cancelModal={cancelModal}
         />
       )}
-    </Box>
+    </>
   );
 }

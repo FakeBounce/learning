@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, act, cleanup } from '@testProvider';
 import ApplicantsListPopperContent from '@src/pages/applicants/applicants-list/ApplicantsListPopperContent';
 import { stateApplicant } from '../DefaultApplicants';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 
 // Mock useNavigate
@@ -64,7 +64,7 @@ describe('ApplicantsListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      PATH_APPLICANTS.profile.replace(':applicantId', stateApplicant.id.toString())
+      generatePath(PATH_APPLICANTS.profile, { applicantId: stateApplicant.id.toString() })
     );
   });
 
@@ -110,7 +110,7 @@ describe('ApplicantsListPopperContent', () => {
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(
-      PATH_APPLICANTS.profile.replace(':applicantId', stateApplicant.id.toString())
+      generatePath(PATH_APPLICANTS.profile, { applicantId: stateApplicant.id.toString() })
     );
   });
 

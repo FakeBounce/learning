@@ -5,7 +5,7 @@ import { ProfileSkeleton } from '@src/components/skeletons/ProfileSkeleton';
 import { useAppSelector } from '@redux/hooks';
 import { ApplicantProfileState } from '@services/applicants/interfaces';
 import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
-import { StyledApplicantColumn, StyledApplicantRow } from '@src/pages/applicants/ApplicantsStyles';
+import { StyledFormColumn, StyledFormRow } from '@src/components/layouts/form/FormStyles';
 
 export default function ExternalTestersUpdateForm() {
   const { applicantProfileLoading }: ApplicantProfileState = useAppSelector(
@@ -17,45 +17,45 @@ export default function ExternalTestersUpdateForm() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2} px={2}>
+    <Box display="flex" flexDirection="column" gap={2}>
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
+        <StyledFormColumn>
+          <StyledFormRow>
             <RHFTextField
               name={'lastname'}
               label={<LabelWithRequired label={<Trans>Nom</Trans>} />}
             />
-          </StyledApplicantRow>
-          <StyledApplicantRow>
+          </StyledFormRow>
+          <StyledFormRow>
             <RHFTextField
               name={'firstname'}
               label={<LabelWithRequired label={<Trans>Prénom</Trans>} />}
             />
-          </StyledApplicantRow>
+          </StyledFormRow>
 
-          <StyledApplicantRow>
+          <StyledFormRow>
             <RHFTextField
               name={'email'}
               label={<LabelWithRequired label={<Trans>Email</Trans>} />}
             />
-          </StyledApplicantRow>
-        </StyledApplicantColumn>
+          </StyledFormRow>
+        </StyledFormColumn>
 
-        <StyledApplicantColumn>
-          <StyledApplicantRow>
+        <StyledFormColumn>
+          <StyledFormRow>
             <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />
-          </StyledApplicantRow>
-          <StyledApplicantRow>
+          </StyledFormRow>
+          <StyledFormRow>
             <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
-          </StyledApplicantRow>
+          </StyledFormRow>
           {/* @todo Add when groups are down and we can select some */}
-          {/*<StyledApplicantRow>*/}
+          {/*<StyledFormRow>*/}
           {/*  <RHFTextField*/}
           {/*    name={'groups'}*/}
           {/*    label={<LabelWithRequired label={<Trans>Groupe(s) lié(s)</Trans>} />}*/}
           {/*  />*/}
-          {/*</StyledApplicantRow>*/}
-        </StyledApplicantColumn>
+          {/*</StyledFormRow>*/}
+        </StyledFormColumn>
       </Box>
     </Box>
   );

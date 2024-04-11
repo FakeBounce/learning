@@ -39,9 +39,9 @@ export default function UserEditForm({ control }: UserEditFormProps) {
         </Typography>
         <Box ml={1.5} mt={1}>
           <Controller
-            name="use_double_auth"
+            name="useDoubleAuth"
             control={control}
-            defaultValue={control._defaultValues.use_double_auth}
+            defaultValue={control._defaultValues.useDoubleAuth}
             render={({ field: { onChange, value } }) => {
               return (
                 <FormControlLabel

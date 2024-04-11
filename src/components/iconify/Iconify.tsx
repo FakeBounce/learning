@@ -1,10 +1,7 @@
-import { forwardRef, Ref } from 'react';
-// icons
+import { forwardRef, memo, Ref } from 'react';
 import { Icon, IconifyIcon } from '@iconify/react';
-// @mui
 import { Box } from '@mui/material';
 
-// ----------------------------------------------------------------------
 const IconifyComponent = ({ icon, width = 20, sx, ...other }: IconifyProps, ref: any) => (
   <Box ref={ref} component={Icon} icon={icon} sx={{ width, height: width, ...sx }} {...other} />
 );
@@ -17,4 +14,4 @@ interface IconifyProps {
   icon: string | IconifyIcon;
 }
 
-export default Iconify;
+export default memo(Iconify);

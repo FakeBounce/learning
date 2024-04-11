@@ -1,4 +1,3 @@
-import { User } from '@services/connected-user/interfaces';
 import {
   GetSingleUserResponse,
   GetUsersRequest,
@@ -6,7 +5,8 @@ import {
   UpdateUserBlockRequest,
   UpdateUserBlockResponse,
   UpdateUserRequest,
-  UpdateUserResponse
+  UpdateUserResponse,
+  User
 } from '@services/users/interfaces';
 import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import * as UsersServices from '@services/users/usersAPI';
@@ -109,7 +109,7 @@ export const usersSlice = createSlice({
       .addCase(getUsersList.fulfilled, (state, action: { payload: GetUsersResponse }) => {
         state.usersList.usersListLoading = false;
         state.usersList.usersListData = action.payload.data.rows;
-        // state.usersList.usersListTotalCount = action.payload.data.pagination.total_results;
+        state.usersList.usersListTotalCount = action.payload.data.pagination.totalResults;
       })
       .addCase(getUsersList.rejected, (state, action: AnyAction) => {
         state.usersList.usersListLoading = false;

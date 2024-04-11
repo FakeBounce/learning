@@ -1,7 +1,7 @@
 import { Box, Typography } from '@mui/material';
 import FullTable from '@src/components/table/FullTable';
 import { LMSCard } from '@src/components/lms';
-import { Role } from '@services/roles/interfaces';
+import { UserRole } from '@services/roles/interfaces';
 import {
   userProfileRolesColumns,
   userProfileRolesHeaderRender,
@@ -12,7 +12,7 @@ import { useTheme } from '@mui/material/styles';
 import { useAppSelector } from '@redux/hooks';
 
 interface UserProfileRolesProps {
-  roles: Role[];
+  roles: UserRole[];
 }
 
 export default function UserProfileRoles({ roles }: UserProfileRolesProps) {

@@ -4,10 +4,10 @@ export interface Organization {
   id: number;
   logo: string;
   name: string;
-  is_active: boolean;
+  isActive: boolean;
   address: string;
   city: string;
-  use_double_auth: boolean;
+  useDoubleAuth: boolean;
 }
 
 /*
@@ -62,10 +62,10 @@ export interface UpdateOrganizationsBlockResponse {
  */
 export interface CreateOrganizationsRequest {
   name: string;
-  address_id: string;
+  addressId: string;
   logo: File | string;
-  use_double_auth: 0 | 1;
-  client_admin: {
+  useDoubleAuth: 0 | 1;
+  clientAdmin: {
     login: string;
     firstname: string;
     lastname: string;
@@ -86,7 +86,7 @@ export interface CreateOrganizationsResponse {
 export interface UpdateOrganizationsRequest {
   id: number;
   name?: string;
-  address_id?: string;
+  addressId?: string;
   logo?: File | string;
 }
 

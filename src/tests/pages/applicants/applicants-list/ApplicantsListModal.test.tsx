@@ -67,6 +67,6 @@ describe('ApplicantsListModal', () => {
     });
 
     expect(ApplicantsListMock.history.put).toHaveLength(1);
-    expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/block/${stateApplicant.id}`);
+    expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/${stateApplicant.id}/block`);
   });
 });
