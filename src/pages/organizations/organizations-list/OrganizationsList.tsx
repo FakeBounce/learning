@@ -4,7 +4,6 @@ import { Organization } from '@services/organizations/interfaces';
 import { LMSCard } from '@src/components/lms';
 import FullTable from '@src/components/table/FullTable';
 import {
-  OrderBy,
   organizationsListColumns,
   organizationsTableHeaderRenderer,
   organizationsTableRowsRenderer
@@ -16,6 +15,7 @@ import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
 import { selectOrganizationsList } from '@redux/reducers/organizationsReducer';
+import { OrderBy } from '@services/interfaces';
 
 export default function OrganizationsList() {
   const dispatch = useAppDispatch();

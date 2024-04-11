@@ -13,14 +13,34 @@ export default function ApplicantsListHeader() {
   const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
 
   const canCreateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE);
+  const canCreateBulkApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE_BULK);
 
-  const goToApplicantsCreate = () => {
+  const goToCreateApplicant = () => {
     navigate(PATH_APPLICANTS.add);
   };
 
-  const applicantsListHeaderActions = canCreateApplicant
-    ? [{ action: goToApplicantsCreate, actionText: <Trans>Ajouter</Trans> }]
-    : null;
+  const goToCreateBulkApplicant = () => {
+    navigate(PATH_APPLICANTS.addBulk);
+  };
 
-  return <CardHeader headerText={<Trans>Étudiants</Trans>} actions={applicantsListHeaderActions} />;
+  const applicantsListHeaderActions = () => {
+    const actions = [];
+    if (canCreateApplicant) {
+      actions.push({
+        action: goToCreateApplicant,
+        actionText: <Trans>Ajouter</Trans>
+      });
+    }
+    if (canCreateBulkApplicant) {
+      actions.push({
+        action: goToCreateBulkApplicant,
+        actionText: <Trans>Ajouter en masse</Trans>
+      });
+    }
+    return actions;
+  };
+
+  return (
+    <CardHeader headerText={<Trans>Étudiants</Trans>} actions={applicantsListHeaderActions()} />
+  );
 }

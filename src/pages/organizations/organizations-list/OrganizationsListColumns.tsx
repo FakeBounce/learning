@@ -5,11 +5,8 @@ import { Organization } from '@services/organizations/interfaces';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode, MouseEvent } from 'react';
 import StatusChip from '@src/components/lms/StatusChip';
+import { OrderBy } from '@services/interfaces';
 
-export interface OrderBy {
-  id: string;
-  direction: 'DESC' | 'ASC';
-}
 export interface OrganizationColumn {
   id: 'name' | 'city' | 'isActive';
   label: ReactNode;

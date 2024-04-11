@@ -59,6 +59,12 @@
     "comments": [],
     "obsolete": false
   },
+  "AAjpHB": {
+    "translation": "",
+    "message": "Aucun étudiant valide à ajouter",
+    "comments": [],
+    "obsolete": false
+  },
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
@@ -104,6 +110,12 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
+    "comments": [],
+    "obsolete": false
+  },
+  "FABypk": {
+    "translation": "",
+    "message": "Sélectionnez un fichier",
     "comments": [],
     "obsolete": false
   },
@@ -158,6 +170,12 @@
   "IRPK7p": {
     "translation": "",
     "message": "La notification app est requise",
+    "comments": [],
+    "obsolete": false
+  },
+  "K+tHTS": {
+    "translation": "",
+    "message": "Format incorrect",
     "comments": [],
     "obsolete": false
   },
@@ -251,6 +269,24 @@
     "comments": [],
     "obsolete": false
   },
+  "UeDwla": {
+    "translation": "",
+    "message": "Information obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "UyAuoq": {
+    "translation": "",
+    "message": "Liste des étudiants valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "VXxxDw": {
+    "translation": "",
+    "message": "Liste des étudiants invalides",
+    "comments": [],
+    "obsolete": false
+  },
   "VsENqL": {
     "translation": "",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
@@ -260,6 +296,12 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
+    "comments": [],
+    "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "",
+    "message": "Fichier .csv / Max : 3 Mo",
     "comments": [],
     "obsolete": false
   },
@@ -353,6 +395,12 @@
     "comments": [],
     "obsolete": false
   },
+  "jP37N3": {
+    "translation": "",
+    "message": "Ajouter des étudiants en masse",
+    "comments": [],
+    "obsolete": false
+  },
   "k441hZ": {
     "translation": "",
     "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
@@ -368,6 +416,12 @@
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "rmmVFd": {
+    "translation": "",
+    "message": "Veillez sélectionner un fichier",
     "comments": [],
     "obsolete": false
   },

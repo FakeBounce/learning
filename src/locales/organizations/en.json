@@ -20,7 +20,8 @@
   "4kCp92": {
     "translation": "",
     "message": "L'email de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -49,12 +50,14 @@
   "C1e9Kp": {
     "translation": "",
     "message": "Le prénom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CdGMiD": {
     "translation": "",
     "message": "L'email de l'admin est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Cm37TD": {
     "translation": "",
@@ -119,7 +122,8 @@
   "JoxuHW": {
     "translation": "",
     "message": "L'adresse est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -142,12 +146,14 @@
   "PedA04": {
     "translation": "",
     "message": "Créer une organization",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "",
@@ -170,7 +176,8 @@
   "ZpEiaW": {
     "translation": "",
     "message": "Veuillez ajouter un logo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "b+/aiw": {
     "translation": "",
@@ -229,7 +236,8 @@
   "kSDjJh": {
     "translation": "",
     "message": "Le nom de l'admin est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lHMRD2": {
     "translation": "",
@@ -252,7 +260,8 @@
   "rBTdOL": {
     "translation": "",
     "message": "L'identifiant est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rKvP91": {
     "translation": "",

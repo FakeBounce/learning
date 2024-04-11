@@ -1,6 +1,8 @@
 import {
   CreateApplicantRequest,
   CreateApplicantResponse,
+  CreateBulkApplicantRequest,
+  CreateBulkApplicantResponse,
   GetApplicantsListRequest,
   GetApplicantsListResponse,
   GetSingleApplicantResponse,
@@ -73,4 +75,18 @@ export const createApplicant = async (
       'Content-Type': 'multipart/form-data'
     }
   });
+};
+
+export const createBulkApplicant = async (
+  args: CreateBulkApplicantRequest
+): Promise<AxiosResponse<CreateBulkApplicantResponse>> => {
+  const { type, applicantList } = args;
+
+  const applicantsForApi = {
+    type,
+    group_id: 1,
+    applicants: applicantList
+  };
+
+  return axios.post(`/applicants/add-multiple`, applicantsForApi);
 };

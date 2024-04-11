@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   CreateApplicantRequest,
+  CreateBulkApplicantRequest,
   GetApplicantsListRequest,
   UpdateApplicantBlockRequest,
   UpdateApplicantRequest
@@ -64,6 +65,19 @@ export const createApplicant = createAsyncThunk(
   async (args: CreateApplicantRequest, { rejectWithValue }) => {
     try {
       const response = await ApplicantsServices.createApplicant(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const createBulkApplicant = createAsyncThunk(
+  'applicants/createBulk',
+  async (args: CreateBulkApplicantRequest, { rejectWithValue }) => {
+    try {
+      const response = await ApplicantsServices.createBulkApplicant(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);

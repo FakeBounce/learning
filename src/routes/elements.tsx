@@ -48,6 +48,9 @@ export const ApplicantsUpdate = LoadableComponent(
 export const ApplicantsCreate = LoadableComponent(
   lazy(() => import('@src/pages/applicants/applicants-create/ApplicantsCreate'))
 );
+export const ApplicantsBulk = LoadableComponent(
+  lazy(() => import('@src/pages/applicants/applicants-bulk/ApplicantsBulk'))
+);
 
 /**
  External Testers

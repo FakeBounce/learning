@@ -13,3 +13,8 @@ export interface ApiResponsePagination {
   totalResults: number;
   totalPages: number;
 }
+
+export interface OrderBy {
+  id: string;
+  direction: 'DESC' | 'ASC';
+}

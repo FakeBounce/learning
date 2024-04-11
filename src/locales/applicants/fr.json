@@ -59,6 +59,12 @@
     "comments": [],
     "obsolete": false
   },
+  "AAjpHB": {
+    "translation": "Aucun étudiant valide à ajouter",
+    "message": "Aucun étudiant valide à ajouter",
+    "comments": [],
+    "obsolete": false
+  },
   "Bmo0y3": {
     "translation": "OUI",
     "message": "OUI",
@@ -104,6 +110,12 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
+    "comments": [],
+    "obsolete": false
+  },
+  "FABypk": {
+    "translation": "Sélectionnez un fichier",
+    "message": "Sélectionnez un fichier",
     "comments": [],
     "obsolete": false
   },
@@ -158,6 +170,12 @@
   "IRPK7p": {
     "translation": "La notification app est requise",
     "message": "La notification app est requise",
+    "comments": [],
+    "obsolete": false
+  },
+  "K+tHTS": {
+    "translation": "Format incorrect",
+    "message": "Format incorrect",
     "comments": [],
     "obsolete": false
   },
@@ -251,6 +269,24 @@
     "comments": [],
     "obsolete": false
   },
+  "UeDwla": {
+    "translation": "Information obligatoire",
+    "message": "Information obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "UyAuoq": {
+    "translation": "Liste des étudiants valides",
+    "message": "Liste des étudiants valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "VXxxDw": {
+    "translation": "Liste des étudiants invalides",
+    "message": "Liste des étudiants invalides",
+    "comments": [],
+    "obsolete": false
+  },
   "VsENqL": {
     "translation": "Êtes-vous sûrs de vouloir les modifier ?",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
@@ -260,6 +296,12 @@
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
+    "comments": [],
+    "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "Fichier .csv / Max : 3 Mo",
+    "message": "Fichier .csv / Max : 3 Mo",
     "comments": [],
     "obsolete": false
   },
@@ -353,6 +395,12 @@
     "comments": [],
     "obsolete": false
   },
+  "jP37N3": {
+    "translation": "Ajouter des étudiants en masse",
+    "message": "Ajouter des étudiants en masse",
+    "comments": [],
+    "obsolete": false
+  },
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
     "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
@@ -368,6 +416,12 @@
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "rmmVFd": {
+    "translation": "Veillez sélectionner un fichier",
+    "message": "Veillez sélectionner un fichier",
     "comments": [],
     "obsolete": false
   },

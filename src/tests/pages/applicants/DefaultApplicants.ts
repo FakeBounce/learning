@@ -1,4 +1,9 @@
-import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants/interfaces';
+import {
+  Applicant,
+  ApplicantForBulk,
+  ApplicantFromApi,
+  ApplicantType
+} from '@services/applicants/interfaces';
 
 export const defaultApplicant = {
   id: 1,
@@ -141,3 +146,88 @@ export const singleApplicant = {
     city: 'singleApplicantCity'
   }
 };
+
+export const validRowsForApplicantBulk = [
+  {
+    externalId: 'POIU1',
+    firstname: 'Améthyste',
+    lastname: 'Supernom',
+    email: 'superam@kyste.fr',
+    phone: '0987654321',
+    city: 'Poiuytreza',
+    birthDate: '03/03/1090',
+    birthName: 'Poulop'
+  },
+  {
+    externalId: 'LKDAL209',
+    firstname: 'Parapluie',
+    lastname: 'Lenom',
+    email: 'para@pluie.com',
+    phone: '',
+    city: 'Moiute',
+    birthDate: '02/05/1976',
+    birthName: 'Teebop'
+  },
+  {
+    externalId: '',
+    firstname: 'yaller',
+    lastname: 'jdois',
+    email: 'jdoisyaller@vite.com',
+    phone: '',
+    city: 'HOHOHO',
+    birthDate: '01/23/1003',
+    birthName: ''
+  }
+] as ApplicantForBulk[];
+
+export const faultyRowsForApplicantBulk = [
+  {
+    externalId: '',
+    email: 'faultyrow@bulk.fr',
+    firstname: 'faulty',
+    lastname: 'row',
+    phone: 'IF',
+    birthName: '',
+    birthDate: 'MD',
+    city: 'faultyRowCity'
+  }
+] as ApplicantForBulk[];
+
+export const ApplicantBulkFromApi = [
+  {
+    type: ApplicantType.STUDENT,
+    is_active: true,
+    external_id: 'POIU1',
+    firstname: 'Améthyste',
+    lastname: 'Supernom',
+    email: 'superam@kyste.fr',
+    phone: '0987654321',
+    city: 'Poiuytreza',
+    birth_date: '03/03/1090',
+    birth_name: 'Poulop'
+  },
+  {
+    type: ApplicantType.STUDENT,
+    is_active: true,
+    external_id: 'LKDAL209',
+    firstname: 'Parapluie',
+    lastname: 'Lenom',
+    email: 'para@pluie.com',
+    phone: '',
+    city: 'Moiute',
+    birth_date: '02/05/1976',
+    birth_name: 'Teebop'
+  },
+  {
+    type: ApplicantType.STUDENT,
+    is_active: true,
+    external_id: '',
+    firstname: 'yaller',
+    lastname: 'jdois',
+    email: 'jdoisyaller@vite.com',
+    phone: '',
+    city: 'HOHOHO',
+    birth_date: '01/23/1003',
+    birth_name: ''
+  }
+] as ApplicantFromApi[];

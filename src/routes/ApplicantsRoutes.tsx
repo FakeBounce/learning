@@ -1,6 +1,11 @@
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
-import { Applicants, ApplicantsCreate, ApplicantsUpdate } from 'src/routes/elements';
+import {
+  Applicants,
+  ApplicantsBulk,
+  ApplicantsCreate,
+  ApplicantsUpdate
+} from 'src/routes/elements';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import ActionRestrictedRoute from '@utils/feature-flag/ActionRestrictedRoute';
@@ -20,6 +25,10 @@ function ApplicantsRoutes() {
       <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE} />}>
         <Route path={PATH_APPLICANTS.add} element={<ApplicantsCreate />} />
+      </Route>
+
+      <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE_BULK} />}>
+        <Route path={PATH_APPLICANTS.bulkAdd} element={<ApplicantsBulk />} />
       </Route>
     </Route>
   );

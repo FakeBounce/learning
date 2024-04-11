@@ -2,6 +2,7 @@ import {
   ApplicantState,
   ApplicantType,
   CreateApplicantResponse,
+  CreateBulkApplicantResponse,
   GetApplicantsListResponse,
   GetSingleApplicantResponse,
   UpdateApplicantResponse
@@ -32,6 +33,10 @@ export const initialApplicantState: ApplicantState = {
   applicantCreate: {
     applicantCreateLoading: false,
     hasCreated: false
+  },
+  applicantBulk: {
+    applicantBulkLoading: false,
+    hasCreatedBulk: false
   }
 };
 
@@ -47,6 +52,9 @@ export const applicantSlice = createSlice({
     },
     resetCreatingApplicant: (state) => {
       state.applicantCreate.hasCreated = false;
+    },
+    resetCreatingBulkApplicant: (state) => {
+      state.applicantBulk.hasCreatedBulk = false;
     }
   },
   extraReducers: (builder) => {
@@ -121,11 +129,36 @@ export const applicantSlice = createSlice({
         state.applicantCreate.applicantCreateLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(ApplicantsActions.createBulkApplicant.pending, (state) => {
+        state.applicantBulk.applicantBulkLoading = true;
+        state.applicantBulk.hasCreatedBulk = false;
+      })
+      .addCase(
+        ApplicantsActions.createBulkApplicant.fulfilled,
+        (state, action: { payload: CreateBulkApplicantResponse }) => {
+          state.applicantBulk.applicantBulkLoading = false;
+          state.applicantBulk.hasCreatedBulk = true;
+          const messageToDisplay =
+            action.payload.data.rows[0].type === ApplicantType.TESTER
+              ? t`Les testeur ont bien été enregistrés`
+              : t`Les étudiant ont bien été enregistrés`;
+          enqueueSnackbar(messageToDisplay, { variant: 'success' });
+        }
+      )
+      .addCase(ApplicantsActions.createBulkApplicant.rejected, (state, action: AnyAction) => {
+        state.applicantBulk.applicantBulkLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
       });
   }
 });
 
-export const { startEditingApplicant, cancelEditingApplicant, resetCreatingApplicant } =
-  applicantSlice.actions;
+export const {
+  startEditingApplicant,
+  cancelEditingApplicant,
+  resetCreatingApplicant,
+  resetCreatingBulkApplicant
+} = applicantSlice.actions;
 
 export default applicantSlice.reducer;

@@ -15,7 +15,7 @@ const ROOTS_DASHBOARD = '/';
 export const PATH_AUTH = {
   login: '/login',
   resetPassword: '/reset-password',
-  forgotPassword: '/forgot-password',
+  forgotPassword: '/forgot-password'
 };
 
 export const PATH_ERRORS = {
@@ -53,7 +53,8 @@ const ROOT_APPLICANTS = PATH_PARAMETERS.applicants;
 export const PATH_APPLICANTS = {
   root: ROOT_APPLICANTS,
   profile: path(ROOT_APPLICANTS, '/profile/:applicantId'),
-  add: path(ROOT_APPLICANTS, '/create')
+  add: path(ROOT_APPLICANTS, '/create'),
+  addBulk: path(ROOT_APPLICANTS, '/creation-bulk')
 };
 
 const ROOT_EXTERNAL_TESTERS = PATH_PARAMETERS.externalTesters;
@@ -87,5 +88,5 @@ const ROOT_GROUPS = PATH_PARAMETERS.groups;
 export const PATH_GROUPS = {
   root: ROOT_GROUPS,
   add: path(ROOT_GROUPS, '/create'),
-  update: path(ROOT_GROUPS, '/update/:roleId'),
+  update: path(ROOT_GROUPS, '/update/:roleId')
 };
