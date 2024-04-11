@@ -40,7 +40,7 @@ function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {
       <Stack alignItems="flex-end" sx={{ mt: 1 }}>
         <Link
           component={RouterLink}
-          to={PATH_AUTH.resetPassword}
+          to={PATH_AUTH.forgotPassword}
           variant="body2"
           color="inherit"
           underline="always"

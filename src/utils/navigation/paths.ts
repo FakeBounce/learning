@@ -14,7 +14,8 @@ const ROOTS_DASHBOARD = '/';
 
 export const PATH_AUTH = {
   login: '/login',
-  resetPassword: '/reset-password'
+  resetPassword: '/reset-password',
+  forgotPassword: '/forgot-password',
 };
 
 export const PATH_ERRORS = {

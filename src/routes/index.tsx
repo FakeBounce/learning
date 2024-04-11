@@ -1,7 +1,16 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { LoginPage, Page404, Roles } from 'src/routes/elements';
-import { PATH_AUTH, PATH_DASHBOARD, PATH_ROLES } from '@utils/navigation/paths';
+import {
+  ForgotPasswordPage,
+  LoginPage,
+  Page404,
+  Roles
+} from 'src/routes/elements';
+import {
+  PATH_AUTH,
+  PATH_DASHBOARD,
+  PATH_ROLES
+} from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
@@ -43,6 +52,7 @@ const Router = () => {
 
       <Route element={<GuestGuard />}>
         <Route path={PATH_AUTH.login} element={<LoginPage />} />
+        <Route path={PATH_AUTH.forgotPassword} element={<ForgotPasswordPage />} />
       </Route>
     </Routes>
   );

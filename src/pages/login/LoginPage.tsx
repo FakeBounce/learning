@@ -5,10 +5,8 @@ import { styled } from '@mui/system';
 import { LMSCard } from '@src/components/lms';
 import LoginFooter from '@src/pages/login/LoginFooter';
 import LoginHeader from '@src/pages/login/LoginHeader';
-import { PATH_DASHBOARD } from '@utils/navigation/paths';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
 import LoginForm from 'src/pages/login/LoginForm';
 import * as Yup from 'yup';
 import { login } from '@redux/actions/connectedUserActions';
@@ -41,14 +39,6 @@ const defaultValues = {
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
   const { loading } = useAppSelector((state) => state.connectedUser.login);
-  const isAuthenticated = useAppSelector((state) => state.connectedUser.login.isAuthenticated);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate(PATH_DASHBOARD.root);
-    }
-  }, [isAuthenticated]);
 
   const dispatch = useAppDispatch();
   const methods = useForm({

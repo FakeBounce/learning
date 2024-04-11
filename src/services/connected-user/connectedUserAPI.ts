@@ -1,6 +1,7 @@
 import axios from '@utils/axios';
 import { AxiosResponse } from 'axios';
 import {
+  ForgotPasswordRequest,
   GetConnectedUserResponse,
   LoginRequest,
   LoginResponse,
@@ -31,3 +32,7 @@ export const refresh = async (): Promise<AxiosResponse<LoginResponse>> => {
 export const logout = async (): Promise<AxiosResponse<LoginResponse>> => {
   return axios.delete('/users/logout');
 };
+
+export const forgotPassword = async (args: ForgotPasswordRequest): Promise<AxiosResponse> => {
+  return axios.post('/users/forgot-password', args);
+}
