@@ -85,7 +85,7 @@ export const createBulkApplicant = async (
   const applicantsForApi = {
     type,
     group_id: 1,
-    applicants: snakizeObject(applicantList)
+    applicants: applicantList
   };
 
   return axios.post(`/applicants/add-multiple`, applicantsForApi);

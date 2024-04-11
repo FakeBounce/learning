@@ -63,6 +63,6 @@ describe('ApplicantsListHeader', () => {
     });
 
     // Check if the navigate function has been called
-    expect(navigateMock).toHaveBeenCalledWith(PATH_APPLICANTS.bulkAdd);
+    expect(navigateMock).toHaveBeenCalledWith(PATH_APPLICANTS.addBulk);
   });
 });

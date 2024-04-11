@@ -38,7 +38,8 @@
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8N1T4V": {
     "translation": "",
@@ -61,7 +62,8 @@
   "AAjpHB": {
     "translation": "",
     "message": "Aucun étudiant valide à ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "",
@@ -114,7 +116,8 @@
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FBQvDW": {
     "translation": "",
@@ -131,7 +134,8 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
@@ -172,12 +176,14 @@
   "K+tHTS": {
     "translation": "",
     "message": "Format incorrect",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -194,7 +200,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -247,7 +254,8 @@
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "",
@@ -264,17 +272,20 @@
   "UeDwla": {
     "translation": "",
     "message": "Information obligatoire",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UyAuoq": {
     "translation": "",
     "message": "Liste des étudiants valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VXxxDw": {
     "translation": "",
     "message": "Liste des étudiants invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VsENqL": {
     "translation": "",
@@ -291,7 +302,8 @@
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -374,7 +386,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -385,7 +398,8 @@
   "jP37N3": {
     "translation": "",
     "message": "Ajouter des étudiants en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "k441hZ": {
     "translation": "",
@@ -408,7 +422,8 @@
   "rmmVFd": {
     "translation": "",
     "message": "Veillez sélectionner un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "",
@@ -437,12 +452,14 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wB7q3X": {
     "translation": "",
     "message": "Date naiss.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "",
