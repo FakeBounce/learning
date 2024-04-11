@@ -4,12 +4,14 @@ import {
   ForgotPasswordPage,
   LoginPage,
   Page404,
-  Roles
+  Roles,
+  Groups
 } from 'src/routes/elements';
 import {
   PATH_AUTH,
   PATH_DASHBOARD,
-  PATH_ROLES
+  PATH_ROLES,
+  PATH_GROUPS
 } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
@@ -45,6 +47,16 @@ const Router = () => {
           }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
+        </Route>
+        <Route
+          element={
+            <FeatureFlagedRoute
+              pageType={PermissionTypeEnum.GROUPS}
+              permissionsAuthorized={pageRestrictionsList.groups}
+            />
+          }
+        >
+          <Route path={PATH_GROUPS.root} element={<Groups />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

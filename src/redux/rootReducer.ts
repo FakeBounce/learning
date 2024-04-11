@@ -6,6 +6,7 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import applicantsReducer from '@redux/reducers/applicantsReducer';
+import groupsReducer from '@redux/reducers/groupsReducer';
 // ----------------------------------------------------------------------
 
 export const rootPersistConfig = {
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   organizations: organizationsReducer,
   users: usersReducer,
   roles: rolesReducer,
-  applicants: applicantsReducer
+  applicants: applicantsReducer,
+  groups: groupsReducer,
 });
 
 export default rootReducer;
