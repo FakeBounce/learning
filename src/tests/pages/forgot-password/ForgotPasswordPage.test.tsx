@@ -40,7 +40,7 @@ describe('ForgotPasswordPage', () => {
     await waitFor(() => {
       expect(ForgotPasswordAxiosMock.history.post.length).toBe(1);
       expect(JSON.parse(ForgotPasswordAxiosMock.history.post[0].data)).toStrictEqual({
-        organization_uuid: 'testorg',
+        organizationUuid: 'testorg',
         email: 'testmail'
       });
     });

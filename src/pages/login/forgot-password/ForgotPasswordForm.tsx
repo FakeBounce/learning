@@ -8,7 +8,7 @@ export default function ForgotPasswordForm() {
       spacing={3}
     >
       <RHFTextField
-        name={'organizationId'}
+        name={'organizationUuid'}
         label={
           LabelWithRequired({
             label: <Trans>Organisation ID</Trans>

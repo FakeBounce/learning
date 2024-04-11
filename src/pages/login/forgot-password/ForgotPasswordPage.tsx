@@ -10,6 +10,7 @@ import ForgotPasswordHeader from '@src/pages/login/forgot-password/ForgotPasswor
 import ForgotPasswordFooter from '@src/pages/login/forgot-password/ForgotPasswordFooter';
 import ForgotPasswordForm from '@src/pages/login/forgot-password/ForgotPasswordForm';
 import { forgotPassword } from '@redux/actions/connectedUserActions';
+import { ForgotPasswordRequest } from '@services/connected-user/interfaces';
 
 // ----------------------------------------------------------------------
 
@@ -22,13 +23,13 @@ const StyledLoginContainerBox = styled(Box)(({ theme }) => ({
   padding: `0 ${theme.spacing(2)}`
 }));
 
-const LoginSchema = Yup.object().shape({
-  organizationId: Yup.string().required(t`L'organisation ID est obligatoire`),
+const ForgotPasswordPageSchema = Yup.object().shape({
+  organizationUuid: Yup.string().required(t`L'organisation ID est obligatoire`),
   email: Yup.string().required(t`L'email est obligatoire`)
 });
 
 const defaultValues = {
-  organizationId: '',
+  organizationUuid: '',
   email: ''
 };
 
@@ -36,15 +37,15 @@ export default function ForgotPasswordPage() {
 
   const dispatch = useAppDispatch();
   const methods = useForm({
-    resolver: yupResolver(LoginSchema),
+    resolver: yupResolver(ForgotPasswordPageSchema),
     defaultValues
   });
 
   const { handleSubmit } = methods;
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async (data: ForgotPasswordRequest) => {
     dispatch(
-      forgotPassword({ email: data.email, organization_uuid: data.organizationId })
+      forgotPassword(data)
     );
   };
 

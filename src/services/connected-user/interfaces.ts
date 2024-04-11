@@ -93,5 +93,5 @@ export interface LogoutResponse {
 
 export interface ForgotPasswordRequest {
   email: string;
-  organization_uuid: string;
+  organizationUuid: string;
 }
