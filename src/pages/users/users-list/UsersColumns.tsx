@@ -2,7 +2,7 @@ import { MouseEvent } from 'react';
 import { Trans } from '@lingui/macro';
 import { User } from '@services/users/interfaces';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { TableCellActions } from '@src/components/table/TableCellActions';
+import StatusChip from '@src/components/lms/StatusChip';
 
 export const usersColumns = (
   handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
@@ -47,8 +47,15 @@ export const usersColumns = (
         </strong>
       ),
       maxWidth: 100,
-      renderCell: (cell: GridRenderCellParams) => (
-        <TableCellActions cell={cell} handleClick={handleClick(cell.row)} />
-      )
+      renderCell: (cell: GridRenderCellParams) => {
+        const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
+        return (
+          <StatusChip
+            isActive={cell.row.isActive}
+            activatedText={activatedText}
+            handleClick={handleClick(cell.row)}
+          />
+        );
+      }
     }
   ] as GridColDef[];
