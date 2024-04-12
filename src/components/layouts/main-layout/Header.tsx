@@ -12,7 +12,7 @@ import { enqueueSnackbar } from 'notistack';
 export default function Header() {
   const dispatch = useAppDispatch();
   const { id } = useAppSelector((state) => state.connectedUser.mainOrganization);
-  const { currentOrganization } = useAppSelector((state) => state.connectedUser.user);
+  const { currentOrganization, isSuperAdmin } = useAppSelector((state) => state.connectedUser.user);
   const navigate = useNavigate();
   const theme = useTheme();
 
@@ -47,7 +47,7 @@ export default function Header() {
                 <Trans>(global)</Trans>
               </Typography>
             )}
-            {!currentOrganization.isMain && (
+            {!currentOrganization.isMain && isSuperAdmin && (
               <Chip
                 sx={{ marginLeft: theme.spacing(2) }}
                 label={<Trans>Déconnexion</Trans>}

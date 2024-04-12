@@ -3,7 +3,7 @@
  * To change the organization view of the connected user
  */
 import { ApiResponseMessage } from '@services/interfaces';
-import { PermissionTypeList } from '@services/permissions/interfaces';
+import { UserPermission } from '@services/permissions/interfaces';
 
 export interface ConnectedUserOrganization {
   id: number;
@@ -24,7 +24,7 @@ export interface ConnectedUser {
   email: string;
   isClientAdmin: boolean;
   isSuperAdmin: boolean;
-  permissions: PermissionTypeList;
+  permissions: UserPermission[];
   currentOrganization: ConnectedUserOrganization;
 }
 

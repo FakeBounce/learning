@@ -1,33 +1,17 @@
-export interface PermissionTypeList {
-  [PermissionTypeEnum.PERSONALIZATION]?: Permission;
-  [PermissionTypeEnum.USERS]?: Permission;
-  [PermissionTypeEnum.TESTERS]?: Permission;
-  [PermissionTypeEnum.APPLICANTS]?: Permission;
-  [PermissionTypeEnum.ROLES]?: Permission;
-  [PermissionTypeEnum.GROUPS]?: Permission;
-  [PermissionTypeEnum.MODULES]?: Permission;
-  [PermissionTypeEnum.COURSES]?: Permission;
-  [PermissionTypeEnum.STATS]?: Permission;
-}
-
-export interface Permission {
-  title: string;
-  actions: PermissionAction[];
-}
-
-export interface PermissionAction {
-  name: PermissionEnum;
+export interface UserPermission {
   id: number;
-  enabled: boolean;
+  name: PermissionKey;
 }
+
+export type PermissionKey = `${PermissionEnum}_${PermissionTypeEnum}`;
 
 export enum PermissionEnum {
-  CREATE = 'Créer',
-  READ = 'Visualiser',
-  UPDATE = 'Modifier',
-  DELETE = 'Supprimer',
-  CREATE_BULK = 'Ajouter en masse',
-  BLOCK_UNBLOCK = 'Bloquer/Débloquer'
+  CREATE = 'add',
+  READ = 'see',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  CREATE_BULK = 'add_mass',
+  BLOCK_UNBLOCK = 'block'
 }
 
 export enum PermissionTypeEnum {
@@ -40,6 +24,6 @@ export enum PermissionTypeEnum {
   MODULES = 'modules',
   COURSES = 'courses',
   STATS = 'stats',
-  SUPER_ADMIN = 'super-admin',
-  CLIENT_ADMIN = 'client-admin'
+  SUPER_ADMIN = 'super_admin',
+  CLIENT_ADMIN = 'client_admin'
 }

@@ -23,7 +23,7 @@ interface UserState {
   };
   forgotPassword: {
     loading: boolean;
-  }
+  };
 }
 
 const initialState: UserState = {
@@ -80,21 +80,22 @@ export const connectedUserSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(UserActions.getUser.pending, (state) => {
-        state.globalLoading = true;
-      })
       .addCase(UserActions.forgotPassword.pending, (state) => {
         state.forgotPassword.loading = true;
       })
       .addCase(UserActions.forgotPassword.fulfilled, (state) => {
         state.forgotPassword.loading = false;
-        enqueueSnackbar(t`Demande de réinitialisation de mot de passe envoyée`, { variant: 'success' });
-
+        enqueueSnackbar(t`Demande de réinitialisation de mot de passe envoyée`, {
+          variant: 'success'
+        });
       })
       .addCase(UserActions.forgotPassword.rejected, (state, action: AnyAction) => {
         state.forgotPassword.loading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(UserActions.getUser.pending, (state) => {
+        state.globalLoading = true;
       })
       .addCase(
         UserActions.getUser.fulfilled,
