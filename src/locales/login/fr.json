@@ -59,6 +59,11 @@
     "comments": [],
     "obsolete": false
   },
+  "HGjRPB": {
+    "translation": "Adresse mail",
+    "message": "Adresse mail",
+    "comments": []
+  },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
@@ -82,6 +87,11 @@
     "message": "Organization id is required",
     "comments": [],
     "obsolete": false
+  },
+  "SDTSUy": {
+    "translation": "Organisation ID",
+    "message": "Organisation ID",
+    "comments": []
   },
   "X1Endn": {
     "translation": "Pas encore de compte ?",

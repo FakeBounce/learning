@@ -116,7 +116,8 @@
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FBQvDW": {
     "translation": "",
@@ -277,12 +278,14 @@
   "UyAuoq": {
     "translation": "",
     "message": "Liste des étudiants valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VXxxDw": {
     "translation": "",
     "message": "Liste des étudiants invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VsENqL": {
     "translation": "",
@@ -299,7 +302,8 @@
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
