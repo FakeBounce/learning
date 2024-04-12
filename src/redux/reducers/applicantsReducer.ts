@@ -1,15 +1,16 @@
 import {
+  Applicant,
   ApplicantState,
   ApplicantType,
   CreateApplicantResponse,
   CreateBulkApplicantResponse,
   GetApplicantsListResponse,
-  GetSingleApplicantResponse,
+  GetSingleApplicantResponse, UpdateApplicantBlockResponse,
   UpdateApplicantResponse
 } from '@services/applicants/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as ApplicantsActions from '@redux/actions/applicantsActions';
-import { AnyAction, createSlice } from '@reduxjs/toolkit';
+import { AnyAction, createSelector, createSlice } from '@reduxjs/toolkit';
 import {
   convertApplicantArrayValues,
   convertApplicantValues
@@ -67,6 +68,21 @@ export const applicantSlice = createSlice({
       )
       .addCase(ApplicantsActions.getApplicantsList.rejected, (state, action: AnyAction) => {
         state.applicantList.applicantListLoading = false;
+        const errorMessage = action.payload?.message?.value || action.error.message;
+        enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(ApplicantsActions.toggleApplicantBlock.pending, (_) => {})
+      .addCase(
+        ApplicantsActions.toggleApplicantBlock.fulfilled,
+        (state, action: { payload: UpdateApplicantBlockResponse }) => {
+          // Find the applicant in the list and update it
+          const applicantIndex = selectApplicantFindId(state, action.payload.data.id);
+          if (applicantIndex > -1) {
+            state.applicantList.applicantListData[applicantIndex] = action.payload.data;
+          }
+        }
+      )
+      .addCase(ApplicantsActions.toggleApplicantBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
@@ -138,6 +154,14 @@ export const applicantSlice = createSlice({
       });
   }
 });
+
+export const selectApplicantFindId = createSelector(
+  [
+    (state: ApplicantState) => state.applicantList.applicantListData,
+    (_, idToFind) => idToFind
+  ],
+  (s, idToFind) => s.findIndex((applicant: Applicant) => applicant.id === idToFind)
+);
 
 export const { startEditingApplicant, cancelEditingApplicant, resetApplicantState } =
   applicantSlice.actions;
