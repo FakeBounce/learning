@@ -45,7 +45,7 @@ export default function ApplicantsList() {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popper' : undefined;
+  const id = open ? 'simple-popper-applicant' : undefined;
 
   return (
     <>
