@@ -3,6 +3,9 @@ import ApplicantsListPopperContent from '@src/pages/applicants/applicants-list/A
 import { stateApplicant } from '../DefaultApplicants';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
+import { useOutletContext } from 'react-router';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -10,7 +13,18 @@ jest.mock('react-router-dom', () => ({
   useNavigate: jest.fn()
 }));
 
+jest.mock('react-router', () => ({
+  ...jest.requireActual('react-router'),
+  useOutletContext: jest.fn()
+}));
+
 describe('ApplicantsListPopperContent', () => {
+  const mockupPageType = PermissionTypeEnum.APPLICANTS;
+
+  beforeEach(() => {
+    (useOutletContext as jest.Mock).mockReturnValue({ pageType: mockupPageType });
+  });
+
   afterEach(() => {
     jest.clearAllMocks();
     cleanup();
@@ -20,10 +34,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={null}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={null}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     expect(screen.getByText(/Profil/i)).toBeInTheDocument();
@@ -35,13 +56,66 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={stateApplicant}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     expect(screen.getByText(/Bloquer/i)).toBeInTheDocument();
+  });
+
+  it('renders ApplicantsListPopperContent without update permissions', () => {
+    const handleToggleBlockMock = jest.fn();
+
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockImplementation((pageType, permission) => {
+            return pageType === mockupPageType && permission === PermissionEnum.BLOCK_UNBLOCK;
+          }),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
+    );
+
+    expect(screen.getByText(/Bloquer/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Mettre à jour/i)).not.toBeInTheDocument();
+  });
+
+  it('renders ApplicantsListPopperContent without block permissions', () => {
+    const handleToggleBlockMock = jest.fn();
+
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockImplementation((pageType, permission) => {
+            return pageType === mockupPageType && permission === PermissionEnum.UPDATE;
+          }),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
+    );
+
+    expect(screen.queryByText(/Bloquer/i)).not.toBeInTheDocument();
+    expect(screen.getByText(/Mettre à jour/i)).toBeInTheDocument();
   });
 
   it('navigate on Mettre a jour click', () => {
@@ -52,10 +126,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={stateApplicant}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     act(() => {
@@ -76,10 +157,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={null}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={null}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     act(() => {

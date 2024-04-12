@@ -32,6 +32,7 @@ export const applicantsColumns = (
     },
     {
       field: 'lastname',
+      flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Nom</Trans>
@@ -40,6 +41,7 @@ export const applicantsColumns = (
     },
     {
       field: 'firstname',
+      flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Prénom</Trans>
@@ -48,6 +50,7 @@ export const applicantsColumns = (
     },
     {
       field: 'birthDate',
+      flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Date naiss.</Trans>
@@ -61,6 +64,7 @@ export const applicantsColumns = (
     },
     {
       field: 'email',
+      flex: 1,
       minWidth: 200,
       renderHeader: () => (
         <strong>
@@ -70,6 +74,7 @@ export const applicantsColumns = (
     },
     {
       field: 'phone',
+      flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Téléphone</Trans>
@@ -78,6 +83,7 @@ export const applicantsColumns = (
     },
     {
       field: 'city',
+      flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Ville</Trans>

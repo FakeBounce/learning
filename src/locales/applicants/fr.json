@@ -92,8 +92,7 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "E1oq0K": {
     "translation": "Vous avez modifier les champs suivants :",
@@ -155,8 +154,7 @@
   "HdNGur": {
     "translation": "Bloquer",
     "message": "Bloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "IAAmKF": {
     "translation": "Non renseigné",
@@ -206,8 +204,7 @@
   "P3YkHZ": {
     "translation": "Mettre à jour",
     "message": "Mettre à jour",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "PsHtRs": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -425,8 +422,7 @@
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "Testeurs externes",

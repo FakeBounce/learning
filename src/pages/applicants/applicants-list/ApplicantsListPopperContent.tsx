@@ -5,6 +5,10 @@ import { Applicant } from '@services/applicants/interfaces';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
 import { useAppDispatch } from '@redux/hooks';
+import { useContext } from 'react';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
 
 interface ApplicantsListPopperContentProps {
   handleToggleBlock: () => void;
@@ -16,6 +20,14 @@ export default function ApplicantsListPopperContent({
 }: ApplicantsListPopperContentProps) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
+  const canBlockUnblockApplicant = isAuthorizedByPermissionsTo(
+    pageType,
+    PermissionEnum.BLOCK_UNBLOCK
+  );
+  const canUpdateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE);
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
@@ -40,16 +52,20 @@ export default function ApplicantsListPopperContent({
         <ListItemButton onClick={goToApplicantProfile}>
           <ListItemText primary={<Trans>Profil</Trans>} />
         </ListItemButton>
-        <ListItemButton onClick={handleToggleBlock}>
-          <ListItemText
-            primary={
-              applicantSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>
-            }
-          />
-        </ListItemButton>
-        <ListItemButton onClick={goToApplicantUpdate}>
-          <ListItemText primary={<Trans>Mettre à jour</Trans>} />
-        </ListItemButton>
+        {canBlockUnblockApplicant && (
+          <ListItemButton onClick={handleToggleBlock}>
+            <ListItemText
+              primary={
+                applicantSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>
+              }
+            />
+          </ListItemButton>
+        )}
+        {canUpdateApplicant && (
+          <ListItemButton onClick={goToApplicantUpdate}>
+            <ListItemText primary={<Trans>Mettre à jour</Trans>} />
+          </ListItemButton>
+        )}
       </ListItem>
     </Paper>
   );
