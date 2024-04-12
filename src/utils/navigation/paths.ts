@@ -54,7 +54,7 @@ export const PATH_APPLICANTS = {
   root: ROOT_APPLICANTS,
   profile: path(ROOT_APPLICANTS, '/profile/:applicantId'),
   add: path(ROOT_APPLICANTS, '/create'),
-  addBulk: path(ROOT_APPLICANTS, '/creation-bulk')
+  addBulk: path(ROOT_APPLICANTS, '/create-bulk')
 };
 
 const ROOT_EXTERNAL_TESTERS = PATH_PARAMETERS.externalTesters;

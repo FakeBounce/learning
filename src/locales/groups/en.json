@@ -2,26 +2,31 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EvYn6I": {
     "translation": "",
     "message": "Nombre d'utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }
