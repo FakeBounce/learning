@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/LMSModal Default smoke-test 1`] = `
+<button>
+  Open modal
+</button>
+`;

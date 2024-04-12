@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/CardFooter Default smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1nvwnbn-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="0"
+          type="button"
+          id=":r0:"
+  >
+    Annuler
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="0"
+          type="submit"
+          id=":r1:"
+          role="submit"
+  >
+    Enregistrer
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Example/CardFooter Loading smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1nvwnbn-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="-1"
+          type="button"
+          disabled
+          id=":r2:"
+  >
+    <div class="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-1iyu4y0-MuiLoadingButton-loadingIndicator">
+      <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorInherit css-62e83j-MuiCircularProgress-root"
+            role="progressbar"
+            aria-labelledby=":r2:"
+            style="width: 16px; height: 16px;"
+      >
+        <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+             viewbox="22 22 44 44"
+        >
+          <circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                  cx="44"
+                  cy="44"
+                  r="20.2"
+                  fill="none"
+                  stroke-width="3.6"
+          >
+          </circle>
+        </svg>
+      </span>
+    </div>
+    Annuler
+  </button>
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium Mui-disabled MuiButton-root MuiLoadingButton-root MuiLoadingButton-loading MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="-1"
+          type="submit"
+          disabled
+          id=":r3:"
+          role="submit"
+  >
+    <div class="MuiLoadingButton-loadingIndicator MuiLoadingButton-loadingIndicatorCenter css-1iyu4y0-MuiLoadingButton-loadingIndicator">
+      <span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorInherit css-62e83j-MuiCircularProgress-root"
+            role="progressbar"
+            aria-labelledby=":r3:"
+            style="width: 16px; height: 16px;"
+      >
+        <svg class="MuiCircularProgress-svg css-1idz92c-MuiCircularProgress-svg"
+             viewbox="22 22 44 44"
+        >
+          <circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-176wh8e-MuiCircularProgress-circle"
+                  cx="44"
+                  cy="44"
+                  r="20.2"
+                  fill="none"
+                  stroke-width="3.6"
+          >
+          </circle>
+        </svg>
+      </span>
+    </div>
+    Enregistrer
+  </button>
+</div>
+`;

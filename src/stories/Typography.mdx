@@ -1,0 +1,111 @@
+import { Meta, Typeset } from '@storybook/blocks';
+import typography from '../theme/typography';
+
+<Meta title="Typography" />
+
+export const SampleText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+
+# Typography
+
+## Balises h1->h6
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[
+    typography.h1.fontSize,
+    typography.h2.fontSize,
+    typography.h3.fontSize,
+    typography.h4.fontSize,
+    typography.h5.fontSize,
+    typography.h6.fontSize
+  ]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+## Sous-titre 1 et 2
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[typography.subtitle1.fontSize, typography.subtitle2.fontSize]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+## Corps de texte 1 et 2 dans différents poids
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[typography.body1.fontSize, typography.body2.fontSize]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 600(medium)
+
+<Typeset
+  fontSizes={[typography.body1.fontSize, typography.body2.fontSize]}
+  fontWeight={typography.fontWeightMedium}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 700(bold)
+
+<Typeset
+  fontSizes={[typography.body1.fontSize, typography.body2.fontSize]}
+  fontWeight={typography.fontWeightBold}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+## Caption, overline et bouton
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[typography.caption.fontSize]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[typography.overline.fontSize]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>
+
+**Font:** Public Sans, sans-serif
+
+**Weights:** 400(regular)
+
+<Typeset
+  fontSizes={[typography.button.fontSize]}
+  fontWeight={typography.h1.fontWeight}
+  sampleText={SampleText}
+  fontFamily={typography.fontFamily}
+/>

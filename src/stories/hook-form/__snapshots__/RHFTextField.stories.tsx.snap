@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/RHFTextField Default smoke-test 1`] = `
+<form>
+  <div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-zcm3ct-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r0:"
+           id=":r0:-label"
+    >
+      Example Field
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-hzsscs-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             aria-describedby=":r0:-helper-text"
+             id=":r0:"
+             name="example"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-rqfyya-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Example Field
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+    <p class="MuiFormHelperText-root MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-1lq1qy0-MuiFormHelperText-root"
+       id=":r0:-helper-text"
+    >
+      This is a helper text.
+    </p>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFTextField Disabled smoke-test 1`] = `
+<form>
+  <div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-disabled MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-zcm3ct-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r3:"
+           id=":r3:-label"
+    >
+      Disabled Field
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-hzsscs-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             disabled
+             id=":r3:"
+             name="disabled"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input Mui-disabled MuiInputBase-inputSizeSmall css-rqfyya-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Disabled Field
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFTextField Error smoke-test 1`] = `
+<form>
+  <div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-error MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-zcm3ct-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r2:"
+           id=":r2:-label"
+    >
+      Small Field
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary Mui-error MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-hzsscs-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="[object Object]"
+             aria-describedby=":r2:-helper-text"
+             id=":r2:"
+             name="small"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-rqfyya-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Small Field
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+    <p class="MuiFormHelperText-root Mui-error MuiFormHelperText-sizeSmall MuiFormHelperText-contained css-1lq1qy0-MuiFormHelperText-root"
+       id=":r2:-helper-text"
+    >
+      An error happened
+    </p>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFTextField Medium smoke-test 1`] = `
+<form>
+  <div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined MuiFormLabel-colorPrimary MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeMedium MuiInputLabel-outlined css-ioiz93-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r1:"
+           id=":r1:-label"
+    >
+      Medium Field
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-hzsscs-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             id=":r1:"
+             name="medium"
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input css-lqfcw6-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Medium Field
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</form>
+`;
+
+exports[`Example/RHFTextField Required smoke-test 1`] = `
+<form>
+  <div class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-wb57ya-MuiFormControl-root-MuiTextField-root">
+    <label class="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary Mui-required MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined css-zcm3ct-MuiFormLabel-root-MuiInputLabel-root"
+           data-shrink="false"
+           for=":r4:"
+           id=":r4:-label"
+    >
+      Required Field
+      <span aria-hidden="true"
+            class="MuiFormLabel-asterisk MuiInputLabel-asterisk css-4pefzv-MuiFormLabel-asterisk"
+      >
+         *
+      </span>
+    </label>
+    <div class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl MuiInputBase-sizeSmall css-hzsscs-MuiInputBase-root-MuiOutlinedInput-root">
+      <input aria-invalid="false"
+             id=":r4:"
+             name="required"
+             required
+             type="text"
+             class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputSizeSmall css-rqfyya-MuiInputBase-input-MuiOutlinedInput-input"
+             value
+      >
+      <fieldset aria-hidden="true"
+                class="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend class="css-yjsfm1">
+          <span>
+            Required Field *
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</form>
+`;

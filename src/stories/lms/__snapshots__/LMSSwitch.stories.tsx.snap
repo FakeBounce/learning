@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/LMSSwitch Checked smoke-test 1`] = `
+<span class="MuiSwitch-root MuiSwitch-sizeMedium css-tvdqvb-MuiSwitch-root">
+  <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary Mui-checked Mui-checked css-1brz8fh-MuiButtonBase-root-MuiSwitch-switchBase">
+    <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+           type="checkbox"
+           checked
+    >
+    <span class="MuiSwitch-thumb css-tqmoez-MuiSwitch-thumb">
+    </span>
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </span>
+  <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+  </span>
+</span>
+`;
+
+exports[`Example/LMSSwitch Default smoke-test 1`] = `
+<span class="MuiSwitch-root MuiSwitch-sizeMedium css-tvdqvb-MuiSwitch-root">
+  <span class="MuiButtonBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary PrivateSwitchBase-root MuiSwitch-switchBase MuiSwitch-colorPrimary css-1brz8fh-MuiButtonBase-root-MuiSwitch-switchBase">
+    <input class="PrivateSwitchBase-input MuiSwitch-input css-1m9pwf3"
+           type="checkbox"
+    >
+    <span class="MuiSwitch-thumb css-tqmoez-MuiSwitch-thumb">
+    </span>
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </span>
+  <span class="MuiSwitch-track css-1yjjitx-MuiSwitch-track">
+  </span>
+</span>
+`;

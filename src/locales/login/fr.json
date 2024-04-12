@@ -59,6 +59,12 @@
     "comments": [],
     "obsolete": false
   },
+  "HGjRPB": {
+    "translation": "Adresse mail",
+    "message": "Adresse mail",
+    "comments": [],
+    "obsolete": false
+  },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
@@ -80,6 +86,17 @@
   "NDUWrS": {
     "translation": "Organization id is required",
     "message": "Organization id is required",
+    "comments": [],
+    "obsolete": false
+  },
+  "PpLRwD": {
+    "translation": "Retour à la connexion",
+    "message": "Retour à la connexion",
+    "comments": []
+  },
+  "SDTSUy": {
+    "translation": "Organisation ID",
+    "message": "Organisation ID",
     "comments": [],
     "obsolete": false
   },
@@ -124,6 +141,11 @@
     "message": "Étudiants",
     "comments": [],
     "obsolete": false
+  },
+  "iS7m9d": {
+    "translation": "Réinitialiser",
+    "message": "Réinitialiser",
+    "comments": []
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/CardHeader ColoredHeader smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <p class="MuiTypography-root MuiTypography-body1 css-thswzk-MuiTypography-root">
+    Colored header
+  </p>
+</div>
+`;
+
+exports[`Example/CardHeader Default smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <p class="MuiTypography-root MuiTypography-body1 css-tjb74-MuiTypography-root">
+    Header
+  </p>
+</div>
+`;
+
+exports[`Example/CardHeader WithMultipleAction smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <p class="MuiTypography-root MuiTypography-body1 css-tjb74-MuiTypography-root">
+    Header with multiple action
+  </p>
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="0"
+          type="button"
+          id=":r1:"
+  >
+    Action 1
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1gn5gyf-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="0"
+          type="button"
+          id=":r2:"
+  >
+    Action 2
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Example/CardHeader WithSingleAction smoke-test 1`] = `
+<div class="MuiBox-root css-10egq61">
+  <p class="MuiTypography-root MuiTypography-body1 css-tjb74-MuiTypography-root">
+    Header with single action
+  </p>
+  <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          tabindex="0"
+          type="button"
+          id=":r0:"
+  >
+    Action
+    <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+    </span>
+  </button>
+</div>
+`;

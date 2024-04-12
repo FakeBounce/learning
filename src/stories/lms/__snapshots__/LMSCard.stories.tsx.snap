@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example/LMSCard Default smoke-test 1`] = `
+<div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 css-1slpo8t-MuiPaper-root">
+  <p class="MuiTypography-root MuiTypography-body1 css-gkbk35-MuiTypography-root">
+    This is a default LMSCard without header or footer.
+  </p>
+</div>
+`;
+
+exports[`Example/LMSCard PageCard smoke-test 1`] = `
+<div class="MuiStack-root css-dnja1o-MuiStack-root">
+  <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 css-8c9seq-MuiPaper-root">
+    <div class="MuiStack-root css-1a5lnx6-MuiStack-root">
+      <div class="MuiBox-root css-10egq61">
+        <p class="MuiTypography-root MuiTypography-body1 css-tjb74-MuiTypography-root">
+          Header with single action
+        </p>
+        <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                tabindex="0"
+                type="button"
+                id=":r1:"
+        >
+          Action
+          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+          </span>
+        </button>
+      </div>
+    </div>
+    <div class="MuiStack-root css-141v11l-MuiStack-root">
+      <p class="MuiTypography-root MuiTypography-body1 css-gkbk35-MuiTypography-root">
+        This is a page style LMSCard with header and footer. (Grid style)
+      </p>
+    </div>
+    <div class="MuiStack-root css-96ys31-MuiStack-root">
+      <div class="MuiBox-root css-10egq61">
+        <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1nvwnbn-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                tabindex="0"
+                type="button"
+                id=":r2:"
+        >
+          Annuler
+          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+          </span>
+        </button>
+        <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-121cmne-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+                tabindex="0"
+                type="submit"
+                id=":r3:"
+                role="submit"
+        >
+          Enregistrer
+          <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Example/LMSCard WithHeaderAndFooter smoke-test 1`] = `
+<div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation3 css-1slpo8t-MuiPaper-root">
+  <div class="MuiStack-root css-1saxivv-MuiStack-root">
+    <h3 class="MuiTypography-root MuiTypography-h3 css-qtlqwc-MuiTypography-root">
+      Connexion
+    </h3>
+    <div class="MuiBox-root css-1cg1idb">
+      <p class="MuiTypography-root MuiTypography-body1 css-a2cwj1-MuiTypography-root">
+        Pas encore de compte ?
+      </p>
+      <p class="MuiTypography-root MuiTypography-body1 css-ls5w3c-MuiTypography-root">
+        <a class="MuiBox-root css-170kp7e"
+           href="/register"
+        >
+          Créer un compte
+        </a>
+      </p>
+    </div>
+  </div>
+  <p class="MuiTypography-root MuiTypography-body1 css-gkbk35-MuiTypography-root">
+    This is an LMSCard with header and footer. (Login style)
+  </p>
+  <div class="MuiStack-root css-11zvfn9-MuiStack-root">
+    <button class="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeLarge MuiButton-textSizeLarge MuiButton-fullWidth MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeLarge MuiButton-textSizeLarge MuiButton-fullWidth css-1msqpia-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+            tabindex="0"
+            type="submit"
+            id=":r0:"
+            role="submit"
+    >
+      Se connecter
+      <span class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root">
+      </span>
+    </button>
+  </div>
+</div>
+`;

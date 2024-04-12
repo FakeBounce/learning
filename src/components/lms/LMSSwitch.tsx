@@ -1,6 +1,6 @@
 import { styled } from '@mui/system';
 import { Switch } from '@mui/material';
-import React from 'react';
+import { ChangeEvent } from 'react';
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
   width: 35,
@@ -41,7 +41,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 interface LMSSwitchProps {
-  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }
 
