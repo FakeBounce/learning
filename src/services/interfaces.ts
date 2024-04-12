@@ -1,8 +1,3 @@
-export interface OrderBy {
-  field: string;
-  direction: 'DESC' | 'ASC';
-}
-
 export interface FilterBy {
   operator: 'AND' | 'OR';
   items: [
@@ -25,6 +20,7 @@ export interface ApiResponseMessage {
   value: string;
   level: string;
 }
+
 export interface ApiRequestSort {
   field: string;
   direction: 'ASC' | 'DESC';
@@ -35,9 +31,4 @@ export interface ApiResponsePagination {
   rowPerPage: number;
   totalResults: number;
   totalPages: number;
-}
-
-export interface OrderBy {
-  id: string;
-  direction: 'DESC' | 'ASC';
 }
