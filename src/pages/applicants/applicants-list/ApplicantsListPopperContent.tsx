@@ -23,8 +23,11 @@ export default function ApplicantsListPopperContent({
   const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
   const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
 
-  const canBlockUnblockApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.BLOCK_UNBLOCK);
-  const canUpdateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.BLOCK_UNBLOCK);
+  const canBlockUnblockApplicant = isAuthorizedByPermissionsTo(
+    pageType,
+    PermissionEnum.BLOCK_UNBLOCK
+  );
+  const canUpdateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE);
 
   const goToApplicantProfile = () => {
     if (applicantSelected !== null) {
@@ -49,7 +52,7 @@ export default function ApplicantsListPopperContent({
         <ListItemButton onClick={goToApplicantProfile}>
           <ListItemText primary={<Trans>Profil</Trans>} />
         </ListItemButton>
-        { canBlockUnblockApplicant &&
+        {canBlockUnblockApplicant && (
           <ListItemButton onClick={handleToggleBlock}>
             <ListItemText
               primary={
@@ -57,12 +60,12 @@ export default function ApplicantsListPopperContent({
               }
             />
           </ListItemButton>
-        }
-        { canUpdateApplicant &&
+        )}
+        {canUpdateApplicant && (
           <ListItemButton onClick={goToApplicantUpdate}>
             <ListItemText primary={<Trans>Mettre à jour</Trans>} />
           </ListItemButton>
-        }
+        )}
       </ListItem>
     </Paper>
   );

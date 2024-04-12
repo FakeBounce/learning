@@ -92,7 +92,8 @@
   "PpLRwD": {
     "translation": "Retour à la connexion",
     "message": "Retour à la connexion",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SDTSUy": {
     "translation": "Organisation ID",
@@ -145,7 +146,8 @@
   "iS7m9d": {
     "translation": "Réinitialiser",
     "message": "Réinitialiser",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
