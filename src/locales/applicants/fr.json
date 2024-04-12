@@ -38,7 +38,8 @@
   "8/pAPk": {
     "translation": "Nom de naissance",
     "message": "Nom de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8N1T4V": {
     "translation": "La notification email est requis",
@@ -132,7 +133,8 @@
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
@@ -173,12 +175,14 @@
   "K+tHTS": {
     "translation": "Format incorrect",
     "message": "Format incorrect",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -195,7 +199,8 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -248,7 +253,8 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "/",
@@ -265,7 +271,8 @@
   "UeDwla": {
     "translation": "Information obligatoire",
     "message": "Information obligatoire",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UyAuoq": {
     "translation": "Liste des étudiants valides",
@@ -375,7 +382,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -440,12 +448,14 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wB7q3X": {
     "translation": "Date naiss.",
     "message": "Date naiss.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "NON",

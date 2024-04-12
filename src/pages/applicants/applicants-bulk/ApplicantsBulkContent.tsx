@@ -100,9 +100,7 @@ export default function ApplicantsBulkContent({
                 <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
                   <SimpleTable
                     columns={applicantsBulkColumns}
-                    getRowId={(row) => {
-                      return row.email;
-                    }}
+                    getRowId={(row) => row.email}
                     rows={faultyRows}
                   />
                 </LMSCard>
