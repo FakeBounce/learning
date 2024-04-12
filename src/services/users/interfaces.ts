@@ -1,4 +1,4 @@
-import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '../interfaces';
+import { ApiResponseMessage, ApiResponsePagination, TableRequestConfig } from '../interfaces';
 import { UserRole } from '@services/roles/interfaces';
 
 export interface User {
@@ -18,12 +18,7 @@ export interface User {
  * API Request and Response
  * To get a list of users
  */
-export interface GetUsersRequest {
-  currentPage: number;
-  rowsPerPage: number;
-  filters?: any;
-  sort?: ApiRequestSort;
-}
+export interface GetUsersRequest extends TableRequestConfig {}
 
 export interface GetUsersResponse {
   success: boolean;

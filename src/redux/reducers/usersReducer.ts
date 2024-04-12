@@ -18,7 +18,7 @@ interface UsersState {
   usersList: {
     usersListData: User[];
     usersListLoading: boolean;
-    usersListTotalCount: number | null;
+    usersListTotalCount: number;
   };
   singleUser: {
     singleUserData: User | null;
@@ -33,7 +33,7 @@ const initialState: UsersState = {
   usersList: {
     usersListData: [],
     usersListLoading: false,
-    usersListTotalCount: null
+    usersListTotalCount: 0
   },
   singleUser: {
     singleUserData: null,

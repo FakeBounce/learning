@@ -1,19 +1,14 @@
 import { LMSCard } from '@src/components/lms';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import FullTable from '@src/components/table/FullTable';
 import UsersListHeader from '@src/pages/users/users-list/UsersListHeader';
-import {
-  usersColumns,
-  usersTableHeaderRender,
-  usersTableRowsRender,
-  OrderBy
-} from '@src/pages/users/users-list/UsersColumns';
-import { useState, MouseEvent, useEffect, ChangeEvent } from 'react';
+import { usersColumns } from '@src/pages/users/users-list/UsersColumns';
+import { useState, MouseEvent } from 'react';
 import { User } from '@services/users/interfaces';
 import { getUsersList } from '@redux/reducers/usersReducer';
 import UsersListPopperContent from '@src/pages/users/users-list/UsersListPopperContent';
-import Pagination from '@src/components/table/Pagination';
 import LMSPopover from '@src/components/lms/LMSPopover';
+import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
+import { TableRequestConfig } from '@services/interfaces';
 
 export default function UsersList() {
   const dispatch = useAppDispatch();
@@ -22,49 +17,11 @@ export default function UsersList() {
     (state) => state.users.usersList
   );
 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-  const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
   const [userSelected, setUserSelected] = useState<User | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleChangePage = (_: unknown, newPage: number) => {
-    setCurrentPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event: ChangeEvent<HTMLInputElement>) => {
-    setRowsPerPage(+event.target.value);
-    setCurrentPage(0);
-  };
-
-  useEffect(() => {
-    const defaultUserListRequestConfig = {
-      currentPage: currentPage,
-      rowsPerPage: rowsPerPage
-    };
-
-    const userRequestConfig =
-      orderBy === null
-        ? { ...defaultUserListRequestConfig }
-        : {
-            ...defaultUserListRequestConfig,
-            sort: { field: orderBy.id, direction: orderBy.direction }
-          };
-
+  const handleTableChange = (userRequestConfig: TableRequestConfig) => {
     dispatch(getUsersList(userRequestConfig));
-  }, [currentPage, rowsPerPage, orderBy]);
-
-  const handleSort = (id: 'lastname' | 'firstname' | 'email' | 'isActive') => {
-    if (orderBy?.id === id) {
-      if (orderBy.direction === 'DESC') {
-        setOrderBy(null);
-        return;
-      }
-      setOrderBy({ id, direction: 'DESC' });
-      return;
-    } else {
-      setOrderBy({ id, direction: 'ASC' });
-    }
   };
 
   const handleClick = (newUser: User) => (event: MouseEvent<HTMLElement>) => {
@@ -78,19 +35,12 @@ export default function UsersList() {
   return (
     <>
       <LMSCard isPageCard contentPadding={0} header={<UsersListHeader />}>
-        <FullTable
-          headerRenderer={usersTableHeaderRender(handleSort, orderBy)}
-          bodyRenderer={usersTableRowsRender(usersListData, handleClick)}
-          isLoading={usersListLoading}
-          rowsNum={rowsPerPage}
-          colsNum={usersColumns.length}
-        />
-        <Pagination
-          totalCount={usersListTotalCount || 0}
-          rowsPerPage={rowsPerPage}
-          currentPage={currentPage}
-          onPageChange={handleChangePage}
-          onRowsPerPageChange={handleChangeRowsPerPage}
+        <TableWithSortAndFilter
+          columns={usersColumns(handleClick)}
+          rows={usersListData}
+          loading={usersListLoading}
+          rowCount={usersListTotalCount}
+          onChange={handleTableChange}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>

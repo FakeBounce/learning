@@ -3,14 +3,11 @@ import { LMSCard } from '@src/components/lms';
 import UploadBox from '@src/components/lms/UploadBox';
 import { Trans } from '@lingui/macro';
 import Iconify from '@src/components/iconify/Iconify';
-import {
-  applicantsBulkTableHeaderRenderer,
-  applicantsBulkTableRowsRenderer
-} from '@src/pages/applicants/applicants-bulk/ApplicantsBulkColumns';
-import InsideTable from '@src/components/table/InsideTable';
+import { applicantsBulkColumns } from '@src/pages/applicants/applicants-bulk/ApplicantsBulkColumns';
 import ApplicantsBulkHeader from '@src/pages/applicants/applicants-bulk/ApplicantsBulkHeader';
 import ApplicantsBulkFooter from '@src/pages/applicants/applicants-bulk/ApplicantsBulkFooter';
 import { ApplicantForBulk } from '@services/applicants/interfaces';
+import SimpleTable from '@src/components/table/SimpleTable';
 
 interface ApplicantsBulkContentProps {
   handleDropAvatar: (acceptedFiles: any) => void;
@@ -30,8 +27,14 @@ export default function ApplicantsBulkContent({
 }: ApplicantsBulkContentProps) {
   return (
     <Box px={[0, 2]} display="flex" mb={2}>
-      <LMSCard isPageCard header={<ApplicantsBulkHeader />} footer={<ApplicantsBulkFooter />}>
-        <Box display="flex" px={2}>
+      <LMSCard
+        isPageCard
+        contentPadding={0}
+        canExpand
+        header={<ApplicantsBulkHeader />}
+        footer={<ApplicantsBulkFooter />}
+      >
+        <Box display="flex" px={4}>
           <UploadBox
             onDrop={handleDropAvatar}
             sx={{ display: 'flex', flex: '1 1 0', minWidth: 240 }}
@@ -73,18 +76,19 @@ export default function ApplicantsBulkContent({
         {(validRows.length > 0 || faultyRows.length > 0) && (
           <Box display="flex" flexDirection="column" p={2} gap={2}>
             {validRows.length > 0 && (
-              <Box>
+              <Box display="flex" flexDirection="column" gap={2}>
                 {faultyRows.length > 0 && (
                   <Typography variant="h6">
                     <Trans>Liste des étudiants valides</Trans>
                   </Typography>
                 )}
-                <InsideTable
-                  headerRenderer={applicantsBulkTableHeaderRenderer}
-                  rowsRenderer={applicantsBulkTableRowsRenderer}
-                  tableContent={validRows}
-                  totalRows={validRows.length}
-                />
+                <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
+                  <SimpleTable
+                    columns={applicantsBulkColumns}
+                    getRowId={(row) => row.email}
+                    rows={validRows}
+                  />
+                </LMSCard>
               </Box>
             )}
 
@@ -93,12 +97,13 @@ export default function ApplicantsBulkContent({
                 <Typography variant="h6">
                   <Trans>Liste des étudiants invalides</Trans>
                 </Typography>
-                <InsideTable
-                  headerRenderer={applicantsBulkTableHeaderRenderer}
-                  rowsRenderer={applicantsBulkTableRowsRenderer}
-                  tableContent={faultyRows}
-                  totalRows={faultyRows.length}
-                />
+                <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
+                  <SimpleTable
+                    columns={applicantsBulkColumns}
+                    getRowId={(row) => row.email}
+                    rows={faultyRows}
+                  />
+                </LMSCard>
               </>
             )}
           </Box>

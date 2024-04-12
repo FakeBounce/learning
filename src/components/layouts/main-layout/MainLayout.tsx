@@ -15,7 +15,7 @@ export default function MainLayout() {
     <Box display={'flex'} width="100%">
       <Sidebar open={open} setOpen={setOpen} />
       <Stack
-        height="100vh"
+        minHeight="100vh"
         sx={{
           width: open ? `calc(100% - ${drawerWidth}px)` : `calc(100% - ${theme.spacing(7)})`
         }}

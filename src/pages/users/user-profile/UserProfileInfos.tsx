@@ -16,7 +16,7 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
   const theme = useTheme();
 
   return (
-    <Box display="flex" gap={2}>
+    <Box display="flex" gap={2} px={4}>
       <StyledFormColumn>
         <StyledFormRow>
           <StyledFormTypography>

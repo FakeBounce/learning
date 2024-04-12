@@ -1,15 +1,11 @@
 import { Box, Typography } from '@mui/material';
-import FullTable from '@src/components/table/FullTable';
 import { LMSCard } from '@src/components/lms';
 import { UserRole } from '@services/roles/interfaces';
-import {
-  userProfileRolesColumns,
-  userProfileRolesHeaderRender,
-  userProfileRolesRowRender
-} from '@src/pages/users/user-profile/user-roles/UserProfileRolesColumn';
+import { userProfileRolesColumns } from '@src/pages/users/user-profile/user-roles/UserProfileRolesColumn';
 import { Trans } from '@lingui/macro';
 import { useTheme } from '@mui/material/styles';
 import { useAppSelector } from '@redux/hooks';
+import SimpleTable from '@src/components/table/SimpleTable';
 
 interface UserProfileRolesProps {
   roles: UserRole[];
@@ -21,24 +17,23 @@ export default function UserProfileRoles({ roles }: UserProfileRolesProps) {
   const { singleUserLoading } = useAppSelector((state) => state.users.singleUser);
 
   return (
-    <Box px={[0, 2]} marginY={3} width="100%" boxSizing="border-box">
-      <Typography
-        sx={{
-          fontSize: theme.typography.h3.fontSize,
-          fontWeight: theme.typography.fontWeightRegular,
-          marginBottom: 3
-        }}
-      >
-        <Trans>Rôles</Trans>
-      </Typography>
+    <Box gap={3} display="flex" flexDirection="column">
+      <Box px={[0, 4]} width="100%" boxSizing="border-box">
+        <Typography
+          sx={{
+            fontSize: theme.typography.h3.fontSize,
+            fontWeight: theme.typography.fontWeightRegular
+          }}
+        >
+          <Trans>Rôles</Trans>
+        </Typography>
+      </Box>
       {roles.length > 0 ? (
-        <LMSCard isPageCard cardCss={{ position: 'relative' }}>
-          <FullTable
-            headerRenderer={userProfileRolesHeaderRender()}
-            bodyRenderer={userProfileRolesRowRender(roles)}
-            isLoading={singleUserLoading}
-            rowsNum={5}
-            colsNum={userProfileRolesColumns.length}
+        <LMSCard isPageCard canExpand contentPadding={0}>
+          <SimpleTable
+            columns={userProfileRolesColumns()}
+            rows={roles}
+            loading={singleUserLoading}
           />
         </LMSCard>
       ) : (
