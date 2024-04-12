@@ -114,8 +114,6 @@ export const connectedUserSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      // @todo : Define what to do when the action is pending
-      .addCase(UserActions.changeOrganizationView.pending, () => {})
       .addCase(
         UserActions.changeOrganizationView.fulfilled,
         (state, action: { payload: UpdateOrganizationViewResponse }) => {
@@ -127,8 +125,7 @@ export const connectedUserSlice = createSlice({
         }
       )
       .addCase(UserActions.changeOrganizationView.rejected, (_, action: AnyAction) => {
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
+        throw action.payload?.message?.value || action.error.message;
       })
       .addCase(resetApp, (state) => {
         state.login.isAuthenticated = false;

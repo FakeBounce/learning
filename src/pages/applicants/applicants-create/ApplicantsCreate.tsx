@@ -1,8 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { useAppDispatch } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
   ApplicantNotifications,
@@ -18,31 +18,21 @@ import ApplicantsCreateHeader from '@src/pages/applicants/applicants-create/Appl
 import ApplicantsUpdateForm from '@src/pages/applicants/applicants-update/ApplicantsUpdateForm';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
-import { resetCreatingApplicant } from '@redux/reducers/applicantsReducer';
 import { verifyFileForUpload } from '@utils/helpers/validators';
 import ApplicantsCreateFooter from '@src/pages/applicants/applicants-create/ApplicantsCreateFooter';
+import { enqueueSnackbar } from 'notistack';
+import { resetApplicantState } from '@redux/reducers/applicantsReducer';
 
 export default function ApplicantsCreate() {
   const [image, setImage] = useState<string | File>('');
-  const { hasCreated } = useAppSelector((state) => state.applicants.applicantCreate);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (hasCreated) {
-      if (getValues().email) {
-        navigate(PATH_APPLICANTS.root);
-      } else {
-        dispatch(resetCreatingApplicant());
-      }
-    }
-  }, [hasCreated]);
 
   const dispatch = useAppDispatch();
   const methods = useForm({
     resolver: yupResolver(updateApplicantSchema),
     defaultValues: updateApplicantFormDefaultValues
   });
-  const { handleSubmit, getValues, setError } = methods;
+  const { handleSubmit, setError } = methods;
 
   const onSubmit = async (data: UpdateApplicantForm) => {
     const isFileValid = await verifyFileForUpload(image, setError);
@@ -75,7 +65,13 @@ export default function ApplicantsCreate() {
     };
 
     // @todo - Handle groups
-    dispatch(createApplicant(createApplicantRequest));
+    try {
+      await dispatch(createApplicant(createApplicantRequest));
+      navigate(PATH_APPLICANTS.root);
+    } catch (error) {
+      enqueueSnackbar(error as string, { variant: 'error' });
+      dispatch(resetApplicantState());
+    }
   };
 
   return (

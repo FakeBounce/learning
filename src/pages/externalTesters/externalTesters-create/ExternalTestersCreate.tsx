@@ -1,13 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { useAppDispatch } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
-import { useEffect } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { ApplicantType, CreateApplicantRequest } from '@services/applicants/interfaces';
 import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
-import { resetCreatingApplicant } from '@redux/reducers/applicantsReducer';
 import ExternalTestersCreateFooter from '@src/pages/externalTesters/externalTesters-create/ExternalTestersCreateFooter';
 import {
   UpdateExternalTesterForm,
@@ -17,27 +15,18 @@ import {
 import ExternalTestersUpdateForm from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdateForm';
 import { Trans } from '@lingui/macro';
 import CardHeader from '@src/components/cards/CardHeader';
+import { enqueueSnackbar } from 'notistack';
+import { resetApplicantState } from '@redux/reducers/applicantsReducer';
 
 export default function ExternalTestersCreate() {
-  const { hasCreated } = useAppSelector((state) => state.applicants.applicantCreate);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    if (hasCreated) {
-      if (getValues().email) {
-        navigate(PATH_EXTERNAL_TESTERS.root);
-      } else {
-        dispatch(resetCreatingApplicant());
-      }
-    }
-  }, [hasCreated]);
 
   const dispatch = useAppDispatch();
   const methods = useForm({
     resolver: yupResolver(updateExternalTesterSchema),
     defaultValues: updateExternalTesterFormDefaultValues
   });
-  const { handleSubmit, getValues } = methods;
+  const { handleSubmit } = methods;
 
   const onSubmit = async (data: UpdateExternalTesterForm) => {
     const createApplicantRequest: CreateApplicantRequest = {
@@ -53,7 +42,13 @@ export default function ExternalTestersCreate() {
       }
     };
 
-    dispatch(createApplicant(createApplicantRequest));
+    try {
+      await dispatch(createApplicant(createApplicantRequest));
+      navigate(PATH_EXTERNAL_TESTERS.root);
+    } catch (error) {
+      enqueueSnackbar(error as string, { variant: 'error' });
+      dispatch(resetApplicantState());
+    }
   };
 
   return (

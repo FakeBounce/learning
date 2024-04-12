@@ -51,7 +51,9 @@ const initialState: OrganizationState = {
 export const organizationSlice = createSlice({
   name: 'organizations',
   initialState,
-  reducers: {},
+  reducers: {
+    resetOrganizationState: () => initialState
+  },
   extraReducers: (builder) => {
     builder
       /**
@@ -150,14 +152,8 @@ export const organizationSlice = createSlice({
           enqueueSnackbar(t`Organisation enregistrée !`, { variant: 'success' });
         }
       )
-      .addCase(OrganizationsActions.createOrganizations.rejected, (state, action: AnyAction) => {
-        state.organizationCreate.organizationCreateLoading = false;
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        // @todo This is a temporary solution, we should handle the error message in a better way
-        // Get first key of object data in payload.data and use it as the error message
-        const specificError = action.payload.data[Object.keys(action.payload.data)[0]][0];
-
-        enqueueSnackbar(`${errorMessage} : ${specificError}`, { variant: 'error' });
+      .addCase(OrganizationsActions.createOrganizations.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       })
       .addCase(changeOrganizationView.fulfilled, (state) => {
         state.organizationList = initialState.organizationList;
@@ -178,5 +174,6 @@ export const selectOrganizationsList = createSelector(
   (state: RootState) => state.organizations.organizationList,
   (s) => s
 );
+export const { resetOrganizationState } = organizationSlice.actions;
 
 export default organizationSlice.reducer;

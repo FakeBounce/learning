@@ -1,17 +1,18 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t, Trans } from '@lingui/macro';
-import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { useAppDispatch } from '@redux/hooks';
 import { createOrganizations } from '@redux/actions/organizationsActions';
 import { LMSCard } from '@src/components/lms';
 import OrganizationsCreateFooter from '@src/pages/organizations/organizations-create/OrganizationsCreateFooter';
 import OrganizationsCreateForm from '@src/pages/organizations/organizations-create/OrganizationsCreateForm';
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { enqueueSnackbar } from 'notistack';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import CardHeader from '@src/components/cards/CardHeader';
+import { resetOrganizationState } from '@redux/reducers/organizationsReducer';
 
 const createOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
@@ -48,20 +49,10 @@ export default function OrganizationsCreate() {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
-  const { currentOrganizationData } = useAppSelector(
-    (state) => state.organizations.currentOrganization
-  );
   const methods = useForm({
     resolver: yupResolver(createOrganizationschema),
     defaultValues
   });
-
-  // Go to OrganizationsList if an organization has been updated or created
-  useEffect(() => {
-    if (currentOrganizationData) {
-      navigate(PATH_ORGANIZATIONS.root);
-    }
-  }, [currentOrganizationData]);
 
   const { handleSubmit } = methods;
 
@@ -69,23 +60,29 @@ export default function OrganizationsCreate() {
     if (image === '') {
       enqueueSnackbar(t`Veuillez ajouter un logo`, { variant: 'error' });
     } else {
-      // Handle add
-      dispatch(
-        createOrganizations({
-          logo: image,
-          name: data.name,
-          // @todo - Use google API on front and not through the backend to prevent multiplicating requests
-          // So for now we use this default addressId
-          addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
-          useDoubleAuth: false,
-          clientAdmin: {
-            firstname: data.adminFirstName,
-            lastname: data.adminLastName,
-            email: data.adminEmail,
-            login: data.login
-          }
-        })
-      );
+      try {
+        // Handle add
+        await dispatch(
+          createOrganizations({
+            logo: image,
+            name: data.name,
+            // @todo - Use google API on front and not through the backend to prevent multiplicating requests
+            // So for now we use this default addressId
+            addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
+            useDoubleAuth: false,
+            clientAdmin: {
+              firstname: data.adminFirstName,
+              lastname: data.adminLastName,
+              email: data.adminEmail,
+              login: data.login
+            }
+          })
+        );
+        navigate(PATH_ORGANIZATIONS.root);
+      } catch (error) {
+        enqueueSnackbar(error as string, { variant: 'error' });
+        dispatch(resetOrganizationState());
+      }
     }
   };
 

@@ -37,8 +37,7 @@ describe('ExternalTestersCreate', () => {
         applicants: {
           ...initialApplicantState,
           applicantCreate: {
-            applicantCreateLoading: false,
-            hasCreated: false
+            applicantCreateLoading: false
           }
         }
       }

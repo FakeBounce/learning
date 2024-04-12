@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { PATH_DASHBOARD } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 export default function Header() {
   const dispatch = useAppDispatch();
@@ -15,9 +16,13 @@ export default function Header() {
   const navigate = useNavigate();
   const theme = useTheme();
 
-  const handleOrganizationLogout = () => {
-    dispatch(changeOrganizationView({ organizationId: id }));
-    navigate(PATH_DASHBOARD.root);
+  const handleOrganizationLogout = async () => {
+    try {
+      await dispatch(changeOrganizationView({ organizationId: id }));
+      navigate(PATH_DASHBOARD.root);
+    } catch (error) {
+      enqueueSnackbar(error as string, { variant: 'error' });
+    }
   };
 
   return (

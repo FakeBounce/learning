@@ -116,7 +116,7 @@ describe('ApplicantsBulk', () => {
     });
 
     await waitFor(async () => {
-      expect(screen.getByText(/Veillez sélectionner un fichier/i)).toBeInTheDocument();
+      expect(screen.getByText(/Veuillez sélectionner un fichier/i)).toBeInTheDocument();
     });
   });
 
