@@ -25,12 +25,17 @@ export default function UsersList() {
   };
 
   const handleClick = (newUser: User) => (event: MouseEvent<HTMLElement>) => {
+    if (newUser.id === userSelected?.id) {
+      setUserSelected(null);
+      setAnchorEl(null);
+      return;
+    }
     setUserSelected(newUser);
     setAnchorEl(event.currentTarget);
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'simple-popper' : undefined;
+  const id = open ? 'simple-popper-users' : undefined;
 
   return (
     <>
@@ -43,7 +48,7 @@ export default function UsersList() {
           onChange={handleTableChange}
         />
       </LMSCard>
-      <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+      <LMSPopover id={id} open={open} anchorEl={anchorEl}>
         <UsersListPopperContent
           setAnchorEl={setAnchorEl}
           setUserSelected={setUserSelected}

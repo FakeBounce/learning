@@ -3,7 +3,7 @@ import { Avatar, Box } from '@mui/material';
 import { Applicant } from '@services/applicants/interfaces';
 import { MouseEvent } from 'react';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-import { TableCellActions } from '@src/components/table/TableCellActions';
+import StatusChip from '@src/components/lms/StatusChip';
 
 export const externalTestersColumns = (
   handleClick: (newApplicant: Applicant) => (event: MouseEvent<HTMLElement>) => void
@@ -72,8 +72,15 @@ export const externalTestersColumns = (
         </strong>
       ),
       width: 120,
-      renderCell: (cell: GridRenderCellParams) => (
-        <TableCellActions cell={cell} handleClick={handleClick(cell.row)} />
-      )
+      renderCell: (cell: GridRenderCellParams) => {
+        const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
+        return (
+          <StatusChip
+            isActive={cell.row.isActive}
+            activatedText={activatedText}
+            handleClick={handleClick(cell.row)}
+          />
+        );
+      }
     }
   ] as GridColDef[];

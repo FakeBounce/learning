@@ -6,12 +6,12 @@ import { memo, MouseEvent, ReactNode } from 'react';
 interface StatusChipProps {
   isActive?: boolean;
   activatedText?: ReactNode;
-  handleClick: (event: MouseEvent<HTMLElement>) => void;
+  handleClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
 function StatusChip({ isActive = false, activatedText, handleClick }: StatusChipProps) {
   return (
-    <Box display="flex" alignItems="center">
+    <Box display="flex" flex="1" alignItems="center" justifyContent="space-between">
       {activatedText && (
         <Chip
           sx={{
@@ -23,12 +23,14 @@ function StatusChip({ isActive = false, activatedText, handleClick }: StatusChip
           label={activatedText}
         />
       )}
-      <IconButton onClick={handleClick} sx={{ boxShadow: 'none' }}>
-        <Iconify
-          sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
-          icon={'pepicons-pop:dots-y'}
-        />
-      </IconButton>
+      {handleClick && (
+        <IconButton onClick={handleClick} sx={{ boxShadow: 'none' }}>
+          <Iconify
+            sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
+            icon={'pepicons-pop:dots-y'}
+          />
+        </IconButton>
+      )}
     </Box>
   );
 }
