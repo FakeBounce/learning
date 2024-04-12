@@ -24,7 +24,6 @@ export const applicantsColumns = (
     },
     {
       field: 'externalId',
-      // flex: 1,
       renderHeader: () => (
         <strong>
           <Trans>Id externe</Trans>
@@ -94,8 +93,6 @@ export const applicantsColumns = (
     {
       field: 'isActive',
       display: 'flex',
-      sortable: true,
-      disableColumnMenu: true,
       renderHeader: () => (
         <strong>
           <Trans>Statut</Trans>

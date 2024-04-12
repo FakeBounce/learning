@@ -9,6 +9,7 @@ import {
 import ApplicantsListMock, { setupSuccessAxiosMock } from './ApplicantsListMock';
 import { useOutletContext } from 'react-router';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 jest.mock('react-router', () => ({
   ...jest.requireActual('react-router'),
@@ -31,7 +32,16 @@ describe('ApplicantsList', () => {
 
   it('renders ApplicantsList correctly', async () => {
     setupSuccessAxiosMock();
-    render(<ApplicantsList />);
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+        >
+        <ApplicantsList />
+      </FeatureFlagContext.Provider>
+    );
 
     await waitFor(() => {
       expect(screen.getByText(defaultApplicant.city as string)).toBeInTheDocument();
@@ -43,7 +53,16 @@ describe('ApplicantsList', () => {
 
   it('should call filter with sort when clicking on headers', async () => {
     setupSuccessAxiosMock();
-    render(<ApplicantsList />);
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsList />
+      </FeatureFlagContext.Provider>
+    );
 
     await waitFor(() => {
       expect(screen.getByText(defaultApplicant.city as string)).toBeInTheDocument();

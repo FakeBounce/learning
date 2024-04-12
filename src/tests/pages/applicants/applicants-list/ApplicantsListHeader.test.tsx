@@ -54,12 +54,38 @@ describe('ApplicantsListHeader', () => {
 
     expect(screen.getByText(/Étudiants/i)).toBeInTheDocument();
 
-    // Ensure that the "Annuler" button is present
-    const createButton = screen.getByText('Ajouter en masse');
+    // Ensure that the "Ajouter" button is present
+    const createButton = screen.getByText('Ajouter');
     expect(createButton).toBeInTheDocument();
 
     act(() => {
       fireEvent.click(createButton);
+    });
+
+    // Check if the navigate function has been called
+    expect(navigateMock).toHaveBeenCalledWith(PATH_APPLICANTS.add);
+  });
+
+  it('should have the bulk create button if user has rights', () => {
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true), // Mock the isAuthorizedByPermissionsTo function
+          canSeePage: jest.fn().mockReturnValue(true) // Mock the canSeePage function
+        }}
+      >
+        <ApplicantsListHeader />
+      </FeatureFlagContext.Provider>
+    );
+
+    expect(screen.getByText(/Étudiants/i)).toBeInTheDocument();
+
+    // Ensure that the "Ajouter en masse" button is present
+    const bulkCreateButton = screen.getByText('Ajouter en masse');
+    expect(bulkCreateButton).toBeInTheDocument();
+
+    act(() => {
+      fireEvent.click(bulkCreateButton);
     });
 
     // Check if the navigate function has been called

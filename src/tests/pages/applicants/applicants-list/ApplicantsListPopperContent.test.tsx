@@ -3,6 +3,7 @@ import ApplicantsListPopperContent from '@src/pages/applicants/applicants-list/A
 import { stateApplicant } from '../DefaultApplicants';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -20,10 +21,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={null}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={null}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     expect(screen.getByText(/Profil/i)).toBeInTheDocument();
@@ -35,10 +43,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={stateApplicant}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     expect(screen.getByText(/Bloquer/i)).toBeInTheDocument();
@@ -52,10 +67,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={stateApplicant}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(false),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={stateApplicant}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     act(() => {
@@ -76,10 +98,17 @@ describe('ApplicantsListPopperContent', () => {
     const handleToggleBlockMock = jest.fn();
 
     render(
-      <ApplicantsListPopperContent
-        handleToggleBlock={handleToggleBlockMock}
-        applicantSelected={null}
-      />
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ApplicantsListPopperContent
+          handleToggleBlock={handleToggleBlockMock}
+          applicantSelected={null}
+        />
+      </FeatureFlagContext.Provider>
     );
 
     act(() => {
