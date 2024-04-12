@@ -1,20 +1,47 @@
 import { Trans } from '@lingui/macro';
 import { Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import Iconify from '@src/components/iconify/Iconify';
 import { parametersNavigationConfig } from '@utils/navigation/configNavigation';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { useNavigate } from 'react-router-dom';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
+import { useAppSelector } from '@redux/hooks';
 
 export default function SidebarParametersList({ open }: { open: boolean }) {
-  const theme = useTheme();
   const [parametersOpen, setParametersOpen] = useState(true);
+  const { permissions } = useAppSelector((state) => state.connectedUser.user);
 
   const { canSeePage } = useContext(FeatureFlagContext);
   const navigate = useNavigate();
+
+  // Refresh the page when permissions change
+  useEffect(() => {}, [permissions]);
+
+  const generateAvailablePages = () => {
+    return parametersNavigationConfig.map((navItem) => {
+      if (navItem.restrictedTo && !canSeePage(navItem.restrictedTo)) {
+        return null;
+      }
+      return (
+        <ListItem key={`navItem-${navItem.path}`} disablePadding sx={{ display: 'block' }}>
+          <ListItemButton
+            sx={{
+              justifyContent: open ? 'initial' : 'center',
+              px: 2.5,
+              py: 0.5
+            }}
+            onClick={() => {
+              navigate(navItem.path);
+            }}
+          >
+            <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
+          </ListItemButton>
+        </ListItem>
+      );
+    });
+  };
 
   if (!open) {
     return (
@@ -38,7 +65,7 @@ export default function SidebarParametersList({ open }: { open: boolean }) {
       <Box
         display="flex"
         flexDirection={'row'}
-        bgcolor={theme.palette.grey[200]}
+        bgcolor={(theme) => theme.palette.grey[200]}
         height={48}
         borderRadius={2}
         alignItems="center"
@@ -58,29 +85,7 @@ export default function SidebarParametersList({ open }: { open: boolean }) {
       >
         <Iconify icon={parametersOpen ? 'mdi:chevron-up' : 'mdi:chevron-down'} width={24} />
       </IconButton>
-      <List>
-        {parametersNavigationConfig.map((navItem) => {
-          if (navItem.restrictedTo && !canSeePage(navItem.restrictedTo)) {
-            return null;
-          }
-          return (
-            <ListItem key={`navItem-${navItem.path}`} disablePadding sx={{ display: 'block' }}>
-              <ListItemButton
-                sx={{
-                  justifyContent: open ? 'initial' : 'center',
-                  px: 2.5,
-                  py: 0.5
-                }}
-                onClick={() => {
-                  navigate(navItem.path);
-                }}
-              >
-                <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
-              </ListItemButton>
-            </ListItem>
-          );
-        })}
-      </List>
+      <List>{generateAvailablePages()}</List>
     </Box>
   );
 }

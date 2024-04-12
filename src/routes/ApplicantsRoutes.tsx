@@ -28,7 +28,7 @@ function ApplicantsRoutes() {
       </Route>
 
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE_BULK} />}>
-        <Route path={PATH_APPLICANTS.bulkAdd} element={<ApplicantsBulk />} />
+        <Route path={PATH_APPLICANTS.addBulk} element={<ApplicantsBulk />} />
       </Route>
     </Route>
   );
