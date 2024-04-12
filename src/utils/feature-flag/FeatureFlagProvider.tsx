@@ -74,7 +74,7 @@ const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
 
       return permissionsObject[`${permissionAsked}_${pageType}`];
     },
-    [permissions, isUserAdmin]
+    [permissions, permissionsObject, isUserAdmin]
   );
 
   const pagePermissionCheck = useCallback(
@@ -95,7 +95,7 @@ const FeatureFlagProvider = ({ children }: { children: ReactNode }) => {
       }
       return isAuthorizedByPermissionsTo(pageAskedPermission, PermissionEnum.READ);
     },
-    [currentOrganization, isUserAdmin]
+    [currentOrganization, isUserAdmin, isAuthorizedByPermissionsTo]
   );
 
   const canSeePage = (pageAsked: PermissionTypeEnum[]): boolean => {

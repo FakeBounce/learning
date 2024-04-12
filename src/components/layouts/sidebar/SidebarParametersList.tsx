@@ -2,22 +2,17 @@ import { Trans } from '@lingui/macro';
 import { Typography, List, ListItem, ListItemButton, ListItemText } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
 import { parametersNavigationConfig } from '@utils/navigation/configNavigation';
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import { useNavigate } from 'react-router-dom';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
-import { useAppSelector } from '@redux/hooks';
 
 export default function SidebarParametersList({ open }: { open: boolean }) {
   const [parametersOpen, setParametersOpen] = useState(true);
-  const { permissions } = useAppSelector((state) => state.connectedUser.user);
 
   const { canSeePage } = useContext(FeatureFlagContext);
   const navigate = useNavigate();
-
-  // Refresh the page when permissions change
-  useEffect(() => {}, [permissions]);
 
   const generateAvailablePages = () => {
     return parametersNavigationConfig.map((navItem) => {
