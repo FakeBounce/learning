@@ -1,6 +1,11 @@
 import { AxiosResponse } from 'axios';
 import axios from '@utils/axios';
-import { GetGroupsRequest, GetGroupsResponse } from '@services/groups/interfaces';
+import {
+  DeleteGroupRequest,
+  DeleteGroupResponse,
+  GetGroupsRequest,
+  GetGroupsResponse
+} from '@services/groups/interfaces';
 
 export const getGroups = async (
   args: GetGroupsRequest
@@ -13,4 +18,12 @@ export const getGroups = async (
     filters,
     sort
   });
-}
+};
+
+export const deleteGroup = async (
+  args: DeleteGroupRequest
+): Promise<AxiosResponse<DeleteGroupResponse>> => {
+  const { groupId } = args;
+
+  return axios.delete(`/groups/${groupId}`);
+};

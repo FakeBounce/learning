@@ -21,6 +21,11 @@ export interface TableRequestConfig {
   filters?: FilterBy;
 }
 
+export const defaultTableRequestConfig = {
+  currentPage: 0,
+  rowsPerPage: 10
+};
+
 export interface ApiResponseMessage {
   value: string;
   level: string;

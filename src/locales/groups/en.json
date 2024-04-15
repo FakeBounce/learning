@@ -17,6 +17,11 @@
     "comments": [],
     "obsolete": false
   },
+  "T3xsZH": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
+    "comments": []
+  },
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
@@ -28,5 +33,10 @@
     "message": "Nom",
     "comments": [],
     "obsolete": false
+  },
+  "wmNuk6": {
+    "translation": "",
+    "message": "Supprimer un groupe",
+    "comments": []
   }
 }

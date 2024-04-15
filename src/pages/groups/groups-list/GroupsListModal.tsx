@@ -1,26 +1,23 @@
 import LMSModal from '@src/components/lms/LMSModal';
-import { t, Trans } from '@lingui/macro';
+import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
-import { enqueueSnackbar } from 'notistack';
 import { Group } from '@services/groups/interfaces';
 
 interface GroupsListModalProps {
   groupSelected: Group;
   isModalOpen: boolean;
   setIsModalOpen: (value: boolean) => void;
+  handleDeleteGroup: () => void;
   cancelModal: () => void;
 }
 
-export default function GroupsListModal({ groupSelected, isModalOpen, setIsModalOpen, cancelModal }: GroupsListModalProps) {
-
-  const deleteGroup = () => {
-    if (groupSelected !== null) {
-      //@TODO : call the delete action
-      enqueueSnackbar(t`Groupe supprimé !`, { variant: 'success' })
-      // Reset the popper
-      cancelModal();
-    }
-  };
+export default function GroupsListModal({
+  groupSelected,
+  isModalOpen,
+  setIsModalOpen,
+  handleDeleteGroup,
+  cancelModal
+}: GroupsListModalProps) {
   return (
     <LMSModal
       title={<Trans>Supprimer un groupe</Trans>}
@@ -28,7 +25,7 @@ export default function GroupsListModal({ groupSelected, isModalOpen, setIsModal
       onClose={() => {
         setIsModalOpen(false);
       }}
-      validateAction={deleteGroup}
+      validateAction={handleDeleteGroup}
       cancelAction={cancelModal}
     >
       <Typography>
@@ -42,15 +39,15 @@ export default function GroupsListModal({ groupSelected, isModalOpen, setIsModal
             }}
           >
             {groupSelected.name}
-          </Box>{' '}
-          ainsi que tous les{' '}
+          </Box>
+          , cela aura pour effet de retirer tous les{' '}
           <Box
             component={'span'}
             sx={{
-              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              fontWeight: (theme) => theme.typography.fontWeightMedium
             }}
           >
-            utilisateurs
+            utilisateurs et les droits
           </Box>{' '}
           lui étant rattachés ?
         </Trans>
