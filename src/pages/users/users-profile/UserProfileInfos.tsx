@@ -1,5 +1,4 @@
 import { Box, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
 import { User } from '@services/users/interfaces';
 import {
@@ -7,13 +6,20 @@ import {
   StyledFormRow,
   StyledFormTypography
 } from '@src/components/layouts/form/FormStyles';
+import { useAppSelector } from '@redux/hooks';
+import { ProfileSkeleton } from '@src/components/skeletons/ProfileSkeleton';
 
-interface UserProfileInfosProps {
-  user: User;
-}
+export default function UserProfileInfos() {
+  const {
+    singleUserData,
+    singleUserLoading
+  }: { singleUserData: User; singleUserLoading: boolean } = useAppSelector(
+    (state) => state.users.singleUser
+  );
 
-export default function UserProfileInfos({ user }: UserProfileInfosProps) {
-  const theme = useTheme();
+  if (singleUserLoading || !singleUserData) {
+    return <ProfileSkeleton rows={3} cols={2} />;
+  }
 
   return (
     <Box display="flex" gap={2} px={4}>
@@ -22,21 +28,23 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
           <StyledFormTypography>
             <Trans>Nom</Trans>
           </StyledFormTypography>
-          <Typography>{user.lastname}</Typography>
+          <Typography>{singleUserData.lastname}</Typography>
         </StyledFormRow>
 
         <StyledFormRow>
           <StyledFormTypography>
             <Trans>Email</Trans>
           </StyledFormTypography>
-          <Typography sx={theme.typography.body1}>{user.email}</Typography>
+          <Typography sx={(theme) => theme.typography.body1}>{singleUserData.email}</Typography>
         </StyledFormRow>
 
         <StyledFormRow>
           <StyledFormTypography>
             <Trans>Double authentification</Trans>
           </StyledFormTypography>
-          <Typography>{user.useDoubleAuth ? <Trans>OUI</Trans> : <Trans>NON</Trans>}</Typography>
+          <Typography>
+            {singleUserData.useDoubleAuth ? <Trans>OUI</Trans> : <Trans>NON</Trans>}
+          </Typography>
         </StyledFormRow>
       </StyledFormColumn>
       <StyledFormColumn>
@@ -44,14 +52,14 @@ export default function UserProfileInfos({ user }: UserProfileInfosProps) {
           <StyledFormTypography>
             <Trans>Prénom</Trans>
           </StyledFormTypography>
-          <Typography>{user.firstname}</Typography>
+          <Typography>{singleUserData.firstname}</Typography>
         </StyledFormRow>
 
         <StyledFormRow>
           <StyledFormTypography>
             <Trans>Login</Trans>
           </StyledFormTypography>
-          <Typography>{user.login}</Typography>
+          <Typography>{singleUserData.login}</Typography>
         </StyledFormRow>
       </StyledFormColumn>
     </Box>

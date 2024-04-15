@@ -1,6 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const userProfileGroupsColumns = () =>
   [
@@ -8,11 +9,7 @@ export const userProfileGroupsColumns = () =>
       field: 'name',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
       renderCell: (cell: GridRenderCellParams) => (
         <Typography fontSize={(theme) => theme.typography.body2.fontSize}>{cell.value}</Typography>
       )
@@ -22,11 +19,7 @@ export const userProfileGroupsColumns = () =>
       type: 'string',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Description</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Description</Trans>),
       renderCell: (cell: GridRenderCellParams) => (
         <Typography fontSize={(theme) => theme.typography.body2.fontSize}>{cell.value}</Typography>
       )

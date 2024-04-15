@@ -2,8 +2,7 @@
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "0uOGoh": {
     "translation": "",
@@ -14,14 +13,12 @@
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "",
     "message": "Liste des modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "4kUPlv": {
     "translation": "",
@@ -32,14 +29,12 @@
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8N1T4V": {
     "translation": "",
@@ -56,8 +51,7 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "AAjpHB": {
     "translation": "",
@@ -86,8 +80,7 @@
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
@@ -104,8 +97,7 @@
   "EIxP9b": {
     "translation": "",
     "message": "Gestion des rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "F8ESDf": {
     "translation": "",
@@ -137,11 +129,15 @@
     "comments": [],
     "obsolete": false
   },
+  "GF/eyq": {
+    "translation": "",
+    "message": "Ajouter en masse",
+    "comments": []
+  },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "",
@@ -152,8 +148,7 @@
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HdNGur": {
     "translation": "",
@@ -176,8 +171,7 @@
   "K+tHTS": {
     "translation": "",
     "message": "Format incorrect",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MCvCnO": {
     "translation": "",
@@ -194,8 +188,7 @@
   "MeRGCv": {
     "translation": "",
     "message": "Créer un testeur externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "",
@@ -272,8 +265,7 @@
   "UeDwla": {
     "translation": "",
     "message": "Information obligatoire",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UyAuoq": {
     "translation": "",
@@ -296,8 +288,7 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "",
@@ -308,8 +299,7 @@
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YNznY8": {
     "translation": "",
@@ -344,8 +334,7 @@
   "eoO6cw": {
     "translation": "",
     "message": "Liste des Parcours",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "f3LmJs": {
     "translation": "",
@@ -380,8 +369,7 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iAKACc": {
     "translation": "",
@@ -410,14 +398,12 @@
   "lPgC5g": {
     "translation": "",
     "message": "Créer un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rmmVFd": {
     "translation": "",
@@ -440,8 +426,7 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "vdb2j0": {
     "translation": "",

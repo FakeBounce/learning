@@ -3,6 +3,7 @@ import { Trans } from '@lingui/macro';
 import { User } from '@services/users/interfaces';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import StatusChip from '@src/components/lms/StatusChip';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const usersColumns = (
   handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
@@ -12,40 +13,24 @@ export const usersColumns = (
       field: 'lastname',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>)
     },
     {
       field: 'firstname',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Prénom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Prénom</Trans>)
     },
     {
       field: 'email',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Email</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Email</Trans>)
     },
     {
       field: 'isActive',
       display: 'flex',
-      renderHeader: () => (
-        <strong>
-          <Trans>Statut</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
       maxWidth: 100,
       renderCell: (cell: GridRenderCellParams) => {
         const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;

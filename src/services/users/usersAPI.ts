@@ -1,6 +1,8 @@
 import { AxiosResponse } from 'axios';
 import axios from '@utils/axios';
 import {
+  BulkUserRequest,
+  BulkUserResponse,
   GetSingleUserResponse,
   GetUsersRequest,
   GetUsersResponse,
@@ -39,4 +41,10 @@ export const toggleUserBlock = async (
   const correctPath = setActive ? 'unblock' : 'block';
 
   return axios.put(`/users/${userId}/${correctPath}`);
+};
+
+export const createBulkUser = async (
+  args: BulkUserRequest
+): Promise<AxiosResponse<BulkUserResponse>> => {
+  return axios.post(`/users/add-multiple`, { users: args });
 };

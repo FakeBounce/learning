@@ -79,8 +79,8 @@ export const PATH_USERS = {
   root: ROOT_USERS,
   add: path(ROOT_USERS, '/create'),
   addBulk: path(ROOT_USERS, '/create-bulk'),
-  profile: path(ROOT_USERS, '/profile/:id'),
-  edit: path(ROOT_USERS, '/edit/:id')
+  profile: path(ROOT_USERS, '/profile/:userId'),
+  update: path(ROOT_USERS, '/update/:userId')
 };
 
 //Groups

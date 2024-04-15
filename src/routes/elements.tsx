@@ -30,11 +30,14 @@ export const OrganizationsUpdate = LoadableComponent(
 
 export const Users = LoadableComponent(lazy(() => import('@src/pages/users/users-list/UsersList')));
 export const UserProfile = LoadableComponent(
-  lazy(() => import('@src/pages/users/user-profile/UserProfile'))
+  lazy(() => import('@src/pages/users/users-profile/UserProfile'))
 );
 
 export const UserEdit = LoadableComponent(
-  lazy(() => import('@src/pages/users/user-edit/UserEdit'))
+  lazy(() => import('@src/pages/users/users-edit/UserEdit'))
+);
+export const UserBluk = LoadableComponent(
+  lazy(() => import('@src/pages/users/users-bulk/UsersBulk'))
 );
 
 /**

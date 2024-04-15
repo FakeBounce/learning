@@ -5,6 +5,7 @@ import { Organization } from '@services/organizations/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { MouseEvent } from 'react';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const organizationsListColumns = (
   handleClick: (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => void
@@ -23,11 +24,7 @@ export const organizationsListColumns = (
       field: 'name',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
       // filterOperators: getGridNumericOperators()
       //   .filter((operator) => operator.value !== 'isAnyOf')
       //   .map((operator) => ({
@@ -44,11 +41,7 @@ export const organizationsListColumns = (
     },
     {
       field: 'city',
-      renderHeader: () => (
-        <strong>
-          <Trans>Ville</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Ville</Trans>),
       display: 'flex',
       flex: 1
     },
@@ -57,11 +50,7 @@ export const organizationsListColumns = (
       sortable: true,
       disableColumnMenu: true,
       display: 'flex',
-      renderHeader: () => (
-        <strong>
-          <Trans>Statut</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
       maxWidth: 120,
       flex: 1,
       padding: 'none',

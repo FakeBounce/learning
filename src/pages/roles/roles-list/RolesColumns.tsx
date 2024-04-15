@@ -5,6 +5,7 @@ import Iconify from '@src/components/iconify/Iconify';
 import { MouseEvent } from 'react';
 import { Role } from '@services/roles/interfaces';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const rolesColumns = (
   handleClick: (newRole: Role) => (event: MouseEvent<HTMLElement>) => void
@@ -14,11 +15,7 @@ export const rolesColumns = (
       field: 'name',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
       renderCell: (cell: GridRenderCellParams) => {
         return (
           <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
@@ -31,11 +28,7 @@ export const rolesColumns = (
       field: 'description',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Description</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Description</Trans>),
       renderCell: (cell: GridRenderCellParams) => {
         return (
           <Box display="flex" alignItems="center" justifyContent="space-between">

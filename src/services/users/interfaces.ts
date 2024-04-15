@@ -14,7 +14,14 @@ export interface User {
   groups: any[];
 }
 
-/*
+export interface UserForBulk {
+  email: string;
+  firstname: string;
+  lastname: string;
+  login: string;
+}
+
+/**
  * API Request and Response
  * To get a list of users
  */
@@ -29,7 +36,7 @@ export interface GetUsersResponse {
   };
 }
 
-/*
+/**
  * API Request and Response
  * To get a specific user
  */
@@ -39,7 +46,7 @@ export interface GetSingleUserResponse {
   data: User;
 }
 
-/*
+/**
  * API Request and Response
  * To update user
  */
@@ -58,7 +65,7 @@ export interface UpdateUserResponse {
   data: User;
 }
 
-/*
+/**
  * API Request and Response
  * To toggle user block
  */
@@ -71,4 +78,16 @@ export interface UpdateUserBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: User;
+}
+
+/**
+ * API Request and Response
+ * To create bulk users
+ */
+export type BulkUserRequest = UserForBulk[];
+
+export interface BulkUserResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: User[];
 }

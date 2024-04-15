@@ -2,64 +2,32 @@ import { Trans } from '@lingui/macro';
 import { Typography } from '@mui/material';
 import { isValid } from 'date-fns';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
-
-const ApplicantsBulkCellRender = (cell: GridRenderCellParams) => {
-  if (cell.value === 'MD') {
-    return (
-      <Typography color="error">
-        <Trans>Information obligatoire</Trans>
-      </Typography>
-    );
-  }
-  if (cell.value === 'IF') {
-    return (
-      <Typography color="error">
-        <Trans>Format incorrect</Trans>
-      </Typography>
-    );
-  }
-  return <Typography>{cell.value}</Typography>;
-};
+import { BulkCellRenderer } from '@utils/helpers/bulkCellRenderer';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const applicantsBulkColumns = [
   {
     field: 'externalId',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Id externe</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Id externe</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'lastname',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Nom</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'firstname',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Prénom</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Prénom</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'birthDate',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Date naiss.</Trans>
-      </strong>
-    ),
+    renderHeader: () => renderHeaderCell(<Trans>Date naiss.</Trans>),
     renderCell: (cell: GridRenderCellParams) => {
       if (cell.row.birthDate === 'MD') {
         return (
@@ -82,41 +50,25 @@ export const applicantsBulkColumns = [
   {
     field: 'birthName',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Nom de naissance</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Nom de naissance</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'email',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Email</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Email</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'phone',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Téléphone</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Téléphone</Trans>),
+    renderCell: BulkCellRenderer
   },
   {
     field: 'city',
     display: 'flex',
-    renderHeader: () => (
-      <strong>
-        <Trans>Ville</Trans>
-      </strong>
-    ),
-    renderCell: ApplicantsBulkCellRender
+    renderHeader: () => renderHeaderCell(<Trans>Ville</Trans>),
+    renderCell: BulkCellRenderer
   }
 ] as GridColDef[];

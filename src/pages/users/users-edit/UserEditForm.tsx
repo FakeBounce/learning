@@ -4,7 +4,7 @@ import { RHFTextField } from '@src/components/hook-form';
 import { Trans } from '@lingui/macro';
 import LMSSwitch from '@src/components/lms/LMSSwitch';
 import { Control, Controller } from 'react-hook-form';
-import { EditUserForm } from '@src/pages/users/user-edit/UserEdit';
+import { EditUserForm } from '@src/pages/users/users-edit/UserEdit';
 
 const labelWithRequired = (label: ReactNode) => (
   <>

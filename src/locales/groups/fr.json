@@ -1,21 +1,73 @@
 {
+  "/Wfz2D": {
+    "translation": "Modifier un utilisateur",
+    "message": "Modifier un utilisateur",
+    "comments": []
+  },
+  "2mcnZQ": {
+    "translation": "Utilisateurs",
+    "message": "Utilisateurs",
+    "comments": []
+  },
+  "3RK7em": {
+    "translation": "Liste des modules",
+    "message": "Liste des modules",
+    "comments": []
+  },
+  "7p5kLi": {
+    "translation": "Dashboard",
+    "message": "Dashboard",
+    "comments": []
+  },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "DDwdL4": {
+    "translation": "Profil",
+    "message": "Profil",
+    "comments": []
+  },
+  "EIxP9b": {
+    "translation": "Gestion des rôles",
+    "message": "Gestion des rôles",
+    "comments": []
   },
   "EvYn6I": {
     "translation": "Nombre d'utilisateurs",
     "message": "Nombre d'utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "GF/eyq": {
+    "translation": "Ajouter en masse",
+    "message": "Ajouter en masse",
+    "comments": []
+  },
+  "GoZkew": {
+    "translation": "Organisations",
+    "message": "Organisations",
+    "comments": []
+  },
+  "HbvbX+": {
+    "translation": "Personnalisation",
+    "message": "Personnalisation",
+    "comments": []
+  },
+  "MeRGCv": {
+    "translation": "Créer un testeur externe",
+    "message": "Créer un testeur externe",
+    "comments": []
   },
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "Xukbwg": {
+    "translation": "Modifier une organisation",
+    "message": "Modifier une organisation",
+    "comments": []
   },
   "T3xsZH": {
     "translation": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
@@ -28,15 +80,19 @@
     "comments": [],
     "obsolete": false
   },
+  "eoO6cw": {
+    "translation": "Liste des Parcours",
+    "message": "Liste des Parcours",
+    "comments": []
+  },
+  "hsf9ph": {
+    "translation": "Étudiants",
+    "message": "Étudiants",
+    "comments": []
+  },
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
-  },
-  "wmNuk6": {
-    "translation": "Supprimer un groupe",
-    "message": "Supprimer un groupe",
     "comments": []
   }
 }
