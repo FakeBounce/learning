@@ -196,38 +196,38 @@ export const faultyRowsForApplicantBulk = [
 export const ApplicantBulkFromApi = [
   {
     type: ApplicantType.STUDENT,
-    is_active: true,
-    external_id: 'POIU1',
+    isActive: true,
+    externalId: 'POIU1',
     firstname: 'Améthyste',
     lastname: 'Supernom',
     email: 'superam@kyste.fr',
     phone: '0987654321',
     city: 'Poiuytreza',
-    birth_date: '03/03/1090',
-    birth_name: 'Poulop'
+    birthDate: '03/03/1090',
+    birthName: 'Poulop'
   },
   {
     type: ApplicantType.STUDENT,
-    is_active: true,
+    isActive: true,
     external_id: 'LKDAL209',
     firstname: 'Parapluie',
     lastname: 'Lenom',
     email: 'para@pluie.com',
     phone: '',
     city: 'Moiute',
-    birth_date: '02/05/1976',
-    birth_name: 'Teebop'
+    birthDate: '02/05/1976',
+    birthName: 'Teebop'
   },
   {
     type: ApplicantType.STUDENT,
-    is_active: true,
-    external_id: '',
+    isActive: true,
+    externalId: '',
     firstname: 'yaller',
     lastname: 'jdois',
     email: 'jdoisyaller@vite.com',
     phone: '',
     city: 'HOHOHO',
-    birth_date: '01/23/1003',
-    birth_name: ''
+    birthDate: '01/23/1003',
+    birthName: ''
   }
 ] as ApplicantFromApi[];

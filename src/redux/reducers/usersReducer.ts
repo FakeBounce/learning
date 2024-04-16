@@ -1,18 +1,17 @@
 import {
   GetSingleUserResponse,
-  GetUsersRequest,
   GetUsersResponse,
-  UpdateUserBlockRequest,
   UpdateUserBlockResponse,
-  UpdateUserRequest,
   UpdateUserResponse,
   User
 } from '@services/users/interfaces';
-import { AnyAction, createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import * as UsersServices from '@services/users/usersAPI';
+import { AnyAction, createSelector, createSlice } from '@reduxjs/toolkit';
+import * as UsersActions from '@redux/actions/usersActions';
 import { enqueueSnackbar } from 'notistack';
 import { t } from '@lingui/macro';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
+import { Organization } from '@services/organizations/interfaces';
+import { RootState } from '@redux/store';
 
 interface UsersState {
   usersList: {
@@ -27,9 +26,12 @@ interface UsersState {
   updatedUser: {
     updatedUserLoading: boolean;
   };
+  usersBulk: {
+    usersBulkLoading: boolean;
+  };
 }
 
-const initialState: UsersState = {
+export const initialUserState: UsersState = {
   usersList: {
     usersListData: [],
     usersListLoading: false,
@@ -41,129 +43,110 @@ const initialState: UsersState = {
   },
   updatedUser: {
     updatedUserLoading: false
+  },
+  usersBulk: {
+    usersBulkLoading: false
   }
 };
 
-export const getUsersList = createAsyncThunk(
-  'users/list',
-  async (arg: GetUsersRequest, { rejectWithValue }) => {
-    try {
-      const response = await UsersServices.getUsers(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const getSingleUser = createAsyncThunk(
-  'users/fetchSingle',
-  async (id: number, { rejectWithValue }) => {
-    try {
-      const response = await UsersServices.getSingleUser(id);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const updateUser = createAsyncThunk(
-  'users/update',
-  async (arg: UpdateUserRequest, { rejectWithValue }) => {
-    try {
-      const response = await UsersServices.updateUser(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
-export const toggleUserBlock = createAsyncThunk(
-  'users/toggleBlock',
-  async (arg: UpdateUserBlockRequest, { rejectWithValue }) => {
-    try {
-      const response = await UsersServices.toggleUserBlock(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
-
 export const usersSlice = createSlice({
   name: 'users',
-  initialState,
-  reducers: {},
+  initialState: initialUserState,
+  reducers: {
+    resetUserState: () => initialUserState
+  },
   extraReducers: (builder) => {
     builder
       //List Users Reducers
-      .addCase(getUsersList.pending, (state) => {
+      .addCase(UsersActions.getUsersList.pending, (state) => {
         state.usersList.usersListLoading = true;
       })
-      .addCase(getUsersList.fulfilled, (state, action: { payload: GetUsersResponse }) => {
-        state.usersList.usersListLoading = false;
-        state.usersList.usersListData = action.payload.data.rows;
-        state.usersList.usersListTotalCount = action.payload.data.pagination.totalResults;
-      })
-      .addCase(getUsersList.rejected, (state, action: AnyAction) => {
+      .addCase(
+        UsersActions.getUsersList.fulfilled,
+        (state, action: { payload: GetUsersResponse }) => {
+          state.usersList.usersListLoading = false;
+          state.usersList.usersListData = action.payload.data.rows;
+          state.usersList.usersListTotalCount = action.payload.data.pagination.totalResults;
+        }
+      )
+      .addCase(UsersActions.getUsersList.rejected, (state, action: AnyAction) => {
         state.usersList.usersListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
 
       // Fetch Single User Reducers
-      .addCase(getSingleUser.pending, (state) => {
+      .addCase(UsersActions.getSingleUser.pending, (state) => {
         state.singleUser.singleUserLoading = true;
       })
-      .addCase(getSingleUser.fulfilled, (state, action: { payload: GetSingleUserResponse }) => {
-        state.singleUser.singleUserLoading = false;
-        state.singleUser.singleUserData = action.payload.data;
-      })
-      .addCase(getSingleUser.rejected, (state, action: AnyAction) => {
+      .addCase(
+        UsersActions.getSingleUser.fulfilled,
+        (state, action: { payload: GetSingleUserResponse }) => {
+          state.singleUser.singleUserLoading = false;
+          state.singleUser.singleUserData = action.payload.data;
+        }
+      )
+      .addCase(UsersActions.getSingleUser.rejected, (state, action: AnyAction) => {
         state.singleUser.singleUserLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
 
       // Update User Reducers
-      .addCase(updateUser.pending, (state) => {
+      .addCase(UsersActions.updateUser.pending, (state) => {
         state.updatedUser.updatedUserLoading = true;
       })
-      .addCase(updateUser.fulfilled, (state, action: { payload: UpdateUserResponse }) => {
-        state.singleUser.singleUserData = action.payload.data;
-        enqueueSnackbar(t`Utilisateur enregistré !`, { variant: 'success' });
-      })
-      .addCase(updateUser.rejected, (_, action: AnyAction) => {
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
+      .addCase(
+        UsersActions.updateUser.fulfilled,
+        (state, action: { payload: UpdateUserResponse }) => {
+          state.updatedUser.updatedUserLoading = false;
+          state.singleUser.singleUserData = action.payload.data;
+          enqueueSnackbar(t`Utilisateur enregistré !`, { variant: 'success' });
+        }
+      )
+      .addCase(UsersActions.updateUser.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       })
 
       // Users Block Reducers
-      .addCase(toggleUserBlock.pending, (_) => {})
-      .addCase(toggleUserBlock.fulfilled, (state, action: { payload: UpdateUserBlockResponse }) => {
-        // Find the user in the list and update it
-        const userIndex = state.usersList.usersListData.findIndex(
-          (org) => org.id === action.payload.data.id
-        );
-        if (userIndex > -1) {
-          state.usersList.usersListData[userIndex] = action.payload.data;
+      .addCase(UsersActions.toggleUserBlock.pending, (_) => {})
+      .addCase(
+        UsersActions.toggleUserBlock.fulfilled,
+        (state, action: { payload: UpdateUserBlockResponse }) => {
+          // Find the user in the list and update it
+          const userIndex = selectUsersFindId(state, action.payload.data.id);
+          if (userIndex > -1) {
+            state.usersList.usersListData[userIndex] = action.payload.data;
+          }
         }
-      })
-      .addCase(toggleUserBlock.rejected, (_, action: AnyAction) => {
+      )
+      .addCase(UsersActions.toggleUserBlock.rejected, (_, action: AnyAction) => {
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
+      // Users Block Reducers
+      .addCase(UsersActions.createBulkUser.pending, (state) => {
+        state.usersBulk.usersBulkLoading = true;
+      })
+      .addCase(UsersActions.createBulkUser.fulfilled, (state) => {
+        state.usersBulk.usersBulkLoading = false;
+        enqueueSnackbar(t`Utilisateurs créés !`, { variant: 'success' });
+      })
+      .addCase(UsersActions.createBulkUser.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
       .addCase(changeOrganizationView.fulfilled, (state) => {
-        state.usersList = initialState.usersList;
-        state.singleUser = initialState.singleUser;
+        state.usersList = initialUserState.usersList;
+        state.singleUser = initialUserState.singleUser;
       });
   }
 });
+
+export const selectUsersFindId = createSelector(
+  [(state: RootState) => state.users.usersList.usersListData, (_, idToFind) => idToFind],
+  (s, idToFind) => s.findIndex((org: Organization) => org.id === idToFind)
+);
+
+export const { resetUserState } = usersSlice.actions;
 
 export default usersSlice.reducer;

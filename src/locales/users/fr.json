@@ -23,9 +23,20 @@
     "comments": [],
     "obsolete": false
   },
+  "9hQFA+": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
+    "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
+    "comments": []
+  },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
+    "comments": [],
+    "obsolete": false
+  },
+  "A7xVRH": {
+    "translation": "Veuillez sélectionner un fichier",
+    "message": "Veuillez sélectionner un fichier",
     "comments": [],
     "obsolete": false
   },
@@ -47,6 +58,12 @@
     "comments": [],
     "obsolete": false
   },
+  "Dd/Xo9": {
+    "translation": "Ajouter des utilisateurs en masse",
+    "message": "Ajouter des utilisateurs en masse",
+    "comments": [],
+    "obsolete": false
+  },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
@@ -56,6 +73,18 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
+    "comments": [],
+    "obsolete": false
+  },
+  "FABypk": {
+    "translation": "Sélectionnez un fichier",
+    "message": "Sélectionnez un fichier",
+    "comments": [],
+    "obsolete": false
+  },
+  "FdjX4N": {
+    "translation": "Aucun utilisateur valide à ajouter",
+    "message": "Aucun utilisateur valide à ajouter",
     "comments": [],
     "obsolete": false
   },
@@ -101,6 +130,11 @@
     "comments": [],
     "obsolete": false
   },
+  "JSPwk2": {
+    "translation": "Débloquer un utilisateur",
+    "message": "Débloquer un utilisateur",
+    "comments": []
+  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
@@ -134,12 +168,34 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
+    "comments": []
+  },
+  "SCttC7": {
+    "translation": "?",
+    "message": "?",
     "comments": [],
     "obsolete": false
+  },
+  "SDHbV6": {
+    "translation": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
+    "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
+    "comments": [],
+    "obsolete": false
+  },
+  "Vb8ErI": {
+    "translation": "Liste des utilisateurs valides",
+    "message": "Liste des utilisateurs valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "Fichier .csv / Max : 3 Mo",
+    "message": "Fichier .csv / Max : 3 Mo",
     "comments": [],
     "obsolete": false
   },
@@ -203,6 +259,18 @@
     "comments": [],
     "obsolete": false
   },
+  "jN1i4x": {
+    "translation": "Liste des utilisateurs invalides",
+    "message": "Liste des utilisateurs invalides",
+    "comments": [],
+    "obsolete": false
+  },
+  "kBPLqk": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
+    "message": "Êtes-vous sûr de vouloir bloquer l’organisation",
+    "comments": [],
+    "obsolete": false
+  },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
@@ -215,9 +283,20 @@
     "comments": [],
     "obsolete": false
   },
+  "r+5fnD": {
+    "translation": "Bloquer un utilisateur",
+    "message": "Bloquer un utilisateur",
+    "comments": []
+  },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
+    "comments": [],
+    "obsolete": false
+  },
+  "tM+VkT": {
+    "translation": "L'utilisateur n'existe pas",
+    "message": "L'utilisateur n'existe pas",
     "comments": [],
     "obsolete": false
   },

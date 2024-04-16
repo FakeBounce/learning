@@ -1,13 +1,73 @@
 {
+  "/Wfz2D": {
+    "translation": "Modifier un utilisateur",
+    "message": "Modifier un utilisateur",
+    "comments": [],
+    "obsolete": false
+  },
+  "2mcnZQ": {
+    "translation": "Utilisateurs",
+    "message": "Utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
+  "3RK7em": {
+    "translation": "Liste des modules",
+    "message": "Liste des modules",
+    "comments": [],
+    "obsolete": false
+  },
+  "7p5kLi": {
+    "translation": "Dashboard",
+    "message": "Dashboard",
+    "comments": [],
+    "obsolete": false
+  },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
     "comments": [],
     "obsolete": false
   },
+  "DDwdL4": {
+    "translation": "Profil",
+    "message": "Profil",
+    "comments": [],
+    "obsolete": false
+  },
+  "EIxP9b": {
+    "translation": "Gestion des rôles",
+    "message": "Gestion des rôles",
+    "comments": [],
+    "obsolete": false
+  },
   "EvYn6I": {
     "translation": "Nombre d'utilisateurs",
     "message": "Nombre d'utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
+  "GF/eyq": {
+    "translation": "Ajouter en masse",
+    "message": "Ajouter en masse",
+    "comments": [],
+    "obsolete": false
+  },
+  "GoZkew": {
+    "translation": "Organisations",
+    "message": "Organisations",
+    "comments": [],
+    "obsolete": false
+  },
+  "HbvbX+": {
+    "translation": "Personnalisation",
+    "message": "Personnalisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "MeRGCv": {
+    "translation": "Créer un testeur externe",
+    "message": "Créer un testeur externe",
     "comments": [],
     "obsolete": false
   },
@@ -20,11 +80,30 @@
   "T3xsZH": {
     "translation": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
     "message": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "Xukbwg": {
+    "translation": "Modifier une organisation",
+    "message": "Modifier une organisation",
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
+    "comments": [],
+    "obsolete": false
+  },
+  "eoO6cw": {
+    "translation": "Liste des Parcours",
+    "message": "Liste des Parcours",
+    "comments": [],
+    "obsolete": false
+  },
+  "hsf9ph": {
+    "translation": "Étudiants",
+    "message": "Étudiants",
     "comments": [],
     "obsolete": false
   },
@@ -33,10 +112,5 @@
     "message": "Nom",
     "comments": [],
     "obsolete": false
-  },
-  "wmNuk6": {
-    "translation": "Supprimer un groupe",
-    "message": "Supprimer un groupe",
-    "comments": []
   }
 }

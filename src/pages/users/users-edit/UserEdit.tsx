@@ -3,14 +3,16 @@ import { t, Trans } from '@lingui/macro';
 import { FormProvider, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LMSCard } from '@src/components/lms';
-import { Box, Typography } from '@mui/material';
-import UserEditForm from '@src/pages/users/user-edit/UserEditForm';
+import { Box } from '@mui/material';
+import UserEditForm from '@src/pages/users/users-edit/UserEditForm';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { useLocation } from 'react-router-dom';
+import { generatePath, useLocation, useNavigate } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
-import { getSingleUser, updateUser } from '@redux/reducers/usersReducer';
-import UserEditFooter from '@src/pages/users/user-edit/UserEditFooter';
+import { getSingleUser, updateUser } from '@redux/actions/usersActions';
+import { PATH_ERRORS, PATH_USERS } from '@utils/navigation/paths';
+import CardHeader from '@src/components/cards/CardHeader';
+import CardFooter from '@src/components/cards/CardFooter';
 
 const EditUserSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom est requis`),
@@ -38,8 +40,11 @@ export interface EditUserForm {
 
 export default function UserEdit() {
   const dispatch = useAppDispatch();
+
+  const { updatedUserLoading } = useAppSelector((state) => state.users.updatedUser);
   const [user, setUser] = useState<EditUserForm>(defaultValues);
 
+  const navigate = useNavigate();
   const { pathname } = useLocation();
   const userId = Number(pathname.split('/').pop());
 
@@ -47,9 +52,17 @@ export default function UserEdit() {
 
   // Update the form if we are on the update page
   useEffect(() => {
-    if (pathname.includes('edit')) {
-      if (userId) {
-        dispatch(getSingleUser(userId));
+    if (singleUserData?.id !== Number(userId)) {
+      try {
+        const applicantIdToFetch = Number(userId);
+        if (!isNaN(applicantIdToFetch)) {
+          dispatch(getSingleUser(applicantIdToFetch));
+        } else {
+          throw new Error();
+        }
+      } catch (_) {
+        navigate(PATH_ERRORS.root);
+        enqueueSnackbar(t`L'utilisateur n'existe pas`, { variant: 'error' });
       }
     }
   }, []);
@@ -80,10 +93,19 @@ export default function UserEdit() {
     });
 
     if (Object.keys(newUserData).length > 0) {
-      dispatch(updateUser({ id: userId, ...newUserData }));
+      try {
+        await dispatch(updateUser({ id: userId, ...newUserData }));
+        returnToProfile();
+      } catch (error) {
+        enqueueSnackbar(error as string, { variant: 'error' });
+      }
     } else {
       enqueueSnackbar(t`Aucune modification n'a été apportée`, { variant: 'warning' });
     }
+  };
+
+  const returnToProfile = () => {
+    navigate(generatePath(PATH_USERS.profile, { userId: String(userId) }));
   };
 
   return (
@@ -91,13 +113,9 @@ export default function UserEdit() {
       <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
         <Box px={[0, 2]} display="flex">
           <LMSCard
-            cardCss={{ padding: 3 }}
-            header={
-              <Typography variant="h4" sx={{ fontWeight: 'normal' }}>
-                <Trans>Modifier un utilisateur</Trans>
-              </Typography>
-            }
-            footer={<UserEditFooter />}
+            isPageCard
+            header={<CardHeader headerText={<Trans>Modifier un utilisateur</Trans>} />}
+            footer={<CardFooter isLoading={updatedUserLoading} cancelAction={returnToProfile} />}
           >
             <UserEditForm control={control} />
           </LMSCard>

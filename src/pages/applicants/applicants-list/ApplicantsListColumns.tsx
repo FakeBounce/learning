@@ -4,6 +4,7 @@ import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { MouseEvent } from 'react';
 import { Applicant } from '@services/applicants/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const applicantsColumns = (
   handleClick: (newApplicant: Applicant) => (event: MouseEvent<HTMLElement>) => void
@@ -24,38 +25,22 @@ export const applicantsColumns = (
     },
     {
       field: 'externalId',
-      renderHeader: () => (
-        <strong>
-          <Trans>Id externe</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Id externe</Trans>)
     },
     {
       field: 'lastname',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>)
     },
     {
       field: 'firstname',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Prénom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Prénom</Trans>)
     },
     {
       field: 'birthDate',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Date naiss.</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Date naiss.</Trans>),
       renderCell: (cell: GridRenderCellParams) => {
         if (!cell.row.birthDate) return <Trans>/</Trans>;
         const birthDate = new Date(cell.row.birthDate).toLocaleDateString();
@@ -66,38 +51,22 @@ export const applicantsColumns = (
       field: 'email',
       flex: 1,
       minWidth: 200,
-      renderHeader: () => (
-        <strong>
-          <Trans>Email</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Email</Trans>)
     },
     {
       field: 'phone',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Téléphone</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Téléphone</Trans>)
     },
     {
       field: 'city',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Ville</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Ville</Trans>)
     },
     {
       field: 'isActive',
       display: 'flex',
-      renderHeader: () => (
-        <strong>
-          <Trans>Statut</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
       width: 120,
       renderCell: (cell: GridRenderCellParams) => {
         const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;

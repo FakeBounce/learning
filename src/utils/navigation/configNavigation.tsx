@@ -84,7 +84,11 @@ const usersNavigationConfig = [
   },
   {
     title: <Trans>Modifier un utilisateur</Trans>,
-    path: PATH_USERS.edit
+    path: PATH_USERS.update
+  },
+  {
+    title: <Trans>Ajouter en masse</Trans>,
+    path: PATH_USERS.addBulk
   }
 ];
 
@@ -99,7 +103,7 @@ const applicantsNavigationConfig = [
   },
   {
     title: <Trans>Ajouter en masse</Trans>,
-    path: PATH_APPLICANTS.bulkAdd
+    path: PATH_APPLICANTS.addBulk
   }
 ];
 

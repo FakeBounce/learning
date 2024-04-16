@@ -1,41 +1,30 @@
 import { Trans } from '@lingui/macro';
 import { ListItem, ListItemButton, ListItemText, Paper } from '@mui/material';
-import { useAppDispatch } from '@redux/hooks';
-import { useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate } from 'react-router-dom';
 import { User } from '@services/users/interfaces';
-import { toggleUserBlock } from '@redux/reducers/usersReducer';
+import { PATH_USERS } from '@utils/navigation/paths';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { useContext } from 'react';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 interface UsersListPopperContentProps {
-  setAnchorEl: (value: HTMLElement | null) => void;
-  setUserSelected: (value: User | null) => void;
+  handleToggleBlock: () => void;
   userSelected: User | null;
 }
 export default function UsersListPopperContent({
-  setAnchorEl,
-  setUserSelected,
+  handleToggleBlock,
   userSelected
 }: UsersListPopperContentProps) {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
+  const canBlockUser = isAuthorizedByPermissionsTo(pageType, PermissionEnum.BLOCK_UNBLOCK);
 
   const goToUserProfile = () => {
     if (userSelected !== null) {
-      navigate(`/users/profile/${userSelected.id}`);
-    }
-  };
-
-  const toggleBlock = () => {
-    if (userSelected !== null) {
-      dispatch(
-        toggleUserBlock({
-          setActive: !userSelected.isActive,
-          userId: userSelected.id
-        })
-      ).then(() => {
-        // Reset the popper
-        setAnchorEl(null);
-        setUserSelected(null);
-      });
+      navigate(generatePath(PATH_USERS.profile, { userId: String(userSelected.id) }));
     }
   };
 
@@ -45,11 +34,13 @@ export default function UsersListPopperContent({
         <ListItemButton onClick={goToUserProfile}>
           <ListItemText primary={<Trans>Profil</Trans>} />
         </ListItemButton>
-        <ListItemButton onClick={toggleBlock}>
-          <ListItemText
-            primary={userSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>}
-          />
-        </ListItemButton>
+        {canBlockUser && (
+          <ListItemButton onClick={handleToggleBlock}>
+            <ListItemText
+              primary={userSelected?.isActive ? <Trans>Bloquer</Trans> : <Trans>Débloquer</Trans>}
+            />
+          </ListItemButton>
+        )}
       </ListItem>
     </Paper>
   );

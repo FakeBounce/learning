@@ -16,7 +16,7 @@ import {
   UpdateApplicantRequest
 } from '@services/applicants/interfaces';
 import ApplicantsProfileHeader from '@src/pages/applicants/applicants-profile/ApplicantsProfileHeader';
-import UserProfileGroups from '@src/pages/users/user-profile/user-groups/UserProfileGroups';
+import UserProfileGroups from '@src/pages/users/users-profile/user-groups/UserProfileGroups';
 import ApplicantsUpdateModal from '@src/pages/applicants/applicants-update/ApplicantsUpdateModal';
 import ExternalTestersUpdateForm from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdateForm';
 import {

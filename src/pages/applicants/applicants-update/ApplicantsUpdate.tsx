@@ -25,7 +25,6 @@ import {
   updateApplicantSchema
 } from '@src/pages/applicants/applicants-update/ApplicantsUpdateSchema';
 import ApplicantsProfileInfos from '@src/pages/applicants/applicants-profile/ApplicantsProfileInfos';
-import UserProfileGroups from '@src/pages/users/user-profile/user-groups/UserProfileGroups';
 import ApplicantsUpdateModal from '@src/pages/applicants/applicants-update/ApplicantsUpdateModal';
 
 export default function ApplicantsUpdate() {
@@ -147,7 +146,7 @@ export default function ApplicantsUpdate() {
               <>
                 <ApplicantsProfileInfos />
                 {/* @todo -> Replace with the applicant group */}
-                <UserProfileGroups groups={[]} />
+                {/*<UserProfileGroups />*/}
               </>
             )}
           </LMSCard>

@@ -3,6 +3,7 @@ import { Trans } from '@lingui/macro';
 import { Group } from '@services/groups/interfaces';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import StatusChip from '@src/components/lms/StatusChip';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 const groupsAction = (
   handleClick: (newGroup: Group) => (event: MouseEvent<HTMLElement>) => void
@@ -10,7 +11,7 @@ const groupsAction = (
   return {
     field: 'id',
     display: 'flex',
-    renderHeader: () => '',
+    headerName: '',
     renderCell: (cell: GridRenderCellParams) => <StatusChip handleClick={handleClick(cell.row)} />
   } as GridColDef;
 };
@@ -24,31 +25,19 @@ export const groupsColumns = (
       field: 'name',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>)
     },
     {
       field: 'description',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Description</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Description</Trans>)
     },
     {
       field: 'nbUsers',
       display: 'flex',
       flex: 1,
-      renderHeader: () => (
-        <strong>
-          <Trans>Nombre d'utilisateurs</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Nombre d'utilisateurs</Trans>)
     }
   ] as GridColDef[];
   if (hasActions) {

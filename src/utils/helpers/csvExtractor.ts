@@ -6,7 +6,7 @@ interface MappingTable {
   [key: string]: string[];
 }
 
-interface CsvValidationResult {
+interface CsvApplicantValidationResult {
   validRows: ApplicantForBulk[];
   faultyRows: ApplicantForBulk[];
 }
@@ -64,7 +64,7 @@ function transformCsvToArrayOfObjects(
   });
 }
 
-function validateRows(arrayOfObjects: ApplicantForBulk[]): CsvValidationResult {
+function validateRows(arrayOfObjects: ApplicantForBulk[]): CsvApplicantValidationResult {
   const faultyRows: ApplicantForBulk[] = [];
   const validRows: ApplicantForBulk[] = arrayOfObjects.filter((row) => {
     let isValidRow = true;
@@ -151,13 +151,13 @@ function checkForMissingColumns(firstRow: ApplicantForBulk, mappingTable: Mappin
   }
 }
 
-export function extractApplicantsFromCsv(csvArray: string[][]): CsvValidationResult {
+export function extractApplicantsFromCsv(csvArray: string[][]): CsvApplicantValidationResult {
   const arrayOfObjects = transformCsvToArrayOfObjects(csvArray, mappingTableApplicant);
   checkForMissingColumns(arrayOfObjects[0], mappingTableApplicant);
   return validateRows(arrayOfObjects);
 }
 
-export function extractExternalTestersFromCsv(csvArray: string[][]): CsvValidationResult {
+export function extractExternalTestersFromCsv(csvArray: string[][]): CsvApplicantValidationResult {
   const arrayOfObjects = transformCsvToArrayOfObjects(csvArray, mappingTableTester);
   checkForMissingColumns(arrayOfObjects[0], mappingTableTester);
   return validateRows(arrayOfObjects);

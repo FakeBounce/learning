@@ -4,6 +4,7 @@ import { Applicant } from '@services/applicants/interfaces';
 import { MouseEvent } from 'react';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import StatusChip from '@src/components/lms/StatusChip';
+import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const externalTestersColumns = (
   handleClick: (newApplicant: Applicant) => (event: MouseEvent<HTMLElement>) => void
@@ -24,53 +25,29 @@ export const externalTestersColumns = (
     },
     {
       field: 'externalId',
-      renderHeader: () => (
-        <strong>
-          <Trans>Id externe</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Id externe</Trans>)
     },
     {
       field: 'lastname',
-      renderHeader: () => (
-        <strong>
-          <Trans>Nom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>)
     },
     {
       field: 'firstname',
-      renderHeader: () => (
-        <strong>
-          <Trans>Prénom</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Prénom</Trans>)
     },
     {
       field: 'email',
       minWidth: 200,
-      renderHeader: () => (
-        <strong>
-          <Trans>Email</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Email</Trans>)
     },
     {
       field: 'phone',
-      renderHeader: () => (
-        <strong>
-          <Trans>Téléphone</Trans>
-        </strong>
-      )
+      renderHeader: () => renderHeaderCell(<Trans>Téléphone</Trans>)
     },
     {
       field: 'isActive',
       display: 'flex',
-      renderHeader: () => (
-        <strong>
-          <Trans>Statut</Trans>
-        </strong>
-      ),
+      renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
       width: 120,
       renderCell: (cell: GridRenderCellParams) => {
         const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
