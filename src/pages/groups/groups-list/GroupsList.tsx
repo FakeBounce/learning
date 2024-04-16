@@ -8,13 +8,15 @@ import { groupsColumns } from '@src/pages/groups/groups-list/GroupsColumns';
 import { Group } from '@services/groups/interfaces';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import GroupsListPopperContent from '@src/pages/groups/groups-list/GroupsListPopperContent';
-import { getGroupsList } from '@redux/actions/groupsActions';
+import { deleteGroup, getGroupsList } from '@redux/actions/groupsActions';
 import GroupsListModal from '@src/pages/groups/groups-list/GroupsListModal';
 import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 import { useOutletContext } from 'react-router';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
-import { TableRequestConfig } from '@services/interfaces';
+import { defaultTableRequestConfig, TableRequestConfig } from '@services/interfaces';
+import { enqueueSnackbar } from 'notistack';
+import { resetGroupsState } from '@redux/reducers/groupsReducer';
 
 export default function GroupsList() {
   const dispatch = useAppDispatch();
@@ -25,6 +27,8 @@ export default function GroupsList() {
   const [groupSelected, setGroupSelected] = useState<Group | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [groupTableRequestConfig, setGroupTableRequestConfig] =
+    useState<TableRequestConfig>(defaultTableRequestConfig);
 
   const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
   const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
@@ -33,7 +37,22 @@ export default function GroupsList() {
   const canDeleteGroup = isAuthorizedByPermissionsTo(pageType, PermissionEnum.DELETE);
 
   const handleTableChange = (groupRequestConfig: TableRequestConfig) => {
+    setGroupTableRequestConfig(groupRequestConfig);
     dispatch(getGroupsList(groupRequestConfig));
+  };
+
+  const handleDeleteGroup = async () => {
+    if (groupSelected !== null) {
+      try {
+        await dispatch(deleteGroup({ groupId: groupSelected.id }));
+        dispatch(getGroupsList(groupTableRequestConfig));
+      } catch (e) {
+        dispatch(resetGroupsState());
+        enqueueSnackbar(e as string, { variant: 'error' });
+      }
+      // Reset the popper
+      cancelModal();
+    }
   };
 
   // Popper handlers
@@ -75,6 +94,7 @@ export default function GroupsList() {
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
           cancelModal={cancelModal}
+          handleDeleteGroup={handleDeleteGroup}
         />
       )}
     </Box>

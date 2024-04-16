@@ -24,7 +24,7 @@ function StatusChip({ isActive = false, activatedText, handleClick }: StatusChip
         />
       )}
       {handleClick && (
-        <IconButton onClick={handleClick} sx={{ boxShadow: 'none' }}>
+        <IconButton data-testid={'chipActions'} onClick={handleClick} sx={{ boxShadow: 'none' }}>
           <Iconify
             sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
             icon={'pepicons-pop:dots-y'}

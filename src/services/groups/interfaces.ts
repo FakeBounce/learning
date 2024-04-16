@@ -33,3 +33,12 @@ export interface GetGroupsResponse {
     pagination: ApiResponsePagination;
   };
 }
+
+export interface DeleteGroupRequest {
+  groupId: number;
+}
+
+export interface DeleteGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+}
