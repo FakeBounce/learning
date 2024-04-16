@@ -29,11 +29,21 @@
     "comments": [],
     "obsolete": false
   },
+  "913XwJ": {
+    "translation": "Ajouter des testeurs en masse",
+    "message": "Ajouter des testeurs en masse",
+    "comments": []
+  },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
     "comments": [],
     "obsolete": false
+  },
+  "A7xVRH": {
+    "translation": "Veuillez sélectionner un fichier",
+    "message": "Veuillez sélectionner un fichier",
+    "comments": []
   },
   "DDwdL4": {
     "translation": "Profil",
@@ -52,6 +62,11 @@
     "message": "Activé",
     "comments": [],
     "obsolete": false
+  },
+  "FABypk": {
+    "translation": "Sélectionnez un fichier",
+    "message": "Sélectionnez un fichier",
+    "comments": []
   },
   "FhV/c/": {
     "translation": "Êtes-vous sûr de vouloir débloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -107,11 +122,15 @@
     "comments": [],
     "obsolete": false
   },
+  "K+tHTS": {
+    "translation": "Format incorrect",
+    "message": "Format incorrect",
+    "comments": []
+  },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -140,8 +159,7 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
@@ -164,14 +182,23 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "UeDwla": {
+    "translation": "Information obligatoire",
+    "message": "Information obligatoire",
+    "comments": []
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
     "comments": [],
     "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "Fichier .csv / Max : 3 Mo",
+    "message": "Fichier .csv / Max : 3 Mo",
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -190,6 +217,11 @@
     "message": "L'email est requis",
     "comments": [],
     "obsolete": false
+  },
+  "dSvDOd": {
+    "translation": "Liste des testeurs invalides",
+    "message": "Liste des testeurs invalides",
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -230,8 +262,7 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -263,6 +294,11 @@
     "comments": [],
     "obsolete": false
   },
+  "twb4y0": {
+    "translation": "Aucun testeur valide à ajouter",
+    "message": "Aucun testeur valide à ajouter",
+    "comments": []
+  },
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
@@ -278,8 +314,12 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "wGk4Sl": {
+    "translation": "Liste des testeurs valides",
+    "message": "Liste des testeurs valides",
+    "comments": []
   },
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",

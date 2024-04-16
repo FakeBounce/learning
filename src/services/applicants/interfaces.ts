@@ -62,7 +62,7 @@ export interface ApplicantForBulk {
   email: string | null;
   firstname: string | null;
   lastname: string | null;
-  birthDate: string | null;
+  birthDate?: string | null;
   birthName?: string | null;
   phone?: string | null;
   city?: string | null;

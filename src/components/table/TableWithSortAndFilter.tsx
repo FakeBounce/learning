@@ -1,6 +1,6 @@
 import FullTable from '@src/components/table/FullTable';
 import { memo, useCallback, useEffect, useState } from 'react';
-import { FilterBy, OrderBy, TableRequestConfig } from '@services/interfaces';
+import { FilterBy, ApiRequestSort, TableRequestConfig } from '@services/interfaces';
 import { GridFilterModel, GridPaginationModel, GridSortModel } from '@mui/x-data-grid';
 import { FullTableProps } from '@src/components/table/interfaces';
 import { convertCamelToSnake } from '@utils/helpers/convertCasing';
@@ -21,7 +21,7 @@ const TableWithSortAndFilter = ({
 }: TableWithSortAndFilterProps) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(defaultPageSize || 10);
-  const [orderBy, setOrderBy] = useState<OrderBy | null>(null);
+  const [orderBy, setOrderBy] = useState<ApiRequestSort | null>(null);
   const [filters, setFilters] = useState<FilterBy | null>(null);
 
   const handleChangePage = useCallback((gridPaginationModel: GridPaginationModel) => {

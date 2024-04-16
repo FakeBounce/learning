@@ -15,7 +15,7 @@ const mappingTableApplicant: MappingTable = {
   externalId: ['Id externe', 'External id', 'externalId'],
   firstname: ['Prénom', 'firstname', 'prenom'],
   lastname: ['Nom de naissance', 'Lastname', 'Nom de famille', 'Nom'],
-  email: ['Email', 'Email'],
+  email: ['Email', 'Mail'],
   phone: [
     'Téléphone',
     'Phone',
@@ -33,7 +33,7 @@ const mappingTableTester: MappingTable = {
   externalId: ['Id externe', 'External id'],
   firstname: ['Firstname', 'prénom'],
   lastname: ['Nom de naissance', 'Lastname'],
-  email: ['Email', 'Email'],
+  email: ['Email', 'Mail'],
   phone: ['Téléphone', 'Phone', 'Phone number', 'Numéro de téléphone']
 };
 

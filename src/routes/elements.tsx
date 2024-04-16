@@ -4,7 +4,9 @@ import { lazy } from 'react';
 
 // AUTH
 export const LoginPage = LoadableComponent(lazy(() => import('@src/pages/login/LoginPage')));
-export const ForgotPasswordPage = LoadableComponent(lazy(() => import('@src/pages/login/forgot-password/ForgotPasswordPage')));
+export const ForgotPasswordPage = LoadableComponent(
+  lazy(() => import('@src/pages/login/forgot-password/ForgotPasswordPage'))
+);
 
 // MAIN
 export const Page404 = LoadableComponent(lazy(() => import('../pages/errors/Page404')));
@@ -64,6 +66,9 @@ export const ExternalTestersCreate = LoadableComponent(
 );
 export const ExternalTestersUpdate = LoadableComponent(
   lazy(() => import('@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate'))
+);
+export const ExternalTestersBulk = LoadableComponent(
+  lazy(() => import('@src/pages/externalTesters/externalTesters-bulk/ExternalTestersBulk'))
 );
 
 /**
