@@ -18,5 +18,15 @@ export const setupSuccessAxiosMock = () => {
           total_pages: 1
         }
       }
+    })
+    .onDelete(/\/groups\/\d+/)
+    .reply(200, {
+      success: true,
+      message: {
+        value: 'Le groupe a été supprimé avec succès.',
+        level: 'success'
+      }
     });
-}
+};
+
+export default GroupsListMock;

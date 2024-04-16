@@ -2,6 +2,7 @@ import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { Group } from '@services/groups/interfaces';
+import { useAppSelector } from '@redux/hooks';
 
 interface GroupsListModalProps {
   groupSelected: Group;
@@ -18,6 +19,8 @@ export default function GroupsListModal({
   handleDeleteGroup,
   cancelModal
 }: GroupsListModalProps) {
+  const { groupsDeleteLoading } = useAppSelector((state) => state.groups);
+
   return (
     <LMSModal
       title={<Trans>Supprimer un groupe</Trans>}
@@ -27,6 +30,7 @@ export default function GroupsListModal({
       }}
       validateAction={handleDeleteGroup}
       cancelAction={cancelModal}
+      isLoading={groupsDeleteLoading}
     >
       <Typography>
         <Trans>

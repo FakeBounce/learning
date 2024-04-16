@@ -29,6 +29,7 @@ interface LMSModalProps {
   cancelAction?: () => void;
   validateAction?: () => void;
   onClose: () => void;
+  isLoading?: boolean;
 }
 
 export default function LMSModal({
@@ -37,7 +38,8 @@ export default function LMSModal({
   open,
   onClose,
   validateAction,
-  cancelAction
+  cancelAction,
+  isLoading = false
 }: LMSModalProps) {
   return (
     <StyledDialog onClose={onClose} aria-labelledby="customized-dialog-title" open={open}>
@@ -59,12 +61,12 @@ export default function LMSModal({
       </DialogContent>
       <DialogActions sx={{ gap: 1 }}>
         {cancelAction && (
-          <ActionButton actionType="cancel" onClick={cancelAction}>
+          <ActionButton actionType="cancel" onClick={cancelAction} loading={isLoading}>
             <Trans>Annuler</Trans>
           </ActionButton>
         )}
         {validateAction && (
-          <ActionButton onClick={validateAction}>
+          <ActionButton onClick={validateAction} loading={isLoading}>
             <Trans>Valider</Trans>
           </ActionButton>
         )}
