@@ -16,7 +16,26 @@ const textToDisplay = (userSelected: User) => {
   if (userSelected.isActive) {
     return (
       <Typography>
-        Êtes-vous sûr de vouloir débloquer l’utilisateur{' '}
+        <Trans>
+          Êtes-vous sûr de vouloir débloquer l’utilisateur{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              textTransform: 'uppercase'
+            }}
+          >
+            {userSelected.lastname} {userSelected.firstname}
+          </Box>{' '}
+          ?
+        </Trans>
+      </Typography>
+    );
+  }
+  return (
+    <Typography>
+      <Trans>
+        Êtes-vous sûr de vouloir bloquer l’organisation{' '}
         <Box
           component={'span'}
           sx={{
@@ -27,22 +46,7 @@ const textToDisplay = (userSelected: User) => {
           {userSelected.lastname} {userSelected.firstname}
         </Box>{' '}
         ?
-      </Typography>
-    );
-  }
-  return (
-    <Typography>
-      <Trans>Êtes-vous sûr de vouloir bloquer l’organisation</Trans>{' '}
-      <Box
-        component={'span'}
-        sx={{
-          fontWeight: (theme) => theme.typography.fontWeightMedium,
-          textTransform: 'uppercase'
-        }}
-      >
-        {userSelected.lastname} {userSelected.firstname}
-      </Box>{' '}
-      <Trans>?</Trans>
+      </Trans>
     </Typography>
   );
 };

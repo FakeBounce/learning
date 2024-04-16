@@ -51,7 +51,6 @@ export default function UserProfileHeader() {
     return null;
   };
 
-  // @Todo might need to check the permisisons
   return (
     <CardHeader
       headerText={displayName()}

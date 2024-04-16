@@ -16,7 +16,26 @@ const textToDisplay = (organizationSelected: Organization) => {
   if (organizationSelected.isActive) {
     return (
       <Typography>
-        Êtes-vous sûr de vouloir débloquer l’organisation{' '}
+        <Trans>
+          Êtes-vous sûr de vouloir débloquer l’organisation{' '}
+          <Box
+            component={'span'}
+            sx={{
+              fontWeight: (theme) => theme.typography.fontWeightMedium,
+              textTransform: 'uppercase'
+            }}
+          >
+            {organizationSelected.name}
+          </Box>{' '}
+          et tout ses utilisateurs ?
+        </Trans>
+      </Typography>
+    );
+  }
+  return (
+    <Typography>
+      <Trans>
+        Êtes-vous sûr de vouloir bloquer l’organisation{' '}
         <Box
           component={'span'}
           sx={{
@@ -27,22 +46,7 @@ const textToDisplay = (organizationSelected: Organization) => {
           {organizationSelected.name}
         </Box>{' '}
         et tout ses utilisateurs ?
-      </Typography>
-    );
-  }
-  return (
-    <Typography>
-      <Trans>Êtes-vous sûr de vouloir bloquer l’organisation</Trans>{' '}
-      <Box
-        component={'span'}
-        sx={{
-          fontWeight: (theme) => theme.typography.fontWeightMedium,
-          textTransform: 'uppercase'
-        }}
-      >
-        {organizationSelected.name}
-      </Box>{' '}
-      <Trans>et tout ses utilisateurs ?</Trans>
+      </Trans>
     </Typography>
   );
 };

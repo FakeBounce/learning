@@ -2,17 +2,25 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
+    "comments": [],
+    "obsolete": false
+  },
+  "2Vc4Um": {
+    "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
+    "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
     "comments": []
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
@@ -23,7 +31,8 @@
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7uQ5BG": {
     "translation": "Adresse siège social",
@@ -34,7 +43,8 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Be0x4u": {
     "translation": "Prénom admin client",
@@ -63,12 +73,14 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "F8ESDf": {
     "translation": "Activé",
@@ -83,12 +95,14 @@
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -98,7 +112,8 @@
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "Bloquer",
@@ -126,7 +141,8 @@
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -155,7 +171,8 @@
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
@@ -172,8 +189,7 @@
   "b+/aiw": {
     "translation": "Débloquer une organisation",
     "message": "Débloquer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dg0WGC": {
     "translation": "L'organisation n'existe pas",
@@ -184,7 +200,8 @@
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -204,10 +221,16 @@
     "comments": [],
     "obsolete": false
   },
+  "gm1CMT": {
+    "translation": "Êtes-vous sûr de vouloir débloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
+    "message": "Êtes-vous sûr de vouloir débloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
+    "comments": []
+  },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "Nom",
@@ -229,18 +252,19 @@
   "lHMRD2": {
     "translation": "Bloquer une organisation",
     "message": "Bloquer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
@@ -275,7 +299,8 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "Login",

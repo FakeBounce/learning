@@ -25,12 +25,6 @@ export const organizationsListColumns = (
       display: 'flex',
       flex: 1,
       renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
-      // filterOperators: getGridNumericOperators()
-      //   .filter((operator) => operator.value !== 'isAnyOf')
-      //   .map((operator) => ({
-      //     ...operator,
-      //     InputComponent: operator.InputComponent ? RatingInputValue : undefined
-      //   })),
       renderCell: (row: GridRenderCellParams) => {
         return (
           <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
@@ -51,6 +45,14 @@ export const organizationsListColumns = (
       disableColumnMenu: true,
       display: 'flex',
       renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
+      // @Todo : Add filter operators when valid in API
+      // This is an example of how to add a custom filter operator
+      // filterOperators: getGridNumericOperators()
+      //   .filter((operator) => operator.value !== 'isAnyOf')
+      //   .map((operator) => ({
+      //     ...operator,
+      //     InputComponent: operator.InputComponent ? RatingInputValue : undefined
+      //   })),
       maxWidth: 120,
       flex: 1,
       padding: 'none',
