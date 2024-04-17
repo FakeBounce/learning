@@ -22,8 +22,6 @@ const StyledDropZone = styled('div')(({ theme }) => ({
   }
 }));
 
-// ----------------------------------------------------------------------
-
 interface CustomDropzoneProps {
   sx?: SxProps;
   error?: boolean;
@@ -32,9 +30,9 @@ interface CustomDropzoneProps {
   file?: File | null;
   onDelete?: VoidFunction;
 }
-type UploadBoxProps = CustomDropzoneProps & DropzoneProps;
+type IllustrationUploadBoxProps = CustomDropzoneProps & DropzoneProps;
 
-export default function UploadBox({
+function IllustrationUploadBox({
   placeholder = '',
   error,
   disabled,
@@ -42,7 +40,7 @@ export default function UploadBox({
   file,
   onDelete,
   ...other
-}: UploadBoxProps) {
+}: IllustrationUploadBoxProps) {
   const { getRootProps, getInputProps, isDragActive, isDragReject } = useDropzone({
     accept: { 'text/csv': [] },
     multiple: false,
@@ -65,7 +63,6 @@ export default function UploadBox({
         padding: 2,
         height: 'initial',
         position: 'relative',
-        maxHeight: 128,
         ...(isDragActive && {
           opacity: 0.72
         }),
@@ -88,7 +85,7 @@ export default function UploadBox({
         })
       }}
     >
-      <input data-testid="upload-box-input" {...getInputProps()} disabled={hasFile} />
+      <input data-testid="illustration-upload-box-input" {...getInputProps()} disabled={hasFile} />
 
       {hasFile && <Iconify icon="eva:file-text-fill" width={28} sx={{ mr: 1 }} />}
 
@@ -126,3 +123,5 @@ export default function UploadBox({
     </StyledDropZone>
   );
 }
+
+export default IllustrationUploadBox;

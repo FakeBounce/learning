@@ -1,7 +1,7 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import { ForgotPasswordPage, LoginPage, Roles, Page404 } from 'src/routes/elements';
 import { PATH_AUTH, PATH_DASHBOARD, PATH_ROLES } from '@utils/navigation/paths';
+import { ForgotPasswordPage, LoginPage, Page404, Roles } from 'src/routes/elements';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
@@ -12,6 +12,7 @@ import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import ExternalTestersRoutes from '@src/routes/ExternalTestersRoutes';
 import GroupsRoutes from '@src/routes/GroupsRoutes';
+import ModulesRoutes from '@src/routes/ModulesRoutes';
 
 const Router = () => {
   return (
@@ -29,6 +30,7 @@ const Router = () => {
         {ApplicantsRoutes()}
         {ExternalTestersRoutes()}
         {GroupsRoutes()}
+        {ModulesRoutes()}
         <Route
           element={
             <FeatureFlagedRoute
