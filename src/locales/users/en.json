@@ -26,7 +26,8 @@
   "9hQFA+": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "",
@@ -133,7 +134,8 @@
   "JSPwk2": {
     "translation": "",
     "message": "Débloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "",
@@ -168,7 +170,8 @@
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SCttC7": {
     "translation": "",
@@ -179,7 +182,8 @@
   "SDHbV6": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
@@ -286,7 +290,8 @@
   "r+5fnD": {
     "translation": "",
     "message": "Bloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "",

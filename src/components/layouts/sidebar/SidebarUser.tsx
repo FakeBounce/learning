@@ -4,13 +4,15 @@ import LMSPopover from '@src/components/lms/LMSPopover';
 import { Trans } from '@lingui/macro';
 import { MouseEvent, useState } from 'react';
 import { logout } from '@redux/actions/connectedUserActions';
-import { useAppDispatch } from '@redux/hooks';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 // ----------------------------------------------------------------------
 
 export default function SidebarUser({ open }: { open: boolean }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const theme = useTheme();
   const dispatch = useAppDispatch();
+
+  const { user } = useAppSelector((state) => state.connectedUser);
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -66,12 +68,29 @@ export default function SidebarUser({ open }: { open: boolean }) {
         }}
         onClick={handleClick}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 2, mr: 2 }}>
-          <Avatar alt="Avatar photo" src="/assets/shape_avatar.svg" />
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 1 }}>
+          <Avatar sx={{ background: 'white', color: 'grey' }}>
+            {user.lastname.charAt(0)}
+            {user.firstname.charAt(0)}
+          </Avatar>
         </Box>
-        <Stack py={2} spacing={1}>
-          <Box>Nom / Prénom</Box> <Box> Rôle</Box>
-        </Stack>
+        <Box
+          px={1}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'start',
+            textWrap: 'wrap'
+          }}
+        >
+          <Box sx={{ fontSize: 15 }}>
+            {user.lastname} {user.firstname}
+          </Box>
+          <Box sx={{ fontSize: 12 }}>
+            {user.isSuperAdmin ? 'SuperAdmin' : user.isClientAdmin ? 'ClientAdmin' : ''}
+          </Box>
+        </Box>
         <LMSPopover
           id={id}
           anchorEl={anchorEl}
