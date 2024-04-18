@@ -23,9 +23,9 @@ describe('connected user informations', () => {
     expect(
       screen.getByText(
         defaultConnectedUser.isSuperAdmin
-          ? /SuperAdmin/i
+          ? /Super Admin/i
           : defaultConnectedUser.isClientAdmin
-          ? /ClientAdmin/i
+          ? /Client Admin/i
           : ''
       )
     ).toBeInTheDocument();
