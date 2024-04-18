@@ -1,6 +1,6 @@
 import { resetApp } from '@redux/actions/globalActions';
 
-export const handleRefresh401 = () => {
+export const handle401 = () => {
   // Dynamically import store to avoid circular dependency
   import('@redux/store')
     .then(({ store }) => {

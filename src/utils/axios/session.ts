@@ -1,4 +1,5 @@
 // utils
+import axios from './axios';
 import { LoginInformations } from '@services/connected-user/interfaces';
 import localStorageAvailable from '@utils/localStorageAvailable';
 
@@ -10,10 +11,12 @@ export const setSession = (tokenDatas: LoginInformations | null) => {
     if (hasLocalStorage) {
       localStorage.setItem('LMS_TOKEN', JSON.stringify(tokenDatas));
     }
+    axios.defaults.headers.Authorization = `Bearer ${tokenDatas.token}`;
   } else {
     if (hasLocalStorage) {
       localStorage.removeItem('LMS_TOKEN');
     }
+    delete axios.defaults.headers.common.Authorization;
   }
 };
 
@@ -24,6 +27,7 @@ export const getSession = () => {
     if (storageItem) {
       const tokenDatas = JSON.parse(storageItem);
       if (tokenDatas && tokenDatas.refreshToken) {
+        axios.defaults.headers.Authorization = `Bearer ${tokenDatas.refreshToken}`;
         return tokenDatas;
       }
     }
