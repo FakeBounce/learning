@@ -1,6 +1,5 @@
-import { DataGrid } from '@mui/x-data-grid/DataGrid';
 import Box from '@mui/material/Box';
-import { DataGridProps, GridColDef } from '@mui/x-data-grid';
+import { DataGridProps, GridColDef, DataGrid } from '@mui/x-data-grid';
 import { memo } from 'react';
 
 interface SimpleTableProps extends DataGridProps {

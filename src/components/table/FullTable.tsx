@@ -1,4 +1,4 @@
-import { DataGrid } from '@mui/x-data-grid/DataGrid';
+import { DataGrid } from '@mui/x-data-grid';
 import { FullTableProps } from '@src/components/table/interfaces';
 import Box from '@mui/material/Box';
 

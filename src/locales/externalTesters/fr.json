@@ -92,7 +92,8 @@
   "GroyQn": {
     "translation": "Le testeur n'existe pas",
     "message": "Le testeur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Gt66tb": {
     "translation": "Débloquer un testeur",
@@ -199,7 +200,8 @@
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",

@@ -45,13 +45,11 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
-    await act(async () => {
-      waitFor(() => {
-        expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-          singleApplicant.current_values.firstname
-        );
-        expect(screen.getByLabelText(/Email/i)).toHaveValue(singleApplicant.email);
-      });
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
+        singleApplicant.current_values.firstname
+      );
+      expect(screen.getByLabelText(/Email/i)).toHaveValue(singleApplicant.email);
     });
   });
 
@@ -73,9 +71,7 @@ describe('ApplicantsUpdate', () => {
     });
 
     await act(async () => {
-      await waitFor(async () => {
-        fireEvent.submit(screen.getByRole('submit'));
-      });
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     await waitFor(() => {
@@ -102,9 +98,9 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
+    // Update the firstname
+    const firstnameInput = screen.getByLabelText(/Prénom/i);
     await act(async () => {
-      // Update the firstname
-      const firstnameInput = screen.getByLabelText(/Prénom/i);
       fireEvent.change(firstnameInput, { target: { value: 'UpdatedFirstname' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
@@ -138,9 +134,10 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
+    const emailInput = screen.getByLabelText(/Email/i);
+
     await act(async () => {
       // Update the email
-      const emailInput = screen.getByLabelText(/Email/i);
       fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
