@@ -8,6 +8,8 @@ import {
   GetSingleApplicantResponse,
   UpdateApplicantBlockRequest,
   UpdateApplicantBlockResponse,
+  UpdateApplicantPictureRequest,
+  UpdateApplicantPictureResponse,
   UpdateApplicantRequest,
   UpdateApplicantResponse
 } from '@services/applicants/interfaces';
@@ -55,6 +57,20 @@ export const updateApplicant = async (
   // }
 
   return axios.put(`/applicants/${applicantId}`, formData);
+};
+
+export const updateApplicantPicture = async (
+  args: UpdateApplicantPictureRequest
+): Promise<AxiosResponse<UpdateApplicantPictureResponse>> => {
+  const { applicantId, profilePicture } = args;
+
+  return axios.postForm(
+    `/applicants/${applicantId}/profile-picture`,
+    { image: profilePicture },
+    {
+      headers: { 'Content-Type': 'multipart/form-data' }
+    }
+  );
 };
 
 export const createApplicant = async (

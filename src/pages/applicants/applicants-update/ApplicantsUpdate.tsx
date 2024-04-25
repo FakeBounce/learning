@@ -1,7 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t } from '@lingui/macro';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { getSingleApplicant, updateApplicant } from '@redux/actions/applicantsActions';
+import {
+  getSingleApplicant,
+  updateApplicant,
+  updateApplicantPicture
+} from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
 import ApplicantsUpdateFooter from './ApplicantsUpdateFooter';
 import ApplicantsUpdateForm from './ApplicantsUpdateForm';
@@ -45,25 +49,23 @@ export default function ApplicantsUpdate() {
 
   // Update the form if we are on the update page
   useEffect(() => {
-    if (applicantProfileData?.id !== Number(applicantId)) {
-      try {
-        const applicantIdToFetch = Number(applicantId);
-        if (!isNaN(applicantIdToFetch)) {
-          dispatch(getSingleApplicant(applicantIdToFetch));
-        } else {
-          throw new Error();
-        }
-      } catch (_) {
-        navigate(PATH_ERRORS.root);
-        enqueueSnackbar(t`L'étudiant n'existe pas`, { variant: 'error' });
+    try {
+      const applicantIdToFetch = Number(applicantId);
+      if (!isNaN(applicantIdToFetch)) {
+        dispatch(getSingleApplicant(applicantIdToFetch));
+      } else {
+        throw new Error();
       }
+    } catch (_) {
+      navigate(PATH_ERRORS.root);
+      enqueueSnackbar(t`L'étudiant n'existe pas`, { variant: 'error' });
     }
   }, []);
 
   useEffect(() => {
     if (applicantProfileData) {
       setApplicant(populateUpdateApplicantForm(applicantProfileData));
-      setImage(applicantProfileData.profilePicture || '');
+      setImage(applicantProfileData.profilePicture as string);
     }
   }, [applicantProfileData]);
 
@@ -103,12 +105,12 @@ export default function ApplicantsUpdate() {
       } as ApplicantNotifications;
       Object.keys(dirtyFields.notifications).forEach((key) => {
         const typedKey = key as keyof ApplicantNotifications;
-        newApplicantValues.notifications![typedKey] = data.notifications[typedKey] ? '1' : '0';
+        newApplicantValues.notifications![typedKey] = data.notifications[typedKey];
       });
     }
 
     // @todo - Handle groups update
-    if (Object.keys(newApplicantValues).length > 0) {
+    if (Object.keys(newApplicantValues).length > 0 || dirtyFields.profilePicture) {
       const updateApplicantFormToSubmit = {
         applicantId: Number(applicantId),
         applicant: {
@@ -116,8 +118,13 @@ export default function ApplicantsUpdate() {
         }
       } as UpdateApplicantRequest;
 
-      if (image !== applicantProfileData?.profilePicture) {
-        updateApplicantFormToSubmit.profilePicture = image;
+      if (dirtyFields.profilePicture) {
+        dispatch(
+          updateApplicantPicture({
+            applicantId: Number(applicantId),
+            profilePicture: image as File
+          })
+        );
       }
 
       // Handle update with image

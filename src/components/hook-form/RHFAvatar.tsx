@@ -37,6 +37,12 @@ function RHFAvatar({
   useEffect(() => {
     if (image !== '' && typeof image === 'string') {
       setResult(image);
+    } else if (image instanceof File) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setResult(reader.result as string);
+      };
+      reader.readAsDataURL(image);
     }
   }, [image]);
 

@@ -89,9 +89,9 @@ export const populateUpdateApplicantForm = (applicant: Applicant) => {
     birthName: applicant.birthName || '',
     profilePicture: applicant.profilePicture || '',
     notifications: {
-      email: applicant.notifications?.email === '1',
-      sms: applicant.notifications?.sms === '1',
-      app: applicant.notifications?.app === '1'
+      email: applicant.notifications?.email === true,
+      sms: applicant.notifications?.sms === true,
+      app: applicant.notifications?.app === true
     },
     groups: []
   };

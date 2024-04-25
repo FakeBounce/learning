@@ -5,7 +5,8 @@ import {
   CreateApplicantResponse,
   CreateBulkApplicantResponse,
   GetApplicantsListResponse,
-  GetSingleApplicantResponse, UpdateApplicantBlockResponse,
+  GetSingleApplicantResponse,
+  UpdateApplicantBlockResponse,
   UpdateApplicantResponse
 } from '@services/applicants/interfaces';
 import { enqueueSnackbar } from 'notistack';
@@ -88,6 +89,7 @@ export const applicantSlice = createSlice({
       })
       .addCase(ApplicantsActions.getSingleApplicant.pending, (state) => {
         state.applicantProfile.applicantProfileLoading = true;
+        state.applicantProfile.applicantProfileData = null;
       })
       .addCase(
         ApplicantsActions.getSingleApplicant.fulfilled,
@@ -156,10 +158,7 @@ export const applicantSlice = createSlice({
 });
 
 export const selectApplicantFindId = createSelector(
-  [
-    (state: ApplicantState) => state.applicantList.applicantListData,
-    (_, idToFind) => idToFind
-  ],
+  [(state: ApplicantState) => state.applicantList.applicantListData, (_, idToFind) => idToFind],
   (s, idToFind) => s.findIndex((applicant: Applicant) => applicant.id === idToFind)
 );
 
