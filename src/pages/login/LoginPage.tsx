@@ -54,7 +54,7 @@ export default function LoginPage() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <StyledLoginContainerBox>
           <LMSCard header={<LoginHeader />} footer={<LoginFooter isLoading={loading} />}>
             <LoginForm setShowPassword={setShowPassword} showPassword={showPassword} />

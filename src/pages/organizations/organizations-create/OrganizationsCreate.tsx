@@ -88,7 +88,7 @@ export default function OrganizationsCreate() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <LMSCard
           isPageCard
           header={<CardHeader headerText={<Trans>Créer une organization</Trans>} />}

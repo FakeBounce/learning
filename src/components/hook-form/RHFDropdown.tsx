@@ -63,7 +63,11 @@ function RHFDropdown({
 
         ':active': {
           ...styles[':active'],
-          backgroundColor: !isDisabled ? undefined : isSelected ? theme.palette.error.main : undefined
+          backgroundColor: !isDisabled
+            ? undefined
+            : isSelected
+            ? theme.palette.error.main
+            : undefined
         }
       };
     },
@@ -93,9 +97,11 @@ function RHFDropdown({
     switch (event.key) {
       case 'Enter':
       case 'Tab':
-        setValue(name, [...dropdownValue, createOption(inputValue)]);
-        setDropdownValue([...dropdownValue, createOption(inputValue)]);
-        setInputValue('');
+        if (!dropdownValue.some((option) => option.value === inputValue)) {
+          setValue(name, [...dropdownValue, createOption(inputValue)]);
+          setDropdownValue([...dropdownValue, createOption(inputValue)]);
+          setInputValue('');
+        }
         event.preventDefault();
     }
   };

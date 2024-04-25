@@ -89,7 +89,7 @@ export default function ApplicantsBulk() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <ApplicantsBulkContent
           handleDropAvatar={handleDropAvatar}
           fileUploaded={fileUploaded}
