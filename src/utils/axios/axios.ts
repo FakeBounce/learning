@@ -21,15 +21,23 @@ const axiosInstance: AxiosInstance = (() => {
   const newInstance = axios.create({ baseURL, timeout: 1000 });
 
   newInstance.interceptors.request.use((config) => {
-    //On vérifie s'il s'agit d'une requête de refresh ou une requête normale
-    if (config.url === '/users/refresh') {
-      const session = getSession();
-      if (session) {
-        //On remplace le token dans le header par le refresh token
-        config.headers.Authorization = `Bearer ${session.refreshToken}`;
-      }
-    }
-    return { ...config, data: snakizeObject(config.data) };
+    const axiosDelay = parseInt(getEnvVariable('VITE_HOST_AXIOS_DELAY') ?? '300', 10);
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        // Check if it's a refresh request or a normal request
+        if (config.url === '/users/refresh') {
+          const session = getSession();
+          if (session) {
+            // Replace the token in the header with the refresh token
+            config.headers.Authorization = `Bearer ${session.refreshToken}`;
+          }
+        }
+
+        // Modify the request data to use snake_case keys
+        config = { ...config, data: snakizeObject(config.data) };
+        resolve(config);
+      }, axiosDelay); // Delay each request by 300 milliseconds to give elastic search time to index the data
+    });
   });
 
   newInstance.interceptors.response.use(

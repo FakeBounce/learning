@@ -16,6 +16,12 @@ jest.mock('@mui/material/Dialog', () => {
   return require('@src/tests/mocks/DialogMock').default;
 });
 
+// Notifications mock
+jest.mock('notistack', () => ({
+  ...jest.requireActual('notistack'),
+  enqueueSnackbar: jest.fn()
+}));
+
 function customRender(
   ui: React.ReactElement,
   {

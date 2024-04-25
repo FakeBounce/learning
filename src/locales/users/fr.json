@@ -62,8 +62,7 @@
   "Dd/Xo9": {
     "translation": "Ajouter des utilisateurs en masse",
     "message": "Ajouter des utilisateurs en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
@@ -80,8 +79,7 @@
   "FABypk": {
     "translation": "Sélectionnez un fichier",
     "message": "Sélectionnez un fichier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "FdjX4N": {
     "translation": "Aucun utilisateur valide à ajouter",
@@ -194,14 +192,12 @@
   "Vb8ErI": {
     "translation": "Liste des utilisateurs valides",
     "message": "Liste des utilisateurs valides",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -266,8 +262,7 @@
   "jN1i4x": {
     "translation": "Liste des utilisateurs invalides",
     "message": "Liste des utilisateurs invalides",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",

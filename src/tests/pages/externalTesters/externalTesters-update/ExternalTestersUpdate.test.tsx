@@ -9,6 +9,7 @@ import ExternalTestersUpdateMock, {
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
 import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 const externalTesterUpdateTestConfig = {
   preloadedState: {
@@ -74,7 +75,9 @@ describe('ExternalTestersUpdate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Aucune modification n'a été effectuée/i)).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith("Aucune modification n'a été effectuée", {
+        variant: 'warning'
+      });
     });
   });
 

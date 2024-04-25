@@ -35,4 +35,4 @@ export const logout = async (): Promise<AxiosResponse<LoginResponse>> => {
 
 export const forgotPassword = async (args: ForgotPasswordRequest): Promise<AxiosResponse> => {
   return axios.post('/users/forgot-password', args);
-}
+};

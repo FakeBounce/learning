@@ -28,5 +28,8 @@ export const snakizeObject = (obj: any) =>
   transform(obj, (acc: any, value, key, target) => {
     const camelKey = Array.isArray(target) ? key : convertCamelToSnake(String(key));
 
-    acc[camelKey] = typeof value === 'object' && value !== null ? snakizeObject(value) : value;
+    acc[camelKey] =
+      typeof value === 'object' && value !== null && !(value instanceof File)
+        ? snakizeObject(value)
+        : value;
   });

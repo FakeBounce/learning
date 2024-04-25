@@ -85,7 +85,7 @@ export default function UsersBulkContent({
                 <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
                   <SimpleTable
                     columns={usersBulkColumns}
-                    getRowId={(row) => row.email}
+                    getRowId={(row) => `${row.email}-${row.firstname}-${row.lastname}`}
                     rows={validRows}
                   />
                 </LMSCard>
@@ -100,7 +100,7 @@ export default function UsersBulkContent({
                 <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
                   <SimpleTable
                     columns={usersBulkColumns}
-                    getRowId={(row) => row.email}
+                    getRowId={(row) => `${row.email}-${row.firstname}-${row.lastname}`}
                     rows={faultyRows}
                   />
                 </LMSCard>

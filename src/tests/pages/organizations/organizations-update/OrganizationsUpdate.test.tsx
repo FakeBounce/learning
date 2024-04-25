@@ -7,6 +7,7 @@ import OrganizationsUpdate from '@src/pages/organizations/organizations-update/O
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { Route, Routes } from 'react-router';
 import { generatePath } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 describe('OrganizationsUpdate', () => {
   beforeEach(() => {
@@ -64,7 +65,9 @@ describe('OrganizationsUpdate', () => {
     await waitFor(() => {
       // Check if updateOrganizations and getSingleOrganization were called with the expected arguments
       expect(OrganizationsUpdateMock.history.put.length).toBe(1);
-      expect(screen.getByText('Organisation enregistrée !')).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith('Organisation enregistrée !', {
+        variant: 'success'
+      });
     });
   });
 
@@ -101,7 +104,9 @@ describe('OrganizationsUpdate', () => {
 
     // Wait for form submission to complete
     await waitFor(() => {
-      expect(screen.getByText("Aucune modification n'a été effectuée")).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith("Aucune modification n'a été effectuée", {
+        variant: 'warning'
+      });
       // Check if updateOrganizations and getSingleOrganization were called with the expected arguments
       expect(OrganizationsUpdateMock.history.put.length).toBe(0);
     });
@@ -146,9 +151,10 @@ describe('OrganizationsUpdate', () => {
     // Wait for form submission to complete
     await waitFor(() => {
       // Check if enqueueSnackbar was called with the expected warning message
-      expect(
-        screen.getByText('An error occurred while updating the organization. Please try again.')
-      ).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith(
+        'An error occurred while updating the organization. Please try again.',
+        { variant: 'error' }
+      );
     });
   });
 });
