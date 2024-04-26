@@ -20,7 +20,8 @@
   "5HGTfB": {
     "translation": "",
     "message": "Supprimer un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5qQosN": {
     "translation": "",
@@ -49,7 +50,8 @@
   "DolR28": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "",
@@ -90,7 +92,8 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -119,7 +122,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "",
@@ -142,7 +146,8 @@
   "tNU7H1": {
     "translation": "",
     "message": "Rôle supprimé !",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "",

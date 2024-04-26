@@ -140,7 +140,8 @@
   "flJGrT": {
     "translation": "Organization ID",
     "message": "Organization ID",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -163,7 +164,8 @@
   "nZGv/s": {
     "translation": "Mot de passe oublié ?",
     "message": "Mot de passe oublié ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
@@ -174,7 +176,8 @@
   "uXStqy": {
     "translation": "Mot de passe",
     "message": "Mot de passe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
@@ -185,6 +188,7 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

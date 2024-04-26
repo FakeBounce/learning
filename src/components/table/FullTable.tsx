@@ -1,5 +1,5 @@
 import { DataGrid } from '@mui/x-data-grid';
-import { FullTableProps } from '@src/components/table/interfaces';
+import { defaultSlotProps, FullTableProps } from '@src/components/table/interfaces';
 import Box from '@mui/material/Box';
 
 export default function FullTable({
@@ -33,6 +33,7 @@ export default function FullTable({
         sortingMode={'server'}
         filterMode={'server'}
         paginationMode={'server'}
+        slotProps={defaultSlotProps}
       />
     </Box>
   );

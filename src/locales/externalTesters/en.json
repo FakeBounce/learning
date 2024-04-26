@@ -62,12 +62,14 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FhV/c/": {
     "translation": "",
@@ -102,7 +104,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -131,12 +134,14 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZdToq": {
     "translation": "",
@@ -159,7 +164,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "",
@@ -182,7 +188,8 @@
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UeDwla": {
     "translation": "",
@@ -199,7 +206,8 @@
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -222,7 +230,8 @@
   "dSvDOd": {
     "translation": "",
     "message": "Liste des testeurs invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -263,7 +272,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -316,12 +326,14 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wGk4Sl": {
     "translation": "",
     "message": "Liste des testeurs valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "zKPyEG": {
     "translation": "",

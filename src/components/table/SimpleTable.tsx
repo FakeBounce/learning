@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import { DataGridProps, GridColDef, DataGrid } from '@mui/x-data-grid';
 import { memo } from 'react';
+import { defaultSlotProps } from '@src/components/table/interfaces';
 
 interface SimpleTableProps extends DataGridProps {
   columns: GridColDef[];
@@ -20,6 +21,7 @@ function SimpleTable({ columns, rows, loading = false, ...other }: SimpleTablePr
         disableColumnMenu
         hideFooter
         paginationMode={'server'}
+        slotProps={{ ...defaultSlotProps, ...other.slotProps }}
         {...other}
       />
     </Box>

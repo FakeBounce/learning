@@ -44,7 +44,8 @@
   "EvYn6I": {
     "translation": "Nombre d'utilisateurs",
     "message": "Nombre d'utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
@@ -73,12 +74,14 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "T3xsZH": {
     "translation": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
     "message": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -107,11 +110,13 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wmNuk6": {
     "translation": "Supprimer un groupe",
     "message": "Supprimer un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

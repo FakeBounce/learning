@@ -62,12 +62,14 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "Sélectionnez un fichier",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FhV/c/": {
     "translation": "Êtes-vous sûr de vouloir débloquer le testeur <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -102,7 +104,8 @@
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
@@ -131,12 +134,14 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZdToq": {
     "translation": "Testeurs",
@@ -159,7 +164,8 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
@@ -182,7 +188,8 @@
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UeDwla": {
     "translation": "Information obligatoire",
@@ -199,7 +206,8 @@
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -222,7 +230,8 @@
   "dSvDOd": {
     "translation": "Liste des testeurs invalides",
     "message": "Liste des testeurs invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -263,7 +272,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -316,12 +326,14 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wGk4Sl": {
     "translation": "Liste des testeurs valides",
     "message": "Liste des testeurs valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",

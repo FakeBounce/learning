@@ -110,12 +110,14 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FBQvDW": {
     "translation": "",
@@ -132,7 +134,8 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
@@ -149,7 +152,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -184,12 +188,14 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "",
@@ -200,7 +206,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -217,7 +224,8 @@
   "PsHtRs": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QOV2qe": {
     "translation": "",
@@ -234,7 +242,8 @@
   "SNbh3h": {
     "translation": "",
     "message": "Débloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Ttle7P": {
     "translation": "",
@@ -251,12 +260,14 @@
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "",
     "message": "/",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UU1Jg5": {
     "translation": "",
@@ -273,12 +284,14 @@
   "UyAuoq": {
     "translation": "",
     "message": "Liste des étudiants valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VXxxDw": {
     "translation": "",
     "message": "Liste des étudiants invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VsENqL": {
     "translation": "",
@@ -295,7 +308,8 @@
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -318,7 +332,8 @@
   "YlStRO": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "",
@@ -341,7 +356,8 @@
   "f3LmJs": {
     "translation": "",
     "message": "Bloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "",
@@ -376,7 +392,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -393,7 +410,8 @@
   "k441hZ": {
     "translation": "",
     "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "",
@@ -440,12 +458,14 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "wB7q3X": {
     "translation": "",
     "message": "Date naiss.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "",

@@ -26,7 +26,8 @@
   "9hQFA+": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "",
@@ -61,7 +62,8 @@
   "Dd/Xo9": {
     "translation": "",
     "message": "Ajouter des utilisateurs en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "",
@@ -72,12 +74,14 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FdjX4N": {
     "translation": "",
@@ -106,7 +110,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -129,17 +134,20 @@
   "JSPwk2": {
     "translation": "",
     "message": "Débloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "",
@@ -156,7 +164,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -173,7 +182,8 @@
   "SDHbV6": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "",
@@ -184,12 +194,14 @@
   "Vb8ErI": {
     "translation": "",
     "message": "Liste des utilisateurs valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -248,12 +260,14 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jN1i4x": {
     "translation": "",
     "message": "Liste des utilisateurs invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "",
@@ -276,7 +290,8 @@
   "r+5fnD": {
     "translation": "",
     "message": "Bloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "",
