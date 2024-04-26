@@ -58,12 +58,15 @@ export const logout = createAsyncThunk('connectedUser/logout', async (_, { rejec
   }
 });
 
-export const forgotPassword = createAsyncThunk('connectedUser/forgotPassword', async (arg: any, { rejectWithValue }) => {
-  try {
-    const response = await UserServices.forgotPassword(arg);
-    return response.data;
-  } catch (e: any) {
-    if (e.response.data) return rejectWithValue(e.response.data);
-    throw e;
+export const forgotPassword = createAsyncThunk(
+  'connectedUser/forgotPassword',
+  async (arg: any, { rejectWithValue }) => {
+    try {
+      const response = await UserServices.forgotPassword(arg);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
   }
-});
+);

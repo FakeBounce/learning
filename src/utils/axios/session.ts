@@ -11,7 +11,7 @@ export const setSession = (tokenDatas: LoginInformations | null) => {
     if (hasLocalStorage) {
       localStorage.setItem('LMS_TOKEN', JSON.stringify(tokenDatas));
     }
-    axios.defaults.headers.Authorization = `Bearer ${tokenDatas.token}`;
+    axios.defaults.headers.common.Authorization = `Bearer ${tokenDatas.token}`;
   } else {
     if (hasLocalStorage) {
       localStorage.removeItem('LMS_TOKEN');
@@ -20,14 +20,13 @@ export const setSession = (tokenDatas: LoginInformations | null) => {
   }
 };
 
-export const getSession = () => {
+export const getSession = (): LoginInformations | null => {
   const hasLocalStorage = localStorageAvailable();
   if (hasLocalStorage) {
     const storageItem = localStorage.getItem('LMS_TOKEN');
     if (storageItem) {
       const tokenDatas = JSON.parse(storageItem);
       if (tokenDatas && tokenDatas.refreshToken) {
-        axios.defaults.headers.Authorization = `Bearer ${tokenDatas.refreshToken}`;
         return tokenDatas;
       }
     }

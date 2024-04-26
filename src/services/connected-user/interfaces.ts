@@ -25,6 +25,7 @@ export interface ConnectedUser {
   isClientAdmin: boolean;
   isSuperAdmin: boolean;
   permissions: UserPermission[];
+  mainOrganizationId: number;
   currentOrganization: ConnectedUserOrganization;
 }
 
