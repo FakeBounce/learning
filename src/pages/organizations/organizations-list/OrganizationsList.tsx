@@ -5,7 +5,7 @@ import { LMSCard } from '@src/components/lms';
 import { organizationsListColumns } from '@src/pages/organizations/organizations-list/OrganizationsListColumns';
 import OrganizationsListHeader from '@src/pages/organizations/organizations-list/OrganizationsListHeader';
 import OrganizationsListPopperContent from '@src/pages/organizations/organizations-list/OrganizationsListPopperContent';
-import { useState, MouseEvent, useEffect } from 'react';
+import { useState, MouseEvent } from 'react';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import OrganizationsListModal from '@src/pages/organizations/organizations-list/OrganizationsListModal';
 import { selectOrganizationsList } from '@redux/reducers/organizationsReducer';
@@ -20,10 +20,6 @@ export default function OrganizationsList() {
   const [organizationSelected, setOrganizationSelected] = useState<Organization | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  useEffect(() => {
-    dispatch(getOrganizationsList({ currentPage: 0, rowsPerPage: 10 }));
-  }, []);
 
   const handleTableChange = (organizationRequestConfig: TableRequestConfig) => {
     dispatch(getOrganizationsList(organizationRequestConfig));

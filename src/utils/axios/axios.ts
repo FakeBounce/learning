@@ -3,7 +3,7 @@ import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import { ApiResponseMessage } from '@services/interfaces';
 import { camelizeObject, snakizeObject } from '@utils/helpers/convertCasing';
 import { handle401 } from '@utils/axios/handle401';
-import { getSession, setSession } from '@utils/axios/session';
+import { getSession } from '@utils/axios/session';
 
 interface AxiosDefaultResponse {
   success: boolean;
@@ -19,20 +19,15 @@ const axiosInstance: AxiosInstance = (() => {
   }
 
   const newInstance = axios.create({ baseURL, timeout: 1000 });
+  const session = getSession();
+  if (session) {
+    newInstance.defaults.headers.common['Authorization'] = `Bearer ${session.token}`;
+  }
 
   newInstance.interceptors.request.use((config) => {
     const axiosDelay = parseInt(getEnvVariable('VITE_HOST_AXIOS_DELAY') ?? '300', 10);
     return new Promise((resolve) => {
       setTimeout(() => {
-        // Check if it's a refresh request or a normal request
-        if (config.url === '/users/refresh') {
-          const session = getSession();
-          if (session) {
-            // Replace the token in the header with the refresh token
-            config.headers.Authorization = `Bearer ${session.refreshToken}`;
-          }
-        }
-
         // Modify the request data to use snake_case keys
         config = { ...config, data: snakizeObject(config.data) };
         resolve(config);
@@ -53,28 +48,12 @@ const axiosInstance: AxiosInstance = (() => {
     },
     async (error) => {
       if (error.response && error.response.status === 401) {
-        try {
-          //On refresh le token pour relancer la requête
-          const newToken = await newInstance.post('/users/refresh');
+        console.log('error', error);
+        const newRequest = await handle401(error);
 
-          if (newToken.data.data) {
-            //On met à jour le token dans le local storage
-            setSession(newToken.data.data);
-            //On applique le nouveau token à la requête
-            error.config.headers.Authorization = `Bearer ${newToken.data.data.token}`;
-            //On retransforme les données en objet car elles ont été transformées en string
-            error.config.data = JSON.parse(error.config.data);
-
-            //On relance la requête
-            return newInstance(error.config);
-          } else {
-            //Dans le doute on déconnecte l'utilisateur si la requête est bien passée
-            //mais que le retour n'est pas bon
-            handle401();
-          }
-        } catch (e) {
-          //Si le refresh token a échoué, on déconnecte l'utilisateur
-          handle401();
+        console.log('newRequest', newRequest);
+        if (newRequest) {
+          return newInstance.request(newRequest);
         }
       }
       return Promise.reject(error);

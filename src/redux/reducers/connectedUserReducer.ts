@@ -2,8 +2,7 @@ import {
   GetConnectedUserResponse,
   LoginResponse,
   UpdateOrganizationViewResponse,
-  ConnectedUser,
-  ConnectedUserOrganization
+  ConnectedUser
 } from '@services/connected-user/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as UserActions from '../actions/connectedUserActions';
@@ -15,7 +14,6 @@ import { t } from '@lingui/macro';
 
 interface UserState {
   user: ConnectedUser;
-  mainOrganization: ConnectedUserOrganization;
   globalLoading: boolean;
   login: {
     loading: boolean;
@@ -28,7 +26,6 @@ interface UserState {
 
 const initialState: UserState = {
   user: {} as ConnectedUser,
-  mainOrganization: {} as ConnectedUserOrganization,
   globalLoading: false,
   login: {
     loading: false,
@@ -58,9 +55,6 @@ export const connectedUserSlice = createSlice({
         state.login.loading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
-      })
-      .addCase(UserActions.refresh.pending, (state) => {
-        state.globalLoading = true;
       })
       .addCase(UserActions.refresh.fulfilled, (state, action: { payload: LoginResponse }) => {
         state.login.isAuthenticated = true;
@@ -100,13 +94,7 @@ export const connectedUserSlice = createSlice({
       .addCase(
         UserActions.getUser.fulfilled,
         (state, action: { payload: GetConnectedUserResponse }) => {
-          const newUser = action.payload.data;
-          state.user = {
-            ...newUser
-          };
-          if (newUser.currentOrganization && newUser.currentOrganization.isMain) {
-            state.mainOrganization = { ...newUser.currentOrganization };
-          }
+          state.user = action.payload.data;
           state.globalLoading = false;
         }
       )

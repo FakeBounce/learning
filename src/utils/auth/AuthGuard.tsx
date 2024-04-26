@@ -1,8 +1,9 @@
 import { Skeleton } from '@mui/material';
-import { memo, ReactNode, useState } from 'react';
+import { memo, ReactNode, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { PATH_AUTH } from '@utils/navigation/paths';
-import { useAppSelector } from '@redux/hooks';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
+import { getUser } from '@redux/actions/connectedUserActions';
 
 function AuthGuard({ children }: { children: ReactNode }) {
   const {
@@ -10,8 +11,15 @@ function AuthGuard({ children }: { children: ReactNode }) {
     login: { loading, isAuthenticated }
   } = useAppSelector((state) => state.connectedUser);
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
 
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      dispatch(getUser());
+    }
+  }, [isAuthenticated]);
 
   if (loading || globalLoading) {
     return <Skeleton variant="rectangular" width={210} height={118} />;
