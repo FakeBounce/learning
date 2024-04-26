@@ -27,7 +27,7 @@ jest.mock('@mui/x-data-grid', () => ({
 jest.mock('@src/components/lms/LMSSwitch');
 jest.mock('@src/components/lms/ActionButton');
 jest.mock('@src/components/hook-form/RHFAvatar');
-jest.mock('@src/components/iconify/iconify');
+jest.mock('@src/components/iconify/Iconify');
 jest.mock('@src/components/lms/UploadBox');
 
 // Notifications mock
