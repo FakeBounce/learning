@@ -15,6 +15,15 @@ export interface FullTableProps {
 
 export const defaultSlotProps = {
   pagination: {
-    labelRowsPerPage: t`Résultats par page`
+    labelRowsPerPage: t`Résultats par page`,
+    labelDisplayedRows: ({ from, to, count }: { from: number; to: number; count: number }) =>
+      t`${from}-${to} sur ${count}`
   }
+};
+
+export const defaultLocaleText = {
+  columnHeaderSortAsc: t`Trier en ASC`,
+  columnHeaderSortDesc: t`Trier en DESC`,
+  columnHeaderFilterTooltipLabel: t`Filtrer`,
+  noRowsLabel: t`Aucun résultat`
 };
