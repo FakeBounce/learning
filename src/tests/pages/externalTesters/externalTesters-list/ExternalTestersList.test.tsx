@@ -3,8 +3,6 @@ import ExternalTestersList from '@src/pages/externalTesters/externalTesters-list
 import { defaultTester, newTester, blockedTester, unlockedTester } from '../DefaultTesters';
 import ExternalTestersListMock, { setupSuccessAxiosMock } from './ExternalTestersListMock';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
 jest.mock('@src/pages/externalTesters/externalTesters-list/ExternalTestersListHeader', () =>
   jest.fn()
 );

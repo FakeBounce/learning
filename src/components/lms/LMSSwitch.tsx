@@ -41,7 +41,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 interface LMSSwitchProps {
-  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  handleChange: (_: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
 }
 

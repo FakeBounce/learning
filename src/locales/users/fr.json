@@ -26,8 +26,7 @@
   "9hQFA+": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "Groupes",
@@ -62,8 +61,7 @@
   "Dd/Xo9": {
     "translation": "Ajouter des utilisateurs en masse",
     "message": "Ajouter des utilisateurs en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
@@ -74,14 +72,12 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "FABypk": {
     "translation": "Sélectionnez un fichier",
     "message": "Sélectionnez un fichier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "FdjX4N": {
     "translation": "Aucun utilisateur valide à ajouter",
@@ -110,8 +106,7 @@
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "Personnalisation",
@@ -134,20 +129,17 @@
   "JSPwk2": {
     "translation": "Débloquer un utilisateur",
     "message": "Débloquer un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
@@ -164,8 +156,7 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -182,8 +173,7 @@
   "SDHbV6": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -194,14 +184,12 @@
   "Vb8ErI": {
     "translation": "Liste des utilisateurs valides",
     "message": "Liste des utilisateurs valides",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -260,14 +248,12 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "jN1i4x": {
     "translation": "Liste des utilisateurs invalides",
     "message": "Liste des utilisateurs invalides",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
@@ -290,8 +276,7 @@
   "r+5fnD": {
     "translation": "Bloquer un utilisateur",
     "message": "Bloquer un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "tALayW": {
     "translation": "Annuler",

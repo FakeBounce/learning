@@ -16,9 +16,6 @@ jest.mock('react-router', () => ({
   useOutletContext: jest.fn()
 }));
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 describe('ApplicantsList', () => {
   beforeEach(() => {
     const mockPageType = PermissionTypeEnum.APPLICANTS;

@@ -140,8 +140,7 @@
   "flJGrT": {
     "translation": "",
     "message": "Organization ID",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "",
@@ -164,8 +163,7 @@
   "nZGv/s": {
     "translation": "",
     "message": "Mot de passe oublié ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "",
@@ -176,8 +174,7 @@
   "uXStqy": {
     "translation": "",
     "message": "Mot de passe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
@@ -188,7 +185,6 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

@@ -6,7 +6,7 @@ import { RHFTextField, RHFTextFieldAdornement } from '@src/components/hook-form'
 
 interface LoginFormProps {
   showPassword: boolean;
-  setShowPassword: (show: boolean) => void;
+  setShowPassword: (_show: boolean) => void;
 }
 
 function LoginForm({ showPassword, setShowPassword }: LoginFormProps) {

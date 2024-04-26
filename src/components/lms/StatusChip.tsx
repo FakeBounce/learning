@@ -6,7 +6,7 @@ import { memo, MouseEvent, ReactNode } from 'react';
 interface StatusChipProps {
   isActive?: boolean;
   activatedText?: ReactNode;
-  handleClick?: (event: MouseEvent<HTMLElement>) => void;
+  handleClick?: (_: MouseEvent<HTMLElement>) => void;
 }
 
 function StatusChip({ isActive = false, activatedText, handleClick }: StatusChipProps) {

@@ -6,7 +6,7 @@ import StatusChip from '@src/components/lms/StatusChip';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const usersColumns = (
-  handleClick: (newUser: User) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (_newUser: User) => (_event: MouseEvent<HTMLElement>) => void
 ) =>
   [
     {

@@ -7,9 +7,6 @@ import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { validRowsForApplicantBulk } from '@src/tests/pages/applicants/DefaultApplicants';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

@@ -99,8 +99,6 @@ export const organizationSlice = createSlice({
       /**
         organizations Block Reducers
          **/
-      //  @todo Should we display loading ?
-      .addCase(OrganizationsActions.toggleOrganizationsBlock.pending, (_) => {})
       .addCase(
         OrganizationsActions.toggleOrganizationsBlock.fulfilled,
         (state, action: { payload: UpdateOrganizationsBlockResponse }) => {

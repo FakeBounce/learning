@@ -2,9 +2,6 @@ import { render, screen, act, waitFor } from '@testProvider';
 import UsersBulkContent from '@src/pages/users/users-bulk/UsersBulkContent';
 import { faultyRowsForUsersBulk, validRowsForUsersBulk } from '@src/tests/pages/users/DefaultUsers';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 describe('UsersBulkContent', () => {
   it('renders UsersBulkContent correctly', () => {
     const handleDropAvatar = jest.fn();

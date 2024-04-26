@@ -5,9 +5,6 @@ import UsersBulkMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/users/users-bulk/UsersBulkMock';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

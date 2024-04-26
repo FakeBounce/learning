@@ -54,7 +54,7 @@ const textToDisplay = (userSelected: User) => {
 interface UsersListModalProps {
   userSelected: User;
   isModalOpen: boolean;
-  setIsModalOpen: (value: boolean) => void;
+  setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 
