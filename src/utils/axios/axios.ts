@@ -48,10 +48,8 @@ const axiosInstance: AxiosInstance = (() => {
     },
     async (error) => {
       if (error.response && error.response.status === 401) {
-        console.log('error', error);
         const newRequest = await handle401(error);
 
-        console.log('newRequest', newRequest);
         if (newRequest) {
           return newInstance.request(newRequest);
         }

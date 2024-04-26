@@ -11,7 +11,6 @@ export const setSession = (tokenDatas: LoginInformations | null) => {
     if (hasLocalStorage) {
       localStorage.setItem('LMS_TOKEN', JSON.stringify(tokenDatas));
     }
-    console.log('here', tokenDatas);
     axios.defaults.headers.common.Authorization = `Bearer ${tokenDatas.token}`;
   } else {
     if (hasLocalStorage) {
