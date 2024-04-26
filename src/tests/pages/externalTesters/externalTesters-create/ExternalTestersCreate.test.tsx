@@ -4,6 +4,7 @@ import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 import ExternalTestersCreateMock, { setupSuccessAxiosMock } from './ExternalTestersCreateMock';
 import { PATH_APPLICANTS, PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -59,7 +60,9 @@ describe('ExternalTestersCreate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Le testeur à bien été enregistré/i)).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith('Le testeur à bien été enregistré', {
+        variant: 'success'
+      });
       expect(navigateMock).toHaveBeenCalledWith(PATH_EXTERNAL_TESTERS.root);
     });
   });

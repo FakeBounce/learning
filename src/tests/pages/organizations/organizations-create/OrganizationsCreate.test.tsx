@@ -6,6 +6,7 @@ import OrganizationsCreateMock, {
 import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
 import OrganizationsCreate from '@src/pages/organizations/organizations-create/OrganizationsCreate';
 import { useNavigate } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -119,7 +120,9 @@ describe('OrganizationsCreate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText('Veuillez ajouter un logo')).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith('Veuillez ajouter un logo', {
+        variant: 'error'
+      });
     });
 
     // @todo add the test for the axios error when file upload works correctly

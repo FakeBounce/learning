@@ -5,9 +5,6 @@ import {
   validRowsForApplicantBulk
 } from '@src/tests/pages/applicants/DefaultApplicants';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 describe('ExternalTestersBulkContent', () => {
   it('renders ExternalTestersBulkContent correctly', () => {
     const handleDropAvatar = jest.fn();

@@ -1,16 +1,24 @@
-import { Box, Stack, Avatar, ListItemButton, ListItemText, ListItem } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
+import {
+  Box,
+  Stack,
+  Avatar,
+  ListItemButton,
+  ListItemText,
+  ListItem,
+  Skeleton
+} from '@mui/material';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import { Trans } from '@lingui/macro';
 import { MouseEvent, useState } from 'react';
 import { logout } from '@redux/actions/connectedUserActions';
-import { useAppDispatch } from '@redux/hooks';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 // ----------------------------------------------------------------------
 
 export default function SidebarUser({ open }: { open: boolean }) {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const theme = useTheme();
   const dispatch = useAppDispatch();
+
+  const { user } = useAppSelector((state) => state.connectedUser);
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -38,11 +46,25 @@ export default function SidebarUser({ open }: { open: boolean }) {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            borderRadius: 2,
+            borderRadius: (theme) => theme.shape.customBorderRadius.small,
             transition: 'background-color 0.5s ease'
           }}
         >
-          <Avatar alt="Avatar photo" src="/assets/shape_avatar.svg" />
+          {user !== undefined ? (
+            <Avatar
+              src={user.logo ?? undefined}
+              sx={{
+                background: (theme) => theme.palette.grey[400],
+                color: (theme) => theme.palette.common.white,
+                textTransform: 'uppercase'
+              }}
+            >
+              {user.lastname.charAt(0)}
+              {user.firstname.charAt(0)}
+            </Avatar>
+          ) : (
+            <Skeleton variant="circular" width={40} height={40} />
+          )}
         </Box>
       </Stack>
     );
@@ -57,8 +79,8 @@ export default function SidebarUser({ open }: { open: boolean }) {
     >
       <Box
         sx={{
-          bgcolor: theme.palette.grey[300],
-          borderRadius: 2,
+          bgcolor: (theme) => theme.palette.grey[300],
+          borderRadius: (theme) => theme.shape.customBorderRadius.small,
           height: '5rem',
           display: 'flex',
           transition: 'background-color 0.5s ease',
@@ -66,12 +88,44 @@ export default function SidebarUser({ open }: { open: boolean }) {
         }}
         onClick={handleClick}
       >
-        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 2, mr: 2 }}>
-          <Avatar alt="Avatar photo" src="/assets/shape_avatar.svg" />
+        <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', ml: 1 }}>
+          {user !== undefined ? (
+            <Avatar
+              src={user.logo ?? undefined}
+              sx={{
+                background: (theme) => theme.palette.common.white,
+                color: (theme) => theme.palette.grey[600],
+                textTransform: 'uppercase'
+              }}
+            >
+              {user.lastname.charAt(0)}
+              {user.firstname.charAt(0)}
+            </Avatar>
+          ) : (
+            <Skeleton variant="circular" width={40} height={40} />
+          )}
         </Box>
-        <Stack py={2} spacing={1}>
-          <Box>Nom / Prénom</Box> <Box> Rôle</Box>
-        </Stack>
+        <Box
+          px={1}
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'start',
+            textWrap: 'wrap'
+          }}
+        >
+          <Box sx={{ fontSize: (theme) => theme.typography.body1.fontSize }}>
+            {user.lastname} {user.firstname}
+          </Box>
+          <Box sx={{ fontSize: (theme) => theme.typography.caption.fontSize }}>
+            {user.isSuperAdmin ? (
+              <Trans>Super Admin</Trans>
+            ) : user.isClientAdmin ? (
+              <Trans>Client Admin</Trans>
+            ) : null}
+          </Box>
+        </Box>
         <LMSPopover
           id={id}
           anchorEl={anchorEl}

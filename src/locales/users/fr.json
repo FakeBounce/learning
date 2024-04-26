@@ -26,7 +26,8 @@
   "9hQFA+": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
@@ -133,7 +134,8 @@
   "JSPwk2": {
     "translation": "Débloquer un utilisateur",
     "message": "Débloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "Prénom",
@@ -168,7 +170,8 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SCttC7": {
     "translation": "?",
@@ -179,7 +182,8 @@
   "SDHbV6": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -286,7 +290,8 @@
   "r+5fnD": {
     "translation": "Bloquer un utilisateur",
     "message": "Bloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",

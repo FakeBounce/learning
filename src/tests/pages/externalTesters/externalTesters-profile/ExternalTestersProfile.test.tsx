@@ -1,6 +1,6 @@
 import { cleanup, render, screen, act } from '@testProvider';
 import ExternalTestersProfile from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate';
-import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
+import { PATH_ERRORS, PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import { Routes, Route } from 'react-router';
@@ -8,6 +8,7 @@ import { waitFor } from '@testing-library/dom';
 import ExternalTestersUpdateMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
+import { enqueueSnackbar } from 'notistack';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -17,7 +18,7 @@ jest.mock('react-router-dom', () => ({
 
 jest.mock('@src/pages/applicants/applicants-profile/ApplicantsProfileHeader', () => jest.fn());
 
-describe('ApplicantProfile', () => {
+describe('ExternalTestersProfile', () => {
   beforeEach(() => {
     setupSuccessAxiosMock();
   });
@@ -27,7 +28,7 @@ describe('ApplicantProfile', () => {
     cleanup();
   });
 
-  it('renders ApplicantProfile correctly', async () => {
+  it('renders ExternalTestersProfile correctly', async () => {
     // Mock useNavigate
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
@@ -68,10 +69,9 @@ describe('ApplicantProfile', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(/Le testeur n'existe pas/i)).toBeInTheDocument();
-      });
+    await waitFor(() => {
+      expect(navigateMock).toHaveBeenCalledWith(PATH_ERRORS.root);
+      expect(enqueueSnackbar).toHaveBeenCalledWith("Le testeur n'existe pas", { variant: 'error' });
     });
   });
 });

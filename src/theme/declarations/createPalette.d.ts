@@ -114,8 +114,8 @@ declare module '@mui/material/styles/createPalette' {
     divider: TypeDivider;
     action: TypeAction;
     background: TypeBackground;
-    getContrastText: (background: string) => string;
-    augmentColor: (options: PaletteAugmentColorOptions) => PaletteColor;
+    getContrastText: (_background: string) => string;
+    augmentColor: (_options: PaletteAugmentColorOptions) => PaletteColor;
   }
 
   export interface Channels {
@@ -143,8 +143,8 @@ declare module '@mui/material/styles/createPalette' {
     divider?: string;
     action?: Partial<TypeAction>;
     background?: Partial<TypeBackground>;
-    getContrastText?: (background: string) => string;
+    getContrastText?: (_background: string) => string;
   }
 
-  export default function createPalette(palette: PaletteOptions): Palette;
+  export default function createPalette(_palette: PaletteOptions): Palette;
 }

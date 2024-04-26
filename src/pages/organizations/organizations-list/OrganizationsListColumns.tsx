@@ -8,7 +8,7 @@ import { MouseEvent } from 'react';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const organizationsListColumns = (
-  handleClick: (newOrganization: Organization) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (_newOrganization: Organization) => (_event: MouseEvent<HTMLElement>) => void
 ) => {
   return [
     {

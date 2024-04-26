@@ -30,10 +30,10 @@ const constructPermissionsObject = () => {
 
 export const FeatureFlagContext = createContext<{
   isAuthorizedByPermissionsTo: (
-    pageType: PermissionTypeEnum,
-    permissionAsked: PermissionEnum
+    _pageType: PermissionTypeEnum,
+    _permissionAsked: PermissionEnum
   ) => boolean;
-  canSeePage: (pageAsked: PermissionTypeEnum[]) => boolean;
+  canSeePage: (_pageAsked: PermissionTypeEnum[]) => boolean;
 }>({
   isAuthorizedByPermissionsTo: () => false,
   canSeePage: () => false

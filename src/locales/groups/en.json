@@ -112,5 +112,11 @@
     "message": "Nom",
     "comments": [],
     "obsolete": false
+  },
+  "wmNuk6": {
+    "translation": "",
+    "message": "Supprimer un groupe",
+    "comments": [],
+    "obsolete": false
   }
 }

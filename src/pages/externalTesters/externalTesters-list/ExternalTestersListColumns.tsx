@@ -7,7 +7,7 @@ import StatusChip from '@src/components/lms/StatusChip';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const externalTestersColumns = (
-  handleClick: (newApplicant: Applicant) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (_newApplicant: Applicant) => (_event: MouseEvent<HTMLElement>) => void
 ) =>
   [
     {

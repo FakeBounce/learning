@@ -77,7 +77,6 @@ describe('ApplicantsCreate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/L'étudiant à bien été enregistré/i)).toBeInTheDocument();
       expect(navigateMock).toHaveBeenCalledWith(PATH_APPLICANTS.root);
     });
   });

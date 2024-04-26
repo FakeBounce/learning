@@ -10,7 +10,7 @@ import UsersBulkFooter from '@src/pages/users/users-bulk/UsersBulkFooter';
 import { usersBulkColumns } from '@src/pages/users/users-bulk/UsersBulkColumns';
 
 interface UsersBulkContentProps {
-  handleDropAvatar: (acceptedFiles: any) => void;
+  handleDropAvatar: (_acceptedFiles: any) => void;
   fileUploaded: File | null;
   removeFile: () => void;
   fileError: string | null;
@@ -85,7 +85,7 @@ export default function UsersBulkContent({
                 <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
                   <SimpleTable
                     columns={usersBulkColumns}
-                    getRowId={(row) => row.email}
+                    getRowId={(row) => `${row.email}-${row.firstname}-${row.lastname}`}
                     rows={validRows}
                   />
                 </LMSCard>
@@ -100,7 +100,7 @@ export default function UsersBulkContent({
                 <LMSCard isPageCard contentPadding={0} canExpand cardCss={{ paddingTop: 2 }}>
                   <SimpleTable
                     columns={usersBulkColumns}
-                    getRowId={(row) => row.email}
+                    getRowId={(row) => `${row.email}-${row.firstname}-${row.lastname}`}
                     rows={faultyRows}
                   />
                 </LMSCard>

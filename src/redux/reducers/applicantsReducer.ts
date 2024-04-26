@@ -72,7 +72,6 @@ export const applicantSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(ApplicantsActions.toggleApplicantBlock.pending, (_) => {})
       .addCase(
         ApplicantsActions.toggleApplicantBlock.fulfilled,
         (state, action: { payload: UpdateApplicantBlockResponse }) => {

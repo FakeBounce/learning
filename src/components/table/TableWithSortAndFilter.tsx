@@ -10,7 +10,7 @@ interface TableWithSortAndFilterProps
     FullTableProps,
     'onSortModelChange' | 'onFilterModelChange' | 'onPaginationModelChange'
   > {
-  onChange: (applicantRequestConfig: TableRequestConfig) => void;
+  onChange: (_: TableRequestConfig) => void;
   defaultPageSize?: number;
 }
 

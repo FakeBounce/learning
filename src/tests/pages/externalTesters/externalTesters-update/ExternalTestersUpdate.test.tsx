@@ -9,6 +9,7 @@ import ExternalTestersUpdateMock, {
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
 import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 const externalTesterUpdateTestConfig = {
   preloadedState: {
@@ -44,11 +45,9 @@ describe('ExternalTestersUpdate', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
-        expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
-      });
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
     });
   });
 
@@ -68,13 +67,13 @@ describe('ExternalTestersUpdate', () => {
     });
 
     await act(async () => {
-      await waitFor(async () => {
-        fireEvent.submit(screen.getByRole('submit'));
-      });
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Aucune modification n'a été effectuée/i)).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith("Aucune modification n'a été effectuée", {
+        variant: 'warning'
+      });
     });
   });
 
@@ -131,10 +130,10 @@ describe('ExternalTestersUpdate', () => {
 
     // Update the email
     const emailInput = screen.getByLabelText(/Email/i);
-    fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
 
     // Simulate form submission
     await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
 

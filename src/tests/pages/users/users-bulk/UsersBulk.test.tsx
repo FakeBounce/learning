@@ -1,12 +1,9 @@
 import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
 import UsersBulk from '@src/pages/users/users-bulk/UsersBulk';
-import { validRowsForUsersBulk } from '@src/tests/pages/users/DefaultUsers';
+import { faultyRowsForUsersBulk, validRowsForUsersBulk } from '@src/tests/pages/users/DefaultUsers';
 import UsersBulkMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/users/users-bulk/UsersBulkMock';
-
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -105,10 +102,10 @@ describe('UsersBulk', () => {
     render(<UsersBulk />);
 
     const csvContent = [
-      Object.keys(validRowsForUsersBulk[0]).join(','), // Header row
-      ...validRowsForUsersBulk.map((obj) =>
+      Object.keys(faultyRowsForUsersBulk[0]).join(','), // Header row
+      ...faultyRowsForUsersBulk.map((obj) =>
         Object.values(obj)
-          .map(() => '')
+          .map((val) => val as string)
           .join(',')
       ) // Data rows
     ].join('\r\n');
@@ -125,15 +122,17 @@ describe('UsersBulk', () => {
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const file = new File([blob], 'SomeFile.csv', { type: 'text/csv' });
 
-    const input = screen.getByTestId('upload-box-input');
-    fireEvent.change(input, { target: { files: [file] } });
+    await act(async () => {
+      const input = screen.getByTestId('upload-box-input');
+      fireEvent.change(input, { target: { files: [file] } });
+    });
 
     await waitFor(async () => {
       expect(screen.getByText(/Liste des utilisateurs invalides/i)).toBeInTheDocument();
+      expect(screen.getByText(/Enregistrer/i)).toBeInTheDocument();
     });
 
-    act(() => {
-      expect(screen.getByText(/Enregistrer/i)).toBeInTheDocument();
+    await act(async () => {
       fireEvent.click(screen.getByText(/Enregistrer/i));
     });
 
@@ -166,16 +165,19 @@ describe('UsersBulk', () => {
     const blob = new Blob([csvContent], { type: 'text/csv' });
     const file = new File([blob], 'SomeFile.csv', { type: 'text/csv' });
 
-    const input = screen.getByTestId('upload-box-input');
-    fireEvent.change(input, { target: { files: [file] } });
+    await act(async () => {
+      const input = screen.getByTestId('upload-box-input');
+      fireEvent.change(input, { target: { files: [file] } });
+    });
 
     await waitFor(async () => {
       expect(screen.getByText(/SomeFile.csv/i)).toBeInTheDocument();
     });
 
+    const removeButton = screen.getByTestId('upload-box-delete');
+    expect(removeButton).toBeInTheDocument();
+
     await act(async () => {
-      const removeButton = screen.getByTestId('upload-box-delete');
-      expect(removeButton).toBeInTheDocument();
       fireEvent.click(removeButton);
     });
 

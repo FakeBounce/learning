@@ -8,7 +8,7 @@ import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 export const rolesColumns = (
-  handleClick: (newRole: Role) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (_newRole: Role) => (_event: MouseEvent<HTMLElement>) => void
 ) =>
   [
     {

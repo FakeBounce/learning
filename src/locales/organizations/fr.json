@@ -8,7 +8,8 @@
   "2Vc4Um": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -85,12 +86,14 @@
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GAxRw0": {
     "translation": "Ville",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
@@ -107,7 +110,8 @@
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
@@ -136,7 +140,8 @@
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
@@ -189,7 +194,8 @@
   "b+/aiw": {
     "translation": "Débloquer une organisation",
     "message": "Débloquer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dg0WGC": {
     "translation": "L'organisation n'existe pas",
@@ -224,7 +230,8 @@
   "gm1CMT": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -235,7 +242,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
@@ -252,7 +260,8 @@
   "lHMRD2": {
     "translation": "Bloquer une organisation",
     "message": "Bloquer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",

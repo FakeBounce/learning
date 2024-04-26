@@ -8,9 +8,6 @@ import {
 } from '@src/tests/pages/organizations/DefaultOrganization';
 import { setupSuccessAxiosMock } from '@src/tests/pages/organizations/organizations-list/OrganizationsListMock';
 
-// Mock Pagination as it is not relevant for this test
-jest.mock('@src/components/table/Pagination', () => jest.fn());
-
 describe('OrganizationsList', () => {
   it('renders OrganizationsList correctly', async () => {
     setupSuccessAxiosMock();

@@ -54,7 +54,7 @@ const textToDisplay = (organizationSelected: Organization) => {
 interface OrganizationsListModalProps {
   organizationSelected: Organization;
   isModalOpen: boolean;
-  setIsModalOpen: (value: boolean) => void;
+  setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 

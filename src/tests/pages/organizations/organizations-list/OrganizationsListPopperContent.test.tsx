@@ -118,10 +118,12 @@ describe('OrganizationsListPopperContent', () => {
       fireEvent.click(screen.getByText(/Se connecter/i));
     });
 
-    expect(OrganizationsListMock.history.post.length).toBe(1);
-    expect(OrganizationsListMock.history.post[0].url).toBe(
-      `/organizations/${defaultOrganization.id}/change-view`
-    );
+    await waitFor(() => {
+      expect(OrganizationsListMock.history.post.length).toBe(1);
+      expect(OrganizationsListMock.history.post[0].url).toBe(
+        `/organizations/${defaultOrganization.id}/change-view`
+      );
+    });
 
     // Check if the navigate function has been called
     expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);

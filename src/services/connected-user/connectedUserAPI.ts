@@ -1,5 +1,5 @@
 import axios from '@utils/axios';
-import { AxiosResponse } from 'axios';
+import { AxiosRequestConfig, AxiosResponse } from 'axios';
 import {
   ForgotPasswordRequest,
   GetConnectedUserResponse,
@@ -8,6 +8,7 @@ import {
   UpdateOrganizationViewRequest,
   UpdateOrganizationViewResponse
 } from './interfaces';
+import { getSession } from '@utils/axios/session';
 
 export const updateOrganizationView = async (
   args: UpdateOrganizationViewRequest
@@ -26,7 +27,12 @@ export const login = async (args: LoginRequest): Promise<AxiosResponse<LoginResp
 };
 
 export const refresh = async (): Promise<AxiosResponse<LoginResponse>> => {
-  return axios.post('/users/refresh');
+  const session = getSession();
+  let newHeaders = undefined as AxiosRequestConfig | undefined;
+  if (session) {
+    newHeaders = { headers: { Authorization: `Bearer ${session.refreshToken}` } };
+  }
+  return axios.post('/users/refresh', undefined, newHeaders);
 };
 
 export const logout = async (): Promise<AxiosResponse<LoginResponse>> => {
@@ -35,4 +41,4 @@ export const logout = async (): Promise<AxiosResponse<LoginResponse>> => {
 
 export const forgotPassword = async (args: ForgotPasswordRequest): Promise<AxiosResponse> => {
   return axios.post('/users/forgot-password', args);
-}
+};

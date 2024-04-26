@@ -3,32 +3,21 @@ import { memo, ReactNode, useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { PATH_AUTH } from '@utils/navigation/paths';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { getSession } from '@utils/axios/session';
-import { getUser, refresh } from '@redux/actions/connectedUserActions';
+import { getUser } from '@redux/actions/connectedUserActions';
 
 function AuthGuard({ children }: { children: ReactNode }) {
   const {
     globalLoading,
-    user: { id },
     login: { loading, isAuthenticated }
   } = useAppSelector((state) => state.connectedUser);
   const [requestedLocation, setRequestedLocation] = useState<string | null>(null);
+  const dispatch = useAppDispatch();
 
   const { pathname } = useLocation();
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     if (isAuthenticated) {
-      if (id) {
-        const storageToken = getSession();
-        if (storageToken !== null && storageToken.refreshToken !== null) {
-          dispatch(refresh()).then(() => {
-            dispatch(getUser());
-          });
-        }
-      } else {
-        dispatch(getUser());
-      }
+      dispatch(getUser());
     }
   }, [isAuthenticated]);
 

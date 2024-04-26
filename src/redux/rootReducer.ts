@@ -12,14 +12,15 @@ import groupsReducer from '@redux/reducers/groupsReducer';
 export const rootPersistConfig = {
   key: 'root',
   storage,
-  keyPrefix: 'redux-',
+  keyPrefix: 'lms-',
   whitelist: ['connectedUser']
 };
 
 export const connectedUserPersistConfig = {
-  key: 'connectedUser',
+  // @TODO Doesnt work if we set key:connectedUser which is what it's supposed to be
+  key: 'root',
   storage,
-  blacklist: ['permissions']
+  whitelist: ['user', 'login']
 };
 
 const rootReducer = combineReducers({
@@ -28,7 +29,7 @@ const rootReducer = combineReducers({
   users: usersReducer,
   roles: rolesReducer,
   applicants: applicantsReducer,
-  groups: groupsReducer,
+  groups: groupsReducer
 });
 
 export default rootReducer;

@@ -20,14 +20,13 @@ export const setSession = (tokenDatas: LoginInformations | null) => {
   }
 };
 
-export const getSession = () => {
+export const getSession = (): LoginInformations | null => {
   const hasLocalStorage = localStorageAvailable();
   if (hasLocalStorage) {
     const storageItem = localStorage.getItem('LMS_TOKEN');
     if (storageItem) {
       const tokenDatas = JSON.parse(storageItem);
       if (tokenDatas && tokenDatas.refreshToken) {
-        axios.defaults.headers.common.Authorization = `Bearer ${tokenDatas.refreshToken}`;
         return tokenDatas;
       }
     }

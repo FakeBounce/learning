@@ -9,6 +9,7 @@ import ApplicantsUpdateMock, {
 } from '@src/tests/pages/applicants/applicants-update/ApplicantsUpdateMock';
 import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
+import { enqueueSnackbar } from 'notistack';
 
 const applicantUpdateTestConfig = {
   preloadedState: {
@@ -44,13 +45,11 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
-    await act(async () => {
-      waitFor(() => {
-        expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-          singleApplicant.current_values.firstname
-        );
-        expect(screen.getByLabelText(/Email/i)).toHaveValue(singleApplicant.email);
-      });
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
+        singleApplicant.current_values.firstname
+      );
+      expect(screen.getByLabelText(/Email/i)).toHaveValue(singleApplicant.email);
     });
   });
 
@@ -72,13 +71,13 @@ describe('ApplicantsUpdate', () => {
     });
 
     await act(async () => {
-      await waitFor(async () => {
-        fireEvent.submit(screen.getByRole('submit'));
-      });
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     await waitFor(() => {
-      expect(screen.getByText(/Aucune modification n'a été effectuée/i)).toBeInTheDocument();
+      expect(enqueueSnackbar).toHaveBeenCalledWith("Aucune modification n'a été effectuée", {
+        variant: 'warning'
+      });
     });
   });
 
@@ -101,10 +100,8 @@ describe('ApplicantsUpdate', () => {
 
     // Update the firstname
     const firstnameInput = screen.getByLabelText(/Prénom/i);
-    fireEvent.change(firstnameInput, { target: { value: 'UpdatedFirstname' } });
-
-    // Simulate form submission
     await act(async () => {
+      fireEvent.change(firstnameInput, { target: { value: 'UpdatedFirstname' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
 
@@ -137,12 +134,11 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
-    // Update the email
     const emailInput = screen.getByLabelText(/Email/i);
-    fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
 
-    // Simulate form submission
     await act(async () => {
+      // Update the email
+      fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
 
