@@ -8,4 +8,5 @@ export const pageRestrictionsList = {
   applicants: [PermissionTypeEnum.SUPER_ADMIN, PermissionTypeEnum.APPLICANTS],
   externalTesters: [PermissionTypeEnum.SUPER_ADMIN, PermissionTypeEnum.TESTERS],
   customize: [PermissionTypeEnum.PERSONALIZATION],
+  modules: [PermissionTypeEnum.MODULES]
 };

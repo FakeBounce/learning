@@ -2,26 +2,31 @@
   "/V2CKA": {
     "translation": "",
     "message": "À la fin du module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "1DBtI+": {
     "translation": "",
     "message": "Après chaque essai",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rSV0Vm": {
     "translation": "",
     "message": "Création d’un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "txI/AX": {
     "translation": "",
     "message": "Après chaque question",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xmHh2K": {
     "translation": "",
     "message": "Jamais",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

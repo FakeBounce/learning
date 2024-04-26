@@ -23,7 +23,9 @@ export interface IllustrationUploadBoxProps extends DropzoneOptions {
 }
 
 const StyledDropZone = styled('div')(({ theme }) => ({
-  fontSize: 24,
+  fontSize: theme.typography.h3.fontSize,
+  minWidth: 64,
+  minHeight: 64,
   display: 'flex',
   flexShrink: 0,
   cursor: 'pointer',
@@ -86,6 +88,7 @@ export default function IllustrationUploadBox({
     >
       {hasFile && (
         <img
+          alt={`${file.name} preview`}
           src={file.preview}
           style={{
             width: '100%',
@@ -115,7 +118,7 @@ export default function IllustrationUploadBox({
         </Box>
       )}
 
-      {!error && (placeholder || <Iconify icon="eva:cloud-upload-fill" width={28} />)}
+      {!error && !hasFile && (placeholder || <Iconify icon="eva:cloud-upload-fill" width={28} />)}
       {error && (
         <Box display="flex" flexDirection="column" justifyContent="center" alignItems="center">
           {placeholder || <Iconify icon="eva:cloud-upload-fill" width={28} />}
