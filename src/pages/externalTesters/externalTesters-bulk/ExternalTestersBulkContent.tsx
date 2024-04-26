@@ -10,7 +10,7 @@ import ExternalTestersBulkHeader from '@src/pages/externalTesters/externalTester
 import { externalTestersBulkColumns } from '@src/pages/externalTesters/externalTesters-bulk/ExternalTestersBulkColumns';
 
 interface ExternalTestersBulkContentProps {
-  handleDropAvatar: (acceptedFiles: any) => void;
+  handleDropAvatar: (_acceptedFiles: any) => void;
   fileUploaded: File | null;
   removeFile: () => void;
   fileError: string | null;

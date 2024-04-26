@@ -6,7 +6,7 @@ import StatusChip from '@src/components/lms/StatusChip';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
 const groupsAction = (
-  handleClick: (newGroup: Group) => (event: MouseEvent<HTMLElement>) => void
+  handleClick: (_newGroup: Group) => (_event: MouseEvent<HTMLElement>) => void
 ) => {
   return {
     field: 'id',
@@ -17,7 +17,7 @@ const groupsAction = (
 };
 
 export const groupsColumns = (
-  handleClick: (newGroup: Group) => (event: MouseEvent<HTMLElement>) => void,
+  handleClick: (_newGroup: Group) => (_event: MouseEvent<HTMLElement>) => void,
   hasActions: boolean
 ) => {
   const columns = [

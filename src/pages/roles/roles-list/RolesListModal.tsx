@@ -6,7 +6,7 @@ import { enqueueSnackbar } from 'notistack';
 interface RolesListModalProps {
   roleSelected: any;
   isModalOpen: boolean;
-  setIsModalOpen: (value: boolean) => void;
+  setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 

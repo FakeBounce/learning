@@ -9,10 +9,7 @@ describe('LoginFooter', () => {
     // Ensure that the ActionButton is rendered
     const actionButton = screen.getByRole('submit');
     expect(actionButton).toBeInTheDocument();
-
-    // Ensure that the loading prop is passed correctly
-    const loadingContainer = screen.getByRole('progressbar');
-    expect(loadingContainer).toBeInTheDocument();
+    expect(actionButton).toBeDisabled();
 
     // Ensure that the "Se connecter" text is present
     const seConnecterText = screen.getByText(/Se connecter/i);
@@ -26,10 +23,7 @@ describe('LoginFooter', () => {
     // Ensure that the ActionButton is rendered
     const actionButton = screen.getByRole('submit');
     expect(actionButton).toBeInTheDocument();
-
-    // Ensure that the loading state is not rendered
-    const loadingContainer = screen.queryByRole('progressbar'); // Use queryByRole to check absence
-    expect(loadingContainer).not.toBeInTheDocument();
+    expect(actionButton).not.toBeDisabled();
 
     // Ensure that the "Se connecter" text is present
     const seConnecterText = screen.getByText(/Se connecter/i);

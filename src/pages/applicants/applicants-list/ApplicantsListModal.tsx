@@ -86,7 +86,7 @@ const textToDisplay = (applicantSelected: Applicant) => {
 interface ApplicantsListModalProps {
   applicantSelected: Applicant;
   isModalOpen: boolean;
-  setIsModalOpen: (value: boolean) => void;
+  setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 

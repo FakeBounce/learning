@@ -8,9 +8,14 @@ import ApplicantsBulkHeader from '@src/pages/applicants/applicants-bulk/Applican
 import ApplicantsBulkFooter from '@src/pages/applicants/applicants-bulk/ApplicantsBulkFooter';
 import { ApplicantForBulk } from '@services/applicants/interfaces';
 import SimpleTable from '@src/components/table/SimpleTable';
+import { DropEvent, FileRejection } from 'react-dropzone';
 
 interface ApplicantsBulkContentProps {
-  handleDropAvatar: (acceptedFiles: any) => void;
+  handleDropAvatar: <T extends File>(
+    _acceptedFiles: T[],
+    _fileRejections: FileRejection[],
+    _event: DropEvent
+  ) => void;
   fileUploaded: File | null;
   removeFile: () => void;
   fileError: string | null;

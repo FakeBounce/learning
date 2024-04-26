@@ -10,7 +10,7 @@ import UsersBulkFooter from '@src/pages/users/users-bulk/UsersBulkFooter';
 import { usersBulkColumns } from '@src/pages/users/users-bulk/UsersBulkColumns';
 
 interface UsersBulkContentProps {
-  handleDropAvatar: (acceptedFiles: any) => void;
+  handleDropAvatar: (_acceptedFiles: any) => void;
   fileUploaded: File | null;
   removeFile: () => void;
   fileError: string | null;

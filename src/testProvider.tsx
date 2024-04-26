@@ -17,6 +17,20 @@ jest.mock('@mui/material/Dialog', () => {
 });
 
 // Notifications mock
+jest.mock('@mui/x-data-grid', () => ({
+  ...jest.requireActual('@mui/x-data-grid'),
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  DataGrid: require('@src/tests/mocks/MockFullTable').default
+}));
+
+// Notifications mock
+jest.mock('@src/components/lms/LMSSwitch');
+jest.mock('@src/components/lms/ActionButton');
+jest.mock('@src/components/hook-form/RHFAvatar');
+jest.mock('@src/components/iconify/Iconify');
+jest.mock('@src/components/lms/UploadBox');
+
+// Notifications mock
 jest.mock('notistack', () => ({
   ...jest.requireActual('notistack'),
   enqueueSnackbar: jest.fn()

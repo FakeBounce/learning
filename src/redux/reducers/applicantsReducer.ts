@@ -5,7 +5,8 @@ import {
   CreateApplicantResponse,
   CreateBulkApplicantResponse,
   GetApplicantsListResponse,
-  GetSingleApplicantResponse, UpdateApplicantBlockResponse,
+  GetSingleApplicantResponse,
+  UpdateApplicantBlockResponse,
   UpdateApplicantResponse
 } from '@services/applicants/interfaces';
 import { enqueueSnackbar } from 'notistack';
@@ -71,7 +72,6 @@ export const applicantSlice = createSlice({
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(ApplicantsActions.toggleApplicantBlock.pending, (_) => {})
       .addCase(
         ApplicantsActions.toggleApplicantBlock.fulfilled,
         (state, action: { payload: UpdateApplicantBlockResponse }) => {
@@ -156,10 +156,7 @@ export const applicantSlice = createSlice({
 });
 
 export const selectApplicantFindId = createSelector(
-  [
-    (state: ApplicantState) => state.applicantList.applicantListData,
-    (_, idToFind) => idToFind
-  ],
+  [(state: ApplicantState) => state.applicantList.applicantListData, (_, idToFind) => idToFind],
   (s, idToFind) => s.findIndex((applicant: Applicant) => applicant.id === idToFind)
 );
 

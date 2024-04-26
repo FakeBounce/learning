@@ -9,7 +9,7 @@ import IconButton from '@mui/material/IconButton';
 
 interface SidebarProps {
   open: boolean;
-  setOpen: (open: boolean) => void;
+  setOpen: (_: boolean) => void;
 }
 
 // @todo - Need rework; Lot of UX pieces are missing

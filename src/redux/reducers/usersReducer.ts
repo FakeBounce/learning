@@ -107,9 +107,6 @@ export const usersSlice = createSlice({
       .addCase(UsersActions.updateUser.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       })
-
-      // Users Block Reducers
-      .addCase(UsersActions.toggleUserBlock.pending, (_) => {})
       .addCase(
         UsersActions.toggleUserBlock.fulfilled,
         (state, action: { payload: UpdateUserBlockResponse }) => {

@@ -45,11 +45,9 @@ describe('ExternalTestersUpdate', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
-        expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
-      });
+    await waitFor(() => {
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
     });
   });
 
@@ -69,9 +67,7 @@ describe('ExternalTestersUpdate', () => {
     });
 
     await act(async () => {
-      await waitFor(async () => {
-        fireEvent.submit(screen.getByRole('submit'));
-      });
+      fireEvent.submit(screen.getByRole('submit'));
     });
 
     await waitFor(() => {
@@ -134,10 +130,10 @@ describe('ExternalTestersUpdate', () => {
 
     // Update the email
     const emailInput = screen.getByLabelText(/Email/i);
-    fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
 
     // Simulate form submission
     await act(async () => {
+      fireEvent.change(emailInput, { target: { value: 'UpdatedEmail@test.fr' } });
       fireEvent.submit(screen.getByRole('submit'));
     });
 

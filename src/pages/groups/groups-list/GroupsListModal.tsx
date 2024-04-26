@@ -7,7 +7,7 @@ import { useAppSelector } from '@redux/hooks';
 interface GroupsListModalProps {
   groupSelected: Group;
   isModalOpen: boolean;
-  setIsModalOpen: (value: boolean) => void;
+  setIsModalOpen: (_value: boolean) => void;
   handleDeleteGroup: () => void;
   cancelModal: () => void;
 }

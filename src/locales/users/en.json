@@ -62,7 +62,8 @@
   "Dd/Xo9": {
     "translation": "",
     "message": "Ajouter des utilisateurs en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "",
@@ -79,7 +80,8 @@
   "FABypk": {
     "translation": "",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FdjX4N": {
     "translation": "",
@@ -192,12 +194,14 @@
   "Vb8ErI": {
     "translation": "",
     "message": "Liste des utilisateurs valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -262,7 +266,8 @@
   "jN1i4x": {
     "translation": "",
     "message": "Liste des utilisateurs invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "",
