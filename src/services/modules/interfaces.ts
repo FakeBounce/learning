@@ -54,5 +54,7 @@ export interface CreateModuleResponse {
 
 export enum ModuleDisplayAnswers {
   AFTER_QUESTION = 'after_question',
-  END = 'end'
+  END = 'end',
+  NEVER = 'never',
+  AFTER_ATTEMPTS = 'after_attempts'
 }

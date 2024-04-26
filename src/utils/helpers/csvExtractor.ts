@@ -1,6 +1,7 @@
 import { isValid } from 'date-fns';
 import { t } from '@lingui/macro';
 import { ApplicantForBulk } from '@services/applicants/interfaces';
+import { regexMail, regexPhone } from '@utils/helpers/regex';
 
 interface MappingTable {
   [key: string]: string[];
@@ -84,13 +85,13 @@ function validateRows(arrayOfObjects: ApplicantForBulk[]): CsvApplicantValidatio
       }
 
       // Validate phone format
-      if (fieldName === 'phone' && fieldValue && !/^\+?[0-9\s-]+$/.test(fieldValue)) {
+      if (fieldName === 'phone' && fieldValue && !regexPhone.test(fieldValue)) {
         row[fieldName as keyof ApplicantForBulk] = invalidFormatMessage;
         isValidRow = false;
       }
 
       // Validate email format
-      if (fieldName === 'email' && fieldValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fieldValue)) {
+      if (fieldName === 'email' && fieldValue && !regexMail.test(fieldValue)) {
         row[fieldName as keyof ApplicantForBulk] = invalidFormatMessage;
         isValidRow = false;
       }

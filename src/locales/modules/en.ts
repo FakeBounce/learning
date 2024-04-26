@@ -1,0 +1,1 @@
+/*eslint-disable*/export const messages=JSON.parse("{\"/V2CKA\":\"À la fin du module\",\"1DBtI+\":\"Après chaque essai\",\"rSV0Vm\":\"Création d’un module\",\"txI/AX\":\"Après chaque question\",\"xmHh2K\":\"Jamais\"}");

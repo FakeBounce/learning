@@ -17,19 +17,17 @@ function RHFTextField({ name, helperText, size = 'small', ...other }: RHFTextFie
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState: { error } }) => {
-        return (
-          <TextField
-            {...field}
-            fullWidth
-            value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
-            error={!!error}
-            helperText={error ? error?.message : helperText}
-            size={size}
-            {...other}
-          />
-        );
-      }}
+      render={({ field, fieldState: { error } }) => (
+        <TextField
+          {...field}
+          fullWidth
+          value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
+          error={!!error}
+          helperText={error ? error?.message : helperText}
+          size={size}
+          {...other}
+        />
+      )}
     />
   );
 }

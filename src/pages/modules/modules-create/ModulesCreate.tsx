@@ -30,7 +30,6 @@ export default function ModulesCreate() {
 
   const onSubmit = async (data: any) => {
     try {
-      console.log('DATA', data);
       let newTimer = '00:00:00';
 
       if (data.timer instanceof Date && !isNaN(data.timer)) {

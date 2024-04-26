@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import { ModuleDisplayAnswers } from '@services/modules/interfaces';
 
 /**
- * This is a static array of tags
+ * This is a static array of tags to test while waiting the API
  */
 export const colourOptions: readonly BasicOption[] = [
   // { value: 'ocean', label: 'Ocean' },
@@ -26,8 +26,16 @@ export const answersOptions = [
     label: <Trans>Après chaque question</Trans>
   },
   {
+    value: ModuleDisplayAnswers.AFTER_ATTEMPTS,
+    label: <Trans>Après chaque essai</Trans>
+  },
+  {
     value: ModuleDisplayAnswers.END,
     label: <Trans>À la fin du module</Trans>
+  },
+  {
+    value: ModuleDisplayAnswers.NEVER,
+    label: <Trans>Jamais</Trans>
   }
 ];
 
