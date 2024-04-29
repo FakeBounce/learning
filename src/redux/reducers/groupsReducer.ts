@@ -14,12 +14,16 @@ interface GroupsState {
   groupsCreate: {
     groupsCreateLoading: boolean;
   };
+  currentGroup: {
+    currentGroupData: Group | null;
+    currentGroupLoading: boolean;
+  };
   groupsUpdate: {
     groupsUpdateLoading: boolean;
   };
 }
 
-const groupsInitialState: GroupsState = {
+export const groupsInitialState: GroupsState = {
   groupsList: {
     groupsListData: [],
     groupsListLoading: false,
@@ -28,6 +32,10 @@ const groupsInitialState: GroupsState = {
   groupsDeleteLoading: false,
   groupsCreate: {
     groupsCreateLoading: false
+  },
+  currentGroup: {
+    currentGroupData: null,
+    currentGroupLoading: false
   },
   groupsUpdate: {
     groupsUpdateLoading: false

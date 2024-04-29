@@ -4,9 +4,9 @@ import { RHFTextField } from '@src/components/hook-form';
 import { ProfileSkeleton } from '@src/components/skeletons/ProfileSkeleton';
 import { useAppSelector } from '@redux/hooks';
 import { StyledFormColumn, StyledFormRow } from '@src/components/layouts/form/FormStyles';
-import GroupsCreateUsersList from '@src/pages/groups/groups-create/GroupsCreateUsersList';
+import GroupsUsersList from '@src/pages/groups/GroupsUsersList';
 
-export default function GroupsForm() {
+export default function GroupsForm({ isEditing = false }: { isEditing?: boolean }) {
   const { groupsUpdateLoading } = useAppSelector((state) => state.groups.groupsUpdate);
 
   if (groupsUpdateLoading) {
@@ -29,7 +29,7 @@ export default function GroupsForm() {
         </StyledFormColumn>
       </Box>
 
-      <GroupsCreateUsersList />
+      <GroupsUsersList isEditing={isEditing} />
     </Box>
   );
 }
