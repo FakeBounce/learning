@@ -56,13 +56,21 @@ describe('GroupsCreate', () => {
 
     await waitFor(() => {
       expect(groupsMock.history.post.length).toBeGreaterThanOrEqual(2);
-      expect(groupsMock.history.post[1].url).toBe('/groups');
-      expect(groupsMock.history.post[1].data).toBe(
-        JSON.stringify({
-          name: 'Test Group',
-          description: 'Test Description'
-        })
-      );
+
+      let found = false;
+      groupsMock.history.post.forEach((req) => {
+        if (req.url === '/groups') {
+          found = true;
+          expect(req.data).toBe(
+            JSON.stringify({
+              name: 'Test Group',
+              description: 'Test Description'
+            })
+          );
+        }
+      });
+
+      expect(found).toBe(true);
     });
 
     await waitFor(() => {
