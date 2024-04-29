@@ -114,10 +114,10 @@ export const organizationSlice = createSlice({
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
       /**
-            Update organization Reducers
-            We update the current organization data in .fullfilled cause that's the one we are currently viewing
-            Through the fetch single organization action
-             **/
+        Update organization Reducers
+        We update the current organization data in .fullfilled cause that's the one we are currently viewing
+        Through the fetch single organization action
+     **/
       .addCase(OrganizationsActions.updateOrganizations.pending, (state) => {
         state.organizationUpdate.organizationUpdateLoading = true;
       })

@@ -38,17 +38,16 @@ export const updateOrganizations = createAsyncThunk(
   'organizations/update',
   async (arg: UpdateOrganizationsRequest, { rejectWithValue }) => {
     try {
-      if (arg.logo) {
-        const response = await Promise.all([
-          OrganizationsServices.updateOrganizations(arg),
+      const requestList = [];
+      if (arg.name || arg.addressId)
+        requestList.push(OrganizationsServices.updateOrganizations(arg));
+      if (arg.logo)
+        requestList.push(
           OrganizationsServices.setOrganizationsLogo({ id: arg.id, logo: arg.logo })
-        ]);
-        console.log(response);
-        return response[1].data;
-        // return response.data;
-      }
-      const response = await OrganizationsServices.updateOrganizations(arg);
-      return response.data;
+        );
+
+      const response = await Promise.all(requestList);
+      return response[response.length - 1].data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
       throw e;
