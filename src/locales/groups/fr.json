@@ -44,7 +44,8 @@
   "Bmo0y3": {
     "translation": "OUI",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
@@ -91,12 +92,14 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -125,7 +128,8 @@
   "eTBD1Z": {
     "translation": "Nom du groupe",
     "message": "Nom du groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -148,7 +152,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "Ajouter un groupe",
@@ -171,7 +176,8 @@
   "sCvW+n": {
     "translation": "Appartient déjà au groupe",
     "message": "Appartient déjà au groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",
@@ -194,6 +200,7 @@
   "xj9DHS": {
     "translation": "NON",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

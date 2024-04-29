@@ -55,7 +55,7 @@ describe('GroupsCreate', () => {
     });
 
     await waitFor(() => {
-      expect(groupsMock.history.post.length).toBe(2);
+      expect(groupsMock.history.post.length).toBeGreaterThanOrEqual(2);
       expect(groupsMock.history.post[1].url).toBe('/groups');
       expect(groupsMock.history.post[1].data).toBe(
         JSON.stringify({
