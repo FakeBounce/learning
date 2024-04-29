@@ -1,33 +1,7 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import {
-<<<<<<< HEAD
-  ForgotPasswordPage,
-  LoginPage,
-  Page404,
-  Roles,
-  Groups
-=======
-  ExternalTestersUpdate,
-  Groups,
-  GroupsCreate,
-  LoginPage,
-  Page404,
-  Roles
->>>>>>> f91ab0a (WIP - Group creation)
-} from 'src/routes/elements';
-import {
-  PATH_AUTH,
-  PATH_DASHBOARD,
-<<<<<<< HEAD
-  PATH_ROLES,
-  PATH_GROUPS
-=======
-  PATH_EXTERNAL_TESTERS,
-  PATH_GROUPS,
-  PATH_ROLES
->>>>>>> f91ab0a (WIP - Group creation)
-} from '@utils/navigation/paths';
+import { ForgotPasswordPage, LoginPage, Roles, Page404 } from 'src/routes/elements';
+import { PATH_AUTH, PATH_DASHBOARD, PATH_ROLES } from '@utils/navigation/paths';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
 import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
@@ -37,6 +11,7 @@ import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import ExternalTestersRoutes from '@src/routes/ExternalTestersRoutes';
+import GroupsRoutes from '@src/routes/GroupsRoutes';
 
 const Router = () => {
   return (
@@ -53,6 +28,7 @@ const Router = () => {
         {UsersRoutes()}
         {ApplicantsRoutes()}
         {ExternalTestersRoutes()}
+        {GroupsRoutes()}
         <Route
           element={
             <FeatureFlagedRoute
@@ -62,17 +38,6 @@ const Router = () => {
           }
         >
           <Route path={PATH_ROLES.root} element={<Roles />} />
-        </Route>
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.GROUPS}
-              permissionsAuthorized={pageRestrictionsList.groups}
-            />
-          }
-        >
-          <Route path={PATH_GROUPS.root} element={<Groups />} />
-          <Route path={PATH_GROUPS.add} element={<GroupsCreate />} />
         </Route>
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />

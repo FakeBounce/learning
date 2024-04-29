@@ -2,293 +2,349 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9hQFA+": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "A7xVRH": {
     "translation": "Veuillez sélectionner un fichier",
     "message": "Veuillez sélectionner un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "BSb8d9": {
     "translation": "Double authentification",
     "message": "Double authentification",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "OUI",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Dd/Xo9": {
     "translation": "Ajouter des utilisateurs en masse",
     "message": "Ajouter des utilisateurs en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "Sélectionnez un fichier",
     "message": "Sélectionnez un fichier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FdjX4N": {
     "translation": "Aucun utilisateur valide à ajouter",
     "message": "Aucun utilisateur valide à ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "H1+RH6": {
     "translation": "Aucun groupe défini.",
     "message": "Aucun groupe défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "Bloquer",
     "message": "Bloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JMJBle": {
     "translation": "La double authentification est requise",
     "message": "La double authentification est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JSPwk2": {
     "translation": "Débloquer un utilisateur",
     "message": "Débloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SCttC7": {
     "translation": "?",
     "message": "?",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "SDHbV6": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Vb8ErI": {
     "translation": "Liste des utilisateurs valides",
     "message": "Liste des utilisateurs valides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
     "message": "Fichier .csv / Max : 3 Mo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
     "message": "Enregistrer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hMJAZ/": {
     "translation": "Aucune modification n'a été apportée",
     "message": "Aucune modification n'a été apportée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "i0ke3s": {
     "translation": "Aucun rôle défini.",
     "message": "Aucun rôle défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jN1i4x": {
     "translation": "Liste des utilisateurs invalides",
     "message": "Liste des utilisateurs invalides",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
     "message": "Êtes-vous sûr de vouloir bloquer l’organisation",
     "comments": [],
-    "obsolete": true
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "r+5fnD": {
     "translation": "Bloquer un utilisateur",
     "message": "Bloquer un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tALayW": {
     "translation": "Annuler",
     "message": "Annuler",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tM+VkT": {
     "translation": "L'utilisateur n'existe pas",
     "message": "L'utilisateur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u2iZug": {
     "translation": "Le login est requis",
     "message": "Le login est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "Débloquer",
     "message": "Débloquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "NON",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

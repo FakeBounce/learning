@@ -47,7 +47,8 @@ export default function FullTable({
   pageSizeOptions = [5, 10, 20, 50],
   onSortModelChange,
   onFilterModelChange,
-  onPaginationModelChange
+  onPaginationModelChange,
+  ...other
 }: FullTableProps) {
   return (
     <Box display="flex" flex="1 1 0" sx={{ overflow: 'auto' }}>
@@ -57,13 +58,13 @@ export default function FullTable({
         loading={loading}
         rowCount={rowCount}
         pageSizeOptions={pageSizeOptions}
+        autoHeight
         initialState={{
           pagination: { paginationModel: { pageSize: defaultPageSize } }
         }}
         onSortModelChange={onSortModelChange}
         onFilterModelChange={onFilterModelChange}
         onPaginationModelChange={onPaginationModelChange}
-        disableColumnResize
         disableColumnSelector
         disableRowSelectionOnClick
         sortingMode={'server'}
@@ -74,6 +75,7 @@ export default function FullTable({
         }}
         localeText={defaultLocaleText}
         slotProps={defaultSlotProps}
+        {...other}
       />
     </Box>
   );

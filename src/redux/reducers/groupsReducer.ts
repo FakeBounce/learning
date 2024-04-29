@@ -44,6 +44,7 @@ export const groupsSlice = createSlice({
     builder
       .addCase(GroupsActions.getGroupsList.pending, (state) => {
         state.groupsList.groupsListLoading = true;
+        state.groupsList = groupsInitialState.groupsList;
       })
       .addCase(GroupsActions.getGroupsList.fulfilled, (state, action) => {
         state.groupsList.groupsListData = action.payload.data.rows;

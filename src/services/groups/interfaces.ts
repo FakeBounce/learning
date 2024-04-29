@@ -3,8 +3,7 @@ import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@serv
 export interface Group {
   id: number;
   name: string;
-  description: string;
-  organisationId?: number;
+  description?: string;
   isMain?: boolean;
   nbUsers?: number;
 }
