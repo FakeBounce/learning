@@ -21,7 +21,7 @@ function RHFTextField({ name, helperText, size = 'small', ...other }: RHFTextFie
         <TextField
           {...field}
           fullWidth
-          value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
+          id={name}
           error={!!error}
           helperText={error ? error?.message : helperText}
           size={size}

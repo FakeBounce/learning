@@ -15,7 +15,7 @@ function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
   return (
     <Box>
       <Typography variant="caption">
-        {required ? <LabelWithRequired label={label} /> : label}
+        {required ? <LabelWithRequired name={name} label={label} /> : label}
       </Typography>
       <Box ml={1.5} mt={1}>
         <Controller
