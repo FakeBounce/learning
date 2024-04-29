@@ -149,9 +149,33 @@
     "comments": [],
     "obsolete": false
   },
+  "huWkQi": {
+    "translation": "",
+    "message": "Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "iS7m9d": {
     "translation": "",
     "message": "Réinitialiser",
+    "comments": [],
+    "obsolete": false
+  },
+  "kr+Vzs": {
+    "translation": "",
+    "message": "L'organisation ID est obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "l5G7BG": {
+    "translation": "",
+    "message": "L'email est obligatoire",
     "comments": [],
     "obsolete": false
   },

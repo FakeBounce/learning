@@ -85,3 +85,6 @@ export const Roles = LoadableComponent(lazy(() => import('@src/pages/roles/roles
 export const Groups = LoadableComponent(
   lazy(() => import('@src/pages/groups/groups-list/GroupsList'))
 );
+export const GroupsCreate = LoadableComponent(
+  lazy(() => import('@src/pages/groups/groups-create/GroupsCreate'))
+);

@@ -1,8 +1,9 @@
 import { DeleteGroupResponse, Group } from '@services/groups/interfaces';
 import { createSlice } from '@reduxjs/toolkit';
-import * as GroupsAction from '@redux/actions/groupsActions';
+import * as GroupsActions from '@redux/actions/groupsActions';
 import { AnyAction } from 'redux';
 import { enqueueSnackbar } from 'notistack';
+
 interface GroupsState {
   groupsList: {
     groupsListData: Group[];
@@ -10,6 +11,12 @@ interface GroupsState {
     groupsListTotalCount: number;
   };
   groupsDeleteLoading: boolean;
+  groupsCreate: {
+    groupsCreateLoading: boolean;
+  };
+  groupsUpdate: {
+    groupsUpdateLoading: boolean;
+  };
 }
 
 const groupsInitialState: GroupsState = {
@@ -18,7 +25,13 @@ const groupsInitialState: GroupsState = {
     groupsListLoading: false,
     groupsListTotalCount: 0
   },
-  groupsDeleteLoading: false
+  groupsDeleteLoading: false,
+  groupsCreate: {
+    groupsCreateLoading: false
+  },
+  groupsUpdate: {
+    groupsUpdateLoading: false
+  }
 };
 
 export const groupsSlice = createSlice({
@@ -29,30 +42,40 @@ export const groupsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(GroupsAction.getGroupsList.pending, (state) => {
+      .addCase(GroupsActions.getGroupsList.pending, (state) => {
         state.groupsList.groupsListLoading = true;
+        state.groupsList = groupsInitialState.groupsList;
       })
-      .addCase(GroupsAction.getGroupsList.fulfilled, (state, action) => {
+      .addCase(GroupsActions.getGroupsList.fulfilled, (state, action) => {
         state.groupsList.groupsListData = action.payload.data.rows;
         state.groupsList.groupsListTotalCount = action.payload.data.pagination.totalResults;
         state.groupsList.groupsListLoading = false;
       })
-      .addCase(GroupsAction.getGroupsList.rejected, (state, action: AnyAction) => {
+      .addCase(GroupsActions.getGroupsList.rejected, (state, action: AnyAction) => {
         state.groupsList.groupsListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(GroupsAction.deleteGroup.pending, (state) => {
+      .addCase(GroupsActions.deleteGroup.pending, (state) => {
         state.groupsDeleteLoading = true;
       })
       .addCase(
-        GroupsAction.deleteGroup.fulfilled,
+        GroupsActions.deleteGroup.fulfilled,
         (state, action: { payload: DeleteGroupResponse }) => {
           state.groupsDeleteLoading = false;
           enqueueSnackbar(action.payload.message.value, { variant: 'success' });
         }
       )
-      .addCase(GroupsAction.deleteGroup.rejected, (_, action: AnyAction) => {
+      .addCase(GroupsActions.deleteGroup.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(GroupsActions.createGroup.pending, (state) => {
+        state.groupsCreate.groupsCreateLoading = true;
+      })
+      .addCase(GroupsActions.createGroup.fulfilled, (state) => {
+        state.groupsCreate.groupsCreateLoading = false;
+      })
+      .addCase(GroupsActions.createGroup.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       });
   }

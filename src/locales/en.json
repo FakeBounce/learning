@@ -23,9 +23,21 @@
     "comments": [],
     "obsolete": false
   },
+  "2Vc4Um": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
+    "comments": [],
+    "obsolete": false
+  },
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
+  "3/5e4J": {
+    "translation": "",
+    "message": "Le nom du groupe est requis",
     "comments": [],
     "obsolete": false
   },
@@ -83,15 +95,39 @@
     "comments": [],
     "obsolete": false
   },
+  "913XwJ": {
+    "translation": "",
+    "message": "Ajouter des testeurs en masse",
+    "comments": [],
+    "obsolete": false
+  },
   "9HM7Cg": {
     "translation": "",
     "message": "Notification email",
     "comments": [],
     "obsolete": false
   },
+  "9hQFA+": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0} {1}</0> ?",
+    "comments": [],
+    "obsolete": false
+  },
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
+    "comments": [],
+    "obsolete": false
+  },
+  "A7xVRH": {
+    "translation": "",
+    "message": "Veuillez sélectionner un fichier",
+    "comments": [],
+    "obsolete": false
+  },
+  "AAjpHB": {
+    "translation": "",
+    "message": "Aucun étudiant valide à ajouter",
     "comments": [],
     "obsolete": false
   },
@@ -155,6 +191,12 @@
     "comments": [],
     "obsolete": false
   },
+  "Dd/Xo9": {
+    "translation": "",
+    "message": "Ajouter des utilisateurs en masse",
+    "comments": [],
+    "obsolete": false
+  },
   "DolR28": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
@@ -167,9 +209,21 @@
     "comments": [],
     "obsolete": false
   },
+  "EvYn6I": {
+    "translation": "",
+    "message": "Nombre d'utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
+    "comments": [],
+    "obsolete": false
+  },
+  "FABypk": {
+    "translation": "",
+    "message": "Sélectionnez un fichier",
     "comments": [],
     "obsolete": false
   },
@@ -182,6 +236,12 @@
   "FLD9GE": {
     "translation": "",
     "message": "Modifier les utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
+  "FdjX4N": {
+    "translation": "",
+    "message": "Aucun utilisateur valide à ajouter",
     "comments": [],
     "obsolete": false
   },
@@ -239,6 +299,12 @@
     "comments": [],
     "obsolete": false
   },
+  "HGjRPB": {
+    "translation": "",
+    "message": "Adresse mail",
+    "comments": [],
+    "obsolete": false
+  },
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
@@ -263,6 +329,12 @@
     "comments": [],
     "obsolete": false
   },
+  "JSPwk2": {
+    "translation": "",
+    "message": "Débloquer un utilisateur",
+    "comments": [],
+    "obsolete": false
+  },
   "JSaiRe": {
     "translation": "",
     "message": "Se connecter",
@@ -272,6 +344,12 @@
   "JoxuHW": {
     "translation": "",
     "message": "L'adresse est requise",
+    "comments": [],
+    "obsolete": false
+  },
+  "K+tHTS": {
+    "translation": "",
+    "message": "Format incorrect",
     "comments": [],
     "obsolete": false
   },
@@ -335,6 +413,12 @@
     "comments": [],
     "obsolete": false
   },
+  "PpLRwD": {
+    "translation": "",
+    "message": "Retour à la connexion",
+    "comments": [],
+    "obsolete": false
+  },
   "PsHtRs": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -353,6 +437,18 @@
     "comments": [],
     "obsolete": false
   },
+  "SDHbV6": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir débloquer l’utilisateur <0>{0} {1}</0> ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "SDTSUy": {
+    "translation": "",
+    "message": "Organisation ID",
+    "comments": [],
+    "obsolete": false
+  },
   "SNbh3h": {
     "translation": "",
     "message": "Débloquer un étudiant",
@@ -362,6 +458,12 @@
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
+    "comments": [],
+    "obsolete": false
+  },
+  "T3xsZH": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
     "comments": [],
     "obsolete": false
   },
@@ -401,6 +503,30 @@
     "comments": [],
     "obsolete": false
   },
+  "UeDwla": {
+    "translation": "",
+    "message": "Information obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "UyAuoq": {
+    "translation": "",
+    "message": "Liste des étudiants valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "VXxxDw": {
+    "translation": "",
+    "message": "Liste des étudiants invalides",
+    "comments": [],
+    "obsolete": false
+  },
+  "Vb8ErI": {
+    "translation": "",
+    "message": "Liste des utilisateurs valides",
+    "comments": [],
+    "obsolete": false
+  },
   "VsENqL": {
     "translation": "",
     "message": "Êtes-vous sûrs de vouloir les modifier ?",
@@ -416,6 +542,12 @@
   "X1Endn": {
     "translation": "",
     "message": "Pas encore de compte ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "XZo0ki": {
+    "translation": "",
+    "message": "Fichier .csv / Max : 3 Mo",
     "comments": [],
     "obsolete": false
   },
@@ -473,9 +605,21 @@
     "comments": [],
     "obsolete": false
   },
+  "dSvDOd": {
+    "translation": "",
+    "message": "Liste des testeurs invalides",
+    "comments": [],
+    "obsolete": false
+  },
   "dg0WGC": {
     "translation": "",
     "message": "L'organisation n'existe pas",
+    "comments": [],
+    "obsolete": false
+  },
+  "eTBD1Z": {
+    "translation": "",
+    "message": "Nom du groupe",
     "comments": [],
     "obsolete": false
   },
@@ -521,6 +665,12 @@
     "comments": [],
     "obsolete": false
   },
+  "gm1CMT": {
+    "translation": "",
+    "message": "Êtes-vous sûr de vouloir débloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
+    "comments": [],
+    "obsolete": false
+  },
   "hMJAZ/": {
     "translation": "",
     "message": "Aucune modification n'a été apportée",
@@ -539,6 +689,12 @@
     "comments": [],
     "obsolete": false
   },
+  "huWkQi": {
+    "translation": "",
+    "message": "Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "comments": [],
+    "obsolete": false
+  },
   "i0ke3s": {
     "translation": "",
     "message": "Aucun rôle défini.",
@@ -551,9 +707,33 @@
     "comments": [],
     "obsolete": false
   },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
+  },
+  "iS7m9d": {
+    "translation": "",
+    "message": "Réinitialiser",
+    "comments": [],
+    "obsolete": false
+  },
   "ikKkoV": {
     "translation": "",
     "message": "Le nom de famille est requis",
+    "comments": [],
+    "obsolete": false
+  },
+  "jN1i4x": {
+    "translation": "",
+    "message": "Liste des utilisateurs invalides",
+    "comments": [],
+    "obsolete": false
+  },
+  "jP37N3": {
+    "translation": "",
+    "message": "Ajouter des étudiants en masse",
     "comments": [],
     "obsolete": false
   },
@@ -575,6 +755,18 @@
     "comments": [],
     "obsolete": false
   },
+  "kr+Vzs": {
+    "translation": "",
+    "message": "L'organisation ID est obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "l5G7BG": {
+    "translation": "",
+    "message": "L'email est obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
   "lHMRD2": {
     "translation": "",
     "message": "Bloquer une organisation",
@@ -590,6 +782,12 @@
   "posy4G": {
     "translation": "",
     "message": "Gérer les permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "r+5fnD": {
+    "translation": "",
+    "message": "Bloquer un utilisateur",
     "comments": [],
     "obsolete": false
   },
@@ -617,9 +815,21 @@
     "comments": [],
     "obsolete": false
   },
+  "tM+VkT": {
+    "translation": "",
+    "message": "L'utilisateur n'existe pas",
+    "comments": [],
+    "obsolete": false
+  },
   "tNU7H1": {
     "translation": "",
     "message": "Rôle supprimé !",
+    "comments": [],
+    "obsolete": false
+  },
+  "twb4y0": {
+    "translation": "",
+    "message": "Aucun testeur valide à ajouter",
     "comments": [],
     "obsolete": false
   },
@@ -656,6 +866,18 @@
   "wB7q3X": {
     "translation": "",
     "message": "Date naiss.",
+    "comments": [],
+    "obsolete": false
+  },
+  "wGk4Sl": {
+    "translation": "",
+    "message": "Liste des testeurs valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "wmNuk6": {
+    "translation": "",
+    "message": "Supprimer un groupe",
     "comments": [],
     "obsolete": false
   },

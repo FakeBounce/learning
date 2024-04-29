@@ -11,9 +11,20 @@
     "comments": [],
     "obsolete": false
   },
+  "3/5e4J": {
+    "translation": "Le nom du groupe est requis",
+    "message": "Le nom du groupe est requis",
+    "comments": []
+  },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
+    "comments": [],
+    "obsolete": false
+  },
+  "5qQosN": {
+    "translation": "Supprimer",
+    "message": "Supprimer",
     "comments": [],
     "obsolete": false
   },
@@ -74,6 +85,16 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
+    "comments": []
+  },
+  "O3oNi5": {
+    "translation": "Email",
+    "message": "Email",
+    "comments": []
+  },
+  "OQ8lVl": {
+    "translation": "Modifier",
+    "message": "Modifier",
     "comments": [],
     "obsolete": false
   },
@@ -95,9 +116,20 @@
     "comments": [],
     "obsolete": false
   },
+  "eTBD1Z": {
+    "translation": "Nom du groupe",
+    "message": "Nom du groupe",
+    "comments": []
+  },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
+    "comments": [],
+    "obsolete": false
+  },
+  "fu2rxk": {
+    "translation": "Enregistrer",
+    "message": "Enregistrer",
     "comments": [],
     "obsolete": false
   },
@@ -110,6 +142,34 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
+    "comments": []
+  },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
+    "comments": []
+  },
+  "lPgC5g": {
+    "translation": "Créer un étudiant",
+    "message": "Créer un étudiant",
+    "comments": [],
+    "obsolete": false
+  },
+  "q+G9Ft": {
+    "translation": "Créer une organisation",
+    "message": "Créer une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "tALayW": {
+    "translation": "Annuler",
+    "message": "Annuler",
+    "comments": [],
+    "obsolete": false
+  },
+  "v+QFYv": {
+    "translation": "Testeurs externes",
+    "message": "Testeurs externes",
     "comments": [],
     "obsolete": false
   },

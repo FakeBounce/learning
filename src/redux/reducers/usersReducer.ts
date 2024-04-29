@@ -12,6 +12,7 @@ import { t } from '@lingui/macro';
 import { changeOrganizationView } from '@redux/actions/connectedUserActions';
 import { Organization } from '@services/organizations/interfaces';
 import { RootState } from '@redux/store';
+import { createGroup } from '@redux/actions/groupsActions';
 
 interface UsersState {
   usersList: {
@@ -60,6 +61,7 @@ export const usersSlice = createSlice({
       //List Users Reducers
       .addCase(UsersActions.getUsersList.pending, (state) => {
         state.usersList.usersListLoading = true;
+        state.usersList = initialUserState.usersList;
       })
       .addCase(
         UsersActions.getUsersList.fulfilled,
@@ -135,6 +137,9 @@ export const usersSlice = createSlice({
       .addCase(changeOrganizationView.fulfilled, (state) => {
         state.usersList = initialUserState.usersList;
         state.singleUser = initialUserState.singleUser;
+      })
+      .addCase(createGroup.fulfilled, (state) => {
+        state.usersList = initialUserState.usersList;
       });
   }
 });

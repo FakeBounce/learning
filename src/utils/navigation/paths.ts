@@ -88,5 +88,5 @@ const ROOT_GROUPS = PATH_PARAMETERS.groups;
 export const PATH_GROUPS = {
   root: ROOT_GROUPS,
   add: path(ROOT_GROUPS, '/create'),
-  update: path(ROOT_GROUPS, '/update/:roleId')
+  update: path(ROOT_GROUPS, '/profile/:groupeId')
 };

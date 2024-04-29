@@ -3,8 +3,7 @@ import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@serv
 export interface Group {
   id: number;
   name: string;
-  description: string;
-  organisationId?: number;
+  description?: string;
   isMain?: boolean;
   nbUsers?: number;
 }
@@ -41,4 +40,16 @@ export interface DeleteGroupRequest {
 export interface DeleteGroupResponse {
   success: boolean;
   message: ApiResponseMessage;
+}
+
+export interface CreateGroupRequest {
+  name: string;
+  description?: string;
+  usersId?: number[];
+}
+
+export interface CreateGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Group;
 }

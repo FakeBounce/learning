@@ -59,6 +59,12 @@
     "comments": [],
     "obsolete": false
   },
+  "A7xVRH": {
+    "translation": "",
+    "message": "Veuillez sélectionner un fichier",
+    "comments": [],
+    "obsolete": false
+  },
   "AAjpHB": {
     "translation": "",
     "message": "Aucun étudiant valide à ajouter",
@@ -392,6 +398,12 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
     "comments": [],
     "obsolete": false
   },
