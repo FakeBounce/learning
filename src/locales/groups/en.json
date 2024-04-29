@@ -14,7 +14,8 @@
   "3/5e4J": {
     "translation": "",
     "message": "Le nom du groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "",
@@ -37,6 +38,12 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
+    "comments": [],
+    "obsolete": false
+  },
+  "Bmo0y3": {
+    "translation": "",
+    "message": "OUI",
     "comments": [],
     "obsolete": false
   },
@@ -85,12 +92,14 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -119,7 +128,8 @@
   "eTBD1Z": {
     "translation": "",
     "message": "Nom du groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -142,12 +152,14 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "",
@@ -158,6 +170,12 @@
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "sCvW+n": {
+    "translation": "",
+    "message": "Appartient déjà au groupe",
     "comments": [],
     "obsolete": false
   },
@@ -176,6 +194,12 @@
   "wmNuk6": {
     "translation": "",
     "message": "Supprimer un groupe",
+    "comments": [],
+    "obsolete": false
+  },
+  "xj9DHS": {
+    "translation": "",
+    "message": "NON",
     "comments": [],
     "obsolete": false
   }
