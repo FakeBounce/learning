@@ -12,6 +12,21 @@ import rootReducer from './redux/rootReducer';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 
+// Mock usePlacesService
+jest.mock('react-google-autocomplete/lib/usePlacesAutocompleteService', () => {
+  return {
+    __esModule: true, // this property makes it behave like a module
+    default: () => ({
+      placePredictions: [
+        { description: 'Place One', place_id: '1' },
+        { description: 'Place Two', place_id: '2' }
+      ],
+      getPlacePredictions: jest.fn(),
+      isPlacePredictionsLoading: false
+    })
+  };
+});
+
 jest.mock('@mui/x-data-grid', () => ({
   ...jest.requireActual('@mui/x-data-grid'),
   // eslint-disable-next-line @typescript-eslint/no-var-requires

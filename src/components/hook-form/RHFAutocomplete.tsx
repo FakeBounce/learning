@@ -15,7 +15,7 @@ type RHFAutocompleteProps = BaseRHFAutocompleteProps &
 export default function RHFAutocomplete({
   name,
   label,
-  size,
+  size = 'small',
   helperText,
   ...other
 }: RHFAutocompleteProps) {
