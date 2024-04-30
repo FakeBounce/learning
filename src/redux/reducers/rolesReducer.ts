@@ -10,13 +10,33 @@ interface RolesState {
     rolesListLoading: boolean;
     rolesListTotalCount: number;
   };
+  currentRole: {
+    currentRoleData: Role | null;
+    currentRoleLoading: boolean;
+  };
+  rolesCreate: {
+    rolesCreateLoading: boolean;
+  };
+  rolesUpdate: {
+    rolesUpdateLoading: boolean;
+  };
 }
 
-const initialState: RolesState = {
+export const rolesInitialState: RolesState = {
   rolesList: {
     rolesListData: [],
     rolesListLoading: false,
     rolesListTotalCount: 0
+  },
+  currentRole: {
+    currentRoleData: null,
+    currentRoleLoading: false
+  },
+  rolesCreate: {
+    rolesCreateLoading: false
+  },
+  rolesUpdate: {
+    rolesUpdateLoading: false
   }
 };
 
@@ -35,8 +55,10 @@ export const getRolesList = createAsyncThunk(
 
 export const rolesSlice = createSlice({
   name: 'roles',
-  initialState,
-  reducers: {},
+  initialState: rolesInitialState,
+  reducers: {
+    resetRolesState: () => rolesInitialState
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getRolesList.pending, (state) => {
@@ -54,5 +76,7 @@ export const rolesSlice = createSlice({
       });
   }
 });
+
+export const { resetRolesState } = rolesSlice.actions;
 
 export default rolesSlice.reducer;

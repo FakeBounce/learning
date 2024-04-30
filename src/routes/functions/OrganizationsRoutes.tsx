@@ -1,6 +1,6 @@
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
-import { Organizations, OrganizationsCreate, OrganizationsUpdate } from 'src/routes/elements';
+import { Organizations, OrganizationsCreate, OrganizationsUpdate } from '@src/routes/elements';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';

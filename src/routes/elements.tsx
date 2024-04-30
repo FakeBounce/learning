@@ -78,6 +78,9 @@ export const ExternalTestersBulk = LoadableComponent(
  Roles
  **/
 export const Roles = LoadableComponent(lazy(() => import('@src/pages/roles/roles-list/RolesList')));
+export const RolesCreate = LoadableComponent(
+  lazy(() => import('@src/pages/roles/roles-create/RolesCreate'))
+);
 
 /**
  Groups

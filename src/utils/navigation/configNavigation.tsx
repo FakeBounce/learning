@@ -8,6 +8,7 @@ import {
   PATH_MODULES,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
+  PATH_ROLES,
   PATH_USERS
 } from './paths';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
@@ -138,16 +139,31 @@ const modulesNavigationConfig = [
   }
 ];
 
+const rolesNavigationConfig = [
+  {
+    title: <Trans>Rôles</Trans>,
+    path: PATH_ROLES.root
+  },
+  {
+    title: <Trans>Ajouter un rôle</Trans>,
+    path: PATH_ROLES.add
+  },
+  {
+    title: <Trans>Gestion des permissions</Trans>,
+    path: PATH_ROLES.managePermission
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
   ...generalNavigationConfig,
-  ...parametersNavigationConfig,
   ...organizationsNavigationConfig,
   ...usersNavigationConfig,
   ...applicantsNavigationConfig,
   ...externalTestersNavigationConfig,
   ...groupsNavigationConfig,
+  ...rolesNavigationConfig,
   ...modulesNavigationConfig
 ];
 

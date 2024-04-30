@@ -3,7 +3,7 @@ import {
   ExternalTestersCreate,
   ExternalTesters,
   ExternalTestersBulk
-} from 'src/routes/elements';
+} from '@src/routes/elements';
 import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';

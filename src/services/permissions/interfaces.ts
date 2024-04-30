@@ -27,3 +27,14 @@ export enum PermissionTypeEnum {
   SUPER_ADMIN = 'super_admin',
   CLIENT_ADMIN = 'client_admin'
 }
+
+export interface PermissionTypeList {
+  title: string;
+  actions: RolePermission[];
+}
+
+export interface RolePermission {
+  name: string;
+  id: number;
+  enabled: boolean;
+}

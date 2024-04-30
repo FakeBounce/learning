@@ -1,11 +1,11 @@
 import FullTable from '@src/components/table/FullTable';
-import { memo, useCallback, useEffect, useState } from 'react';
-import { FilterBy, ApiRequestSort, TableRequestConfig } from '@services/interfaces';
+import { memo, useEffect, useState } from 'react';
+import { TableRequestConfig } from '@services/interfaces';
 import { GridFilterModel, GridPaginationModel, GridSortModel } from '@mui/x-data-grid';
 import { FullTableProps } from '@src/components/table/interfaces';
 import { convertCamelToSnake } from '@utils/helpers/convertCasing';
 
-interface TableWithSortAndFilterProps
+export interface TableWithSortAndFilterProps
   extends Omit<
     FullTableProps,
     'onSortModelChange' | 'onFilterModelChange' | 'onPaginationModelChange'
@@ -19,67 +19,65 @@ const TableWithSortAndFilter = ({
   defaultPageSize,
   ...fullTableProps
 }: TableWithSortAndFilterProps) => {
-  const [currentPage, setCurrentPage] = useState(0);
-  const [rowsPerPage, setRowsPerPage] = useState(defaultPageSize || 10);
-  const [orderBy, setOrderBy] = useState<ApiRequestSort | null>(null);
-  const [filters, setFilters] = useState<FilterBy | null>(null);
+  const [tableRequestConfig, setTableRequestConfig] = useState<TableRequestConfig>({
+    currentPage: 1,
+    rowsPerPage: defaultPageSize || 10,
+    sort: undefined,
+    filters: undefined
+  });
 
-  const handleChangePage = useCallback((gridPaginationModel: GridPaginationModel) => {
-    if (gridPaginationModel.page !== currentPage) {
-      setCurrentPage(gridPaginationModel.page);
-      return;
-    }
-    if (gridPaginationModel.pageSize !== rowsPerPage) {
-      setRowsPerPage(gridPaginationModel.pageSize);
-      return;
-    }
-  }, []);
+  const handleChangePage = (gridPaginationModel: GridPaginationModel) => {
+    setTableRequestConfig({
+      ...tableRequestConfig,
+      currentPage: gridPaginationModel.page + 1,
+      rowsPerPage: gridPaginationModel.pageSize
+    });
+  };
 
-  const handleSort = useCallback((gridSortItems: GridSortModel) => {
+  const handleSort = (gridSortItems: GridSortModel) => {
     if (gridSortItems.length === 0) {
-      setOrderBy(null);
+      setTableRequestConfig({
+        ...tableRequestConfig,
+        sort: undefined
+      });
       return;
     } else if (gridSortItems[0].sort) {
-      setOrderBy({
-        field: convertCamelToSnake(gridSortItems[0].field),
-        direction: gridSortItems[0].sort.toUpperCase() as 'ASC' | 'DESC'
+      setTableRequestConfig({
+        ...tableRequestConfig,
+        sort: {
+          field: convertCamelToSnake(gridSortItems[0].field),
+          direction: gridSortItems[0].sort.toUpperCase() as 'ASC' | 'DESC'
+        }
       });
     }
-  }, []);
+  };
 
-  const handleFilterChange = useCallback((filterModel: GridFilterModel) => {
+  const handleFilterChange = (filterModel: GridFilterModel) => {
     if (filterModel.items.length === 0 || !filterModel.items[0].value) {
-      setFilters(null);
+      setTableRequestConfig({
+        ...tableRequestConfig,
+        filters: undefined
+      });
       return;
     }
-    setFilters({
-      operator: 'AND',
-      items: [
-        {
-          field: convertCamelToSnake(filterModel.items[0].field),
-          operator: filterModel.items[0].operator,
-          value: filterModel.items[0].value
-        }
-      ]
+    setTableRequestConfig({
+      ...tableRequestConfig,
+      filters: {
+        operator: 'AND',
+        items: [
+          {
+            field: convertCamelToSnake(filterModel.items[0].field),
+            operator: filterModel.items[0].operator,
+            value: filterModel.items[0].value
+          }
+        ]
+      }
     });
-  }, []);
+  };
 
   useEffect(() => {
-    const tableRequestConfig = {
-      currentPage: currentPage,
-      rowsPerPage: rowsPerPage
-    } as TableRequestConfig;
-
-    if (orderBy) {
-      tableRequestConfig.sort = orderBy;
-    }
-
-    if (filters) {
-      tableRequestConfig.filters = filters;
-    }
-
     onChange(tableRequestConfig);
-  }, [currentPage, rowsPerPage, orderBy, filters]);
+  }, [tableRequestConfig]);
 
   return (
     <FullTable

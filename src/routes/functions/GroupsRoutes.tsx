@@ -1,4 +1,4 @@
-import { Groups, GroupsCreate } from 'src/routes/elements';
+import { Groups, GroupsCreate } from '@src/routes/elements';
 import { PATH_GROUPS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';

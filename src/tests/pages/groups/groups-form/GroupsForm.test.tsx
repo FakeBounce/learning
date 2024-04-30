@@ -1,10 +1,10 @@
 import { render, screen, act, renderHook } from '@testProvider';
-import GroupsForm from '@src/pages/groups/GroupsForm';
+import GroupsForm from '@src/pages/groups/groups-form/GroupsForm';
 import { FormProvider, useForm } from 'react-hook-form';
 
-jest.mock('@src/pages/groups/GroupsUsersList', () => ({
+jest.mock('@src/components/table/TableUsersList', () => ({
   __esModule: true,
-  default: () => <div>GroupsUsersList</div>
+  default: () => <div>TableUsersList</div>
 }));
 
 describe('GroupsForm', () => {

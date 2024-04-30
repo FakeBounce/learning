@@ -24,8 +24,23 @@ const MockFullTable: FC<MockFullTableProps> = ({ columns, rows }) => {
       : row[column.field];
   };
 
+  const renderHeadCell = (column: GridColDef) => {
+    return column.renderHeader
+      ? column.renderHeader({
+          field: column.field,
+          colDef: {
+            computedWidth: 100,
+            field: column.field
+          }
+        })
+      : column.headerName;
+  };
+
   return (
     <div style={{ overflowX: 'auto' }}>
+      {columns.map((column: GridColDef) => (
+        <div key={`${column.field}-column-head`}>{renderHeadCell(column)}</div>
+      ))}
       {rows.map((row: any) => (
         <div key={row.id ?? row.email}>
           {columns.map((column: GridColDef) => (

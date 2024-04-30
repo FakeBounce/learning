@@ -1,6 +1,6 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
-import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
+import { defaultGroup, defaultGroupsList } from '@src/tests/pages/groups/DefaultGroup';
 import { defaultUsersList } from '@src/tests/pages/users/DefaultUsers';
 
 const GroupsMock = new MockAdapter(axios);
@@ -14,7 +14,7 @@ export const groupsSetupSuccessAxiosMock = () => {
       success: true,
       message: { value: '', level: 'success' },
       data: {
-        rows: [defaultGroup],
+        rows: defaultGroupsList,
         pagination: {
           page: 1,
           row_per_page: 10,
@@ -41,13 +41,7 @@ export const groupsSetupSuccessAxiosMock = () => {
       value: 'Le groupe a été créé avec succès.',
       level: 'success'
     },
-    data: {
-      id: 1,
-      name: 'Group 1',
-      description: 'Description 1',
-      isMain: false,
-      nbUsers: null
-    }
+    data: defaultGroup
   });
 
   /**
@@ -59,13 +53,7 @@ export const groupsSetupSuccessAxiosMock = () => {
       value: 'Le groupe a été modifié avec succès.',
       level: 'success'
     },
-    data: {
-      id: 1,
-      name: 'Group 1',
-      description: 'Description 1',
-      isMain: false,
-      nbUsers: null
-    }
+    data: defaultGroup
   });
 
   /**
