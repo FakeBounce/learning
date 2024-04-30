@@ -60,7 +60,7 @@ export const usersSlice = createSlice({
       //List Users Reducers
       .addCase(UsersActions.getUsersList.pending, (state) => {
         state.usersList.usersListLoading = true;
-        state.usersList = initialUserState.usersList;
+        state.usersList.usersListData = [];
       })
       .addCase(
         UsersActions.getUsersList.fulfilled,

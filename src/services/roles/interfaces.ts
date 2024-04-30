@@ -43,3 +43,16 @@ export interface GetRolePermissionsResponse {
   message: ApiResponseMessage;
   data: PermissionTypeList;
 }
+
+export interface CreateRoleRequest {
+  name: string;
+  description?: string;
+  usersId?: number[];
+  groupsId?: number[];
+}
+
+export interface CreateRoleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Role;
+}

@@ -8,7 +8,7 @@ import { resetGroupsState } from '@redux/reducers/groupsReducer';
 import * as Yup from 'yup';
 import { t, Trans } from '@lingui/macro';
 import GroupsCreateFooter from '@src/pages/groups/groups-create/GroupsCreateFooter';
-import GroupsForm from '@src/pages/groups/GroupsForm';
+import GroupsForm from '@src/pages/groups/groups-form/GroupsForm';
 import { createGroup } from '@redux/actions/groupsActions';
 import CardHeader from '@src/components/cards/CardHeader';
 import { enqueueSnackbar } from 'notistack';

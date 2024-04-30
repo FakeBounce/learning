@@ -6,7 +6,6 @@ import '@testing-library/jest-dom';
 import * as process from 'process';
 
 process.env.VITE_HOST_ENVIRONNEMENT = 'test';
-process.env.VITE_HOST_AXIOS_DELAY = '0';
 
 module.exports = {
   testEnvironment: 'jsdom'

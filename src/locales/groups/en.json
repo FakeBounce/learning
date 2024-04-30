@@ -2,26 +2,22 @@
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3/5e4J": {
     "translation": "",
     "message": "Le nom du groupe est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "",
     "message": "Liste des modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "5qQosN": {
     "translation": "",
@@ -32,74 +28,62 @@
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
     "message": "Profil",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EIxP9b": {
     "translation": "",
     "message": "Gestion des rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EvYn6I": {
     "translation": "",
     "message": "Nombre d'utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "",
     "message": "Créer un testeur externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
@@ -107,17 +91,36 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "",
+    "message": "Ajouter un rôle",
+    "comments": []
+  },
+  "ROGnVQ": {
+    "translation": "",
+    "message": "Gestion des permissions",
+    "comments": []
+  },
+  "S+0gfq": {
+    "translation": "",
+    "message": "Création d'un module",
+    "comments": []
+  },
   "T3xsZH": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir supprimer le groupe <0>{0}</0>, cela aura pour effet de retirer tous les <1>utilisateurs et les droits</1> lui étant rattachés ?",
     "comments": [],
     "obsolete": false
   },
+  "XdArAS": {
+    "translation": "",
+    "message": "Modules",
+    "comments": []
+  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YNznY8": {
     "translation": "",
@@ -128,14 +131,12 @@
   "eTBD1Z": {
     "translation": "",
     "message": "Nom du groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
     "message": "Liste des Parcours",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fu2rxk": {
     "translation": "",
@@ -146,38 +147,32 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "",
     "message": "Ajouter un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "",
     "message": "Créer un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "sCvW+n": {
     "translation": "",
     "message": "Appartient déjà au groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "tALayW": {
     "translation": "",
@@ -188,8 +183,7 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "wmNuk6": {
     "translation": "",
@@ -200,7 +194,11 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
+    "comments": []
   }
 }

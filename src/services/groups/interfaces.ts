@@ -1,4 +1,5 @@
 import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import { Role } from '@services/roles/interfaces';
 
 export interface Group {
   id: number;
@@ -6,6 +7,7 @@ export interface Group {
   description?: string;
   isMain?: boolean;
   nbUsers?: number;
+  roles?: Role[];
 }
 
 export interface GroupFromAPI {

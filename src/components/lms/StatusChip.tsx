@@ -11,7 +11,12 @@ interface StatusChipProps {
 
 function StatusChip({ isActive = false, activatedText, handleClick }: StatusChipProps) {
   return (
-    <Box display="flex" flex="1" alignItems="center" justifyContent="space-between">
+    <Box
+      display="flex"
+      flex="1"
+      alignItems="center"
+      justifyContent={activatedText ? 'space-between' : 'flex-end'}
+    >
       {activatedText && (
         <Chip
           sx={{

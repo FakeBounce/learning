@@ -1,11 +1,11 @@
 import { render, screen, act, renderHook, waitFor } from '@testProvider';
-import GroupsUsersList from '@src/pages/groups/GroupsUsersList';
+import TableUsersList from '@src/components/table/TableUsersList';
 import { groupsSetupSuccessAxiosMock } from '@src/tests/pages/groups/GroupsMock';
 import { defaultUsersList } from '@src/tests/pages/users/DefaultUsers';
 import { FormProvider, useForm } from 'react-hook-form';
-import { groupsInitialState } from '@redux/reducers/groupsReducer';
+import { GroupsUsersColumns } from '@src/pages/groups/groups-form/GroupsUsersColumns';
 
-describe('GroupsUsersList', () => {
+describe('TableUsersList', () => {
   it('should render correctly', async () => {
     const methods = renderHook(() => useForm()).result.current;
     groupsSetupSuccessAxiosMock();
@@ -13,7 +13,13 @@ describe('GroupsUsersList', () => {
       render(
         <FormProvider {...methods}>
           <form>
-            <GroupsUsersList isEditing={false} />
+            <TableUsersList
+              columns={GroupsUsersColumns({
+                isEditing: false,
+                currentGroup: null
+              })}
+              onRowSelectionModelChange={jest.fn()}
+            />
           </form>
         </FormProvider>
       );
@@ -33,26 +39,21 @@ describe('GroupsUsersList', () => {
       render(
         <FormProvider {...methods}>
           <form>
-            <GroupsUsersList isEditing={true} />
-          </form>
-        </FormProvider>,
-        {
-          preloadedState: {
-            groups: {
-              ...groupsInitialState,
-              currentGroup: {
-                currentGroupData: {
+            <TableUsersList
+              columns={GroupsUsersColumns({
+                isEditing: true,
+                currentGroup: {
                   id: 2,
                   name: 'Test',
                   description: '',
                   isMain: false,
                   nbUsers: 2
-                },
-                currentGroupLoading: false
-              }
-            }
-          }
-        }
+                }
+              })}
+              onRowSelectionModelChange={jest.fn()}
+            />
+          </form>
+        </FormProvider>
       );
     });
 

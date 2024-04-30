@@ -1,4 +1,4 @@
-import { ModulesCreate } from 'src/routes/elements';
+import { ModulesCreate } from '@src/routes/elements';
 import { PATH_MODULES } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';

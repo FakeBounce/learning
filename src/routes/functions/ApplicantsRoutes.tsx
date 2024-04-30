@@ -5,7 +5,7 @@ import {
   ApplicantsBulk,
   ApplicantsCreate,
   ApplicantsUpdate
-} from 'src/routes/elements';
+} from '@src/routes/elements';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 import ActionRestrictedRoute from '@utils/feature-flag/ActionRestrictedRoute';
