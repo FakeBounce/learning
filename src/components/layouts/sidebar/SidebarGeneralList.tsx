@@ -36,6 +36,7 @@ export default function SidebarGeneralList({ open }: { open: boolean }) {
               }}
             >
               <ListItemIcon
+                data-testid={`icon-${navItem.path}`}
                 sx={{
                   minWidth: 0,
                   mr: open ? 3 : 'auto',

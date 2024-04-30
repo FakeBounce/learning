@@ -20,7 +20,8 @@ export default function HeaderBreadcrumbs() {
       const currentPath = pathArray.slice(0, index + 1).join('/') || '/';
       const currentPathConfig = globalNavigationConfig.find((config) => {
         if (config.path && config.path.includes(':')) {
-          return currentPath.includes(config.path.split(':')[0]);
+          const baseRoute = config.path.split(':')[0];
+          return currentPath.startsWith(baseRoute);
         }
 
         return config.path === currentPath;
@@ -30,7 +31,7 @@ export default function HeaderBreadcrumbs() {
         return (
           <HeaderBreadcrumbItem
             key={currentPathConfig.path}
-            currentPathConfig={currentPathConfig}
+            currentPathConfig={{ ...currentPathConfig, path: currentPath }}
             isLast={isLast}
           />
         );

@@ -5,7 +5,7 @@
   "description": "Typescript Version",
   "private": true,
   "scripts": {
-    "dev": "yarn run vite -- --port 30000 --host",
+    "dev": "yarn run vite --port 30000 --host",
     "test": "react-scripts test",
     "test:all": "yarn test --bail --watchAll=false --coverage --findRelatedTests",
     "test:ci": "yarn test --bail --watchAll=false --coverage --testResultsProcessor=\"jest-junit\"",
@@ -144,7 +144,9 @@
     ],
     "collectCoverageFrom": [
       "<rootDir>/src/components/**/*.{ts,tsx}",
-      "<rootDir>/src/pages/**/*.{ts,tsx}"
+      "<rootDir>/src/pages/**/*.{ts,tsx}",
+      "<rootDir>/src/utils/auth/*.{ts,tsx}",
+      "<rootDir>/src/utils/helpers/*.{ts,tsx}"
     ],
     "coveragePathIgnorePatterns": [
       "node_modules",
