@@ -17,7 +17,10 @@ import { resetOrganizationState } from '@redux/reducers/organizationsReducer';
 const createOrganizationschema = Yup.object().shape({
   name: Yup.string().required(t`Le nom est requis`),
   login: Yup.string().required(t`L'identifiant est requis`),
-  address: Yup.string().required(t`L'adresse est requise`),
+  address: Yup.object().shape({
+    label: Yup.string().required(t`L'adresse est requise`),
+    value: Yup.string().required(t`L'adresse est requise`)
+  }),
   adminLastName: Yup.string().required(t`Le nom de l'admin est requis`),
   adminFirstName: Yup.string().required(t`Le prénom de l'admin est requis`),
   adminEmail: Yup.string()
@@ -28,7 +31,7 @@ const createOrganizationschema = Yup.object().shape({
 const defaultValues = {
   name: '',
   login: '',
-  address: '',
+  address: { label: '', value: '' },
   adminLastName: '',
   adminFirstName: '',
   adminEmail: ''
@@ -37,7 +40,7 @@ const defaultValues = {
 interface CreateOrganizationForm {
   name: string;
   login: string;
-  address: string;
+  address: { label: string; value: string };
   adminLastName: string;
   adminFirstName: string;
   adminEmail: string;
@@ -69,6 +72,7 @@ export default function OrganizationsCreate() {
             // @todo - Use google API on front and not through the backend to prevent multiplicating requests
             // So for now we use this default addressId
             addressId: 'ChIJ-U_newOxthIRZKI1ypcmSB8',
+            // addressId: data.address.value,
             useDoubleAuth: false,
             clientAdmin: {
               firstname: data.adminFirstName,

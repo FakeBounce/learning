@@ -47,7 +47,7 @@ describe('OrganizationsCreateForm', () => {
     render(
       <FormProvider {...methods}>
         <form>
-          <OrganizationsCreateForm image={''} setImage={setImageMock} />
+          <OrganizationsCreateForm image="" setImage={setImageMock} />
         </form>
       </FormProvider>
     );
