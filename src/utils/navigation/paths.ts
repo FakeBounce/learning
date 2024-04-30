@@ -26,8 +26,8 @@ export const PATH_ERRORS = {
 // Used for dashboard navigation
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
-  courseList: path(ROOTS_DASHBOARD, 'course-list'),
-  modulesList: path(ROOTS_DASHBOARD, 'modules-list')
+  courses: path(ROOTS_DASHBOARD, 'courses'),
+  modules: path(ROOTS_DASHBOARD, 'modules')
 };
 
 // Used for sidebar navigation parameters
@@ -89,4 +89,11 @@ export const PATH_GROUPS = {
   root: ROOT_GROUPS,
   add: path(ROOT_GROUPS, '/create'),
   update: path(ROOT_GROUPS, '/profile/:groupeId')
+};
+
+// Modules
+const ROOT_MODULES = PATH_DASHBOARD.modules;
+export const PATH_MODULES = {
+  root: ROOT_MODULES,
+  add: path(ROOT_MODULES, '/create'),
 };

@@ -1,5 +1,6 @@
 import { t } from '@lingui/macro';
 import { UserForBulk } from '@services/users/interfaces';
+import { regexMail } from '@utils/helpers/regex';
 
 interface MappingTable {
   [key: string]: string[];
@@ -61,7 +62,7 @@ function validateRows(arrayOfObjects: UserForBulk[]): CsvUserValidationResult {
       }
 
       // Validate email format
-      if (fieldName === 'email' && fieldValue && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(fieldValue)) {
+      if (fieldName === 'email' && fieldValue && !regexMail.test(fieldValue)) {
         row[fieldName as keyof UserForBulk] = invalidFormatMessage;
         isValidRow = false;
       }

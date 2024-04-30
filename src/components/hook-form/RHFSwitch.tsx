@@ -1,5 +1,5 @@
 import { memo, ReactNode } from 'react';
-import { Box, FormControlLabel } from '@mui/material';
+import { Box, FormControlLabel, Typography } from '@mui/material';
 import LMSSwitch from '@src/components/lms/LMSSwitch';
 import { Controller, useFormContext } from 'react-hook-form';
 import LabelWithRequired from '@src/components/hook-form/LabelWithRequired';
@@ -14,7 +14,9 @@ function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
   const { control } = useFormContext();
   return (
     <Box>
-      {required ? <LabelWithRequired label={label} /> : label}
+      <Typography variant="caption">
+        {required ? <LabelWithRequired label={label} /> : label}
+      </Typography>
       <Box ml={1.5} mt={1}>
         <Controller
           name={name}

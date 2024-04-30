@@ -76,7 +76,7 @@ export default function ApplicantsCreate() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <LMSCard isPageCard header={<ApplicantsCreateHeader />} footer={<ApplicantsCreateFooter />}>
           <ApplicantsUpdateForm image={image} setImage={setImage} />
         </LMSCard>

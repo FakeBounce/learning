@@ -134,7 +134,7 @@ export default function ApplicantsUpdate() {
   return (
     <>
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <LMSCard
             isPageCard
             header={<ApplicantsProfileHeader isUpdate={isEditing} />}

@@ -51,7 +51,7 @@ export default function ForgotPasswordPage() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <StyledLoginContainerBox>
           <LMSCard header={<ForgotPasswordHeader />} footer={<ForgotPasswordFooter />}>
             <ForgotPasswordForm />

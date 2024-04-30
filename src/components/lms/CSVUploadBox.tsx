@@ -22,8 +22,6 @@ const StyledDropZone = styled('div')(({ theme }) => ({
   }
 }));
 
-// ----------------------------------------------------------------------
-
 interface CustomDropzoneProps {
   sx?: SxProps;
   error?: boolean;
@@ -34,7 +32,7 @@ interface CustomDropzoneProps {
 }
 type UploadBoxProps = CustomDropzoneProps & DropzoneProps;
 
-export default function UploadBox({
+export default function CSVUploadBox({
   placeholder = '',
   error,
   disabled,

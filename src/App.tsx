@@ -11,6 +11,8 @@ import { store, persistor } from '@redux/store';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { FeatureFlagProvider } from '@utils/feature-flag/FeatureFlagProvider';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 
 // ----------------------------------------------------------------------
 
@@ -20,20 +22,22 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <ThemeProvider>
-        <SnackbarProvider>
-          <ReduxProvider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-              <FeatureFlagProvider>
-                <I18nProvider i18n={i18n}>
-                  <Router />
-                </I18nProvider>
-              </FeatureFlagProvider>
-            </PersistGate>
-          </ReduxProvider>
-        </SnackbarProvider>
-      </ThemeProvider>
-    </BrowserRouter>
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <BrowserRouter>
+        <ThemeProvider>
+          <SnackbarProvider>
+            <ReduxProvider store={store}>
+              <PersistGate loading={null} persistor={persistor}>
+                <FeatureFlagProvider>
+                  <I18nProvider i18n={i18n}>
+                    <Router />
+                  </I18nProvider>
+                </FeatureFlagProvider>
+              </PersistGate>
+            </ReduxProvider>
+          </SnackbarProvider>
+        </ThemeProvider>
+      </BrowserRouter>
+    </LocalizationProvider>
   );
 }

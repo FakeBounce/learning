@@ -6,14 +6,13 @@ import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import { Outlet } from 'react-router';
 import { Skeleton } from '@mui/material';
 import { useAppSelector } from '@redux/hooks';
-// ----------------------------------------------------------------------
 
 function FeatureFlagedRoute({
   pageType,
-  permissionsAuthorized
+  permissionsAuthorized = []
 }: {
   pageType: PermissionTypeEnum;
-  permissionsAuthorized: PermissionTypeEnum[];
+  permissionsAuthorized?: PermissionTypeEnum[];
 }) {
   const [showLoading, setShowLoading] = useState(true);
   const { canSeePage } = useContext(FeatureFlagContext);
@@ -27,6 +26,10 @@ function FeatureFlagedRoute({
 
   if (showLoading) {
     return <Skeleton variant="rectangular" width={210} height={118} />;
+  }
+
+  if (permissionsAuthorized.length === 0) {
+    return <Outlet context={{ pageType }} />;
   }
 
   if (!canSeePage(permissionsAuthorized)) {

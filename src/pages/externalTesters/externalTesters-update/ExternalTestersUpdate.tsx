@@ -117,7 +117,7 @@ export default function ExternalTestersUpdate() {
   return (
     <>
       <FormProvider {...methods}>
-        <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <LMSCard
             isPageCard
             header={<ApplicantsProfileHeader isUpdate={isEditing} />}
@@ -129,7 +129,7 @@ export default function ExternalTestersUpdate() {
               <>
                 <ExternalTestersProfileInfos />
                 {/* @todo -> Replace with the applicant group */}
-                {/*<UserProfileGroups groups={[]} />*/}
+                {/*<UserProfileGroups />*/}
               </>
             )}
           </LMSCard>

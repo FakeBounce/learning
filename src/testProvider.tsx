@@ -23,12 +23,11 @@ jest.mock('@mui/x-data-grid', () => ({
   DataGrid: require('@src/tests/mocks/MockFullTable').default
 }));
 
-// Notifications mock
 jest.mock('@src/components/lms/LMSSwitch');
 jest.mock('@src/components/lms/ActionButton');
-jest.mock('@src/components/lms/UploadBox');
 jest.mock('@src/components/hook-form/RHFAvatar');
 jest.mock('@src/components/iconify/Iconify');
+jest.mock('@src/components/lms/CSVUploadBox');
 
 // Notifications mock
 jest.mock('notistack', () => ({

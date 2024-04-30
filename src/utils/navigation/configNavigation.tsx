@@ -5,6 +5,7 @@ import {
   PATH_DASHBOARD,
   PATH_EXTERNAL_TESTERS,
   PATH_GROUPS,
+  PATH_MODULES,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
   PATH_USERS
@@ -17,12 +18,12 @@ export const generalNavigationConfig = [
   { title: <Trans>Dashboard</Trans>, path: PATH_DASHBOARD.root, icon: 'dashicons:performance' },
   {
     title: <Trans>Liste des Parcours</Trans>,
-    path: PATH_DASHBOARD.courseList,
+    path: PATH_DASHBOARD.courses,
     icon: 'material-symbols:play-shapes'
   },
   {
     title: <Trans>Liste des modules</Trans>,
-    path: PATH_DASHBOARD.modulesList,
+    path: PATH_DASHBOARD.modules,
     icon: 'uim:star-half-alt'
   }
 ];
@@ -126,6 +127,17 @@ const groupsNavigationConfig = [
   }
 ];
 
+const modulesNavigationConfig = [
+  {
+    title: <Trans>Modules</Trans>,
+    path: PATH_MODULES.root
+  },
+  {
+    title: <Trans>Création d'un module</Trans>,
+    path: PATH_EXTERNAL_TESTERS.add
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
@@ -135,7 +147,8 @@ export const globalNavigationConfig = [
   ...usersNavigationConfig,
   ...applicantsNavigationConfig,
   ...externalTestersNavigationConfig,
-  ...groupsNavigationConfig
+  ...groupsNavigationConfig,
+  ...modulesNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

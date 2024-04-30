@@ -1,24 +1,11 @@
 import { DropzoneProps, useDropzone } from 'react-dropzone';
-import { styled, alpha, SxProps } from '@mui/material/styles';
+import { styled, SxProps } from '@mui/material/styles';
 import Iconify from '@src/components/iconify/Iconify';
 import { ReactNode } from 'react';
 
-const StyledDropZone = styled('div')(({ theme }) => ({
+const StyledDropZone = styled('div')(() => ({
   width: 64,
-  height: 64,
-  fontSize: 24,
-  display: 'flex',
-  flexShrink: 0,
-  cursor: 'pointer',
-  alignItems: 'center',
-  justifyContent: 'center',
-  color: theme.palette.text.disabled,
-  borderRadius: theme.shape.borderRadius,
-  border: `dashed 1px ${theme.palette.divider}`,
-  backgroundColor: alpha(theme.palette.grey[500], 0.08),
-  '&:hover': {
-    opacity: 0.72
-  }
+  height: 64
 }));
 
 // ----------------------------------------------------------------------
@@ -33,7 +20,7 @@ interface CustomDropzoneProps {
 }
 type UploadBoxProps = CustomDropzoneProps & DropzoneProps;
 
-export default function UploadBox({
+export default function CSVUploadBox({
   placeholder = '',
   error,
   disabled,
@@ -60,11 +47,6 @@ export default function UploadBox({
       sx={{
         ...sx,
         display: 'flex',
-        flex: '1 1 0',
-        padding: 2,
-        height: 'initial',
-        position: 'relative',
-        maxHeight: 128,
         ...(isDragActive && {
           opacity: 0.72
         }),
@@ -75,9 +57,6 @@ export default function UploadBox({
         }),
         ...(hasFile && {
           opacity: 0.48,
-          flex: 'none',
-          maxHeight: 'initial',
-          padding: 1,
           width: 'auto',
           paddingRight: 7,
           borderRadius: (theme) => theme.shape.customBorderRadius.medium,
