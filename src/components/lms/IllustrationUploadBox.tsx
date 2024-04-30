@@ -67,6 +67,7 @@ export default function IllustrationUploadBox({
   return (
     <StyledDropZone
       {...getRootProps()}
+      data-testid="illustration-upload-box"
       sx={{
         flex: '1 1 0',
         ...(isDragActive && {
@@ -102,6 +103,7 @@ export default function IllustrationUploadBox({
       {hasFile && hover && (
         <Box
           component={IconButton}
+          data-testid="illustration-upload-box-remove"
           onClick={onRemove}
           display="flex"
           justifyContent="center"

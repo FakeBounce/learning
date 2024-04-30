@@ -9,9 +9,17 @@ import RHFSwitch from '@src/components/hook-form/RHFSwitch';
 import { regexMaxHundred } from '@utils/helpers/regex';
 import RHFTimer from '@src/components/hook-form/RHFTimer';
 import { answersOptions } from '@src/pages/modules/modules-create/ModulesCreateSchema';
+import { ChangeEvent } from 'react';
 
 export default function ModulesFormConfig() {
   const { setValue } = useFormContext();
+
+  const convertEventToNumber = (inputName: string) => (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    if (regexMaxHundred.test(e.target.value) || e.target.value === '') {
+      setValue(inputName, e.target.value === '' ? 0 : parseInt(e.target.value, 10));
+    }
+  };
 
   return (
     <StyledFormColumn sx={{ flex: 2 }}>
@@ -24,7 +32,7 @@ export default function ModulesFormConfig() {
         <StyledFormRow>
           <Box display="flex" sx={{ textWrap: 'nowrap' }}>
             <Typography variant="caption">
-              <LabelWithRequired label={<Trans>Durée du module</Trans>} />
+              <LabelWithRequired name="timer" label={<Trans>Durée du module</Trans>} />
             </Typography>
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
@@ -40,18 +48,13 @@ export default function ModulesFormConfig() {
         <StyledFormRow>
           <Box display="flex" sx={{ textWrap: 'nowrap' }}>
             <Typography variant="caption">
-              <LabelWithRequired label={<Trans>Recommencer</Trans>} />
+              <LabelWithRequired name="nbAttempts" label={<Trans>Recommencer</Trans>} />
             </Typography>
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
             <RHFTextField
               name="nbAttempts"
-              onChange={(e) => {
-                if (regexMaxHundred.test(e.target.value) || e.target.value === '') {
-                  setValue('nbAttempts', e.target.value === '' ? 0 : parseInt(e.target.value, 10));
-                }
-              }}
-              type="text"
+              onChange={convertEventToNumber('nbAttempts')}
               required
               sx={{ maxWidth: 60 }}
             />
@@ -61,7 +64,7 @@ export default function ModulesFormConfig() {
         <StyledFormRow>
           <Box display="flex" sx={{ textWrap: 'nowrap' }}>
             <Typography variant="caption">
-              <LabelWithRequired label={<Trans>Validation du module</Trans>} />
+              <LabelWithRequired name="successRate" label={<Trans>Validation du module</Trans>} />
             </Typography>
           </Box>
           <Box display="flex" alignItems="center" gap={1}>
@@ -69,11 +72,7 @@ export default function ModulesFormConfig() {
             <RHFTextField
               name="successRate"
               type="text"
-              onChange={(e) => {
-                if (regexMaxHundred.test(e.target.value) || e.target.value === '') {
-                  setValue('successRate', e.target.value === '' ? 0 : parseInt(e.target.value, 10));
-                }
-              }}
+              onChange={convertEventToNumber('successRate')}
               required
               sx={{ maxWidth: 60 }}
             />

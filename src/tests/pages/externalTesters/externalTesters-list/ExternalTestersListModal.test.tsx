@@ -4,6 +4,7 @@ import { stateTester } from '../DefaultTesters';
 import ExternalTestersListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-list/ApplicantsListMock';
+import { waitFor } from '@testing-library/dom';
 
 describe('ExternalTestersListModal', () => {
   it('renders ExternalTestersListModal correctly', async () => {
@@ -66,7 +67,11 @@ describe('ExternalTestersListModal', () => {
       fireEvent.click(validateButton);
     });
 
-    expect(ExternalTestersListMock.history.put).toHaveLength(1);
-    expect(ExternalTestersListMock.history.put[0].url).toBe(`/applicants/${stateTester.id}/block`);
+    await waitFor(() => {
+      expect(ExternalTestersListMock.history.put).toHaveLength(1);
+      expect(ExternalTestersListMock.history.put[0].url).toBe(
+        `/applicants/${stateTester.id}/block`
+      );
+    });
   });
 });

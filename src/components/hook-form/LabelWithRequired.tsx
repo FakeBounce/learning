@@ -1,8 +1,8 @@
 import { memo, ReactNode } from 'react';
 
-const LabelWithRequired = ({ label }: { label: ReactNode }) => (
+const LabelWithRequired = ({ label, name }: { label: ReactNode; name: string }) => (
   <>
-    {label}
+    <label htmlFor={name}>{label}</label>
     <span className="MuiFormLabel-asterisk"> *</span>
   </>
 );

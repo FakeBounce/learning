@@ -109,7 +109,11 @@ function RHFDropdown({
   return (
     <Box display="flex" flex="1" flexDirection="column">
       <Typography variant="caption">
-        {required ? <LabelWithRequired label={label} /> : label}
+        {required ? (
+          <LabelWithRequired name={name} label={label} />
+        ) : (
+          <label htmlFor={name}>label</label>
+        )}
       </Typography>
       <Box mt={0.5}>
         <Controller
@@ -123,6 +127,8 @@ function RHFDropdown({
                   setValue(name, newValue);
                   setDropdownValue(newValue);
                 }}
+                data-testid="rhf-dropdown"
+                id={name}
                 value={value}
                 onKeyDown={handleKeyDown}
                 onInputChange={(newInputValue) => setInputValue(newInputValue)}

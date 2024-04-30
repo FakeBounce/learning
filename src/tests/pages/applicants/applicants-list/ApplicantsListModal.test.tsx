@@ -4,6 +4,7 @@ import { stateApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import ApplicantsListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-list/ApplicantsListMock';
+import { waitFor } from '@testing-library/dom';
 
 describe('ApplicantsListModal', () => {
   it('renders ApplicantsListModal correctly', async () => {
@@ -66,7 +67,9 @@ describe('ApplicantsListModal', () => {
       fireEvent.click(validateButton);
     });
 
-    expect(ApplicantsListMock.history.put).toHaveLength(1);
-    expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/${stateApplicant.id}/block`);
+    await waitFor(() => {
+      expect(ApplicantsListMock.history.put).toHaveLength(1);
+      expect(ApplicantsListMock.history.put[0].url).toBe(`/applicants/${stateApplicant.id}/block`);
+    });
   });
 });
