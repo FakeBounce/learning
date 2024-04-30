@@ -2,7 +2,7 @@ import { Trans } from '@lingui/macro';
 import { Avatar, Box, Stack, Typography } from '@mui/material';
 import { RHFTextField } from '@src/components/hook-form';
 import Iconify from '@src/components/iconify/Iconify';
-import { uploader } from '@utils/fileUploader';
+import { uploader } from '@utils/helpers/fileUploader';
 import {
   ChangeEvent,
   Dispatch,
