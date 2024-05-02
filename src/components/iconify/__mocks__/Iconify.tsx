@@ -7,7 +7,9 @@ interface IconifyProps {
 }
 
 const MockIconify: FC<IconifyProps> = ({ icon, width = 20, sx = {} }: IconifyProps) => (
-  <span style={{ width, height: width, ...sx }}>{icon}</span>
+  <span data-testid={`iconify-${icon}`} style={{ width, height: width, ...sx }}>
+    {icon}
+  </span>
 );
 
 export default MockIconify;

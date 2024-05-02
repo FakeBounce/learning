@@ -95,9 +95,27 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "PpLRwD": {
     "translation": "",
     "message": "Retour à la connexion",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "",
+    "message": "Création d'un module",
     "comments": [],
     "obsolete": false
   },
@@ -110,6 +128,12 @@
   "X1Endn": {
     "translation": "",
     "message": "Pas encore de compte ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "XdArAS": {
+    "translation": "",
+    "message": "Modules",
     "comments": [],
     "obsolete": false
   },
@@ -131,6 +155,12 @@
     "comments": [],
     "obsolete": false
   },
+  "dBw0sb": {
+    "translation": "",
+    "message": "Modifier un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "eoO6cw": {
     "translation": "",
     "message": "Liste des Parcours",
@@ -149,9 +179,33 @@
     "comments": [],
     "obsolete": false
   },
+  "huWkQi": {
+    "translation": "",
+    "message": "Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "iS7m9d": {
     "translation": "",
     "message": "Réinitialiser",
+    "comments": [],
+    "obsolete": false
+  },
+  "kr+Vzs": {
+    "translation": "",
+    "message": "L'organisation ID est obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "l5G7BG": {
+    "translation": "",
+    "message": "L'email est obligatoire",
     "comments": [],
     "obsolete": false
   },
@@ -182,6 +236,12 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

@@ -57,6 +57,11 @@ export default function GroupsList() {
 
   // Popper handlers
   const handleClick = (newGroup: Group) => (event: MouseEvent<HTMLElement>) => {
+    if (newGroup.id === groupSelected?.id) {
+      setGroupSelected(null);
+      setAnchorEl(null);
+      return;
+    }
     setGroupSelected(newGroup);
     setAnchorEl(event.currentTarget);
   };

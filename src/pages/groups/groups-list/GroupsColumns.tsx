@@ -12,6 +12,9 @@ const groupsAction = (
     field: 'id',
     display: 'flex',
     headerName: '',
+    sortable: false,
+    resizable: false,
+    disableColumnMenu: true,
     renderCell: (cell: GridRenderCellParams) => <StatusChip handleClick={handleClick(cell.row)} />
   } as GridColDef;
 };

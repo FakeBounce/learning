@@ -24,6 +24,7 @@ export default function RolesListModal({
       cancelModal();
     }
   };
+
   return (
     <LMSModal
       title={<Trans>Supprimer un rôle</Trans>}

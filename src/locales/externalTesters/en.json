@@ -172,9 +172,27 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "",
+    "message": "Création d'un module",
     "comments": [],
     "obsolete": false
   },
@@ -207,6 +225,12 @@
     "comments": [],
     "obsolete": false
   },
+  "XdArAS": {
+    "translation": "",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
@@ -216,6 +240,12 @@
   "YNznY8": {
     "translation": "",
     "message": "Ajouter",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -270,6 +300,12 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -330,6 +366,12 @@
   "wGk4Sl": {
     "translation": "",
     "message": "Liste des testeurs valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

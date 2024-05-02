@@ -20,14 +20,14 @@ export const PATH_AUTH = {
 
 export const PATH_ERRORS = {
   root: '/404',
-  '403': '/403'
+  forbidden: '/403'
 };
 
 // Used for dashboard navigation
 export const PATH_DASHBOARD = {
   root: ROOTS_DASHBOARD,
-  courseList: path(ROOTS_DASHBOARD, 'course-list'),
-  modulesList: path(ROOTS_DASHBOARD, 'modules-list')
+  courses: path(ROOTS_DASHBOARD, 'courses'),
+  modules: path(ROOTS_DASHBOARD, 'modules')
 };
 
 // Used for sidebar navigation parameters
@@ -88,5 +88,13 @@ const ROOT_GROUPS = PATH_PARAMETERS.groups;
 export const PATH_GROUPS = {
   root: ROOT_GROUPS,
   add: path(ROOT_GROUPS, '/create'),
-  update: path(ROOT_GROUPS, '/update/:roleId')
+  update: path(ROOT_GROUPS, '/profile/:groupId')
+};
+
+// Modules
+const ROOT_MODULES = PATH_DASHBOARD.modules;
+export const PATH_MODULES = {
+  root: ROOT_MODULES,
+  add: path(ROOT_MODULES, '/create'),
+  profile: path(ROOT_MODULES, '/profile/:moduleId')
 };

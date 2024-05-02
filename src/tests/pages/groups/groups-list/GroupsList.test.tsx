@@ -1,9 +1,7 @@
-import GroupsListMock, {
-  setupSuccessAxiosMock
-} from '@src/tests/pages/groups/groups-list/GroupsListMock';
+import GroupsMock, { groupsSetupSuccessAxiosMock } from '@src/tests/pages/groups/GroupsMock';
 import { render, waitFor, screen, cleanup } from '@testProvider';
 import GroupsList from '@src/pages/groups/groups-list/GroupsList';
-import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
+import { defaultGroupsList } from '@src/tests/pages/groups/DefaultGroup';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import { useOutletContext } from 'react-router';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
@@ -24,11 +22,11 @@ describe('GroupsList', () => {
 
   afterEach(() => {
     cleanup();
-    GroupsListMock.reset();
+    GroupsMock.reset();
   });
 
   it('should render GroupsList correctly', async () => {
-    setupSuccessAxiosMock();
+    groupsSetupSuccessAxiosMock();
     render(
       <FeatureFlagContext.Provider
         value={{
@@ -41,12 +39,12 @@ describe('GroupsList', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultGroup.name)).toBeInTheDocument();
+      expect(screen.getByText(defaultGroupsList[0].name)).toBeInTheDocument();
     });
   });
 
   it('should delete Group correctly', async () => {
-    setupSuccessAxiosMock();
+    groupsSetupSuccessAxiosMock();
 
     render(
       <FeatureFlagContext.Provider
@@ -60,12 +58,12 @@ describe('GroupsList', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultGroup.name)).toBeInTheDocument();
+      expect(screen.getByText(defaultGroupsList[0].name)).toBeInTheDocument();
     });
 
     let actionsButton: any;
     await waitFor(() => {
-      actionsButton = screen.getByTestId(/chipActions/i);
+      actionsButton = screen.getAllByTestId(/chipActions/i)[0];
       expect(actionsButton).toBeInTheDocument();
     });
 
@@ -94,8 +92,8 @@ describe('GroupsList', () => {
     });
 
     await waitFor(() => {
-      expect(GroupsListMock.history.delete).toHaveLength(1);
-      expect(GroupsListMock.history.delete[0].url).toBe(`/groups/${defaultGroup.id}`);
+      expect(GroupsMock.history.delete).toHaveLength(1);
+      expect(GroupsMock.history.delete[0].url).toBe(`/groups/${defaultGroupsList[0].id}`);
     });
   });
 });

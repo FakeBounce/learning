@@ -9,26 +9,50 @@ import { MemoryRouter } from 'react-router';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './redux/rootReducer';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 
-// Mock Dialog to prevent Portal warnings
-jest.mock('@mui/material/Dialog', () => {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  return require('@src/tests/mocks/DialogMock').default;
+// Mock usePlacesService
+jest.mock('react-google-autocomplete/lib/usePlacesAutocompleteService', () => {
+  return {
+    __esModule: true, // this property makes it behave like a module
+    default: () => ({
+      placePredictions: [
+        { description: 'Place One', place_id: '1' },
+        { description: 'Place Two', place_id: '2' }
+      ],
+      getPlacePredictions: jest.fn(),
+      isPlacePredictionsLoading: false
+    })
+  };
 });
 
-// Notifications mock
 jest.mock('@mui/x-data-grid', () => ({
   ...jest.requireActual('@mui/x-data-grid'),
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   DataGrid: require('@src/tests/mocks/MockFullTable').default
 }));
 
-// Notifications mock
-jest.mock('@src/components/lms/LMSSwitch');
-jest.mock('@src/components/lms/ActionButton');
+// Potentially need to find another way to mock the components
+// If we use MenuItem another way
+jest.mock('@mui/material/MenuItem', () => {
+  // eslint-disable-next-line react/display-name
+  return ({ value, children, ...props }: { value: string; children: ReactNode }) => (
+    <option value={value} {...props}>
+      {children}
+    </option>
+  );
+});
+
+jest.mock('@src/components/hook-form/RHFSelect');
 jest.mock('@src/components/hook-form/RHFAvatar');
+jest.mock('@src/components/hook-form/RHFTimer');
+jest.mock('@src/components/hook-form/RHFAutocomplete');
+jest.mock('@src/components/lms/LMSSwitch');
+jest.mock('@src/components/lms/LMSModal');
+jest.mock('@src/components/lms/ActionButton');
+jest.mock('@src/components/lms/CSVUploadBox');
 jest.mock('@src/components/iconify/Iconify');
-jest.mock('@src/components/lms/UploadBox');
 
 // Notifications mock
 jest.mock('notistack', () => ({
@@ -51,11 +75,13 @@ function customRender(
 ) {
   function Wrapper({ children }: { children: ReactNode }) {
     return (
-      <MemoryRouter initialEntries={customHistory}>
-        <Provider store={store}>
-          <AppWrapper>{children}</AppWrapper>
-        </Provider>
-      </MemoryRouter>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <MemoryRouter initialEntries={customHistory}>
+          <Provider store={store}>
+            <AppWrapper>{children}</AppWrapper>
+          </Provider>
+        </MemoryRouter>
+      </LocalizationProvider>
     );
   }
   return rtlRender(ui, { wrapper: Wrapper, ...renderOptions });

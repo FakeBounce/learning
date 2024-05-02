@@ -95,9 +95,27 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "Ajouter un rôle",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "PpLRwD": {
     "translation": "Retour à la connexion",
     "message": "Retour à la connexion",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "Gestion des permissions",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "Création d'un module",
+    "message": "Création d'un module",
     "comments": [],
     "obsolete": false
   },
@@ -110,6 +128,12 @@
   "X1Endn": {
     "translation": "Pas encore de compte ?",
     "message": "Pas encore de compte ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "XdArAS": {
+    "translation": "Modules",
+    "message": "Modules",
     "comments": [],
     "obsolete": false
   },
@@ -131,6 +155,12 @@
     "comments": [],
     "obsolete": false
   },
+  "dBw0sb": {
+    "translation": "Modifier un groupe",
+    "message": "Modifier un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
@@ -149,9 +179,33 @@
     "comments": [],
     "obsolete": false
   },
+  "huWkQi": {
+    "translation": "Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "message": "Veuillez renseigner l'adresse mail associée à votre compte et nous vous enverrons un lien pour réinitialiser votre mot de passe.",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "iS7m9d": {
     "translation": "Réinitialiser",
     "message": "Réinitialiser",
+    "comments": [],
+    "obsolete": false
+  },
+  "kr+Vzs": {
+    "translation": "L'organisation ID est obligatoire",
+    "message": "L'organisation ID est obligatoire",
+    "comments": [],
+    "obsolete": false
+  },
+  "l5G7BG": {
+    "translation": "L'email est obligatoire",
+    "message": "L'email est obligatoire",
     "comments": [],
     "obsolete": false
   },
@@ -182,6 +236,12 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "Rôles",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

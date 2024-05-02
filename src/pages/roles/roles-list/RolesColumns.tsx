@@ -1,11 +1,9 @@
 import { Trans } from '@lingui/macro';
-import { Box, IconButton, Typography } from '@mui/material';
-import { Theme } from '@mui/material/styles';
-import Iconify from '@src/components/iconify/Iconify';
 import { MouseEvent } from 'react';
 import { Role } from '@services/roles/interfaces';
 import { GridColDef, GridRenderCellParams } from '@mui/x-data-grid';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
+import StatusChip from '@src/components/lms/StatusChip';
 
 export const rolesColumns = (
   handleClick: (_newRole: Role) => (_event: MouseEvent<HTMLElement>) => void
@@ -15,34 +13,25 @@ export const rolesColumns = (
       field: 'name',
       display: 'flex',
       flex: 1,
-      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>),
-      renderCell: (cell: GridRenderCellParams) => {
-        return (
-          <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
-            {cell.value}
-          </Typography>
-        );
-      }
+      renderHeader: () => renderHeaderCell(<Trans>Nom</Trans>)
     },
     {
       field: 'description',
       display: 'flex',
+      sortable: false,
+      disableColumnMenu: true,
       flex: 1,
-      renderHeader: () => renderHeaderCell(<Trans>Description</Trans>),
+      renderHeader: () => renderHeaderCell(<Trans>Description</Trans>)
+    },
+    {
+      field: 'id',
+      display: 'flex',
+      sortable: false,
+      resizable: false,
+      disableColumnMenu: true,
+      headerName: '',
       renderCell: (cell: GridRenderCellParams) => {
-        return (
-          <Box display="flex" alignItems="center" justifyContent="space-between">
-            <Typography fontSize={(theme: Theme) => theme.typography.body2.fontSize} ml={1}>
-              {cell.value}
-            </Typography>
-            <IconButton onClick={handleClick(cell.row)} sx={{ boxShadow: 'none' }}>
-              <Iconify
-                sx={{ color: (theme: Theme) => theme.palette.grey[900] }}
-                icon={'pepicons-pop:dots-y'}
-              />
-            </IconButton>
-          </Box>
-        );
+        return <StatusChip handleClick={handleClick(cell.row)} />;
       }
     }
   ] as GridColDef[];

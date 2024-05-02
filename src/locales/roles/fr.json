@@ -1,4 +1,10 @@
 {
+  "+zy2Nq": {
+    "translation": "Type",
+    "message": "Type",
+    "comments": [],
+    "obsolete": false
+  },
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
@@ -8,6 +14,12 @@
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
+    "comments": [],
+    "obsolete": false
+  },
+  "3/5e4J": {
+    "translation": "Le nom du groupe est requis",
+    "message": "Le nom du groupe est requis",
     "comments": [],
     "obsolete": false
   },
@@ -41,6 +53,12 @@
     "comments": [],
     "obsolete": false
   },
+  "Bmo0y3": {
+    "translation": "OUI",
+    "message": "OUI",
+    "comments": [],
+    "obsolete": false
+  },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
@@ -65,6 +83,12 @@
     "comments": [],
     "obsolete": false
   },
+  "FVThbb": {
+    "translation": "Utilisateur",
+    "message": "Utilisateur",
+    "comments": [],
+    "obsolete": false
+  },
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
@@ -83,6 +107,12 @@
     "comments": [],
     "obsolete": false
   },
+  "IJxJfq": {
+    "translation": "Groupe",
+    "message": "Groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
@@ -95,6 +125,42 @@
     "comments": [],
     "obsolete": false
   },
+  "O3oNi5": {
+    "translation": "Email",
+    "message": "Email",
+    "comments": [],
+    "obsolete": false
+  },
+  "OLPz9q": {
+    "translation": "Nom du rôle",
+    "message": "Nom du rôle",
+    "comments": [],
+    "obsolete": false
+  },
+  "P54OXz": {
+    "translation": "Ajouter un rôle",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "Gestion des permissions",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "Création d'un module",
+    "message": "Création d'un module",
+    "comments": [],
+    "obsolete": false
+  },
+  "XdArAS": {
+    "translation": "Modules",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
@@ -104,6 +170,12 @@
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "Modifier un groupe",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -125,6 +197,12 @@
     "comments": [],
     "obsolete": false
   },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
@@ -143,6 +221,12 @@
     "comments": [],
     "obsolete": false
   },
+  "sCvW+n": {
+    "translation": "Appartient déjà au groupe",
+    "message": "Appartient déjà au groupe",
+    "comments": [],
+    "obsolete": false
+  },
   "tNU7H1": {
     "translation": "Rôle supprimé !",
     "message": "Rôle supprimé !",
@@ -152,6 +236,12 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "xj9DHS": {
+    "translation": "NON",
+    "message": "NON",
     "comments": [],
     "obsolete": false
   },

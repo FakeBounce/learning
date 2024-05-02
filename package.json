@@ -5,7 +5,7 @@
   "description": "Typescript Version",
   "private": true,
   "scripts": {
-    "dev": "yarn run vite -- --port 30000 --host",
+    "dev": "yarn run vite --port 30000 --host",
     "test": "react-scripts test",
     "test:all": "yarn test --bail --watchAll=false --coverage --findRelatedTests",
     "test:ci": "yarn test --bail --watchAll=false --coverage --testResultsProcessor=\"jest-junit\"",
@@ -67,6 +67,7 @@
     "@mui/material": "^5.15.15",
     "@mui/system": "^5.10.15",
     "@mui/x-data-grid": "^7.3.0",
+    "@mui/x-date-pickers": "^7.2.0",
     "@reduxjs/toolkit": "^1.9.7",
     "axios": "^1.6.7",
     "date-fns": "^3.6.0",
@@ -75,11 +76,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
+    "react-google-autocomplete": "^2.7.3",
     "react-hook-form": "^7.39.5",
     "react-redux": "^8.0.5",
     "react-router": "^6.4.3",
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
+    "react-select": "^5.8.0",
     "redux": "^4.2.0",
     "redux-persist": "^6.0.0",
     "web-vitals": "^3.1.0",
@@ -141,7 +144,9 @@
     ],
     "collectCoverageFrom": [
       "<rootDir>/src/components/**/*.{ts,tsx}",
-      "<rootDir>/src/pages/**/*.{ts,tsx}"
+      "<rootDir>/src/pages/**/*.{ts,tsx}",
+      "<rootDir>/src/utils/auth/*.{ts,tsx}",
+      "<rootDir>/src/utils/helpers/*.{ts,tsx}"
     ],
     "coveragePathIgnorePatterns": [
       "node_modules",

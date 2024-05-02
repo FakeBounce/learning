@@ -7,8 +7,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function SidebarGeneralList({ open }: { open: boolean }) {
+  const { pathname } = useLocation();
+
   return (
     <Box
       sx={{
@@ -28,25 +31,45 @@ export default function SidebarGeneralList({ open }: { open: boolean }) {
       <List>
         {generalNavigationConfig.map((navItem) => (
           <ListItem key={`navItem-${navItem.path}`} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5
-              }}
-            >
-              <ListItemIcon
+            <Box component={NavLink} to={navItem.path}>
+              <ListItemButton
                 sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center'
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  display: 'flex',
+                  px: open ? 0.5 : 0,
+                  mx: open ? 2 : 1,
+                  transition: 'all 0.3s ease',
+                  borderRadius: (theme) => theme.shape.customBorderRadius.small,
+                  backgroundColor: (theme) =>
+                    pathname === navItem.path && open ? theme.palette.grey[300] : 'transparent'
                 }}
               >
-                <Iconify icon={navItem.icon} width={24} />
-              </ListItemIcon>
+                <ListItemIcon
+                  data-testid={`icon-${navItem.path}`}
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 1 : 'auto',
+                    justifyContent: 'center',
+                    padding: 1,
+                    maxWidth: !open ? '100%' : 48,
+                    borderRadius: (theme) => theme.shape.customBorderRadius.small,
+                    transition: 'all 0.3s ease',
+                    backgroundColor: (theme) =>
+                      pathname === navItem.path && !open ? theme.palette.grey[300] : 'transparent'
+                  }}
+                >
+                  <Iconify icon={navItem.icon} width={24} />
+                </ListItemIcon>
 
-              <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
+                <ListItemText
+                  primary={navItem.title}
+                  sx={{
+                    opacity: open ? 1 : 0
+                  }}
+                />
+              </ListItemButton>
+            </Box>
           </ListItem>
         ))}
       </List>

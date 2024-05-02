@@ -1,3 +1,8 @@
+export interface BasicOption {
+  readonly label: string;
+  readonly value: string;
+}
+
 export interface FilterBy {
   operator: 'AND' | 'OR';
   items: [

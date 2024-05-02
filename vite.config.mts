@@ -18,6 +18,12 @@ export default defineConfig((props) => {
       }),
       tsconfigPaths()
     ],
+    optimizeDeps: {
+      include: ['@emotion/react']
+    },
+    resolve: {
+      dedupe: ['@emotion/react']
+    },
     define: envWithProcessPrefix
   };
 });

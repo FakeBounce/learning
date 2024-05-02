@@ -61,6 +61,12 @@
     "comments": [],
     "obsolete": false
   },
+  "A7xVRH": {
+    "translation": "",
+    "message": "Veuillez sélectionner un fichier",
+    "comments": [],
+    "obsolete": false
+  },
   "AAjpHB": {
     "translation": "",
     "message": "Aucun étudiant valide à ajouter",
@@ -216,6 +222,12 @@
     "message": "Mettre à jour",
     "comments": []
   },
+  "P54OXz": {
+    "translation": "",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "PsHtRs": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -231,6 +243,18 @@
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
     "comments": []
+  },
+  "ROGnVQ": {
+    "translation": "",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "",
+    "message": "Création d'un module",
+    "comments": [],
+    "obsolete": false
   },
   "SNbh3h": {
     "translation": "",
@@ -301,6 +325,12 @@
     "comments": [],
     "obsolete": false
   },
+  "XdArAS": {
+    "translation": "",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
@@ -322,6 +352,12 @@
   "YlStRO": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -379,6 +415,12 @@
     "translation": "",
     "message": "Nom",
     "comments": []
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "",
@@ -453,6 +495,12 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

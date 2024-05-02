@@ -78,10 +78,29 @@ export const ExternalTestersBulk = LoadableComponent(
  Roles
  **/
 export const Roles = LoadableComponent(lazy(() => import('@src/pages/roles/roles-list/RolesList')));
+export const RolesCreate = LoadableComponent(
+  lazy(() => import('@src/pages/roles/roles-create/RolesCreate'))
+);
 
 /**
  Groups
  **/
 export const Groups = LoadableComponent(
   lazy(() => import('@src/pages/groups/groups-list/GroupsList'))
+);
+export const GroupsCreate = LoadableComponent(
+  lazy(() => import('@src/pages/groups/groups-create/GroupsCreate'))
+);
+export const GroupsUpdate = LoadableComponent(
+  lazy(() => import('@src/pages/groups/groups-update/GroupsUpdate'))
+);
+
+/**
+ Modules
+ **/
+export const Modules = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-list/ModulesList'))
+);
+export const ModulesCreate = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-create/ModulesCreate'))
 );

@@ -61,6 +61,12 @@
     "comments": [],
     "obsolete": false
   },
+  "A7xVRH": {
+    "translation": "Veuillez sélectionner un fichier",
+    "message": "Veuillez sélectionner un fichier",
+    "comments": [],
+    "obsolete": false
+  },
   "AAjpHB": {
     "translation": "Aucun étudiant valide à ajouter",
     "message": "Aucun étudiant valide à ajouter",
@@ -216,6 +222,12 @@
     "message": "Mettre à jour",
     "comments": []
   },
+  "P54OXz": {
+    "translation": "Ajouter un rôle",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "PsHtRs": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -231,6 +243,18 @@
     "translation": "Le numéro de téléphone est invalide",
     "message": "Le numéro de téléphone est invalide",
     "comments": []
+  },
+  "ROGnVQ": {
+    "translation": "Gestion des permissions",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "Création d'un module",
+    "message": "Création d'un module",
+    "comments": [],
+    "obsolete": false
   },
   "SNbh3h": {
     "translation": "Débloquer un étudiant",
@@ -301,6 +325,12 @@
     "comments": [],
     "obsolete": false
   },
+  "XdArAS": {
+    "translation": "Modules",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
@@ -322,6 +352,12 @@
   "YlStRO": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "Modifier un groupe",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -379,6 +415,12 @@
     "translation": "Nom",
     "message": "Nom",
     "comments": []
+  },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
+    "comments": [],
+    "obsolete": false
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
@@ -453,6 +495,12 @@
   "xj9DHS": {
     "translation": "NON",
     "message": "NON",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "Rôles",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

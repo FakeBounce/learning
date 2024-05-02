@@ -1,7 +1,13 @@
-import { GridColDef, GridFilterModel, GridPaginationModel, GridSortModel } from '@mui/x-data-grid';
+import {
+  DataGridProps,
+  GridColDef,
+  GridFilterModel,
+  GridPaginationModel,
+  GridSortModel
+} from '@mui/x-data-grid';
 import { t } from '@lingui/macro';
 
-export interface FullTableProps {
+export interface FullTableProps extends DataGridProps {
   columns: GridColDef[];
   rows: any[];
   defaultPageSize?: number;

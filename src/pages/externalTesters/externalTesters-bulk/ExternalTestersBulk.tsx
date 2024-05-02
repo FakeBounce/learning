@@ -86,7 +86,7 @@ export default function ExternalTestersBulk() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <ExternalTestersBulkContent
           handleDropAvatar={handleDropAvatar}
           fileUploaded={fileUploaded}

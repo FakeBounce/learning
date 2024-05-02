@@ -1,7 +1,7 @@
 import { Trans } from '@lingui/macro';
 import { Avatar, Input, Stack, Typography } from '@mui/material';
 import Iconify from '@src/components/iconify/Iconify';
-import { uploader } from '@utils/fileUploader';
+import { uploader } from '@utils/helpers/fileUploader';
 import {
   ChangeEvent,
   Dispatch,

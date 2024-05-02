@@ -53,7 +53,7 @@ export default function ExternalTestersCreate() {
 
   return (
     <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }}>
+      <form onSubmit={handleSubmit(onSubmit)} noValidate>
         <LMSCard
           isPageCard
           header={<CardHeader headerText={<Trans>Ajouter un testeur</Trans>} />}

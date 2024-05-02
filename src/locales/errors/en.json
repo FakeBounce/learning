@@ -71,9 +71,39 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "",
+    "message": "Création d'un module",
+    "comments": [],
+    "obsolete": false
+  },
+  "XdArAS": {
+    "translation": "",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -86,6 +116,12 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "",
+    "message": "Ajouter un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -104,6 +140,12 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   }

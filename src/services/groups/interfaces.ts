@@ -1,35 +1,32 @@
-import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import {
+  ApiRequestSort,
+  ApiResponseMessage,
+  ApiResponsePagination,
+  FilterBy
+} from '@services/interfaces';
+import { Role } from '@services/roles/interfaces';
 
 export interface Group {
   id: number;
   name: string;
-  description: string;
-  organisationId?: number;
+  description?: string;
   isMain?: boolean;
   nbUsers?: number;
-}
-
-export interface GroupFromAPI {
-  id: number;
-  name: string;
-  description: string;
-  organisation_id: number;
-  is_main: boolean;
-  nb_users: number;
+  roles?: Role[];
 }
 
 export interface GetGroupsRequest {
   currentPage: number;
   rowsPerPage: number;
   sort?: ApiRequestSort;
-  filters?: any;
+  filters?: FilterBy;
 }
 
 export interface GetGroupsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: GroupFromAPI[];
+    rows: Group[];
     pagination: ApiResponsePagination;
   };
 }
@@ -41,4 +38,29 @@ export interface DeleteGroupRequest {
 export interface DeleteGroupResponse {
   success: boolean;
   message: ApiResponseMessage;
+}
+
+export interface CreateGroupRequest {
+  name: string;
+  description?: string;
+  usersId?: number[];
+}
+
+export interface CreateGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Group;
+}
+
+export interface UpdateGroupRequest {
+  id: number;
+  name?: string;
+  description?: string;
+  usersId?: number[];
+}
+
+export interface UpdateGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Group;
 }

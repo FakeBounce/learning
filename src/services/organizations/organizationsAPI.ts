@@ -4,6 +4,8 @@ import {
   GetOrganizationsRequest,
   GetOrganizationsResponse,
   GetSingleOrganizationResponse,
+  SetOrganizationsLogoRequest,
+  SetOrganizationsLogoResponse,
   UpdateOrganizationsBlockRequest,
   UpdateOrganizationsBlockResponse,
   UpdateOrganizationsRequest,
@@ -24,12 +26,28 @@ export const createOrganizations = async (
 export const updateOrganizations = async (
   args: UpdateOrganizationsRequest
 ): Promise<AxiosResponse<UpdateOrganizationsResponse>> => {
-  const { id, name, addressId, logo } = args;
+  const { id, name, addressId } = args;
+
   return axios.put(`/organizations/${id}`, {
     name,
-    addressId,
-    logo
+    addressId
   });
+};
+
+export const setOrganizationsLogo = async (
+  args: SetOrganizationsLogoRequest
+): Promise<AxiosResponse<SetOrganizationsLogoResponse>> => {
+  const { id, logo } = args;
+  
+  return axios.post(
+    `/organizations/${id}/logo`,
+    { image: logo },
+    {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }
+  );
 };
 
 export const updateOrganizationsBlock = async (

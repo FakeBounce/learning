@@ -155,9 +155,27 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "Ajouter un rôle",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "PedA04": {
     "translation": "Créer une organization",
     "message": "Créer une organization",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "Gestion des permissions",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "Création d'un module",
+    "message": "Création d'un module",
     "comments": [],
     "obsolete": false
   },
@@ -170,6 +188,12 @@
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
+    "comments": [],
+    "obsolete": false
+  },
+  "XdArAS": {
+    "translation": "Modules",
+    "message": "Modules",
     "comments": [],
     "obsolete": false
   },
@@ -194,6 +218,12 @@
   "b+/aiw": {
     "translation": "Débloquer une organisation",
     "message": "Débloquer une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "Modifier un groupe",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -242,6 +272,12 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -308,6 +344,12 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "Rôles",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

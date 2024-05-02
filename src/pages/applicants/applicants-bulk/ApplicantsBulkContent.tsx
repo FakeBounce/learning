@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
 import { LMSCard } from '@src/components/lms';
-import UploadBox from '@src/components/lms/UploadBox';
+import CSVUploadBox from '@src/components/lms/CSVUploadBox';
 import { Trans } from '@lingui/macro';
 import Iconify from '@src/components/iconify/Iconify';
 import { applicantsBulkColumns } from '@src/pages/applicants/applicants-bulk/ApplicantsBulkColumns';
@@ -40,7 +40,7 @@ export default function ApplicantsBulkContent({
         footer={<ApplicantsBulkFooter />}
       >
         <Box display="flex" px={4}>
-          <UploadBox
+          <CSVUploadBox
             onDrop={handleDropAvatar}
             sx={{ display: 'flex', flex: '1 1 0', minWidth: 240 }}
             disabled={!!fileUploaded}

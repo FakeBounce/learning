@@ -1,6 +1,8 @@
 import { AxiosResponse } from 'axios';
 import axios from '@utils/axios/axios';
 import {
+  CreateRoleRequest,
+  CreateRoleResponse,
   GetRolePermissionsRequest,
   GetRolePermissionsResponse,
   GetRolesRequest,
@@ -25,3 +27,7 @@ export const getRoles = async (args: GetRolesRequest): Promise<AxiosResponse<Get
     sort
   });
 };
+
+export const createRole = async (
+  args: CreateRoleRequest
+): Promise<AxiosResponse<CreateRoleResponse>> => axios.post(`/roles`, args);

@@ -4,8 +4,11 @@ import {
   PATH_APPLICANTS,
   PATH_DASHBOARD,
   PATH_EXTERNAL_TESTERS,
+  PATH_GROUPS,
+  PATH_MODULES,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
+  PATH_ROLES,
   PATH_USERS
 } from './paths';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
@@ -16,12 +19,12 @@ export const generalNavigationConfig = [
   { title: <Trans>Dashboard</Trans>, path: PATH_DASHBOARD.root, icon: 'dashicons:performance' },
   {
     title: <Trans>Liste des Parcours</Trans>,
-    path: PATH_DASHBOARD.courseList,
+    path: PATH_DASHBOARD.courses,
     icon: 'material-symbols:play-shapes'
   },
   {
     title: <Trans>Liste des modules</Trans>,
-    path: PATH_DASHBOARD.modulesList,
+    path: PATH_MODULES.root,
     icon: 'uim:star-half-alt'
   }
 ];
@@ -118,15 +121,58 @@ const externalTestersNavigationConfig = [
   }
 ];
 
+const groupsNavigationConfig = [
+  {
+    title: <Trans>Groupes</Trans>,
+    path: PATH_GROUPS.root
+  },
+  {
+    title: <Trans>Ajouter un groupe</Trans>,
+    path: PATH_GROUPS.add
+  },
+  {
+    title: <Trans>Modifier un groupe</Trans>,
+    path: PATH_GROUPS.update
+  }
+];
+
+const modulesNavigationConfig = [
+  {
+    title: <Trans>Modules</Trans>,
+    path: PATH_MODULES.root
+  },
+  {
+    title: <Trans>Création d'un module</Trans>,
+    path: PATH_MODULES.add
+  }
+];
+
+const rolesNavigationConfig = [
+  {
+    title: <Trans>Rôles</Trans>,
+    path: PATH_ROLES.root
+  },
+  {
+    title: <Trans>Ajouter un rôle</Trans>,
+    path: PATH_ROLES.add
+  },
+  {
+    title: <Trans>Gestion des permissions</Trans>,
+    path: PATH_ROLES.managePermission
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
   ...generalNavigationConfig,
-  ...parametersNavigationConfig,
   ...organizationsNavigationConfig,
   ...usersNavigationConfig,
   ...applicantsNavigationConfig,
-  ...externalTestersNavigationConfig
+  ...externalTestersNavigationConfig,
+  ...groupsNavigationConfig,
+  ...rolesNavigationConfig,
+  ...modulesNavigationConfig
 ];
 
 export interface globalNavigationConfigType {

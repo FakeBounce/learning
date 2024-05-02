@@ -26,14 +26,8 @@ const axiosInstance: AxiosInstance = (() => {
   // newInstance.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
 
   newInstance.interceptors.request.use((config) => {
-    const axiosDelay = parseInt(getEnvVariable('VITE_HOST_AXIOS_DELAY') ?? '300', 10);
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        // Modify the request data to use snake_case keys
-        config = { ...config, data: snakizeObject(config.data) };
-        resolve(config);
-      }, axiosDelay); // Delay each request by 300 milliseconds to give elastic search time to index the data
-    });
+    // Modify the request data to use snake_case keys
+    return { ...config, data: snakizeObject(config.data) };
   });
 
   newInstance.interceptors.response.use(

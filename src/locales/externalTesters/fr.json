@@ -172,9 +172,27 @@
     "comments": [],
     "obsolete": false
   },
+  "P54OXz": {
+    "translation": "Ajouter un rôle",
+    "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
     "message": "Le numéro de téléphone est invalide",
+    "comments": [],
+    "obsolete": false
+  },
+  "ROGnVQ": {
+    "translation": "Gestion des permissions",
+    "message": "Gestion des permissions",
+    "comments": [],
+    "obsolete": false
+  },
+  "S+0gfq": {
+    "translation": "Création d'un module",
+    "message": "Création d'un module",
     "comments": [],
     "obsolete": false
   },
@@ -207,6 +225,12 @@
     "comments": [],
     "obsolete": false
   },
+  "XdArAS": {
+    "translation": "Modules",
+    "message": "Modules",
+    "comments": [],
+    "obsolete": false
+  },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
@@ -216,6 +240,12 @@
   "YNznY8": {
     "translation": "Ajouter",
     "message": "Ajouter",
+    "comments": [],
+    "obsolete": false
+  },
+  "dBw0sb": {
+    "translation": "Modifier un groupe",
+    "message": "Modifier un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -270,6 +300,12 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
+    "comments": [],
+    "obsolete": false
+  },
+  "iJHuOY": {
+    "translation": "Ajouter un groupe",
+    "message": "Ajouter un groupe",
     "comments": [],
     "obsolete": false
   },
@@ -330,6 +366,12 @@
   "wGk4Sl": {
     "translation": "Liste des testeurs valides",
     "message": "Liste des testeurs valides",
+    "comments": [],
+    "obsolete": false
+  },
+  "yZC9OF": {
+    "translation": "Rôles",
+    "message": "Rôles",
     "comments": [],
     "obsolete": false
   },

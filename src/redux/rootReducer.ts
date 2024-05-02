@@ -7,7 +7,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import applicantsReducer from '@redux/reducers/applicantsReducer';
 import groupsReducer from '@redux/reducers/groupsReducer';
-// ----------------------------------------------------------------------
+import modulesReducer from '@redux/reducers/modulesReducer';
 
 export const rootPersistConfig = {
   key: 'root',
@@ -29,7 +29,8 @@ const rootReducer = combineReducers({
   users: usersReducer,
   roles: rolesReducer,
   applicants: applicantsReducer,
-  groups: groupsReducer
+  groups: groupsReducer,
+  modules: modulesReducer
 });
 
 export default rootReducer;

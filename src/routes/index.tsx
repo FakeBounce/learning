@@ -1,27 +1,16 @@
 import GuestGuard from '@utils/auth/GuestGuard';
 import AuthGuard from '@utils/auth/AuthGuard';
-import {
-  ForgotPasswordPage,
-  LoginPage,
-  Page404,
-  Roles,
-  Groups
-} from 'src/routes/elements';
-import {
-  PATH_AUTH,
-  PATH_DASHBOARD,
-  PATH_ROLES,
-  PATH_GROUPS
-} from '@utils/navigation/paths';
+import { PATH_AUTH, PATH_DASHBOARD } from '@utils/navigation/paths';
+import { ForgotPasswordPage, LoginPage, Page404 } from 'src/routes/elements';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import MainLayout from 'src/components/layouts/main-layout/MainLayout';
-import ApplicantsRoutes from '@src/routes/ApplicantsRoutes';
-import OrganizationsRoutes from '@src/routes/OrganizationsRoutes';
-import UsersRoutes from '@src/routes/UsersRoutes';
-import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
-import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
-import { PermissionTypeEnum } from '@services/permissions/interfaces';
-import ExternalTestersRoutes from '@src/routes/ExternalTestersRoutes';
+import ApplicantsRoutes from '@src/routes/functions/ApplicantsRoutes';
+import OrganizationsRoutes from '@src/routes/functions/OrganizationsRoutes';
+import UsersRoutes from '@src/routes/functions/UsersRoutes';
+import ExternalTestersRoutes from '@src/routes/functions/ExternalTestersRoutes';
+import GroupsRoutes from '@src/routes/functions/GroupsRoutes';
+import ModulesRoutes from '@src/routes/functions/ModulesRoutes';
+import RolesRoutes from '@src/routes/functions/RolesRoutes';
 
 const Router = () => {
   return (
@@ -38,26 +27,9 @@ const Router = () => {
         {UsersRoutes()}
         {ApplicantsRoutes()}
         {ExternalTestersRoutes()}
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.ROLES}
-              permissionsAuthorized={pageRestrictionsList.roles}
-            />
-          }
-        >
-          <Route path={PATH_ROLES.root} element={<Roles />} />
-        </Route>
-        <Route
-          element={
-            <FeatureFlagedRoute
-              pageType={PermissionTypeEnum.GROUPS}
-              permissionsAuthorized={pageRestrictionsList.groups}
-            />
-          }
-        >
-          <Route path={PATH_GROUPS.root} element={<Groups />} />
-        </Route>
+        {GroupsRoutes()}
+        {ModulesRoutes()}
+        {RolesRoutes()}
         <Route path="/404" element={<Page404 />} />
         <Route path="*" element={<Navigate to="/404" />} />
       </Route>

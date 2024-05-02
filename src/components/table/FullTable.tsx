@@ -13,6 +13,7 @@ import {
 import Box from '@mui/material/Box';
 import { TablePaginationProps } from '@mui/material';
 import MuiPagination from '@mui/material/Pagination';
+import { DEFAULT_PAGE_SIZE, MIN_HEIGHT_FULL_TABLE } from '@utils/globalConsts';
 
 function Pagination({
   page,
@@ -41,13 +42,14 @@ function CustomPagination(props: any) {
 export default function FullTable({
   columns,
   rows,
-  defaultPageSize = 10,
+  defaultPageSize = DEFAULT_PAGE_SIZE,
   rowCount = 0,
   loading = false,
   pageSizeOptions = [5, 10, 20, 50],
   onSortModelChange,
   onFilterModelChange,
-  onPaginationModelChange
+  onPaginationModelChange,
+  ...other
 }: FullTableProps) {
   return (
     <Box display="flex" flex="1 1 0" sx={{ overflow: 'auto' }}>
@@ -63,7 +65,6 @@ export default function FullTable({
         onSortModelChange={onSortModelChange}
         onFilterModelChange={onFilterModelChange}
         onPaginationModelChange={onPaginationModelChange}
-        disableColumnResize
         disableColumnSelector
         disableRowSelectionOnClick
         sortingMode={'server'}
@@ -74,6 +75,14 @@ export default function FullTable({
         }}
         localeText={defaultLocaleText}
         slotProps={defaultSlotProps}
+        {...other}
+        sx={{
+          '.MuiDataGrid-virtualScroller': {
+            overflowY: 'scroll !important',
+            minHeight: MIN_HEIGHT_FULL_TABLE
+          },
+          ...other.sx
+        }}
       />
     </Box>
   );
