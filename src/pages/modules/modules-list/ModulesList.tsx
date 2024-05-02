@@ -11,7 +11,7 @@ import LMSPopover from '@src/components/lms/LMSPopover';
 import ModulesListPopperContent from '@src/pages/modules/modules-list/ModulesListPopperContent';
 import ModulesListModal from '@src/pages/modules/modules-list/ModulesListModal';
 
-export default function RolesList() {
+export default function ModulesList() {
   const dispatch = useAppDispatch();
 
   const { modulesListData, modulesListLoading, modulesListTotalCount } = useAppSelector(
@@ -64,7 +64,6 @@ export default function RolesList() {
         <ModulesListModal
           moduleSelected={moduleSelected}
           isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
           cancelModal={cancelModal}
         />
       )}

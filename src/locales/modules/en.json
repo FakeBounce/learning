@@ -2,7 +2,8 @@
   "+A7C9u": {
     "translation": "",
     "message": "Créer un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/V2CKA": {
     "translation": "",
@@ -19,7 +20,8 @@
   "/s3YqS": {
     "translation": "",
     "message": "Mise à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "1CtVQM": {
     "translation": "",
@@ -36,7 +38,8 @@
   "1FR6FT": {
     "translation": "",
     "message": "Durée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
@@ -113,7 +116,8 @@
   "Eq6YVV": {
     "translation": "",
     "message": "Score",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
@@ -142,12 +146,14 @@
   "J6dtbK": {
     "translation": "",
     "message": "Auteur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "",
@@ -188,7 +194,8 @@
   "RJ5kAY": {
     "translation": "",
     "message": "Nom du module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "",
@@ -217,7 +224,8 @@
   "XdArAS": {
     "translation": "",
     "message": "Modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
@@ -246,7 +254,8 @@
   "eE0JZ4": {
     "translation": "",
     "message": "Version",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",

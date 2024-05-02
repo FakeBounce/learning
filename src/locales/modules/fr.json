@@ -2,7 +2,8 @@
   "+A7C9u": {
     "translation": "Créer un module",
     "message": "Créer un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/V2CKA": {
     "translation": "À la fin du module",
@@ -19,7 +20,8 @@
   "/s3YqS": {
     "translation": "Mise à jour",
     "message": "Mise à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "1CtVQM": {
     "translation": "Module supprimé !",
@@ -36,7 +38,8 @@
   "1FR6FT": {
     "translation": "Durée",
     "message": "Durée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -113,7 +116,8 @@
   "Eq6YVV": {
     "translation": "Score",
     "message": "Score",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
@@ -142,12 +146,14 @@
   "J6dtbK": {
     "translation": "Auteur",
     "message": "Auteur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
@@ -188,7 +194,8 @@
   "RJ5kAY": {
     "translation": "Nom du module",
     "message": "Nom du module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
@@ -217,7 +224,8 @@
   "XdArAS": {
     "translation": "Modules",
     "message": "Modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
@@ -246,7 +254,8 @@
   "eE0JZ4": {
     "translation": "Version",
     "message": "Version",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",

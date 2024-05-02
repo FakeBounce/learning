@@ -15,15 +15,6 @@ export interface Group {
   roles?: Role[];
 }
 
-export interface GroupFromAPI {
-  id: number;
-  name: string;
-  description: string;
-  organisation_id: number;
-  is_main: boolean;
-  nb_users: number;
-}
-
 export interface GetGroupsRequest {
   currentPage: number;
   rowsPerPage: number;
@@ -35,7 +26,7 @@ export interface GetGroupsResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: GroupFromAPI[];
+    rows: Group[];
     pagination: ApiResponsePagination;
   };
 }

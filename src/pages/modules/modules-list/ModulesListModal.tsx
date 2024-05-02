@@ -7,14 +7,12 @@ import { Module } from '@services/modules/interfaces';
 interface ModulesListModalProps {
   moduleSelected: Module | null;
   isModalOpen: boolean;
-  setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 
 export default function ModulesListModal({
   moduleSelected,
   isModalOpen,
-  setIsModalOpen,
   cancelModal
 }: ModulesListModalProps) {
   const deleteModule = () => {
@@ -30,9 +28,7 @@ export default function ModulesListModal({
     <LMSModal
       title={<Trans>Supprimer un module</Trans>}
       open={isModalOpen}
-      onClose={() => {
-        setIsModalOpen(false);
-      }}
+      onClose={cancelModal}
       validateAction={deleteModule}
       cancelAction={cancelModal}
     >
