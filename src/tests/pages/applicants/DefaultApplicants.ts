@@ -19,9 +19,9 @@ export const defaultApplicant = {
   birthDate: '1990-01-01',
   city: 'defaultApplicantCity',
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '1'
+    app: true,
+    sms: true,
+    email: true
   }
 } as ApplicantFromApi;
 
@@ -39,9 +39,9 @@ export const blockedApplicant = {
   birthDate: '1990-01-01',
   city: 'blockedApplicantCity',
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '1'
+    app: true,
+    sms: true,
+    email: true
   }
 } as ApplicantFromApi;
 
@@ -59,9 +59,9 @@ export const unlockedApplicant = {
   birthDate: '1990-01-01',
   city: 'unlockedApplicantCity',
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '1'
+    app: true,
+    sms: true,
+    email: true
   }
 } as ApplicantFromApi;
 
@@ -79,9 +79,9 @@ export const newApplicant = {
   birthDate: '1990-01-01',
   city: 'newApplicantCity',
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '1'
+    app: true,
+    sms: true,
+    email: true
   }
 } as ApplicantFromApi;
 
@@ -99,9 +99,9 @@ export const stateApplicant = {
   birthDate: '1990-01-01',
   city: 'stateApplicantCity',
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '1'
+    app: true,
+    sms: true,
+    email: true
   }
 } as Applicant;
 
@@ -119,9 +119,9 @@ export const stateApplicantDisabled = {
   birthDate: '1990-01-01',
   city: 'stateApplicantCity',
   notifications: {
-    app: '0',
-    sms: '0',
-    email: '0'
+    app: false,
+    sms: false,
+    email: false
   }
 } as Applicant;
 
@@ -133,9 +133,9 @@ export const singleApplicant = {
   external_id: null,
   isActive: true,
   notifications: {
-    app: '1',
-    sms: '1',
-    email: '0'
+    app: true,
+    sms: true,
+    email: false
   },
   current_values: {
     firstname: 'single',

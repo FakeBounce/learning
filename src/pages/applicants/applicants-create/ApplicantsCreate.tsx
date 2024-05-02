@@ -41,9 +41,9 @@ export default function ApplicantsCreate() {
 
     // @todo - Wait for API to accept booleans
     const notificationsValues: ApplicantNotifications = {
-      email: data.notifications.email ? '1' : '0',
-      sms: data.notifications.sms ? '1' : '0',
-      app: data.notifications.app ? '1' : '0'
+      email: data.notifications.email,
+      sms: data.notifications.sms,
+      app: data.notifications.app
     };
 
     const createApplicantRequest: CreateApplicantRequest = {

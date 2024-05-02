@@ -1,4 +1,9 @@
 {
+  "+3OZdN": {
+    "translation": "",
+    "message": "Nouvelle donnée renseignée : {0}",
+    "comments": []
+  },
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
@@ -8,8 +13,7 @@
   "0uOGoh": {
     "translation": "",
     "message": "Le format est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "",
@@ -38,14 +42,12 @@
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8N1T4V": {
     "translation": "",
     "message": "La notification email est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9HM7Cg": {
     "translation": "",
@@ -92,8 +94,7 @@
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
@@ -140,8 +141,7 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GF/eyq": {
     "translation": "",
@@ -176,14 +176,12 @@
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "IRPK7p": {
     "translation": "",
     "message": "La notification app est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "K+tHTS": {
     "translation": "",
@@ -194,8 +192,7 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
@@ -212,8 +209,7 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
@@ -224,8 +220,7 @@
   "P3YkHZ": {
     "translation": "",
     "message": "Mettre à jour",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "",
@@ -242,14 +237,12 @@
   "QOV2qe": {
     "translation": "",
     "message": "Date de naissance",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ROGnVQ": {
     "translation": "",
@@ -284,8 +277,7 @@
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UHDGIH": {
     "translation": "",
@@ -296,8 +288,7 @@
   "UU1Jg5": {
     "translation": "",
     "message": "La date de naissance est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UeDwla": {
     "translation": "",
@@ -326,8 +317,7 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "",
@@ -374,14 +364,12 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eeDRWI": {
     "translation": "",
     "message": "La notification sms est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
@@ -398,8 +386,7 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fu2rxk": {
     "translation": "",
@@ -416,8 +403,7 @@
   "hW6LJA": {
     "translation": "",
     "message": "L'email est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "",
@@ -428,8 +414,7 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "",
@@ -440,8 +425,7 @@
   "ikKkoV": {
     "translation": "",
     "message": "Le nom de famille est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "jP37N3": {
     "translation": "",
@@ -500,8 +484,7 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "wB7q3X": {
     "translation": "",
@@ -524,7 +507,6 @@
   "zKPyEG": {
     "translation": "",
     "message": "Au moins un groupe est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

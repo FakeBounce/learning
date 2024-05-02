@@ -88,6 +88,7 @@ export const applicantSlice = createSlice({
       })
       .addCase(ApplicantsActions.getSingleApplicant.pending, (state) => {
         state.applicantProfile.applicantProfileLoading = true;
+        state.applicantProfile.applicantProfileData = null;
       })
       .addCase(
         ApplicantsActions.getSingleApplicant.fulfilled,

@@ -23,6 +23,7 @@ const axiosInstance: AxiosInstance = (() => {
   if (session) {
     newInstance.defaults.headers.common['Authorization'] = `Bearer ${session.token}`;
   }
+  // newInstance.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
 
   newInstance.interceptors.request.use((config) => {
     // Modify the request data to use snake_case keys

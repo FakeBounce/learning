@@ -104,7 +104,12 @@ export default function ExternalTestersUpdate() {
       } as UpdateApplicantRequest;
 
       // Handle update with image
-      dispatch(updateApplicant(updateApplicantFormToSubmit));
+      dispatch(
+        updateApplicant({
+          applicantId: Number(applicantId),
+          updateArgs: updateApplicantFormToSubmit
+        })
+      );
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }

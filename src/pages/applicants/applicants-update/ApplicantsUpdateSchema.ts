@@ -1,7 +1,7 @@
 import { t } from '@lingui/macro';
 import * as Yup from 'yup';
 import { Applicant } from '@services/applicants/interfaces';
-import { format } from 'date-fns';
+import { format, formatDate } from 'date-fns';
 
 export const updateApplicantSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom de famille est requis`),
@@ -24,7 +24,8 @@ export const updateApplicantSchema = Yup.object().shape({
     .test('is-valid-date', t`Le format est invalide`, (value) => {
       if (!value) return true; // Allow empty string if field is not required
       // Check if the value is a valid date
-      return !isNaN(Date.parse(value));
+      const formattedDate = formatDate(value, 'dd-MM-yyyy');
+      return !isNaN(Date.parse(formattedDate));
     })
     .transform((value) => {
       if (!isNaN(Date.parse(value))) {
@@ -89,9 +90,9 @@ export const populateUpdateApplicantForm = (applicant: Applicant) => {
     birthName: applicant.birthName || '',
     profilePicture: applicant.profilePicture || '',
     notifications: {
-      email: applicant.notifications?.email === '1',
-      sms: applicant.notifications?.sms === '1',
-      app: applicant.notifications?.app === '1'
+      email: applicant.notifications?.email === true,
+      sms: applicant.notifications?.sms === true,
+      app: applicant.notifications?.app === true
     },
     groups: []
   };

@@ -37,7 +37,7 @@ export interface ApplicantBulkState {
 
 interface BaseApplicant {
   id: number;
-  profilePicture: string | undefined | null;
+  profilePicture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
   externalId: string | null;
@@ -50,12 +50,26 @@ interface BaseApplicant {
   city?: string | null;
   notifications?: ApplicantNotifications;
   groups?: string[];
+  conflicts?: ApplicantsUpdateConflicts;
 }
 interface AdditionalApplicantProperties {
   [key: string]: string | number | null | boolean | undefined;
 }
 
 export type Applicant = BaseApplicant & AdditionalApplicantProperties;
+
+export interface ApplicantsUpdateConflicts {
+  //@todo add groups
+  lastname?: string;
+  firstname?: string;
+  email?: string;
+  birthDate?: string;
+  externalId?: string;
+  phone?: string;
+  birthName?: string;
+  city?: string;
+  notifications?: ApplicantNotifications;
+}
 
 export interface ApplicantForBulk {
   externalId: string | null;
@@ -107,9 +121,9 @@ export interface BaseApplicantValues {
 export type ApplicantValues = BaseApplicantValues & AdditionalApplicantProperties;
 
 export interface ApplicantNotifications {
-  app: '0' | '1';
-  sms: '0' | '1';
-  email: '0' | '1';
+  app: boolean;
+  sms: boolean;
+  email: boolean;
 }
 
 export enum ApplicantType {
@@ -154,6 +168,17 @@ export interface UpdateApplicantRequest {
 }
 
 export interface UpdateApplicantResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ApplicantFromApi;
+}
+
+export interface UpdateApplicantPictureRequest {
+  applicantId: number;
+  profilePicture: File;
+}
+
+export interface UpdateApplicantPictureResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: ApplicantFromApi;

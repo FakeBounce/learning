@@ -4,7 +4,7 @@ import { memo, ReactNode } from 'react';
 
 interface ActionButtonProps extends LoadingButtonProps {
   children: ReactNode;
-  actionType?: 'action' | 'cancel' | 'update';
+  actionType?: 'action' | 'cancel' | 'update' | 'warning';
   sx?: Record<string, any>;
 }
 function ActionButton({ actionType = 'action', children, sx, ...other }: ActionButtonProps) {
@@ -27,6 +27,12 @@ function ActionButton({ actionType = 'action', children, sx, ...other }: ActionB
       bgcolor: theme.palette.secondary.main,
       '&:hover': {
         bgcolor: theme.palette.secondary.dark
+      }
+    },
+    warning: {
+      bgcolor: theme.palette.warning.main,
+      '&:hover': {
+        bgcolor: theme.palette.warning.dark
       }
     }
   };
