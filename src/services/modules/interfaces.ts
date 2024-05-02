@@ -1,35 +1,61 @@
-import { ApiResponseMessage } from '@services/interfaces';
-import { GroupFromAPI } from '@services/groups/interfaces';
+import {
+  ApiRequestSort,
+  ApiResponseMessage,
+  ApiResponsePagination,
+  FilterBy
+} from '@services/interfaces';
+import { Group } from '@services/groups/interfaces';
 
-export interface ModuleState {
-  moduleCreate: {
-    moduleCreateLoading: boolean;
-  };
+export enum ModuleDisplayAnswers {
+  AFTER_QUESTION = 'after_question',
+  END = 'end',
+  NEVER = 'never',
+  AFTER_ATTEMPTS = 'after_attempts'
 }
-export const initialModuleState: ModuleState = {
-  moduleCreate: {
-    moduleCreateLoading: false
-  }
-};
+
+export enum ModuleStatusEnum {
+  DRAFT = 'draft',
+  PUBLISHED = 'published',
+  ARCHIVED = 'archived',
+  IN_CORRECTION = 'in_correction'
+}
+
+export enum ModuleUserRightEnum {
+  OWNER = 'owner'
+}
+
+export interface ModuleRights {
+  users: ModuleRightUser[];
+  groups: Group[];
+}
+
+export interface ModuleRightUser {
+  id: number;
+  login: string;
+  right: ModuleUserRightEnum;
+}
 
 export interface Module {
-  id: number;
-  title: string;
+  composition: string;
   description: string;
-  media: string;
-  timer: string;
-  nbAttempts: number;
-  successRate: number;
   displayAnswers: ModuleDisplayAnswers;
+  id: number;
+  isLastPublishedOrArchivedVersion: boolean;
+  isLastVersion: boolean;
   isLocked: boolean;
   isPublic: boolean;
-  languageId: number;
+  language: string;
+  media: string[];
+  nbAttempts: number;
+  parentId: number | null;
+  rights: ModuleRights;
+  successRate: number;
+  status: ModuleStatusEnum;
   tags: string[];
-  createdAt: string;
-  updatedAt: string;
-  createdBy: number;
-  organisationId: number;
-  organisation: GroupFromAPI;
+  timer: string;
+  title: string;
+  updatedAt: Date;
+  version: number;
 }
 
 export interface CreateModuleRequest {
@@ -52,9 +78,18 @@ export interface CreateModuleResponse {
   data: Module;
 }
 
-export enum ModuleDisplayAnswers {
-  AFTER_QUESTION = 'after_question',
-  END = 'end',
-  NEVER = 'never',
-  AFTER_ATTEMPTS = 'after_attempts'
+export interface GetModulesRequest {
+  currentPage: number;
+  rowsPerPage: number;
+  sort?: ApiRequestSort;
+  filters?: FilterBy;
+}
+
+export interface GetModulesResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: {
+    pagination: ApiResponsePagination;
+    rows: Module[];
+  };
 }

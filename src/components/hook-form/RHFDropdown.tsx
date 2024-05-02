@@ -112,7 +112,7 @@ function RHFDropdown({
         {required ? (
           <LabelWithRequired name={name} label={label} />
         ) : (
-          <label htmlFor={name}>label</label>
+          <label htmlFor={name}>{label}</label>
         )}
       </Typography>
       <Box mt={0.5}>

@@ -13,7 +13,7 @@ import {
   colourOptions,
   languagesOptions
 } from '@src/pages/modules/modules-create/ModulesCreateSchema';
-import ModulesFormConfig from '@src/pages/modules/ModulesFormConfig';
+import ModulesFormConfig from '@src/pages/modules/modules-form/ModulesFormConfig';
 
 export default function ModulesForm() {
   const { setValue, resetField } = useFormContext();

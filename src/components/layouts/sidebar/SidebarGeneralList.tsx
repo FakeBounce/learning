@@ -7,6 +7,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import { NavLink } from 'react-router-dom';
 
 export default function SidebarGeneralList({ open }: { open: boolean }) {
   return (
@@ -28,26 +29,28 @@ export default function SidebarGeneralList({ open }: { open: boolean }) {
       <List>
         {generalNavigationConfig.map((navItem) => (
           <ListItem key={`navItem-${navItem.path}`} disablePadding sx={{ display: 'block' }}>
-            <ListItemButton
-              sx={{
-                minHeight: 48,
-                justifyContent: open ? 'initial' : 'center',
-                px: 2.5
-              }}
-            >
-              <ListItemIcon
-                data-testid={`icon-${navItem.path}`}
+            <Box component={NavLink} to={navItem.path}>
+              <ListItemButton
                 sx={{
-                  minWidth: 0,
-                  mr: open ? 3 : 'auto',
-                  justifyContent: 'center'
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5
                 }}
               >
-                <Iconify icon={navItem.icon} width={24} />
-              </ListItemIcon>
+                <ListItemIcon
+                  data-testid={`icon-${navItem.path}`}
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Iconify icon={navItem.icon} width={24} />
+                </ListItemIcon>
 
-              <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
-            </ListItemButton>
+                <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </Box>
           </ListItem>
         ))}
       </List>

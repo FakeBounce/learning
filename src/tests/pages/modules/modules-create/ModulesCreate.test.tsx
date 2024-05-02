@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, renderHook, waitFor } from '@testProvider';
+import { render, screen, fireEvent, act } from '@testProvider';
 import ModulesCreate from '@src/pages/modules/modules-create/ModulesCreate';
 import { useNavigate } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';

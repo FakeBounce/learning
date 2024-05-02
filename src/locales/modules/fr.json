@@ -1,4 +1,9 @@
 {
+  "+A7C9u": {
+    "translation": "Créer un module",
+    "message": "Créer un module",
+    "comments": []
+  },
   "/V2CKA": {
     "translation": "À la fin du module",
     "message": "À la fin du module",
@@ -8,7 +13,19 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
+    "comments": [],
+    "obsolete": false
+  },
+  "/s3YqS": {
+    "translation": "Mise à jour",
+    "message": "Mise à jour",
     "comments": []
+  },
+  "1CtVQM": {
+    "translation": "Module supprimé !",
+    "message": "Module supprimé !",
+    "comments": [],
+    "obsolete": false
   },
   "1DBtI+": {
     "translation": "Après chaque essai",
@@ -16,15 +33,28 @@
     "comments": [],
     "obsolete": false
   },
+  "1FR6FT": {
+    "translation": "Durée",
+    "message": "Durée",
+    "comments": []
+  },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "5qQosN": {
+    "translation": "Supprimer",
+    "message": "Supprimer",
+    "comments": [],
+    "obsolete": false
   },
   "6dUBla": {
     "translation": "Validation du module",
@@ -32,15 +62,23 @@
     "comments": [],
     "obsolete": false
   },
+  "7cyFQz": {
+    "translation": "Archivé",
+    "message": "Archivé",
+    "comments": [],
+    "obsolete": false
+  },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "BNJMAr": {
     "translation": "Recommencer",
@@ -48,35 +86,74 @@
     "comments": [],
     "obsolete": false
   },
+  "DCKpq+": {
+    "translation": "En correction",
+    "message": "En correction",
+    "comments": [],
+    "obsolete": false
+  },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
+    "comments": [],
+    "obsolete": false
+  },
+  "Ef7StM": {
+    "translation": "Unknown",
+    "message": "Unknown",
+    "comments": [],
+    "obsolete": false
+  },
+  "Eq6YVV": {
+    "translation": "Score",
+    "message": "Score",
     "comments": []
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "INP3dF": {
+    "translation": "Publié",
+    "message": "Publié",
+    "comments": [],
+    "obsolete": false
+  },
+  "J6dtbK": {
+    "translation": "Auteur",
+    "message": "Auteur",
+    "comments": []
+  },
+  "MZX/LX": {
+    "translation": "Statut",
+    "message": "Statut",
     "comments": []
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "NIxUee": {
     "translation": "Durée du module",
@@ -90,20 +167,46 @@
     "comments": [],
     "obsolete": false
   },
+  "Nu4oKW": {
+    "translation": "Description",
+    "message": "Description",
+    "comments": [],
+    "obsolete": false
+  },
+  "OYHzN1": {
+    "translation": "Tags",
+    "message": "Tags",
+    "comments": [],
+    "obsolete": false
+  },
   "P54OXz": {
     "translation": "Ajouter un rôle",
     "message": "Ajouter un rôle",
+    "comments": [],
+    "obsolete": false
+  },
+  "RJ5kAY": {
+    "translation": "Nom du module",
+    "message": "Nom du module",
     "comments": []
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "Création d'un module",
     "message": "Création d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "U2FMYj": {
+    "translation": "Brouillon",
+    "message": "Brouillon",
+    "comments": [],
+    "obsolete": false
   },
   "XHiamB": {
     "translation": "Verrouiller",
@@ -119,17 +222,43 @@
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
+    "comments": [],
+    "obsolete": false
+  },
+  "YLVbBi": {
+    "translation": "Supprimer un module",
+    "message": "Supprimer un module",
+    "comments": [],
+    "obsolete": false
+  },
+  "ZYJB/d": {
+    "translation": "Duppliquer",
+    "message": "Duppliquer",
+    "comments": [],
+    "obsolete": false
+  },
+  "dyGH74": {
+    "translation": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "message": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
+    "comments": [],
+    "obsolete": false
+  },
+  "eE0JZ4": {
+    "translation": "Version",
+    "message": "Version",
     "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "huVs7o": {
     "translation": "Rendre public",
@@ -140,17 +269,32 @@
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "now6WU": {
+    "translation": "Voir",
+    "message": "Voir",
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
+  },
+  "rMJNt/": {
+    "translation": "Langue",
+    "message": "Langue",
+    "comments": [],
+    "obsolete": false
   },
   "rSV0Vm": {
     "translation": "Création d’un module",
@@ -164,10 +308,17 @@
     "comments": [],
     "obsolete": false
   },
+  "uAJKId": {
+    "translation": "Assignez une valeur et appuyez sur la touche entrée",
+    "message": "Assignez une valeur et appuyez sur la touche entrée",
+    "comments": [],
+    "obsolete": false
+  },
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xmHh2K": {
     "translation": "Jamais",
@@ -178,6 +329,7 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

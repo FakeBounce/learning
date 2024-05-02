@@ -1,6 +1,6 @@
 import { render, screen, fireEvent, act, renderHook, waitFor } from '@testProvider';
 import { FormProvider, useForm } from 'react-hook-form';
-import ModulesForm from '@src/pages/modules/ModulesForm';
+import ModulesForm from '@src/pages/modules/modules-form/ModulesForm';
 
 describe('ModulesForm', () => {
   beforeEach(() => {
