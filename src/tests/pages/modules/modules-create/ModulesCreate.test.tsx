@@ -2,10 +2,10 @@ import { render, screen, fireEvent, act } from '@testProvider';
 import ModulesCreate from '@src/pages/modules/modules-create/ModulesCreate';
 import { useNavigate } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';
-import modulesCreateMock, {
+import modulesMock, {
   modulesCreateSetupErrorAxiosMock,
   modulesCreateSetupSuccessAxiosMock
-} from '@src/tests/pages/modules/modules-create/ModulesCreateMock';
+} from '@src/tests/pages/modules/ModulesMock';
 import { ModuleDisplayAnswers } from '@services/modules/interfaces';
 import { enqueueSnackbar } from 'notistack';
 
@@ -23,7 +23,7 @@ describe('ModulesCreate', () => {
   });
 
   afterEach(() => {
-    modulesCreateMock.reset();
+    modulesMock.reset();
     jest.clearAllMocks();
   });
 
@@ -78,7 +78,7 @@ describe('ModulesCreate', () => {
       fireEvent.click(submitButton);
     });
 
-    expect(modulesCreateMock.history.post.length).toBe(1);
+    expect(modulesMock.history.post.length).toBe(1);
   });
 
   it('should display an error if something is wrong', async () => {
@@ -107,7 +107,7 @@ describe('ModulesCreate', () => {
       fireEvent.click(submitButton);
     });
 
-    expect(modulesCreateMock.history.post.length).toBe(1);
+    expect(modulesMock.history.post.length).toBe(1);
     expect(enqueueSnackbar).toHaveBeenCalledWith(
       'Une erreur est survenue lors de la création du module',
       { variant: 'error' }

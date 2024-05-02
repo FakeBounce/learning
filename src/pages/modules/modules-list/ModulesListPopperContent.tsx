@@ -17,7 +17,7 @@ export default function ModulesListPopperContent({
 }: ModulesListPopperContentProps) {
   const navigate = useNavigate();
 
-  const handleChangeView = () => {
+  const handleSeeModule = () => {
     if (moduleSelected !== null) {
       navigate(generatePath(PATH_MODULES.profile, { moduleId: moduleSelected.id }));
     }
@@ -26,7 +26,7 @@ export default function ModulesListPopperContent({
   return (
     <ListItem disablePadding sx={{ display: 'block' }}>
       <ListItemButton
-        onClick={handleChangeView}
+        onClick={handleSeeModule}
         sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
       >
         <ListItemText primary={<Trans>Voir</Trans>} />
