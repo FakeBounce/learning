@@ -123,6 +123,10 @@ const externalTestersNavigationConfig = [
 
 const groupsNavigationConfig = [
   {
+    title: <Trans>Groupes</Trans>,
+    path: PATH_GROUPS.root
+  },
+  {
     title: <Trans>Ajouter un groupe</Trans>,
     path: PATH_GROUPS.add
   }

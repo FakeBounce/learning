@@ -15,8 +15,8 @@ describe('SidebarParametersList', () => {
       </FeatureFlagContext.Provider>
     );
 
-    expect(screen.getByRole('button')).toBeInTheDocument();
-    expect(screen.queryByRole('list')).not.toBeInTheDocument();
+    expect(screen.getByTestId('iconify-mdi:cog')).toBeInTheDocument();
+    expect(screen.queryByRole('list')).not.toBeVisible();
   });
 
   it('should not display any list items if canSeePage is false', async () => {
