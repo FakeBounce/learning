@@ -91,6 +91,9 @@ export const Groups = LoadableComponent(
 export const GroupsCreate = LoadableComponent(
   lazy(() => import('@src/pages/groups/groups-create/GroupsCreate'))
 );
+export const GroupsUpdate = LoadableComponent(
+  lazy(() => import('@src/pages/groups/groups-update/GroupsUpdate'))
+);
 
 /**
  Modules

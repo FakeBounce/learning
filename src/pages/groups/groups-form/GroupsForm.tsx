@@ -16,7 +16,7 @@ export default function GroupsForm({ isEditing = false }: { isEditing?: boolean 
   const { setValue } = useFormContext();
 
   const handleRowSelection = (rowsSelected: GridRowSelectionModel) => {
-    setValue('usersId', rowsSelected);
+    setValue('usersId', rowsSelected, { shouldDirty: true });
   };
 
   if (groupsUpdateLoading) {

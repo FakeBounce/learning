@@ -51,3 +51,16 @@ export interface CreateGroupResponse {
   message: ApiResponseMessage;
   data: Group;
 }
+
+export interface UpdateGroupRequest {
+  id: number;
+  name?: string;
+  description?: string;
+  usersId?: number[];
+}
+
+export interface UpdateGroupResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Group;
+}

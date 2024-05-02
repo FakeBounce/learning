@@ -46,7 +46,7 @@ export default function ModulesForm() {
       });
 
       if (file) {
-        setValue('media', newFile, { shouldValidate: true });
+        setValue('media', newFile, { shouldDirty: true });
       }
     },
     [setValue]

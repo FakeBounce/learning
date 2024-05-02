@@ -1,4 +1,4 @@
-import { Groups, GroupsCreate } from '@src/routes/elements';
+import { Groups, GroupsCreate, GroupsUpdate } from '@src/routes/elements';
 import { PATH_GROUPS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
@@ -19,6 +19,9 @@ const GroupsRoutes = () => {
       <Route path={PATH_GROUPS.root} element={<Groups />} />
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE} />}>
         <Route path={PATH_GROUPS.add} element={<GroupsCreate />} />
+      </Route>
+      <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.UPDATE} />}>
+        <Route path={PATH_GROUPS.update} element={<GroupsUpdate />} />
       </Route>
     </Route>
   );

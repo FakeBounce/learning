@@ -129,6 +129,10 @@ const groupsNavigationConfig = [
   {
     title: <Trans>Ajouter un groupe</Trans>,
     path: PATH_GROUPS.add
+  },
+  {
+    title: <Trans>Modifier un groupe</Trans>,
+    path: PATH_GROUPS.update
   }
 ];
 

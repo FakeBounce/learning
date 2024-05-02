@@ -1,4 +1,9 @@
-import { DeleteGroupResponse, Group } from '@services/groups/interfaces';
+import {
+  CreateGroupResponse,
+  DeleteGroupResponse,
+  Group,
+  UpdateGroupResponse
+} from '@services/groups/interfaces';
 import { createSlice } from '@reduxjs/toolkit';
 import * as GroupsActions from '@redux/actions/groupsActions';
 import { AnyAction } from 'redux';
@@ -46,13 +51,17 @@ export const groupsSlice = createSlice({
   name: 'groups',
   initialState: groupsInitialState,
   reducers: {
-    resetGroupsState: () => groupsInitialState
+    resetGroupsState: () => groupsInitialState,
+    setCurrentGroup: (state, action: { payload: Group }) => {
+      state.currentGroup.currentGroupData = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
       .addCase(GroupsActions.getGroupsList.pending, (state) => {
         state.groupsList.groupsListLoading = true;
         state.groupsList.groupsListData = [];
+        state.currentGroup.currentGroupData = null;
       })
       .addCase(GroupsActions.getGroupsList.fulfilled, (state, action) => {
         state.groupsList.groupsListData = action.payload.data.rows;
@@ -80,15 +89,32 @@ export const groupsSlice = createSlice({
       .addCase(GroupsActions.createGroup.pending, (state) => {
         state.groupsCreate.groupsCreateLoading = true;
       })
-      .addCase(GroupsActions.createGroup.fulfilled, (state) => {
-        state.groupsCreate.groupsCreateLoading = false;
-      })
+      .addCase(
+        GroupsActions.createGroup.fulfilled,
+        (state, action: { payload: CreateGroupResponse }) => {
+          state.groupsCreate.groupsCreateLoading = false;
+          enqueueSnackbar(action.payload.message.value, { variant: 'success' });
+        }
+      )
       .addCase(GroupsActions.createGroup.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(GroupsActions.updateGroupAction.pending, (state) => {
+        state.groupsUpdate.groupsUpdateLoading = true;
+      })
+      .addCase(
+        GroupsActions.updateGroupAction.fulfilled,
+        (state, action: { payload: UpdateGroupResponse }) => {
+          state.groupsUpdate.groupsUpdateLoading = false;
+          enqueueSnackbar(action.payload.message.value, { variant: 'success' });
+        }
+      )
+      .addCase(GroupsActions.updateGroupAction.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const { resetGroupsState } = groupsSlice.actions;
+export const { resetGroupsState, setCurrentGroup } = groupsSlice.actions;
 
 export default groupsSlice.reducer;

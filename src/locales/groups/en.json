@@ -12,8 +12,7 @@
   "3/5e4J": {
     "translation": "",
     "message": "Le nom du groupe est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "",
@@ -23,8 +22,7 @@
   "5qQosN": {
     "translation": "",
     "message": "Supprimer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7p5kLi": {
     "translation": "",
@@ -39,8 +37,7 @@
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DDwdL4": {
     "translation": "",
@@ -81,20 +78,17 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "",
@@ -117,6 +111,11 @@
     "comments": [],
     "obsolete": false
   },
+  "W3FHUJ": {
+    "translation": "",
+    "message": "Aucune modification n'a été effectuée",
+    "comments": []
+  },
   "XdArAS": {
     "translation": "",
     "message": "Modules",
@@ -133,11 +132,15 @@
     "comments": [],
     "obsolete": false
   },
+  "dBw0sb": {
+    "translation": "",
+    "message": "Modifier un groupe",
+    "comments": []
+  },
   "eTBD1Z": {
     "translation": "",
     "message": "Nom du groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
@@ -158,8 +161,7 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "",
@@ -179,8 +181,7 @@
   "sCvW+n": {
     "translation": "",
     "message": "Appartient déjà au groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "tALayW": {
     "translation": "",
@@ -202,8 +203,7 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "yZC9OF": {
     "translation": "",

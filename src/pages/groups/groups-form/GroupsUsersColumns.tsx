@@ -18,7 +18,8 @@ export const GroupsUsersColumns = ({
   const isEditingColumn: GridColDef = {
     field: 'id',
     display: 'flex',
-    flex: 1,
+    sortable: false,
+    disableColumnMenu: true,
     renderHeader: () => renderHeaderCell(<Trans>Appartient déjà au groupe</Trans>),
     renderCell: (cell: GridRenderCellParams) => (
       <Typography>
