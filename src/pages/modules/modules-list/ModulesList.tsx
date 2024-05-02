@@ -40,7 +40,7 @@ export default function RolesList() {
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? 'roles-popper' : undefined;
+  const id = open ? 'modules-popper' : undefined;
 
   return (
     <>
@@ -53,7 +53,7 @@ export default function RolesList() {
           onChange={handleTableChange}
         />
       </LMSCard>
-      <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={() => setAnchorEl(null)}>
+      <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={cancelModal}>
         <ModulesListPopperContent
           moduleSelected={moduleSelected}
           handleDelete={() => setIsModalOpen(true)}

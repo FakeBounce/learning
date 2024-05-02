@@ -14,12 +14,12 @@ export default function ModulesListHeader() {
   const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
   const theme = useTheme();
 
-  const canCreateRole = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE);
+  const canCreateModule = isAuthorizedByPermissionsTo(pageType, PermissionEnum.CREATE);
   const goToCreateModule = () => {
     navigate(PATH_MODULES.add);
   };
 
-  const modulesListHeaderActions = canCreateRole
+  const modulesListHeaderActions = canCreateModule
     ? [{ action: goToCreateModule, actionText: <Trans>Créer un module</Trans> }]
     : null;
 
