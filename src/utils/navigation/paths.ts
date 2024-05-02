@@ -20,7 +20,7 @@ export const PATH_AUTH = {
 
 export const PATH_ERRORS = {
   root: '/404',
-  '403': '/403'
+  forbidden: '/403'
 };
 
 // Used for dashboard navigation
@@ -88,7 +88,7 @@ const ROOT_GROUPS = PATH_PARAMETERS.groups;
 export const PATH_GROUPS = {
   root: ROOT_GROUPS,
   add: path(ROOT_GROUPS, '/create'),
-  update: path(ROOT_GROUPS, '/profile/:groupeId')
+  update: path(ROOT_GROUPS, '/profile/:groupId')
 };
 
 // Modules

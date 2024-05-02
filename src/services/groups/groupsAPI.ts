@@ -6,7 +6,9 @@ import {
   CreateGroupRequest,
   CreateGroupResponse,
   GetGroupsRequest,
-  GetGroupsResponse
+  GetGroupsResponse,
+  UpdateGroupRequest,
+  UpdateGroupResponse
 } from '@services/groups/interfaces';
 
 export const getGroups = async (
@@ -34,4 +36,11 @@ export const createGroup = async (
   args: CreateGroupRequest
 ): Promise<AxiosResponse<CreateGroupResponse>> => {
   return axios.post(`/groups`, args);
+};
+
+export const updateGroup = async (
+  args: UpdateGroupRequest
+): Promise<AxiosResponse<UpdateGroupResponse>> => {
+  const { id } = args;
+  return axios.put(`/groups/${id}`, args);
 };

@@ -2,7 +2,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import {
   CreateGroupRequest,
   DeleteGroupRequest,
-  GetGroupsRequest
+  GetGroupsRequest,
+  UpdateGroupRequest
 } from '@services/groups/interfaces';
 import * as GroupsServices from '@services/groups/groupsAPI';
 
@@ -20,7 +21,7 @@ export const getGroupsList = createAsyncThunk(
 );
 
 export const deleteGroup = createAsyncThunk(
-  'groups/deleteGroup',
+  'groups/delete',
   async (args: DeleteGroupRequest, { rejectWithValue }) => {
     try {
       const response = await GroupsServices.deleteGroup(args);
@@ -37,6 +38,19 @@ export const createGroup = createAsyncThunk(
   async (args: CreateGroupRequest, { rejectWithValue }) => {
     try {
       const response = await GroupsServices.createGroup(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const updateGroupAction = createAsyncThunk(
+  'groups/update',
+  async (args: UpdateGroupRequest, { rejectWithValue }) => {
+    try {
+      const response = await GroupsServices.updateGroup(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
