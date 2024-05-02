@@ -26,7 +26,8 @@
   "1CtVQM": {
     "translation": "Module supprimé !",
     "message": "Module supprimé !",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "1DBtI+": {
     "translation": "Après chaque essai",
@@ -55,7 +56,8 @@
   "5qQosN": {
     "translation": "Supprimer",
     "message": "Supprimer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "6dUBla": {
     "translation": "Validation du module",
@@ -234,17 +236,20 @@
   "YLVbBi": {
     "translation": "Supprimer un module",
     "message": "Supprimer un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZYJB/d": {
     "translation": "Duppliquer",
     "message": "Duppliquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dyGH74": {
     "translation": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
     "message": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eE0JZ4": {
     "translation": "Version",
@@ -285,7 +290,8 @@
   "now6WU": {
     "translation": "Voir",
     "message": "Voir",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",

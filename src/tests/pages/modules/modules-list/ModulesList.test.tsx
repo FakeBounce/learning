@@ -25,7 +25,7 @@ describe('ModulesList', () => {
     ModulesMock.reset();
   });
 
-  it('should render GroupsList correctly', async () => {
+  it('should render ModulesList correctly', async () => {
     modulesCreateSetupSuccessAxiosMock();
     render(
       <FeatureFlagContext.Provider
