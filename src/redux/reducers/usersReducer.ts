@@ -49,6 +49,8 @@ export const initialUserState: UsersState = {
   }
 };
 
+const blockedText = (isActive: boolean) => (isActive ? t`bloqué` : t`débloqué`);
+
 export const usersSlice = createSlice({
   name: 'users',
   initialState: initialUserState,
@@ -115,6 +117,9 @@ export const usersSlice = createSlice({
           const userIndex = selectUsersFindId(state, action.payload.data.id);
           if (userIndex > -1) {
             state.usersList.usersListData[userIndex] = action.payload.data;
+            enqueueSnackbar(t`Utilisateur ${blockedText(action.payload.data.isActive)} !`, {
+              variant: 'success'
+            });
           }
         }
       )
@@ -141,7 +146,7 @@ export const usersSlice = createSlice({
 });
 
 export const selectUsersFindId = createSelector(
-  [(state: RootState) => state.users.usersList.usersListData, (_, idToFind) => idToFind],
+  [(state: RootState) => state.usersList.usersListData, (_, idToFind) => idToFind],
   (s, idToFind) => s.findIndex((org: Organization) => org.id === idToFind)
 );
 

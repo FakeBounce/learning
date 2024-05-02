@@ -30,8 +30,9 @@ export const usersColumns = (
     {
       field: 'isActive',
       display: 'flex',
+      flex: 1,
       renderHeader: () => renderHeaderCell(<Trans>Statut</Trans>),
-      maxWidth: 100,
+      maxWidth: 110,
       renderCell: (cell: GridRenderCellParams) => {
         const activatedText = cell.row.isActive ? <Trans>Activé</Trans> : <Trans>Bloqué</Trans>;
         return (
