@@ -38,7 +38,7 @@ export default function ApplicantsProfileInfos() {
         <StyledFormColumn>
           <CircledAvatar>
             <Avatar
-              src={(applicantProfileData.profilePicture as string) ?? undefined}
+              src={applicantProfileData.profilePicture ?? undefined}
               sx={{
                 width: '100%',
                 height: '100%',

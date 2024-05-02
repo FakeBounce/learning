@@ -64,7 +64,7 @@ export const updateApplicantPicture = async (
 ): Promise<AxiosResponse<UpdateApplicantPictureResponse>> => {
   const { applicantId, profilePicture } = args;
 
-  return axios.postForm(
+  return axios.post(
     `/applicants/${applicantId}/profile-picture`,
     { image: profilePicture },
     {

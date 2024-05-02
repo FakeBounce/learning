@@ -50,10 +50,31 @@ export const toggleApplicantBlock = createAsyncThunk(
 
 export const updateApplicant = createAsyncThunk(
   'applicants/update',
-  async (arg: UpdateApplicantRequest, { rejectWithValue }) => {
+  async (
+    args: {
+      applicantId: number;
+      updateArgs: UpdateApplicantRequest;
+      profilePicture?: File;
+    },
+    { rejectWithValue }
+  ) => {
     try {
-      const response = await ApplicantsServices.updateApplicant(arg);
-      return response.data;
+      const promises = [];
+      const { updateArgs, profilePicture } = args;
+      if (Object.keys(updateArgs.applicant).length > 0) {
+        promises.push(ApplicantsServices.updateApplicant(updateArgs));
+      }
+
+      if (profilePicture) {
+        promises.push(
+          ApplicantsServices.updateApplicantPicture({
+            applicantId: args.applicantId,
+            profilePicture
+          })
+        );
+      }
+      const response = await Promise.all(promises);
+      return response[response.length - 1].data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);
       throw e;

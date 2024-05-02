@@ -23,6 +23,25 @@ export default function ApplicantsUpdateDifferences({
     return keys.join(', ');
   };
 
+  const updateValues = () => {
+    if (typeof value === 'string') {
+      setValue(fieldName, value, { shouldDirty: true });
+    }
+
+    if (typeof value === 'object') {
+      const notificationsToUpdate = getNotificationsKeys(value);
+      const notificationTypes: (keyof ApplicantNotifications)[] = ['email', 'sms', 'app'];
+
+      notificationTypes.forEach((type: keyof ApplicantNotifications) => {
+        if (notificationsToUpdate.includes(type)) {
+          setValue(`notifications[${type}]`, value[type], { shouldDirty: true });
+        }
+      });
+    }
+
+    setIsUpdated(true);
+  };
+
   return (
     <Box
       sx={{
@@ -42,24 +61,7 @@ export default function ApplicantsUpdateDifferences({
       </Trans>
       {!isUpdated && (
         <ActionButton
-          onClick={() => {
-            if (typeof value === 'string') {
-              setValue(fieldName, value, { shouldDirty: true });
-            }
-
-            if (typeof value === 'object') {
-              const notificationsToUpdate = getNotificationsKeys(value);
-              const notificationTypes: (keyof ApplicantNotifications)[] = ['email', 'sms', 'app'];
-
-              notificationTypes.forEach((type: keyof ApplicantNotifications) => {
-                if (notificationsToUpdate.includes(type)) {
-                  setValue(`notifications[${type}]`, value[type], { shouldDirty: true });
-                }
-              });
-            }
-
-            setIsUpdated(true);
-          }}
+          onClick={updateValues}
           actionType={'warning'}
           sx={{
             padding: 0

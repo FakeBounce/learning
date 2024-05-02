@@ -23,6 +23,7 @@ const axiosInstance: AxiosInstance = (() => {
   if (session) {
     newInstance.defaults.headers.common['Authorization'] = `Bearer ${session.token}`;
   }
+  // newInstance.defaults.headers.put['Content-Type'] = 'application/x-www-form-urlencoded';
 
   newInstance.interceptors.request.use((config) => {
     const axiosDelay = parseInt(getEnvVariable('VITE_HOST_AXIOS_DELAY') ?? '300', 10);

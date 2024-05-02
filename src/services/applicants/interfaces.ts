@@ -37,7 +37,7 @@ export interface ApplicantBulkState {
 
 interface BaseApplicant {
   id: number;
-  profilePicture: string | File | null;
+  profilePicture: string | null;
   email: string;
   type: ApplicantType.STUDENT | ApplicantType.TESTER;
   externalId: string | null;
@@ -59,7 +59,16 @@ interface AdditionalApplicantProperties {
 export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
 export interface ApplicantsUpdateConflicts {
-  [key: string]: string | ApplicantNotifications;
+  //@todo add groups
+  lastname?: string;
+  firstname?: string;
+  email?: string;
+  birthDate?: string;
+  externalId?: string;
+  phone?: string;
+  birthName?: string;
+  city?: string;
+  notifications?: ApplicantNotifications;
 }
 
 export interface ApplicantForBulk {

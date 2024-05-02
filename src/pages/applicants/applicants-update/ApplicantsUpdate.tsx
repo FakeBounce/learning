@@ -1,11 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { t } from '@lingui/macro';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import {
-  getSingleApplicant,
-  updateApplicant,
-  updateApplicantPicture
-} from '@redux/actions/applicantsActions';
+import { getSingleApplicant, updateApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
 import ApplicantsUpdateFooter from './ApplicantsUpdateFooter';
 import ApplicantsUpdateForm from './ApplicantsUpdateForm';
@@ -62,13 +58,6 @@ export default function ApplicantsUpdate() {
     }
   }, []);
 
-  useEffect(() => {
-    if (applicantProfileData) {
-      setApplicant(populateUpdateApplicantForm(applicantProfileData));
-      setImage(applicantProfileData.profilePicture as string);
-    }
-  }, [applicantProfileData]);
-
   const methods = useForm({
     resolver: yupResolver(updateApplicantSchema),
     defaultValues: applicant,
@@ -76,8 +65,17 @@ export default function ApplicantsUpdate() {
   });
   const {
     handleSubmit,
+    reset,
     formState: { dirtyFields }
   } = methods;
+
+  useEffect(() => {
+    if (applicantProfileData) {
+      setApplicant(populateUpdateApplicantForm(applicantProfileData));
+      if (applicantProfileData.profilePicture) setImage(applicantProfileData.profilePicture);
+      reset();
+    }
+  }, [applicantProfileData, isEditing]);
 
   const onSubmit = async (data: UpdateApplicantForm) => {
     if (dirtyFields.externalId || dirtyFields.email) {
@@ -118,17 +116,14 @@ export default function ApplicantsUpdate() {
         }
       } as UpdateApplicantRequest;
 
-      if (dirtyFields.profilePicture) {
-        dispatch(
-          updateApplicantPicture({
-            applicantId: Number(applicantId),
-            profilePicture: image as File
-          })
-        );
-      }
-
       // Handle update with image
-      dispatch(updateApplicant(updateApplicantFormToSubmit));
+      dispatch(
+        updateApplicant({
+          applicantId: Number(applicantId),
+          updateArgs: updateApplicantFormToSubmit,
+          profilePicture: dirtyFields.profilePicture ? (image as File) : undefined
+        })
+      );
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }
