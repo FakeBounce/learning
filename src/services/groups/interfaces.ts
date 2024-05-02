@@ -1,4 +1,9 @@
-import { ApiRequestSort, ApiResponseMessage, ApiResponsePagination } from '@services/interfaces';
+import {
+  ApiRequestSort,
+  ApiResponseMessage,
+  ApiResponsePagination,
+  FilterBy
+} from '@services/interfaces';
 import { Role } from '@services/roles/interfaces';
 
 export interface Group {
@@ -23,7 +28,7 @@ export interface GetGroupsRequest {
   currentPage: number;
   rowsPerPage: number;
   sort?: ApiRequestSort;
-  filters?: any;
+  filters?: FilterBy;
 }
 
 export interface GetGroupsResponse {

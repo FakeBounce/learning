@@ -2,24 +2,25 @@ import LMSModal from '@src/components/lms/LMSModal';
 import { t, Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { enqueueSnackbar } from 'notistack';
+import { Module } from '@services/modules/interfaces';
 
-interface RolesListModalProps {
-  roleSelected: any;
+interface ModulesListModalProps {
+  moduleSelected: Module | null;
   isModalOpen: boolean;
   setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;
 }
 
-export default function RolesListModal({
-  roleSelected,
+export default function ModulesListModal({
+  moduleSelected,
   isModalOpen,
   setIsModalOpen,
   cancelModal
-}: RolesListModalProps) {
-  const deleteRole = () => {
-    if (roleSelected !== null) {
+}: ModulesListModalProps) {
+  const deleteModule = () => {
+    if (moduleSelected !== null) {
       //@TODO : call the delete action
-      enqueueSnackbar(t`Rôle supprimé !`, { variant: 'success' });
+      enqueueSnackbar(t`Module supprimé !`, { variant: 'success' });
       // Reset the popper
       cancelModal();
     }
@@ -27,17 +28,17 @@ export default function RolesListModal({
 
   return (
     <LMSModal
-      title={<Trans>Supprimer un rôle</Trans>}
+      title={<Trans>Supprimer un module</Trans>}
       open={isModalOpen}
       onClose={() => {
         setIsModalOpen(false);
       }}
-      validateAction={deleteRole}
+      validateAction={deleteModule}
       cancelAction={cancelModal}
     >
       <Typography>
         <Trans>
-          Êtes-vous sûr de vouloir supprimer le rôle{' '}
+          Êtes-vous sûr de vouloir supprimer le module{' '}
           <Box
             component={'span'}
             sx={{
@@ -45,7 +46,7 @@ export default function RolesListModal({
               textTransform: 'uppercase'
             }}
           >
-            {roleSelected.name}
+            {moduleSelected?.title}
           </Box>{' '}
           ainsi que tous les{' '}
           <Box

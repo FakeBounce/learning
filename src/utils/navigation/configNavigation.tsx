@@ -24,7 +24,7 @@ export const generalNavigationConfig = [
   },
   {
     title: <Trans>Liste des modules</Trans>,
-    path: PATH_DASHBOARD.modules,
+    path: PATH_MODULES.root,
     icon: 'uim:star-half-alt'
   }
 ];
@@ -135,7 +135,7 @@ const modulesNavigationConfig = [
   },
   {
     title: <Trans>Création d'un module</Trans>,
-    path: PATH_EXTERNAL_TESTERS.add
+    path: PATH_MODULES.add
   }
 ];
 

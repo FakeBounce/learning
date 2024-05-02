@@ -2,7 +2,8 @@
   "+zy2Nq": {
     "translation": "",
     "message": "Type",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/Wfz2D": {
     "translation": "",
@@ -17,7 +18,8 @@
   "3/5e4J": {
     "translation": "",
     "message": "Le nom du groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "",
@@ -27,8 +29,7 @@
   "5HGTfB": {
     "translation": "",
     "message": "Supprimer un rôle",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "5qQosN": {
     "translation": "",
@@ -49,7 +50,8 @@
   "Bmo0y3": {
     "translation": "",
     "message": "OUI",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "",
@@ -59,8 +61,7 @@
   "DolR28": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EIxP9b": {
     "translation": "",
@@ -76,7 +77,8 @@
   "FVThbb": {
     "translation": "",
     "message": "Utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
@@ -96,7 +98,8 @@
   "IJxJfq": {
     "translation": "",
     "message": "Groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "",
@@ -106,17 +109,20 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OLPz9q": {
     "translation": "",
     "message": "Nom du rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "",
@@ -162,7 +168,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "",
@@ -188,13 +195,13 @@
   "sCvW+n": {
     "translation": "",
     "message": "Appartient déjà au groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "tNU7H1": {
     "translation": "",
     "message": "Rôle supprimé !",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
@@ -204,7 +211,8 @@
   "xj9DHS": {
     "translation": "",
     "message": "NON",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "yZC9OF": {
     "translation": "",

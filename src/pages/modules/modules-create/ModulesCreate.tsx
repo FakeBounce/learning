@@ -10,7 +10,7 @@ import {
   modulesCreateDefaultValues,
   modulesCreateSchema
 } from '@src/pages/modules/modules-create/ModulesCreateSchema';
-import ModulesForm from '@src/pages/modules/ModulesForm';
+import ModulesForm from '@src/pages/modules/modules-form/ModulesForm';
 import { useAppDispatch } from '@redux/hooks';
 import { createModuleAction } from '@redux/actions/modulesActions';
 import { enqueueSnackbar } from 'notistack';
