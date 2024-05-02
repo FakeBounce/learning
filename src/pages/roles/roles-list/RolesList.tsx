@@ -28,6 +28,11 @@ export default function RolesList() {
 
   // Popper handlers
   const handleClick = (newRole: Role) => (event: MouseEvent<HTMLElement>) => {
+    if (newRole.id === roleSelected?.id) {
+      setRoleSelected(null);
+      setAnchorEl(null);
+      return;
+    }
     setRoleSelected(newRole);
     setAnchorEl(event.currentTarget);
   };

@@ -7,9 +7,11 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 export default function SidebarGeneralList({ open }: { open: boolean }) {
+  const { pathname } = useLocation();
+
   return (
     <Box
       sx={{
@@ -34,21 +36,38 @@ export default function SidebarGeneralList({ open }: { open: boolean }) {
                 sx={{
                   minHeight: 48,
                   justifyContent: open ? 'initial' : 'center',
-                  px: 2.5
+                  display: 'flex',
+                  px: open ? 0.5 : 0,
+                  mx: open ? 2 : 1,
+                  transition: 'all 0.3s ease',
+                  borderRadius: (theme) => theme.shape.customBorderRadius.small,
+                  backgroundColor: (theme) =>
+                    pathname === navItem.path && open ? theme.palette.grey[300] : 'transparent'
                 }}
               >
                 <ListItemIcon
                   data-testid={`icon-${navItem.path}`}
                   sx={{
                     minWidth: 0,
-                    mr: open ? 3 : 'auto',
-                    justifyContent: 'center'
+                    mr: open ? 1 : 'auto',
+                    justifyContent: 'center',
+                    padding: 1,
+                    maxWidth: !open ? '100%' : 48,
+                    borderRadius: (theme) => theme.shape.customBorderRadius.small,
+                    transition: 'all 0.3s ease',
+                    backgroundColor: (theme) =>
+                      pathname === navItem.path && !open ? theme.palette.grey[300] : 'transparent'
                   }}
                 >
                   <Iconify icon={navItem.icon} width={24} />
                 </ListItemIcon>
 
-                <ListItemText primary={navItem.title} sx={{ opacity: open ? 1 : 0 }} />
+                <ListItemText
+                  primary={navItem.title}
+                  sx={{
+                    opacity: open ? 1 : 0
+                  }}
+                />
               </ListItemButton>
             </Box>
           </ListItem>

@@ -16,7 +16,11 @@ interface CardHeaderProps {
 
 function CardHeader({ headerText, headerColor, actions = null }: CardHeaderProps) {
   return (
-    <Box display="flex" gap={2}>
+    <Box
+      display="flex"
+      gap={2}
+      flexDirection={[actions && actions.length > 1 ? 'column' : 'row', 'row']}
+    >
       <Typography
         sx={{
           fontSize: (theme) => theme.typography.h3.fontSize,
@@ -26,17 +30,20 @@ function CardHeader({ headerText, headerColor, actions = null }: CardHeaderProps
       >
         {headerText}
       </Typography>
-      {actions &&
-        actions.map((action, index) => (
-          <ActionButton
-            key={index}
-            actionType={action.actionType ?? 'action'}
-            sx={{ textTransform: 'none' }}
-            onClick={action.action}
-          >
-            {action.actionText}
-          </ActionButton>
-        ))}
+      {actions && (
+        <Box display="flex" gap={2}>
+          {actions.map((action, index) => (
+            <ActionButton
+              key={index}
+              actionType={action.actionType ?? 'action'}
+              sx={{ textTransform: 'none' }}
+              onClick={action.action}
+            >
+              {action.actionText}
+            </ActionButton>
+          ))}
+        </Box>
+      )}
     </Box>
   );
 }

@@ -28,6 +28,11 @@ export default function ModulesList() {
 
   // Popper handlers
   const handleClick = (newModule: Module) => (event: MouseEvent<HTMLElement>) => {
+    if (moduleSelected?.id === newModule.id) {
+      setModuleSelected(null);
+      setAnchorEl(null);
+      return;
+    }
     setModuleSelected(newModule);
     setAnchorEl(event.currentTarget);
   };
@@ -53,7 +58,7 @@ export default function ModulesList() {
           onChange={handleTableChange}
         />
       </LMSCard>
-      <LMSPopover id={id} open={open} anchorEl={anchorEl} onClose={cancelModal}>
+      <LMSPopover id={id} open={open} anchorEl={anchorEl}>
         <ModulesListPopperContent
           moduleSelected={moduleSelected}
           handleDelete={() => setIsModalOpen(true)}
