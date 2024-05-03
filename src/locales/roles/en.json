@@ -32,12 +32,14 @@
   "5HGTfB": {
     "translation": "",
     "message": "Supprimer un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5qQosN": {
     "translation": "",
     "message": "Supprimer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -66,7 +68,8 @@
   "DolR28": {
     "translation": "",
     "message": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "",
@@ -77,7 +80,8 @@
   "FLD9GE": {
     "translation": "",
     "message": "Modifier les utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FVThbb": {
     "translation": "",
@@ -118,7 +122,8 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "",
@@ -201,7 +206,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "",
@@ -218,7 +224,8 @@
   "posy4G": {
     "translation": "",
     "message": "Gérer les permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "",

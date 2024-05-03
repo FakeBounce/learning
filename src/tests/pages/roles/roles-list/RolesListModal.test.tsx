@@ -1,8 +1,12 @@
 import { cleanup, render, screen, act, fireEvent } from '@src/testProvider';
 import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 import { defaultRole } from '@src/tests/pages/roles/DefaultRole';
-import RolesMock, { rolesSetupSuccessAxiosMock } from '@src/tests/pages/roles/RolesMock';
+import RolesMock, {
+  rolesSetupErrorAxiosMock,
+  rolesSetupSuccessAxiosMock
+} from '@src/tests/pages/roles/RolesMock';
 import { waitFor } from '@testing-library/dom';
+import { enqueueSnackbar } from 'notistack';
 
 describe('RolesListModal', () => {
   afterEach(() => {
@@ -49,6 +53,30 @@ describe('RolesListModal', () => {
     await waitFor(() => {
       expect(RolesMock.history.delete.length).toBe(1);
       expect(cancelModal).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  it('should display an error if server crash', async () => {
+    rolesSetupErrorAxiosMock();
+    const setIsModalOpen = jest.fn();
+    const cancelModal = jest.fn();
+
+    render(
+      <RolesListModal
+        roleSelected={defaultRole}
+        isModalOpen={true}
+        setIsModalOpen={setIsModalOpen}
+        cancelModal={cancelModal}
+      />
+    );
+
+    expect(screen.getByText(defaultRole.name)).toBeInTheDocument();
+    await act(async () => {
+      fireEvent.click(screen.getByText(/Valider/i));
+    });
+
+    await waitFor(() => {
+      expect(enqueueSnackbar).toHaveBeenCalledTimes(1);
     });
   });
 });
