@@ -5,6 +5,13 @@ export const defaultRole = {
   isClientAdmin: false
 };
 
+export const defaultAdminRole = {
+  id: 4,
+  name: 'test admin',
+  description: 'Role de test admin',
+  isClientAdmin: true
+};
+
 export const defaultRolesList = [
   {
     id: 5,

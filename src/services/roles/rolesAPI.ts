@@ -3,6 +3,8 @@ import axios from '@utils/axios/axios';
 import {
   CreateRoleRequest,
   CreateRoleResponse,
+  DeleteRoleRequest,
+  DeleteRoleResponse,
   GetRolePermissionsRequest,
   GetRolePermissionsResponse,
   GetRolesRequest,
@@ -39,4 +41,9 @@ export const updateRole = async (
 ): Promise<AxiosResponse<UpdateRoleResponse>> => {
   const { id, ...rest } = args;
   return axios.put(`/roles/${id}`, rest);
+};
+export const deleteRole = async (
+  args: DeleteRoleRequest
+): Promise<AxiosResponse<DeleteRoleResponse>> => {
+  return axios.delete(`/roles/${args.id}`);
 };

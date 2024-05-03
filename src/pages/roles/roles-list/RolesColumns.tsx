@@ -6,9 +6,22 @@ import { renderHeaderCell } from '@utils/helpers/tableRenders';
 import StatusChip from '@src/components/lms/StatusChip';
 
 export const rolesColumns = (
-  handleClick: (_newRole: Role) => (_event: MouseEvent<HTMLElement>) => void
-) =>
-  [
+  handleClick: (_newRole: Role) => (_event: MouseEvent<HTMLElement>) => void,
+  showOptions: boolean
+) => {
+  const optionsColumn: GridColDef = {
+    field: 'id',
+    display: 'flex',
+    sortable: false,
+    resizable: false,
+    disableColumnMenu: true,
+    headerName: '',
+    renderCell: (cell: GridRenderCellParams) => {
+      return <StatusChip handleClick={handleClick(cell.row)} />;
+    }
+  };
+
+  const defaultColumns: GridColDef[] = [
     {
       field: 'name',
       display: 'flex',
@@ -22,16 +35,8 @@ export const rolesColumns = (
       disableColumnMenu: true,
       flex: 1,
       renderHeader: () => renderHeaderCell(<Trans>Description</Trans>)
-    },
-    {
-      field: 'id',
-      display: 'flex',
-      sortable: false,
-      resizable: false,
-      disableColumnMenu: true,
-      headerName: '',
-      renderCell: (cell: GridRenderCellParams) => {
-        return <StatusChip handleClick={handleClick(cell.row)} />;
-      }
     }
-  ] as GridColDef[];
+  ];
+
+  return showOptions ? [...defaultColumns, optionsColumn] : defaultColumns;
+};

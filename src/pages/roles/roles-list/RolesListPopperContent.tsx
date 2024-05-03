@@ -5,6 +5,10 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_ROLES } from '@utils/navigation/paths';
 import { useAppDispatch } from '@redux/hooks';
 import { setCurrentRole } from '@redux/reducers/rolesReducer';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { useContext } from 'react';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 interface RolesListPopperContentProps {
   roleSelected: Role | null;
@@ -17,10 +21,14 @@ export default function RolesListPopperContent({
 }: RolesListPopperContentProps) {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
+  const canUpdateRole = isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE);
+  const canDeleteRole = isAuthorizedByPermissionsTo(pageType, PermissionEnum.DELETE);
 
   const handleChangeView = (type: string) => () => {
     if (roleSelected !== null) {
-      //@TODO: uncomment when pages is ready
       switch (type) {
         case 'update':
           dispatch(setCurrentRole(roleSelected));
@@ -37,19 +45,24 @@ export default function RolesListPopperContent({
 
   return (
     <ListItem disablePadding sx={{ display: 'block' }}>
-      <ListItemButton
-        onClick={handleChangeView('update')}
-        sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
-      >
-        <ListItemText primary={<Trans>Modifier les utilisateurs</Trans>} />
-      </ListItemButton>
-      <ListItemButton
-        onClick={handleChangeView('manage')}
-        sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
-      >
-        <ListItemText primary={<Trans>Gérer les permissions</Trans>} />
-      </ListItemButton>
-      {!roleSelected?.isClientAdmin && (
+      {canUpdateRole && (
+        <>
+          <ListItemButton
+            onClick={handleChangeView('update')}
+            sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
+          >
+            <ListItemText primary={<Trans>Modifier les utilisateurs</Trans>} />
+          </ListItemButton>
+          <ListItemButton
+            onClick={handleChangeView('manage')}
+            sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
+          >
+            <ListItemText primary={<Trans>Gérer les permissions</Trans>} />
+          </ListItemButton>
+        </>
+      )}
+
+      {!roleSelected?.isClientAdmin && canDeleteRole && (
         <ListItemButton
           onClick={handleDelete}
           sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}

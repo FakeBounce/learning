@@ -1,9 +1,8 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { GetRolesRequest, Role } from '@services/roles/interfaces';
-import * as rolesServices from '@services/roles/rolesAPI';
+import { createSlice } from '@reduxjs/toolkit';
+import { Role } from '@services/roles/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import { AnyAction } from 'redux';
-import { createRoleAction, updateRoleAction } from '@redux/actions/rolesActions';
+import * as RolesActions from '@redux/actions/rolesActions';
 
 interface RolesState {
   rolesList: {
@@ -20,6 +19,9 @@ interface RolesState {
   };
   rolesUpdate: {
     rolesUpdateLoading: boolean;
+  };
+  rolesDelete: {
+    rolesDeleteLoading: boolean;
   };
 }
 
@@ -38,71 +40,81 @@ export const rolesInitialState: RolesState = {
   },
   rolesUpdate: {
     rolesUpdateLoading: false
+  },
+  rolesDelete: {
+    rolesDeleteLoading: false
   }
 };
-
-export const getRolesList = createAsyncThunk(
-  'roles/list',
-  async (arg: GetRolesRequest, { rejectWithValue }) => {
-    try {
-      const response = await rolesServices.getRoles(arg);
-      return response.data;
-    } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
-      throw e;
-    }
-  }
-);
 
 export const rolesSlice = createSlice({
   name: 'roles',
   initialState: rolesInitialState,
   reducers: {
     resetRolesState: () => rolesInitialState,
+    resetDeleteRoleState: (state) => {
+      state.rolesDelete.rolesDeleteLoading = false;
+    },
     setCurrentRole: (state, action) => {
       state.currentRole.currentRoleData = action.payload;
+    },
+    removeRoleFromList: (state, action) => {
+      state.rolesList.rolesListData = state.rolesList.rolesListData.filter(
+        (role) => role.id !== action.payload
+      );
+      state.rolesList.rolesListTotalCount -= 1;
     }
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getRolesList.pending, (state) => {
+      .addCase(RolesActions.getRolesList.pending, (state) => {
         state.rolesList.rolesListLoading = true;
         state.rolesList.rolesListData = [];
         state.currentRole.currentRoleData = null;
       })
-      .addCase(getRolesList.fulfilled, (state, action) => {
+      .addCase(RolesActions.getRolesList.fulfilled, (state, action) => {
         state.rolesList.rolesListData = action.payload.data.rows;
         state.rolesList.rolesListTotalCount = action.payload.data.pagination.totalResults;
         state.rolesList.rolesListLoading = false;
       })
-      .addCase(getRolesList.rejected, (state, action: AnyAction) => {
+      .addCase(RolesActions.getRolesList.rejected, (state, action: AnyAction) => {
         state.rolesList.rolesListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
-      .addCase(createRoleAction.pending, (state) => {
+      .addCase(RolesActions.createRoleAction.pending, (state) => {
         state.rolesCreate.rolesCreateLoading = true;
       })
-      .addCase(createRoleAction.fulfilled, (state, action) => {
+      .addCase(RolesActions.createRoleAction.fulfilled, (state, action) => {
         state.rolesCreate.rolesCreateLoading = false;
         enqueueSnackbar(action.payload.message.value, { variant: 'success' });
       })
-      .addCase(createRoleAction.rejected, (_state, action: AnyAction) => {
+      .addCase(RolesActions.createRoleAction.rejected, (_state, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       })
-      .addCase(updateRoleAction.pending, (state) => {
+      .addCase(RolesActions.updateRoleAction.pending, (state) => {
         state.rolesUpdate.rolesUpdateLoading = true;
       })
-      .addCase(updateRoleAction.fulfilled, (state, action) => {
+      .addCase(RolesActions.updateRoleAction.fulfilled, (state, action) => {
         state.rolesUpdate.rolesUpdateLoading = false;
         enqueueSnackbar(action.payload.message.value, { variant: 'success' });
       })
-      .addCase(updateRoleAction.rejected, (_state, action: AnyAction) => {
+      .addCase(RolesActions.updateRoleAction.rejected, (_state, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(RolesActions.deleteRoleAction.pending, (state) => {
+        state.rolesDelete.rolesDeleteLoading = true;
+      })
+      .addCase(RolesActions.deleteRoleAction.fulfilled, (state, action) => {
+        state.rolesDelete.rolesDeleteLoading = false;
+        enqueueSnackbar(action.payload.message.value, { variant: 'success' });
+      })
+      .addCase(RolesActions.deleteRoleAction.rejected, (_state, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const { resetRolesState, setCurrentRole } = rolesSlice.actions;
+export const { resetRolesState, resetDeleteRoleState, setCurrentRole, removeRoleFromList } =
+  rolesSlice.actions;
 
 export default rolesSlice.reducer;
