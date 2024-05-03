@@ -8,10 +8,10 @@ import RHFSelect from '@src/components/hook-form/RHFSelect';
 import RHFSwitch from '@src/components/hook-form/RHFSwitch';
 import { regexMaxHundred } from '@utils/helpers/regex';
 import RHFTimer from '@src/components/hook-form/RHFTimer';
-import { answersOptions } from '@src/pages/modules/modules-create/ModulesCreateSchema';
+import { answersOptions } from '@src/pages/modules/modules-form/ModulesFormSchema';
 import { ChangeEvent } from 'react';
 
-export default function ModulesFormConfig() {
+export default function ModulesFormConfig({ disabled = false }: { disabled?: boolean }) {
   const { setValue } = useFormContext();
 
   const convertEventToNumber = (inputName: string) => (e: ChangeEvent<HTMLInputElement>) => {
@@ -41,6 +41,7 @@ export default function ModulesFormConfig() {
               name="timer"
               size={'small'}
               sx={{ maxWidth: 120, textAlign: 'right' }}
+              disabled={disabled}
             />
           </Box>
         </StyledFormRow>
@@ -57,6 +58,7 @@ export default function ModulesFormConfig() {
               onChange={convertEventToNumber('nbAttempts')}
               required
               sx={{ maxWidth: 60 }}
+              disabled={disabled}
             />
             fois
           </Box>
@@ -75,6 +77,7 @@ export default function ModulesFormConfig() {
               onChange={convertEventToNumber('successRate')}
               required
               sx={{ maxWidth: 60 }}
+              disabled={disabled}
             />
             %
           </Box>
@@ -87,6 +90,7 @@ export default function ModulesFormConfig() {
             label={<Trans>Affichage des réponses</Trans>}
             required
             size="small"
+            disabled={disabled}
           >
             {answersOptions.map((answer) => (
               <MenuItem key={answer.value} value={answer.value}>
@@ -98,8 +102,8 @@ export default function ModulesFormConfig() {
       </StyledFormColumn>
       <StyledFormColumn>
         <StyledFormRow sx={{ flexDirection: 'row', gap: 2 }}>
-          <RHFSwitch name="isLocked" label={<Trans>Verrouiller</Trans>} />
-          <RHFSwitch name="isPublic" label={<Trans>Rendre public</Trans>} />
+          <RHFSwitch name="isLocked" label={<Trans>Verrouiller</Trans>} disabled={disabled} />
+          <RHFSwitch name="isPublic" label={<Trans>Rendre public</Trans>} disabled={disabled} />
         </StyledFormRow>
       </StyledFormColumn>
     </StyledFormColumn>

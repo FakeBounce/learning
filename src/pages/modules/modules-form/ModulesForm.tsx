@@ -9,13 +9,10 @@ import RHFSelect from '@src/components/hook-form/RHFSelect';
 import RHFDropdown from '@src/components/hook-form/RHFDropdown';
 import { BasicOption } from '@services/interfaces';
 import { RHFUploadBox } from '@src/components/hook-form/RHFUploadBox';
-import {
-  colourOptions,
-  languagesOptions
-} from '@src/pages/modules/modules-create/ModulesCreateSchema';
+import { colourOptions, languagesOptions } from '@src/pages/modules/modules-form/ModulesFormSchema';
 import ModulesFormConfig from '@src/pages/modules/modules-form/ModulesFormConfig';
 
-export default function ModulesForm() {
+export default function ModulesForm({ disabled = false }: { disabled?: boolean }) {
   const { setValue, resetField } = useFormContext();
   /**
    * Color options will be the array of tags received by the API
@@ -60,13 +57,24 @@ export default function ModulesForm() {
     <>
       <Box display="flex" flex="1" gap={2} flexDirection={['column', 'row']}>
         <Box display="flex" flex="1">
-          <RHFUploadBox name={'media'} onDrop={handleDrop} onRemove={handleRemoveFile} />
+          <RHFUploadBox
+            name={'media'}
+            onDrop={handleDrop}
+            onRemove={handleRemoveFile}
+            disabled={disabled}
+          />
         </Box>
-        <ModulesFormConfig />
+        <ModulesFormConfig disabled={disabled} />
       </Box>
       <Box display="flex" gap={2}>
         <Box display="flex" flex="2">
-          <RHFTextField type="text" name="title" required label={<Trans>Nom du module</Trans>} />
+          <RHFTextField
+            type="text"
+            name="title"
+            required
+            label={<Trans>Nom du module</Trans>}
+            disabled={disabled}
+          />
         </Box>
         <Box display="flex" flex="1">
           <RHFSelect
@@ -75,6 +83,7 @@ export default function ModulesForm() {
             defaultValue={languagesOptions[0].value}
             required
             size="small"
+            disabled={disabled}
           >
             {languagesOptions.map((language) => (
               <MenuItem key={language.value} value={language.value}>
@@ -90,6 +99,7 @@ export default function ModulesForm() {
           multiline
           name="description"
           required
+          disabled={disabled}
           label={<Trans>Description</Trans>}
         />
       </StyledFormRow>
@@ -103,6 +113,7 @@ export default function ModulesForm() {
           defaultOptions={[]}
           name="tags"
           label={<Trans>Tags</Trans>}
+          isDisabled={disabled}
         />
       </StyledFormRow>
     </>

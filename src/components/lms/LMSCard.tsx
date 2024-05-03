@@ -1,9 +1,5 @@
 import { Stack, Paper, Box } from '@mui/material';
-// Keep theme and matches in case need later
-// import { Stack, Paper, useMediaQuery } from '@mui/material';
-// import { useTheme } from '@mui/material/styles';
 import { ReactNode } from 'react';
-// ----------------------------------------------------------------------
 
 interface LMSCardProps {
   cardCss?: Record<string, any>;

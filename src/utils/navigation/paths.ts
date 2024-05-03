@@ -96,5 +96,5 @@ const ROOT_MODULES = PATH_DASHBOARD.modules;
 export const PATH_MODULES = {
   root: ROOT_MODULES,
   add: path(ROOT_MODULES, '/create'),
-  profile: path(ROOT_MODULES, '/profile/:moduleId')
+  profile: path(ROOT_MODULES, '/:moduleId')
 };

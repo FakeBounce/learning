@@ -4,7 +4,9 @@ import {
   GetModulesRequest,
   GetModulesResponse,
   CreateModuleRequest,
-  CreateModuleResponse
+  CreateModuleResponse,
+  GetSingleModuleRequest,
+  GetSingleModuleResponse
 } from '@services/modules/interfaces';
 
 export const getModules = async (
@@ -18,6 +20,12 @@ export const getModules = async (
     filters,
     sort
   });
+};
+
+export const getSingleModule = async (
+  args: GetSingleModuleRequest
+): Promise<AxiosResponse<GetSingleModuleResponse>> => {
+  return axios.get(`/modules/${args.id}`);
 };
 
 export const createModule = async (

@@ -104,3 +104,6 @@ export const Modules = LoadableComponent(
 export const ModulesCreate = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-create/ModulesCreate'))
 );
+export const ModulesProfile = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-profile/ModulesProfile'))
+);

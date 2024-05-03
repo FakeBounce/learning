@@ -21,7 +21,25 @@ export enum ModuleStatusEnum {
 }
 
 export enum ModuleUserRightEnum {
-  OWNER = 'owner'
+  OWNER = 'owner',
+  CONTRIBUTOR = 'contributor',
+  SUPERVISOR = 'supervisor',
+  VIEWER = 'viewer'
+}
+
+export enum ModulesActions {
+  SEE = 'see',
+  DASHBOARD = 'dashboard',
+  DUPLICATE = 'duplicate',
+  SEND = 'send',
+  SHARE = 'share',
+  TRY = 'try',
+  NEW_VERSION = 'new_version',
+  EDIT = 'edit',
+  DELETE = 'delete',
+  CANCEL = 'cancel',
+  ARCHIVE = 'archive',
+  LOCK_UNLOCK = 'lock_unlock'
 }
 
 export interface ModuleRights {
@@ -33,6 +51,17 @@ export interface ModuleRightUser {
   id: number;
   login: string;
   right: ModuleUserRightEnum;
+}
+
+export interface Tag {
+  id: number;
+  created_at: Date;
+  updated_at: Date;
+  deleted_at: Date | null;
+  label: string;
+  taggable_type: string;
+  taggable_id: number;
+  organization_id: number;
 }
 
 export interface Module {
@@ -51,7 +80,7 @@ export interface Module {
   rights: ModuleRights;
   successRate: number;
   status: ModuleStatusEnum;
-  tags: string[];
+  tags: Tag[];
   timer: string;
   title: string;
   updatedAt: Date;
@@ -92,4 +121,14 @@ export interface GetModulesResponse {
     pagination: ApiResponsePagination;
     rows: Module[];
   };
+}
+
+export interface GetSingleModuleRequest {
+  id: number;
+}
+
+export interface GetSingleModuleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
 }

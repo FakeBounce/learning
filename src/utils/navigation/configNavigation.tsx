@@ -144,6 +144,10 @@ const modulesNavigationConfig = [
   {
     title: <Trans>Création d'un module</Trans>,
     path: PATH_MODULES.add
+  },
+  {
+    title: <Trans>Profil d'un module</Trans>,
+    path: PATH_MODULES.profile
   }
 ];
 

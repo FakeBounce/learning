@@ -8,9 +8,10 @@ interface RHFSwitchProps {
   name: string;
   required?: boolean;
   label: ReactNode;
+  disabled?: boolean;
 }
 
-function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
+function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) {
   const { control } = useFormContext();
   return (
     <Box>
@@ -25,7 +26,7 @@ function RHFSwitch({ name, required = false, label }: RHFSwitchProps) {
           render={({ field: { onChange, value } }) => {
             return (
               <FormControlLabel
-                control={<LMSSwitch checked={value} handleChange={onChange} />}
+                control={<LMSSwitch checked={value} handleChange={onChange} disabled={disabled} />}
                 label=""
               />
             );

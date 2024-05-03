@@ -25,6 +25,7 @@ export const applicantsColumns = (
     },
     {
       field: 'externalId',
+      display: 'flex',
       renderHeader: () => renderHeaderCell(<Trans>Id externe</Trans>)
     },
     {
@@ -39,6 +40,7 @@ export const applicantsColumns = (
     },
     {
       field: 'birthDate',
+      display: 'flex',
       flex: 1,
       renderHeader: () => renderHeaderCell(<Trans>Date naiss.</Trans>),
       renderCell: (cell: GridRenderCellParams) => {
