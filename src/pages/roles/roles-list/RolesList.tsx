@@ -2,14 +2,17 @@ import { LMSCard } from '@src/components/lms';
 import RolesListHeader from '@src/pages/roles/roles-list/RolesListHeader';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { rolesColumns } from '@src/pages/roles/roles-list/RolesColumns';
-import { MouseEvent, useState } from 'react';
+import { MouseEvent, useContext, useState } from 'react';
 import { Role } from '@services/roles/interfaces';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import RolesListPopperContent from '@src/pages/roles/roles-list/RolesListPopperContent';
-import { getRolesList } from '@redux/reducers/rolesReducer';
 import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
 import { TableRequestConfig } from '@services/interfaces';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
+import { getRolesList } from '@redux/actions/rolesActions';
 
 export default function RolesList() {
   const dispatch = useAppDispatch();
@@ -21,6 +24,13 @@ export default function RolesList() {
   const [roleSelected, setRoleSelected] = useState<Role | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
+  const canSeeOptions =
+    isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE) ||
+    isAuthorizedByPermissionsTo(pageType, PermissionEnum.DELETE);
 
   const handleTableChange = (rolesRequestConfig: TableRequestConfig) => {
     dispatch(getRolesList(rolesRequestConfig));
@@ -51,7 +61,7 @@ export default function RolesList() {
     <>
       <LMSCard isPageCard contentPadding={0} header={<RolesListHeader />}>
         <TableWithSortAndFilter
-          columns={rolesColumns(handleClick)}
+          columns={rolesColumns(handleClick, canSeeOptions)}
           rows={rolesListData}
           loading={rolesListLoading}
           rowCount={rolesListTotalCount}

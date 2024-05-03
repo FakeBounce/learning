@@ -41,6 +41,30 @@ export const rolesSetupSuccessAxiosMock = () => {
     },
     data: defaultRole
   });
+
+  /**
+   * Mocks the response for the group creation
+   */
+  RolesMock.onDelete(/\/roles\/\d+/).reply(200, {
+    success: true,
+    message: {
+      value: 'Le rôle a été modifié avec succès.',
+      level: 'success'
+    }
+  });
+};
+
+export const rolesSetupErrorAxiosMock = () => {
+  /**
+   * Mocks the response for the group creation
+   */
+  RolesMock.onDelete(/\/roles\/\d+/).reply(500, {
+    success: false,
+    message: {
+      value: 'Il y a eu une erreur lors de la suppression du rôle. Veuillez réessayer plus tard.',
+      level: 'error'
+    }
+  });
 };
 
 export default RolesMock;

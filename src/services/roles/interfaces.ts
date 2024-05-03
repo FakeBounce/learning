@@ -70,3 +70,12 @@ export interface UpdateRoleResponse {
   message: ApiResponseMessage;
   data: Role;
 }
+
+export interface DeleteRoleRequest {
+  id: number;
+}
+
+export interface DeleteRoleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+}

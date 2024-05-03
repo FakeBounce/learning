@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { defaultRole } from '@src/tests/pages/roles/DefaultRole';
 import { rolesInitialState } from '@redux/reducers/rolesReducer';
-import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
 import { enqueueSnackbar } from 'notistack';
 
 // Mock useNavigate

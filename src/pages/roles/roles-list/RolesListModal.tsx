@@ -1,7 +1,10 @@
 import LMSModal from '@src/components/lms/LMSModal';
-import { t, Trans } from '@lingui/macro';
+import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { enqueueSnackbar } from 'notistack';
+import { deleteRoleAction } from '@redux/actions/rolesActions';
+import { removeRoleFromList, resetDeleteRoleState } from '@redux/reducers/rolesReducer';
 
 interface RolesListModalProps {
   roleSelected: any;
@@ -16,12 +19,19 @@ export default function RolesListModal({
   setIsModalOpen,
   cancelModal
 }: RolesListModalProps) {
-  const deleteRole = () => {
+  const dispatch = useAppDispatch();
+  const { rolesDeleteLoading } = useAppSelector((state) => state.roles.rolesDelete);
+
+  const deleteRole = async () => {
     if (roleSelected !== null) {
-      //@TODO : call the delete action
-      enqueueSnackbar(t`Rôle supprimé !`, { variant: 'success' });
-      // Reset the popper
-      cancelModal();
+      try {
+        await dispatch(deleteRoleAction({ id: roleSelected.id }));
+        dispatch(removeRoleFromList(roleSelected.id));
+        cancelModal();
+      } catch (error) {
+        enqueueSnackbar(error as string, { variant: 'error' });
+        dispatch(resetDeleteRoleState());
+      }
     }
   };
 
@@ -32,6 +42,7 @@ export default function RolesListModal({
       onClose={() => {
         setIsModalOpen(false);
       }}
+      isLoading={rolesDeleteLoading}
       validateAction={deleteRole}
       cancelAction={cancelModal}
     >
