@@ -8,20 +8,17 @@
   "/V2CKA": {
     "translation": "",
     "message": "À la fin du module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "/s3YqS": {
     "translation": "",
     "message": "Mise à jour",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "1CtVQM": {
     "translation": "",
@@ -32,26 +29,22 @@
   "1DBtI+": {
     "translation": "",
     "message": "Après chaque essai",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "1FR6FT": {
     "translation": "",
     "message": "Durée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "",
     "message": "Liste des modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "5qQosN": {
     "translation": "",
@@ -62,8 +55,7 @@
   "6dUBla": {
     "translation": "",
     "message": "Validation du module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "7cyFQz": {
     "translation": "",
@@ -74,20 +66,17 @@
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "BNJMAr": {
     "translation": "",
     "message": "Recommencer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DCKpq+": {
     "translation": "",
@@ -98,14 +87,12 @@
   "DDwdL4": {
     "translation": "",
     "message": "Profil",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "EIxP9b": {
     "translation": "",
     "message": "Gestion des rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Ef7StM": {
     "translation": "",
@@ -116,26 +103,22 @@
   "Eq6YVV": {
     "translation": "",
     "message": "Score",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "INP3dF": {
     "translation": "",
@@ -146,68 +129,62 @@
   "J6dtbK": {
     "translation": "",
     "message": "Auteur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "",
     "message": "Créer un testeur externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "NIxUee": {
     "translation": "",
     "message": "Durée du module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "NZ/LFz": {
     "translation": "",
     "message": "Affichage des réponses",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "OQ8lVl": {
+    "translation": "",
+    "message": "Modifier",
+    "comments": []
   },
   "OYHzN1": {
     "translation": "",
     "message": "Tags",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "",
     "message": "Ajouter un rôle",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "RJ5kAY": {
     "translation": "",
     "message": "Nom du module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ROGnVQ": {
     "translation": "",
     "message": "Gestion des permissions",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "S+0gfq": {
     "translation": "",
     "message": "Création d'un module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "U2FMYj": {
     "translation": "",
@@ -218,20 +195,17 @@
   "XHiamB": {
     "translation": "",
     "message": "Verrouiller",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XdArAS": {
     "translation": "",
     "message": "Modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YLVbBi": {
     "translation": "",
@@ -248,8 +222,7 @@
   "dBw0sb": {
     "translation": "",
     "message": "Modifier un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dyGH74": {
     "translation": "",
@@ -260,38 +233,42 @@
   "eE0JZ4": {
     "translation": "",
     "message": "Version",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "eG0+eP": {
+    "translation": "",
+    "message": "Le module n'existe pas",
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
     "message": "Liste des Parcours",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "huVs7o": {
     "translation": "",
     "message": "Rendre public",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "i5N/Tb": {
+    "translation": "",
+    "message": "Profil d'un module",
+    "comments": []
   },
   "iJHuOY": {
     "translation": "",
     "message": "Ajouter un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "",
     "message": "Créer un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "now6WU": {
     "translation": "",
@@ -302,49 +279,41 @@
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rMJNt/": {
     "translation": "",
     "message": "Langue",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rSV0Vm": {
     "translation": "",
     "message": "Création d’un module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "txI/AX": {
     "translation": "",
     "message": "Après chaque question",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "uAJKId": {
     "translation": "",
     "message": "Assignez une valeur et appuyez sur la touche entrée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "xmHh2K": {
     "translation": "",
     "message": "Jamais",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

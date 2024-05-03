@@ -2,30 +2,29 @@
   "+3OZdN": {
     "translation": "Nouvelle donnée renseignée : {0}",
     "message": "Nouvelle donnée renseignée : {0}",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "0uOGoh": {
     "translation": "Le format est invalide",
     "message": "Le format est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "4kUPlv": {
     "translation": "Notifications app",
@@ -36,8 +35,7 @@
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "8/pAPk": {
     "translation": "Nom de naissance",
@@ -47,7 +45,8 @@
   "8N1T4V": {
     "translation": "La notification email est requis",
     "message": "La notification email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9HM7Cg": {
     "translation": "Notification email",
@@ -58,8 +57,7 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "A7xVRH": {
     "translation": "Veuillez sélectionner un fichier",
@@ -94,13 +92,13 @@
   "D/HeUe": {
     "translation": "L'étudiant n'existe pas",
     "message": "L'étudiant n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "E1oq0K": {
     "translation": "Vous avez modifier les champs suivants :",
@@ -111,14 +109,12 @@
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "F8ESDf": {
     "translation": "Activé",
     "message": "Activé",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "FABypk": {
     "translation": "Sélectionnez un fichier",
@@ -146,26 +142,22 @@
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "Bloqué",
     "message": "Bloqué",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HdNGur": {
     "translation": "Bloquer",
@@ -181,7 +173,8 @@
   "IRPK7p": {
     "translation": "La notification app est requise",
     "message": "La notification app est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "K+tHTS": {
     "translation": "Format incorrect",
@@ -197,14 +190,12 @@
   "MZX/LX": {
     "translation": "Statut",
     "message": "Statut",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "Email",
@@ -220,13 +211,13 @@
   "P3YkHZ": {
     "translation": "Mettre à jour",
     "message": "Mettre à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "Ajouter un rôle",
     "message": "Ajouter un rôle",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "PsHtRs": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
@@ -242,19 +233,18 @@
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
     "message": "Le numéro de téléphone est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "S+0gfq": {
     "translation": "Création d'un module",
     "message": "Création d'un module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "SNbh3h": {
     "translation": "Débloquer un étudiant",
@@ -282,13 +272,13 @@
   "UHDGIH": {
     "translation": "/",
     "message": "/",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UU1Jg5": {
     "translation": "La date de naissance est requise",
     "message": "La date de naissance est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UeDwla": {
     "translation": "Information obligatoire",
@@ -317,7 +307,8 @@
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
@@ -328,14 +319,12 @@
   "XdArAS": {
     "translation": "Modules",
     "message": "Modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YNznY8": {
     "translation": "Ajouter",
@@ -358,24 +347,24 @@
   "dBw0sb": {
     "translation": "Modifier un groupe",
     "message": "Modifier un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eeDRWI": {
     "translation": "La notification sms est requise",
     "message": "La notification sms est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "f3LmJs": {
     "translation": "Bloquer un étudiant",
@@ -386,7 +375,8 @@
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -403,13 +393,18 @@
   "hW6LJA": {
     "translation": "L'email est invalide",
     "message": "L'email est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "i5N/Tb": {
+    "translation": "Profil d'un module",
+    "message": "Profil d'un module",
+    "comments": []
   },
   "iAKACc": {
     "translation": "Nom",
@@ -419,13 +414,13 @@
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
     "message": "Le nom de famille est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jP37N3": {
     "translation": "Ajouter des étudiants en masse",
@@ -442,14 +437,12 @@
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rmmVFd": {
     "translation": "Veillez sélectionner un fichier",
@@ -472,8 +465,7 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "vdb2j0": {
     "translation": "Notifications SMS",
@@ -489,8 +481,7 @@
   "wB7q3X": {
     "translation": "Date naiss.",
     "message": "Date naiss.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "xj9DHS": {
     "translation": "NON",
@@ -501,12 +492,12 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",
     "message": "Au moins un groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

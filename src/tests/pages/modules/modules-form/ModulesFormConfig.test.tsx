@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, act, renderHook } from '@testProvider';
 import { FormProvider, useForm } from 'react-hook-form';
 import ModulesFormConfig from '@src/pages/modules/modules-form/ModulesFormConfig';
-import { answersOptions } from '@src/pages/modules/modules-create/ModulesCreateSchema';
+import { answersOptions } from '@src/pages/modules/modules-form/ModulesFormSchema';
 
 describe('ModulesFormConfig', () => {
   it('renders ModulesFormConfig correctly', async () => {

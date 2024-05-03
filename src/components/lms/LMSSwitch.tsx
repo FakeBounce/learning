@@ -1,5 +1,5 @@
 import { styled } from '@mui/system';
-import { Switch } from '@mui/material';
+import { Switch, SwitchProps } from '@mui/material';
 import { ChangeEvent } from 'react';
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
@@ -40,11 +40,12 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
   }
 }));
 
-interface LMSSwitchProps {
+interface LMSSwitchProps extends SwitchProps {
   handleChange: (_: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
+  disabled?: boolean;
 }
 
-export default function LMSSwitch({ handleChange, checked }: LMSSwitchProps) {
-  return <AntSwitch onChange={handleChange} checked={checked} />;
+export default function LMSSwitch({ handleChange, checked, disabled = false }: LMSSwitchProps) {
+  return <AntSwitch onChange={handleChange} checked={checked} disabled={disabled} />;
 }

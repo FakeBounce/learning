@@ -1,4 +1,4 @@
-import { Modules, ModulesCreate } from '@src/routes/elements';
+import { Modules, ModulesCreate, ModulesProfile } from '@src/routes/elements';
 import { PATH_MODULES } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
@@ -13,6 +13,7 @@ const ModulesRoutes = () => {
       }
     >
       <Route path={PATH_MODULES.root} element={<Modules />} />
+      <Route path={PATH_MODULES.profile} element={<ModulesProfile />} />
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE} />}>
         <Route path={PATH_MODULES.add} element={<ModulesCreate />} />
       </Route>

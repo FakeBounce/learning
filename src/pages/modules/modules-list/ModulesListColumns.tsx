@@ -7,6 +7,47 @@ import { Module, ModuleRightUser } from '@services/modules/interfaces';
 import { format } from 'date-fns';
 import Iconify from '@src/components/iconify/Iconify';
 import { renderModuleStatus } from '@utils/helpers/modulesDisplays';
+import Box from '@mui/material/Box';
+import { Chip, Typography } from '@mui/material';
+
+const chipDisplayer = (cell: GridRenderCellParams) => (
+  <Box display="flex" gap={1} justifyContent="center" alignItems="center">
+    {cell.row.tags.length > 0 &&
+      cell.row.tags.map((tag: string, index: number) => {
+        if (index < 2) {
+          return (
+            <Chip
+              key={`tag-${tag}`}
+              label={tag}
+              sx={{
+                backgroundColor: (theme) => theme.palette.grey[200],
+                color: (theme) => theme.palette.secondary.main,
+                fontSize: (theme) => theme.typography.caption.fontSize,
+                fontWeight: (theme) => theme.typography.subtitle1.fontWeight,
+                borderRadius: (theme) => theme.shape.customBorderRadius.small,
+                height: 26,
+                span: {
+                  padding: 0.75
+                }
+              }}
+            />
+          );
+        }
+      })}
+    {cell.row.tags.length > 2 && (
+      <Typography
+        sx={{
+          color: (theme) => theme.palette.secondary.main,
+          fontSize: (theme) => theme.typography.caption.fontSize,
+          fontWeight: (theme) => theme.typography.subtitle1.fontWeight,
+          borderRadius: (theme) => theme.shape.customBorderRadius.small
+        }}
+      >
+        + {cell.row.tags.length - 2}
+      </Typography>
+    )}
+  </Box>
+);
 
 const getAuthorFromRights = (cell: GridRenderCellParams) => {
   if (cell.row.rights && cell.row.rights.users && cell.row.rights.users.length > 0) {
@@ -44,7 +85,14 @@ export const modulesColumns = (
       field: 'title',
       display: 'flex',
       flex: 1,
-      renderHeader: () => renderHeaderCell(<Trans>Nom du module</Trans>)
+      minWidth: 200,
+      renderHeader: () => renderHeaderCell(<Trans>Nom du module</Trans>),
+      renderCell: (cell: GridRenderCellParams) => (
+        <Box display="flex" flexDirection="column" gap={cell.row.tags.length > 0 ? 1 : 0}>
+          <Typography variant="subtitle1">{cell.row.title}</Typography>
+          {chipDisplayer(cell)}
+        </Box>
+      )
     },
     {
       field: 'createdBy',

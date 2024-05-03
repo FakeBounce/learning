@@ -56,6 +56,7 @@ export default function ModulesList() {
           loading={modulesListLoading}
           rowCount={modulesListTotalCount}
           onChange={handleTableChange}
+          rowHeight={80}
         />
       </LMSCard>
       <LMSPopover id={id} open={open} anchorEl={anchorEl}>

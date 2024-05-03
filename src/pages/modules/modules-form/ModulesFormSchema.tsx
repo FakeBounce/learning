@@ -2,7 +2,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Trans } from '@lingui/macro';
 import { BasicOption } from '@services/interfaces';
 import * as Yup from 'yup';
-import { ModuleDisplayAnswers } from '@services/modules/interfaces';
+import { Module, ModuleDisplayAnswers } from '@services/modules/interfaces';
+import { setTimeToDate } from '@utils/helpers/timeConvertors';
 
 /**
  * This is a static array of tags to test while waiting the API
@@ -50,7 +51,37 @@ export const languagesOptions = [
   }
 ];
 
-export const modulesCreateDefaultValues = {
+export interface ModuleFormValues {
+  media?: File | null;
+  timer: Date;
+  nbAttempts: number;
+  successRate: number;
+  displayAnswers: string;
+  isLocked: boolean;
+  isPublic: boolean;
+  title: string;
+  languageId: number;
+  description: string;
+  tags?: BasicOption[];
+}
+
+export const populateModuleForm = (module: Module) => {
+  return {
+    media: undefined,
+    timer: setTimeToDate(module.timer),
+    nbAttempts: module.nbAttempts,
+    successRate: module.successRate,
+    displayAnswers: module.displayAnswers,
+    isLocked: !!module.isLocked,
+    isPublic: !!module.isPublic,
+    title: module.title,
+    languageId: module.language === 'french' ? 1 : 2,
+    description: module.description,
+    tags: module.tags.map((tag) => ({ value: tag.label, label: tag.label }))
+  } as ModuleFormValues;
+};
+
+export const modulesFormDefaultValues: ModuleFormValues = {
   media: undefined,
   timer: new Date(new Date().setHours(0, 0, 0, 0)),
   nbAttempts: 0,
@@ -64,9 +95,9 @@ export const modulesCreateDefaultValues = {
   tags: []
 };
 
-export const modulesCreateSchema = yupResolver(
+export const modulesFormSchema = yupResolver(
   Yup.object().shape({
-    media: Yup.mixed().nullable(),
+    media: Yup.mixed<File>().nullable().optional(),
     timer: Yup.date()
       .required('La durée est requise')
       .min(
