@@ -15,7 +15,7 @@ export default function SnackbarProvider({ children }: { children: ReactNode }) 
         ref={notistackRef}
         dense
         maxSnack={5}
-        autoHideDuration={1000}
+        autoHideDuration={2000}
         variant="success" // Set default variant
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         action={(key) => (

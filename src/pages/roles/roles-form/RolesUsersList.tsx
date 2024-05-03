@@ -17,10 +17,10 @@ const RolesUsersList = ({ isEditing }: { isEditing: boolean }) => {
   const { setValue } = useFormContext();
 
   const handleUserRowSelection = (rowsSelected: GridRowSelectionModel) => {
-    setValue('usersId', rowsSelected);
+    setValue('usersId', rowsSelected, { shouldDirty: true });
   };
   const handleGroupRowSelection = (rowsSelected: GridRowSelectionModel) => {
-    setValue('groupsId', rowsSelected);
+    setValue('groupsId', rowsSelected, { shouldDirty: true });
   };
 
   return (

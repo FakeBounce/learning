@@ -31,7 +31,7 @@ export const RolesUsersColumns = ({
   currentRole: Role | null;
 }) => {
   const isEditingColumn: GridColDef = {
-    field: 'id',
+    field: 'isAlreadyInRole',
     display: 'flex',
     flex: 1,
     renderHeader: () => renderHeaderCell(<Trans>Appartient déjà au groupe</Trans>),

@@ -56,3 +56,17 @@ export interface CreateRoleResponse {
   message: ApiResponseMessage;
   data: Role;
 }
+
+export interface UpdateRoleRequest {
+  id: number;
+  name?: string;
+  description?: string;
+  usersId?: number[];
+  groupsId?: number[];
+}
+
+export interface UpdateRoleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Role;
+}
