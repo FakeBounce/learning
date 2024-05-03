@@ -71,4 +71,36 @@ describe('ModulesFormConfig', () => {
 
     expect(regexInput2).toHaveValue('20');
   });
+
+  it('should be disabled', async () => {
+    const methods = renderHook(() =>
+      useForm({
+        defaultValues: {
+          timer: '00:00',
+          successRate: '',
+          nbAttempts: '',
+          isLocked: false,
+          isPublic: false,
+          displayAnswers: answersOptions[0].value
+        }
+      })
+    ).result.current;
+
+    await act(async () => {
+      render(
+        <FormProvider {...methods}>
+          <form>
+            <ModulesFormConfig disabled />
+          </form>
+        </FormProvider>
+      );
+    });
+
+    expect(screen.getByLabelText(/Recommencer/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Validation du module/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Durée du module/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Affichage des réponses/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Verrouiller/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Rendre public/i)).toBeDisabled();
+  });
 });

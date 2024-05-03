@@ -5,13 +5,14 @@ interface BaseRHFTextFieldProps {
   name: string;
   size?: 'small' | 'medium';
   required?: boolean;
+  disabled?: boolean;
 }
 
 type RHFTimerProps = BaseRHFTextFieldProps & {
   // Add any specific props you might need for testing
 };
 
-function RHFTimer({ name, size = 'small', required = false }: RHFTimerProps) {
+function RHFTimer({ name, size = 'small', required = false, disabled = false }: RHFTimerProps) {
   const { control } = useFormContext();
   const [pickerError, setPickerError] = useState(false);
 
@@ -23,6 +24,8 @@ function RHFTimer({ name, size = 'small', required = false }: RHFTimerProps) {
         <input
           type="time"
           {...field}
+          id={name}
+          disabled={disabled}
           value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
           onChange={(e) => {
             field.onChange(e); // Handle change events

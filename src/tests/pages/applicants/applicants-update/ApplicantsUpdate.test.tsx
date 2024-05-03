@@ -49,7 +49,7 @@ describe('ApplicantsUpdate', () => {
       expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
         singleApplicant.current_values.firstname
       );
-      expect(screen.getByLabelText(/Email/i)).toHaveValue(singleApplicant.email);
+      expect(screen.getByRole('textbox', { name: /Email/i })).toHaveValue(singleApplicant.email);
     });
   });
 
@@ -134,7 +134,7 @@ describe('ApplicantsUpdate', () => {
       );
     });
 
-    const emailInput = screen.getByLabelText(/Email/i);
+    const emailInput = screen.getByRole('textbox', { name: /Email/i });
 
     await act(async () => {
       // Update the email

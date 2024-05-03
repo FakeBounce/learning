@@ -16,7 +16,11 @@ function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) 
   return (
     <Box>
       <Typography variant="caption">
-        {required ? <LabelWithRequired name={name} label={label} /> : label}
+        {required ? (
+          <LabelWithRequired name={name} label={label} />
+        ) : (
+          <label htmlFor={name}>{label}</label>
+        )}
       </Typography>
       <Box ml={1.5} mt={1}>
         <Controller
@@ -26,7 +30,14 @@ function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) 
           render={({ field: { onChange, value } }) => {
             return (
               <FormControlLabel
-                control={<LMSSwitch checked={value} handleChange={onChange} disabled={disabled} />}
+                control={
+                  <LMSSwitch
+                    name={name}
+                    checked={value}
+                    handleChange={onChange}
+                    disabled={disabled}
+                  />
+                }
                 label=""
               />
             );

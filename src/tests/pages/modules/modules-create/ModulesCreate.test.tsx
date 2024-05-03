@@ -3,8 +3,8 @@ import ModulesCreate from '@src/pages/modules/modules-create/ModulesCreate';
 import { useNavigate } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';
 import modulesMock, {
-  modulesCreateSetupErrorAxiosMock,
-  modulesCreateSetupSuccessAxiosMock
+  modulesSetupErrorAxiosMock,
+  modulesSetupSuccessAxiosMock
 } from '@src/tests/pages/modules/ModulesMock';
 import { ModuleDisplayAnswers } from '@services/modules/interfaces';
 import { enqueueSnackbar } from 'notistack';
@@ -53,7 +53,7 @@ describe('ModulesCreate', () => {
   });
 
   it('send the form correctly', async () => {
-    modulesCreateSetupSuccessAxiosMock();
+    modulesSetupSuccessAxiosMock();
     await act(async () => {
       render(<ModulesCreate />);
     });
@@ -82,7 +82,7 @@ describe('ModulesCreate', () => {
   });
 
   it('should display an error if something is wrong', async () => {
-    modulesCreateSetupErrorAxiosMock();
+    modulesSetupErrorAxiosMock();
     await act(async () => {
       render(<ModulesCreate />);
     });

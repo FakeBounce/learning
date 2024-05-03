@@ -30,7 +30,123 @@ export const defaultModule: Module = {
       {
         id: 1,
         login: 'Market',
-        right: ModuleUserRightEnum.OWNER
+        right: ModuleUserRightEnum.OWNER,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.OWNER
+        }
+      }
+    ],
+    groups: []
+  }
+};
+
+export const defaultModuleContributor: Module = {
+  id: 2,
+  language: 'french',
+  title: 'Module title',
+  parentId: null,
+  description: 'Module description',
+  timer: '00:00:00',
+  nbAttempts: 0,
+  successRate: 0,
+  displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
+  version: 1,
+  status: ModuleStatusEnum.DRAFT,
+  composition: '[]',
+  tags: [],
+  isLocked: false,
+  isPublic: false,
+  isLastPublishedOrArchivedVersion: false,
+  isLastVersion: true,
+  updatedAt: new Date('2024-04-24T14:47:10.000000Z'),
+  media: [],
+  rights: {
+    users: [
+      {
+        id: 1,
+        login: 'Market',
+        right: ModuleUserRightEnum.CONTRIBUTOR,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.CONTRIBUTOR
+        }
+      }
+    ],
+    groups: []
+  }
+};
+
+export const defaultModuleSupervisor: Module = {
+  id: 2,
+  language: 'french',
+  title: 'Module title',
+  parentId: null,
+  description: 'Module description',
+  timer: '00:00:00',
+  nbAttempts: 0,
+  successRate: 0,
+  displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
+  version: 1,
+  status: ModuleStatusEnum.DRAFT,
+  composition: '[]',
+  tags: [],
+  isLocked: false,
+  isPublic: false,
+  isLastPublishedOrArchivedVersion: false,
+  isLastVersion: true,
+  updatedAt: new Date('2024-04-24T14:47:10.000000Z'),
+  media: [],
+  rights: {
+    users: [
+      {
+        id: 1,
+        login: 'Market',
+        right: ModuleUserRightEnum.CONTRIBUTOR,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.CONTRIBUTOR
+        }
+      }
+    ],
+    groups: []
+  }
+};
+
+export const defaultModuleViewer: Module = {
+  id: 2,
+  language: 'french',
+  title: 'Module title',
+  parentId: null,
+  description: 'Module description',
+  timer: '00:00:00',
+  nbAttempts: 0,
+  successRate: 0,
+  displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
+  version: 1,
+  status: ModuleStatusEnum.DRAFT,
+  composition: '[]',
+  tags: [],
+  isLocked: false,
+  isPublic: false,
+  isLastPublishedOrArchivedVersion: false,
+  isLastVersion: true,
+  updatedAt: new Date('2024-04-24T14:47:10.000000Z'),
+  media: [],
+  rights: {
+    users: [
+      {
+        id: 1,
+        login: 'Market',
+        right: ModuleUserRightEnum.VIEWER,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.VIEWER
+        }
       }
     ],
     groups: []
