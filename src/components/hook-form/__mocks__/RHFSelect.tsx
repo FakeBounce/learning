@@ -19,7 +19,7 @@ function RHFSelect({ name, children, ...other }: RHFSelectProps) {
       render={({ field }) => (
         <>
           <label htmlFor={name}>{other.label}</label>
-          <select {...field} id={name} name={name}>
+          <select {...field} id={name} name={name} disabled={other.disabled}>
             {children}
           </select>
         </>

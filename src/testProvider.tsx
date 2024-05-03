@@ -64,7 +64,11 @@ function customRender(
   ui: React.ReactElement,
   {
     preloadedState,
-    store = configureStore({ reducer: rootReducer, preloadedState }),
+    store = configureStore({
+      reducer: rootReducer,
+      preloadedState,
+      middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false })
+    }),
     customHistory = ['/'],
     ...renderOptions
   }: {

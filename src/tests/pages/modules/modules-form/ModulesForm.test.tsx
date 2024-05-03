@@ -79,4 +79,27 @@ describe('ModulesForm', () => {
       expect(methods.getValues('media')).toBeNull();
     });
   });
+
+  it('should be disabled', async () => {
+    const methods = renderHook(() =>
+      useForm({
+        defaultValues: {
+          media: null // Ensure the default value for media is null
+        }
+      })
+    ).result.current;
+
+    render(
+      <FormProvider {...methods}>
+        <form>
+          <ModulesForm disabled />
+        </form>
+      </FormProvider>
+    );
+
+    expect(screen.getByTestId('illustration-upload-box').querySelector('input')).toBeDisabled();
+    expect(screen.getByRole('textbox', { name: /Nom du module/i })).toBeDisabled();
+    expect(screen.getByLabelText(/Langue/i)).toBeDisabled();
+    expect(screen.getByLabelText(/Description/i)).toBeDisabled();
+  });
 });

@@ -98,7 +98,7 @@ export default function IllustrationUploadBox({
           }}
         />
       )}
-      <input {...getInputProps()} />
+      <input disabled={disabled} {...getInputProps()} />
 
       {hasFile && hover && (
         <Box

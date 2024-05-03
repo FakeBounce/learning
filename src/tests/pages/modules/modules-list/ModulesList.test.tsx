@@ -2,9 +2,7 @@ import { render, waitFor, screen, cleanup } from '@testProvider';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import { useOutletContext } from 'react-router';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
-import ModulesMock, {
-  modulesCreateSetupSuccessAxiosMock
-} from '@src/tests/pages/modules/ModulesMock';
+import ModulesMock, { modulesSetupSuccessAxiosMock } from '@src/tests/pages/modules/ModulesMock';
 import ModulesList from '@src/pages/modules/modules-list/ModulesList';
 import { defaultModulesList } from '@src/tests/pages/modules/defaultModule';
 
@@ -26,7 +24,7 @@ describe('ModulesList', () => {
   });
 
   it('should render ModulesList correctly', async () => {
-    modulesCreateSetupSuccessAxiosMock();
+    modulesSetupSuccessAxiosMock();
     render(
       <FeatureFlagContext.Provider
         value={{

@@ -54,7 +54,9 @@ describe('ApplicantsCreate', () => {
     await act(async () => {
       fireEvent.change(screen.getByLabelText(/Prénom/i), { target: { value: 'John' } });
       fireEvent.change(screen.getAllByLabelText(/Nom/i)[0], { target: { value: 'Doe' } });
-      fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'john@doe.com' } });
+      fireEvent.change(screen.getByRole('textbox', { name: /Email/i }), {
+        target: { value: 'john@doe.com' }
+      });
       fireEvent.change(screen.getByLabelText(/Date de naissance/i), {
         target: { value: '01/01/1990' }
       });

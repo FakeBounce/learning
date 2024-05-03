@@ -5,7 +5,7 @@ import { defaultPagination } from '@src/tests/pages/mocksConstants';
 
 const ModulesMock = new MockAdapter(axios);
 
-export const modulesCreateSetupSuccessAxiosMock = () => {
+export const modulesSetupSuccessAxiosMock = () => {
   // Mock the createOrganizations endpoint
   ModulesMock.onPost('/modules').reply(200, {
     success: true,
@@ -21,9 +21,15 @@ export const modulesCreateSetupSuccessAxiosMock = () => {
       rows: defaultModulesList
     }
   });
+
+  ModulesMock.onGet(/\/modules\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Module fetched successfully' },
+    data: defaultModule
+  });
 };
 
-export const modulesCreateSetupErrorAxiosMock = () => {
+export const modulesSetupErrorAxiosMock = () => {
   // Mock the createOrganizations endpoint
   ModulesMock.onPost('/modules').reply(422, {
     success: false,

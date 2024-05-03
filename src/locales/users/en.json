@@ -2,22 +2,26 @@
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9hQFA+": {
     "translation": "",
@@ -28,7 +32,8 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "A7xVRH": {
     "translation": "",
@@ -51,7 +56,8 @@
   "DDwdL4": {
     "translation": "",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Dd/Xo9": {
     "translation": "",
@@ -62,7 +68,8 @@
   "EIxP9b": {
     "translation": "",
     "message": "Gestion des rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "F8ESDf": {
     "translation": "",
@@ -85,12 +92,14 @@
   "GF/eyq": {
     "translation": "",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "H1+RH6": {
     "translation": "",
@@ -107,7 +116,8 @@
   "HbvbX+": {
     "translation": "",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "",
@@ -142,7 +152,8 @@
   "MeRGCv": {
     "translation": "",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Nu4oKW": {
     "translation": "",
@@ -165,17 +176,20 @@
   "P54OXz": {
     "translation": "",
     "message": "Ajouter un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "",
     "message": "Création d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "SCttC7": {
     "translation": "",
@@ -210,12 +224,14 @@
   "XdArAS": {
     "translation": "",
     "message": "Modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "",
@@ -226,7 +242,8 @@
   "dBw0sb": {
     "translation": "",
     "message": "Modifier un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dEcezs": {
     "translation": "",
@@ -237,7 +254,8 @@
   "eoO6cw": {
     "translation": "",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "",
@@ -260,7 +278,8 @@
   "hsf9ph": {
     "translation": "",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "i0ke3s": {
     "translation": "",
@@ -271,7 +290,8 @@
   "i5N/Tb": {
     "translation": "",
     "message": "Profil d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iAKACc": {
     "translation": "",
@@ -282,7 +302,8 @@
   "iJHuOY": {
     "translation": "",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jN1i4x": {
     "translation": "",
@@ -299,12 +320,14 @@
   "lPgC5g": {
     "translation": "",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "r+5fnD": {
     "translation": "",
@@ -339,7 +362,8 @@
   "v+QFYv": {
     "translation": "",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "",
@@ -350,7 +374,8 @@
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "",
