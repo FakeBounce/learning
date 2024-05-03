@@ -4,7 +4,7 @@ import { LMSCard } from '@src/components/lms';
 import { FormProvider, useForm } from 'react-hook-form';
 import { PATH_ROLES } from '@utils/navigation/paths';
 import { useNavigate, useParams } from 'react-router-dom';
-import { Trans } from '@lingui/macro';
+import { t, Trans } from '@lingui/macro';
 import CardHeader from '@src/components/cards/CardHeader';
 import { enqueueSnackbar } from 'notistack';
 import { updateRoleAction } from '@redux/actions/rolesActions';
@@ -20,11 +20,12 @@ import RolesUpdateFooter from '@src/pages/roles/roles-update/RolesUpdateFooter';
 
 export default function RolesUpdate() {
   const [role, setRole] = useState<RoleForm>(roleFormDefaultValues);
-  const navigate = useNavigate();
 
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const { currentRoleData } = useAppSelector((state) => state.roles.currentRole);
   const { roleId } = useParams();
+
+  const { currentRoleData } = useAppSelector((state) => state.roles.currentRole);
 
   useEffect(() => {
     if (currentRoleData) {
@@ -53,9 +54,7 @@ export default function RolesUpdate() {
 
   const onSubmit = async (data: RoleForm) => {
     try {
-      const updateRoleRequest = {
-        name: data.name
-      } as RoleForm;
+      const updateRoleRequest = {} as RoleForm;
 
       Object.keys(dirtyFields).forEach((key) => {
         const formKey = key as keyof RoleForm;
@@ -81,7 +80,11 @@ export default function RolesUpdate() {
         }
       });
 
-      console.log('updateRoleRequest', updateRoleRequest, data, dirtyFields);
+      if (Object.keys(updateRoleRequest).length === 0) {
+        enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
+        return;
+      }
+
       await dispatch(updateRoleAction({ id: Number(roleId), ...updateRoleRequest }));
       navigate(PATH_ROLES.root);
     } catch (error) {

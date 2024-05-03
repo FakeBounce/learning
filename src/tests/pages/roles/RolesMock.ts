@@ -29,6 +29,18 @@ export const rolesSetupSuccessAxiosMock = () => {
     },
     data: defaultRole
   });
+
+  /**
+   * Mocks the response for the group creation
+   */
+  RolesMock.onPut(/\/roles\/\d+/).reply(200, {
+    success: true,
+    message: {
+      value: 'Le rôle a été modifié avec succès.',
+      level: 'success'
+    },
+    data: defaultRole
+  });
 };
 
 export default RolesMock;
