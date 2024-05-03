@@ -4,51 +4,34 @@ import { LMSCard } from '@src/components/lms';
 import { FormProvider, useForm } from 'react-hook-form';
 import { PATH_ROLES } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
-import * as Yup from 'yup';
-import { t, Trans } from '@lingui/macro';
+import { Trans } from '@lingui/macro';
 import CardHeader from '@src/components/cards/CardHeader';
 import { enqueueSnackbar } from 'notistack';
 import RolesCreateFooter from '@src/pages/roles/roles-create/RolesCreateFooter';
 import { createRoleAction } from '@redux/actions/rolesActions';
 import { resetRolesState } from '@redux/reducers/rolesReducer';
 import RolesUsersForm from '@src/pages/roles/roles-form/RolesUsersForm';
-
-export const createRoleSchema = Yup.object().shape({
-  name: Yup.string().required(t`Le nom du groupe est requis`),
-  description: Yup.string().optional(),
-  usersId: Yup.array().of(Yup.number().required()).optional(),
-  groupsId: Yup.array().of(Yup.number().required()).optional()
-});
-
-export const createRoleFormDefaultValues = {
-  name: '',
-  description: '',
-  usersId: [],
-  groupsId: []
-};
-
-export interface CreateRoleForm {
-  name: string;
-  description?: string;
-  usersId?: number[];
-  groupsId?: number[];
-}
+import {
+  RoleForm,
+  roleFormDefaultValues,
+  roleFormSchema
+} from '@src/pages/roles/roles-form/RolesFormSchema';
 
 export default function RolesCreate() {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
   const methods = useForm({
-    resolver: yupResolver(createRoleSchema),
-    defaultValues: createRoleFormDefaultValues
+    resolver: yupResolver(roleFormSchema),
+    defaultValues: { ...roleFormDefaultValues }
   });
   const { handleSubmit } = methods;
 
-  const onSubmit = async (data: CreateRoleForm) => {
+  const onSubmit = async (data: RoleForm) => {
     try {
       const createRoleRequest = {
         name: data.name
-      } as CreateRoleForm;
+      } as RoleForm;
 
       if (data.description && data.description !== '') {
         createRoleRequest.description = data.description;

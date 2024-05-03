@@ -1,5 +1,5 @@
 import { PATH_ROLES } from '@utils/navigation/paths';
-import { Roles, RolesCreate } from 'src/routes/elements';
+import { Roles, RolesCreate, RolesUpdate } from 'src/routes/elements';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
@@ -19,6 +19,9 @@ const Router = () => {
       <Route path={PATH_ROLES.root} element={<Roles />} />
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE} />}>
         <Route path={PATH_ROLES.add} element={<RolesCreate />} />
+      </Route>
+      <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.UPDATE} />}>
+        <Route path={PATH_ROLES.update} element={<RolesUpdate />} />
       </Route>
     </Route>
   );

@@ -1,5 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { CreateRoleRequest, GetRolePermissionsRequest } from '@services/roles/interfaces';
+import {
+  CreateRoleRequest,
+  GetRolePermissionsRequest,
+  UpdateRoleRequest
+} from '@services/roles/interfaces';
 import * as RolesServices from '@services/roles/rolesAPI';
 
 export const getRolePermissions = createAsyncThunk(
@@ -20,6 +24,19 @@ export const createRoleAction = createAsyncThunk(
   async (args: CreateRoleRequest, { rejectWithValue }) => {
     try {
       const response = await RolesServices.createRole(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) return rejectWithValue(e.response.data);
+      throw e;
+    }
+  }
+);
+
+export const updateRoleAction = createAsyncThunk(
+  'roles/update',
+  async (args: UpdateRoleRequest, { rejectWithValue }) => {
+    try {
+      const response = await RolesServices.updateRole(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) return rejectWithValue(e.response.data);

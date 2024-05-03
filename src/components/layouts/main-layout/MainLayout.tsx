@@ -8,7 +8,7 @@ import { drawerWidth } from '@src/components/layouts/sidebar/styles';
 import { useTheme } from '@mui/material/styles';
 
 export default function MainLayout() {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const theme = useTheme();
 
   return (

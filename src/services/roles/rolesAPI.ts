@@ -6,7 +6,9 @@ import {
   GetRolePermissionsRequest,
   GetRolePermissionsResponse,
   GetRolesRequest,
-  GetRolesResponse
+  GetRolesResponse,
+  UpdateRoleRequest,
+  UpdateRoleResponse
 } from '@services/roles/interfaces';
 
 export const getRolePermissions = async (
@@ -31,3 +33,10 @@ export const getRoles = async (args: GetRolesRequest): Promise<AxiosResponse<Get
 export const createRole = async (
   args: CreateRoleRequest
 ): Promise<AxiosResponse<CreateRoleResponse>> => axios.post(`/roles`, args);
+
+export const updateRole = async (
+  args: UpdateRoleRequest
+): Promise<AxiosResponse<UpdateRoleResponse>> => {
+  const { id, ...rest } = args;
+  return axios.put(`/roles/${id}`, rest);
+};

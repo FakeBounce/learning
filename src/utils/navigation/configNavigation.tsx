@@ -161,6 +161,10 @@ const rolesNavigationConfig = [
     path: PATH_ROLES.add
   },
   {
+    title: <Trans>Modifier un rôle</Trans>,
+    path: PATH_ROLES.update
+  },
+  {
     title: <Trans>Gestion des permissions</Trans>,
     path: PATH_ROLES.managePermission
   }

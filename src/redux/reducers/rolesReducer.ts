@@ -3,6 +3,7 @@ import { GetRolesRequest, Role } from '@services/roles/interfaces';
 import * as rolesServices from '@services/roles/rolesAPI';
 import { enqueueSnackbar } from 'notistack';
 import { AnyAction } from 'redux';
+import { createRoleAction, updateRoleAction } from '@redux/actions/rolesActions';
 
 interface RolesState {
   rolesList: {
@@ -57,12 +58,17 @@ export const rolesSlice = createSlice({
   name: 'roles',
   initialState: rolesInitialState,
   reducers: {
-    resetRolesState: () => rolesInitialState
+    resetRolesState: () => rolesInitialState,
+    setCurrentRole: (state, action) => {
+      state.currentRole.currentRoleData = action.payload;
+    }
   },
   extraReducers: (builder) => {
     builder
       .addCase(getRolesList.pending, (state) => {
         state.rolesList.rolesListLoading = true;
+        state.rolesList.rolesListData = [];
+        state.currentRole.currentRoleData = null;
       })
       .addCase(getRolesList.fulfilled, (state, action) => {
         state.rolesList.rolesListData = action.payload.data.rows;
@@ -73,10 +79,30 @@ export const rolesSlice = createSlice({
         state.rolesList.rolesListLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
+      })
+      .addCase(createRoleAction.pending, (state) => {
+        state.rolesCreate.rolesCreateLoading = true;
+      })
+      .addCase(createRoleAction.fulfilled, (state, action) => {
+        state.rolesCreate.rolesCreateLoading = false;
+        enqueueSnackbar(action.payload.message.value, { variant: 'success' });
+      })
+      .addCase(createRoleAction.rejected, (_state, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(updateRoleAction.pending, (state) => {
+        state.rolesUpdate.rolesUpdateLoading = true;
+      })
+      .addCase(updateRoleAction.fulfilled, (state, action) => {
+        state.rolesUpdate.rolesUpdateLoading = false;
+        enqueueSnackbar(action.payload.message.value, { variant: 'success' });
+      })
+      .addCase(updateRoleAction.rejected, (_state, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const { resetRolesState } = rolesSlice.actions;
+export const { resetRolesState, setCurrentRole } = rolesSlice.actions;
 
 export default rolesSlice.reducer;
