@@ -46,7 +46,7 @@ interface BaseApplicant {
   phone: string | null;
   isActive: boolean;
   birthName?: null | string;
-  birthDate?: string;
+  birthDate?: string | Date;
   city?: string | null;
   notifications?: ApplicantNotifications;
   groups?: string[];

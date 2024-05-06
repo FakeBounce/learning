@@ -47,6 +47,7 @@ jest.mock('@mui/material/MenuItem', () => {
 jest.mock('@src/components/hook-form/RHFSelect');
 jest.mock('@src/components/hook-form/RHFAvatar');
 jest.mock('@src/components/hook-form/RHFTimer');
+jest.mock('@src/components/hook-form/RHFDatePicker');
 jest.mock('@src/components/hook-form/RHFAutocomplete');
 jest.mock('@src/components/lms/LMSSwitch');
 jest.mock('@src/components/lms/LMSModal');

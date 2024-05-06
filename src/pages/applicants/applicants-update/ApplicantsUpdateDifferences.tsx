@@ -28,7 +28,9 @@ export default function ApplicantsUpdateDifferences({
       setValue(fieldName, value, { shouldDirty: true });
     }
 
-    if (typeof value === 'object') {
+    if (fieldName === 'birthDate') {
+      setValue(fieldName, new Date(value as string), { shouldDirty: true });
+    } else if (typeof value === 'object') {
       const notificationsToUpdate = getNotificationsKeys(value);
       const notificationTypes: (keyof ApplicantNotifications)[] = ['email', 'sms', 'app'];
 

@@ -13,6 +13,7 @@ import { i18n } from '@lingui/core';
 import { FeatureFlagProvider } from '@utils/feature-flag/FeatureFlagProvider';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
+import { fr } from 'date-fns/locale/fr';
 
 // ----------------------------------------------------------------------
 
@@ -22,7 +23,7 @@ export default function App() {
   }, []);
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
+    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={fr}>
       <BrowserRouter>
         <ThemeProvider>
           <SnackbarProvider>
