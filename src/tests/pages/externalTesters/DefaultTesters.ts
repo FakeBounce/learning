@@ -1,4 +1,5 @@
 import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants/interfaces';
+import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
 
 export const defaultTester = {
   id: 1,
@@ -57,7 +58,8 @@ export const stateTester = {
   firstname: 'state',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: true
+  isActive: true,
+  groups: [defaultGroup]
 } as Applicant;
 
 export const stateTesterDisabled = {
@@ -69,7 +71,8 @@ export const stateTesterDisabled = {
   firstname: 'state',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: false
+  isActive: false,
+  groups: [defaultGroup]
 } as Applicant;
 
 export const singleTester = {
@@ -79,6 +82,7 @@ export const singleTester = {
   type: ApplicantType.TESTER,
   external_id: null,
   isActive: true,
+  groups: [defaultGroup],
   current_values: {
     firstname: 'single',
     lastname: 'tester',

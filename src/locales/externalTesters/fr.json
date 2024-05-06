@@ -23,6 +23,11 @@
     "comments": [],
     "obsolete": false
   },
+  "79Gbrb": {
+    "translation": "Groupe(s) lié(s)",
+    "message": "Groupe(s) lié(s)",
+    "comments": []
+  },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
@@ -134,8 +139,7 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -164,8 +168,7 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
@@ -182,8 +185,7 @@
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
     "message": "Le numéro de téléphone est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
@@ -200,14 +202,12 @@
   "TOpCm4": {
     "translation": "Ajouter un testeur",
     "message": "Ajouter un testeur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UDTsGF": {
     "translation": "Id externe",
     "message": "Id externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "UeDwla": {
     "translation": "Information obligatoire",
@@ -254,8 +254,7 @@
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "dSvDOd": {
     "translation": "Liste des testeurs invalides",
@@ -272,8 +271,7 @@
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -290,8 +288,7 @@
   "hW6LJA": {
     "translation": "L'email est invalide",
     "message": "L'email est invalide",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -308,8 +305,7 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "Ajouter un groupe",
@@ -320,8 +316,7 @@
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
     "message": "Le nom de famille est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
@@ -368,8 +363,7 @@
   "vm08uh": {
     "translation": "Téléphone",
     "message": "Téléphone",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "vuenzM": {
     "translation": "Modifier un rôle",
@@ -392,7 +386,6 @@
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",
     "message": "Au moins un groupe est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

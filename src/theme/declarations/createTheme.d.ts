@@ -9,7 +9,7 @@ declare module '@mui/material/styles' {
         medium: number;
         large: number;
         extraLarge: number;
-        whole: number;
+        whole: number | string;
       };
     };
   }
@@ -22,7 +22,7 @@ declare module '@mui/material/styles' {
         medium: number;
         extraLarge: number;
         large: number;
-        whole: number;
+        whole: number | string;
       };
     };
   }

@@ -37,5 +37,12 @@ export const defaultGroupsList: Group[] = [
     description: 'Une petite description sympa',
     isMain: false,
     nbUsers: 0
+  },
+  {
+    id: 7,
+    name: 'test group 4',
+    description: 'HAHHAHAHAHAHAHAHAHAHAHA',
+    isMain: true,
+    nbUsers: 5
   }
 ];

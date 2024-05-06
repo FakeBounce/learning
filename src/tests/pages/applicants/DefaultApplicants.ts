@@ -4,6 +4,7 @@ import {
   ApplicantFromApi,
   ApplicantType
 } from '@services/applicants/interfaces';
+import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
 
 export const defaultApplicant = {
   id: 1,
@@ -102,7 +103,8 @@ export const stateApplicant = {
     app: true,
     sms: true,
     email: true
-  }
+  },
+  groups: [defaultGroup]
 } as Applicant;
 
 export const stateApplicantDisabled = {
@@ -122,7 +124,8 @@ export const stateApplicantDisabled = {
     app: false,
     sms: false,
     email: false
-  }
+  },
+  groups: [defaultGroup]
 } as Applicant;
 
 export const singleApplicant = {
@@ -144,7 +147,8 @@ export const singleApplicant = {
     birthName: null,
     birthDate: '1990-01-01',
     city: 'singleApplicantCity'
-  }
+  },
+  groups: [defaultGroup]
 };
 
 export const validRowsForApplicantBulk = [

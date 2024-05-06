@@ -1,6 +1,8 @@
 import { t } from '@lingui/macro';
 import * as Yup from 'yup';
 import { Applicant } from '@services/applicants/interfaces';
+import { BasicOption } from '@services/interfaces';
+import { Group } from '@services/groups/interfaces';
 
 export const updateExternalTesterSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom de famille est requis`),
@@ -9,8 +11,9 @@ export const updateExternalTesterSchema = Yup.object().shape({
     .optional()
     .matches(/^$|^\+?[0-9]{8,15}$/, t`Le numéro de téléphone est invalide`),
   externalId: Yup.string().optional(),
-  groups: Yup.array()
-    .of(Yup.string())
+  groupsId: Yup.array()
+    .of(Yup.object().shape({ value: Yup.string().required(), label: Yup.string().required() }))
+    .min(1, t`Au moins un groupe est requis`)
     .required(t`Au moins un groupe est requis`),
   email: Yup.string()
     .required(t`L'email est requis`)
@@ -24,7 +27,7 @@ export const updateExternalTesterFormDefaultValues = {
   email: '',
   phone: '',
   externalId: '',
-  groups: []
+  groupsId: []
 };
 
 export interface UpdateExternalTesterForm {
@@ -33,7 +36,7 @@ export interface UpdateExternalTesterForm {
   email: string;
   phone?: string;
   externalId?: string;
-  groups: (string | undefined)[];
+  groupsId: BasicOption[];
 }
 
 export const populateUpdateExternalTesterForm = (applicant: Applicant) => {
@@ -43,6 +46,8 @@ export const populateUpdateExternalTesterForm = (applicant: Applicant) => {
     email: applicant.email,
     phone: applicant.phone || '',
     externalId: applicant.externalId || '',
-    groups: []
+    groupsId: applicant.groups
+      ? applicant.groups.map((group: Group) => ({ value: group.id.toString(), label: group.name }))
+      : []
   };
 };

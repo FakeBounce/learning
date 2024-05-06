@@ -11,7 +11,6 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PATH_ERRORS } from '@utils/navigation/paths';
 import {
-  Applicant,
   ApplicantNotifications,
   ApplicantProfileState,
   ApplicantUpdateState,
@@ -26,6 +25,7 @@ import {
 } from '@src/pages/applicants/applicants-update/ApplicantsUpdateSchema';
 import ApplicantsProfileInfos from '@src/pages/applicants/applicants-profile/ApplicantsProfileInfos';
 import ApplicantsUpdateModal from '@src/pages/applicants/applicants-update/ApplicantsUpdateModal';
+import ApplicantsProfileGroups from '@src/pages/applicants/applicants-profile/ApplicantsProfileGroups';
 
 export default function ApplicantsUpdate() {
   const [applicant, setApplicant] = useState<UpdateApplicantForm>(updateApplicantFormDefaultValues);
@@ -88,26 +88,37 @@ export default function ApplicantsUpdate() {
 
   const handleUpdate = async (data: UpdateApplicantForm) => {
     setIsModalOpen(false);
-    const newApplicantValues = {} as Partial<Applicant>;
+
+    const newApplicantValues = {} as Partial<UpdateApplicantRequest['applicant']>;
+
     Object.keys(dirtyFields).forEach((key) => {
       const typedKey = key as keyof UpdateApplicantForm;
-      if (typedKey === 'profilePicture' || typedKey === 'notifications' || typedKey === 'groups')
+      if (
+        typedKey === 'profilePicture' ||
+        typedKey === 'notifications' ||
+        typedKey === 'groupsId' ||
+        typedKey === 'birthDate'
+      )
         return;
       newApplicantValues[typedKey] = data[typedKey];
     });
 
+    if (dirtyFields.birthDate) {
+      newApplicantValues.birthDate = data.birthDate;
+    }
+
     if (dirtyFields.notifications) {
-      // @todo - Should only update the notifications that have changed
-      newApplicantValues.notifications = {
-        ...applicantProfileData?.notifications
-      } as ApplicantNotifications;
+      newApplicantValues.notifications = {} as ApplicantNotifications;
       Object.keys(dirtyFields.notifications).forEach((key) => {
         const typedKey = key as keyof ApplicantNotifications;
         newApplicantValues.notifications![typedKey] = data.notifications[typedKey];
       });
     }
 
-    // @todo - Handle groups update
+    if (dirtyFields.groupsId) {
+      newApplicantValues.groupsId = data.groupsId.map((group) => group.value);
+    }
+
     if (Object.keys(newApplicantValues).length > 0 || dirtyFields.profilePicture) {
       const updateApplicantFormToSubmit = {
         applicantId: Number(applicantId),
@@ -116,14 +127,18 @@ export default function ApplicantsUpdate() {
         }
       } as UpdateApplicantRequest;
 
-      // Handle update with image
-      dispatch(
-        updateApplicant({
-          applicantId: Number(applicantId),
-          updateArgs: updateApplicantFormToSubmit,
-          profilePicture: dirtyFields.profilePicture ? (image as File) : undefined
-        })
-      );
+      try {
+        // Handle update with image
+        await dispatch(
+          updateApplicant({
+            applicantId: Number(applicantId),
+            updateArgs: updateApplicantFormToSubmit,
+            profilePicture: dirtyFields.profilePicture ? (image as File) : undefined
+          })
+        );
+      } catch (error) {
+        enqueueSnackbar(error as string, { variant: 'error' });
+      }
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }
@@ -139,6 +154,7 @@ export default function ApplicantsUpdate() {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <LMSCard
             isPageCard
+            contentPadding={0}
             header={<ApplicantsProfileHeader isUpdate={isEditing} />}
             footer={isEditing ? <ApplicantsUpdateFooter /> : null}
           >
@@ -147,8 +163,7 @@ export default function ApplicantsUpdate() {
             ) : (
               <>
                 <ApplicantsProfileInfos />
-                {/* @todo -> Replace with the applicant group */}
-                {/*<UserProfileGroups />*/}
+                <ApplicantsProfileGroups />
               </>
             )}
           </LMSCard>

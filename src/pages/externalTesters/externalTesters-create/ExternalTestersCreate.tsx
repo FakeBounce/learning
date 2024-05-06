@@ -17,6 +17,10 @@ import { Trans } from '@lingui/macro';
 import CardHeader from '@src/components/cards/CardHeader';
 import { enqueueSnackbar } from 'notistack';
 import { resetApplicantState } from '@redux/reducers/applicantsReducer';
+import { BasicOption } from '@services/interfaces';
+import { useEffect } from 'react';
+import { getGroups } from '@services/groups/groupsAPI';
+import { Group } from '@services/groups/interfaces';
 
 export default function ExternalTestersCreate() {
   const navigate = useNavigate();
@@ -26,7 +30,24 @@ export default function ExternalTestersCreate() {
     resolver: yupResolver(updateExternalTesterSchema),
     defaultValues: updateExternalTesterFormDefaultValues
   });
-  const { handleSubmit } = methods;
+  const { handleSubmit, setValue } = methods;
+
+  useEffect(() => {
+    getGroups({
+      currentPage: 1,
+      rowsPerPage: 1000
+    })
+      .then((response) => {
+        const defaultGroup = response.data.data.rows.find(
+          (group) => group.isMain === true
+        ) as Group;
+        setValue('groupsId', [{ label: defaultGroup.name, value: defaultGroup.id.toString() }]);
+        return;
+      })
+      .catch((error) => {
+        enqueueSnackbar(error as string, { variant: 'error' });
+      });
+  }, []);
 
   const onSubmit = async (data: UpdateExternalTesterForm) => {
     const createApplicantRequest: CreateApplicantRequest = {
@@ -35,10 +56,9 @@ export default function ExternalTestersCreate() {
         lastname: data.lastname,
         type: ApplicantType.TESTER,
         email: data.email,
-        phone: data.phone || null,
-        externalId: data.externalId || null,
-        // @todo - Handle groups
-        groups: ['1']
+        phone: data.phone || undefined,
+        externalId: data.externalId || undefined,
+        groupsId: data.groupsId.map((group: BasicOption) => group.value)
       }
     };
 

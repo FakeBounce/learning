@@ -6,11 +6,11 @@ import MenuItem from '@mui/material/MenuItem';
 import { StyledFormRow } from '@src/components/layouts/form/FormStyles';
 import RHFTextField from '@src/components/hook-form/RHFTextField';
 import RHFSelect from '@src/components/hook-form/RHFSelect';
-import RHFDropdown from '@src/components/hook-form/RHFDropdown';
 import { BasicOption } from '@services/interfaces';
 import { RHFUploadBox } from '@src/components/hook-form/RHFUploadBox';
 import { colourOptions, languagesOptions } from '@src/pages/modules/modules-form/ModulesFormSchema';
 import ModulesFormConfig from '@src/pages/modules/modules-form/ModulesFormConfig';
+import RHFDropdownCreate from '@src/components/hook-form/RHFDropdownCreate';
 
 export default function ModulesForm({ disabled = false }: { disabled?: boolean }) {
   const { setValue, resetField } = useFormContext();
@@ -104,7 +104,7 @@ export default function ModulesForm({ disabled = false }: { disabled?: boolean }
         />
       </StyledFormRow>
       <StyledFormRow>
-        <RHFDropdown
+        <RHFDropdownCreate
           isMulti
           isClearable
           placeholder={<Trans>Assignez une valeur et appuyez sur la touche entrée</Trans>}

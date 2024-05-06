@@ -6,6 +6,7 @@ import { useAppSelector } from '@redux/hooks';
 import { ApplicantProfileState } from '@services/applicants/interfaces';
 
 import { StyledFormColumn, StyledFormRow } from '@src/components/layouts/form/FormStyles';
+import RHFDropdownGroups from '@src/components/hook-form/RHFDropdownGroups';
 
 export default function ExternalTestersUpdateForm() {
   const { applicantProfileLoading }: ApplicantProfileState = useAppSelector(
@@ -39,13 +40,17 @@ export default function ExternalTestersUpdateForm() {
           <StyledFormRow>
             <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
           </StyledFormRow>
-          {/* @todo Add when groups are down and we can select some */}
-          {/*<StyledFormRow>*/}
-          {/*  <RHFTextField*/}
-          {/*    name={'groups'}*/}
-          {/*    label={<Trans>Groupe(s) lié(s)</Trans>} required*/}
-          {/*  />*/}
-          {/*</StyledFormRow>*/}
+          <StyledFormRow>
+            <RHFDropdownGroups
+              isMulti
+              isClearable
+              cacheOptions
+              defaultOptions={[]}
+              required
+              name="groupsId"
+              label={<Trans>Groupe(s) lié(s)</Trans>}
+            />
+          </StyledFormRow>
         </StyledFormColumn>
       </Box>
     </Box>

@@ -158,7 +158,8 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XdArAS": {
     "translation": "",
@@ -253,7 +254,8 @@
   "vuenzM": {
     "translation": "",
     "message": "Modifier un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "",

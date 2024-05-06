@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useAppDispatch } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
   ApplicantNotifications,
@@ -22,6 +22,8 @@ import { verifyFileForUpload } from '@utils/helpers/validators';
 import ApplicantsCreateFooter from '@src/pages/applicants/applicants-create/ApplicantsCreateFooter';
 import { enqueueSnackbar } from 'notistack';
 import { resetApplicantState } from '@redux/reducers/applicantsReducer';
+import { getGroups } from '@services/groups/groupsAPI';
+import { Group } from '@services/groups/interfaces';
 
 export default function ApplicantsCreate() {
   const [image, setImage] = useState<string | File>('');
@@ -32,14 +34,35 @@ export default function ApplicantsCreate() {
     resolver: yupResolver(updateApplicantSchema),
     defaultValues: updateApplicantFormDefaultValues
   });
-  const { handleSubmit, setError } = methods;
+  const { handleSubmit, setValue, setError } = methods;
+
+  // @todo - Rework this to add filter on isMain
+  useEffect(() => {
+    getGroups({
+      currentPage: 1,
+      rowsPerPage: 1000
+    })
+      .then((response) => {
+        const defaultGroup = response.data.data.rows.find(
+          (group) => group.isMain === true
+        ) as Group;
+        setValue('groupsId', [{ label: defaultGroup.name, value: defaultGroup.id.toString() }]);
+        return;
+      })
+      .catch((error) => {
+        enqueueSnackbar(error as string, { variant: 'error' });
+      });
+  }, []);
 
   const onSubmit = async (data: UpdateApplicantForm) => {
-    const isFileValid = await verifyFileForUpload(image, setError);
+    if (image !== '') {
+      const isFileValid = await verifyFileForUpload(image, setError);
 
-    if (!isFileValid) return;
+      if (!isFileValid) {
+        return;
+      }
+    }
 
-    // @todo - Wait for API to accept booleans
     const notificationsValues: ApplicantNotifications = {
       email: data.notifications.email,
       sms: data.notifications.sms,
@@ -52,19 +75,17 @@ export default function ApplicantsCreate() {
         lastname: data.lastname,
         type: ApplicantType.STUDENT,
         email: data.email,
-        birthDate: data.birthDate,
-        phone: data.phone || null,
-        externalId: data.externalId || null,
-        birthName: data.birthName || null,
-        city: data.city || null,
-        // @todo - Handle groups
-        groups: ['1'],
+        birthDate: data.birthDate || undefined,
+        phone: data.phone || undefined,
+        externalId: data.externalId || undefined,
+        birthName: data.birthName || undefined,
+        city: data.city || undefined,
+        groupsId: data.groupsId.map((group) => group.value),
         notifications: notificationsValues
       },
       profilePicture: image
     };
 
-    // @todo - Handle groups
     try {
       await dispatch(createApplicant(createApplicantRequest));
       navigate(PATH_APPLICANTS.root);

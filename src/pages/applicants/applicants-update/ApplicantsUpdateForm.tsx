@@ -16,6 +16,7 @@ import {
 import ApplicantsUpdateDifferences from '@src/pages/applicants/applicants-update/ApplicantsUpdateDifferences';
 import { formatDate } from 'date-fns';
 import RHFDatePicker from '@src/components/hook-form/RHFDatePicker';
+import RHFDropdownGroups from '@src/components/hook-form/RHFDropdownGroups';
 
 export default function ApplicantsUpdateForm({
   image,
@@ -33,7 +34,7 @@ export default function ApplicantsUpdateForm({
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box display="flex" flexDirection="column" gap={2} px={4}>
       <Box
         display="flex"
         flexDirection={['column', 'column', 'row']}
@@ -78,22 +79,18 @@ export default function ApplicantsUpdateForm({
               />
             </StyledFormRow>
           </Box>
-          {applicantProfileData?.conflicts?.notifications && (
-            <ApplicantsUpdateDifferences
-              //empty because we use the same warning box for all notifications
-              fieldName={''}
-              value={applicantProfileData?.conflicts?.notifications as ApplicantNotifications}
-            />
-          )}
+          <ApplicantsUpdateDifferences
+            //empty because we use the same warning box for all notifications
+            fieldName={''}
+            value={applicantProfileData?.conflicts?.notifications as ApplicantNotifications}
+          />
 
           <StyledFormRow>
             <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />
-            {applicantProfileData?.conflicts?.externalId && (
-              <ApplicantsUpdateDifferences
-                fieldName={'externalId'}
-                value={applicantProfileData?.conflicts?.externalId}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'externalId'}
+              value={applicantProfileData?.conflicts?.externalId}
+            />
           </StyledFormRow>
         </StyledFormColumn>
       </Box>
@@ -101,53 +98,47 @@ export default function ApplicantsUpdateForm({
         <StyledFormColumn>
           <StyledFormRow>
             <RHFTextField name={'lastname'} label={<Trans>Nom</Trans>} required />
-            {applicantProfileData?.conflicts?.lastname && (
-              <ApplicantsUpdateDifferences
-                fieldName={'lastname'}
-                value={applicantProfileData?.conflicts?.lastname}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'lastname'}
+              value={applicantProfileData?.conflicts?.lastname}
+            />
           </StyledFormRow>
           <StyledFormRow>
             <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />
-            {applicantProfileData?.conflicts?.firstname && (
-              <ApplicantsUpdateDifferences
-                fieldName={'firstname'}
-                value={applicantProfileData?.conflicts?.firstname}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'firstname'}
+              value={applicantProfileData?.conflicts?.firstname}
+            />
           </StyledFormRow>
 
           <StyledFormRow>
             <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />
-            {applicantProfileData?.conflicts?.email && (
-              <ApplicantsUpdateDifferences
-                fieldName={'email'}
-                value={applicantProfileData?.conflicts?.email}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'email'}
+              value={applicantProfileData?.conflicts?.email}
+            />
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFDatePicker name={'birthDate'} label={<Trans>Date de naissance</Trans>} required />
-            {applicantProfileData?.conflicts?.birthDate && (
-              <ApplicantsUpdateDifferences
-                fieldName={'birthDate'}
-                value={formatDate(applicantProfileData?.conflicts?.birthDate, 'dd/MM/yyyy')}
-              />
-            )}
+            <RHFDatePicker name={'birthDate'} label={<Trans>Date de naissance</Trans>} />
+            <ApplicantsUpdateDifferences
+              fieldName={'birthDate'}
+              value={
+                applicantProfileData?.conflicts?.birthDate
+                  ? formatDate(applicantProfileData?.conflicts?.birthDate, 'dd/MM/yyyy')
+                  : undefined
+              }
+            />
           </StyledFormRow>
         </StyledFormColumn>
 
         <StyledFormColumn>
           <StyledFormRow>
             <RHFTextField name={'birthName'} label={<Trans>Nom de naissance</Trans>} />
-            {applicantProfileData?.conflicts?.birthName && (
-              <ApplicantsUpdateDifferences
-                fieldName={'birthName'}
-                value={applicantProfileData?.conflicts?.birthName}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'birthName'}
+              value={applicantProfileData?.conflicts?.birthName}
+            />
           </StyledFormRow>
           <StyledFormRow>
             <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
@@ -160,20 +151,22 @@ export default function ApplicantsUpdateForm({
           </StyledFormRow>
           <StyledFormRow>
             <RHFTextField name={'city'} label={<Trans>Ville</Trans>} />
-            {applicantProfileData?.conflicts?.city && (
-              <ApplicantsUpdateDifferences
-                fieldName={'city'}
-                value={applicantProfileData?.conflicts?.city}
-              />
-            )}
+            <ApplicantsUpdateDifferences
+              fieldName={'city'}
+              value={applicantProfileData?.conflicts?.city}
+            />
           </StyledFormRow>
-          {/* @todo Add when groups are down and we can select some */}
-          {/*<StyledFormRow>*/}
-          {/*  <RHFTextField*/}
-          {/*    name={'groups'}*/}
-          {/*    label={<Trans>Groupe(s) lié(s)</Trans>} required*/}
-          {/*  />*/}
-          {/*</StyledFormRow>*/}
+          <StyledFormRow>
+            <RHFDropdownGroups
+              isMulti
+              isClearable
+              cacheOptions
+              defaultOptions={[]}
+              required
+              name="groupsId"
+              label={<Trans>Groupe(s) lié(s)</Trans>}
+            />
+          </StyledFormRow>
         </StyledFormColumn>
       </Box>
     </Box>
