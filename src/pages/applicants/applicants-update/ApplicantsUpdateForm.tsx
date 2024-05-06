@@ -15,6 +15,7 @@ import {
 } from '@src/components/layouts/form/FormStyles';
 import ApplicantsUpdateDifferences from '@src/pages/applicants/applicants-update/ApplicantsUpdateDifferences';
 import { formatDate } from 'date-fns';
+import RHFDatePicker from '@src/components/hook-form/RHFDatePicker';
 
 export default function ApplicantsUpdateForm({
   image,
@@ -128,14 +129,11 @@ export default function ApplicantsUpdateForm({
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFTextField name={'birthDate'} label={<Trans>Date de naissance</Trans>} required />
+            <RHFDatePicker name={'birthDate'} label={<Trans>Date de naissance</Trans>} required />
             {applicantProfileData?.conflicts?.birthDate && (
               <ApplicantsUpdateDifferences
                 fieldName={'birthDate'}
-                value={formatDate(
-                  Date.parse(applicantProfileData?.conflicts?.birthDate as string),
-                  'dd/MM/yyyy'
-                )}
+                value={formatDate(applicantProfileData?.conflicts?.birthDate, 'dd/MM/yyyy')}
               />
             )}
           </StyledFormRow>

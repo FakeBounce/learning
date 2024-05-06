@@ -95,13 +95,7 @@ export default function RolesUpdate() {
 
   return (
     <FormProvider {...methods}>
-      <form
-        onSubmit={handleSubmit(onSubmit, (e) => {
-          console.log('e', e);
-        })}
-        style={{ width: '100%' }}
-        noValidate
-      >
+      <form onSubmit={handleSubmit(onSubmit)} style={{ width: '100%' }} noValidate>
         <LMSCard
           isPageCard
           contentPadding={0}

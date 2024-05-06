@@ -6,6 +6,7 @@ import ApplicantsCreateMock, {
 } from '@src/tests/pages/applicants/applicants-create/ApplicantsCreateMock';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { useNavigate } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -57,9 +58,7 @@ describe('ApplicantsCreate', () => {
       fireEvent.change(screen.getByRole('textbox', { name: /Email/i }), {
         target: { value: 'john@doe.com' }
       });
-      fireEvent.change(screen.getByLabelText(/Date de naissance/i), {
-        target: { value: '01/01/1990' }
-      });
+      await userEvent.type(screen.getByLabelText(/Date de naissance/i), '1990-01-01');
     });
 
     const fileInput = screen.getByTestId('file-upload');
