@@ -51,9 +51,7 @@ describe('ApplicantsUpdate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        singleApplicant.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleApplicant.firstname);
       expect(screen.getByRole('textbox', { name: /Email/i })).toHaveValue(singleApplicant.email);
     });
   });
@@ -70,9 +68,7 @@ describe('ApplicantsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        singleApplicant.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleApplicant.firstname);
     });
 
     await act(async () => {
@@ -98,9 +94,7 @@ describe('ApplicantsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        singleApplicant.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleApplicant.firstname);
     });
 
     // Update the firstname
@@ -134,9 +128,7 @@ describe('ApplicantsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        singleApplicant.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleApplicant.firstname);
     });
 
     const emailInput = screen.getByRole('textbox', { name: /Email/i });
@@ -198,9 +190,7 @@ describe('ApplicantsUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        conflictedApplicant.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(conflictedApplicant.firstname);
     });
 
     expect(

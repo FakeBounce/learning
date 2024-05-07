@@ -10,7 +10,6 @@ import { FormProvider, useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { PATH_ERRORS } from '@utils/navigation/paths';
 import {
-  Applicant,
   ApplicantProfileState,
   ApplicantUpdateState,
   UpdateApplicantRequest
@@ -26,6 +25,7 @@ import {
 } from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdateSchema';
 import ExternalTestersProfileInfos from '@src/pages/externalTesters/externalTesters-profile/ExternalTestersProfileInfos';
 import ApplicantsProfileGroups from '@src/pages/applicants/applicants-profile/ApplicantsProfileGroups';
+import { resetApplicantsLoading } from '@redux/reducers/applicantsReducer';
 
 export default function ExternalTestersUpdate() {
   const [applicant, setApplicant] = useState<UpdateExternalTesterForm>(
@@ -88,12 +88,16 @@ export default function ExternalTestersUpdate() {
 
   const handleUpdate = async (data: UpdateExternalTesterForm) => {
     setIsModalOpen(false);
-    const newApplicantValues = {} as Partial<Applicant>;
+    const newApplicantValues = {} as Partial<UpdateApplicantRequest['applicant']>;
     Object.keys(dirtyFields).forEach((key) => {
       const typedKey = key as keyof UpdateExternalTesterForm;
       if (typedKey === 'groupsId') return;
       newApplicantValues[typedKey] = data[typedKey];
     });
+
+    if (dirtyFields.groupsId && data.groupsId) {
+      newApplicantValues.groupsId = data.groupsId.map((group) => group.value);
+    }
 
     if (Object.keys(newApplicantValues).length > 0) {
       const updateApplicantFormToSubmit = {
@@ -103,13 +107,17 @@ export default function ExternalTestersUpdate() {
         }
       } as UpdateApplicantRequest;
 
-      // Handle update with image
-      dispatch(
-        updateApplicant({
-          applicantId: Number(applicantId),
-          updateArgs: updateApplicantFormToSubmit
-        })
-      );
+      try {
+        await dispatch(
+          updateApplicant({
+            applicantId: Number(applicantId),
+            updateArgs: updateApplicantFormToSubmit
+          })
+        );
+      } catch (error) {
+        enqueueSnackbar(error as string, { variant: 'error' });
+        dispatch(resetApplicantsLoading());
+      }
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });
     }
@@ -125,6 +133,7 @@ export default function ExternalTestersUpdate() {
         <form onSubmit={handleSubmit(onSubmit)} noValidate>
           <LMSCard
             isPageCard
+            contentPadding={0}
             header={<ApplicantsProfileHeader isUpdate={isEditing} />}
             footer={isEditing ? <ApplicantsUpdateFooter /> : null}
           >

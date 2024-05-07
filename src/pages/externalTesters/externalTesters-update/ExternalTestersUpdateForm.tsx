@@ -8,18 +8,20 @@ import { ApplicantProfileState } from '@services/applicants/interfaces';
 import { StyledFormColumn, StyledFormRow } from '@src/components/layouts/form/FormStyles';
 import RHFDropdownGroups from '@src/components/hook-form/RHFDropdownGroups';
 import ApplicantsUpdateDifferences from '@src/pages/applicants/applicants-update/ApplicantsUpdateDifferences';
+import { selectIsOnMainOrganization } from '@redux/reducers/connectedUserReducer';
 
 export default function ExternalTestersUpdateForm() {
   const { applicantProfileData, applicantProfileLoading }: ApplicantProfileState = useAppSelector(
     (state) => state.applicants.applicantProfile
   );
+  const isOnMainOrganization = useAppSelector(selectIsOnMainOrganization);
 
   if (applicantProfileLoading) {
     return <ProfileSkeleton rows={1} cols={2} />;
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box display="flex" flexDirection="column" gap={2} px={4}>
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
         <StyledFormColumn>
           <StyledFormRow>
@@ -61,17 +63,19 @@ export default function ExternalTestersUpdateForm() {
               value={applicantProfileData?.conflicts?.phone}
             />
           </StyledFormRow>
-          <StyledFormRow>
-            <RHFDropdownGroups
-              isMulti
-              isClearable
-              cacheOptions
-              defaultOptions={[]}
-              required
-              name="groupsId"
-              label={<Trans>Groupe(s) lié(s)</Trans>}
-            />
-          </StyledFormRow>
+          {!isOnMainOrganization && (
+            <StyledFormRow>
+              <RHFDropdownGroups
+                isMulti
+                isClearable
+                cacheOptions
+                defaultOptions={[]}
+                required
+                name="groupsId"
+                label={<Trans>Groupe(s) lié(s)</Trans>}
+              />
+            </StyledFormRow>
+          )}
         </StyledFormColumn>
       </Box>
     </Box>

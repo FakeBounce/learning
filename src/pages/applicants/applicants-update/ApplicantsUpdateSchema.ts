@@ -16,8 +16,7 @@ export const updateApplicantSchema = Yup.object().shape({
   city: Yup.string().optional(),
   groupsId: Yup.array()
     .of(Yup.object().shape({ value: Yup.string().required(), label: Yup.string().required() }))
-    .min(1, t`Au moins un groupe est requis`)
-    .required(t`Au moins un groupe est requis`),
+    .optional(),
   email: Yup.string()
     .required(t`L'email est requis`)
     .email(t`L'email est invalide`),
@@ -70,7 +69,7 @@ export interface UpdateApplicantForm {
   birthName?: string;
   city?: string;
   profilePicture?: File | string | undefined;
-  groupsId: BasicOption[];
+  groupsId?: BasicOption[];
   notifications: {
     email: boolean;
     sms: boolean;

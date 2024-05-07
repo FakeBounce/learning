@@ -36,7 +36,7 @@ export interface ApplicantBulkState {
   applicantBulkLoading: boolean;
 }
 
-interface BaseApplicant {
+export interface Applicant {
   id: number;
   profilePicture: string | null;
   email: string;
@@ -52,12 +52,8 @@ interface BaseApplicant {
   notifications?: ApplicantNotifications;
   groups?: Group[];
   conflicts: ApplicantsUpdateConflicts;
+  otherData: string | number | null | boolean | undefined[];
 }
-interface AdditionalApplicantProperties {
-  [key: string]: string | number | null | boolean | undefined;
-}
-
-export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
 export interface ApplicantsUpdateConflicts {
   lastname?: string;
@@ -82,45 +78,6 @@ export interface ApplicantForBulk {
   city?: string | null;
 }
 
-interface BaseApplicantFromApi {
-  id: number;
-  profilePicture: string | null;
-  email: string;
-  type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  externalId: string | null;
-  firstname: string;
-  lastname: string;
-  phone: string | null;
-  isActive: boolean;
-  birthName: null | string;
-  birthDate: string;
-  city: string | null;
-  notifications?: ApplicantNotifications;
-  conflicts: ApplicantsUpdateConflicts;
-}
-export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
-
-export interface SingleApplicantFromApi {
-  id: number;
-  profilePicture: string | null;
-  email: string;
-  type: ApplicantType.STUDENT | ApplicantType.TESTER;
-  externalId: string | null;
-  isActive: boolean;
-  notifications?: ApplicantNotifications;
-  currentValues: ApplicantValues;
-}
-
-export interface BaseApplicantValues {
-  firstname: string;
-  lastname: string;
-  phone: string | null;
-  birthName: null | string;
-  birthDate: string;
-  city: string;
-}
-export type ApplicantValues = BaseApplicantValues & AdditionalApplicantProperties;
-
 export interface ApplicantNotifications {
   app: boolean;
   sms: boolean;
@@ -140,7 +97,7 @@ export interface GetApplicantsListResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: {
-    rows: ApplicantFromApi[];
+    rows: Applicant[];
     pagination: ApiResponsePagination;
   };
 }
@@ -148,7 +105,7 @@ export interface GetApplicantsListResponse {
 export interface GetSingleApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: SingleApplicantFromApi;
+  data: Applicant;
 }
 
 export interface UpdateApplicantBlockRequest {
@@ -159,7 +116,7 @@ export interface UpdateApplicantBlockRequest {
 export interface UpdateApplicantBlockResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ApplicantFromApi;
+  data: Applicant;
 }
 
 export interface UpdateApplicantRequest {
@@ -187,7 +144,7 @@ export interface UpdateApplicantRequest {
 export interface UpdateApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ApplicantFromApi;
+  data: Applicant;
 }
 
 export interface UpdateApplicantPictureRequest {
@@ -198,7 +155,7 @@ export interface UpdateApplicantPictureRequest {
 export interface UpdateApplicantPictureResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ApplicantFromApi;
+  data: Applicant;
 }
 
 export interface CreateApplicantRequest {
@@ -225,7 +182,7 @@ export interface CreateApplicantRequest {
 export interface CreateApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: ApplicantFromApi;
+  data: Applicant;
 }
 
 export interface CreateBulkApplicantRequest {
@@ -236,5 +193,5 @@ export interface CreateBulkApplicantRequest {
 export interface CreateBulkApplicantResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: { rows: ApplicantFromApi[] };
+  data: { rows: Applicant[] };
 }

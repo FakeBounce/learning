@@ -26,6 +26,7 @@ import {
 import ApplicantsProfileInfos from '@src/pages/applicants/applicants-profile/ApplicantsProfileInfos';
 import ApplicantsUpdateModal from '@src/pages/applicants/applicants-update/ApplicantsUpdateModal';
 import ApplicantsProfileGroups from '@src/pages/applicants/applicants-profile/ApplicantsProfileGroups';
+import { resetApplicantsLoading } from '@redux/reducers/applicantsReducer';
 
 export default function ApplicantsUpdate() {
   const [applicant, setApplicant] = useState<UpdateApplicantForm>(updateApplicantFormDefaultValues);
@@ -115,7 +116,7 @@ export default function ApplicantsUpdate() {
       });
     }
 
-    if (dirtyFields.groupsId) {
+    if (dirtyFields.groupsId && data.groupsId) {
       newApplicantValues.groupsId = data.groupsId.map((group) => group.value);
     }
 
@@ -138,6 +139,7 @@ export default function ApplicantsUpdate() {
         );
       } catch (error) {
         enqueueSnackbar(error as string, { variant: 'error' });
+        dispatch(resetApplicantsLoading());
       }
     } else {
       enqueueSnackbar(t`Aucune modification n'a été effectuée`, { variant: 'warning' });

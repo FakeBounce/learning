@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useAppDispatch } from '@redux/hooks';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
 import { FormProvider, useForm } from 'react-hook-form';
@@ -21,11 +21,14 @@ import { BasicOption } from '@services/interfaces';
 import { useEffect } from 'react';
 import { getGroups } from '@services/groups/groupsAPI';
 import { Group } from '@services/groups/interfaces';
+import { selectIsOnMainOrganization } from '@redux/reducers/connectedUserReducer';
 
 export default function ExternalTestersCreate() {
   const navigate = useNavigate();
 
   const dispatch = useAppDispatch();
+  const isOnMainOrganization = useAppSelector(selectIsOnMainOrganization);
+
   const methods = useForm({
     resolver: yupResolver(updateExternalTesterSchema),
     defaultValues: updateExternalTesterFormDefaultValues
@@ -58,7 +61,9 @@ export default function ExternalTestersCreate() {
         email: data.email,
         phone: data.phone || undefined,
         externalId: data.externalId || undefined,
-        groupsId: data.groupsId.map((group: BasicOption) => group.value)
+        groupsId: isOnMainOrganization
+          ? []
+          : (data.groupsId?.map((group: BasicOption) => group.value) as string[])
       }
     };
 

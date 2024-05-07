@@ -25,7 +25,7 @@ export default function ExternalTestersProfileInfos() {
   }
 
   return (
-    <Box display="flex" flexDirection="column" gap={2} pb={4}>
+    <Box display="flex" flexDirection="column" gap={2} pb={4} px={4}>
       <Box display="flex" flexDirection={['column', 'column', 'row']} gap={2}>
         <StyledFormColumn>
           <StyledFormRow>

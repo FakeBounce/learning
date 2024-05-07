@@ -1,9 +1,4 @@
-import {
-  Applicant,
-  ApplicantForBulk,
-  ApplicantFromApi,
-  ApplicantType
-} from '@services/applicants/interfaces';
+import { Applicant, ApplicantForBulk, ApplicantType } from '@services/applicants/interfaces';
 import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
 
 export const defaultApplicant = {
@@ -24,7 +19,7 @@ export const defaultApplicant = {
     sms: true,
     email: true
   }
-} as ApplicantFromApi;
+} as Applicant;
 
 export const blockedApplicant = {
   id: 2,
@@ -44,7 +39,7 @@ export const blockedApplicant = {
     sms: true,
     email: true
   }
-} as ApplicantFromApi;
+} as Applicant;
 
 export const unlockedApplicant = {
   id: 3,
@@ -64,7 +59,7 @@ export const unlockedApplicant = {
     sms: true,
     email: true
   }
-} as ApplicantFromApi;
+} as Applicant;
 
 export const newApplicant = {
   id: 4,
@@ -84,7 +79,7 @@ export const newApplicant = {
     sms: true,
     email: true
   }
-} as ApplicantFromApi;
+} as Applicant;
 
 export const stateApplicant = {
   id: 1,
@@ -140,14 +135,12 @@ export const singleApplicant = {
     sms: true,
     email: false
   },
-  current_values: {
-    firstname: 'single',
-    lastname: 'applicant',
-    phone: '0123456789',
-    birthName: null,
-    birthDate: '1990-01-01',
-    city: 'singleApplicantCity'
-  },
+  firstname: 'single',
+  lastname: 'applicant',
+  phone: '0123456789',
+  birthName: null,
+  birthDate: '1990-01-01',
+  city: 'singleApplicantCity',
   groups: [defaultGroup]
 };
 
@@ -163,14 +156,12 @@ export const conflictedApplicant = {
     sms: true,
     email: false
   },
-  current_values: {
-    firstname: 'cfirstname',
-    lastname: 'clastname',
-    phone: '0123456789',
-    birthName: null,
-    birthDate: '1990-01-01',
-    city: 'conflictedApplicantCity'
-  },
+  firstname: 'cfirstname',
+  lastname: 'clastname',
+  phone: '0123456789',
+  birthName: null,
+  birthDate: '1990-01-01',
+  city: 'conflictedApplicantCity',
   conflicts: {
     firstname: 'conflictedFirstname',
     lastname: 'conflictedLastname'
@@ -261,4 +252,4 @@ export const ApplicantBulkFromApi = [
     birthDate: '01/23/1003',
     birthName: ''
   }
-] as ApplicantFromApi[];
+] as Applicant[];
