@@ -11,7 +11,7 @@ export default function ApplicantsUpdateDifferences({
   value
 }: {
   fieldName: string;
-  value: string | ApplicantNotifications;
+  value?: string | ApplicantNotifications;
 }) {
   const [isUpdated, setIsUpdated] = useState(false);
   const { setValue } = useFormContext();
@@ -43,6 +43,8 @@ export default function ApplicantsUpdateDifferences({
 
     setIsUpdated(true);
   };
+
+  if (!value) return null;
 
   return (
     <Box

@@ -42,7 +42,6 @@ export const updateApplicantBlock = async (
   const { applicantId, setActive } = args;
   const correctPath = setActive ? 'unblock' : 'block';
 
-  // @todo Not working right now
   return axios.put(`/applicants/${applicantId}/${correctPath}`);
 };
 
@@ -52,9 +51,6 @@ export const updateApplicant = async (
   const { applicantId, applicant } = args;
 
   const formData = { ...applicant };
-  // if (args.profilePicture) {
-  //   formData['profilePicture'] = args.profilePicture;
-  // }
 
   return axios.put(`/applicants/${applicantId}`, formData);
 };
@@ -78,13 +74,29 @@ export const createApplicant = async (
 ): Promise<AxiosResponse<CreateApplicantResponse>> => {
   const applicantForApi = args.applicant;
 
+  // @todo - Remove notifs cast when API is updated
   const formData = {
     ...applicantForApi,
-    groups_id: args.applicant.groups
+    notifications: applicantForApi.notifications
+      ? {
+          email: applicantForApi.notifications
+            ? applicantForApi.notifications?.email
+              ? '1'
+              : '0'
+            : undefined,
+          sms: applicantForApi.notifications
+            ? applicantForApi.notifications?.sms
+              ? '1'
+              : '0'
+            : undefined,
+          app: applicantForApi.notifications
+            ? applicantForApi.notifications?.app
+              ? '1'
+              : '0'
+            : undefined
+        }
+      : undefined
   };
-  // if (args.profilePicture) {
-  //   formData['profile_picture'] = args.profilePicture;
-  // }
 
   return axios.post(`/applicants`, formData, {
     headers: {

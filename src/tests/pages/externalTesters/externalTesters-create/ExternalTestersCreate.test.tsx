@@ -19,7 +19,7 @@ describe('ExternalTestersCreate', () => {
     cleanup();
   });
 
-  it('renders ApplicantsCreate correctly', () => {
+  it('renders ExternalTestersCreate correctly', () => {
     render(<ExternalTestersCreate />);
 
     expect(screen.getByText('Ajouter un testeur')).toBeInTheDocument();
@@ -33,15 +33,17 @@ describe('ExternalTestersCreate', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    render(<ExternalTestersCreate />, {
-      preloadedState: {
-        applicants: {
-          ...initialApplicantState,
-          applicantCreate: {
-            applicantCreateLoading: false
+    await waitFor(async () => {
+      render(<ExternalTestersCreate />, {
+        preloadedState: {
+          applicants: {
+            ...initialApplicantState,
+            applicantCreate: {
+              applicantCreateLoading: false
+            }
           }
         }
-      }
+      });
     });
 
     await act(async () => {
@@ -55,8 +57,15 @@ describe('ExternalTestersCreate', () => {
     });
 
     await waitFor(() => {
-      expect(ExternalTestersCreateMock.history.post).toHaveLength(1);
-      expect(ExternalTestersCreateMock.history.post[0].url).toBe(PATH_APPLICANTS.root);
+      expect(ExternalTestersCreateMock.history.post.length).toBeGreaterThanOrEqual(2);
+      let hasFound = false;
+      ExternalTestersCreateMock.history.post.forEach((request) => {
+        if (request.url === PATH_APPLICANTS.root) {
+          hasFound = true;
+        }
+      });
+
+      expect(hasFound).toBeTruthy();
     });
 
     await waitFor(() => {

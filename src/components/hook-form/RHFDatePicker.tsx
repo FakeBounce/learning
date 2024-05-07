@@ -19,30 +19,34 @@ function RHFDatePicker({ name, size = 'small', required = false, ...other }: RHF
     <Controller
       name={name}
       control={control}
-      render={({ field, fieldState: { error } }) => {
-        return (
-          <DatePicker
-            {...field}
-            value={typeof field.value === 'number' && field.value === 0 ? '' : field.value}
-            onError={(eps) => {
-              setPickerError(!!eps);
-            }}
-            slotProps={{
-              textField: {
-                size,
-                error: !!error && pickerError,
-                helperText: pickerError ? (
-                  <Trans>Date invalide</Trans>
-                ) : error ? (
-                  error?.message
-                ) : null,
-                required
-              }
-            }}
-            {...other}
-          />
-        );
-      }}
+      render={({ field, fieldState: { error } }) => (
+        <DatePicker
+          {...field}
+          value={
+            typeof field.value === 'number' && field.value === 0
+              ? ''
+              : field.value === ''
+              ? null
+              : field.value
+          }
+          onError={(eps) => {
+            setPickerError(!!eps);
+          }}
+          slotProps={{
+            textField: {
+              size,
+              error: !!error && pickerError,
+              helperText: pickerError ? (
+                <Trans>Date invalide</Trans>
+              ) : error ? (
+                error?.message
+              ) : null,
+              required
+            }
+          }}
+          {...other}
+        />
+      )}
     />
   );
 }

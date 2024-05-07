@@ -50,6 +50,13 @@ export const applicantSlice = createSlice({
     startEditingApplicant: (state) => {
       state.applicantUpdate.isEditing = true;
     },
+    resetApplicantsLoading: (state) => {
+      state.applicantList.applicantListLoading = false;
+      state.applicantProfile.applicantProfileLoading = false;
+      state.applicantUpdate.applicantUpdateLoading = false;
+      state.applicantCreate.applicantCreateLoading = false;
+      state.applicantBulk.applicantBulkLoading = false;
+    },
     resetApplicantState: () => initialApplicantState
   },
   extraReducers: (builder) => {
@@ -79,6 +86,7 @@ export const applicantSlice = createSlice({
           const applicantIndex = selectApplicantFindId(state, action.payload.data.id);
           if (applicantIndex > -1) {
             state.applicantList.applicantListData[applicantIndex] = action.payload.data;
+            enqueueSnackbar(t`Le statut de l'étudiant a bien été modifié`, { variant: 'success' });
           }
         }
       )
@@ -114,10 +122,8 @@ export const applicantSlice = createSlice({
           enqueueSnackbar(t`Les modifications ont bien été enregistrées`, { variant: 'success' });
         }
       )
-      .addCase(ApplicantsActions.updateApplicant.rejected, (state, action: AnyAction) => {
-        state.applicantUpdate.applicantUpdateLoading = false;
-        const errorMessage = action.payload?.message?.value || action.error.message;
-        enqueueSnackbar(errorMessage, { variant: 'error' });
+      .addCase(ApplicantsActions.updateApplicant.rejected, (_state, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       })
       .addCase(ApplicantsActions.createApplicant.pending, (state) => {
         state.applicantCreate.applicantCreateLoading = true;
@@ -161,7 +167,11 @@ export const selectApplicantFindId = createSelector(
   (s, idToFind) => s.findIndex((applicant: Applicant) => applicant.id === idToFind)
 );
 
-export const { startEditingApplicant, cancelEditingApplicant, resetApplicantState } =
-  applicantSlice.actions;
+export const {
+  startEditingApplicant,
+  cancelEditingApplicant,
+  resetApplicantState,
+  resetApplicantsLoading
+} = applicantSlice.actions;
 
 export default applicantSlice.reducer;

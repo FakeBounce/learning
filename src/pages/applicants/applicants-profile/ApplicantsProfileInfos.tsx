@@ -27,7 +27,7 @@ export default function ApplicantsProfileInfos() {
   }
 
   return (
-    <Box pb={4} display="flex" flexDirection="column" gap={2}>
+    <Box pb={4} display="flex" flexDirection="column" gap={2} px={4}>
       <Box
         display="flex"
         flexDirection={['column', 'column', 'row']}

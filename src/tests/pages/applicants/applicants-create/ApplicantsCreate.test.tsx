@@ -41,15 +41,17 @@ describe('ApplicantsCreate', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    render(<ApplicantsCreate />, {
-      preloadedState: {
-        applicants: {
-          ...initialApplicantState,
-          applicantCreate: {
-            applicantCreateLoading: false
+    await waitFor(async () => {
+      render(<ApplicantsCreate />, {
+        preloadedState: {
+          applicants: {
+            ...initialApplicantState,
+            applicantCreate: {
+              applicantCreateLoading: false
+            }
           }
         }
-      }
+      });
     });
 
     await act(async () => {
@@ -73,8 +75,15 @@ describe('ApplicantsCreate', () => {
     });
 
     await waitFor(() => {
-      expect(ApplicantsCreateMock.history.post).toHaveLength(1);
-      expect(ApplicantsCreateMock.history.post[0].url).toBe(PATH_APPLICANTS.root);
+      expect(ApplicantsCreateMock.history.post.length).toBeGreaterThanOrEqual(2);
+      let hasFound = false;
+      ApplicantsCreateMock.history.post.forEach((request) => {
+        if (request.url === PATH_APPLICANTS.root) {
+          hasFound = true;
+        }
+      });
+
+      expect(hasFound).toBeTruthy();
     });
 
     await waitFor(() => {

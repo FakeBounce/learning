@@ -3,6 +3,7 @@ import {
   ApiResponsePagination,
   TableRequestConfig
 } from '@services/interfaces';
+import { Group } from '@services/groups/interfaces';
 
 export interface ApplicantState {
   applicantList: ApplicantListState;
@@ -49,8 +50,8 @@ interface BaseApplicant {
   birthDate?: string | Date;
   city?: string | null;
   notifications?: ApplicantNotifications;
-  groups?: string[];
-  conflicts?: ApplicantsUpdateConflicts;
+  groups?: Group[];
+  conflicts: ApplicantsUpdateConflicts;
 }
 interface AdditionalApplicantProperties {
   [key: string]: string | number | null | boolean | undefined;
@@ -59,7 +60,6 @@ interface AdditionalApplicantProperties {
 export type Applicant = BaseApplicant & AdditionalApplicantProperties;
 
 export interface ApplicantsUpdateConflicts {
-  //@todo add groups
   lastname?: string;
   firstname?: string;
   email?: string;
@@ -96,6 +96,7 @@ interface BaseApplicantFromApi {
   birthDate: string;
   city: string | null;
   notifications?: ApplicantNotifications;
+  conflicts: ApplicantsUpdateConflicts;
 }
 export type ApplicantFromApi = BaseApplicantFromApi & AdditionalApplicantProperties;
 
@@ -163,7 +164,23 @@ export interface UpdateApplicantBlockResponse {
 
 export interface UpdateApplicantRequest {
   applicantId: number;
-  applicant: Partial<Applicant>;
+  applicant: {
+    lastname: string;
+    firstname: string;
+    email: string;
+    type: ApplicantType;
+    birthDate?: string | Date;
+    phone?: string;
+    externalId?: string;
+    birthName?: string;
+    city?: string;
+    groupsId?: string[];
+    notifications?: {
+      email: boolean;
+      sms: boolean;
+      app: boolean;
+    };
+  };
   profilePicture?: string | File | undefined;
 }
 
@@ -185,7 +202,23 @@ export interface UpdateApplicantPictureResponse {
 }
 
 export interface CreateApplicantRequest {
-  applicant: Omit<BaseApplicant, 'profilePicture' | 'id' | 'isActive'>;
+  applicant: {
+    lastname: string;
+    firstname: string;
+    email: string;
+    type: ApplicantType;
+    birthDate?: string | Date;
+    phone?: string;
+    externalId?: string;
+    birthName?: string;
+    city?: string;
+    groupsId: string[];
+    notifications?: {
+      email: boolean;
+      sms: boolean;
+      app: boolean;
+    };
+  };
   profilePicture?: string | File | undefined;
 }
 

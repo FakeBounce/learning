@@ -2,6 +2,8 @@ import { t } from '@lingui/macro';
 import * as Yup from 'yup';
 import { Applicant } from '@services/applicants/interfaces';
 import { format } from 'date-fns';
+import { BasicOption } from '@services/interfaces';
+import { Group } from '@services/groups/interfaces';
 
 export const updateApplicantSchema = Yup.object().shape({
   lastname: Yup.string().required(t`Le nom de famille est requis`),
@@ -12,19 +14,19 @@ export const updateApplicantSchema = Yup.object().shape({
   externalId: Yup.string().optional(),
   birthName: Yup.string().optional(),
   city: Yup.string().optional(),
-  groups: Yup.array()
-    .of(Yup.string())
+  groupsId: Yup.array()
+    .of(Yup.object().shape({ value: Yup.string().required(), label: Yup.string().required() }))
+    .min(1, t`Au moins un groupe est requis`)
     .required(t`Au moins un groupe est requis`),
   email: Yup.string()
     .required(t`L'email est requis`)
     .email(t`L'email est invalide`),
-  // birthDate: Yup.string().required(t`La date de naissance est requise`),
-  birthDate: Yup.string()
-    .required(t`La date de naissance est requise`)
+  birthDate: Yup.mixed<Date | string>()
+    .optional()
     .test('is-valid-date', t`Le format est invalide`, (value) => {
       if (!value) return true; // Allow empty string if field is not required
       // Check if the value is a valid date
-      return !isNaN(Date.parse(value));
+      return !isNaN(Date.parse(value.toString()));
     })
     .transform((value) => {
       if (!isNaN(Date.parse(value))) {
@@ -32,7 +34,6 @@ export const updateApplicantSchema = Yup.object().shape({
       }
       return value;
     }),
-  // groups: Yup.array().required(t`Le nom de famille est requis`),
   notifications: Yup.object().shape({
     email: Yup.boolean().required(t`La notification email est requis`),
     sms: Yup.boolean().required(t`La notification sms est requise`),
@@ -50,26 +51,26 @@ export const updateApplicantFormDefaultValues = {
   birthName: '',
   birthDate: '',
   city: '',
-  groups: [],
+  groupsId: [],
   notifications: {
     email: true,
     sms: true,
     app: true
   },
   profilePicture: ''
-};
+} as UpdateApplicantForm;
 
 export interface UpdateApplicantForm {
   lastname: string;
   firstname: string;
   email: string;
-  birthDate: string | Date;
+  birthDate?: string | Date;
   phone?: string;
   externalId?: string;
   birthName?: string;
   city?: string;
   profilePicture?: File | string | undefined;
-  groups: (string | undefined)[];
+  groupsId: BasicOption[];
   notifications: {
     email: boolean;
     sms: boolean;
@@ -93,6 +94,8 @@ export const populateUpdateApplicantForm = (applicant: Applicant) => {
       sms: applicant.notifications?.sms === true,
       app: applicant.notifications?.app === true
     },
-    groups: []
-  };
+    groupsId: applicant.groups
+      ? applicant.groups.map((group: Group) => ({ value: group.id.toString(), label: group.name }))
+      : []
+  } as UpdateApplicantForm;
 };

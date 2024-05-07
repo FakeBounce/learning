@@ -6,6 +6,27 @@ import { Applicant } from '@services/applicants/interfaces';
 import StatusChip from '@src/components/lms/StatusChip';
 import { renderHeaderCell } from '@utils/helpers/tableRenders';
 
+const updateWarning = (
+  <Box
+    sx={{
+      borderRadius: (theme) => theme.shape.customBorderRadius.whole,
+      backgroundColor: (theme) => theme.palette.warning.main,
+      width: 25,
+      height: 25,
+      color: 'white',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      position: 'absolute',
+      right: -12,
+      top: 15,
+      fontSize: (theme) => theme.typography.h4.fontSize
+    }}
+  >
+    !
+  </Box>
+);
+
 export const applicantsColumns = (
   handleClick: (_newApplicant: Applicant) => (_event: MouseEvent<HTMLElement>) => void
 ) =>
@@ -17,8 +38,9 @@ export const applicantsColumns = (
       renderCell: (cell: GridRenderCellParams) => {
         const logo = cell.row.profilePicture || cell.row.lastname[0].toUpperCase();
         return (
-          <Box display="flex" alignItems="center">
+          <Box display="flex" alignItems="center" position="relative">
             <Avatar src={logo}>{logo}</Avatar>
+            {cell.row.conflicts && Object.keys(cell.row.conflicts).length > 0 && updateWarning}
           </Box>
         );
       }
