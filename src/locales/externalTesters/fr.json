@@ -97,8 +97,7 @@
   "GroyQn": {
     "translation": "Le testeur n'existe pas",
     "message": "Le testeur n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Gt66tb": {
     "translation": "Débloquer un testeur",
@@ -185,7 +184,8 @@
   "QThGLQ": {
     "translation": "Le numéro de téléphone est invalide",
     "message": "Le numéro de téléphone est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
@@ -202,7 +202,8 @@
   "TOpCm4": {
     "translation": "Ajouter un testeur",
     "message": "Ajouter un testeur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UDTsGF": {
     "translation": "Id externe",
@@ -218,8 +219,7 @@
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "Fichier .csv / Max : 3 Mo",
@@ -254,7 +254,8 @@
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dSvDOd": {
     "translation": "Liste des testeurs invalides",
@@ -271,7 +272,8 @@
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -288,7 +290,8 @@
   "hW6LJA": {
     "translation": "L'email est invalide",
     "message": "L'email est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -316,7 +319,8 @@
   "ikKkoV": {
     "translation": "Le nom de famille est requis",
     "message": "Le nom de famille est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
@@ -386,6 +390,7 @@
   "zKPyEG": {
     "translation": "Au moins un groupe est requis",
     "message": "Au moins un groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

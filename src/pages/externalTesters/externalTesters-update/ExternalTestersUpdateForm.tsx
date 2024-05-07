@@ -7,9 +7,10 @@ import { ApplicantProfileState } from '@services/applicants/interfaces';
 
 import { StyledFormColumn, StyledFormRow } from '@src/components/layouts/form/FormStyles';
 import RHFDropdownGroups from '@src/components/hook-form/RHFDropdownGroups';
+import ApplicantsUpdateDifferences from '@src/pages/applicants/applicants-update/ApplicantsUpdateDifferences';
 
 export default function ExternalTestersUpdateForm() {
-  const { applicantProfileLoading }: ApplicantProfileState = useAppSelector(
+  const { applicantProfileData, applicantProfileLoading }: ApplicantProfileState = useAppSelector(
     (state) => state.applicants.applicantProfile
   );
 
@@ -23,22 +24,42 @@ export default function ExternalTestersUpdateForm() {
         <StyledFormColumn>
           <StyledFormRow>
             <RHFTextField name={'lastname'} label={<Trans>Nom</Trans>} required />
+            <ApplicantsUpdateDifferences
+              fieldName={'lastname'}
+              value={applicantProfileData?.conflicts?.lastname}
+            />
           </StyledFormRow>
           <StyledFormRow>
-            <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />
+            <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />{' '}
+            <ApplicantsUpdateDifferences
+              fieldName={'firstname'}
+              value={applicantProfileData?.conflicts?.firstname}
+            />
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />
+            <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />{' '}
+            <ApplicantsUpdateDifferences
+              fieldName={'email'}
+              value={applicantProfileData?.conflicts?.email}
+            />
           </StyledFormRow>
         </StyledFormColumn>
 
         <StyledFormColumn>
           <StyledFormRow>
-            <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />
+            <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />{' '}
+            <ApplicantsUpdateDifferences
+              fieldName={'externalId'}
+              value={applicantProfileData?.conflicts?.externalId}
+            />
           </StyledFormRow>
           <StyledFormRow>
-            <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
+            <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />{' '}
+            <ApplicantsUpdateDifferences
+              fieldName={'phone'}
+              value={applicantProfileData?.conflicts?.phone}
+            />
           </StyledFormRow>
           <StyledFormRow>
             <RHFDropdownGroups

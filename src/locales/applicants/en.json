@@ -2,7 +2,8 @@
   "+3OZdN": {
     "translation": "",
     "message": "Nouvelle donnée renseignée : {0}",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/Wfz2D": {
     "translation": "",
@@ -13,7 +14,8 @@
   "0uOGoh": {
     "translation": "",
     "message": "Le format est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
@@ -30,12 +32,14 @@
   "4kUPlv": {
     "translation": "",
     "message": "Notifications app",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "79Gbrb": {
     "translation": "",
     "message": "Groupe(s) lié(s)",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -46,12 +50,14 @@
   "8/pAPk": {
     "translation": "",
     "message": "Nom de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "8N1T4V": {
     "translation": "",
     "message": "La notification email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9HM7Cg": {
     "translation": "",
@@ -86,7 +92,8 @@
   "CInq4A": {
     "translation": "",
     "message": "Notifications email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "CVT4YH": {
     "translation": "",
@@ -97,7 +104,8 @@
   "D/HeUe": {
     "translation": "",
     "message": "L'étudiant n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DDwdL4": {
     "translation": "",
@@ -120,7 +128,8 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "",
@@ -143,7 +152,8 @@
   "GAxRw0": {
     "translation": "",
     "message": "Ville",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "",
@@ -160,7 +170,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -177,12 +188,14 @@
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "IRPK7p": {
     "translation": "",
     "message": "La notification app est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "K+tHTS": {
     "translation": "",
@@ -193,12 +206,14 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "",
@@ -209,7 +224,8 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
@@ -220,7 +236,8 @@
   "P3YkHZ": {
     "translation": "",
     "message": "Mettre à jour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "",
@@ -237,12 +254,14 @@
   "QOV2qe": {
     "translation": "",
     "message": "Date de naissance",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "",
@@ -277,12 +296,14 @@
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UHDGIH": {
     "translation": "",
     "message": "/",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UU1Jg5": {
     "translation": "",
@@ -317,7 +338,8 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "",
@@ -364,12 +386,14 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eeDRWI": {
     "translation": "",
     "message": "La notification sms est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -386,7 +410,8 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "",
@@ -403,7 +428,8 @@
   "hW6LJA": {
     "translation": "",
     "message": "L'email est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -420,7 +446,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "",
@@ -431,7 +458,8 @@
   "ikKkoV": {
     "translation": "",
     "message": "Le nom de famille est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "jP37N3": {
     "translation": "",
@@ -484,12 +512,14 @@
   "vdb2j0": {
     "translation": "",
     "message": "Notifications SMS",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vuenzM": {
     "translation": "",
@@ -500,12 +530,14 @@
   "wB7q3X": {
     "translation": "",
     "message": "Date naiss.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "x+SGDC": {
     "translation": "",
     "message": "Groupe(s)",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xj9DHS": {
     "translation": "",
@@ -522,6 +554,7 @@
   "zKPyEG": {
     "translation": "",
     "message": "Au moins un groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

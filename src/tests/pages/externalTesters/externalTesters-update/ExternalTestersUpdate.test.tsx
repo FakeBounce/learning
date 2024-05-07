@@ -2,10 +2,11 @@ import { render, screen, fireEvent, act, waitFor } from '@testProvider';
 import ExternalTestersUpdate from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate';
 import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 import { Route, Routes } from 'react-router';
-import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
-import { singleTester } from '../DefaultTesters';
+import { PATH_APPLICANTS, PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
+import { conflictedTester, singleTester } from '../DefaultTesters';
 import ExternalTestersUpdateMock, {
-  setupSuccessAxiosMock
+  setupSuccessAxiosMock,
+  setupSuccessAxiosMockForConflicts
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
 import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
@@ -155,6 +156,64 @@ describe('ExternalTestersUpdate', () => {
       expect(ExternalTestersUpdateMock.history.put[0].data).toBe(
         JSON.stringify({
           email: 'UpdatedEmail@test.fr'
+        })
+      );
+    });
+  });
+
+  it('should have conflicts displayed', async () => {
+    ExternalTestersUpdateMock.reset();
+    ExternalTestersUpdateMock.resetHistory();
+    setupSuccessAxiosMockForConflicts();
+    await act(async () => {
+      render(
+        <Routes>
+          <Route path={PATH_APPLICANTS.profile} element={<ExternalTestersUpdate />} />
+        </Routes>,
+        {
+          preloadedState: {
+            applicants: {
+              ...initialApplicantState,
+              applicantUpdate: {
+                isEditing: true,
+                applicantUpdateLoading: false
+              }
+            }
+          },
+          customHistory: [
+            generatePath(PATH_APPLICANTS.profile, { applicantId: conflictedTester.id })
+          ]
+        }
+      );
+    });
+
+    await waitFor(() => {
+      // Check if the form is rendered with preloaded data
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
+        conflictedTester.current_values.firstname
+      );
+    });
+
+    expect(
+      screen.getByText(`Nouvelle donnée renseignée : ${conflictedTester.conflicts.firstname}`)
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Mettre à jour' })).toHaveLength(2);
+
+    await act(async () => {
+      const conflictButtons = screen.getAllByRole('button', { name: 'Mettre à jour' });
+      fireEvent.click(conflictButtons[0]);
+      fireEvent.click(conflictButtons[1]);
+      fireEvent.submit(screen.getByRole('submit'));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      // Check if updateApplicant was called with the expected arguments
+      expect(ExternalTestersUpdateMock.history.put.length).toBe(1);
+      expect(ExternalTestersUpdateMock.history.put[0].data).toBe(
+        JSON.stringify({
+          lastname: conflictedTester.conflicts.lastname,
+          firstname: conflictedTester.conflicts.firstname
         })
       );
     });

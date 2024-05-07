@@ -176,7 +176,8 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -187,7 +188,8 @@
   "OYHzN1": {
     "translation": "Tags",
     "message": "Tags",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "Ajouter un rôle",
@@ -198,7 +200,8 @@
   "RJ5kAY": {
     "translation": "Nom du module",
     "message": "Nom du module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
@@ -323,7 +326,8 @@
   "rMJNt/": {
     "translation": "Langue",
     "message": "Langue",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rSV0Vm": {
     "translation": "Création d’un module",
@@ -340,7 +344,8 @@
   "uAJKId": {
     "translation": "Assignez une valeur et appuyez sur la touche entrée",
     "message": "Assignez une valeur et appuyez sur la touche entrée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",

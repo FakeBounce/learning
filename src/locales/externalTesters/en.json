@@ -97,8 +97,7 @@
   "GroyQn": {
     "translation": "",
     "message": "Le testeur n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Gt66tb": {
     "translation": "",
@@ -185,7 +184,8 @@
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "",
@@ -202,7 +202,8 @@
   "TOpCm4": {
     "translation": "",
     "message": "Ajouter un testeur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UDTsGF": {
     "translation": "",
@@ -218,8 +219,7 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "XZo0ki": {
     "translation": "",
@@ -254,7 +254,8 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dSvDOd": {
     "translation": "",
@@ -271,7 +272,8 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "",
@@ -288,7 +290,8 @@
   "hW6LJA": {
     "translation": "",
     "message": "L'email est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -316,7 +319,8 @@
   "ikKkoV": {
     "translation": "",
     "message": "Le nom de famille est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "k441hZ": {
     "translation": "",
@@ -386,6 +390,7 @@
   "zKPyEG": {
     "translation": "",
     "message": "Au moins un groupe est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

@@ -25,6 +25,7 @@ import {
   updateExternalTesterSchema
 } from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdateSchema';
 import ExternalTestersProfileInfos from '@src/pages/externalTesters/externalTesters-profile/ExternalTestersProfileInfos';
+import ApplicantsProfileGroups from '@src/pages/applicants/applicants-profile/ApplicantsProfileGroups';
 
 export default function ExternalTestersUpdate() {
   const [applicant, setApplicant] = useState<UpdateExternalTesterForm>(
@@ -90,11 +91,10 @@ export default function ExternalTestersUpdate() {
     const newApplicantValues = {} as Partial<Applicant>;
     Object.keys(dirtyFields).forEach((key) => {
       const typedKey = key as keyof UpdateExternalTesterForm;
-      if (typedKey === 'groups') return;
+      if (typedKey === 'groupsId') return;
       newApplicantValues[typedKey] = data[typedKey];
     });
 
-    // @todo - Handle groups update
     if (Object.keys(newApplicantValues).length > 0) {
       const updateApplicantFormToSubmit = {
         applicantId: Number(applicantId),
@@ -133,8 +133,7 @@ export default function ExternalTestersUpdate() {
             ) : (
               <>
                 <ExternalTestersProfileInfos />
-                {/* @todo -> Replace with the applicant group */}
-                {/*<UserProfileGroups />*/}
+                <ApplicantsProfileGroups />
               </>
             )}
           </LMSCard>

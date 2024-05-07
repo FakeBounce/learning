@@ -89,3 +89,22 @@ export const singleTester = {
     phone: '0123456789'
   }
 };
+
+export const conflictedTester = {
+  id: 8,
+  profile_picture: 'conflictedTesterPicture',
+  email: 'conflictedTester@email.fr',
+  type: ApplicantType.TESTER,
+  external_id: null,
+  isActive: true,
+  groups: [defaultGroup],
+  current_values: {
+    firstname: 'confli',
+    lastname: 'ctedTester',
+    phone: '0123456789'
+  },
+  conflicts: {
+    firstname: 'conflictedTeserFirstname',
+    lastname: 'conflictedTesterLastname'
+  }
+};

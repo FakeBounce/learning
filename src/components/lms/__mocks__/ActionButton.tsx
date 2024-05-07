@@ -9,8 +9,8 @@ interface ActionButtonProps extends LoadingButtonProps {
 export default function ActionButton({
   children,
   loading,
-  role,
-  type,
+  role = 'button',
+  type = 'button',
   disabled,
   onClick
 }: ActionButtonProps) {
