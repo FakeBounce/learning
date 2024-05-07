@@ -13,12 +13,10 @@ export const updateExternalTesterSchema = Yup.object().shape({
   externalId: Yup.string().optional(),
   groupsId: Yup.array()
     .of(Yup.object().shape({ value: Yup.string().required(), label: Yup.string().required() }))
-    .min(1, t`Au moins un groupe est requis`)
-    .required(t`Au moins un groupe est requis`),
+    .optional(),
   email: Yup.string()
     .required(t`L'email est requis`)
     .email(t`L'email est invalide`)
-  // groups: Yup.array().required(t`Le nom de famille est requis`),
 });
 
 export const updateExternalTesterFormDefaultValues = {
@@ -36,7 +34,7 @@ export interface UpdateExternalTesterForm {
   email: string;
   phone?: string;
   externalId?: string;
-  groupsId: BasicOption[];
+  groupsId?: BasicOption[];
 }
 
 export const populateUpdateExternalTesterForm = (applicant: Applicant) => {

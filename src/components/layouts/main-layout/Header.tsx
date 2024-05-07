@@ -11,8 +11,9 @@ import { enqueueSnackbar } from 'notistack';
 
 export default function Header() {
   const dispatch = useAppDispatch();
-  const { mainOrganizationId } = useAppSelector((state) => state.connectedUser.user);
-  const { currentOrganization, isSuperAdmin } = useAppSelector((state) => state.connectedUser.user);
+  const { mainOrganizationId, currentOrganization, isSuperAdmin } = useAppSelector(
+    (state) => state.connectedUser.user
+  );
   const navigate = useNavigate();
   const theme = useTheme();
 

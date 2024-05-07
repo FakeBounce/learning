@@ -17,6 +17,7 @@ import ApplicantsUpdateDifferences from '@src/pages/applicants/applicants-update
 import { formatDate } from 'date-fns';
 import RHFDatePicker from '@src/components/hook-form/RHFDatePicker';
 import RHFDropdownGroups from '@src/components/hook-form/RHFDropdownGroups';
+import { selectIsOnMainOrganization } from '@redux/reducers/connectedUserReducer';
 
 export default function ApplicantsUpdateForm({
   image,
@@ -28,6 +29,7 @@ export default function ApplicantsUpdateForm({
   const { applicantProfileLoading, applicantProfileData }: ApplicantProfileState = useAppSelector(
     (state) => state.applicants.applicantProfile
   );
+  const isOnMainOrganization = useAppSelector(selectIsOnMainOrganization);
 
   if (applicantProfileLoading) {
     return <ProfileSkeleton rows={1} cols={2} />;
@@ -156,17 +158,19 @@ export default function ApplicantsUpdateForm({
               value={applicantProfileData?.conflicts?.city}
             />
           </StyledFormRow>
-          <StyledFormRow>
-            <RHFDropdownGroups
-              isMulti
-              isClearable
-              cacheOptions
-              defaultOptions={[]}
-              required
-              name="groupsId"
-              label={<Trans>Groupe(s) lié(s)</Trans>}
-            />
-          </StyledFormRow>
+          {!isOnMainOrganization && (
+            <StyledFormRow>
+              <RHFDropdownGroups
+                isMulti
+                isClearable
+                cacheOptions
+                defaultOptions={[]}
+                required
+                name="groupsId"
+                label={<Trans>Groupe(s) lié(s)</Trans>}
+              />
+            </StyledFormRow>
+          )}
         </StyledFormColumn>
       </Box>
     </Box>

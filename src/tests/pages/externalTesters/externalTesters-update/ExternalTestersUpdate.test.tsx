@@ -47,7 +47,7 @@ describe('ExternalTestersUpdate', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.firstname);
       expect(screen.getByLabelText(/Email/i)).toHaveValue(singleTester.email);
     });
   });
@@ -64,7 +64,7 @@ describe('ExternalTestersUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.firstname);
     });
 
     await act(async () => {
@@ -90,7 +90,7 @@ describe('ExternalTestersUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.firstname);
     });
 
     // Update the firstname
@@ -126,7 +126,7 @@ describe('ExternalTestersUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.current_values.firstname);
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(singleTester.firstname);
     });
 
     // Update the email
@@ -189,9 +189,7 @@ describe('ExternalTestersUpdate', () => {
 
     await waitFor(() => {
       // Check if the form is rendered with preloaded data
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
-        conflictedTester.current_values.firstname
-      );
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(conflictedTester.firstname);
     });
 
     expect(

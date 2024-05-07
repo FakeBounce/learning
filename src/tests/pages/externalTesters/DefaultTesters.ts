@@ -1,7 +1,7 @@
-import { Applicant, ApplicantFromApi, ApplicantType } from '@services/applicants/interfaces';
 import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
+import { Applicant, ApplicantType } from '@services/applicants/interfaces';
 
-export const defaultTester = {
+export const defaultTester: Applicant = {
   id: 1,
   profilePicture: 'defaultExternalTesterPicture',
   email: 'defaultTester@test.fr',
@@ -10,10 +10,13 @@ export const defaultTester = {
   firstname: 'default',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: true
-} as ApplicantFromApi;
+  isActive: true,
+  groups: [defaultGroup],
+  conflicts: {},
+  otherData: []
+};
 
-export const blockedTester = {
+export const blockedTester: Applicant = {
   id: 2,
   profilePicture: 'blockedTesterPicture',
   email: 'blockedTester@test.fr',
@@ -22,10 +25,13 @@ export const blockedTester = {
   firstname: 'blocked',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: false
-} as ApplicantFromApi;
+  isActive: false,
+  groups: [defaultGroup],
+  conflicts: {},
+  otherData: []
+};
 
-export const unlockedTester = {
+export const unlockedTester: Applicant = {
   id: 3,
   profilePicture: 'unlockedTesterPicture',
   email: 'unlockedTester@test.fr',
@@ -34,10 +40,13 @@ export const unlockedTester = {
   firstname: 'unlocked',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: true
-} as ApplicantFromApi;
+  isActive: true,
+  groups: [defaultGroup],
+  conflicts: {},
+  otherData: []
+};
 
-export const newTester = {
+export const newTester: Applicant = {
   id: 4,
   profilePicture: 'newTesterPicture',
   email: 'newTester@test.fr',
@@ -46,10 +55,13 @@ export const newTester = {
   firstname: 'new',
   lastname: 'tester',
   phone: '0123456789',
-  isActive: true
-} as ApplicantFromApi;
+  isActive: true,
+  groups: [defaultGroup],
+  conflicts: {},
+  otherData: []
+};
 
-export const stateTester = {
+export const stateTester: Applicant = {
   id: 1,
   profilePicture: 'stateTesterPicture',
   email: 'stateTester@test.fr',
@@ -59,10 +71,12 @@ export const stateTester = {
   lastname: 'tester',
   phone: '0123456789',
   isActive: true,
-  groups: [defaultGroup]
-} as Applicant;
+  groups: [defaultGroup],
+  conflicts: {},
+  otherData: []
+};
 
-export const stateTesterDisabled = {
+export const stateTesterDisabled: Applicant = {
   id: 2,
   profilePicture: 'stateTesterPicture',
   email: 'stateTester@test.fr',
@@ -72,39 +86,40 @@ export const stateTesterDisabled = {
   lastname: 'tester',
   phone: '0123456789',
   isActive: false,
-  groups: [defaultGroup]
-} as Applicant;
-
-export const singleTester = {
-  id: 5,
-  profile_picture: 'singleTesterPicture',
-  email: 'singleTester@email.fr',
-  type: ApplicantType.TESTER,
-  external_id: null,
-  isActive: true,
   groups: [defaultGroup],
-  current_values: {
-    firstname: 'single',
-    lastname: 'tester',
-    phone: '0123456789'
-  }
+  conflicts: {},
+  otherData: []
 };
 
-export const conflictedTester = {
-  id: 8,
-  profile_picture: 'conflictedTesterPicture',
-  email: 'conflictedTester@email.fr',
+export const singleTester: Applicant = {
+  id: 5,
+  profilePicture: 'singleTesterPicture',
+  email: 'singleTester@email.fr',
   type: ApplicantType.TESTER,
-  external_id: null,
+  externalId: null,
   isActive: true,
   groups: [defaultGroup],
-  current_values: {
-    firstname: 'confli',
-    lastname: 'ctedTester',
-    phone: '0123456789'
-  },
+  firstname: 'single',
+  lastname: 'tester',
+  phone: '0123456789',
+  conflicts: {},
+  otherData: []
+};
+
+export const conflictedTester: Applicant = {
+  id: 8,
+  profilePicture: 'conflictedTesterPicture',
+  email: 'conflictedTester@email.fr',
+  type: ApplicantType.TESTER,
+  externalId: null,
+  isActive: true,
+  groups: [defaultGroup],
+  firstname: 'confli',
+  lastname: 'ctedTester',
+  phone: '0123456789',
   conflicts: {
     firstname: 'conflictedTeserFirstname',
     lastname: 'conflictedTesterLastname'
-  }
+  },
+  otherData: []
 };

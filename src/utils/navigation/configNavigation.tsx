@@ -97,6 +97,10 @@ const usersNavigationConfig = [
 
 const applicantsNavigationConfig = [
   {
+    title: <Trans>Étudiants</Trans>,
+    path: PATH_APPLICANTS.root
+  },
+  {
     title: <Trans>Profil</Trans>,
     path: PATH_APPLICANTS.profile
   },
@@ -111,6 +115,10 @@ const applicantsNavigationConfig = [
 ];
 
 const externalTestersNavigationConfig = [
+  {
+    title: <Trans>Testeurs</Trans>,
+    path: PATH_EXTERNAL_TESTERS.root
+  },
   {
     title: <Trans>Profil</Trans>,
     path: PATH_EXTERNAL_TESTERS.profile

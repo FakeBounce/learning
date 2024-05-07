@@ -43,9 +43,23 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 interface LMSSwitchProps extends SwitchProps {
   handleChange: (_: ChangeEvent<HTMLInputElement>) => void;
   checked: boolean;
+  name: string;
   disabled?: boolean;
 }
 
-export default function LMSSwitch({ handleChange, checked, disabled = false }: LMSSwitchProps) {
-  return <AntSwitch onChange={handleChange} checked={checked} disabled={disabled} />;
+export default function LMSSwitch({
+  handleChange,
+  checked,
+  disabled = false,
+  name
+}: LMSSwitchProps) {
+  return (
+    <AntSwitch
+      name={name}
+      id={name}
+      onChange={handleChange}
+      checked={checked}
+      disabled={disabled}
+    />
+  );
 }

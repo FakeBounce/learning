@@ -6,11 +6,12 @@ import {
 } from '@services/connected-user/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import * as UserActions from '../actions/connectedUserActions';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSelector, createSlice } from '@reduxjs/toolkit';
 import { AnyAction } from 'redux';
 import { setSession } from '@utils/axios/session';
 import { resetApp } from '@redux/actions/globalActions';
 import { t } from '@lingui/macro';
+import { RootState } from '@redux/store';
 
 interface UserState {
   user: ConnectedUser;
@@ -123,5 +124,10 @@ export const connectedUserSlice = createSlice({
       });
   }
 });
+
+export const selectIsOnMainOrganization = createSelector(
+  (state: RootState) => state.connectedUser.user,
+  (s) => s.currentOrganization?.id === s.mainOrganizationId
+);
 
 export default connectedUserSlice.reducer;

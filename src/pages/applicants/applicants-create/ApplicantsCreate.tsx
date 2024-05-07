@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useAppDispatch } from '@redux/hooks';
+import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { createApplicant } from '@redux/actions/applicantsActions';
 import { LMSCard } from '@src/components/lms';
 import { useEffect, useState } from 'react';
@@ -24,10 +24,12 @@ import { enqueueSnackbar } from 'notistack';
 import { resetApplicantState } from '@redux/reducers/applicantsReducer';
 import { getGroups } from '@services/groups/groupsAPI';
 import { Group } from '@services/groups/interfaces';
+import { selectIsOnMainOrganization } from '@redux/reducers/connectedUserReducer';
 
 export default function ApplicantsCreate() {
   const [image, setImage] = useState<string | File>('');
   const navigate = useNavigate();
+  const isOnMainOrganization = useAppSelector(selectIsOnMainOrganization);
 
   const dispatch = useAppDispatch();
   const methods = useForm({
@@ -80,7 +82,9 @@ export default function ApplicantsCreate() {
         externalId: data.externalId || undefined,
         birthName: data.birthName || undefined,
         city: data.city || undefined,
-        groupsId: data.groupsId.map((group) => group.value),
+        groupsId: isOnMainOrganization
+          ? []
+          : (data.groupsId?.map((group) => group.value) as string[]),
         notifications: notificationsValues
       },
       profilePicture: image
