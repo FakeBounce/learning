@@ -30,7 +30,7 @@ export default function ExternalTestersUpdateForm() {
             />
           </StyledFormRow>
           <StyledFormRow>
-            <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />{' '}
+            <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />
             <ApplicantsUpdateDifferences
               fieldName={'firstname'}
               value={applicantProfileData?.conflicts?.firstname}
@@ -38,7 +38,7 @@ export default function ExternalTestersUpdateForm() {
           </StyledFormRow>
 
           <StyledFormRow>
-            <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />{' '}
+            <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />
             <ApplicantsUpdateDifferences
               fieldName={'email'}
               value={applicantProfileData?.conflicts?.email}
@@ -48,14 +48,14 @@ export default function ExternalTestersUpdateForm() {
 
         <StyledFormColumn>
           <StyledFormRow>
-            <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />{' '}
+            <RHFTextField name={'externalId'} label={<Trans>Id externe</Trans>} />
             <ApplicantsUpdateDifferences
               fieldName={'externalId'}
               value={applicantProfileData?.conflicts?.externalId}
             />
           </StyledFormRow>
           <StyledFormRow>
-            <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />{' '}
+            <RHFTextField name={'phone'} label={<Trans>Téléphone</Trans>} />
             <ApplicantsUpdateDifferences
               fieldName={'phone'}
               value={applicantProfileData?.conflicts?.phone}
