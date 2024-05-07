@@ -37,6 +37,9 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
     opacity: 1,
     backgroundColor: 'rgba(0,0,0,.25)',
     boxSizing: 'border-box'
+  },
+  '& .MuiFormControlLabel-root': {
+    margin: 0
   }
 }));
 

@@ -1,5 +1,5 @@
 import { PATH_ROLES } from '@utils/navigation/paths';
-import { Roles, RolesCreate, RolesUpdate } from 'src/routes/elements';
+import { Roles, RolesCreate, RolesPermissions, RolesUpdate } from 'src/routes/elements';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
@@ -22,6 +22,9 @@ const Router = () => {
       </Route>
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.UPDATE} />}>
         <Route path={PATH_ROLES.update} element={<RolesUpdate />} />
+      </Route>
+      <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.UPDATE} />}>
+        <Route path={PATH_ROLES.managePermission} element={<RolesPermissions />} />
       </Route>
     </Route>
   );

@@ -3,6 +3,10 @@ export interface UserPermission {
   name: PermissionKey;
 }
 
+export type UserPermissionObject = {
+  [key in PermissionKey]: boolean;
+};
+
 export type PermissionKey = `${PermissionEnum}_${PermissionTypeEnum}`;
 
 export enum PermissionEnum {
@@ -31,6 +35,18 @@ export enum PermissionTypeEnum {
 export interface PermissionTypeList {
   title: string;
   actions: RolePermission[];
+}
+
+export interface Permissions {
+  [PermissionTypeEnum.PERSONALIZATION]: PermissionTypeList;
+  [PermissionTypeEnum.USERS]: PermissionTypeList;
+  [PermissionTypeEnum.TESTERS]: PermissionTypeList;
+  [PermissionTypeEnum.APPLICANTS]: PermissionTypeList;
+  [PermissionTypeEnum.ROLES]: PermissionTypeList;
+  [PermissionTypeEnum.GROUPS]: PermissionTypeList;
+  [PermissionTypeEnum.MODULES]: PermissionTypeList;
+  [PermissionTypeEnum.COURSES]: PermissionTypeList;
+  [PermissionTypeEnum.STATS]: PermissionTypeList;
 }
 
 export interface RolePermission {

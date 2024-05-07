@@ -3,6 +3,7 @@ import { Role } from '@services/roles/interfaces';
 import { enqueueSnackbar } from 'notistack';
 import { AnyAction } from 'redux';
 import * as RolesActions from '@redux/actions/rolesActions';
+import { Permissions } from '@services/permissions/interfaces';
 
 interface RolesState {
   rolesList: {
@@ -22,6 +23,10 @@ interface RolesState {
   };
   rolesDelete: {
     rolesDeleteLoading: boolean;
+  };
+  rolesPermissions: {
+    rolesPermissionsLoading: boolean;
+    rolesPermissionsData: Permissions | null;
   };
 }
 
@@ -43,6 +48,10 @@ export const rolesInitialState: RolesState = {
   },
   rolesDelete: {
     rolesDeleteLoading: false
+  },
+  rolesPermissions: {
+    rolesPermissionsLoading: false,
+    rolesPermissionsData: null
   }
 };
 
@@ -51,6 +60,9 @@ export const rolesSlice = createSlice({
   initialState: rolesInitialState,
   reducers: {
     resetRolesState: () => rolesInitialState,
+    resetUpdateRoleState: (state) => {
+      state.rolesUpdate.rolesUpdateLoading = false;
+    },
     resetDeleteRoleState: (state) => {
       state.rolesDelete.rolesDeleteLoading = false;
     },
@@ -110,11 +122,27 @@ export const rolesSlice = createSlice({
       })
       .addCase(RolesActions.deleteRoleAction.rejected, (_state, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(RolesActions.getRolePermissionsAction.pending, (state) => {
+        state.rolesPermissions.rolesPermissionsLoading = true;
+        state.rolesPermissions.rolesPermissionsData = null;
+      })
+      .addCase(RolesActions.getRolePermissionsAction.fulfilled, (state, action) => {
+        state.rolesPermissions.rolesPermissionsLoading = false;
+        state.rolesPermissions.rolesPermissionsData = action.payload.data;
+      })
+      .addCase(RolesActions.getRolePermissionsAction.rejected, (_state, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const { resetRolesState, resetDeleteRoleState, setCurrentRole, removeRoleFromList } =
-  rolesSlice.actions;
+export const {
+  resetRolesState,
+  resetUpdateRoleState,
+  resetDeleteRoleState,
+  setCurrentRole,
+  removeRoleFromList
+} = rolesSlice.actions;
 
 export default rolesSlice.reducer;
