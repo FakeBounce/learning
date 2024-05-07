@@ -3,7 +3,8 @@ import {
   PermissionEnum,
   PermissionKey,
   PermissionTypeEnum,
-  UserPermission
+  UserPermission,
+  UserPermissionObject
 } from '@services/permissions/interfaces';
 import { useAppSelector } from '@redux/hooks';
 
@@ -12,10 +13,6 @@ enum HasAdminRights {
   CLIENT_ADMIN = 1,
   SUPER_ADMIN = 2
 }
-
-type UserPermissionObject = {
-  [key in PermissionKey]: boolean;
-};
 
 const constructPermissionsObject = () => {
   const permissionsObject: UserPermissionObject = {} as UserPermissionObject;

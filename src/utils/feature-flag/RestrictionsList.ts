@@ -1,4 +1,4 @@
-import { PermissionTypeEnum } from '@services/permissions/interfaces';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 import {
   ModulesActions,
   ModuleStatusEnum,
@@ -183,5 +183,80 @@ export const modulesRestrictionsList: ModuleRestrictions = {
       [ModuleUserRightEnum.SUPERVISOR]: false,
       [ModuleUserRightEnum.VIEWER]: false
     }
+  }
+};
+
+export const permissionsRestrictionList = {
+  [PermissionTypeEnum.APPLICANTS]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: false,
+    [PermissionEnum.UPDATE]: true,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: true,
+    [PermissionEnum.BLOCK_UNBLOCK]: true
+  },
+  [PermissionTypeEnum.TESTERS]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: false,
+    [PermissionEnum.UPDATE]: true,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: true,
+    [PermissionEnum.BLOCK_UNBLOCK]: true
+  },
+  [PermissionTypeEnum.USERS]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: true,
+    [PermissionEnum.UPDATE]: true,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: true,
+    [PermissionEnum.BLOCK_UNBLOCK]: true
+  },
+  [PermissionTypeEnum.ROLES]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: true,
+    [PermissionEnum.UPDATE]: true,
+    [PermissionEnum.DELETE]: true,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
+  },
+  [PermissionTypeEnum.STATS]: {
+    [PermissionEnum.CREATE]: false,
+    [PermissionEnum.READ]: true,
+    [PermissionEnum.UPDATE]: false,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
+  },
+  [PermissionTypeEnum.PERSONALIZATION]: {
+    [PermissionEnum.CREATE]: false,
+    [PermissionEnum.READ]: true,
+    [PermissionEnum.UPDATE]: false,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
+  },
+  [PermissionTypeEnum.COURSES]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: false,
+    [PermissionEnum.UPDATE]: false,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
+  },
+  [PermissionTypeEnum.MODULES]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: false,
+    [PermissionEnum.UPDATE]: false,
+    [PermissionEnum.DELETE]: false,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
+  },
+  [PermissionTypeEnum.GROUPS]: {
+    [PermissionEnum.CREATE]: true,
+    [PermissionEnum.READ]: true,
+    [PermissionEnum.UPDATE]: true,
+    [PermissionEnum.DELETE]: true,
+    [PermissionEnum.CREATE_BULK]: false,
+    [PermissionEnum.BLOCK_UNBLOCK]: false
   }
 };

@@ -8,7 +8,7 @@ import {
 } from '@services/roles/interfaces';
 import * as RolesServices from '@services/roles/rolesAPI';
 
-export const getRolePermissions = createAsyncThunk(
+export const getRolePermissionsAction = createAsyncThunk(
   'roles/getRolePermissions',
   async (arg: GetRolePermissionsRequest, { rejectWithValue }) => {
     try {

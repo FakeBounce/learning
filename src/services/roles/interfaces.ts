@@ -5,7 +5,7 @@ import {
   TableRequestConfig
 } from '@services/interfaces';
 import { User } from '@services/users/interfaces';
-import { PermissionTypeList } from '@services/permissions/interfaces';
+import { Permissions, UserPermissionObject } from '@services/permissions/interfaces';
 
 export interface UserRole {
   id: number;
@@ -41,7 +41,7 @@ export interface GetRolePermissionsRequest {
 export interface GetRolePermissionsResponse {
   success: boolean;
   message: ApiResponseMessage;
-  data: PermissionTypeList;
+  data: Permissions;
 }
 
 export interface CreateRoleRequest {
@@ -63,6 +63,7 @@ export interface UpdateRoleRequest {
   description?: string;
   usersId?: number[];
   groupsId?: number[];
+  permissions?: UserPermissionObject;
 }
 
 export interface UpdateRoleResponse {

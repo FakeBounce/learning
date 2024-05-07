@@ -13,24 +13,9 @@ import {
 } from './paths';
 import { pageRestrictionsList } from '@utils/feature-flag/RestrictionsList';
 
-// GENERAL
-// ----------------------------------------------------------------------
-export const generalNavigationConfig = [
-  { title: <Trans>Dashboard</Trans>, path: PATH_DASHBOARD.root, icon: 'dashicons:performance' },
-  {
-    title: <Trans>Liste des Parcours</Trans>,
-    path: PATH_DASHBOARD.courses,
-    icon: 'material-symbols:play-shapes'
-  },
-  {
-    title: <Trans>Liste des modules</Trans>,
-    path: PATH_MODULES.root,
-    icon: 'uim:star-half-alt'
-  }
-];
-
-// Parameters
-// ----------------------------------------------------------------------
+/**
+ * Navigation configuration for the sidebar
+ */
 export const parametersNavigationConfig = [
   {
     title: <Trans>Gestion des rôles</Trans>,
@@ -69,7 +54,27 @@ export const parametersNavigationConfig = [
   }
 ];
 
+// GENERAL
+// ----------------------------------------------------------------------
+export const generalNavigationConfig = [
+  { title: <Trans>Dashboard</Trans>, path: PATH_DASHBOARD.root, icon: 'dashicons:performance' },
+  {
+    title: <Trans>Liste des Parcours</Trans>,
+    path: PATH_DASHBOARD.courses,
+    icon: 'material-symbols:play-shapes'
+  },
+  {
+    title: <Trans>Liste des modules</Trans>,
+    path: PATH_MODULES.root,
+    icon: 'uim:star-half-alt'
+  }
+];
+
 const organizationsNavigationConfig = [
+  {
+    title: <Trans>Organisations</Trans>,
+    path: PATH_ORGANIZATIONS.root
+  },
   {
     title: <Trans>Créer une organisation</Trans>,
     path: PATH_ORGANIZATIONS.add
@@ -81,6 +86,10 @@ const organizationsNavigationConfig = [
 ];
 
 const usersNavigationConfig = [
+  {
+    title: <Trans>Utilisateurs</Trans>,
+    path: PATH_USERS.root
+  },
   {
     title: <Trans>Profil</Trans>,
     path: PATH_USERS.profile

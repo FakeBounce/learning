@@ -23,7 +23,8 @@
   "79Gbrb": {
     "translation": "",
     "message": "Groupe(s) lié(s)",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "",
@@ -60,7 +61,8 @@
   "F8ESDf": {
     "translation": "",
     "message": "Activé",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "FABypk": {
     "translation": "",
@@ -87,7 +89,8 @@
   "GroyQn": {
     "translation": "",
     "message": "Le testeur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Gt66tb": {
     "translation": "",
@@ -98,7 +101,8 @@
   "HGYOb+": {
     "translation": "",
     "message": "Bloqué",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "",
@@ -108,13 +112,13 @@
   "HdNGur": {
     "translation": "",
     "message": "Bloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "IAAmKF": {
     "translation": "",
     "message": "Non renseigné",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "K+tHTS": {
     "translation": "",
@@ -125,12 +129,14 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
     "message": "Statut",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZdToq": {
     "translation": "",
@@ -151,13 +157,13 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P3YkHZ": {
     "translation": "",
     "message": "Mettre à jour",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "",
@@ -167,7 +173,8 @@
   "QThGLQ": {
     "translation": "",
     "message": "Le numéro de téléphone est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ROGnVQ": {
     "translation": "",
@@ -182,12 +189,14 @@
   "TOpCm4": {
     "translation": "",
     "message": "Ajouter un testeur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UDTsGF": {
     "translation": "",
     "message": "Id externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "UeDwla": {
     "translation": "",
@@ -198,7 +207,8 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "",
@@ -230,7 +240,8 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dSvDOd": {
     "translation": "",
@@ -246,7 +257,8 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "",
@@ -263,7 +275,8 @@
   "hW6LJA": {
     "translation": "",
     "message": "L'email est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -278,7 +291,8 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "",
@@ -288,7 +302,8 @@
   "ikKkoV": {
     "translation": "",
     "message": "Le nom de famille est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "k441hZ": {
     "translation": "",
@@ -321,8 +336,7 @@
   "u3n1/X": {
     "translation": "",
     "message": "Débloquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "v+QFYv": {
     "translation": "",
@@ -332,7 +346,8 @@
   "vm08uh": {
     "translation": "",
     "message": "Téléphone",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vuenzM": {
     "translation": "",

@@ -9,12 +9,19 @@ interface RHFSwitchProps {
   required?: boolean;
   label: ReactNode;
   disabled?: boolean;
+  centered?: boolean;
 }
 
-function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) {
+function RHFSwitch({ name, required = false, label, disabled, centered }: RHFSwitchProps) {
   const { control } = useFormContext();
   return (
-    <Box>
+    <Box
+      display="flex"
+      flexDirection="column"
+      justifyContent={centered ? 'center' : 'initial'}
+      alignItems={centered ? 'center' : 'initial'}
+      gap={0.5}
+    >
       <Typography variant="caption">
         {required ? (
           <LabelWithRequired name={name} label={label} />
@@ -22,7 +29,7 @@ function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) 
           <label htmlFor={name}>{label}</label>
         )}
       </Typography>
-      <Box ml={1.5} mt={1}>
+      <Box>
         <Controller
           name={name}
           control={control}
@@ -30,6 +37,12 @@ function RHFSwitch({ name, required = false, label, disabled }: RHFSwitchProps) 
           render={({ field: { onChange, value } }) => {
             return (
               <FormControlLabel
+                sx={{
+                  margin: 0, // Set no margin here for FormControlLabel
+                  '& .MuiFormControlLabel-root': {
+                    margin: 0 // If specifically targeting this class is needed
+                  }
+                }}
                 control={
                   <LMSSwitch
                     name={name}

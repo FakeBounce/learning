@@ -201,6 +201,4 @@ describe('ApplicantsListPopperContent', () => {
       generatePath(PATH_APPLICANTS.profile, { applicantId: stateApplicant.id.toString() })
     );
   });
-
-  // @TODO: Test the toggleBlock when we do the confirmation modal as logic might change
 });
