@@ -151,6 +151,33 @@ export const singleApplicant = {
   groups: [defaultGroup]
 };
 
+export const conflictedApplicant = {
+  id: 8,
+  profile_picture: 'conflictedApplicantPicture',
+  email: 'conflictedApplicant@email.fr',
+  type: ApplicantType.STUDENT,
+  external_id: null,
+  isActive: true,
+  notifications: {
+    app: true,
+    sms: true,
+    email: false
+  },
+  current_values: {
+    firstname: 'cfirstname',
+    lastname: 'clastname',
+    phone: '0123456789',
+    birthName: null,
+    birthDate: '1990-01-01',
+    city: 'conflictedApplicantCity'
+  },
+  conflicts: {
+    firstname: 'conflictedFirstname',
+    lastname: 'conflictedLastname'
+  },
+  groups: [defaultGroup]
+};
+
 export const validRowsForApplicantBulk = [
   {
     externalId: 'POIU1',

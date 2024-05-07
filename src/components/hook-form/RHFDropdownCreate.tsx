@@ -13,7 +13,7 @@ const createOption = (label: string) => ({
   value: label
 });
 
-interface RHFDropdownProps extends AsyncCreatableProps<any, any, any> {
+interface RHFDropdownCreateProps extends AsyncCreatableProps<any, any, any> {
   name: string;
   required?: boolean;
   label: ReactNode;
@@ -28,7 +28,7 @@ function RHFDropdownCreate({
   label,
   placeholder = defaultPlaceholder,
   ...other
-}: RHFDropdownProps) {
+}: RHFDropdownCreateProps) {
   const [inputValue, setInputValue] = useState('');
   const [dropdownValue, setDropdownValue] = useState<readonly BasicOption[]>([]);
   const { control, setValue } = useFormContext();

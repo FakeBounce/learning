@@ -3,9 +3,13 @@ import ApplicantsUpdate from '@src/pages/applicants/applicants-update/Applicants
 import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 import { Route, Routes } from 'react-router';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
-import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
+import {
+  conflictedApplicant,
+  singleApplicant
+} from '@src/tests/pages/applicants/DefaultApplicants';
 import ApplicantsUpdateMock, {
-  setupSuccessAxiosMock
+  setupSuccessAxiosMock,
+  setupSuccessAxiosMockForConflicts
 } from '@src/tests/pages/applicants/applicants-update/ApplicantsUpdateMock';
 import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
@@ -30,8 +34,9 @@ describe('ApplicantsUpdate', () => {
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
     ApplicantsUpdateMock.reset();
+    jest.clearAllMocks();
+    jest.resetAllMocks();
     cleanup();
   });
 
@@ -160,6 +165,64 @@ describe('ApplicantsUpdate', () => {
       expect(ApplicantsUpdateMock.history.put[0].data).toBe(
         JSON.stringify({
           email: 'UpdatedEmail@test.fr'
+        })
+      );
+    });
+  });
+
+  it('should have conflicts displayed', async () => {
+    ApplicantsUpdateMock.reset();
+    ApplicantsUpdateMock.resetHistory();
+    setupSuccessAxiosMockForConflicts();
+    await act(async () => {
+      render(
+        <Routes>
+          <Route path={PATH_APPLICANTS.profile} element={<ApplicantsUpdate />} />
+        </Routes>,
+        {
+          preloadedState: {
+            applicants: {
+              ...initialApplicantState,
+              applicantUpdate: {
+                isEditing: true,
+                applicantUpdateLoading: false
+              }
+            }
+          },
+          customHistory: [
+            generatePath(PATH_APPLICANTS.profile, { applicantId: conflictedApplicant.id })
+          ]
+        }
+      );
+    });
+
+    await waitFor(() => {
+      // Check if the form is rendered with preloaded data
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(
+        conflictedApplicant.current_values.firstname
+      );
+    });
+
+    expect(
+      screen.getByText(`Nouvelle donnée renseignée : ${conflictedApplicant.conflicts.firstname}`)
+    ).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: 'Mettre à jour' })).toHaveLength(2);
+
+    await act(async () => {
+      const conflictButtons = screen.getAllByRole('button', { name: 'Mettre à jour' });
+      fireEvent.click(conflictButtons[0]);
+      fireEvent.click(conflictButtons[1]);
+      fireEvent.submit(screen.getByRole('submit'));
+    });
+
+    // Wait for form submission to complete
+    await waitFor(() => {
+      // Check if updateApplicant was called with the expected arguments
+      expect(ApplicantsUpdateMock.history.put.length).toBe(1);
+      expect(ApplicantsUpdateMock.history.put[0].data).toBe(
+        JSON.stringify({
+          lastname: conflictedApplicant.conflicts.lastname,
+          firstname: conflictedApplicant.conflicts.firstname
         })
       );
     });

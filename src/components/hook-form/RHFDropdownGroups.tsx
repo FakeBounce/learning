@@ -10,7 +10,7 @@ import AsyncSelect, { AsyncProps } from 'react-select/async';
 import debounce from 'lodash/debounce';
 import { getGroups } from '@services/groups/groupsAPI';
 
-interface RHFDropdownProps extends AsyncProps<any, any, any> {
+interface RHFDropdownGroupsProps extends AsyncProps<any, any, any> {
   name: string;
   required?: boolean;
   label: ReactNode;
@@ -25,7 +25,7 @@ function RHFDropdownGroups({
   label,
   placeholder = defaultPlaceholder,
   ...other
-}: RHFDropdownProps) {
+}: RHFDropdownGroupsProps) {
   const [inputValue, setInputValue] = useState('');
   const { control, setValue } = useFormContext();
 
