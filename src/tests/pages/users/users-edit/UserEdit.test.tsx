@@ -5,7 +5,7 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 import { Route, Routes } from 'react-router';
 import { PATH_ERRORS, PATH_USERS } from '@utils/navigation/paths';
-import { defaultUsersList } from '@src/tests/pages/users/DefaultUsers';
+import { defaultUser, defaultUsersList } from '@src/tests/pages/users/DefaultUsers';
 
 const navigateMock = jest.fn().mockResolvedValueOnce({});
 jest.mock('react-router-dom', () => ({
@@ -86,14 +86,14 @@ describe('UserEditForm', () => {
           <Route path={PATH_USERS.update} element={<UserEdit />} />
         </Routes>,
         {
-          customHistory: [generatePath(PATH_USERS.update, { userId: defaultUsersList[0].id })]
+          customHistory: [generatePath(PATH_USERS.update, { userId: defaultUser.id })]
         }
       );
     });
 
     await waitFor(() => {
-      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(defaultUsersList[0].firstname);
-      expect(screen.getByLabelText(/Email/i)).toHaveValue(defaultUsersList[0].email);
+      expect(screen.getByLabelText(/Prénom/i)).toHaveValue(defaultUser.firstname);
+      expect(screen.getByLabelText(/Email/i)).toHaveValue(defaultUser.email);
     });
 
     act(() => {
@@ -116,7 +116,7 @@ describe('UserEditForm', () => {
       );
 
       expect(navigateMock).toHaveBeenCalledWith(
-        generatePath(PATH_USERS.profile, { userId: String(defaultUsersList[0].id) })
+        generatePath(PATH_USERS.profile, { userId: String(defaultUser.id) })
       );
     });
   });

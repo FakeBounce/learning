@@ -30,6 +30,74 @@ export const faultyRowsForUsersBulk = [
   }
 ] as UserForBulk[];
 
+export const defaultUser = {
+  id: 99,
+  lastname: 'def',
+  firstname: 'ault',
+  login: 'inaUser',
+  email: 'default@user.fr',
+  isActive: true,
+  useDoubleAuth: false,
+  groups: [
+    {
+      id: 1,
+      name: 'main',
+      description: null,
+      isMain: true,
+      nbUsers: null
+    },
+    {
+      id: 2,
+      name: 'Test',
+      description: null,
+      isMain: false,
+      nbUsers: 2
+    }
+  ],
+  roles: [
+    {
+      id: 2,
+      name: 'client-admin',
+      description: '',
+      isClientAdmin: true
+    }
+  ]
+};
+
+export const defaultDoubleAuthUser = {
+  id: 99,
+  lastname: 'double',
+  firstname: 'auth',
+  login: 'doubleauth',
+  email: 'double@auth.fr',
+  isActive: true,
+  useDoubleAuth: true,
+  groups: [
+    {
+      id: 1,
+      name: 'main',
+      description: null,
+      isMain: true,
+      nbUsers: null
+    },
+    {
+      id: 2,
+      name: 'Test',
+      description: null,
+      isMain: false,
+      nbUsers: 2
+    }
+  ],
+  roles: [
+    {
+      id: 2,
+      name: 'client-admin',
+      description: '',
+      isClientAdmin: true
+    }
+  ]
+};
+
 export const defaultInactiveUser = {
   id: 14,
   lastname: 'ina',
@@ -54,6 +122,30 @@ export const defaultInactiveUser = {
       nbUsers: 2
     }
   ],
+  roles: []
+};
+
+export const defaultGrouplessUser = {
+  id: 24,
+  lastname: 'ina',
+  firstname: 'ctiveUser',
+  login: 'inaUser',
+  email: 'inactive@user.fr',
+  isActive: false,
+  useDoubleAuth: false,
+  groups: [],
+  roles: []
+};
+
+export const defaultRolelessUser = {
+  id: 54,
+  lastname: 'ina',
+  firstname: 'ctiveUser',
+  login: 'inaUser',
+  email: 'inactive@user.fr',
+  isActive: false,
+  useDoubleAuth: false,
+  groups: [],
   roles: []
 };
 

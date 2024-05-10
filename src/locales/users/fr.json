@@ -2,7 +2,8 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -31,8 +32,7 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "A7xVRH": {
     "translation": "Veuillez sélectionner un fichier",
@@ -43,7 +43,8 @@
   "BSb8d9": {
     "translation": "Double authentification",
     "message": "Double authentification",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "OUI",
@@ -102,8 +103,7 @@
   "H1+RH6": {
     "translation": "Aucun groupe défini.",
     "message": "Aucun groupe défini.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -126,7 +126,8 @@
   "JMJBle": {
     "translation": "La double authentification est requise",
     "message": "La double authentification est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JSPwk2": {
     "translation": "Débloquer un utilisateur",
@@ -137,7 +138,8 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -160,19 +162,18 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "Ajouter un rôle",
@@ -207,7 +208,8 @@
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Vb8ErI": {
     "translation": "Liste des utilisateurs valides",
@@ -248,7 +250,8 @@
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -259,7 +262,8 @@
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -270,7 +274,8 @@
   "hMJAZ/": {
     "translation": "Aucune modification n'a été apportée",
     "message": "Aucune modification n'a été apportée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -281,8 +286,7 @@
   "i0ke3s": {
     "translation": "Aucun rôle défini.",
     "message": "Aucun rôle défini.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "i5N/Tb": {
     "translation": "Profil d'un module",
@@ -345,7 +349,8 @@
   "u2iZug": {
     "translation": "Le login est requis",
     "message": "Le login est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "Débloquer",
@@ -374,12 +379,12 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

@@ -2,7 +2,8 @@
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "",
@@ -31,8 +32,7 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "A7xVRH": {
     "translation": "",
@@ -43,7 +43,8 @@
   "BSb8d9": {
     "translation": "",
     "message": "Double authentification",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Bmo0y3": {
     "translation": "",
@@ -102,8 +103,7 @@
   "H1+RH6": {
     "translation": "",
     "message": "Aucun groupe défini.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HGYOb+": {
     "translation": "",
@@ -126,7 +126,8 @@
   "JMJBle": {
     "translation": "",
     "message": "La double authentification est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JSPwk2": {
     "translation": "",
@@ -137,7 +138,8 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "",
@@ -160,19 +162,18 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P54OXz": {
     "translation": "",
@@ -207,7 +208,8 @@
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Vb8ErI": {
     "translation": "",
@@ -248,7 +250,8 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eoO6cw": {
     "translation": "",
@@ -259,7 +262,8 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "",
@@ -270,7 +274,8 @@
   "hMJAZ/": {
     "translation": "",
     "message": "Aucune modification n'a été apportée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "",
@@ -281,8 +286,7 @@
   "i0ke3s": {
     "translation": "",
     "message": "Aucun rôle défini.",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "i5N/Tb": {
     "translation": "",
@@ -345,7 +349,8 @@
   "u2iZug": {
     "translation": "",
     "message": "Le login est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u3n1/X": {
     "translation": "",
@@ -374,12 +379,12 @@
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

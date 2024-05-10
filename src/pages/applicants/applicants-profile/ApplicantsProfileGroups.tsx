@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { userProfileGroupsColumns } from '@src/pages/users/users-profile/user-groups/UserProfileGroupsColumns';
+import { userProfileGroupsColumns } from '@src/pages/users/users-profile/users-groups/UserProfileGroupsColumns';
 import { LMSCard } from '@src/components/lms';
 import { useTheme } from '@mui/material/styles';
 import { Trans } from '@lingui/macro';
