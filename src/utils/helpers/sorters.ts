@@ -12,12 +12,20 @@ export function sortObjectTable(originalTable: any[], orderBy: OrderBy | null) {
     const bValue = b[orderBy.id];
 
     if (orderBy.direction === 'ASC') {
-      if (aValue < bValue) return -1;
-      if (aValue > bValue) return 1;
+      if (aValue < bValue) {
+        return -1;
+      }
+      if (aValue > bValue) {
+        return 1;
+      }
       return 0;
     } else {
-      if (aValue > bValue) return -1;
-      if (aValue < bValue) return 1;
+      if (aValue > bValue) {
+        return -1;
+      }
+      if (aValue < bValue) {
+        return 1;
+      }
       return 0;
     }
   });

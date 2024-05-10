@@ -9,7 +9,9 @@ export const changeOrganizationView = createAsyncThunk(
       const response = await UserServices.updateOrganizationView(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -20,7 +22,9 @@ export const getUser = createAsyncThunk('connectedUser/getUser', async (_, { rej
     const response = await UserServices.getUser();
     return response.data;
   } catch (e: any) {
-    if (e.response.data) return rejectWithValue(e.response.data);
+    if (e.response.data) {
+      return rejectWithValue(e.response.data);
+    }
     throw e;
   }
 });
@@ -32,7 +36,9 @@ export const login = createAsyncThunk(
       const response = await UserServices.login(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -43,7 +49,9 @@ export const refresh = createAsyncThunk('connectedUser/refresh', async (_, { rej
     const response = await UserServices.refresh();
     return response.data;
   } catch (e: any) {
-    if (e.response.data) return rejectWithValue(e.response.data);
+    if (e.response.data) {
+      return rejectWithValue(e.response.data);
+    }
     throw e;
   }
 });
@@ -53,7 +61,9 @@ export const logout = createAsyncThunk('connectedUser/logout', async (_, { rejec
     const response = await UserServices.logout();
     return response.data;
   } catch (e: any) {
-    if (e.response.data) return rejectWithValue(e.response.data);
+    if (e.response.data) {
+      return rejectWithValue(e.response.data);
+    }
     throw e;
   }
 });
@@ -65,7 +75,9 @@ export const forgotPassword = createAsyncThunk(
       const response = await UserServices.forgotPassword(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

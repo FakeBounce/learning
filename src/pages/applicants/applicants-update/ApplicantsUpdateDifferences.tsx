@@ -44,7 +44,9 @@ export default function ApplicantsUpdateDifferences({
     setIsUpdated(true);
   };
 
-  if (!value) return null;
+  if (!value) {
+    return null;
+  }
 
   return (
     <Box

@@ -32,7 +32,8 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "A7xVRH": {
     "translation": "Veuillez sélectionner un fichier",
@@ -379,7 +380,8 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "Login",

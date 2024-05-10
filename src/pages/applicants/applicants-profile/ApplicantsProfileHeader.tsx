@@ -13,7 +13,9 @@ export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate
   const theme = useTheme();
 
   const navigateToEdit = () => {
-    if (applicantProfileData === null) return;
+    if (applicantProfileData === null) {
+      return;
+    }
     dispatch(startEditingApplicant());
   };
 

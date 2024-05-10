@@ -93,7 +93,9 @@ function RHFDropdownCreate({
   };
 
   const handleKeyDown: KeyboardEventHandler = (event) => {
-    if (!inputValue) return;
+    if (!inputValue) {
+      return;
+    }
     switch (event.key) {
       case 'Enter':
       case 'Tab':

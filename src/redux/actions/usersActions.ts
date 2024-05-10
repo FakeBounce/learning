@@ -14,7 +14,9 @@ export const getUsersList = createAsyncThunk(
       const response = await UsersServices.getUsers(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -27,7 +29,9 @@ export const getSingleUser = createAsyncThunk(
       const response = await UsersServices.getSingleUser(id);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -40,7 +44,9 @@ export const updateUser = createAsyncThunk(
       const response = await UsersServices.updateUser(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -53,7 +59,9 @@ export const toggleUserBlock = createAsyncThunk(
       const response = await UsersServices.toggleUserBlock(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -66,7 +74,9 @@ export const createBulkUser = createAsyncThunk(
       const response = await UsersServices.createBulkUser(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

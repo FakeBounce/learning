@@ -14,7 +14,9 @@ export const getGroupsList = createAsyncThunk(
       const response = await GroupsServices.getGroups(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -27,7 +29,9 @@ export const deleteGroup = createAsyncThunk(
       const response = await GroupsServices.deleteGroup(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -40,7 +44,9 @@ export const createGroup = createAsyncThunk(
       const response = await GroupsServices.createGroup(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -53,7 +59,9 @@ export const updateGroupAction = createAsyncThunk(
       const response = await GroupsServices.updateGroup(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

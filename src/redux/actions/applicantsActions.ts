@@ -16,7 +16,9 @@ export const getApplicantsList = createAsyncThunk(
       const response = await ApplicantsServices.getApplicants(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -29,7 +31,9 @@ export const getSingleApplicant = createAsyncThunk(
       const response = await ApplicantsServices.getSingleApplicant(id);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -42,7 +46,9 @@ export const toggleApplicantBlock = createAsyncThunk(
       const response = await ApplicantsServices.updateApplicantBlock(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -76,7 +82,9 @@ export const updateApplicant = createAsyncThunk(
       const response = await Promise.all(promises);
       return response[response.length - 1].data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -89,7 +97,9 @@ export const updateApplicantPicture = createAsyncThunk(
       const response = await ApplicantsServices.updateApplicantPicture(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -102,7 +112,9 @@ export const createApplicant = createAsyncThunk(
       const response = await ApplicantsServices.createApplicant(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -115,7 +127,9 @@ export const createBulkApplicant = createAsyncThunk(
       const response = await ApplicantsServices.createBulkApplicant(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

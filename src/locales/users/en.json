@@ -32,7 +32,8 @@
   "9wYFQH": {
     "translation": "",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "A7xVRH": {
     "translation": "",
@@ -379,7 +380,8 @@
   "yZC9OF": {
     "translation": "",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "",

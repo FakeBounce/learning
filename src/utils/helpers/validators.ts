@@ -7,16 +7,24 @@ export const fileValidator = Yup.mixed<File | string>()
   //   return !!value; // File or empty string, validation passes
   // })
   .test('fileSize', t`Le fichier est trop volumineux`, (value: File | string | undefined) => {
-    if (!value) return true; // No file uploaded, validation fails
-    if (typeof value === 'string' && !value.trim()) return false; // Empty string, validation fails
+    if (!value) {
+      return true;
+    } // No file uploaded, validation fails
+    if (typeof value === 'string' && !value.trim()) {
+      return false;
+    } // Empty string, validation fails
     if (value instanceof File) {
       return value.size <= 200000; // Adjust file size limit as needed (200000 bytes = 200kb)
     }
     return true; // Non-empty string (filename), validation passes
   })
   .test('fileType', t`Le type de fichier est invalide`, (value: File | string | undefined) => {
-    if (!value) return false; // No file uploaded, validation fails
-    if (typeof value === 'string' && !value.trim()) return false; // Empty string, validation fails
+    if (!value) {
+      return false;
+    } // No file uploaded, validation fails
+    if (typeof value === 'string' && !value.trim()) {
+      return false;
+    } // Empty string, validation fails
     if (value instanceof File) {
       return ['image/jpeg', 'image/png', 'image/gif'].includes(value.type);
     }

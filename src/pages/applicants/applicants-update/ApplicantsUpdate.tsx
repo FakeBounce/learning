@@ -73,7 +73,9 @@ export default function ApplicantsUpdate() {
   useEffect(() => {
     if (applicantProfileData) {
       setApplicant(populateUpdateApplicantForm(applicantProfileData));
-      if (applicantProfileData.profilePicture) setImage(applicantProfileData.profilePicture);
+      if (applicantProfileData.profilePicture) {
+        setImage(applicantProfileData.profilePicture);
+      }
       reset();
     }
   }, [applicantProfileData, isEditing]);
@@ -99,8 +101,9 @@ export default function ApplicantsUpdate() {
         typedKey === 'notifications' ||
         typedKey === 'groupsId' ||
         typedKey === 'birthDate'
-      )
+      ) {
         return;
+      }
       newApplicantValues[typedKey] = data[typedKey];
     });
 

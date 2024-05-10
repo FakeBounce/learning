@@ -91,7 +91,9 @@ export default function ExternalTestersUpdate() {
     const newApplicantValues = {} as Partial<UpdateApplicantRequest['applicant']>;
     Object.keys(dirtyFields).forEach((key) => {
       const typedKey = key as keyof UpdateExternalTesterForm;
-      if (typedKey === 'groupsId') return;
+      if (typedKey === 'groupsId') {
+        return;
+      }
       newApplicantValues[typedKey] = data[typedKey];
     });
 

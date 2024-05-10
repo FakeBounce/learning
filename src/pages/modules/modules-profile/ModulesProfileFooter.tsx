@@ -14,7 +14,9 @@ export default function ModulesProfileFooter() {
   const dispatch = useAppDispatch();
 
   const toggleEditMode = () => {
-    if (modulesCurrentData === null) return;
+    if (modulesCurrentData === null) {
+      return;
+    }
 
     if (modulesCurrentIsEditing) {
       dispatch(cancelEditingModule());

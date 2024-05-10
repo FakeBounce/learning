@@ -66,7 +66,9 @@ export const applicantsColumns = (
       flex: 1,
       renderHeader: () => renderHeaderCell(<Trans>Date naiss.</Trans>),
       renderCell: (cell: GridRenderCellParams) => {
-        if (!cell.row.birthDate) return <Trans>/</Trans>;
+        if (!cell.row.birthDate) {
+          return <Trans>/</Trans>;
+        }
         const birthDate = new Date(cell.row.birthDate).toLocaleDateString();
         return <Typography>{birthDate}</Typography>;
       }

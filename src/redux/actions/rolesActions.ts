@@ -15,7 +15,9 @@ export const getRolePermissionsAction = createAsyncThunk(
       const response = await RolesServices.getRolePermissions(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -28,7 +30,9 @@ export const getRolesList = createAsyncThunk(
       const response = await RolesServices.getRoles(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -41,7 +45,9 @@ export const createRoleAction = createAsyncThunk(
       const response = await RolesServices.createRole(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -54,7 +60,9 @@ export const updateRoleAction = createAsyncThunk(
       const response = await RolesServices.updateRole(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -67,7 +75,9 @@ export const deleteRoleAction = createAsyncThunk(
       const response = await RolesServices.deleteRole(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

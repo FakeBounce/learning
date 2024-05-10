@@ -23,7 +23,9 @@ export const updateApplicantSchema = Yup.object().shape({
   birthDate: Yup.mixed<Date | string>()
     .optional()
     .test('is-valid-date', t`Le format est invalide`, (value) => {
-      if (!value) return true; // Allow empty string if field is not required
+      if (!value) {
+        return true;
+      } // Allow empty string if field is not required
       // Check if the value is a valid date
       return !isNaN(Date.parse(value.toString()));
     })

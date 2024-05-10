@@ -21,7 +21,9 @@ export default function LMSModal({
   cancelAction,
   isLoading = false
 }: LMSModalProps) {
-  if (!open) return null;
+  if (!open) {
+    return null;
+  }
   return (
     <div>
       <div>{title}</div>

@@ -13,7 +13,9 @@ export const getModulesAction = createAsyncThunk(
       const response = await ModulesServices.getModules(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -26,7 +28,9 @@ export const getSingleModuleAction = createAsyncThunk(
       const response = await ModulesServices.getSingleModule(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -39,7 +43,9 @@ export const createModuleAction = createAsyncThunk(
       const response = await ModulesServices.createModule(args);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }

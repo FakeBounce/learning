@@ -15,7 +15,9 @@ export const createOrganizations = createAsyncThunk(
       const response = await OrganizationsServices.createOrganizations(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -28,7 +30,9 @@ export const getSingleOrganization = createAsyncThunk(
       const response = await OrganizationsServices.getSingleOrganization(id);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -39,17 +43,21 @@ export const updateOrganizations = createAsyncThunk(
   async (arg: UpdateOrganizationsRequest, { rejectWithValue }) => {
     try {
       const requestList = [];
-      if (arg.name || arg.addressId)
+      if (arg.name || arg.addressId) {
         requestList.push(OrganizationsServices.updateOrganizations(arg));
-      if (arg.logo)
+      }
+      if (arg.logo) {
         requestList.push(
           OrganizationsServices.setOrganizationsLogo({ id: arg.id, logo: arg.logo })
         );
+      }
 
       const response = await Promise.all(requestList);
       return response[response.length - 1].data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -62,7 +70,9 @@ export const setOrganizationLogo = createAsyncThunk(
       const response = await OrganizationsServices.updateOrganizations(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -75,7 +85,9 @@ export const getOrganizationsList = createAsyncThunk(
       const response = await OrganizationsServices.getOrganizations(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
@@ -88,7 +100,9 @@ export const toggleOrganizationsBlock = createAsyncThunk(
       const response = await OrganizationsServices.updateOrganizationsBlock(arg);
       return response.data;
     } catch (e: any) {
-      if (e.response.data) return rejectWithValue(e.response.data);
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
       throw e;
     }
   }
