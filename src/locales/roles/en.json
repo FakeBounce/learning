@@ -152,7 +152,8 @@
   "ROGnVQ": {
     "translation": "",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "",
@@ -199,7 +200,8 @@
   "fvZGCG": {
     "translation": "",
     "message": "Le rôle n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hm4myw": {
     "translation": "",

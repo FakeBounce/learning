@@ -1,5 +1,5 @@
 import { ApiResponseMessage, ApiResponsePagination, TableRequestConfig } from '../interfaces';
-import { UserRole } from '@services/roles/interfaces';
+import { Role } from '@services/roles/interfaces';
 
 export interface User {
   email: string;
@@ -9,7 +9,7 @@ export interface User {
   login: string;
   useDoubleAuth: boolean;
   isActive: boolean;
-  roles: UserRole[];
+  roles: Role[];
   // @todo define the type of the groups
   groups: any[];
 }

@@ -152,7 +152,8 @@
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "Création d'un module",
@@ -199,7 +200,8 @@
   "fvZGCG": {
     "translation": "Le rôle n'existe pas",
     "message": "Le rôle n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hm4myw": {
     "translation": "Activités",
