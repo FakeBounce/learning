@@ -19,7 +19,8 @@ import { resetUpdateRoleState } from '@redux/reducers/rolesReducer';
 
 export default function RolesPermissions() {
   // const [role, setRole] = useState<UserPermissionObject>(constructPermissionsObject());
-  const x = constructPermissionsObject();
+  // @TODO rework this when the api gives a correct structure
+  const temp = constructPermissionsObject();
 
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -51,8 +52,8 @@ export default function RolesPermissions() {
 
   const methods = useForm({
     resolver: yupResolver(permissionsSchema),
-    defaultValues: x,
-    values: x
+    defaultValues: temp,
+    values: temp
   });
   const { handleSubmit } = methods;
 
@@ -72,8 +73,8 @@ export default function RolesPermissions() {
         <LMSCard
           isPageCard
           contentPadding={0}
-          header={<CardHeader headerText={<Trans>Modifier un rôle</Trans>} />}
-          footer={<RolesUpdateFooter />}
+          header={<CardHeader headerText={<Trans>Gestion des permissions</Trans>} />}
+          footer={<RolesUpdateFooter />} // Same as RolesUpdateFooter because it's also an update page
         >
           <RolesPermissionsForm />
         </LMSCard>

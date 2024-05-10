@@ -1,6 +1,10 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
-import { defaultRole, defaultRolesList } from '@src/tests/pages/roles/DefaultRole';
+import {
+  defaultRole,
+  defaultRolePermissions,
+  defaultRolesList
+} from '@src/tests/pages/roles/DefaultRole';
 
 const RolesMock = new MockAdapter(axios);
 export const rolesSetupSuccessAxiosMock = () => {
@@ -19,7 +23,7 @@ export const rolesSetupSuccessAxiosMock = () => {
   });
 
   /**
-   * Mocks the response for the group creation
+   * Mocks the response for the role creation
    */
   RolesMock.onPost(/\/roles/).reply(200, {
     success: true,
@@ -31,7 +35,7 @@ export const rolesSetupSuccessAxiosMock = () => {
   });
 
   /**
-   * Mocks the response for the group creation
+   * Mocks the response for the role update
    */
   RolesMock.onPut(/\/roles\/\d+/).reply(200, {
     success: true,
@@ -43,7 +47,7 @@ export const rolesSetupSuccessAxiosMock = () => {
   });
 
   /**
-   * Mocks the response for the group creation
+   * Mocks the response for the role deletion
    */
   RolesMock.onDelete(/\/roles\/\d+/).reply(200, {
     success: true,
@@ -52,11 +56,23 @@ export const rolesSetupSuccessAxiosMock = () => {
       level: 'success'
     }
   });
+
+  /**
+   * Mocks the response for the role permissions
+   */
+  RolesMock.onGet(/\/roles\/\d+\/permissions/).reply(200, {
+    success: true,
+    message: {
+      value: '',
+      level: 'success'
+    },
+    data: defaultRolePermissions
+  });
 };
 
 export const rolesSetupErrorAxiosMock = () => {
   /**
-   * Mocks the response for the group creation
+   * Mocks the response for the role deletion
    */
   RolesMock.onDelete(/\/roles\/\d+/).reply(500, {
     success: false,

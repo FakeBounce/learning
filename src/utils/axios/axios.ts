@@ -18,7 +18,7 @@ const axiosInstance: AxiosInstance = (() => {
     throw new Error('VITE_HOST_API_KEY environment variable not defined.');
   }
 
-  const newInstance = axios.create({ baseURL, timeout: 1000 });
+  const newInstance = axios.create({ baseURL, timeout: 5000 });
   const session = getSession();
   if (session) {
     newInstance.defaults.headers.common['Authorization'] = `Bearer ${session.token}`;
