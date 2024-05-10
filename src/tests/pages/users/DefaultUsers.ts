@@ -1,4 +1,4 @@
-import { UserForBulk } from '@services/users/interfaces';
+import { User, UserForBulk } from '@services/users/interfaces';
 
 export const validRowsForUsersBulk = [
   {
@@ -30,36 +30,63 @@ export const faultyRowsForUsersBulk = [
   }
 ] as UserForBulk[];
 
-export const defaultUsersList = [
+export const defaultInactiveUser = {
+  id: 14,
+  lastname: 'ina',
+  firstname: 'ctiveUser',
+  login: 'inaUser',
+  email: 'inactive@user.fr',
+  isActive: false,
+  useDoubleAuth: false,
+  groups: [
+    {
+      id: 1,
+      name: 'main',
+      description: null,
+      isMain: true,
+      nbUsers: null
+    },
+    {
+      id: 2,
+      name: 'Test',
+      description: null,
+      isMain: false,
+      nbUsers: 2
+    }
+  ],
+  roles: []
+};
+
+export const defaultUsersList: User[] = [
   {
     id: 2,
     lastname: 'zazi',
     firstname: 'thierry',
     login: 'test',
     email: 'zazi@thierry.com',
-    is_active: true,
-    use_double_auth: true,
+    isActive: true,
+    useDoubleAuth: true,
     groups: [
       {
         id: 1,
         name: 'main',
         description: null,
-        is_main: true,
-        nb_users: null
+        isMain: true,
+        nbUsers: null
       }
     ],
     roles: [
       {
         id: 2,
         name: 'client-admin',
-        description: null,
-        is_client_admin: true
+        description: '',
+        isClientAdmin: true
       },
       {
         id: 9,
         name: 'aaaa',
         description: 'bbdvre',
-        is_client_admin: false
+        isClientAdmin: false
       }
     ]
   },
@@ -69,15 +96,15 @@ export const defaultUsersList = [
     firstname: 'testa',
     login: 'gabrielletestp',
     email: 'gabrielle+testp@market-academy.com',
-    is_active: true,
-    use_double_auth: false,
+    isActive: true,
+    useDoubleAuth: false,
     groups: [
       {
         id: 1,
         name: 'main',
         description: null,
-        is_main: true,
-        nb_users: null
+        isMain: true,
+        nbUsers: null
       }
     ],
     roles: []
@@ -88,34 +115,34 @@ export const defaultUsersList = [
     firstname: 'Ben',
     login: 'benjamin',
     email: 'ben@jamin.fr',
-    is_active: true,
-    use_double_auth: false,
+    isActive: true,
+    useDoubleAuth: false,
     groups: [
       {
         id: 1,
         name: 'main',
         description: null,
-        is_main: true,
-        nb_users: null
+        isMain: true,
+        nbUsers: null
       }
     ],
     roles: []
   },
   {
     id: 11,
-    lastname: 'Jamin',
+    lastname: 'Jamin2',
     firstname: 'Ben',
     login: 'benjo',
     email: 'benjamin+1@market-academy.com',
-    is_active: true,
-    use_double_auth: false,
+    isActive: true,
+    useDoubleAuth: false,
     groups: [
       {
         id: 1,
         name: 'main',
         description: null,
-        is_main: true,
-        nb_users: null
+        isMain: true,
+        nbUsers: null
       }
     ],
     roles: []
@@ -126,22 +153,22 @@ export const defaultUsersList = [
     firstname: 'Améthyste',
     login: 'zdjaoz',
     email: 'superam@kyste.fr',
-    is_active: true,
-    use_double_auth: false,
+    isActive: true,
+    useDoubleAuth: false,
     groups: [
       {
         id: 1,
         name: 'main',
         description: null,
-        is_main: true,
-        nb_users: null
+        isMain: true,
+        nbUsers: null
       },
       {
         id: 2,
         name: 'Test',
         description: null,
-        is_main: false,
-        nb_users: 2
+        isMain: false,
+        nbUsers: 2
       }
     ],
     roles: []

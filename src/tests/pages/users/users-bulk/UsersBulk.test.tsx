@@ -1,9 +1,7 @@
 import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
 import UsersBulk from '@src/pages/users/users-bulk/UsersBulk';
 import { faultyRowsForUsersBulk, validRowsForUsersBulk } from '@src/tests/pages/users/DefaultUsers';
-import UsersBulkMock, {
-  setupSuccessAxiosMock
-} from '@src/tests/pages/users/users-bulk/UsersBulkMock';
+import UsersMock, { usersSetupSuccessAxiosMock } from '@src/tests/pages/users/UsersMock';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
@@ -16,13 +14,13 @@ describe('UsersBulk', () => {
     // Mock useNavigate
     (navigateMock as jest.Mock).mockReturnValue(jest.fn());
 
-    setupSuccessAxiosMock();
+    usersSetupSuccessAxiosMock();
   });
 
   afterEach(() => {
     jest.clearAllMocks();
     cleanup();
-    UsersBulkMock.reset();
+    UsersMock.reset();
   });
 
   it('renders UsersBulk correctly', () => {
@@ -69,10 +67,10 @@ describe('UsersBulk', () => {
     });
 
     await waitFor(async () => {
-      expect(UsersBulkMock.history.post.length).toBe(1);
-      expect(UsersBulkMock.history.post[0].data).toContain(validRowsForUsersBulk[0].email);
-      expect(UsersBulkMock.history.post[0].data).toContain(validRowsForUsersBulk[1].email);
-      expect(UsersBulkMock.history.post[0].data).toContain(validRowsForUsersBulk[2].email);
+      expect(UsersMock.history.post.length).toBe(1);
+      expect(UsersMock.history.post[0].data).toContain(validRowsForUsersBulk[0].email);
+      expect(UsersMock.history.post[0].data).toContain(validRowsForUsersBulk[1].email);
+      expect(UsersMock.history.post[0].data).toContain(validRowsForUsersBulk[2].email);
     });
   });
 
