@@ -2,8 +2,7 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
@@ -44,8 +43,7 @@
   "BSb8d9": {
     "translation": "Double authentification",
     "message": "Double authentification",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "OUI",
@@ -128,8 +126,7 @@
   "JMJBle": {
     "translation": "La double authentification est requise",
     "message": "La double authentification est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JSPwk2": {
     "translation": "Débloquer un utilisateur",
@@ -140,8 +137,7 @@
   "MCvCnO": {
     "translation": "Prénom",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -170,8 +166,7 @@
   "O3oNi5": {
     "translation": "Email",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -212,8 +207,7 @@
   "ShMuaQ": {
     "translation": "Le nom est requis",
     "message": "Le nom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Vb8ErI": {
     "translation": "Liste des utilisateurs valides",
@@ -254,8 +248,7 @@
   "dEcezs": {
     "translation": "L'email est requis",
     "message": "L'email est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -266,8 +259,7 @@
   "fojDKu": {
     "translation": "Le prénom est requis",
     "message": "Le prénom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -278,8 +270,7 @@
   "hMJAZ/": {
     "translation": "Aucune modification n'a été apportée",
     "message": "Aucune modification n'a été apportée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "Étudiants",
@@ -302,8 +293,7 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "Ajouter un groupe",
@@ -350,14 +340,12 @@
   "tM+VkT": {
     "translation": "L'utilisateur n'existe pas",
     "message": "L'utilisateur n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "u2iZug": {
     "translation": "Le login est requis",
     "message": "Le login est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "u3n1/X": {
     "translation": "Débloquer",
@@ -392,7 +380,6 @@
   "z0t9bb": {
     "translation": "Login",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

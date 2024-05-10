@@ -28,6 +28,15 @@ export const usersSetupSuccessAxiosMock = () => {
   });
 
   /**
+   * Mock the users update endpoint
+   */
+  UserMock.onPut(/\/users\/\d+/).reply(200, {
+    success: true,
+    message: { value: '' },
+    data: defaultUsersList[0]
+  });
+
+  /**
    * Mock the users block endpoint
    */
   UserMock.onPut(/\/users\/\d+\/block/).reply(200, {
@@ -39,6 +48,14 @@ export const usersSetupSuccessAxiosMock = () => {
    * Mock the users unblock endpoint
    */
   UserMock.onPut(/\/users\/\d+\/unblock/).reply(200, {
+    success: true,
+    message: { value: '' },
+    data: defaultUsersList[0]
+  });
+  /**
+   * Mock the users unblock endpoint
+   */
+  UserMock.onGet(/\/users\/\d+/).reply(200, {
     success: true,
     message: { value: '' },
     data: defaultUsersList[0]
