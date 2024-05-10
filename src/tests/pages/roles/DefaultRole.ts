@@ -29,3 +29,31 @@ export const defaultRolesList = [
     description: 'Role de test 3'
   }
 ];
+
+export const defaultRolePermissions = {
+  see_users: true,
+  add_users: true,
+  update_users: true,
+  delete_users: true,
+  see_roles: true,
+  add_roles: true,
+  update_roles: true,
+  delete_roles: true,
+  see_applicants: true,
+  add_applicants: true,
+  add_mass_applicants: true,
+  update_applicants: true,
+  block_applicants: true,
+  see_external_testers: true,
+  add_external_testers: true,
+  update_external_testers: true,
+  add_mass_testers: true,
+  block_external_testers: true,
+  see_groups: true,
+  add_groups: true,
+  update_groups: true,
+  delete_groups: true,
+  see_personalization: true,
+  add_courses: true,
+  add_modules: true
+};
