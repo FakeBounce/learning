@@ -1,6 +1,10 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
-import { defaultUsersList, validRowsForUsersBulk } from '@src/tests/pages/users/DefaultUsers';
+import {
+  defaultUser,
+  defaultUsersList,
+  validRowsForUsersBulk
+} from '@src/tests/pages/users/DefaultUsers';
 import { defaultPagination } from '@src/tests/pages/mocksConstants';
 
 const UserMock = new MockAdapter(axios);
@@ -58,7 +62,7 @@ export const usersSetupSuccessAxiosMock = () => {
   UserMock.onGet(/\/users\/\d+/).reply(200, {
     success: true,
     message: { value: '' },
-    data: defaultUsersList[0]
+    data: defaultUser
   });
 };
 

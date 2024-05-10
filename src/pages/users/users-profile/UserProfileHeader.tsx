@@ -12,14 +12,16 @@ import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 export default function UserProfileHeader() {
   const { singleUserData, singleUserLoading } = useAppSelector((state) => state.users.singleUser);
-
   const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
   const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
+
   const theme = useTheme();
   const navigate = useNavigate();
 
   const navigateToEdit = () => {
-    if (singleUserData === null) return;
+    if (singleUserData === null) {
+      return;
+    }
     navigate(generatePath(PATH_USERS.update, { userId: String(singleUserData.id) }));
   };
 

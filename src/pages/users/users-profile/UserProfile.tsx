@@ -1,8 +1,8 @@
 import { LMSCard } from '@src/components/lms';
 import UserProfileInfos from '@src/pages/users/users-profile/UserProfileInfos';
 import UserProfileHeader from '@src/pages/users/users-profile/UserProfileHeader';
-import UserProfileGroups from '@src/pages/users/users-profile/user-groups/UserProfileGroups';
-import UserProfileRoles from '@src/pages/users/users-profile/user-roles/UserProfileRoles';
+import UserProfileGroups from '@src/pages/users/users-profile/users-groups/UserProfileGroups';
+import UserProfileRoles from '@src/pages/users/users-profile/users-roles/UserProfileRoles';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -18,13 +18,12 @@ export default function UserProfile() {
   const { singleUserData } = useAppSelector((state) => state.users.singleUser);
   const { userId } = useParams();
 
-  // Update the form if we are on the update page
   useEffect(() => {
     if (singleUserData?.id !== Number(userId)) {
       try {
-        const applicantIdToFetch = Number(userId);
-        if (!isNaN(applicantIdToFetch)) {
-          dispatch(getSingleUser(applicantIdToFetch));
+        const userIdToFetch = Number(userId);
+        if (!isNaN(userIdToFetch)) {
+          dispatch(getSingleUser(userIdToFetch));
         } else {
           throw new Error();
         }
