@@ -7,7 +7,7 @@ import { Box } from '@mui/material';
 import UserEditForm from '@src/pages/users/users-edit/UserEditForm';
 import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { generatePath, useLocation, useNavigate } from 'react-router-dom';
+import { generatePath, useNavigate, useParams } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 import { getSingleUser, updateUser } from '@redux/actions/usersActions';
 import { PATH_ERRORS, PATH_USERS } from '@utils/navigation/paths';
@@ -45,8 +45,7 @@ export default function UserEdit() {
   const [user, setUser] = useState<EditUserForm>(defaultValues);
 
   const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const userId = Number(pathname.split('/').pop());
+  const { userId } = useParams();
 
   const { singleUserData } = useAppSelector((state) => state.users.singleUser);
 
@@ -54,9 +53,9 @@ export default function UserEdit() {
   useEffect(() => {
     if (singleUserData?.id !== Number(userId)) {
       try {
-        const applicantIdToFetch = Number(userId);
-        if (!isNaN(applicantIdToFetch)) {
-          dispatch(getSingleUser(applicantIdToFetch));
+        const userIdToFetch = Number(userId);
+        if (!isNaN(userIdToFetch)) {
+          dispatch(getSingleUser(userIdToFetch));
         } else {
           throw new Error();
         }
@@ -81,7 +80,6 @@ export default function UserEdit() {
 
   const {
     handleSubmit,
-    control,
     formState: { dirtyFields }
   } = methods;
 
@@ -94,7 +92,7 @@ export default function UserEdit() {
 
     if (Object.keys(newUserData).length > 0) {
       try {
-        await dispatch(updateUser({ id: userId, ...newUserData }));
+        await dispatch(updateUser({ id: Number(userId), ...newUserData }));
         returnToProfile();
       } catch (error) {
         enqueueSnackbar(error as string, { variant: 'error' });
@@ -117,7 +115,7 @@ export default function UserEdit() {
             header={<CardHeader headerText={<Trans>Modifier un utilisateur</Trans>} />}
             footer={<CardFooter isLoading={updatedUserLoading} cancelAction={returnToProfile} />}
           >
-            <UserEditForm control={control} />
+            <UserEditForm />
           </LMSCard>
         </Box>
       </form>

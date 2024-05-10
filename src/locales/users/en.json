@@ -2,8 +2,7 @@
   "/Wfz2D": {
     "translation": "",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "",
@@ -44,8 +43,7 @@
   "BSb8d9": {
     "translation": "",
     "message": "Double authentification",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "",
@@ -128,8 +126,7 @@
   "JMJBle": {
     "translation": "",
     "message": "La double authentification est requise",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "JSPwk2": {
     "translation": "",
@@ -140,8 +137,7 @@
   "MCvCnO": {
     "translation": "",
     "message": "Prénom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MZX/LX": {
     "translation": "",
@@ -170,8 +166,7 @@
   "O3oNi5": {
     "translation": "",
     "message": "Email",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
@@ -212,8 +207,7 @@
   "ShMuaQ": {
     "translation": "",
     "message": "Le nom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Vb8ErI": {
     "translation": "",
@@ -254,8 +248,7 @@
   "dEcezs": {
     "translation": "",
     "message": "L'email est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "",
@@ -266,8 +259,7 @@
   "fojDKu": {
     "translation": "",
     "message": "Le prénom est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fu2rxk": {
     "translation": "",
@@ -278,8 +270,7 @@
   "hMJAZ/": {
     "translation": "",
     "message": "Aucune modification n'a été apportée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "hsf9ph": {
     "translation": "",
@@ -302,8 +293,7 @@
   "iAKACc": {
     "translation": "",
     "message": "Nom",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "iJHuOY": {
     "translation": "",
@@ -350,14 +340,12 @@
   "tM+VkT": {
     "translation": "",
     "message": "L'utilisateur n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "u2iZug": {
     "translation": "",
     "message": "Le login est requis",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "u3n1/X": {
     "translation": "",
@@ -392,7 +380,6 @@
   "z0t9bb": {
     "translation": "",
     "message": "Login",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

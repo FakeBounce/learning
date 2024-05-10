@@ -1,23 +1,9 @@
-import { ReactNode } from 'react';
-import { Box, FormControlLabel, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { RHFTextField } from '@src/components/hook-form';
 import { Trans } from '@lingui/macro';
-import LMSSwitch from '@src/components/lms/LMSSwitch';
-import { Control, Controller } from 'react-hook-form';
-import { EditUserForm } from '@src/pages/users/users-edit/UserEdit';
+import RHFSwitch from '@src/components/hook-form/RHFSwitch';
 
-const labelWithRequired = (label: ReactNode) => (
-  <>
-    {label}
-    <span className="MuiFormLabel-asterisk"> *</span>
-  </>
-);
-
-interface UserEditFormProps {
-  control: Control<EditUserForm>;
-}
-
-export default function UserEditForm({ control }: UserEditFormProps) {
+export default function UserEditForm() {
   return (
     <Stack
       spacing={3}
@@ -26,32 +12,15 @@ export default function UserEditForm({ control }: UserEditFormProps) {
       }}
     >
       <Box display="flex">
-        <RHFTextField name={'lastname'} label={labelWithRequired('Nom')} />
-        <RHFTextField name={'firstname'} label={labelWithRequired('Prénom')} />
+        <RHFTextField name={'lastname'} label={<Trans>Nom</Trans>} required />
+        <RHFTextField name={'firstname'} label={<Trans>Prénom</Trans>} required />
       </Box>
       <Box display="flex">
-        <RHFTextField name={'email'} label={labelWithRequired('Email')} />
-        <RHFTextField name={'login'} label={labelWithRequired('Login')} />
+        <RHFTextField name={'email'} label={<Trans>Email</Trans>} required />
+        <RHFTextField name={'login'} label={<Trans>Login</Trans>} required />
       </Box>
       <Box>
-        <Typography variant="body2">
-          <Trans>Double authentification</Trans>
-        </Typography>
-        <Box ml={1.5} mt={1}>
-          <Controller
-            name="useDoubleAuth"
-            control={control}
-            defaultValue={control._defaultValues.useDoubleAuth}
-            render={({ field: { onChange, value } }) => {
-              return (
-                <FormControlLabel
-                  control={<LMSSwitch checked={value} handleChange={onChange} />}
-                  label=""
-                />
-              );
-            }}
-          />
-        </Box>
+        <RHFSwitch label={<Trans>Double authentification</Trans>} name="useDoubleAuth" />
       </Box>
     </Stack>
   );
