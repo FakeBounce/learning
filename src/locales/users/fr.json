@@ -104,7 +104,8 @@
   "H1+RH6": {
     "translation": "Aucun groupe défini.",
     "message": "Aucun groupe défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -163,7 +164,8 @@
   "Nu4oKW": {
     "translation": "Description",
     "message": "Description",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "O3oNi5": {
     "translation": "Email",
@@ -174,7 +176,8 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "Ajouter un rôle",
@@ -287,7 +290,8 @@
   "i0ke3s": {
     "translation": "Aucun rôle défini.",
     "message": "Aucun rôle défini.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "i5N/Tb": {
     "translation": "Profil d'un module",
@@ -298,7 +302,8 @@
   "iAKACc": {
     "translation": "Nom",
     "message": "Nom",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iJHuOY": {
     "translation": "Ajouter un groupe",
@@ -345,7 +350,8 @@
   "tM+VkT": {
     "translation": "L'utilisateur n'existe pas",
     "message": "L'utilisateur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "u2iZug": {
     "translation": "Le login est requis",

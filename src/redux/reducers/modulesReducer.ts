@@ -22,6 +22,7 @@ export interface ModulesState {
   modulesUpdate: {
     modulesUpdateLoading: boolean;
   };
+  modulesLoading: boolean;
 }
 export const initialModulesState: ModulesState = {
   modulesList: {
@@ -39,11 +40,12 @@ export const initialModulesState: ModulesState = {
   },
   modulesUpdate: {
     modulesUpdateLoading: false
-  }
+  },
+  modulesLoading: false
 };
 
 export const modulesSlice = createSlice({
-  name: 'connectedUser',
+  name: 'modules',
   initialState: initialModulesState,
   reducers: {
     resetModuleState: () => initialModulesState,
@@ -52,6 +54,9 @@ export const modulesSlice = createSlice({
     },
     cancelEditingModule: (state) => {
       state.modulesCurrent.modulesCurrentIsEditing = false;
+    },
+    resetModuleLoading: (state) => {
+      state.modulesLoading = false;
     }
   },
   extraReducers: (builder) => {
@@ -91,9 +96,47 @@ export const modulesSlice = createSlice({
       })
       .addCase(ModulesActions.getSingleModuleAction.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.createSubjectAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.createSubjectAction.fulfilled, (state, action) => {
+        state.modulesLoading = false;
+        const newComposition = JSON.parse(
+          state.modulesCurrent.modulesCurrentData?.composition || ''
+        );
+        newComposition.push({
+          name: action.payload.data.title,
+          id: action.payload.data.id,
+          type: 'subject',
+          composition: []
+        });
+        state.modulesCurrent.modulesCurrentData = {
+          ...(state.modulesCurrent.modulesCurrentData as Module),
+          composition: JSON.stringify(newComposition) || ''
+        };
+        enqueueSnackbar(t`Le sujet a bien été créé`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.createSubjectAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.deleteSubjectAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.deleteSubjectAction.fulfilled, (state, action) => {
+        state.modulesLoading = false;
+        state.modulesCurrent.modulesCurrentData = action.payload.data;
+        enqueueSnackbar(t`Le sujet a bien été supprimé`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.deleteSubjectAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.moveSubjectAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
       });
   }
 });
 
-export const { resetModuleState, startEditingModule, cancelEditingModule } = modulesSlice.actions;
+export const { resetModuleState, startEditingModule, cancelEditingModule, resetModuleLoading } =
+  modulesSlice.actions;
 export default modulesSlice.reducer;

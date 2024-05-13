@@ -23,6 +23,11 @@
     "comments": [],
     "obsolete": false
   },
+  "10kreC": {
+    "translation": "Ajouter un sujet",
+    "message": "Ajouter un sujet",
+    "comments": []
+  },
   "1CtVQM": {
     "translation": "Module supprimé !",
     "message": "Module supprimé !",
@@ -64,6 +69,11 @@
     "message": "Validation du module",
     "comments": [],
     "obsolete": false
+  },
+  "7PJftv": {
+    "translation": "Une erreur est survenue lors du déplacement du sujet",
+    "message": "Une erreur est survenue lors du déplacement du sujet",
+    "comments": []
   },
   "7cyFQz": {
     "translation": "Archivé",
@@ -188,7 +198,8 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OYHzN1": {
     "translation": "Tags",
@@ -250,6 +261,11 @@
     "comments": [],
     "obsolete": false
   },
+  "YNznY8": {
+    "translation": "Ajouter",
+    "message": "Ajouter",
+    "comments": []
+  },
   "ZYJB/d": {
     "translation": "Duppliquer",
     "message": "Duppliquer",
@@ -277,8 +293,12 @@
   "eG0+eP": {
     "translation": "Le module n'existe pas",
     "message": "Le module n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "eVDAkI": {
+    "translation": "Un contenu",
+    "message": "Un contenu",
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
@@ -319,14 +339,18 @@
   "now6WU": {
     "translation": "Voir",
     "message": "Voir",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
     "comments": [],
     "obsolete": false
+  },
+  "r60cpl": {
+    "translation": "Un sujet",
+    "message": "Un sujet",
+    "comments": []
   },
   "rMJNt/": {
     "translation": "Langue",
@@ -351,6 +375,11 @@
     "message": "Assignez une valeur et appuyez sur la touche entrée",
     "comments": [],
     "obsolete": false
+  },
+  "uxeg1t": {
+    "translation": "Créer des sujets permet d’organiser l’activité en classant les contenus dans des dossiers, selon un thème commun.",
+    "message": "Créer des sujets permet d’organiser l’activité en classant les contenus dans des dossiers, selon un thème commun.",
+    "comments": []
   },
   "v+QFYv": {
     "translation": "Testeurs externes",

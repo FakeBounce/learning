@@ -16,6 +16,7 @@ import {
 } from '@src/pages/modules/modules-form/ModulesFormSchema';
 import ModulesProfileHeader from '@src/pages/modules/modules-profile/ModulesProfileHeader';
 import ModulesProfileFooter from '@src/pages/modules/modules-profile/ModulesProfileFooter';
+import ModulesStudyPlan from '@src/pages/modules/modules-study-plan/ModulesStudyPlan';
 
 export default function ModulesProfile() {
   const [module, setModule] = useState(modulesFormDefaultValues);
@@ -61,12 +62,15 @@ export default function ModulesProfile() {
   const onSubmit = async (_data: ModuleFormValues) => {};
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <LMSCard isPageCard header={<ModulesProfileHeader />} footer={<ModulesProfileFooter />}>
-          <ModulesForm disabled={!modulesCurrentIsEditing} />
-        </LMSCard>
-      </form>
-    </FormProvider>
+    <>
+      <FormProvider {...methods}>
+        <form onSubmit={handleSubmit(onSubmit)} noValidate>
+          <LMSCard isPageCard header={<ModulesProfileHeader />} footer={<ModulesProfileFooter />}>
+            <ModulesForm disabled={!modulesCurrentIsEditing} />
+          </LMSCard>
+        </form>
+      </FormProvider>
+      <ModulesStudyPlan />
+    </>
   );
 }

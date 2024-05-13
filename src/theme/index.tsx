@@ -19,6 +19,7 @@ export default function ThemeProvider({ children }: { children: ReactNode }) {
       shape: {
         borderRadius: 4,
         customBorderRadius: {
+          extraSmall: 1,
           small: 2,
           medium: 4,
           large: 8,

@@ -2,8 +2,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as ModulesServices from '@services/modules/modulesAPI';
 import {
   CreateModuleRequest,
+  CreateModuleSubjectRequest,
+  DeleteModuleSubjectRequest,
   GetModulesRequest,
-  GetSingleModuleRequest
+  GetSingleModuleRequest,
+  MoveModuleSubjectRequest
 } from '@services/modules/interfaces';
 
 export const getModulesAction = createAsyncThunk(
@@ -41,6 +44,51 @@ export const createModuleAction = createAsyncThunk(
   async (args: CreateModuleRequest, { rejectWithValue }) => {
     try {
       const response = await ModulesServices.createModule(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const createSubjectAction = createAsyncThunk(
+  'modules/createSubject',
+  async (args: CreateModuleSubjectRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.createSubject(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const deleteSubjectAction = createAsyncThunk(
+  'modules/deleteSubject',
+  async (args: DeleteModuleSubjectRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.deleteSubject(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const moveSubjectAction = createAsyncThunk(
+  'modules/moveSubject',
+  async (args: MoveModuleSubjectRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.moveSubject(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) {

@@ -87,6 +87,25 @@ export interface Module {
   version: number;
 }
 
+export interface ModuleSubject {
+  id: number;
+  position: number;
+  questions: number[];
+  title: string;
+}
+
+export enum ModuleCompositionItemType {
+  SUBJECT = 'subject',
+  QUESTION = 'question'
+}
+
+export interface ModuleCompositionItem {
+  name: string;
+  id: number;
+  type: ModuleCompositionItemType;
+  composition: ModuleCompositionItem[];
+}
+
 export interface CreateModuleRequest {
   media: File;
   timer: string;
@@ -128,6 +147,38 @@ export interface GetSingleModuleRequest {
 }
 
 export interface GetSingleModuleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export interface CreateModuleSubjectRequest {
+  title: string;
+  moduleId: number;
+}
+
+export interface CreateModuleSubjectResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ModuleSubject;
+}
+
+export interface DeleteModuleSubjectRequest {
+  subjectId: number;
+}
+
+export interface DeleteModuleSubjectResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export interface MoveModuleSubjectRequest {
+  subjectId: number;
+  newPosition: number;
+}
+
+export interface MoveModuleSubjectResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Module;

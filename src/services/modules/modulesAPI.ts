@@ -6,7 +6,13 @@ import {
   CreateModuleRequest,
   CreateModuleResponse,
   GetSingleModuleRequest,
-  GetSingleModuleResponse
+  GetSingleModuleResponse,
+  CreateModuleSubjectRequest,
+  CreateModuleSubjectResponse,
+  DeleteModuleSubjectRequest,
+  DeleteModuleSubjectResponse,
+  MoveModuleSubjectRequest,
+  MoveModuleSubjectResponse
 } from '@services/modules/interfaces';
 
 export const getModules = async (
@@ -36,4 +42,22 @@ export const createModule = async (
       'Content-Type': 'multipart/form-data'
     }
   });
+};
+
+export const createSubject = async (
+  args: CreateModuleSubjectRequest
+): Promise<AxiosResponse<CreateModuleSubjectResponse>> => {
+  return axios.post(`/subjects`, args);
+};
+
+export const deleteSubject = async (
+  args: DeleteModuleSubjectRequest
+): Promise<AxiosResponse<DeleteModuleSubjectResponse>> => {
+  return axios.delete(`/subjects/${args.subjectId}`);
+};
+
+export const moveSubject = async (
+  args: MoveModuleSubjectRequest
+): Promise<AxiosResponse<MoveModuleSubjectResponse>> => {
+  return axios.put(`/subjects/${args.subjectId}/move`, args);
 };
