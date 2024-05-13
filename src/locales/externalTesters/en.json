@@ -98,7 +98,8 @@
   "GroyQn": {
     "translation": "",
     "message": "Le testeur n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Gt66tb": {
     "translation": "",
@@ -223,7 +224,8 @@
   "W3FHUJ": {
     "translation": "",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XZo0ki": {
     "translation": "",

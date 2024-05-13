@@ -5,6 +5,7 @@ declare module '@mui/material/styles' {
     shape: {
       borderRadius: number;
       customBorderRadius: {
+        extraSmall: number;
         small: number;
         medium: number;
         large: number;
@@ -18,6 +19,7 @@ declare module '@mui/material/styles' {
     shape: {
       borderRadius: number;
       customBorderRadius: {
+        extraSmall: number;
         small: number;
         medium: number;
         extraLarge: number;

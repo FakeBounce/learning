@@ -64,14 +64,12 @@ export default function ApplicantsList() {
           applicantSelected={applicantSelected}
         />
       </LMSPopover>
-      {applicantSelected && (
-        <ApplicantsListModal
-          applicantSelected={applicantSelected}
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-          cancelModal={cancelModal}
-        />
-      )}
+      <ApplicantsListModal
+        applicantSelected={applicantSelected}
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+        cancelModal={cancelModal}
+      />
     </>
   );
 }

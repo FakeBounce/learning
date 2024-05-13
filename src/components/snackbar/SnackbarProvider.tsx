@@ -2,7 +2,6 @@ import { IconButton } from '@mui/material';
 import { ReactNode, useRef } from 'react';
 import { closeSnackbar, SnackbarProvider as NotistackProvider } from 'notistack';
 import StyledNotistack from './styles';
-// ----------------------------------------------------------------------
 
 export default function SnackbarProvider({ children }: { children: ReactNode }) {
   const notistackRef = useRef(null);
@@ -15,7 +14,7 @@ export default function SnackbarProvider({ children }: { children: ReactNode }) 
         ref={notistackRef}
         dense
         maxSnack={5}
-        autoHideDuration={2000}
+        autoHideDuration={3000}
         variant="success" // Set default variant
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         action={(key) => (

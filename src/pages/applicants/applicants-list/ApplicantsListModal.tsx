@@ -1,18 +1,24 @@
-import { Box, Typography } from '@mui/material';
+import { Box, Skeleton, Typography } from '@mui/material';
 import { useAppDispatch } from '@redux/hooks';
 import { toggleApplicantBlock } from '@redux/actions/applicantsActions';
 import { Applicant } from '@services/applicants/interfaces';
 import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
 
-const titleToDisplay = (applicantSelected: Applicant) => {
+const titleToDisplay = (applicantSelected: Applicant | null) => {
+  if (applicantSelected === null) {
+    return <Skeleton animation="pulse" variant="text" width="30%" />;
+  }
   if (!applicantSelected.isActive) {
     return <Trans>Débloquer un étudiant</Trans>;
   }
   return <Trans>Bloquer un étudiant</Trans>;
 };
 
-const textToDisplay = (applicantSelected: Applicant) => {
+const textToDisplay = (applicantSelected: Applicant | null) => {
+  if (applicantSelected === null) {
+    return <Skeleton animation="pulse" variant="text" width="100%" />;
+  }
   if (!applicantSelected.isActive) {
     return (
       <Typography>
@@ -84,7 +90,7 @@ const textToDisplay = (applicantSelected: Applicant) => {
 };
 
 interface ApplicantsListModalProps {
-  applicantSelected: Applicant;
+  applicantSelected: Applicant | null;
   isModalOpen: boolean;
   setIsModalOpen: (_value: boolean) => void;
   cancelModal: () => void;

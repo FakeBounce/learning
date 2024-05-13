@@ -1,6 +1,5 @@
 import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
@@ -8,6 +7,7 @@ import Iconify from '@src/components/iconify/Iconify';
 import ActionButton from '@src/components/lms/ActionButton';
 import { Trans } from '@lingui/macro';
 import { ReactNode } from 'react';
+import { Typography } from '@mui/material';
 
 const StyledDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
@@ -43,7 +43,9 @@ export default function LMSModal({
 }: LMSModalProps) {
   return (
     <StyledDialog onClose={onClose} aria-labelledby="customized-dialog-title" open={open}>
-      <DialogTitle sx={{ m: 0, p: 2 }}>{title}</DialogTitle>
+      <Typography variant="h4" sx={{ m: 0, p: 2 }}>
+        {title}
+      </Typography>
       <IconButton
         aria-label="close"
         onClick={onClose}
@@ -51,7 +53,7 @@ export default function LMSModal({
           position: 'absolute',
           right: 8,
           top: 8,
-          color: (theme) => theme.palette.grey[500]
+          color: (theme) => theme.palette.grey[900]
         }}
       >
         <Iconify icon="material-symbols:close" />
