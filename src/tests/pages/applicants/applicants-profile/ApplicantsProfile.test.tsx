@@ -1,13 +1,13 @@
-import { cleanup, render, screen, act } from '@testProvider';
+import { cleanup, render, screen, waitFor } from '@testProvider';
 import ApplicantsProfile from '@src/pages/applicants/applicants-update/ApplicantsUpdate';
 import { PATH_APPLICANTS } from '@utils/navigation/paths';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import { Routes, Route } from 'react-router';
-import { waitFor } from '@testing-library/dom';
 import ApplicantProfileMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-profile/ApplicantsProfileMock';
+import { enqueueSnackbar } from 'notistack';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({
@@ -32,7 +32,7 @@ describe('ApplicantProfile', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    await act(async () => {
+    await waitFor(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
@@ -45,10 +45,8 @@ describe('ApplicantProfile', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(singleApplicant.email)).toBeInTheDocument();
-      });
+    await waitFor(() => {
+      expect(screen.getByText(singleApplicant.email)).toBeInTheDocument();
     });
   });
 
@@ -57,7 +55,7 @@ describe('ApplicantProfile', () => {
     const navigateMock = jest.fn().mockResolvedValueOnce({});
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
-    await act(async () => {
+    await waitFor(async () => {
       render(
         <Routes>
           <Route path={PATH_APPLICANTS.profile} element={<ApplicantsProfile />} />
@@ -68,10 +66,8 @@ describe('ApplicantProfile', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(/L'étudiant n'existe pas/i)).toBeInTheDocument();
-      });
+    await waitFor(() => {
+      expect(enqueueSnackbar).toHaveBeenCalledWith("L'étudiant n'existe pas", { variant: 'error' });
     });
   });
 });

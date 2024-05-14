@@ -1,10 +1,10 @@
 import { render, screen, fireEvent, act, waitFor } from '@testProvider';
 import ApplicantsUpdateFooter from '@src/pages/applicants/applicants-update/ApplicantsUpdateFooter';
 import { initialApplicantState } from '@redux/reducers/applicantsReducer';
-import { useAppSelector } from '@redux/hooks';
+import { store } from '@redux/store';
 
 describe('ApplicantsUpdateFooter', () => {
-  it('renders ApplicantsUpdateFooter correctly', () => {
+  it('renders ApplicantsUpdateFooter correctly', async () => {
     render(<ApplicantsUpdateFooter />, {
       preloadedState: {
         applicants: {
@@ -17,7 +17,6 @@ describe('ApplicantsUpdateFooter', () => {
       }
     });
 
-    // Ensure that the "Annuler" button is present
     const cancelButton = screen.getByText(/Annuler/i);
     expect(cancelButton).toBeInTheDocument();
 
@@ -25,13 +24,13 @@ describe('ApplicantsUpdateFooter', () => {
       fireEvent.click(cancelButton);
     });
 
-    waitFor(() => {
-      const { isEditing } = useAppSelector((state) => state.applicants.applicantUpdate);
+    await waitFor(() => {
+      const isEditing = store.getState().applicants.applicantUpdate.isEditing;
       expect(isEditing).toBe(false);
     });
   });
 
-  it('renders ApplicantsUpdateFooter with loadings', () => {
+  it('renders ApplicantsUpdateFooter with loadings', async () => {
     render(<ApplicantsUpdateFooter />, {
       preloadedState: {
         applicants: {
@@ -44,7 +43,7 @@ describe('ApplicantsUpdateFooter', () => {
       }
     });
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.getByText(/Enregistrer/i)).toBeDisabled();
     });
   });

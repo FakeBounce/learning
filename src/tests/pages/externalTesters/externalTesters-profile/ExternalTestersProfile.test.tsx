@@ -1,16 +1,15 @@
-import { cleanup, render, screen, act } from '@testProvider';
+import { cleanup, render, screen, act, waitFor } from '@testProvider';
 import ExternalTestersProfile from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate';
 import { PATH_ERRORS, PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { generatePath, useNavigate } from 'react-router-dom';
-import { singleApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import { Routes, Route } from 'react-router';
-import { waitFor } from '@testing-library/dom';
 import ExternalTestersUpdateMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
 import { enqueueSnackbar } from 'notistack';
+import { singleTester } from '@src/tests/pages/externalTesters/DefaultTesters';
 
-// Mock useNavigate
+const navigateMock = jest.fn().mockResolvedValueOnce({});
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn()
@@ -21,43 +20,35 @@ jest.mock('@src/pages/applicants/applicants-profile/ApplicantsProfileHeader', ()
 describe('ExternalTestersProfile', () => {
   beforeEach(() => {
     setupSuccessAxiosMock();
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
   });
+
   afterEach(() => {
-    // Clear the Axios mock
     ExternalTestersUpdateMock.reset();
     cleanup();
+    jest.clearAllMocks();
   });
 
   it('renders ExternalTestersProfile correctly', async () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
-    await act(async () => {
+    await waitFor(async () => {
       render(
         <Routes>
           <Route path={PATH_EXTERNAL_TESTERS.profile} element={<ExternalTestersProfile />} />
         </Routes>,
         {
           customHistory: [
-            generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: singleApplicant.id })
+            generatePath(PATH_EXTERNAL_TESTERS.profile, { applicantId: singleTester.id })
           ]
         }
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(singleApplicant.email)).toBeInTheDocument();
-      });
+    await waitFor(() => {
+      expect(screen.getByText(singleTester.email)).toBeInTheDocument();
     });
   });
 
   it('displays an error when the id is incorrect', async () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     await act(async () => {
       render(
         <Routes>

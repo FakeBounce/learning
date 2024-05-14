@@ -237,6 +237,11 @@
     "comments": [],
     "obsolete": false
   },
+  "V8tP80": {
+    "translation": "Titre du sujet",
+    "message": "Titre du sujet",
+    "comments": []
+  },
   "XHiamB": {
     "translation": "Verrouiller",
     "message": "Verrouiller",
@@ -293,7 +298,8 @@
   "eG0+eP": {
     "translation": "Le module n'existe pas",
     "message": "Le module n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eVDAkI": {
     "translation": "Un contenu",
@@ -339,7 +345,8 @@
   "now6WU": {
     "translation": "Voir",
     "message": "Voir",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",

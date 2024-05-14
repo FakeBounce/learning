@@ -25,7 +25,7 @@ describe('ApplicantsUpdateForm', () => {
     expect(screen.getByText(/Notifications email/i)).toBeInTheDocument();
   });
 
-  it('should have the correct image', () => {
+  it('should have the correct image', async () => {
     render(
       <FormProvider {...methods}>
         <form>
@@ -35,7 +35,7 @@ describe('ApplicantsUpdateForm', () => {
     );
 
     // Check if the image is displayed
-    waitFor(() => {
+    await waitFor(() => {
       const avatar = screen.getByRole('img');
       expect(avatar.getAttribute('src')).toContain('SomeImage');
     });

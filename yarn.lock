@@ -13770,6 +13770,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-beautiful-dnd-test-utils@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/react-beautiful-dnd-test-utils/-/react-beautiful-dnd-test-utils-4.1.1.tgz#e4bf0d997cee2ce28987866c7b22b887424fe179"
+  integrity sha512-2l8IrPyKpmjBmYr89kAOltNVG3m09FWlAofjpX018Bmz+7hYEoh1AV1FowX3ab/CFjAgt28W0sakf1juuRwF4w==
+
 react-colorful@^5.1.2:
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"

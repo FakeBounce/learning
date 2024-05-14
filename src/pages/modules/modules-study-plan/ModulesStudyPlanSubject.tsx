@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { IconButton } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Iconify from '@src/components/iconify/Iconify';
@@ -14,12 +14,14 @@ interface ModulesStudyPlanSubjectProps extends DraggableProvided {
   subject: ModuleCompositionItem;
   snapshotDraggable: DraggableStateSnapshot;
   innerRef: (_element?: HTMLElement | null | undefined) => void;
+  canDelete?: boolean;
 }
 
 export default function ModulesStudyPlanSubject({
   subject,
   snapshotDraggable,
   innerRef,
+  canDelete = false,
   ...other
 }: ModulesStudyPlanSubjectProps) {
   const { modulesLoading } = useAppSelector((state) => state.modules);
@@ -70,12 +72,14 @@ export default function ModulesStudyPlanSubject({
           {subject.name}
         </Typography>
       </Box>
-      <IconButton onClick={handleDeleteSubject} sx={{ p: 0 }} disabled={modulesLoading}>
-        <Iconify
-          icon="material-symbols:close"
-          sx={{ color: (theme: Theme) => theme.palette.secondary.main }}
-        />
-      </IconButton>
+      {canDelete && (
+        <IconButton onClick={handleDeleteSubject} sx={{ p: 0 }} disabled={modulesLoading}>
+          <Iconify
+            icon="material-symbols:close"
+            sx={{ color: (theme: Theme) => theme.palette.secondary.main }}
+          />
+        </IconButton>
+      )}
     </Box>
   );
 }

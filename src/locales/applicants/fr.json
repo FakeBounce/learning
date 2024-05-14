@@ -236,8 +236,7 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P3YkHZ": {
     "translation": "Mettre à jour",
@@ -254,7 +253,8 @@
   "PsHtRs": {
     "translation": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "message": "Êtes-vous sûr de vouloir débloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "QOV2qe": {
     "translation": "Date de naissance",
@@ -283,7 +283,8 @@
   "SNbh3h": {
     "translation": "Débloquer un étudiant",
     "message": "Débloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Ttle7P": {
     "translation": "Identifiant externe",
@@ -378,7 +379,8 @@
   "YlStRO": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
     "message": "Êtes-vous sûr de vouloir bloquer l’étudiant <0>{0}</0> <1>{1}</1> dans <2>toutes les organisations</2> ?",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dBw0sb": {
     "translation": "Modifier un groupe",
@@ -407,7 +409,8 @@
   "f3LmJs": {
     "translation": "Bloquer un étudiant",
     "message": "Bloquer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fojDKu": {
     "translation": "Le prénom est requis",
@@ -472,7 +475,8 @@
   "k441hZ": {
     "translation": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
     "message": "Il ne pourra plus avoir accès aux parcours et modules mais aura accès à son historique.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
