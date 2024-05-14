@@ -4,11 +4,18 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { startEditingApplicant } from '@redux/reducers/applicantsReducer';
 import CardHeader from '@src/components/cards/CardHeader';
 import { useTheme } from '@mui/material/styles';
+import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
+import { useOutletContext } from 'react-router';
+import { useContext } from 'react';
+import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 
 export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate?: boolean }) {
-  const { applicantProfileData, applicantProfileLoading } = useAppSelector(
-    (state) => state.applicants.applicantProfile
-  );
+  const {
+    applicantProfile: { applicantProfileData, applicantProfileLoading },
+    applicantUpdate: { isEditing }
+  } = useAppSelector((state) => state.applicants);
+  const { pageType }: { pageType: PermissionTypeEnum } = useOutletContext();
+  const { isAuthorizedByPermissionsTo } = useContext(FeatureFlagContext);
   const dispatch = useAppDispatch();
   const theme = useTheme();
 
@@ -17,6 +24,20 @@ export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate
       return;
     }
     dispatch(startEditingApplicant());
+  };
+
+  const applicantHeaderActions = () => {
+    const canUpdateApplicant = isAuthorizedByPermissionsTo(pageType, PermissionEnum.UPDATE);
+    if (canUpdateApplicant) {
+      return [
+        {
+          action: navigateToEdit,
+          actionText: <Trans>Modifier</Trans>,
+          actionType: 'update' as const
+        }
+      ];
+    }
+    return null;
   };
 
   const displayName = () => {
@@ -33,7 +54,7 @@ export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate
     return <Skeleton animation="pulse" variant="text" width="30%" />;
   };
 
-  if (isUpdate) {
+  if (isUpdate || isEditing) {
     return <CardHeader headerText={displayName()} actions={null} />;
   }
 
@@ -41,9 +62,7 @@ export default function ApplicantsProfileHeader({ isUpdate = false }: { isUpdate
     <CardHeader
       headerText={displayName()}
       headerColor={theme.palette.secondary.main}
-      actions={[
-        { action: navigateToEdit, actionText: <Trans>Modifier</Trans>, actionType: 'update' }
-      ]}
+      actions={applicantHeaderActions()}
     />
   );
 }

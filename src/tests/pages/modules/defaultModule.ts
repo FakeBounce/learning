@@ -1,7 +1,10 @@
 import {
   Module,
+  ModuleCompositionItem,
+  ModuleCompositionItemType,
   ModuleDisplayAnswers,
   ModuleStatusEnum,
+  ModuleSubject,
   ModuleUserRightEnum
 } from '@services/modules/interfaces';
 
@@ -434,3 +437,112 @@ export const defaultModulesList: Module[] = [
     }
   }
 ];
+
+export const defaultSubject: ModuleSubject = {
+  id: 1,
+  position: 0,
+  questions: [],
+  title: 'Subject title'
+};
+
+export const defaultCompositionItem: ModuleCompositionItem = {
+  id: 1,
+  name: 'Subject 1 title',
+  type: ModuleCompositionItemType.SUBJECT,
+  composition: []
+};
+
+export const defaultModuleComposition: ModuleCompositionItem[] = [
+  {
+    id: 1,
+    name: 'Subject 1 title',
+    type: ModuleCompositionItemType.SUBJECT,
+    composition: []
+  },
+  {
+    id: 2,
+    name: 'New',
+    type: ModuleCompositionItemType.SUBJECT,
+    composition: []
+  },
+  {
+    id: 3,
+    name: 'Gato Saroto',
+    type: ModuleCompositionItemType.SUBJECT,
+    composition: []
+  }
+];
+
+export const defaultModuleComposed: Module = {
+  id: 1,
+  language: 'french',
+  title: 'Module title',
+  parentId: null,
+  description: 'Module description',
+  timer: '00:00:00',
+  nbAttempts: 0,
+  successRate: 0,
+  displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
+  version: 1,
+  status: ModuleStatusEnum.DRAFT,
+  composition: JSON.stringify(defaultModuleComposition),
+  tags: [],
+  isLocked: false,
+  isPublic: false,
+  isLastPublishedOrArchivedVersion: false,
+  isLastVersion: true,
+  updatedAt: new Date('2024-04-24T14:47:10.000000Z'),
+  media: [],
+  rights: {
+    users: [
+      {
+        id: 1,
+        login: 'Market',
+        right: ModuleUserRightEnum.OWNER,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.OWNER
+        }
+      }
+    ],
+    groups: []
+  }
+};
+
+export const moduleComposedViewer: Module = {
+  id: 1,
+  language: 'french',
+  title: 'Module title',
+  parentId: null,
+  description: 'Module description',
+  timer: '00:00:00',
+  nbAttempts: 0,
+  successRate: 0,
+  displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
+  version: 1,
+  status: ModuleStatusEnum.DRAFT,
+  composition: JSON.stringify(defaultModuleComposition),
+  tags: [],
+  isLocked: false,
+  isPublic: false,
+  isLastPublishedOrArchivedVersion: false,
+  isLastVersion: true,
+  updatedAt: new Date('2024-04-24T14:47:10.000000Z'),
+  media: [],
+  rights: {
+    users: [
+      {
+        id: 1,
+        login: 'Market',
+        right: ModuleUserRightEnum.VIEWER,
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        //@ts-expect-error
+        pivot: {
+          right: ModuleUserRightEnum.VIEWER
+        }
+      }
+    ],
+    groups: []
+  }
+};

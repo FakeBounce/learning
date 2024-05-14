@@ -12,6 +12,8 @@ import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 
+jest.mock('@src/pages/applicants/applicants-profile/ApplicantsProfileHeader', () => jest.fn());
+
 const externalTesterUpdateTestConfig = {
   preloadedState: {
     applicants: {

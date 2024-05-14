@@ -1,35 +1,45 @@
-import { render, screen, fireEvent, act, waitFor } from '@testProvider';
+import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
 import UsersBulkFooter from '@src/pages/users/users-bulk/UsersBulkFooter';
 import { PATH_USERS } from '@utils/navigation/paths';
 import { initialUserState } from '@redux/reducers/usersReducer';
+import { useNavigate } from 'react-router-dom';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => jest.fn()
+  useNavigate: jest.fn()
 }));
 
 describe('UsersBulkFooter', () => {
-  it('renders UsersBulkFooter correctly', () => {
+  beforeEach(() => {
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+  });
+
+  afterEach(() => {
+    cleanup();
+    jest.clearAllMocks();
+  });
+
+  it('renders UsersBulkFooter correctly', async () => {
     render(<UsersBulkFooter />);
 
     // Ensure that the "Annuler" button is present
     const cancelButton = screen.getByText(/Annuler/i);
     expect(cancelButton).toBeInTheDocument();
 
-    act(() => {
+    await act(async () => {
       fireEvent.click(cancelButton);
     });
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(navigateMock).toHaveBeenCalledWith(PATH_USERS.root);
     });
   });
 
-  it('renders UsersBulkFooter with loadings', () => {
+  it('renders UsersBulkFooter with loadings', async () => {
     render(<UsersBulkFooter />, {
       preloadedState: {
-        applicants: {
+        users: {
           ...initialUserState,
           usersBulk: {
             usersBulkLoading: true
@@ -38,7 +48,7 @@ describe('UsersBulkFooter', () => {
       }
     });
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.getByText(/Enregistrer/i)).toBeDisabled();
     });
   });

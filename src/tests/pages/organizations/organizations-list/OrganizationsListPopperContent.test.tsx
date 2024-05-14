@@ -7,23 +7,23 @@ import OrganizationsListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/organizations/organizations-list/OrganizationsListMock';
 
-// Mock useNavigate
+const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn()
 }));
 
 describe('OrganizationsListPopperContent', () => {
+  beforeEach(() => {
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+  });
+
   afterEach(() => {
     jest.clearAllMocks();
     cleanup();
   });
 
   it('renders OrganizationsListPopperContent correctly', () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     const handleToggleBlockMock = jest.fn();
 
     render(
@@ -39,10 +39,6 @@ describe('OrganizationsListPopperContent', () => {
   });
 
   it('renders OrganizationsListPopperContent correctly with organization', () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     const handleToggleBlockMock = jest.fn();
 
     render(
@@ -56,10 +52,6 @@ describe('OrganizationsListPopperContent', () => {
   });
 
   it('navigate on handle button click', () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     const handleToggleBlockMock = jest.fn();
 
     render(
@@ -78,10 +70,6 @@ describe('OrganizationsListPopperContent', () => {
   });
 
   it("doesn't navigate if no organization", () => {
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     const handleToggleBlockMock = jest.fn();
 
     render(
@@ -101,10 +89,6 @@ describe('OrganizationsListPopperContent', () => {
 
   it('should change organization and navigate to dashboard on connect click', async () => {
     setupSuccessAxiosMock();
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
-
     const handleToggleBlockMock = jest.fn();
 
     render(
@@ -129,12 +113,8 @@ describe('OrganizationsListPopperContent', () => {
     expect(navigateMock).toHaveBeenCalledWith(PATH_DASHBOARD.root);
   });
 
-  it('should display an info if the user is already connected to the organization', async () => {
+  it('should call toggle block on click', async () => {
     setupSuccessAxiosMock();
-
-    // Mock useNavigate
-    const navigateMock = jest.fn().mockResolvedValueOnce({});
-    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
     const handleToggleBlockMock = jest.fn();
 
@@ -153,14 +133,11 @@ describe('OrganizationsListPopperContent', () => {
     );
 
     await act(async () => {
-      fireEvent.click(screen.getByText(/Se connecter/i));
+      fireEvent.click(screen.getByText(/Bloquer/i));
     });
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(handleToggleBlockMock).toHaveBeenCalled();
-      expect(screen.getByText(/Vous êtes déjà connecté à cette organisation/i)).toBeInTheDocument();
     });
   });
-
-  // @TODO: Test the toggleBlock when we do the confirmation modal as logic might change
 });

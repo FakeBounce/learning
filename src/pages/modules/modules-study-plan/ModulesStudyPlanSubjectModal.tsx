@@ -67,7 +67,7 @@ export default function ModulesStudyPlanSubjectModal({ isOpen, onClose }: Module
               </Trans>
             </Typography>
 
-            <RHFTextField name={'title'} label={'Titre du sujet'} required />
+            <RHFTextField name={'title'} label={<Trans>Titre du sujet</Trans>} required />
           </Box>
         </form>
       </FormProvider>

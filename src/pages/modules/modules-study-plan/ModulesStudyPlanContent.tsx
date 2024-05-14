@@ -19,14 +19,7 @@ import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading } from '@redux/reducers/modulesReducer';
 import { t } from '@lingui/macro';
 import { canDoModuleAction } from '@utils/feature-flag/canDoModuleAction';
-
-const reorder = (list: ModuleCompositionItem[], startIndex: number, endIndex: number) => {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-};
+import { reorder } from '@utils/helpers/sorters';
 
 export default function ModulesStudyPlanContent() {
   const { modulesCurrentData } = useAppSelector((state) => state.modules.modulesCurrent);
@@ -41,12 +34,25 @@ export default function ModulesStudyPlanContent() {
     if (!result.destination) {
       return;
     }
-
+    /**
+     * We need to split the draggableId to get the item id and the item type
+     * The draggableId is formatted like this: frontline-subject-1
+     *  0: frontline = root
+     *  1: type
+     *  2: id
+     *  3: backline = nested
+     *  4: type
+     *  5: id
+     */
     const splitted = result.draggableId.split('-');
     const itemId = Number(splitted[2]);
     const itemType = splitted[1] as ModuleCompositionItemType;
 
-    const items = reorder(internComposition, result.source.index, result.destination.index);
+    const items: ModuleCompositionItem[] = reorder(
+      internComposition,
+      result.source.index,
+      result.destination.index
+    );
     setInternComposition(items as ModuleCompositionItem[]);
     handleMoveItem(itemId, itemType, result.destination.index);
   };
@@ -76,38 +82,37 @@ export default function ModulesStudyPlanContent() {
     <Box display="flex" flex={1} flexDirection="column" gap={2} px={1}>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable">
-          {(provided: DroppableProvided) => {
-            return (
-              <Box
-                ref={provided.innerRef}
-                {...provided.droppableProps}
-                display="flex"
-                flex={1}
-                flexDirection="column"
-              >
-                {internComposition.map((subject: ModuleCompositionItem, index) => (
-                  <Draggable
-                    key={`frontline-${subject.id}`}
-                    draggableId={`frontline-${subject.type}-${subject.id}`}
-                    index={index}
-                    isDragDisabled={!canEditPlan}
-                  >
-                    {(providedDraggable, snapshotDraggable) => (
-                      <ModulesStudyPlanSubject
-                        key={subject.id}
-                        subject={subject}
-                        snapshotDraggable={snapshotDraggable}
-                        innerRef={providedDraggable.innerRef}
-                        draggableProps={providedDraggable.draggableProps}
-                        dragHandleProps={providedDraggable.dragHandleProps}
-                      />
-                    )}
-                  </Draggable>
-                ))}
-                {provided.placeholder}
-              </Box>
-            );
-          }}
+          {(provided: DroppableProvided) => (
+            <Box
+              ref={provided.innerRef}
+              {...provided.droppableProps}
+              display="flex"
+              flex={1}
+              flexDirection="column"
+            >
+              {internComposition.map((subject: ModuleCompositionItem, index) => (
+                <Draggable
+                  key={`frontline-${subject.id}`}
+                  draggableId={`frontline-${subject.type}-${subject.id}`}
+                  index={index}
+                  isDragDisabled={!canEditPlan}
+                >
+                  {(providedDraggable, snapshotDraggable) => (
+                    <ModulesStudyPlanSubject
+                      key={subject.id}
+                      subject={subject}
+                      snapshotDraggable={snapshotDraggable}
+                      innerRef={providedDraggable.innerRef}
+                      canDelete={canEditPlan}
+                      draggableProps={providedDraggable.draggableProps}
+                      dragHandleProps={providedDraggable.dragHandleProps}
+                    />
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </Box>
+          )}
         </Droppable>
       </DragDropContext>
     </Box>

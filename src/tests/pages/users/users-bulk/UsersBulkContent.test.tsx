@@ -21,7 +21,7 @@ describe('UsersBulkContent', () => {
     expect(screen.getByText(/Sélectionnez un fichier/i)).toBeInTheDocument();
   });
 
-  it('should display errors', () => {
+  it('should display errors', async () => {
     const handleDropAvatar = jest.fn();
     const removeFile = jest.fn();
     render(
@@ -35,7 +35,7 @@ describe('UsersBulkContent', () => {
       />
     );
 
-    waitFor(() => {
+    await waitFor(() => {
       expect(screen.getByText(/A classic error/i)).toBeInTheDocument();
     });
   });
