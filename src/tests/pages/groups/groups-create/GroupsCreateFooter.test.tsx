@@ -2,14 +2,19 @@ import { render, screen, act, fireEvent, waitFor, cleanup } from '@testProvider'
 import GroupsCreateFooter from '@src/pages/groups/groups-create/GroupsCreateFooter';
 import { PATH_GROUPS } from '@utils/navigation/paths';
 import { groupsInitialState } from '@redux/reducers/groupsReducer';
+import { useNavigate } from 'react-router-dom';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => jest.fn()
+  useNavigate: jest.fn()
 }));
 
 describe('GroupsCreateFooter', () => {
+  beforeEach(() => {
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+  });
+
   afterEach(() => {
     cleanup();
   });

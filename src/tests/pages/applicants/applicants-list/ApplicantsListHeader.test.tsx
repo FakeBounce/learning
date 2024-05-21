@@ -11,7 +11,6 @@ jest.mock('react-router', () => ({
   useOutletContext: jest.fn()
 }));
 
-// Mock useNavigate
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: jest.fn()

@@ -38,7 +38,7 @@ export default function LMSModal({
           </button>
         )}
         {validateAction && (
-          <button onClick={validateAction} disabled={isLoading}>
+          <button onClick={validateAction} type="submit" role="submit" disabled={isLoading}>
             <Trans>Valider</Trans>
           </button>
         )}

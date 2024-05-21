@@ -2,14 +2,19 @@ import { render, screen, act, fireEvent, waitFor, cleanup } from '@testProvider'
 import { PATH_ROLES } from '@utils/navigation/paths';
 import { rolesInitialState } from '@redux/reducers/rolesReducer';
 import RolesUpdateFooter from '@src/pages/roles/roles-update/RolesUpdateFooter';
+import { useNavigate } from 'react-router-dom';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => jest.fn()
+  useNavigate: jest.fn()
 }));
 
 describe('RolesUpdateFooter', () => {
+  beforeEach(() => {
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
+  });
+
   afterEach(() => {
     cleanup();
   });

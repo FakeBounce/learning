@@ -14,12 +14,14 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/rTz0M": {
     "translation": "Audio",
     "message": "Audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/s3YqS": {
     "translation": "Mise à jour",
@@ -30,12 +32,14 @@
   "02T80J": {
     "translation": "La vidéo n'existe pas",
     "message": "La vidéo n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "10kreC": {
     "translation": "Ajouter un sujet",
     "message": "Ajouter un sujet",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "1CtVQM": {
     "translation": "Module supprimé !",
@@ -58,37 +62,44 @@
   "2iSAaZ": {
     "translation": "Détails d'un module",
     "message": "Détails d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3t6kDf": {
     "translation": "Le lien est invalide",
     "message": "Le lien est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "4APrtN": {
     "translation": "L'url de la vidéo est requise",
     "message": "L'url de la vidéo est requise",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5+EnKV": {
     "translation": "Le document n'existe pas",
     "message": "Le document n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5BT3SC": {
     "translation": "L'audio n'existe pas",
     "message": "L'audio n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "5qQosN": {
     "translation": "Supprimer",
@@ -105,12 +116,14 @@
   "7PJftv": {
     "translation": "Une erreur est survenue lors du déplacement du sujet",
     "message": "Une erreur est survenue lors du déplacement du sujet",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7Zdnlq": {
     "translation": "Document",
     "message": "Document",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7cyFQz": {
     "translation": "Archivé",
@@ -121,17 +134,20 @@
   "7o5Ou5": {
     "translation": "Ajouter une vidéo",
     "message": "Ajouter une vidéo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "BNJMAr": {
     "translation": "Recommencer",
@@ -142,17 +158,20 @@
   "BWK3BV": {
     "translation": "Nom de l'image",
     "message": "Nom de l'image",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Cd8Jrf": {
     "translation": "Nom du document",
     "message": "Nom du document",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Czvpw8": {
     "translation": "Type de question",
     "message": "Type de question",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "DCKpq+": {
     "translation": "En correction",
@@ -163,22 +182,26 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "E3c+o8": {
     "translation": "Ajouter une image",
     "message": "Ajouter une image",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EK4bIm": {
     "translation": "Le fichier est requis",
     "message": "Le fichier est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Ef7StM": {
     "translation": "Unknown",
@@ -195,22 +218,26 @@
   "Fhcesg": {
     "translation": "Ajouter du contenu",
     "message": "Ajouter du contenu",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "INP3dF": {
     "translation": "Publié",
@@ -227,22 +254,26 @@
   "JoPv8n": {
     "translation": "Ajouter un document",
     "message": "Ajouter un document",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "KUTQn2": {
     "translation": "Type de contenu",
     "message": "Type de contenu",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "LzS4QP": {
     "translation": "Ajouter un audio",
     "message": "Ajouter un audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MO+Zo9": {
     "translation": "Veuillez sélectionner un type de question",
     "message": "Veuillez sélectionner un type de question",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -253,12 +284,14 @@
   "MZdToq": {
     "translation": "Testeurs",
     "message": "Testeurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "NIxUee": {
     "translation": "Durée du module",
@@ -281,7 +314,8 @@
   "OQ8lVl": {
     "translation": "Modifier",
     "message": "Modifier",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OYHzN1": {
     "translation": "Tags",
@@ -292,12 +326,14 @@
   "P+8krb": {
     "translation": "Le type de fichier est invalide",
     "message": "Le type de fichier est invalide",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "P54OXz": {
     "translation": "Ajouter un rôle",
     "message": "Ajouter un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "RJ5kAY": {
     "translation": "Nom du module",
@@ -308,17 +344,20 @@
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "Création d'un module",
     "message": "Création d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Sl+W+d": {
     "translation": "Nom de l'audio",
     "message": "Nom de l'audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "U2FMYj": {
     "translation": "Brouillon",
@@ -329,17 +368,20 @@
   "V8tP80": {
     "translation": "Titre du sujet",
     "message": "Titre du sujet",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "VSxOLW": {
     "translation": "L'image n'existe pas",
     "message": "L'image n'existe pas",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
     "message": "Aucune modification n'a été effectuée",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "XHiamB": {
     "translation": "Verrouiller",
@@ -350,12 +392,14 @@
   "XdArAS": {
     "translation": "Modules",
     "message": "Modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YLVbBi": {
     "translation": "Supprimer un module",
@@ -372,7 +416,8 @@
   "ZQUkGj": {
     "translation": "Vidéo",
     "message": "Vidéo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZYJB/d": {
     "translation": "Duppliquer",
@@ -383,22 +428,26 @@
   "a4QTdO": {
     "translation": "URL de l'audio",
     "message": "URL de l'audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "aP3N/0": {
     "translation": "Ok",
     "message": "Ok",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "cvRwVg": {
     "translation": "Le nom de la vidéo est requis",
     "message": "Le nom de la vidéo est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dBw0sb": {
     "translation": "Modifier un groupe",
     "message": "Modifier un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dyGH74": {
     "translation": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
@@ -415,12 +464,14 @@
   "eE7BkC": {
     "translation": "Veuillez sélectionner un type de contenu",
     "message": "Veuillez sélectionner un type de contenu",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eFlGiu": {
     "translation": "Le fichier est trop volumineux",
     "message": "Le fichier est trop volumineux",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "eG0+eP": {
     "translation": "Le module n'existe pas",
@@ -437,22 +488,26 @@
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "gv0P18": {
     "translation": "Aucun",
     "message": "Aucun",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hG89Ed": {
     "translation": "Image",
     "message": "Image",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "huVs7o": {
     "translation": "Rendre public",
@@ -469,22 +524,26 @@
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "iKSz5m": {
     "translation": "Le nom de l'image est requis",
     "message": "Le nom de l'image est requis",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lMLLuP": {
     "translation": "Dans le sujet",
     "message": "Dans le sujet",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "now6WU": {
     "translation": "Voir",
@@ -495,12 +554,14 @@
   "pM1m2w": {
     "translation": "Nom de la vidéo",
     "message": "Nom de la vidéo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "r60cpl": {
     "translation": "Un sujet",
@@ -535,22 +596,26 @@
   "uxeg1t": {
     "translation": "Créer des sujets permet d’organiser l’activité en classant les contenus dans des dossiers, selon un thème commun.",
     "message": "Créer des sujets permet d’organiser l’activité en classant les contenus dans des dossiers, selon un thème commun.",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "va6Oov": {
     "translation": "Retour",
     "message": "Retour",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vuenzM": {
     "translation": "Modifier un rôle",
     "message": "Modifier un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "xmHh2K": {
     "translation": "Jamais",
@@ -561,6 +626,7 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   }
 }

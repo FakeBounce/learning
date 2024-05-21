@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act, waitFor } from '@testProvider';
+import { render, screen, fireEvent, act, waitFor, cleanup } from '@testProvider';
 import ExternalTestersUpdate from '@src/pages/externalTesters/externalTesters-update/ExternalTestersUpdate';
 import { initialApplicantState } from '@redux/reducers/applicantsReducer';
 import { Route, Routes } from 'react-router';
@@ -8,7 +8,6 @@ import ExternalTestersUpdateMock, {
   setupSuccessAxiosMock,
   setupSuccessAxiosMockForConflicts
 } from '@src/tests/pages/externalTesters/externalTesters-update/ExternalTestersUpdateMock';
-import { cleanup } from '@testing-library/react';
 import { generatePath } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 

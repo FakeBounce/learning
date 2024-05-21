@@ -25,6 +25,7 @@ function RHFTextField({ name, helperText, size = 'small', ...other }: RHFTextFie
           error={!!error}
           helperText={error ? error?.message : helperText}
           size={size}
+          inputProps={{ 'data-testid': `rhf-textfield-${name}` }}
           {...other}
         />
       )}

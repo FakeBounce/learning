@@ -1,11 +1,10 @@
-import { cleanup, render, screen, act, fireEvent } from '@src/testProvider';
+import { cleanup, render, screen, act, fireEvent, waitFor } from '@src/testProvider';
 import RolesListModal from '@src/pages/roles/roles-list/RolesListModal';
 import { defaultRole } from '@src/tests/pages/roles/DefaultRole';
 import RolesMock, {
   rolesSetupErrorAxiosMock,
   rolesSetupSuccessAxiosMock
 } from '@src/tests/pages/roles/RolesMock';
-import { waitFor } from '@testing-library/dom';
 import { enqueueSnackbar } from 'notistack';
 import { rolesInitialState } from '@redux/reducers/rolesReducer';
 

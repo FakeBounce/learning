@@ -1,7 +1,6 @@
-import { render, screen, fireEvent, act } from '@testProvider';
+import { render, screen, fireEvent, act, waitFor } from '@testProvider';
 import Header from '@src/components/layouts/main-layout/Header';
 import { useNavigate } from 'react-router-dom';
-import { waitFor } from '@testing-library/dom';
 import HeaderMock, {
   headerSetupSuccessAxiosMock
 } from '@src/tests/components/layouts/main-layout/HeaderMock';

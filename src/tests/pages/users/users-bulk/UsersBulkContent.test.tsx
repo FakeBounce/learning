@@ -59,11 +59,9 @@ describe('UsersBulkContent', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(validRowsForUsersBulk[0].email as string)).toBeInTheDocument();
-        expect(screen.getByText(file.name as string)).toBeInTheDocument();
-      });
+    await waitFor(async () => {
+      expect(screen.getByText(validRowsForUsersBulk[0].email as string)).toBeInTheDocument();
+      expect(screen.getByText(file.name as string)).toBeInTheDocument();
     });
   });
 

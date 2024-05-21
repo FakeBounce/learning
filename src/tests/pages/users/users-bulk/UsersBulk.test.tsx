@@ -6,7 +6,7 @@ import UsersMock, { usersSetupSuccessAxiosMock } from '@src/tests/pages/users/Us
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => jest.fn()
+  useNavigate: jest.fn()
 }));
 
 describe('UsersBulk', () => {

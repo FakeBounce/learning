@@ -1,6 +1,7 @@
 import MockAdapter from 'axios-mock-adapter';
 import axios from '@utils/axios';
 import {
+  defaultMediaImage,
   defaultModule,
   defaultModuleComposed,
   defaultModulesList,
@@ -66,6 +67,51 @@ export const modulesSetupSuccessAxiosMock = () => {
   ModulesMock.onPut(/\/subjects\/\d+\/move/).reply(200, {
     success: true,
     message: { value: 'Subject moved successfully' },
+    data: defaultModuleComposed
+  });
+
+  /**
+   * Mock the move module subject endpoint
+   */
+  ModulesMock.onPut(/\/subjects\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Subject moved successfully' },
+    data: defaultModuleComposed
+  });
+
+  /**
+   * Mock the create module media endpoint
+   */
+  ModulesMock.onPost(/\/media/).reply(200, {
+    success: true,
+    message: { value: 'Media created successfully' },
+    data: defaultMediaImage
+  });
+
+  /**
+   * Mock the delete module media endpoint
+   */
+  ModulesMock.onDelete(/\/media\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Media deleted successfully' },
+    data: defaultModuleComposed
+  });
+
+  /**
+   * Mock the move module media endpoint
+   */
+  ModulesMock.onPut(/\/media\/\d+\/move/).reply(200, {
+    success: true,
+    message: { value: 'Media moved successfully' },
+    data: defaultModuleComposed
+  });
+
+  /**
+   * Mock the edit module media endpoint
+   */
+  ModulesMock.onPut(/\/media\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Media moved successfully' },
     data: defaultModuleComposed
   });
 };
