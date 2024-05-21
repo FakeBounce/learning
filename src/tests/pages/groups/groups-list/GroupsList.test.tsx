@@ -1,12 +1,10 @@
 import GroupsMock, { groupsSetupSuccessAxiosMock } from '@src/tests/pages/groups/GroupsMock';
-import { render, waitFor, screen, cleanup } from '@testProvider';
+import { render, waitFor, screen, cleanup, act, fireEvent } from '@testProvider';
 import GroupsList from '@src/pages/groups/groups-list/GroupsList';
 import { defaultGroupsList } from '@src/tests/pages/groups/DefaultGroup';
 import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import { useOutletContext } from 'react-router';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
-import { act } from '@testing-library/react';
-import { fireEvent } from '@testing-library/dom';
 
 jest.mock('react-router', () => ({
   ...jest.requireActual('react-router'),

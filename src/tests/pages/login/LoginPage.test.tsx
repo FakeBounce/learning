@@ -1,8 +1,7 @@
-import { render, screen, fireEvent, waitFor, act } from '@testProvider';
+import { render, screen, fireEvent, waitFor, act, cleanup } from '@testProvider';
 import Login from '@src/pages/login/LoginPage';
 import { useNavigate } from 'react-router-dom';
 import LoginAxiosMock, { setupSuccessAxiosMock } from './LoginAxiosMock';
-import { cleanup } from '@testing-library/react';
 
 // Mock useNavigate
 jest.mock('react-router-dom', () => ({

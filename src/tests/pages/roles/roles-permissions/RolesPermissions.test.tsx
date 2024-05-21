@@ -1,4 +1,4 @@
-import { render, screen, waitFor, cleanup, act } from '@testProvider';
+import { render, screen, waitFor, cleanup, act, fireEvent } from '@testProvider';
 import { translatePermissionsEnum } from '@utils/helpers/translatePermissions';
 import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 import RolesPermissions from '@src/pages/roles/roles-permissions/RolesPermissions';
@@ -6,7 +6,6 @@ import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_ERRORS, PATH_ROLES } from '@utils/navigation/paths';
 import RolesMock, { rolesSetupSuccessAxiosMock } from '@src/tests/pages/roles/RolesMock';
 import { Route, Routes } from 'react-router';
-import { fireEvent } from '@testing-library/dom';
 
 const navigateMock = jest.fn().mockResolvedValueOnce({});
 jest.mock('react-router-dom', () => ({

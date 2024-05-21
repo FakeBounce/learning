@@ -1,10 +1,9 @@
-import { render, screen, fireEvent, act } from '@testProvider';
+import { render, screen, fireEvent, act, waitFor } from '@testProvider';
 import ExternalTestersListModal from '@src/pages/externalTesters/externalTesters-list/ExternalTestersListModal';
 import { stateTester } from '../DefaultTesters';
 import ExternalTestersListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-list/ApplicantsListMock';
-import { waitFor } from '@testing-library/dom';
 
 describe('ExternalTestersListModal', () => {
   it('renders ExternalTestersListModal correctly', async () => {

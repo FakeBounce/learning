@@ -3,20 +3,19 @@ import ExternalTestersBulk from '@src/pages/externalTesters/externalTesters-bulk
 import ApplicantsBulkMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-bulk/ApplicantsBulkMock';
-import { initialApplicantState } from '@redux/reducers/applicantsReducer';
-import { PATH_APPLICANTS } from '@utils/navigation/paths';
+import { PATH_EXTERNAL_TESTERS } from '@utils/navigation/paths';
 import { validRowsForApplicantBulk } from '@src/tests/pages/applicants/DefaultApplicants';
+import { useNavigate } from 'react-router-dom';
 
 const navigateMock = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => jest.fn()
+  useNavigate: jest.fn()
 }));
 
 describe(' ExternalTestersBulk', () => {
   beforeEach(() => {
-    // Mock useNavigate
-    (navigateMock as jest.Mock).mockReturnValue(jest.fn());
+    (useNavigate as jest.Mock).mockReturnValue(navigateMock);
 
     setupSuccessAxiosMock();
   });
@@ -32,23 +31,6 @@ describe(' ExternalTestersBulk', () => {
 
     // Ensure that the "Annuler" button is present
     expect(screen.getByText(/Ajouter des testeurs en masse/i)).toBeInTheDocument();
-  });
-
-  it('should redirect if already created', () => {
-    render(<ExternalTestersBulk />, {
-      preloadedState: {
-        applicants: {
-          ...initialApplicantState,
-          applicantBulk: {
-            hasCreatedBulk: true
-          }
-        }
-      }
-    });
-
-    waitFor(() => {
-      expect(navigateMock).toHaveBeenCalledWith(PATH_APPLICANTS.root);
-    });
   });
 
   it('send form correctly', async () => {
@@ -92,6 +74,10 @@ describe(' ExternalTestersBulk', () => {
       expect(ApplicantsBulkMock.history.post[0].data).toContain(validRowsForApplicantBulk[0].email);
       expect(ApplicantsBulkMock.history.post[0].data).toContain(validRowsForApplicantBulk[1].email);
       expect(ApplicantsBulkMock.history.post[0].data).toContain(validRowsForApplicantBulk[2].email);
+    });
+
+    await waitFor(async () => {
+      expect(navigateMock).toHaveBeenCalledWith(PATH_EXTERNAL_TESTERS.root);
     });
   });
 

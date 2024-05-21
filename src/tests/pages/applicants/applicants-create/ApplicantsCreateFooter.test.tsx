@@ -12,7 +12,6 @@ jest.mock('react-router-dom', () => ({
 
 describe('ApplicantsCreateFooter', () => {
   beforeEach(() => {
-    // Mock useNavigate
     (useNavigate as jest.Mock).mockReturnValue(navigateMock);
   });
 

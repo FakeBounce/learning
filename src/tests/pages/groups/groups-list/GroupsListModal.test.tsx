@@ -1,8 +1,6 @@
-import { cleanup, render, screen } from '@testProvider';
+import { cleanup, render, screen, act, fireEvent } from '@testProvider';
 import GroupsListModal from '@src/pages/groups/groups-list/GroupsListModal';
 import { defaultGroup } from '@src/tests/pages/groups/DefaultGroup';
-import { fireEvent } from '@testing-library/dom';
-import { act } from '@testing-library/react';
 
 describe('GroupsListModal', () => {
   afterEach(() => {

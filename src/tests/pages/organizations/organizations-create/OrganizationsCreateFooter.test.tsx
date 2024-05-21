@@ -1,8 +1,7 @@
-import { render, screen, fireEvent } from '@testProvider';
+import { render, screen, fireEvent, act } from '@testProvider';
 import OrganizationsCreateFooter from '@src/pages/organizations/organizations-create/OrganizationsCreateFooter';
 import { useAppSelector } from '@redux/hooks';
 import { PATH_ORGANIZATIONS } from '@utils/navigation/paths';
-import { act } from 'react-dom/test-utils';
 import { useNavigate } from 'react-router-dom';
 
 jest.mock('@redux/hooks', () => ({

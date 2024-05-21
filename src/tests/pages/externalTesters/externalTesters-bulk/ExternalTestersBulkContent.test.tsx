@@ -24,7 +24,7 @@ describe('ExternalTestersBulkContent', () => {
     expect(screen.getByText(/Sélectionnez un fichier/i)).toBeInTheDocument();
   });
 
-  it('should display errors', () => {
+  it('should display errors', async () => {
     const handleDropAvatar = jest.fn();
     const removeFile = jest.fn();
     render(
@@ -38,7 +38,7 @@ describe('ExternalTestersBulkContent', () => {
       />
     );
 
-    waitFor(() => {
+    await waitFor(async () => {
       expect(screen.getByText(/A classic error/i)).toBeInTheDocument();
     });
   });

@@ -1,10 +1,9 @@
-import { render, screen, fireEvent, act } from '@testProvider';
+import { render, screen, fireEvent, act, waitFor } from '@testProvider';
 import ApplicantsListModal from '@src/pages/applicants/applicants-list/ApplicantsListModal';
 import { stateApplicant } from '@src/tests/pages/applicants/DefaultApplicants';
 import ApplicantsListMock, {
   setupSuccessAxiosMock
 } from '@src/tests/pages/applicants/applicants-list/ApplicantsListMock';
-import { waitFor } from '@testing-library/dom';
 
 describe('ApplicantsListModal', () => {
   it('renders ApplicantsListModal correctly', async () => {

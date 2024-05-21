@@ -24,7 +24,7 @@ describe('ApplicantsBulkContent', () => {
     expect(screen.getByText(/Sélectionnez un fichier/i)).toBeInTheDocument();
   });
 
-  it('should display errors', () => {
+  it('should display errors', async () => {
     const handleDropAvatar = jest.fn();
     const removeFile = jest.fn();
     render(
@@ -38,7 +38,7 @@ describe('ApplicantsBulkContent', () => {
       />
     );
 
-    waitFor(() => {
+    await waitFor(async () => {
       expect(screen.getByText(/A classic error/i)).toBeInTheDocument();
     });
   });
@@ -62,11 +62,9 @@ describe('ApplicantsBulkContent', () => {
       );
     });
 
-    act(() => {
-      waitFor(() => {
-        expect(screen.getByText(validRowsForApplicantBulk[0].email as string)).toBeInTheDocument();
-        expect(screen.getByText(file.name as string)).toBeInTheDocument();
-      });
+    await waitFor(async () => {
+      expect(screen.getByText(validRowsForApplicantBulk[0].email as string)).toBeInTheDocument();
+      expect(screen.getByText(file.name as string)).toBeInTheDocument();
     });
   });
 

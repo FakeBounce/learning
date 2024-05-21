@@ -1,8 +1,6 @@
-import { cleanup, render, screen } from '@testProvider';
-import { fireEvent } from '@testing-library/dom';
-import { act } from '@testing-library/react';
+import { cleanup, render, screen, act, fireEvent } from '@testProvider';
 import ModulesListModal from '@src/pages/modules/modules-list/ModulesListModal';
-import { defaultModule } from '@src/tests/pages/modules/defaultModule';
+import { moduleComposedViewer } from '@src/tests/pages/modules/defaultModule';
 
 describe('ModulesListModal', () => {
   afterEach(() => {
@@ -15,14 +13,14 @@ describe('ModulesListModal', () => {
 
     render(
       <ModulesListModal
-        moduleSelected={defaultModule}
+        moduleSelected={moduleComposedViewer}
         isModalOpen={true}
         cancelModal={cancelModal}
       />
     );
 
     expect(screen.getByText(/Supprimer un module/i)).toBeInTheDocument();
-    expect(screen.getByText(defaultModule.title)).toBeInTheDocument();
+    expect(screen.getByText(moduleComposedViewer.title)).toBeInTheDocument();
   });
 
   it('should delete the module and close the modal', () => {
@@ -30,7 +28,7 @@ describe('ModulesListModal', () => {
 
     render(
       <ModulesListModal
-        moduleSelected={defaultModule}
+        moduleSelected={moduleComposedViewer}
         isModalOpen={true}
         cancelModal={cancelModal}
       />

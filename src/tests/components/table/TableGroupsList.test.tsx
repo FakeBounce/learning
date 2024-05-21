@@ -1,11 +1,10 @@
-import { render, screen, act, renderHook, waitFor } from '@testProvider';
+import { render, screen, act, renderHook, waitFor, cleanup } from '@testProvider';
 import GroupsMock, { groupsSetupSuccessAxiosMock } from '@src/tests/pages/groups/GroupsMock';
 import { FormProvider, useForm } from 'react-hook-form';
 import TableGroupsList from '@src/components/table/TableGroupsList';
 import { RolesGroupsColumns } from '@src/pages/roles/roles-form/RolesUsersColumns';
 import { Group } from '@services/groups/interfaces';
 import { defaultGroupsList } from '@src/tests/pages/groups/DefaultGroup';
-import { cleanup } from '@testing-library/react';
 
 describe('TableGroupsList', () => {
   afterEach(() => {

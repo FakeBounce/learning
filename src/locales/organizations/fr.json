@@ -2,12 +2,14 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "/rTz0M": {
     "translation": "Audio",
     "message": "Audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2Vc4Um": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation <0>{0}</0> et tout ses utilisateurs ?",
@@ -18,17 +20,20 @@
   "2iSAaZ": {
     "translation": "Détails d'un module",
     "message": "Détails d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "4kCp92": {
     "translation": "L'email de l'admin est requis",
@@ -39,17 +44,20 @@
   "7Zdnlq": {
     "translation": "Document",
     "message": "Document",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7o5Ou5": {
     "translation": "Ajouter une vidéo",
     "message": "Ajouter une vidéo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "7uQ5BG": {
     "translation": "Adresse siège social",
@@ -60,7 +68,8 @@
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Be0x4u": {
     "translation": "Prénom admin client",
@@ -89,17 +98,20 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "E3c+o8": {
     "translation": "Ajouter une image",
     "message": "Ajouter une image",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "F8ESDf": {
     "translation": "Activé",
@@ -116,12 +128,14 @@
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HGYOb+": {
     "translation": "Bloqué",
@@ -132,7 +146,8 @@
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "HdNGur": {
     "translation": "Bloquer",
@@ -149,7 +164,8 @@
   "JoPv8n": {
     "translation": "Ajouter un document",
     "message": "Ajouter un document",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "JoxuHW": {
     "translation": "L'adresse est requise",
@@ -160,7 +176,8 @@
   "LzS4QP": {
     "translation": "Ajouter un audio",
     "message": "Ajouter un audio",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MZX/LX": {
     "translation": "Statut",
@@ -171,12 +188,14 @@
   "MZdToq": {
     "translation": "Testeurs",
     "message": "Testeurs",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "OQ8lVl": {
     "translation": "Modifier",
@@ -187,7 +206,8 @@
   "P54OXz": {
     "translation": "Ajouter un rôle",
     "message": "Ajouter un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "PedA04": {
     "translation": "Créer une organization",
@@ -198,12 +218,14 @@
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "S+0gfq": {
     "translation": "Création d'un module",
     "message": "Création d'un module",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ShMuaQ": {
     "translation": "Le nom est requis",
@@ -220,12 +242,14 @@
   "XdArAS": {
     "translation": "Modules",
     "message": "Modules",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "YNznY8": {
     "translation": "Ajouter",
@@ -236,7 +260,8 @@
   "ZQUkGj": {
     "translation": "Vidéo",
     "message": "Vidéo",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "ZpEiaW": {
     "translation": "Veuillez ajouter un logo",
@@ -253,7 +278,8 @@
   "dBw0sb": {
     "translation": "Modifier un groupe",
     "message": "Modifier un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "dg0WGC": {
     "translation": "L'organisation n'existe pas",
@@ -264,7 +290,8 @@
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "fu2rxk": {
     "translation": "Enregistrer",
@@ -293,12 +320,14 @@
   "hG89Ed": {
     "translation": "Image",
     "message": "Image",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "i5N/Tb": {
     "translation": "Profil d'un module",
@@ -315,7 +344,8 @@
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "kBPLqk": {
     "translation": "Êtes-vous sûr de vouloir bloquer l’organisation",
@@ -338,12 +368,14 @@
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "rBTdOL": {
     "translation": "L'identifiant est requis",
@@ -378,17 +410,20 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "vuenzM": {
     "translation": "Modifier un rôle",
     "message": "Modifier un rôle",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "z0t9bb": {
     "translation": "Login",

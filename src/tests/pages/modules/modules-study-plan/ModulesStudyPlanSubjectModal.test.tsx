@@ -41,7 +41,7 @@ describe('ModulesStudyPlanSubjectModal', () => {
       fireEvent.change(screen.getByLabelText(/Titre du sujet/i), {
         target: { value: 'New title' }
       });
-      fireEvent.click(screen.getByRole('button', { name: /Valider/i }));
+      fireEvent.click(screen.getByRole('submit'));
     });
 
     await waitFor(() => {
