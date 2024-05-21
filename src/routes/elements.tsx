@@ -113,3 +113,40 @@ export const ModulesCreate = LoadableComponent(
 export const ModulesProfile = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-profile/ModulesProfile'))
 );
+
+/**
+ * Modules Video
+ */
+export const ModulesVideoCreate = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-video/ModulesVideoCreate'))
+);
+export const ModulesVideoDetail = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-video/ModulesVideoDetail'))
+);
+/**
+ * Modules Images
+ */
+export const ModulesImageCreate = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-image/ModulesImageCreate'))
+);
+export const ModulesImageDetail = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-image/ModulesImageDetail'))
+);
+/**
+ * Modules Documents
+ */
+export const ModulesDocumentCreate = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-document/ModulesDocumentCreate'))
+);
+export const ModulesDocumentDetail = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-document/ModulesDocumentDetail'))
+);
+/**
+ * Modules Audios
+ */
+export const ModulesAudioCreate = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-audio/ModulesAudioCreate'))
+);
+export const ModulesAudioDetail = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-media/modules-audio/ModulesAudioDetail'))
+);

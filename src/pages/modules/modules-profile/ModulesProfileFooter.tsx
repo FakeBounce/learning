@@ -41,5 +41,5 @@ export default function ModulesProfileFooter() {
     );
   }
 
-  return <CardFooter cancelAction={() => toggleEditMode()} isLoading={modulesCurrentLoading} />;
+  return <CardFooter cancelAction={toggleEditMode} isLoading={modulesCurrentLoading} />;
 }

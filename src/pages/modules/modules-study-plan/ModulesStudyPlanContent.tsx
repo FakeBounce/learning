@@ -2,7 +2,9 @@ import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
 import {
+  Module,
   ModuleCompositionItem,
+  ModuleCompositionItemNested,
   ModuleCompositionItemType,
   ModulesActions
 } from '@services/modules/interfaces';
@@ -14,35 +16,37 @@ import {
   DropResult,
   DroppableProvided
 } from '@hello-pangea/dnd';
-import { moveSubjectAction } from '@redux/actions/modulesActions';
+import { moveMediaAction, moveSubjectAction } from '@redux/actions/modulesActions';
 import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading } from '@redux/reducers/modulesReducer';
 import { t } from '@lingui/macro';
 import { canDoModuleAction } from '@utils/feature-flag/canDoModuleAction';
 import { reorder } from '@utils/helpers/sorters';
+import ModulesStudyPlanMedia from '@src/pages/modules/modules-study-plan/ModulesStudyPlanMedia';
 
 export default function ModulesStudyPlanContent() {
-  const { modulesCurrentData } = useAppSelector((state) => state.modules.modulesCurrent);
-  const [internComposition, setInternComposition] = useState<ModuleCompositionItem[]>([]);
+  const { modulesCurrentData }: { modulesCurrentData: Module } = useAppSelector(
+    (state) => state.modules.modulesCurrent
+  );
+  const [internComposition, setInternComposition] = useState<
+    (ModuleCompositionItem | ModuleCompositionItemNested)[]
+  >([]);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    setInternComposition(modulesCurrentData ? JSON.parse(modulesCurrentData.composition) : []);
+    setInternComposition(modulesCurrentData ? modulesCurrentData.composition : []);
   }, [modulesCurrentData]);
 
   const onDragEnd = (result: DropResult) => {
-    if (!result.destination) {
+    if (!result.destination || result.source.index === result.destination.index) {
       return;
     }
     /**
      * We need to split the draggableId to get the item id and the item type
      * The draggableId is formatted like this: frontline-subject-1
-     *  0: frontline = root
+     *  0: frontline = root / backline = nested
      *  1: type
      *  2: id
-     *  3: backline = nested
-     *  4: type
-     *  5: id
      */
     const splitted = result.draggableId.split('-');
     const itemId = Number(splitted[2]);
@@ -58,18 +62,23 @@ export default function ModulesStudyPlanContent() {
   };
 
   const handleMoveItem = async (
-    subjectId: number,
+    itemId: number,
     itemType: ModuleCompositionItemType,
     newPosition: number
   ) => {
     try {
-      if (itemType === ModuleCompositionItemType.SUBJECT) {
-        await dispatch(moveSubjectAction({ subjectId, newPosition }));
-        return;
+      switch (itemType) {
+        case ModuleCompositionItemType.SUBJECT:
+          await dispatch(moveSubjectAction({ subjectId: itemId, newPosition }));
+          return;
+        case ModuleCompositionItemType.MEDIA:
+          await dispatch(moveMediaAction({ mediaId: itemId, position: newPosition }));
+          return;
+        default:
+          throw t`Une erreur est survenue lors du déplacement du sujet`;
       }
-      throw t`Une erreur est survenue lors du déplacement du sujet`;
     } catch (error) {
-      setInternComposition(modulesCurrentData ? JSON.parse(modulesCurrentData.composition) : []);
+      setInternComposition(modulesCurrentData ? modulesCurrentData.composition : []);
       enqueueSnackbar(error as string, { variant: 'error' });
       dispatch(resetModuleLoading());
     }
@@ -89,27 +98,49 @@ export default function ModulesStudyPlanContent() {
               display="flex"
               flex={1}
               flexDirection="column"
+              gap={1}
             >
-              {internComposition.map((subject: ModuleCompositionItem, index) => (
-                <Draggable
-                  key={`frontline-${subject.id}`}
-                  draggableId={`frontline-${subject.type}-${subject.id}`}
-                  index={index}
-                  isDragDisabled={!canEditPlan}
-                >
-                  {(providedDraggable, snapshotDraggable) => (
-                    <ModulesStudyPlanSubject
-                      key={subject.id}
-                      subject={subject}
-                      snapshotDraggable={snapshotDraggable}
-                      innerRef={providedDraggable.innerRef}
-                      canDelete={canEditPlan}
-                      draggableProps={providedDraggable.draggableProps}
-                      dragHandleProps={providedDraggable.dragHandleProps}
-                    />
-                  )}
-                </Draggable>
-              ))}
+              {internComposition.map(
+                (compositionItem: ModuleCompositionItem | ModuleCompositionItemNested, index) => (
+                  <Draggable
+                    key={`frontline-${compositionItem.type}-${compositionItem.id}`}
+                    draggableId={`frontline-${compositionItem.type}-${compositionItem.id}`}
+                    index={index}
+                    isDragDisabled={!canEditPlan}
+                  >
+                    {(providedDraggable, snapshotDraggable) => {
+                      switch (compositionItem.type) {
+                        case ModuleCompositionItemType.SUBJECT:
+                          return (
+                            <ModulesStudyPlanSubject
+                              key={compositionItem.id}
+                              subject={compositionItem as ModuleCompositionItem}
+                              snapshotDraggable={snapshotDraggable}
+                              innerRef={providedDraggable.innerRef}
+                              canEdit={canEditPlan}
+                              draggableProps={providedDraggable.draggableProps}
+                              dragHandleProps={providedDraggable.dragHandleProps}
+                            />
+                          );
+                        case ModuleCompositionItemType.MEDIA:
+                          return (
+                            <ModulesStudyPlanMedia
+                              key={compositionItem.id}
+                              media={compositionItem}
+                              snapshotDraggable={snapshotDraggable}
+                              innerRef={providedDraggable.innerRef}
+                              canDelete={canEditPlan}
+                              draggableProps={providedDraggable.draggableProps}
+                              dragHandleProps={providedDraggable.dragHandleProps}
+                            />
+                          );
+                        default:
+                          return null;
+                      }
+                    }}
+                  </Draggable>
+                )
+              )}
               {provided.placeholder}
             </Box>
           )}

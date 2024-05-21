@@ -23,6 +23,7 @@ export const modulesSetupSuccessAxiosMock = () => {
   /**
    * Mock the get modules list endpoint
    */
+
   ModulesMock.onPost('/modules/filter').reply(200, {
     success: true,
     message: { value: 'Module fetched successfully' },

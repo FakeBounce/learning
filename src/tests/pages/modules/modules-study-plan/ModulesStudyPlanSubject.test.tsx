@@ -28,7 +28,7 @@ describe('ModulesStudyPlanSubject', () => {
         }
         innerRef={() => {}}
         draggableProps={{} as any}
-        canDelete={false}
+        canEdit={false}
         dragHandleProps={{} as any}
       />,
       {
@@ -59,7 +59,7 @@ describe('ModulesStudyPlanSubject', () => {
         }
         innerRef={() => {}}
         draggableProps={{} as any}
-        canDelete={true}
+        canEdit={true}
         dragHandleProps={{} as any}
       />,
       {
@@ -91,7 +91,7 @@ describe('ModulesStudyPlanSubject', () => {
         }
         innerRef={() => {}}
         draggableProps={{} as any}
-        canDelete={true}
+        canEdit={true}
         dragHandleProps={{} as any}
       />
     );

@@ -7,6 +7,7 @@ import RolesMock, {
 } from '@src/tests/pages/roles/RolesMock';
 import { waitFor } from '@testing-library/dom';
 import { enqueueSnackbar } from 'notistack';
+import { rolesInitialState } from '@redux/reducers/rolesReducer';
 
 describe('RolesListModal', () => {
   afterEach(() => {
@@ -42,7 +43,22 @@ describe('RolesListModal', () => {
         isModalOpen={true}
         setIsModalOpen={setIsModalOpen}
         cancelModal={cancelModal}
-      />
+      />,
+      {
+        preloadedState: {
+          roles: {
+            ...rolesInitialState,
+            rolesDelete: {
+              rolesDeleteLoading: false
+            },
+            rolesList: {
+              rolesListData: [defaultRole],
+              rolesListLoading: false,
+              rolesListTotalCount: 1
+            }
+          }
+        }
+      }
     );
 
     expect(screen.getByText(defaultRole.name)).toBeInTheDocument();
@@ -52,6 +68,8 @@ describe('RolesListModal', () => {
 
     await waitFor(() => {
       expect(RolesMock.history.delete.length).toBe(1);
+    });
+    await waitFor(() => {
       expect(cancelModal).toHaveBeenCalledTimes(1);
     });
   });

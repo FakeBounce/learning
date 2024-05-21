@@ -65,7 +65,7 @@ export interface Tag {
 }
 
 export interface Module {
-  composition: string;
+  composition: (ModuleCompositionItem | ModuleCompositionItemNested)[];
   description: string;
   displayAnswers: ModuleDisplayAnswers;
   id: number;
@@ -94,16 +94,52 @@ export interface ModuleSubject {
   title: string;
 }
 
+export interface ModuleMedia {
+  id: number;
+  position: number;
+  type: ModuleCompositionItemType;
+  mediaType: MediaType;
+  name: string;
+  path?: string;
+  file?: string;
+}
+
 export enum ModuleCompositionItemType {
   SUBJECT = 'subject',
-  QUESTION = 'question'
+  QUESTION = 'question',
+  MEDIA = 'media'
+}
+
+export enum QuestionType {
+  TRUE_FALSE = 'trueFalse',
+  CHECKBOX = 'checkbox',
+  MULTIPLE_CHOICE = 'multipleChoice',
+  TEXT_WITH_HOLE = 'textWithHole',
+  CLICKABLE_IMAGE = 'clickableImage',
+  FREE_TEXT = 'freeText'
+}
+
+export enum MediaType {
+  DOCUMENT = 'file',
+  IMAGE = 'image',
+  GIF = 'gif',
+  AUDIO = 'audio',
+  VIDEO = 'video'
+}
+
+export interface ModuleCompositionItemNested {
+  name: string;
+  id: number;
+  type: ModuleCompositionItemType;
+  path?: string;
+  mediaType?: MediaType;
 }
 
 export interface ModuleCompositionItem {
   name: string;
   id: number;
   type: ModuleCompositionItemType;
-  composition: ModuleCompositionItem[];
+  composition: ModuleCompositionItemNested[];
 }
 
 export interface CreateModuleRequest {
@@ -182,4 +218,66 @@ export interface MoveModuleSubjectResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: Module;
+}
+
+interface CreateModuleMediaRequestTypes {
+  subjectId?: number;
+  courseId?: number;
+  moduleId?: number;
+  mediaType: MediaType;
+  url?: string;
+  file?: File;
+  name: string;
+}
+
+// Utility type to enforce the presence of at least one of the keys
+type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<T, Exclude<keyof T, Keys>> &
+  {
+    [K in Keys]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<Keys, K>>>;
+  }[Keys];
+
+export type CreateModuleMediaRequest = RequireAtLeastOne<
+  CreateModuleMediaRequestTypes,
+  'subjectId' | 'courseId' | 'moduleId'
+>;
+
+export interface CreateModuleMediaResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ModuleMedia;
+}
+
+export type DeleteModuleMediaRequest = {
+  mediaId: number;
+};
+
+export interface DeleteModuleMediaResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export type MoveModuleMediaRequest = {
+  mediaId: number;
+  position: number;
+};
+
+export interface MoveModuleMediaResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export type UpdateModuleMediaRequest = {
+  mediaId: number;
+  name?: string;
+  url?: string;
+  file?: File;
+  mediaType?: MediaType;
+};
+
+export interface UpdateModuleMediaResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ModuleMedia;
 }

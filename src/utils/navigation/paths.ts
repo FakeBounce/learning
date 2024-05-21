@@ -96,5 +96,15 @@ const ROOT_MODULES = PATH_DASHBOARD.modules;
 export const PATH_MODULES = {
   root: ROOT_MODULES,
   add: path(ROOT_MODULES, '/create'),
-  profile: path(ROOT_MODULES, '/:moduleId')
+  profile: path(ROOT_MODULES, '/:moduleId'),
+  addQuestion: path(ROOT_MODULES, '/:moduleId/question/create'),
+  questionDetail: path(ROOT_MODULES, '/:moduleId/question/:questionId'),
+  addImage: path(ROOT_MODULES, '/:moduleId/image/create'),
+  imageDetail: path(ROOT_MODULES, '/:moduleId/image/:imageId'),
+  addVideo: path(ROOT_MODULES, '/:moduleId/video/create'),
+  videoDetail: path(ROOT_MODULES, '/:moduleId/video/:videoId'),
+  addDocument: path(ROOT_MODULES, '/:moduleId/document/create'),
+  documentDetail: path(ROOT_MODULES, '/:moduleId/document/:documentId'),
+  addAudio: path(ROOT_MODULES, '/:moduleId/audio/create'),
+  audioDetail: path(ROOT_MODULES, '/:moduleId/audio/:audioId')
 };

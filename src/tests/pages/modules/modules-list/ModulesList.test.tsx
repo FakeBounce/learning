@@ -12,19 +12,19 @@ jest.mock('react-router', () => ({
 }));
 
 describe('ModulesList', () => {
-  const mockupPageType = PermissionTypeEnum.GROUPS;
+  const mockupPageType = PermissionTypeEnum.MODULES;
 
   beforeEach(() => {
     (useOutletContext as jest.Mock).mockReturnValue({ pageType: mockupPageType });
+    ModulesMock.reset();
+    modulesSetupSuccessAxiosMock();
   });
 
   afterEach(() => {
     cleanup();
-    ModulesMock.reset();
   });
 
   it('should render ModulesList correctly', async () => {
-    modulesSetupSuccessAxiosMock();
     render(
       <FeatureFlagContext.Provider
         value={{
