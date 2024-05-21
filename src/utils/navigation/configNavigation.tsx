@@ -153,21 +153,6 @@ const groupsNavigationConfig = [
   }
 ];
 
-const modulesNavigationConfig = [
-  {
-    title: <Trans>Modules</Trans>,
-    path: PATH_MODULES.root
-  },
-  {
-    title: <Trans>Création d'un module</Trans>,
-    path: PATH_MODULES.add
-  },
-  {
-    title: <Trans>Profil d'un module</Trans>,
-    path: PATH_MODULES.profile
-  }
-];
-
 const rolesNavigationConfig = [
   {
     title: <Trans>Rôles</Trans>,
@@ -184,6 +169,53 @@ const rolesNavigationConfig = [
   {
     title: <Trans>Gestion des permissions</Trans>,
     path: PATH_ROLES.managePermission
+  }
+];
+
+const modulesNavigationConfig = [
+  {
+    title: <Trans>Modules</Trans>,
+    path: PATH_MODULES.root
+  },
+  {
+    title: <Trans>Création d'un module</Trans>,
+    path: PATH_MODULES.add
+  },
+  {
+    title: <Trans>Détails d'un module</Trans>,
+    path: PATH_MODULES.profile
+  },
+  {
+    title: <Trans>Ajouter une vidéo</Trans>,
+    path: PATH_MODULES.addVideo
+  },
+  {
+    title: <Trans>Vidéo</Trans>,
+    path: PATH_MODULES.videoDetail
+  },
+  {
+    title: <Trans>Ajouter une image</Trans>,
+    path: PATH_MODULES.addImage
+  },
+  {
+    title: <Trans>Image</Trans>,
+    path: PATH_MODULES.imageDetail
+  },
+  {
+    title: <Trans>Ajouter un document</Trans>,
+    path: PATH_MODULES.addDocument
+  },
+  {
+    title: <Trans>Document</Trans>,
+    path: PATH_MODULES.documentDetail
+  },
+  {
+    title: <Trans>Ajouter un audio</Trans>,
+    path: PATH_MODULES.addAudio
+  },
+  {
+    title: <Trans>Audio</Trans>,
+    path: PATH_MODULES.audioDetail
   }
 ];
 

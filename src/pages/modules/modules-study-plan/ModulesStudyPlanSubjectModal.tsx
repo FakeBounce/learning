@@ -11,7 +11,7 @@ import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading } from '@redux/reducers/modulesReducer';
 import { createSubjectAction } from '@redux/actions/modulesActions';
 
-interface ModulesStudyPlanProps {
+interface ModulesStudyPlanSubjectModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
@@ -20,7 +20,10 @@ const ModulesStudyPlanSubjectModalSchema = Yup.object().shape({
   title: Yup.string().required('Ce champ est requis')
 });
 
-export default function ModulesStudyPlanSubjectModal({ isOpen, onClose }: ModulesStudyPlanProps) {
+export default function ModulesStudyPlanSubjectModal({
+  isOpen,
+  onClose
+}: ModulesStudyPlanSubjectModalProps) {
   const { modulesCurrentData } = useAppSelector((state) => state.modules.modulesCurrent);
   const modulesLoading = useAppSelector((state) => state.modules.modulesLoading);
   const dispatch = useAppDispatch();

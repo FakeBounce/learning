@@ -1,9 +1,24 @@
-import { Modules, ModulesCreate, ModulesProfile } from '@src/routes/elements';
+import {
+  Modules,
+  ModulesCreate,
+  ModulesProfile,
+  ModulesVideoCreate,
+  ModulesVideoDetail,
+  ModulesImageCreate,
+  ModulesImageDetail,
+  ModulesDocumentCreate,
+  ModulesDocumentDetail,
+  ModulesAudioCreate,
+  ModulesAudioDetail
+} from '@src/routes/elements';
 import { PATH_MODULES } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 import ActionRestrictedRoute from '@utils/feature-flag/ActionRestrictedRoute';
+import ModulesRestrictedRoute from '@utils/feature-flag/ModulesRestrictedRoute';
+import { MediaType, ModulesActions } from '@services/modules/interfaces';
+import ModulesTypeRoute from '@utils/feature-flag/ModulesTypeRoute';
 
 const ModulesRoutes = () => {
   return (
@@ -17,8 +32,64 @@ const ModulesRoutes = () => {
       <Route element={<ActionRestrictedRoute actionNeededType={PermissionEnum.CREATE} />}>
         <Route path={PATH_MODULES.add} element={<ModulesCreate />} />
       </Route>
+      {ModulesVideoRoutes()}
+      {ModulesImagesRoutes()}
+      {ModulesDocumentRoutes()}
+      {ModulesAudioRoutes()}
     </Route>
   );
 };
 
 export default ModulesRoutes;
+
+const ModulesVideoRoutes = () => {
+  return (
+    <Route element={<ModulesTypeRoute contentType={MediaType.VIDEO} />}>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.EDIT} />}>
+        <Route path={PATH_MODULES.addVideo} element={<ModulesVideoCreate />} />
+      </Route>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>
+        <Route path={PATH_MODULES.videoDetail} element={<ModulesVideoDetail />} />
+      </Route>
+    </Route>
+  );
+};
+
+const ModulesImagesRoutes = () => {
+  return (
+    <Route element={<ModulesTypeRoute contentType={MediaType.IMAGE} />}>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.EDIT} />}>
+        <Route path={PATH_MODULES.addImage} element={<ModulesImageCreate />} />
+      </Route>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>
+        <Route path={PATH_MODULES.imageDetail} element={<ModulesImageDetail />} />
+      </Route>
+    </Route>
+  );
+};
+
+const ModulesDocumentRoutes = () => {
+  return (
+    <Route element={<ModulesTypeRoute contentType={MediaType.DOCUMENT} />}>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.EDIT} />}>
+        <Route path={PATH_MODULES.addDocument} element={<ModulesDocumentCreate />} />
+      </Route>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>
+        <Route path={PATH_MODULES.documentDetail} element={<ModulesDocumentDetail />} />
+      </Route>
+    </Route>
+  );
+};
+
+const ModulesAudioRoutes = () => {
+  return (
+    <Route element={<ModulesTypeRoute contentType={MediaType.AUDIO} />}>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.EDIT} />}>
+        <Route path={PATH_MODULES.addAudio} element={<ModulesAudioCreate />} />
+      </Route>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>
+        <Route path={PATH_MODULES.audioDetail} element={<ModulesAudioDetail />} />
+      </Route>
+    </Route>
+  );
+};

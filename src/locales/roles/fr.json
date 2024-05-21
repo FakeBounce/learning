@@ -8,14 +8,22 @@
   "/Wfz2D": {
     "translation": "Modifier un utilisateur",
     "message": "Modifier un utilisateur",
-    "comments": [],
-    "obsolete": false
+    "comments": []
+  },
+  "/rTz0M": {
+    "translation": "Audio",
+    "message": "Audio",
+    "comments": []
+  },
+  "2iSAaZ": {
+    "translation": "Détails d'un module",
+    "message": "Détails d'un module",
+    "comments": []
   },
   "2mcnZQ": {
     "translation": "Utilisateurs",
     "message": "Utilisateurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "3/5e4J": {
     "translation": "Le nom du groupe est requis",
@@ -26,8 +34,7 @@
   "3RK7em": {
     "translation": "Liste des modules",
     "message": "Liste des modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "5HGTfB": {
     "translation": "Supprimer un rôle",
@@ -41,17 +48,25 @@
     "comments": [],
     "obsolete": false
   },
+  "7Zdnlq": {
+    "translation": "Document",
+    "message": "Document",
+    "comments": []
+  },
+  "7o5Ou5": {
+    "translation": "Ajouter une vidéo",
+    "message": "Ajouter une vidéo",
+    "comments": []
+  },
   "7p5kLi": {
     "translation": "Dashboard",
     "message": "Dashboard",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "9wYFQH": {
     "translation": "Groupes",
     "message": "Groupes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Bmo0y3": {
     "translation": "OUI",
@@ -62,8 +77,7 @@
   "DDwdL4": {
     "translation": "Profil",
     "message": "Profil",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "DolR28": {
     "translation": "Êtes-vous sûr de vouloir supprimer le rôle <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
@@ -71,11 +85,15 @@
     "comments": [],
     "obsolete": false
   },
+  "E3c+o8": {
+    "translation": "Ajouter une image",
+    "message": "Ajouter une image",
+    "comments": []
+  },
   "EIxP9b": {
     "translation": "Gestion des rôles",
     "message": "Gestion des rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "FLD9GE": {
     "translation": "Modifier les utilisateurs",
@@ -92,20 +110,17 @@
   "GF/eyq": {
     "translation": "Ajouter en masse",
     "message": "Ajouter en masse",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "GoZkew": {
     "translation": "Organisations",
     "message": "Organisations",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "HbvbX+": {
     "translation": "Personnalisation",
     "message": "Personnalisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "IJxJfq": {
     "translation": "Groupe",
@@ -113,17 +128,25 @@
     "comments": [],
     "obsolete": false
   },
+  "JoPv8n": {
+    "translation": "Ajouter un document",
+    "message": "Ajouter un document",
+    "comments": []
+  },
+  "LzS4QP": {
+    "translation": "Ajouter un audio",
+    "message": "Ajouter un audio",
+    "comments": []
+  },
   "MZdToq": {
     "translation": "Testeurs",
     "message": "Testeurs",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "MeRGCv": {
     "translation": "Créer un testeur externe",
     "message": "Créer un testeur externe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Nu4oKW": {
     "translation": "Description",
@@ -146,20 +169,17 @@
   "P54OXz": {
     "translation": "Ajouter un rôle",
     "message": "Ajouter un rôle",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ROGnVQ": {
     "translation": "Gestion des permissions",
     "message": "Gestion des permissions",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "S+0gfq": {
     "translation": "Création d'un module",
     "message": "Création d'un module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "W3FHUJ": {
     "translation": "Aucune modification n'a été effectuée",
@@ -170,14 +190,12 @@
   "XdArAS": {
     "translation": "Modules",
     "message": "Modules",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "Xukbwg": {
     "translation": "Modifier une organisation",
     "message": "Modifier une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YNznY8": {
     "translation": "Ajouter",
@@ -185,23 +203,31 @@
     "comments": [],
     "obsolete": false
   },
+  "ZQUkGj": {
+    "translation": "Vidéo",
+    "message": "Vidéo",
+    "comments": []
+  },
   "dBw0sb": {
     "translation": "Modifier un groupe",
     "message": "Modifier un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eoO6cw": {
     "translation": "Liste des Parcours",
     "message": "Liste des Parcours",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "fvZGCG": {
     "translation": "Le rôle n'existe pas",
     "message": "Le rôle n'existe pas",
     "comments": [],
     "obsolete": false
+  },
+  "hG89Ed": {
+    "translation": "Image",
+    "message": "Image",
+    "comments": []
   },
   "hm4myw": {
     "translation": "Activités",
@@ -212,8 +238,7 @@
   "hsf9ph": {
     "translation": "Étudiants",
     "message": "Étudiants",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "i5N/Tb": {
     "translation": "Profil d'un module",
@@ -230,14 +255,12 @@
   "iJHuOY": {
     "translation": "Ajouter un groupe",
     "message": "Ajouter un groupe",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "lPgC5g": {
     "translation": "Créer un étudiant",
     "message": "Créer un étudiant",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "posy4G": {
     "translation": "Gérer les permissions",
@@ -248,8 +271,7 @@
   "q+G9Ft": {
     "translation": "Créer une organisation",
     "message": "Créer une organisation",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "sCvW+n": {
     "translation": "Appartient déjà au groupe",
@@ -266,14 +288,12 @@
   "v+QFYv": {
     "translation": "Testeurs externes",
     "message": "Testeurs externes",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "vuenzM": {
     "translation": "Modifier un rôle",
     "message": "Modifier un rôle",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "xj9DHS": {
     "translation": "NON",
@@ -284,7 +304,6 @@
   "yZC9OF": {
     "translation": "Rôles",
     "message": "Rôles",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   }
 }

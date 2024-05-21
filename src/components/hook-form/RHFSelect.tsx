@@ -7,12 +7,14 @@ type RHFSelectProps = TextFieldProps & {
   native?: boolean;
   maxHeight?: boolean | number;
   children: ReactNode;
+  size?: 'small' | 'medium';
 };
 
 function RHFSelect({
   name,
   native,
   maxHeight = 220,
+  size = 'small',
   helperText,
   children,
   ...other
@@ -28,6 +30,7 @@ function RHFSelect({
           {...field}
           select
           fullWidth
+          size={size}
           SelectProps={{
             native,
             MenuProps: {

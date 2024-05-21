@@ -3,12 +3,37 @@ import {
   ModuleCompositionItem,
   ModuleCompositionItemType,
   ModuleDisplayAnswers,
+  ModuleRights,
   ModuleStatusEnum,
   ModuleSubject,
-  ModuleUserRightEnum
+  ModuleUserRightEnum,
+  Tag
 } from '@services/modules/interfaces';
 
-export const defaultModule: Module = {
+interface ModuleFromAPI {
+  composition: string;
+  description: string;
+  displayAnswers: ModuleDisplayAnswers;
+  id: number;
+  isLastPublishedOrArchivedVersion: boolean;
+  isLastVersion: boolean;
+  isLocked: boolean;
+  isPublic: boolean;
+  language: string;
+  media: string[];
+  nbAttempts: number;
+  parentId: number | null;
+  rights: ModuleRights;
+  successRate: number;
+  status: ModuleStatusEnum;
+  tags: Tag[];
+  timer: string;
+  title: string;
+  updatedAt: Date;
+  version: number;
+}
+
+export const defaultModule: ModuleFromAPI = {
   id: 2,
   language: 'french',
   title: 'Module title',
@@ -45,7 +70,7 @@ export const defaultModule: Module = {
   }
 };
 
-export const defaultModuleContributor: Module = {
+export const defaultModuleContributor: ModuleFromAPI = {
   id: 2,
   language: 'french',
   title: 'Module title',
@@ -82,7 +107,7 @@ export const defaultModuleContributor: Module = {
   }
 };
 
-export const defaultModuleSupervisor: Module = {
+export const defaultModuleSupervisor: ModuleFromAPI = {
   id: 2,
   language: 'french',
   title: 'Module title',
@@ -119,7 +144,7 @@ export const defaultModuleSupervisor: Module = {
   }
 };
 
-export const defaultModuleViewer: Module = {
+export const defaultModuleViewer: ModuleFromAPI = {
   id: 2,
   language: 'french',
   title: 'Module title',
@@ -156,7 +181,7 @@ export const defaultModuleViewer: Module = {
   }
 };
 
-export const defaultModulesList: Module[] = [
+export const defaultModulesList: ModuleFromAPI[] = [
   {
     id: 2,
     language: 'french',
@@ -485,7 +510,7 @@ export const defaultModuleComposed: Module = {
   displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
   version: 1,
   status: ModuleStatusEnum.DRAFT,
-  composition: JSON.stringify(defaultModuleComposition),
+  composition: defaultModuleComposition,
   tags: [],
   isLocked: false,
   isPublic: false,
@@ -522,7 +547,7 @@ export const moduleComposedViewer: Module = {
   displayAnswers: ModuleDisplayAnswers.AFTER_QUESTION,
   version: 1,
   status: ModuleStatusEnum.DRAFT,
-  composition: JSON.stringify(defaultModuleComposition),
+  composition: defaultModuleComposition,
   tags: [],
   isLocked: false,
   isPublic: false,

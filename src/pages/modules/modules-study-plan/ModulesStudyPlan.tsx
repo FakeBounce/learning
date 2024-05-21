@@ -9,6 +9,7 @@ import ModulesStudyPlanContent from '@src/pages/modules/modules-study-plan/Modul
 import ModulesStudyPlanTitle from '@src/pages/modules/modules-study-plan/ModulesStudyPlanTitle';
 import { STUDY_PLAN_WIDTH } from '@utils/globalConsts';
 import LMSPopover from '@src/components/lms/LMSPopover';
+import ModulesStudyPlanContentModal from '@src/pages/modules/modules-study-plan/ModulesStudyPlanContentModal';
 
 export default function ModulesStudyPlan() {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -69,7 +70,7 @@ export default function ModulesStudyPlan() {
         onClose={() => setIsSubjectModalOpen(false)}
         isOpen={isSubjectModalOpen}
       />
-      <ModulesStudyPlanSubjectModal
+      <ModulesStudyPlanContentModal
         onClose={() => setIsContentModalOpen(false)}
         isOpen={isContentModalOpen}
       />

@@ -26,7 +26,9 @@ export const fileValidator = Yup.mixed<File | string>()
       return false;
     } // Empty string, validation fails
     if (value instanceof File) {
-      return ['image/jpeg', 'image/png', 'image/gif'].includes(value.type);
+      return ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/svg+xml'].includes(
+        value.type
+      );
     }
     return true; // Non-empty string (filename), validation passes
   });

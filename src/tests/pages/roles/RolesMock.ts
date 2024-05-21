@@ -52,7 +52,7 @@ export const rolesSetupSuccessAxiosMock = () => {
   RolesMock.onDelete(/\/roles\/\d+/).reply(200, {
     success: true,
     message: {
-      value: 'Le rôle a été modifié avec succès.',
+      value: 'Le rôle a été supprimé avec succès.',
       level: 'success'
     }
   });
