@@ -2,6 +2,7 @@ import LMSModal from '@src/components/lms/LMSModal';
 import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
 import { Module } from '@services/modules/interfaces';
+import { useAppSelector } from '@redux/hooks';
 
 interface ModulesListModalProps {
   moduleSelected: Module | null;
@@ -16,6 +17,8 @@ export default function ModulesListModal({
   cancelModal,
   handleDeleteModule
 }: ModulesListModalProps) {
+  const { modulesLoading } = useAppSelector((state) => state.modules);
+
   const deleteModule = () => {
     if (moduleSelected !== null) {
       handleDeleteModule();
@@ -30,6 +33,7 @@ export default function ModulesListModal({
       onClose={cancelModal}
       validateAction={deleteModule}
       cancelAction={cancelModal}
+      isLoading={modulesLoading}
     >
       <Typography>
         <Trans>

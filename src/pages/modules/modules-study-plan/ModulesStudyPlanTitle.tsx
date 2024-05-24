@@ -3,11 +3,12 @@ import Skeleton from '@mui/material/Skeleton';
 import Typography from '@mui/material/Typography';
 
 export default function ModulesStudyPlanTitle() {
-  const { modulesCurrentData, modulesCurrentLoading } = useAppSelector(
-    (state) => state.modules.modulesCurrent
-  );
+  const {
+    modulesLoading,
+    modulesCurrent: { modulesCurrentData }
+  } = useAppSelector((state) => state.modules);
 
-  if (modulesCurrentLoading || !modulesCurrentData) {
+  if (modulesLoading || !modulesCurrentData) {
     return <Skeleton animation="pulse" variant="rectangular" />;
   }
 

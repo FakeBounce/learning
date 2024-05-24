@@ -16,9 +16,10 @@ import { resetModuleState } from '@redux/reducers/modulesReducer';
 export default function ModulesList() {
   const dispatch = useAppDispatch();
 
-  const { modulesListData, modulesListLoading, modulesListTotalCount } = useAppSelector(
-    (state) => state.modules.modulesList
-  );
+  const {
+    modulesLoading,
+    modulesList: { modulesListData, modulesListTotalCount }
+  } = useAppSelector((state) => state.modules);
 
   const [moduleSelected, setModuleSelected] = useState<Module | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -72,7 +73,7 @@ export default function ModulesList() {
         <TableWithSortAndFilter
           columns={modulesColumns(handleClick)}
           rows={modulesListData}
-          loading={modulesListLoading}
+          loading={modulesLoading}
           rowCount={modulesListTotalCount}
           onChange={handleTableChange}
           rowHeight={80}

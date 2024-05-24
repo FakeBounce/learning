@@ -104,7 +104,8 @@
   "5qQosN": {
     "translation": "",
     "message": "Supprimer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "6dUBla": {
     "translation": "",
@@ -307,20 +308,17 @@
   "Nu4oKW": {
     "translation": "",
     "message": "Description",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OQ8lVl": {
     "translation": "",
     "message": "Modifier",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "OYHzN1": {
     "translation": "",
     "message": "Tags",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "P+8krb": {
     "translation": "",
@@ -337,8 +335,7 @@
   "RJ5kAY": {
     "translation": "",
     "message": "Nom du module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "ROGnVQ": {
     "translation": "",
@@ -420,7 +417,8 @@
   "ZYJB/d": {
     "translation": "",
     "message": "Duppliquer",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "a4QTdO": {
     "translation": "",
@@ -472,8 +470,7 @@
   "eG0+eP": {
     "translation": "",
     "message": "Le module n'existe pas",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eVDAkI": {
     "translation": "",
@@ -544,7 +541,8 @@
   "now6WU": {
     "translation": "",
     "message": "Voir",
-    "comments": []
+    "comments": [],
+    "obsolete": false
   },
   "pM1m2w": {
     "translation": "",
@@ -567,8 +565,7 @@
   "rMJNt/": {
     "translation": "",
     "message": "Langue",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "rSV0Vm": {
     "translation": "",
@@ -585,8 +582,7 @@
   "uAJKId": {
     "translation": "",
     "message": "Assignez une valeur et appuyez sur la touche entrée",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "uxeg1t": {
     "translation": "",

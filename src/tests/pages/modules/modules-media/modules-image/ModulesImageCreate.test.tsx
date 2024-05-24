@@ -76,7 +76,6 @@ describe('ModulesImageCreate', () => {
             ...initialModulesState,
             modulesCurrent: {
               modulesCurrentData: defaultModuleComposed,
-              modulesCurrentLoading: false,
               modulesCurrentIsEditing: false
             }
           }

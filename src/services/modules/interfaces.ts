@@ -163,6 +163,27 @@ export interface CreateModuleResponse {
   data: Module;
 }
 
+export interface UpdateModuleRequest {
+  media?: File;
+  timer?: string;
+  nbAttempts?: number;
+  successRate?: number;
+  displayAnswers?: ModuleDisplayAnswers;
+  isLocked?: '1' | '0';
+  isPublic?: '1' | '0';
+  title?: string;
+  languageId?: number;
+  description?: string;
+  tags?: string[];
+  moduleId: number;
+}
+
+export interface UpdateModuleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
 export interface GetModulesRequest {
   currentPage: number;
   rowsPerPage: number;

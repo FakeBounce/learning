@@ -6,9 +6,10 @@ import { EditorProps } from '@src/components/editor/types';
 
 interface RHFEditorProps extends EditorProps {
   name: string;
+  disabled?: boolean;
 }
 
-export default function RHFEditor({ name, helperText, ...other }: RHFEditorProps) {
+export default function RHFEditor({ name, helperText, disabled, ...other }: RHFEditorProps) {
   const {
     control,
     watch,
@@ -34,6 +35,7 @@ export default function RHFEditor({ name, helperText, ...other }: RHFEditorProps
         <Editor
           id={name}
           value={field.value}
+          disabled={disabled}
           onChange={field.onChange}
           error={!!error}
           helperText={

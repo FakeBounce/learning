@@ -8,9 +8,10 @@ import { ModulesActions } from '@services/modules/interfaces';
 import { canDoModuleAction } from '@utils/feature-flag/canDoModuleAction';
 
 export default function ModulesProfileFooter() {
-  const { modulesCurrentData, modulesCurrentLoading, modulesCurrentIsEditing } = useAppSelector(
-    (state) => state.modules.modulesCurrent
-  );
+  const {
+    modulesLoading,
+    modulesCurrent: { modulesCurrentData, modulesCurrentIsEditing }
+  } = useAppSelector((state) => state.modules);
   const dispatch = useAppDispatch();
 
   const toggleEditMode = () => {
@@ -34,12 +35,12 @@ export default function ModulesProfileFooter() {
   if (!modulesCurrentIsEditing) {
     return (
       <Box display="flex">
-        <ActionButton onClick={toggleEditMode} loading={modulesCurrentLoading}>
+        <ActionButton onClick={toggleEditMode} loading={modulesLoading}>
           <Trans>Modifier</Trans>
         </ActionButton>
       </Box>
     );
   }
 
-  return <CardFooter cancelAction={toggleEditMode} isLoading={modulesCurrentLoading} />;
+  return <CardFooter cancelAction={toggleEditMode} isLoading={modulesLoading} />;
 }

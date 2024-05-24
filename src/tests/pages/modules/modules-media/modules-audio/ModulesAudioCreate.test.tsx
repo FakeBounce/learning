@@ -49,7 +49,6 @@ describe('ModulesAudioCreate', () => {
             ...initialModulesState,
             modulesCurrent: {
               modulesCurrentData: defaultModuleForMedias,
-              modulesCurrentLoading: false,
               modulesCurrentIsEditing: false
             }
           }

@@ -44,6 +44,24 @@ export const modulesSetupSuccessAxiosMock = () => {
   });
 
   /**
+   * Mock the delete module subject endpoint
+   */
+  ModulesMock.onPut(/\/modules\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Module deleted successfully' },
+    data: defaultModule
+  });
+
+  /**
+   * Mock the delete module subject endpoint
+   */
+  ModulesMock.onDelete(/\/modules\/\d+/).reply(200, {
+    success: true,
+    message: { value: 'Module deleted successfully' },
+    data: defaultModuleComposed
+  });
+
+  /**
    * Mock the create module subject endpoint
    */
   ModulesMock.onPost(/\/subjects/).reply(200, {
