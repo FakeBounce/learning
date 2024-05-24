@@ -2,14 +2,16 @@ import { LMSCard } from '@src/components/lms';
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
 import { MouseEvent, useState } from 'react';
 import TableWithSortAndFilter from '@src/components/table/TableWithSortAndFilter';
-import { TableRequestConfig } from '@services/interfaces';
+import { defaultTableRequestConfig, TableRequestConfig } from '@services/interfaces';
 import ModulesListHeader from '@src/pages/modules/modules-list/ModulesListHeader';
 import { Module } from '@services/modules/interfaces';
 import { modulesColumns } from '@src/pages/modules/modules-list/ModulesListColumns';
-import { getModulesAction } from '@redux/actions/modulesActions';
+import { deleteModuleAction, getModulesAction } from '@redux/actions/modulesActions';
 import LMSPopover from '@src/components/lms/LMSPopover';
 import ModulesListPopperContent from '@src/pages/modules/modules-list/ModulesListPopperContent';
 import ModulesListModal from '@src/pages/modules/modules-list/ModulesListModal';
+import { enqueueSnackbar } from 'notistack';
+import { resetModuleState } from '@redux/reducers/modulesReducer';
 
 export default function ModulesList() {
   const dispatch = useAppDispatch();
@@ -21,8 +23,11 @@ export default function ModulesList() {
   const [moduleSelected, setModuleSelected] = useState<Module | null>(null);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [moduleTableRequestConfig, setModuleTableRequestConfig] =
+    useState<TableRequestConfig>(defaultTableRequestConfig);
 
   const handleTableChange = (modulesRequestConfig: TableRequestConfig) => {
+    setModuleTableRequestConfig(modulesRequestConfig);
     dispatch(getModulesAction(modulesRequestConfig));
   };
 
@@ -35,6 +40,20 @@ export default function ModulesList() {
     }
     setModuleSelected(newModule);
     setAnchorEl(event.currentTarget);
+  };
+
+  const handleDeleteModule = async () => {
+    if (moduleSelected !== null) {
+      try {
+        await dispatch(deleteModuleAction({ moduleId: moduleSelected.id }));
+        dispatch(getModulesAction(moduleTableRequestConfig));
+      } catch (e) {
+        dispatch(resetModuleState());
+        enqueueSnackbar(e as string, { variant: 'error' });
+      }
+      // Reset the popper
+      cancelModal();
+    }
   };
 
   const cancelModal = () => {
@@ -71,6 +90,7 @@ export default function ModulesList() {
           moduleSelected={moduleSelected}
           isModalOpen={isModalOpen}
           cancelModal={cancelModal}
+          handleDeleteModule={handleDeleteModule}
         />
       )}
     </>

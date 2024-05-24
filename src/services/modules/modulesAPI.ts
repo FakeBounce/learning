@@ -28,7 +28,9 @@ import {
   MoveModuleQuestionRequest,
   MoveModuleQuestionResponse,
   UpdateModuleQuestionRequest,
-  UpdateModuleQuestionResponse
+  UpdateModuleQuestionResponse,
+  DeleteModuleResponse,
+  DeleteModuleRequest
 } from '@services/modules/interfaces';
 
 export const getModules = async (
@@ -58,6 +60,12 @@ export const createModule = async (
       'Content-Type': 'multipart/form-data'
     }
   });
+};
+
+export const deleteModule = async (
+  args: DeleteModuleRequest
+): Promise<AxiosResponse<DeleteModuleResponse>> => {
+  return axios.delete(`/modules/${args.moduleId}`);
 };
 
 export const createSubject = async (

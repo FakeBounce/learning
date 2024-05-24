@@ -3,7 +3,10 @@ import { PermissionTypeEnum } from '@services/permissions/interfaces';
 import { useOutletContext } from 'react-router';
 import { FeatureFlagContext } from '@utils/feature-flag/FeatureFlagProvider';
 import ModulesListPopperContent from '@src/pages/modules/modules-list/ModulesListPopperContent';
-import { defaultModule } from '@src/tests/pages/modules/defaultModule';
+import {
+  defaultModuleComposed,
+  moduleComposedViewer
+} from '@src/tests/pages/modules/defaultModule';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';
 
@@ -41,7 +44,7 @@ describe('ModulesListPopperContent', () => {
         }}
       >
         <ModulesListPopperContent
-          moduleSelected={defaultModule}
+          moduleSelected={defaultModuleComposed}
           handleDelete={handleDelete}
           handleDuplicate={handleDuplicate}
         />
@@ -68,7 +71,7 @@ describe('ModulesListPopperContent', () => {
         }}
       >
         <ModulesListPopperContent
-          moduleSelected={defaultModule}
+          moduleSelected={defaultModuleComposed}
           handleDelete={handleDelete}
           handleDuplicate={handleDuplicate}
         />
@@ -83,7 +86,31 @@ describe('ModulesListPopperContent', () => {
     });
 
     expect(navigateMock).toHaveBeenCalledWith(
-      generatePath(PATH_MODULES.profile, { moduleId: defaultModule.id })
+      generatePath(PATH_MODULES.profile, { moduleId: defaultModuleComposed.id })
     );
+  });
+
+  it('should not see delete if no rights', () => {
+    const handleDelete = jest.fn();
+    const handleDuplicate = jest.fn();
+
+    render(
+      <FeatureFlagContext.Provider
+        value={{
+          isAuthorizedByPermissionsTo: jest.fn().mockReturnValue(true),
+          canSeePage: jest.fn().mockReturnValue(true)
+        }}
+      >
+        <ModulesListPopperContent
+          moduleSelected={moduleComposedViewer}
+          handleDelete={handleDelete}
+          handleDuplicate={handleDuplicate}
+        />
+      </FeatureFlagContext.Provider>
+    );
+
+    expect(screen.getByText(/Voir/i)).toBeInTheDocument();
+    expect(screen.getByText(/Duppliquer/i)).toBeInTheDocument();
+    expect(screen.queryByText(/Supprimer/i)).not.toBeInTheDocument();
   });
 });

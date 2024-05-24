@@ -1,25 +1,24 @@
 import LMSModal from '@src/components/lms/LMSModal';
-import { t, Trans } from '@lingui/macro';
+import { Trans } from '@lingui/macro';
 import { Box, Typography } from '@mui/material';
-import { enqueueSnackbar } from 'notistack';
 import { Module } from '@services/modules/interfaces';
 
 interface ModulesListModalProps {
   moduleSelected: Module | null;
   isModalOpen: boolean;
   cancelModal: () => void;
+  handleDeleteModule: () => void;
 }
 
 export default function ModulesListModal({
   moduleSelected,
   isModalOpen,
-  cancelModal
+  cancelModal,
+  handleDeleteModule
 }: ModulesListModalProps) {
   const deleteModule = () => {
     if (moduleSelected !== null) {
-      //@TODO : call the delete action
-      enqueueSnackbar(t`Module supprimé !`, { variant: 'success' });
-      // Reset the popper
+      handleDeleteModule();
       cancelModal();
     }
   };

@@ -104,8 +104,7 @@
   "5qQosN": {
     "translation": "Supprimer",
     "message": "Supprimer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "6dUBla": {
     "translation": "Validation du module",
@@ -404,8 +403,7 @@
   "YLVbBi": {
     "translation": "Supprimer un module",
     "message": "Supprimer un module",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "YNznY8": {
     "translation": "Ajouter",
@@ -422,8 +420,7 @@
   "ZYJB/d": {
     "translation": "Duppliquer",
     "message": "Duppliquer",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "a4QTdO": {
     "translation": "URL de l'audio",
@@ -452,8 +449,7 @@
   "dyGH74": {
     "translation": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
     "message": "Êtes-vous sûr de vouloir supprimer le module <0>{0}</0> ainsi que tous les <1>groupes</1> et <2>utilisateurs</2> lui étant rattachés ?",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "eE0JZ4": {
     "translation": "Version",
@@ -548,8 +544,7 @@
   "now6WU": {
     "translation": "Voir",
     "message": "Voir",
-    "comments": [],
-    "obsolete": false
+    "comments": []
   },
   "pM1m2w": {
     "translation": "Nom de la vidéo",

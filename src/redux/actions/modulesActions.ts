@@ -7,6 +7,7 @@ import {
   CreateModuleSubjectRequest,
   DeleteModuleMediaRequest,
   DeleteModuleQuestionRequest,
+  DeleteModuleRequest,
   DeleteModuleSubjectRequest,
   GetModulesRequest,
   GetSingleModuleRequest,
@@ -52,6 +53,21 @@ export const createModuleAction = createAsyncThunk(
   async (args: CreateModuleRequest, { rejectWithValue }) => {
     try {
       const response = await ModulesServices.createModule(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const deleteModuleAction = createAsyncThunk(
+  'modules/delete',
+  async (args: DeleteModuleRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.deleteModule(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) {
