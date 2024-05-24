@@ -42,7 +42,7 @@ describe('ModulesStudyPlanSubject', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultCompositionItem.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultCompositionItem.name)).toBeInTheDocument();
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
   });
@@ -73,7 +73,7 @@ describe('ModulesStudyPlanSubject', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultCompositionItem.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultCompositionItem.name)).toBeInTheDocument();
       expect(screen.getByRole('button')).toBeInTheDocument();
       expect(screen.getByRole('button')).toBeDisabled();
     });
