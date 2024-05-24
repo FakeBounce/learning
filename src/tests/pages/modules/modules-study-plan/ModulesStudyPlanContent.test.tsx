@@ -33,7 +33,7 @@ describe('ModulesStudyPlanContent', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(defaultModuleComposition[0].name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultModuleComposition[0].name)).toBeInTheDocument();
     });
   });
 
@@ -51,13 +51,13 @@ describe('ModulesStudyPlanContent', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(defaultModuleComposition[0].name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultModuleComposition[0].name)).toBeInTheDocument();
     });
 
     act(() => {
-      pickUp(screen.getByText(defaultModuleComposition[0].name));
-      move(screen.getByText(defaultModuleComposition[0].name), DragDirection.DOWN);
-      drop(screen.getByText(defaultModuleComposition[0].name));
+      pickUp(screen.getByTitle(defaultModuleComposition[0].name));
+      move(screen.getByTitle(defaultModuleComposition[0].name), DragDirection.DOWN);
+      drop(screen.getByTitle(defaultModuleComposition[0].name));
     });
 
     await waitFor(() => {

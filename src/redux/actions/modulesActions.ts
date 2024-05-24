@@ -2,15 +2,19 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import * as ModulesServices from '@services/modules/modulesAPI';
 import {
   CreateModuleMediaRequest,
+  CreateModuleQuestionRequest,
   CreateModuleRequest,
   CreateModuleSubjectRequest,
   DeleteModuleMediaRequest,
+  DeleteModuleQuestionRequest,
   DeleteModuleSubjectRequest,
   GetModulesRequest,
   GetSingleModuleRequest,
   MoveModuleMediaRequest,
+  MoveModuleQuestionRequest,
   MoveModuleSubjectRequest,
-  UpdateModuleMediaRequest
+  UpdateModuleMediaRequest,
+  UpdateModuleQuestionRequest
 } from '@services/modules/interfaces';
 
 export const getModulesAction = createAsyncThunk(
@@ -153,6 +157,66 @@ export const updateMediaAction = createAsyncThunk(
   async (args: UpdateModuleMediaRequest, { rejectWithValue }) => {
     try {
       const response = await ModulesServices.updateMedia(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const createQuestionAction = createAsyncThunk(
+  'modules/createQuestion',
+  async (args: CreateModuleQuestionRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.createQuestion(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const deleteQuestionAction = createAsyncThunk(
+  'modules/deleteQuestion',
+  async (args: DeleteModuleQuestionRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.deleteQuestion(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const moveQuestionAction = createAsyncThunk(
+  'modules/moveQuestion',
+  async (args: MoveModuleQuestionRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.moveQuestion(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const updateQuestionAction = createAsyncThunk(
+  'modules/updateQuestion',
+  async (args: UpdateModuleQuestionRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.updateQuestion(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) {

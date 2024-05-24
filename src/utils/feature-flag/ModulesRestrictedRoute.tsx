@@ -1,8 +1,8 @@
 import { useAppDispatch, useAppSelector } from '@redux/hooks';
-import { useNavigate, useParams } from 'react-router-dom';
+import { matchPath, useNavigate, useParams } from 'react-router-dom';
 import { memo, useEffect } from 'react';
 import { getSingleModuleAction } from '@redux/actions/modulesActions';
-import { PATH_MODULES } from '@utils/navigation/paths';
+import { PATH_MODULES, pathToQuestionTypeMap } from '@utils/navigation/paths';
 import { enqueueSnackbar } from 'notistack';
 import { t } from '@lingui/macro';
 import {
@@ -19,13 +19,7 @@ interface OutletContextType {
   contentType: MediaType | ModuleCompositionItemType.QUESTION;
 }
 
-function ModulesRestrictedRoute({
-  actionRequired,
-  questionType
-}: {
-  actionRequired: ModulesActions;
-  questionType?: QuestionType;
-}) {
+function ModulesRestrictedRoute({ actionRequired }: { actionRequired: ModulesActions }) {
   const {
     modulesContentForm,
     modulesCurrent: { modulesCurrentData }
@@ -43,7 +37,23 @@ function ModulesRestrictedRoute({
       return;
     }
     if (modulesContentForm.contentType === null) {
+      /**
+       * Match the current path with questions path to find the question type
+       */
       if (contentType === ModuleCompositionItemType.QUESTION) {
+        let questionType: QuestionType | undefined;
+        for (const path in pathToQuestionTypeMap) {
+          if (matchPath({ path: path, end: true }, location.pathname)) {
+            questionType = pathToQuestionTypeMap[path];
+            break;
+          }
+        }
+
+        if (!questionType) {
+          navigate(PATH_MODULES.root);
+          enqueueSnackbar(t`Le type de question n'est pas défini`, { variant: 'error' });
+          return;
+        }
         dispatch(setContentForm({ contentType, questionType }));
       } else {
         dispatch(setContentForm({ contentType }));

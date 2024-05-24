@@ -18,7 +18,7 @@ describe('ModulesStudyPlanTitle', () => {
     });
 
     await waitFor(() => {
-      expect(screen.getByText(defaultModule.title)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultModule.title)).toBeInTheDocument();
     });
   });
 
@@ -36,7 +36,7 @@ describe('ModulesStudyPlanTitle', () => {
     });
 
     await waitFor(() => {
-      expect(screen.queryByText(defaultModule.title)).not.toBeInTheDocument();
+      expect(screen.queryByTitle(defaultModule.title)).not.toBeInTheDocument();
     });
   });
 });

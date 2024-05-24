@@ -6,21 +6,21 @@ import Iconify from '@src/components/iconify/Iconify';
 import { Theme } from '@mui/material/styles';
 import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading } from '@redux/reducers/modulesReducer';
-import { deleteMediaAction } from '@redux/actions/modulesActions';
-import { MediaType, ModuleCompositionItemNested } from '@services/modules/interfaces';
+import { deleteQuestionAction } from '@redux/actions/modulesActions';
+import { ModuleCompositionItemNested } from '@services/modules/interfaces';
 import { DraggableProvided, DraggableStateSnapshot } from '@hello-pangea/dnd';
 import { generatePath, useNavigate, useParams } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';
 
 interface ModulesStudyPlanSubjectProps extends DraggableProvided {
-  media: ModuleCompositionItemNested;
+  question: ModuleCompositionItemNested;
   snapshotDraggable: DraggableStateSnapshot;
   innerRef: (_element?: HTMLElement | null | undefined) => void;
   canDelete?: boolean;
 }
 
-export default function ModulesStudyPlanMedia({
-  media,
+export default function ModulesStudyPlanQuestion({
+  question,
   snapshotDraggable,
   innerRef,
   canDelete = false,
@@ -29,11 +29,11 @@ export default function ModulesStudyPlanMedia({
   const { modulesLoading } = useAppSelector((state) => state.modules);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { moduleId, videoId, imageId, documentId, audioId } = useParams();
+  const { moduleId, questionId } = useParams();
 
   const handleDeleteSubject = async () => {
     try {
-      await dispatch(deleteMediaAction({ mediaId: media.id }));
+      await dispatch(deleteQuestionAction({ questionId: question.id }));
     } catch (error) {
       enqueueSnackbar(error as string, { variant: 'error' });
       dispatch(resetModuleLoading());
@@ -41,41 +41,8 @@ export default function ModulesStudyPlanMedia({
   };
 
   const handleNavigateToDetail = () => {
-    switch (media.mediaType) {
-      case MediaType.VIDEO:
-        navigate(generatePath(PATH_MODULES.videoDetail, { moduleId, videoId: media.id }));
-        break;
-      case MediaType.IMAGE:
-      case MediaType.GIF:
-        navigate(generatePath(PATH_MODULES.imageDetail, { moduleId, imageId: media.id }));
-        break;
-      case MediaType.DOCUMENT:
-        navigate(generatePath(PATH_MODULES.documentDetail, { moduleId, documentId: media.id }));
-        break;
-      case MediaType.AUDIO:
-        navigate(generatePath(PATH_MODULES.audioDetail, { moduleId, audioId: media.id }));
-        break;
-      default:
-        break;
-    }
+    navigate(generatePath(PATH_MODULES.questionDetail, { moduleId, questionId: question.id }));
   };
-
-  const iconToDisplay = () => {
-    switch (media.mediaType) {
-      case MediaType.VIDEO:
-        return 'mdi:video';
-      case MediaType.IMAGE:
-        return 'carbon:image';
-      case MediaType.GIF:
-        return 'fluent:gif-20-filled';
-      case MediaType.AUDIO:
-        return 'f7:speaker-2-fill';
-      default:
-        return 'mdi:file-document-outline';
-    }
-  };
-
-  const mediaId = audioId || documentId || imageId || videoId || undefined;
 
   return (
     <Box py={0.5} ref={innerRef} {...other.draggableProps} {...other.dragHandleProps}>
@@ -88,7 +55,7 @@ export default function ModulesStudyPlanMedia({
         bgcolor={(theme) =>
           snapshotDraggable.isDragging
             ? theme.palette.primary.lighter
-            : mediaId === media.id.toString()
+            : questionId && questionId === question.id.toString()
             ? theme.palette.info.lighter
             : theme.palette.secondary.lighter
         }
@@ -96,7 +63,7 @@ export default function ModulesStudyPlanMedia({
       >
         <Box display="flex" gap={1} alignItems="center" onClick={handleNavigateToDetail}>
           <Iconify
-            icon={iconToDisplay()}
+            icon={'mingcute:question-fill'}
             width={20}
             sx={{ color: (theme: Theme) => theme.palette.secondary.main }}
           />
@@ -111,7 +78,7 @@ export default function ModulesStudyPlanMedia({
                 content: 'attr(title)'
               }
             }}
-            title={media.name}
+            title={question.name}
           />
         </Box>
         {canDelete && (

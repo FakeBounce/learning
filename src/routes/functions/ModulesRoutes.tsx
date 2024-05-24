@@ -9,15 +9,17 @@ import {
   ModulesDocumentCreate,
   ModulesDocumentDetail,
   ModulesAudioCreate,
-  ModulesAudioDetail
+  ModulesAudioDetail,
+  ModulesQuestionTrueFalse,
+  ModulesQuestionUnique
 } from '@src/routes/elements';
-import { PATH_MODULES } from '@utils/navigation/paths';
+import { PATH_MODULES, PATH_QUESTIONS } from '@utils/navigation/paths';
 import { Route } from 'react-router-dom';
 import FeatureFlagedRoute from '@utils/feature-flag/FeatureFlagedRoute';
 import { PermissionEnum, PermissionTypeEnum } from '@services/permissions/interfaces';
 import ActionRestrictedRoute from '@utils/feature-flag/ActionRestrictedRoute';
 import ModulesRestrictedRoute from '@utils/feature-flag/ModulesRestrictedRoute';
-import { MediaType, ModulesActions } from '@services/modules/interfaces';
+import { MediaType, ModuleCompositionItemType, ModulesActions } from '@services/modules/interfaces';
 import ModulesTypeRoute from '@utils/feature-flag/ModulesTypeRoute';
 
 const ModulesRoutes = () => {
@@ -36,6 +38,7 @@ const ModulesRoutes = () => {
       {ModulesImagesRoutes()}
       {ModulesDocumentRoutes()}
       {ModulesAudioRoutes()}
+      {ModulesQuestionRoutes()}
     </Route>
   );
 };
@@ -90,6 +93,20 @@ const ModulesAudioRoutes = () => {
       <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>
         <Route path={PATH_MODULES.audioDetail} element={<ModulesAudioDetail />} />
       </Route>
+    </Route>
+  );
+};
+
+const ModulesQuestionRoutes = () => {
+  return (
+    <Route element={<ModulesTypeRoute contentType={ModuleCompositionItemType.QUESTION} />}>
+      <Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.EDIT} />}>
+        <Route path={PATH_QUESTIONS.trueFalse} element={<ModulesQuestionTrueFalse />} />
+        <Route path={PATH_QUESTIONS.unique} element={<ModulesQuestionUnique />} />
+      </Route>
+      {/*<Route element={<ModulesRestrictedRoute actionRequired={ModulesActions.SEE} />}>*/}
+      {/*  <Route path={PATH_MODULES.audioDetail} element={<ModulesAudioDetail />} />*/}
+      {/*</Route>*/}
     </Route>
   );
 };

@@ -53,7 +53,7 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaImage.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaImage.name)).toBeInTheDocument();
 
       expect(screen.queryByRole('button')).not.toBeInTheDocument();
     });
@@ -82,7 +82,7 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaImage.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaImage.name)).toBeInTheDocument();
       expect(screen.getByRole('button')).toBeInTheDocument();
     });
 
@@ -119,11 +119,11 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaImage.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaImage.name)).toBeInTheDocument();
     });
 
     act(() => {
-      fireEvent.click(screen.getByText(defaultMediaImage.name));
+      fireEvent.click(screen.getByTitle(defaultMediaImage.name));
     });
 
     await waitFor(() => {
@@ -156,11 +156,11 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaVideo.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaVideo.name)).toBeInTheDocument();
     });
 
     act(() => {
-      fireEvent.click(screen.getByText(defaultMediaVideo.name));
+      fireEvent.click(screen.getByTitle(defaultMediaVideo.name));
     });
 
     await waitFor(() => {
@@ -193,11 +193,11 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaAudio.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaAudio.name)).toBeInTheDocument();
     });
 
     act(() => {
-      fireEvent.click(screen.getByText(defaultMediaAudio.name));
+      fireEvent.click(screen.getByTitle(defaultMediaAudio.name));
     });
 
     await waitFor(() => {
@@ -230,11 +230,11 @@ describe('ModulesStudyPlanMedia', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(defaultMediaDocument.name)).toBeInTheDocument();
+      expect(screen.getByTitle(defaultMediaDocument.name)).toBeInTheDocument();
     });
 
     act(() => {
-      fireEvent.click(screen.getByText(defaultMediaDocument.name));
+      fireEvent.click(screen.getByTitle(defaultMediaDocument.name));
     });
 
     await waitFor(() => {

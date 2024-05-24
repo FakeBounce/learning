@@ -7,7 +7,7 @@ import {
 import ModulesStudyPlanContentModal from '@src/pages/modules/modules-study-plan/ModulesStudyPlanContentModal';
 import { moduleContentTypes, moduleQuestionTypes } from '@utils/helpers/moduleContent';
 import { generatePath, useNavigate } from 'react-router-dom';
-import { PATH_MODULES } from '@utils/navigation/paths';
+import { PATH_MODULES, PATH_QUESTIONS } from '@utils/navigation/paths';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -91,7 +91,7 @@ describe('ModulesStudyPlanContentModal', () => {
 
     await waitFor(() => {
       expect(navigateMock).toHaveBeenCalledWith(
-        generatePath(PATH_MODULES.addQuestion, { moduleId: defaultModuleComposed.id })
+        generatePath(PATH_QUESTIONS.trueFalse, { moduleId: defaultModuleComposed.id })
       );
     });
   });

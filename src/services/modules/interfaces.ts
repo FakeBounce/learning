@@ -111,12 +111,13 @@ export enum ModuleCompositionItemType {
 }
 
 export enum QuestionType {
-  TRUE_FALSE = 'trueFalse',
-  CHECKBOX = 'checkbox',
-  MULTIPLE_CHOICE = 'multipleChoice',
-  TEXT_WITH_HOLE = 'textWithHole',
-  CLICKABLE_IMAGE = 'clickableImage',
-  FREE_TEXT = 'freeText'
+  TRUE_FALSE = 'true_false',
+  CHECKBOX = 'unique_choice',
+  MULTIPLE_CHOICE = 'multiple_choice',
+  CLASSIFY_IN_ORDER = 'classify_in_order',
+  TEXT_WITH_HOLE = 'gap_fill_text',
+  CLICKABLE_IMAGE = 'select_on_picture',
+  FREE_TEXT = 'open_question'
 }
 
 export enum MediaType {
@@ -277,6 +278,118 @@ export type UpdateModuleMediaRequest = {
 };
 
 export interface UpdateModuleMediaResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ModuleMedia;
+}
+
+export interface ModuleQuestionAnswerChoices {
+  content: string;
+  // @TODO Wait API change for boolean
+  rightAnswer: 1 | 0;
+}
+
+export interface ModuleQuestionAnswerClassify {
+  content: string;
+  proposalNb: number;
+  proposal: string;
+}
+
+export interface ModuleQuestionAnswerGap {
+  content: string;
+  gapNb: number;
+  trapWord: boolean;
+}
+
+export interface ModuleQuestionAnswerPicture {
+  content: string;
+  idZone: number;
+  zone: {
+    x1: number;
+    y1: number;
+    x2: number;
+    y2: number;
+    x3: number;
+    y3: number;
+    x4: number;
+    y4: number;
+  };
+  explanation: string;
+}
+
+export interface ModuleQuestion {
+  id: number;
+  title: string;
+  explanation?: string;
+  nbPoints: number;
+  questionType: QuestionType;
+  moduleId: number;
+  subjectId?: number;
+  answersRandomOrder: boolean;
+  isEliminatory: boolean;
+  nbErrorsAllowed: number;
+  media?: string;
+  answers: (
+    | ModuleQuestionAnswerChoices
+    | ModuleQuestionAnswerClassify
+    | ModuleQuestionAnswerGap
+    | ModuleQuestionAnswerPicture
+  )[];
+}
+
+export interface CreateModuleQuestionRequest {
+  subjectId?: number;
+  courseId?: number;
+  moduleId: number;
+  title: string;
+  explanation?: string;
+  nbPoints: number;
+  questionType: QuestionType;
+  // @TODO Wait API change for boolean
+  answersRandomOrder: 1 | 0;
+  isEliminatory: 1 | 0;
+  nbErrorsAllowed: number;
+  media?: File;
+  answers: (
+    | ModuleQuestionAnswerChoices
+    | ModuleQuestionAnswerClassify
+    | ModuleQuestionAnswerGap
+    | ModuleQuestionAnswerPicture
+  )[];
+}
+
+export interface CreateModuleQuestionResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: ModuleQuestion;
+}
+
+export type DeleteModuleQuestionRequest = {
+  questionId: number;
+};
+
+export interface DeleteModuleQuestionResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export type MoveModuleQuestionRequest = {
+  questionId: number;
+  newPosition: number;
+};
+
+export interface MoveModuleQuestionResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+  data: Module;
+}
+
+export interface UpdateModuleQuestionRequest extends Partial<ModuleQuestion> {
+  questionId: number;
+}
+
+export interface UpdateModuleQuestionResponse {
   success: boolean;
   message: ApiResponseMessage;
   data: ModuleMedia;

@@ -20,7 +20,15 @@ import {
   MoveModuleMediaRequest,
   MoveModuleMediaResponse,
   UpdateModuleMediaRequest,
-  UpdateModuleMediaResponse
+  UpdateModuleMediaResponse,
+  CreateModuleQuestionRequest,
+  CreateModuleQuestionResponse,
+  DeleteModuleQuestionRequest,
+  DeleteModuleQuestionResponse,
+  MoveModuleQuestionRequest,
+  MoveModuleQuestionResponse,
+  UpdateModuleQuestionRequest,
+  UpdateModuleQuestionResponse
 } from '@services/modules/interfaces';
 
 export const getModules = async (
@@ -97,4 +105,34 @@ export const updateMedia = async (
 ): Promise<AxiosResponse<UpdateModuleMediaResponse>> => {
   const { mediaId, ...rest } = args;
   return axios.put(`/media/${mediaId}`, rest);
+};
+
+export const createQuestion = async (
+  args: CreateModuleQuestionRequest
+): Promise<AxiosResponse<CreateModuleQuestionResponse>> => {
+  return axios.post(`/questions`, args, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+  });
+};
+
+export const deleteQuestion = async (
+  args: DeleteModuleQuestionRequest
+): Promise<AxiosResponse<DeleteModuleQuestionResponse>> => {
+  return axios.delete(`/questions/${args.questionId}`);
+};
+
+export const moveQuestion = async (
+  args: MoveModuleQuestionRequest
+): Promise<AxiosResponse<MoveModuleQuestionResponse>> => {
+  const { questionId, ...rest } = args;
+  return axios.put(`/questions/${questionId}/move`, rest);
+};
+
+export const updateQuestion = async (
+  args: UpdateModuleQuestionRequest
+): Promise<AxiosResponse<UpdateModuleQuestionResponse>> => {
+  const { questionId, ...rest } = args;
+  return axios.put(`/questions/${questionId}`, rest);
 };

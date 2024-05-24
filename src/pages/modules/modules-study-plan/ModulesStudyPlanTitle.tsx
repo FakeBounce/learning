@@ -7,6 +7,10 @@ export default function ModulesStudyPlanTitle() {
     (state) => state.modules.modulesCurrent
   );
 
+  if (modulesCurrentLoading || !modulesCurrentData) {
+    return <Skeleton animation="pulse" variant="rectangular" />;
+  }
+
   return (
     <Typography
       variant="h6"
@@ -15,14 +19,12 @@ export default function ModulesStudyPlanTitle() {
         whiteSpace: 'nowrap',
         overflow: 'hidden',
         px: 2,
-        py: 1
+        py: 1,
+        '&::before': {
+          content: 'attr(title)'
+        }
       }}
-    >
-      {modulesCurrentLoading || !modulesCurrentData ? (
-        <Skeleton animation="pulse" variant="rectangular" />
-      ) : (
-        modulesCurrentData.title
-      )}
-    </Typography>
+      title={modulesCurrentData ? modulesCurrentData.title : ''}
+    />
   );
 }
