@@ -1,4 +1,5 @@
 import './App.css';
+import 'react-quill/dist/quill.snow.css';
 import { dynamicActivate, getLocale } from '@src/i18n';
 import ThemeProvider from '@src/theme';
 import { useEffect } from 'react';
@@ -14,8 +15,6 @@ import { FeatureFlagProvider } from '@utils/feature-flag/FeatureFlagProvider';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3';
 import { fr } from 'date-fns/locale/fr';
-
-// ----------------------------------------------------------------------
 
 export default function App() {
   useEffect(() => {

@@ -38,6 +38,10 @@ export const moduleQuestionTypes = [
     value: QuestionType.MULTIPLE_CHOICE
   },
   {
+    label: t`Classifier dans l'ordre`,
+    value: QuestionType.CLASSIFY_IN_ORDER
+  },
+  {
     label: t`Texte à trou`,
     value: QuestionType.TEXT_WITH_HOLE
   },

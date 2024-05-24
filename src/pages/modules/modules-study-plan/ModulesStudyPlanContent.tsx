@@ -16,13 +16,18 @@ import {
   DropResult,
   DroppableProvided
 } from '@hello-pangea/dnd';
-import { moveMediaAction, moveSubjectAction } from '@redux/actions/modulesActions';
+import {
+  moveMediaAction,
+  moveQuestionAction,
+  moveSubjectAction
+} from '@redux/actions/modulesActions';
 import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading } from '@redux/reducers/modulesReducer';
 import { t } from '@lingui/macro';
 import { canDoModuleAction } from '@utils/feature-flag/canDoModuleAction';
 import { reorder } from '@utils/helpers/sorters';
 import ModulesStudyPlanMedia from '@src/pages/modules/modules-study-plan/ModulesStudyPlanMedia';
+import ModulesStudyPlanQuestion from '@src/pages/modules/modules-study-plan/ModulesStudyPlanQuestion';
 
 export default function ModulesStudyPlanContent() {
   const { modulesCurrentData }: { modulesCurrentData: Module } = useAppSelector(
@@ -74,8 +79,11 @@ export default function ModulesStudyPlanContent() {
         case ModuleCompositionItemType.MEDIA:
           await dispatch(moveMediaAction({ mediaId: itemId, position: newPosition }));
           return;
+        case ModuleCompositionItemType.QUESTION:
+          await dispatch(moveQuestionAction({ questionId: itemId, newPosition }));
+          return;
         default:
-          throw t`Une erreur est survenue lors du déplacement du sujet`;
+          throw t`Une erreur est survenue lors du déplacement`;
       }
     } catch (error) {
       setInternComposition(modulesCurrentData ? modulesCurrentData.composition : []);
@@ -127,6 +135,18 @@ export default function ModulesStudyPlanContent() {
                             <ModulesStudyPlanMedia
                               key={compositionItem.id}
                               media={compositionItem}
+                              snapshotDraggable={snapshotDraggable}
+                              innerRef={providedDraggable.innerRef}
+                              canDelete={canEditPlan}
+                              draggableProps={providedDraggable.draggableProps}
+                              dragHandleProps={providedDraggable.dragHandleProps}
+                            />
+                          );
+                        case ModuleCompositionItemType.QUESTION:
+                          return (
+                            <ModulesStudyPlanQuestion
+                              key={compositionItem.id}
+                              question={compositionItem}
                               snapshotDraggable={snapshotDraggable}
                               innerRef={providedDraggable.innerRef}
                               canDelete={canEditPlan}

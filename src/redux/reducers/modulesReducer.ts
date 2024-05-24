@@ -9,7 +9,12 @@ import {
   ModuleCompositionItemType,
   QuestionType
 } from '@services/modules/interfaces';
-import { addMediaItem, deleteMediaItem, updateMediaItem } from '@utils/helpers/modulesFunctions';
+import {
+  addNestedItem,
+  deleteMediaItem,
+  deleteQuestionItem,
+  updateMediaItem
+} from '@utils/helpers/modulesFunctions';
 
 export interface ModulesState {
   modulesList: {
@@ -161,7 +166,7 @@ export const modulesSlice = createSlice({
         state.modulesLoading = false;
         state.modulesCurrent.modulesCurrentData = {
           ...(state.modulesCurrent.modulesCurrentData as Module),
-          composition: addMediaItem(
+          composition: addNestedItem(
             state.modulesCurrent.modulesCurrentData?.composition || [],
             state.modulesContentForm.subjectId,
             {
@@ -215,6 +220,45 @@ export const modulesSlice = createSlice({
         enqueueSnackbar(t`Le média a bien été modifié`, { variant: 'success' });
       })
       .addCase(ModulesActions.updateMediaAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.createQuestionAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.createQuestionAction.fulfilled, (state, action) => {
+        state.modulesLoading = false;
+        state.modulesCurrent.modulesCurrentData = {
+          ...(state.modulesCurrent.modulesCurrentData as Module),
+          composition: addNestedItem(
+            state.modulesCurrent.modulesCurrentData?.composition || [],
+            state.modulesContentForm.subjectId,
+            {
+              name: action.payload.data.title,
+              id: action.payload.data.id,
+              type: ModuleCompositionItemType.QUESTION
+            }
+          )
+        };
+        enqueueSnackbar(t`La question a bien été ajoutée`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.createQuestionAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.deleteQuestionAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.deleteQuestionAction.fulfilled, (state, action) => {
+        state.modulesLoading = false;
+        state.modulesCurrent.modulesCurrentData = {
+          ...(state.modulesCurrent.modulesCurrentData as Module),
+          composition: deleteQuestionItem(
+            state.modulesCurrent.modulesCurrentData?.composition || [],
+            action.payload.data.id
+          )
+        };
+        enqueueSnackbar(t`La question a bien été supprimé`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.deleteQuestionAction.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       });
   }

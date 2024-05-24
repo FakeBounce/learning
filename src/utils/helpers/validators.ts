@@ -33,6 +33,31 @@ export const fileValidator = Yup.mixed<File | string>()
     return true; // Non-empty string (filename), validation passes
   });
 
+export const onlyFileValidator = Yup.mixed<File>()
+  // .test('fileRequired', t`La photo de profil est requise`, (value) => {
+  //   return !!value; // File or empty string, validation passes
+  // })
+  .test('fileSize', t`Le fichier est trop volumineux`, (value: File | undefined) => {
+    if (!value) {
+      return true;
+    } // No file uploaded, validation fails
+    if (value instanceof File) {
+      return value.size <= 200000; // Adjust file size limit as needed (200000 bytes = 200kb)
+    }
+    return true; // Non-empty string (filename), validation passes
+  })
+  .test('fileType', t`Le type de fichier est invalide`, (value: File | undefined) => {
+    if (!value) {
+      return true;
+    } // No file uploaded, validation fails
+    if (value instanceof File) {
+      return ['image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'image/svg+xml'].includes(
+        value.type
+      );
+    }
+    return true; // Non-empty string (filename), validation passes
+  });
+
 export const verifyFileForUpload = async (
   file: File | string | undefined,
   setError: UseFormSetError<any>

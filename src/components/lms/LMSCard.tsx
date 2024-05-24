@@ -19,7 +19,7 @@ const defaultCss = {
   paddingX: 5,
   paddingY: 4,
   borderColor: 'transparent',
-  borderRadius: 4
+  borderRadius: 4,
 };
 
 const pageCardCss = {
@@ -31,6 +31,7 @@ const pageCardCss = {
   borderRadius: 4,
   padding: 0,
   maxWidth: '100%',
+  paddingBottom: 3,
   marginBottom: 2
 };
 
@@ -73,7 +74,7 @@ export default function LMSCard({
           )}
 
           {footer && (
-            <Stack spacing={2} p={2} px={4} sx={{ mt: 2 }}>
+            <Stack spacing={2} pt={2} px={4} sx={{ mt: 2 }}>
               {footer}
             </Stack>
           )}

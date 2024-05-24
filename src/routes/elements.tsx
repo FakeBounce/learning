@@ -123,6 +123,7 @@ export const ModulesVideoCreate = LoadableComponent(
 export const ModulesVideoDetail = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-media/modules-video/ModulesVideoDetail'))
 );
+
 /**
  * Modules Images
  */
@@ -132,6 +133,7 @@ export const ModulesImageCreate = LoadableComponent(
 export const ModulesImageDetail = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-media/modules-image/ModulesImageDetail'))
 );
+
 /**
  * Modules Documents
  */
@@ -141,6 +143,7 @@ export const ModulesDocumentCreate = LoadableComponent(
 export const ModulesDocumentDetail = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-media/modules-document/ModulesDocumentDetail'))
 );
+
 /**
  * Modules Audios
  */
@@ -149,4 +152,14 @@ export const ModulesAudioCreate = LoadableComponent(
 );
 export const ModulesAudioDetail = LoadableComponent(
   lazy(() => import('@src/pages/modules/modules-media/modules-audio/ModulesAudioDetail'))
+);
+
+/**
+ * Modules Questions
+ */
+export const ModulesQuestionTrueFalse = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-question/modules-question-true-false/ModulesQuestionTrueFalse'))
+);
+export const ModulesQuestionUnique = LoadableComponent(
+  lazy(() => import('@src/pages/modules/modules-question/modules-question-unique/ModulesQuestionUnique'))
 );

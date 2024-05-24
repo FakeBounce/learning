@@ -17,7 +17,7 @@ import { enqueueSnackbar } from 'notistack';
 import { resetModuleLoading, setContentForm } from '@redux/reducers/modulesReducer';
 import RHFSelect from '@src/components/hook-form/RHFSelect';
 import { generatePath, useNavigate } from 'react-router-dom';
-import { PATH_MODULES } from '@utils/navigation/paths';
+import { getPathsForQuestions, PATH_MODULES } from '@utils/navigation/paths';
 
 const ModulesStudyPlanContentModalSchema = Yup.object().shape({
   subject: Yup.string().optional(),
@@ -70,7 +70,11 @@ export default function ModulesStudyPlanContentModal({
 
       switch (data.contentType) {
         case ModuleCompositionItemType.QUESTION:
-          navigate(generatePath(PATH_MODULES.addQuestion, { moduleId: modulesCurrentData?.id }));
+          navigate(
+            generatePath(getPathsForQuestions(data.questionType), {
+              moduleId: modulesCurrentData?.id
+            })
+          );
           break;
         case MediaType.IMAGE:
           navigate(generatePath(PATH_MODULES.addImage, { moduleId: modulesCurrentData?.id }));
@@ -85,6 +89,7 @@ export default function ModulesStudyPlanContentModal({
           navigate(generatePath(PATH_MODULES.addAudio, { moduleId: modulesCurrentData?.id }));
           break;
       }
+      handleClose();
     } catch (error) {
       enqueueSnackbar(error as string, { variant: 'error' });
       dispatch(resetModuleLoading());

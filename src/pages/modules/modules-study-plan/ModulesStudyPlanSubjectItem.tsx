@@ -45,11 +45,13 @@ export default function ModulesStudyPlanSubjectItem({
             textOverflow: 'ellipsis',
             whiteSpace: 'nowrap',
             overflow: 'hidden',
-            maxWidth: 100
+            maxWidth: 100,
+            '&::before': {
+              content: 'attr(title)'
+            }
           }}
-        >
-          {name}
-        </Typography>
+          title={name}
+        />
       </Box>
       {canEdit && (
         <IconButton onClick={onDelete} sx={{ p: 0 }} disabled={modulesLoading}>

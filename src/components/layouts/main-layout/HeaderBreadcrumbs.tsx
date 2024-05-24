@@ -31,7 +31,7 @@ export default function HeaderBreadcrumbs() {
           const isLast = index === pathSegments.length - 1;
 
           const currentPathConfig = globalNavigationConfig.find((config) => {
-            if (config.path.includes(':')) {
+            if (config.path && config.path.includes(':')) {
               // More robust checking for dynamic paths
               const regex = new RegExp('^' + config.path.replace(/:[^\s/]+/g, '([^/]+)') + '$');
               return regex.test(accumulatedPath);

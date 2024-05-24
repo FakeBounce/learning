@@ -8,6 +8,7 @@ import {
   PATH_MODULES,
   PATH_ORGANIZATIONS,
   PATH_PARAMETERS,
+  PATH_QUESTIONS,
   PATH_ROLES,
   PATH_USERS
 } from './paths';
@@ -219,6 +220,37 @@ const modulesNavigationConfig = [
   }
 ];
 
+const modulesQuestionsNavigationConfig = [
+  {
+    title: <Trans>Question : Vrai/Faux</Trans>,
+    path: PATH_QUESTIONS.trueFalse
+  },
+  {
+    title: <Trans>Question : Choix unique</Trans>,
+    path: PATH_QUESTIONS.unique
+  },
+  {
+    title: <Trans>Question : Choix multiple</Trans>,
+    path: PATH_QUESTIONS.multiChoice
+  },
+  {
+    title: <Trans>Question : Classifier</Trans>,
+    path: PATH_QUESTIONS.classify
+  },
+  {
+    title: <Trans>Question : Texte à trou</Trans>,
+    path: PATH_QUESTIONS.gap
+  },
+  {
+    title: <Trans>Question : Image cliquable</Trans>,
+    path: PATH_QUESTIONS.picture
+  },
+  {
+    title: <Trans>Question : Libre</Trans>,
+    path: PATH_QUESTIONS.open
+  }
+];
+
 // Global
 // ----------------------------------------------------------------------
 export const globalNavigationConfig = [
@@ -229,7 +261,8 @@ export const globalNavigationConfig = [
   ...externalTestersNavigationConfig,
   ...groupsNavigationConfig,
   ...rolesNavigationConfig,
-  ...modulesNavigationConfig
+  ...modulesNavigationConfig,
+  ...modulesQuestionsNavigationConfig
 ];
 
 export interface globalNavigationConfigType {
