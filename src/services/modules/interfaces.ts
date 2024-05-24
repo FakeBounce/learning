@@ -189,6 +189,15 @@ export interface GetSingleModuleResponse {
   data: Module;
 }
 
+export interface DeleteModuleRequest {
+  moduleId: number;
+}
+
+export interface DeleteModuleResponse {
+  success: boolean;
+  message: ApiResponseMessage;
+}
+
 export interface CreateModuleSubjectRequest {
   title: string;
   moduleId: number;

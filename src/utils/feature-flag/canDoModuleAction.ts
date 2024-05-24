@@ -10,9 +10,11 @@ export const canDoModuleAction = (module: Module, action: ModulesActions) => {
   const status = module.status as ModuleStatusEnum;
   // @TODO Should search the user / right should be retrieved from the first keys
   // @todo Fix this type casting with API returns
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-expect-error
-  const userRight = module.rights.users[0].pivot.right as ModuleUserRightEnum;
+  const userRight =
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-expect-error
+    (module.rights.users[0].pivot?.right as ModuleUserRightEnum) ||
+    (module.rights.users[0].right as ModuleUserRightEnum);
 
   const statusActions = modulesRestrictionsList[status];
   if (!statusActions) {

@@ -124,6 +124,16 @@ export const modulesSlice = createSlice({
       .addCase(ModulesActions.getSingleModuleAction.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       })
+      .addCase(ModulesActions.deleteModuleAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.deleteModuleAction.fulfilled, (state) => {
+        state.modulesLoading = false;
+        enqueueSnackbar(t`Le module a bien été supprimé`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.deleteModuleAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
       .addCase(ModulesActions.createSubjectAction.pending, (state) => {
         state.modulesLoading = true;
       })

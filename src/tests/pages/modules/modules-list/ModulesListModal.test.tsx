@@ -13,6 +13,7 @@ describe('ModulesListModal', () => {
 
     render(
       <ModulesListModal
+        handleDeleteModule={jest.fn()}
         moduleSelected={moduleComposedViewer}
         isModalOpen={true}
         cancelModal={cancelModal}
@@ -24,10 +25,12 @@ describe('ModulesListModal', () => {
   });
 
   it('should delete the module and close the modal', () => {
+    const handleDeleteModule = jest.fn();
     const cancelModal = jest.fn();
 
     render(
       <ModulesListModal
+        handleDeleteModule={handleDeleteModule}
         moduleSelected={moduleComposedViewer}
         isModalOpen={true}
         cancelModal={cancelModal}
@@ -40,13 +43,22 @@ describe('ModulesListModal', () => {
       fireEvent.click(deleteBtn);
     });
 
+    expect(handleDeleteModule).toHaveBeenCalledTimes(1);
     expect(cancelModal).toHaveBeenCalledTimes(1);
   });
 
   it("shouldn't delete if the module is null", () => {
     const cancelModal = jest.fn();
+    const handleDeleteModule = jest.fn();
 
-    render(<ModulesListModal moduleSelected={null} isModalOpen={true} cancelModal={cancelModal} />);
+    render(
+      <ModulesListModal
+        handleDeleteModule={handleDeleteModule}
+        moduleSelected={null}
+        isModalOpen={true}
+        cancelModal={cancelModal}
+      />
+    );
 
     const deleteBtn = screen.getByText(/Valider/i);
 
@@ -54,6 +66,7 @@ describe('ModulesListModal', () => {
       fireEvent.click(deleteBtn);
     });
 
+    expect(handleDeleteModule).not.toHaveBeenCalled();
     expect(cancelModal).not.toHaveBeenCalled();
   });
 });

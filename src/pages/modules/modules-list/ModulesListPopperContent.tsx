@@ -2,7 +2,8 @@ import { ListItem, ListItemButton, ListItemText } from '@mui/material';
 import { Trans } from '@lingui/macro';
 import { generatePath, useNavigate } from 'react-router-dom';
 import { PATH_MODULES } from '@utils/navigation/paths';
-import { Module } from '@services/modules/interfaces';
+import { Module, ModulesActions } from '@services/modules/interfaces';
+import { canDoModuleAction } from '@utils/feature-flag/canDoModuleAction';
 
 interface ModulesListPopperContentProps {
   moduleSelected: Module | null;
@@ -23,6 +24,10 @@ export default function ModulesListPopperContent({
     }
   };
 
+  const canDeleteModule = moduleSelected
+    ? canDoModuleAction(moduleSelected, ModulesActions.DELETE)
+    : false;
+
   return (
     <ListItem disablePadding sx={{ display: 'block' }}>
       <ListItemButton
@@ -37,12 +42,14 @@ export default function ModulesListPopperContent({
       >
         <ListItemText primary={<Trans>Duppliquer</Trans>} />
       </ListItemButton>{' '}
-      <ListItemButton
-        onClick={handleDelete}
-        sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
-      >
-        <ListItemText primary={<Trans>Supprimer</Trans>} />
-      </ListItemButton>
+      {canDeleteModule && (
+        <ListItemButton
+          onClick={handleDelete}
+          sx={{ '&:hover': { color: (theme) => theme.palette.secondary.main } }}
+        >
+          <ListItemText primary={<Trans>Supprimer</Trans>} />
+        </ListItemButton>
+      )}
     </ListItem>
   );
 }
