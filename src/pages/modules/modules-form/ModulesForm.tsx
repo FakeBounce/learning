@@ -11,6 +11,8 @@ import { RHFUploadBox } from '@src/components/hook-form/RHFUploadBox';
 import { colourOptions, languagesOptions } from '@src/pages/modules/modules-form/ModulesFormSchema';
 import ModulesFormConfig from '@src/pages/modules/modules-form/ModulesFormConfig';
 import RHFDropdownCreate from '@src/components/hook-form/RHFDropdownCreate';
+import RHFEditor from '@src/components/hook-form/RHFEditor';
+import { Typography } from '@mui/material';
 
 export default function ModulesForm({ disabled = false }: { disabled?: boolean }) {
   const { setValue, resetField } = useFormContext();
@@ -94,14 +96,15 @@ export default function ModulesForm({ disabled = false }: { disabled?: boolean }
         </Box>
       </Box>
       <StyledFormRow>
-        <RHFTextField
-          type="textarea"
-          multiline
-          name="description"
-          required
-          disabled={disabled}
-          label={<Trans>Description</Trans>}
-        />
+        <Typography
+          variant="h4"
+          sx={{
+            color: (theme) => theme.palette.secondary.main
+          }}
+        >
+          <Trans>Description</Trans>
+        </Typography>
+        <RHFEditor name="description" disabled={disabled} />
       </StyledFormRow>
       <StyledFormRow>
         <RHFDropdownCreate

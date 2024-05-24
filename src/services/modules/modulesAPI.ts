@@ -30,7 +30,9 @@ import {
   UpdateModuleQuestionRequest,
   UpdateModuleQuestionResponse,
   DeleteModuleResponse,
-  DeleteModuleRequest
+  DeleteModuleRequest,
+  UpdateModuleRequest,
+  UpdateModuleResponse
 } from '@services/modules/interfaces';
 
 export const getModules = async (
@@ -60,6 +62,13 @@ export const createModule = async (
       'Content-Type': 'multipart/form-data'
     }
   });
+};
+
+export const updateModule = async (
+  args: UpdateModuleRequest
+): Promise<AxiosResponse<UpdateModuleResponse>> => {
+  const { moduleId, ...rest } = args;
+  return axios.put(`/modules/${moduleId}`, rest);
 };
 
 export const deleteModule = async (

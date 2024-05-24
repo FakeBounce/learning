@@ -10,8 +10,7 @@ describe('ModulesStudyPlanTitle', () => {
         modules: {
           ...initialModulesState,
           modulesCurrent: {
-            modulesCurrentData: defaultModule,
-            modulesCurrentLoading: false
+            modulesCurrentData: defaultModule
           }
         }
       }
@@ -28,9 +27,9 @@ describe('ModulesStudyPlanTitle', () => {
         modules: {
           ...initialModulesState,
           modulesCurrent: {
-            modulesCurrentData: null,
-            modulesCurrentLoading: true
-          }
+            modulesCurrentData: null
+          },
+          modulesLoading: true
         }
       }
     });

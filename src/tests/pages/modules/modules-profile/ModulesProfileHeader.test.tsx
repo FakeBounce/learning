@@ -10,8 +10,7 @@ describe('ModulesProfileHeader', () => {
         modules: {
           ...initialModulesState,
           modulesCurrent: {
-            modulesCurrentData: defaultModule,
-            modulesCurrentLoading: false
+            modulesCurrentData: defaultModule
           }
         }
       }

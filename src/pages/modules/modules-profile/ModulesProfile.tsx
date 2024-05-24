@@ -5,7 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { PATH_ERRORS } from '@utils/navigation/paths';
 import { enqueueSnackbar } from 'notistack';
 import { t } from '@lingui/macro';
-import { getSingleModuleAction } from '@redux/actions/modulesActions';
+import { getSingleModuleAction, updateModuleAction } from '@redux/actions/modulesActions';
 import ModulesForm from '@src/pages/modules/modules-form/ModulesForm';
 import { FormProvider, useForm } from 'react-hook-form';
 import {
@@ -17,6 +17,8 @@ import {
 import ModulesProfileHeader from '@src/pages/modules/modules-profile/ModulesProfileHeader';
 import ModulesProfileFooter from '@src/pages/modules/modules-profile/ModulesProfileFooter';
 import ModulesStudyPlan from '@src/pages/modules/modules-study-plan/ModulesStudyPlan';
+import { UpdateModuleRequest } from '@services/modules/interfaces';
+import { cancelEditingModule, resetModuleLoading } from '@redux/reducers/modulesReducer';
 
 export default function ModulesProfile() {
   const [module, setModule] = useState(modulesFormDefaultValues);
@@ -56,10 +58,57 @@ export default function ModulesProfile() {
     defaultValues: module,
     values: module
   });
-  const { handleSubmit } = methods;
+  const {
+    handleSubmit,
+    formState: { dirtyFields }
+  } = methods;
 
-  // @todo Implement submit on editing task
-  const onSubmit = async (_data: ModuleFormValues) => {};
+  const onSubmit = async (data: ModuleFormValues) => {
+    const newModuleData = {} as UpdateModuleRequest;
+
+    let newTimer = '00:00:00';
+    Object.keys(dirtyFields).forEach((key) => {
+      const formKey = key as keyof ModuleFormValues;
+      const value = data[formKey];
+
+      if (value !== undefined) {
+        switch (formKey) {
+          case 'timer':
+            newTimer = `${data.timer.getHours().toString().padStart(2, '0')}:${data.timer
+              .getMinutes()
+              .toString()
+              .padStart(2, '0')}:00`;
+            newModuleData['timer'] = newTimer;
+            break;
+          // @TODO Set to boolean when API is updated
+          case 'isLocked':
+          case 'isPublic':
+            newModuleData[formKey] = data[formKey] ? '1' : '0';
+            break;
+          case 'tags':
+            newModuleData[formKey] = data.tags ? data.tags.map((tag) => tag.value) : [];
+            break;
+          case 'media':
+            break;
+          default:
+            if (value !== null) {
+              newModuleData[formKey] = value as any;
+            }
+            break;
+        }
+      }
+    });
+
+    try {
+      await dispatch(updateModuleAction({ ...newModuleData, moduleId: Number(moduleId) }));
+      dispatch(cancelEditingModule());
+    } catch (error) {
+      enqueueSnackbar(error as string, {
+        variant: 'error'
+      });
+      dispatch(resetModuleLoading());
+    }
+  };
 
   return (
     <>

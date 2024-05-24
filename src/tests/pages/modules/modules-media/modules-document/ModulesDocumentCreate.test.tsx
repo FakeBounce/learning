@@ -76,7 +76,6 @@ describe('ModulesDocumentCreate', () => {
             ...initialModulesState,
             modulesCurrent: {
               modulesCurrentData: defaultModuleComposed,
-              modulesCurrentLoading: false,
               modulesCurrentIsEditing: false
             }
           }

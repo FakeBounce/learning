@@ -12,6 +12,7 @@ export default function Editor({
   onChange,
   gap = false,
   helperText,
+  disabled,
   sx,
   ...other
 }: EditorProps) {
@@ -40,10 +41,11 @@ export default function Editor({
           ...sx
         }}
       >
-        <EditorToolbar id={id} withGaps={gap} />
+        <EditorToolbar disabled={disabled} id={id} withGaps={gap} />
 
         <ReactQuill
           value={value}
+          readOnly={disabled}
           onChange={onChange}
           modules={modules}
           formats={formats}

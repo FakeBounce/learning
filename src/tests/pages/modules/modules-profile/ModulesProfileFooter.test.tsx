@@ -19,7 +19,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: defaultModule,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: false
           }
         }
@@ -38,7 +37,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: null,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: false
           }
         }
@@ -58,7 +56,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: defaultModuleViewer,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: false
           }
         }
@@ -78,7 +75,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: defaultModuleSupervisor,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: false
           }
         }
@@ -98,7 +94,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: defaultModule,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: true
           }
         }
@@ -119,7 +114,6 @@ describe('ModulesProfileHeader', () => {
           ...initialModulesState,
           modulesCurrent: {
             modulesCurrentData: defaultModule,
-            modulesCurrentLoading: false,
             modulesCurrentIsEditing: false
           }
         }

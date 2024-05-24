@@ -26,7 +26,7 @@ describe('ModulesForm', () => {
 
     expect(screen.getByLabelText(/Affichage des réponses/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Recommencer/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Description/i)).toBeInTheDocument();
+    expect(screen.getByTestId('mce-editor-description')).toBeInTheDocument();
   });
 
   it('uploads a file, and then deletes it correctly', async () => {
@@ -100,6 +100,6 @@ describe('ModulesForm', () => {
     expect(screen.getByTestId('illustration-upload-box').querySelector('input')).toBeDisabled();
     expect(screen.getByRole('textbox', { name: /Nom du module/i })).toBeDisabled();
     expect(screen.getByLabelText(/Langue/i)).toBeDisabled();
-    expect(screen.getByLabelText(/Description/i)).toBeDisabled();
+    expect(screen.getByTestId('mce-editor-description')).toBeDisabled();
   });
 });

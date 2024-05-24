@@ -9,4 +9,5 @@ export interface EditorProps extends ReactQuillProps {
   gap?: boolean;
   helperText?: ReactNode;
   sx?: SxProps<Theme>;
+  disabled?: boolean;
 }

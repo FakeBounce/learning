@@ -49,7 +49,6 @@ describe('ModulesVideoCreate', () => {
             ...initialModulesState,
             modulesCurrent: {
               modulesCurrentData: defaultModuleForMedias,
-              modulesCurrentLoading: false,
               modulesCurrentIsEditing: false
             }
           }

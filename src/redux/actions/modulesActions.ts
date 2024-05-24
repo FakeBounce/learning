@@ -15,7 +15,8 @@ import {
   MoveModuleQuestionRequest,
   MoveModuleSubjectRequest,
   UpdateModuleMediaRequest,
-  UpdateModuleQuestionRequest
+  UpdateModuleQuestionRequest,
+  UpdateModuleRequest
 } from '@services/modules/interfaces';
 
 export const getModulesAction = createAsyncThunk(
@@ -53,6 +54,21 @@ export const createModuleAction = createAsyncThunk(
   async (args: CreateModuleRequest, { rejectWithValue }) => {
     try {
       const response = await ModulesServices.createModule(args);
+      return response.data;
+    } catch (e: any) {
+      if (e.response.data) {
+        return rejectWithValue(e.response.data);
+      }
+      throw e;
+    }
+  }
+);
+
+export const updateModuleAction = createAsyncThunk(
+  'modules/update',
+  async (args: UpdateModuleRequest, { rejectWithValue }) => {
+    try {
+      const response = await ModulesServices.updateModule(args);
       return response.data;
     } catch (e: any) {
       if (e.response.data) {

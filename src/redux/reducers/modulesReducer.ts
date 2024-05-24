@@ -18,20 +18,12 @@ import {
 
 export interface ModulesState {
   modulesList: {
-    modulesListLoading: boolean;
     modulesListData: Module[];
     modulesListTotalCount: number;
   };
   modulesCurrent: {
-    modulesCurrentLoading: boolean;
     modulesCurrentData: Module | null;
     modulesCurrentIsEditing: boolean;
-  };
-  modulesCreate: {
-    modulesCreateLoading: boolean;
-  };
-  modulesUpdate: {
-    modulesUpdateLoading: boolean;
   };
   modulesLoading: boolean;
   modulesContentForm: {
@@ -42,20 +34,12 @@ export interface ModulesState {
 }
 export const initialModulesState: ModulesState = {
   modulesList: {
-    modulesListLoading: false,
     modulesListData: [],
     modulesListTotalCount: 0
   },
   modulesCurrent: {
-    modulesCurrentLoading: false,
     modulesCurrentData: null,
     modulesCurrentIsEditing: false
-  },
-  modulesCreate: {
-    modulesCreateLoading: false
-  },
-  modulesUpdate: {
-    modulesUpdateLoading: false
   },
   modulesLoading: false,
   modulesContentForm: {
@@ -89,10 +73,10 @@ export const modulesSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(ModulesActions.createModuleAction.pending, (state) => {
-        state.modulesCreate.modulesCreateLoading = true;
+        state.modulesLoading = true;
       })
       .addCase(ModulesActions.createModuleAction.fulfilled, (state) => {
-        state.modulesCreate.modulesCreateLoading = false;
+        state.modulesLoading = false;
         enqueueSnackbar(t`Le module à bien été créé`, {
           variant: 'success'
         });
@@ -101,27 +85,38 @@ export const modulesSlice = createSlice({
         throw action.payload?.message?.value || action.error.message;
       })
       .addCase(ModulesActions.getModulesAction.pending, (state) => {
-        state.modulesList.modulesListLoading = true;
+        state.modulesLoading = true;
         state.modulesList.modulesListData = [];
       })
       .addCase(ModulesActions.getModulesAction.fulfilled, (state, action) => {
-        state.modulesList.modulesListLoading = false;
+        state.modulesLoading = false;
         state.modulesList.modulesListData = action.payload.data.rows;
         state.modulesList.modulesListTotalCount = action.payload.data.pagination.totalResults;
       })
       .addCase(ModulesActions.getModulesAction.rejected, (state, action: AnyAction) => {
-        state.modulesList.modulesListLoading = false;
+        state.modulesLoading = false;
         const errorMessage = action.payload?.message?.value || action.error.message;
         enqueueSnackbar(errorMessage, { variant: 'error' });
       })
       .addCase(ModulesActions.getSingleModuleAction.pending, (state) => {
-        state.modulesCurrent.modulesCurrentLoading = true;
+        state.modulesLoading = true;
       })
       .addCase(ModulesActions.getSingleModuleAction.fulfilled, (state, action) => {
-        state.modulesCurrent.modulesCurrentLoading = false;
+        state.modulesLoading = false;
         state.modulesCurrent.modulesCurrentData = action.payload.data;
       })
       .addCase(ModulesActions.getSingleModuleAction.rejected, (_, action: AnyAction) => {
+        throw action.payload?.message?.value || action.error.message;
+      })
+      .addCase(ModulesActions.updateModuleAction.pending, (state) => {
+        state.modulesLoading = true;
+      })
+      .addCase(ModulesActions.updateModuleAction.fulfilled, (state, action) => {
+        state.modulesLoading = false;
+        state.modulesCurrent.modulesCurrentData = action.payload.data;
+        enqueueSnackbar(t`Le module a bien été modifié`, { variant: 'success' });
+      })
+      .addCase(ModulesActions.updateModuleAction.rejected, (_, action: AnyAction) => {
         throw action.payload?.message?.value || action.error.message;
       })
       .addCase(ModulesActions.deleteModuleAction.pending, (state) => {

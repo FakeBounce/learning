@@ -22,9 +22,8 @@ function CardHeader({ headerText, headerColor, actions = null }: CardHeaderProps
       flexDirection={[actions && actions.length > 1 ? 'column' : 'row', 'row']}
     >
       <Typography
+        variant="h4"
         sx={{
-          fontSize: (theme) => theme.typography.h3.fontSize,
-          fontWeight: (theme) => theme.typography.fontWeightBold,
           color: (theme) => headerColor ?? theme.palette.grey[800]
         }}
       >

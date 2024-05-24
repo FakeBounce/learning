@@ -4,13 +4,14 @@ import { useTheme } from '@mui/material/styles';
 import { Skeleton } from '@mui/material';
 
 export default function ModulesProfileHeader() {
-  const { modulesCurrentData, modulesCurrentLoading } = useAppSelector(
-    (state) => state.modules.modulesCurrent
-  );
+  const {
+    modulesLoading,
+    modulesCurrent: { modulesCurrentData }
+  } = useAppSelector((state) => state.modules);
   const theme = useTheme();
 
   const displayName = () => {
-    if (!modulesCurrentLoading && modulesCurrentData !== null) {
+    if (!modulesLoading && modulesCurrentData !== null) {
       return modulesCurrentData.title;
     }
     return <Skeleton animation="pulse" variant="text" width="30%" />;

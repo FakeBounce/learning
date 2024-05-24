@@ -34,7 +34,7 @@ describe('ModulesCreate', () => {
 
     expect(screen.getByLabelText(/Affichage des réponses/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/Recommencer/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/Description/i)).toBeInTheDocument();
+    expect(screen.getByTestId('mce-editor-description')).toBeInTheDocument();
   });
 
   it('should return to modules if click on cancel', async () => {
@@ -54,15 +54,15 @@ describe('ModulesCreate', () => {
 
   it('send the form correctly', async () => {
     modulesSetupSuccessAxiosMock();
-    await act(async () => {
+    act(() => {
       render(<ModulesCreate />);
     });
 
-    await act(async () => {
+    act(() => {
       fireEvent.change(screen.getByLabelText(/Nom du module/i), {
         target: { value: 'Module test' }
       });
-      fireEvent.change(screen.getByLabelText(/Description/i), {
+      fireEvent.change(screen.getByTestId('mce-editor-description'), {
         target: { value: 'Description test' }
       });
       fireEvent.change(screen.getByLabelText(/Recommencer/i), { target: { value: 2 } });
@@ -91,9 +91,11 @@ describe('ModulesCreate', () => {
       fireEvent.change(screen.getByLabelText(/Nom du module/i), {
         target: { value: 'Module test' }
       });
-      fireEvent.change(screen.getByLabelText(/Description/i), {
+
+      fireEvent.change(screen.getByTestId('mce-editor-description'), {
         target: { value: 'Description test' }
       });
+
       fireEvent.change(screen.getByLabelText(/Recommencer/i), { target: { value: 2 } });
       fireEvent.change(screen.getByLabelText(/Affichage des réponses/i), {
         target: { value: ModuleDisplayAnswers.AFTER_QUESTION }

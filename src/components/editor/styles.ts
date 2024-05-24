@@ -66,7 +66,11 @@ export const StyledEditorToolbar = styled('div')(({ theme }) => {
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 4,
-        color: theme.palette.text.primary
+        color: theme.palette.text.primary,
+
+        '&:disabled': {
+          cursor: 'not-allowed'
+        }
       },
 
       // Icon svg
